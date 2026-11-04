@@ -138,7 +138,7 @@ def core_chain(cat) -> str:
     svg = _svg("cs-core-chain", "BComp CS path to CS3263",
                "Ranked dependency graph from CS3263 down to year-1 courses; CS2040S and MA1521 are the shared "
                "dependencies, each needed by two courses.", body)
-    return page("BComp CS path to CS3263", "Dependency graph · AY2026/27 · M1 data",
+    return svg, page("BComp CS path to CS3263", "Dependency graph · AY2026/27 · M1 data",
                 "<h1>From year 1 to CS3263: the BComp CS path</h1>"
                 f'<div class="diagram-container">{svg}</div>')
 
@@ -197,14 +197,110 @@ def exclusion_trap(cat) -> str:
     svg = _svg("exclusion-trap", "Why CS3244 blocks CS3263",
                "CS3263 needs CS2109S or CS2109HS; a completed CS3244 excludes CS2109S and CS2109HS is closed to "
                "BComp CS Hons, so CS3263 is unreachable.", body, height=580)
-    return page("Why CS3244 blocks CS3263", "Dependency graph · AY2026/27 · M1 data",
+    return svg, page("Why CS3244 blocks CS3263", "Dependency graph · AY2026/27 · M1 data",
                 "<h1>The CS3244 trap: one course that makes CS3263 impossible</h1>"
                 f'<div class="diagram-container">{svg}</div>')
 
 
+# ---------------------------------------------------------------------------
+def _oval(x, y, w, name, sub, accent=False):
+    h, cx = 44, x + w / 2
+    stroke = ACCENT if accent else INK
+    return (f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="20" fill="{PAPER}"/>'
+            f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="20" fill="#ffffff" stroke="{stroke}" stroke-width="1"/>'
+            f'<text x="{cx:g}" y="{y + 19}" fill="{INK}" font-size="12" font-weight="600" font-family="{SANS}" '
+            f'text-anchor="middle">{esc(name)}</text>'
+            f'<text x="{cx:g}" y="{y + 34}" fill="{MUTED}" font-size="9" font-family="{MONO}" '
+            f'text-anchor="middle">{esc(sub)}</text>')
+
+
+def _diamond(cx, cy, lines, hw=88, hh=40):
+    pts = f"{cx},{cy - hh} {cx + hw},{cy} {cx},{cy + hh} {cx - hw},{cy}"
+    out = [f'<polygon points="{pts}" fill="{PAPER}"/>',
+           f'<polygon points="{pts}" fill="#ffffff" stroke="{INK}" stroke-width="1"/>']
+    y0 = cy + 4 - 8 * (len(lines) - 1)
+    for i, ln in enumerate(lines):
+        out.append(f'<text x="{cx}" y="{y0 + 16 * i}" fill="{INK}" font-size="11" font-weight="600" '
+                   f'font-family="{SANS}" text-anchor="middle">{esc(ln)}</text>')
+    return "".join(out)
+
+
+def _rect(x, y, w, name, sub, h=56):
+    cx = x + w / 2
+    return (box(x, y, w, h, "backend") +
+            f'<text x="{cx:g}" y="{y + 25}" fill="{INK}" font-size="12" font-weight="600" font-family="{SANS}" '
+            f'text-anchor="middle">{esc(name)}</text>'
+            f'<text x="{cx:g}" y="{y + 42}" fill="{MUTED}" font-size="9" font-family="{MONO}" '
+            f'text-anchor="middle">{esc(sub)}</text>')
+
+
+def _label(x, y, text, accent=False, anchor="start"):
+    w = int(((len(text) * 8 * 0.62 + 8) // 4 + 1) * 4)
+    rx = x if anchor == "start" else x - w // 2
+    color = ACCENT if accent else MUTED
+    return (f'<rect x="{rx}" y="{y - 9}" width="{w}" height="12" rx="2" fill="{PAPER}"/>'
+            f'<text x="{rx + w / 2:g}" y="{y}" fill="{color}" font-size="8" font-family="{MONO}" '
+            f'text-anchor="middle" letter-spacing="0.06em">{esc(text)}</text>')
+
+
+def solver_flow(cat) -> tuple[str, str]:
+    """Flowchart of solver/run.py. Nine nodes; the one consequential branch
+    (no feasible plan -> minimal conflict) carries the accent.
+
+        y=40  start (400)
+        y=156 checks diamond  -> right: early stop (592..848)
+        y=276 query diamond   -> left: Q1 end (48..248)
+        y=356 CP-SAT rect
+        y=492 feasible diamond -> right: PLAN (592..800)
+        y=572 NO_PLAN end
+    """
+    body = [
+        # connectors first
+        _path("M 400,84 V 116"),
+        _path("M 488,156 H 592"),
+        _path("M 400,196 V 236"),
+        _path("M 312,276 H 248"),
+        _path("M 400,316 V 356"),
+        _path("M 400,412 V 452"),
+        _path("M 488,492 H 592"),
+        f'<path d="M 400,532 V 572" fill="none" stroke="{ACCENT}" stroke-width="1.2" '
+        f'marker-end="url(#arrow-accent)"/>',
+        # labels on connectors (masks keep them readable)
+        _label(520, 148, "NO", anchor="middle"),
+        _label(408, 220, "YES"),
+        _label(280, 268, "Q1", anchor="middle"),
+        _label(408, 340, "Q2"),
+        _label(520, 484, "YES", anchor="middle"),
+        _label(408, 556, "NO", accent=True),
+        # nodes
+        _oval(320, 40, 160, "Spec (JSON)", "from the LLM or by hand"),
+        _diamond(400, 156, ["Valid, in scope,", "complete?"]),
+        _oval(592, 134, 256, "Stop early", "INVALID_SPEC · OUT_OF_SCOPE · MISSING_INFO"),
+        _diamond(400, 276, ["Which query?"]),
+        _oval(48, 254, 200, "ELIGIBLE / NOT_ELIGIBLE", "can_take + reachable"),
+        _rect(272, 356, 256, "CP-SAT model, staged optimum", "11 hard rules · objective > added > prefs"),
+        _diamond(400, 492, ["Plan exists?"]),
+        _oval(592, 470, 208, "PLAN", "courses per semester + prefs met"),
+        _oval(288, 572, 224, "NO_PLAN + reasons", "smallest set of conflicting rules"),
+    ]
+    body += _legend(652, [("text", None, "Oval = start or answer · Rectangle = step · Diamond = decision")],
+                    note="Q1 = \u201ccan I take X?\u201d, Q2 = \u201cplan my semesters\u201d. Code: solver/run.py, "
+                         "spec.py, q1.py, model.py, objectives.py, explain.py.")
+    svg = _svg("solver-flow", "How the solver answers a spec",
+               "Flowchart: a spec is checked, then answered as Q1 eligibility or as a Q2 CP-SAT plan; an infeasible "
+               "plan request returns the smallest set of conflicting rules.", body, height=716)
+    return svg, page("How the solver answers a spec", "Flowchart · solver (M2)",
+                     "<h1>How the solver answers a spec</h1>"
+                     f'<div class="diagram-container">{svg}</div>')
+
+
 def write_overviews(out_dir, catalog: dict) -> None:
+    from .diagrams import standalone_svg
     out_dir.mkdir(parents=True, exist_ok=True)
     cat = catalog["courses"]
-    (out_dir / "cs-core-chain.html").write_text(core_chain(cat), encoding="utf-8", newline="\n")
-    (out_dir / "exclusion-trap.html").write_text(exclusion_trap(cat), encoding="utf-8", newline="\n")
-    print(f"[overviews] 2 diagrams -> {out_dir}")
+    for name, fn in (("cs-core-chain", core_chain), ("exclusion-trap", exclusion_trap),
+                     ("solver-flow", solver_flow)):
+        svg, html = fn(cat)
+        (out_dir / f"{name}.html").write_text(html, encoding="utf-8", newline="\n")
+        (out_dir / f"{name}.svg").write_text(standalone_svg(svg), encoding="utf-8", newline="\n")
+    print(f"[overviews] 3 diagrams (html + svg) -> {out_dir}")

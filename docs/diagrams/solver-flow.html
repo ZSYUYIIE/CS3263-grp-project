@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How the solver answers a spec</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Geist', system-ui, sans-serif; background: #f5f5f5; color: #2d3142; padding: 3rem 2rem; }
+.frame { max-width: 1040px; margin: 0 auto; }
+.diagram-container { width: 100%; overflow-x: auto; }
+svg { width: 100%; min-width: 960px; display: block; }
+svg a:hover text { fill: #2e5aa8; }
+.eyebrow { font-family: 'Geist Mono', ui-monospace, monospace; font-size: .66rem; font-weight: 500; letter-spacing: .18em;
+  text-transform: uppercase; color: #4f5d75; margin-bottom: .5rem; }
+.eyebrow a { color: #4f5d75; }
+h1 { font-family: 'Instrument Serif', serif; font-size: clamp(1.5rem, 2.4vw + .75rem, 2rem); font-weight: 400;
+  letter-spacing: -.02em; line-height: 1.15; margin-bottom: 1.5rem; }
+h2 { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 1.35rem; margin: 2rem 0 .75rem; }
+dl { display: grid; grid-template-columns: 11rem 1fr; gap: .55rem 1.25rem; font-size: .9rem;
+  border-top: 1px solid rgba(45,49,66,.12); padding-top: 1rem; }
+dt { font-family: 'Geist Mono', ui-monospace, monospace; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase;
+  color: #4f5d75; padding-top: .15rem; }
+dd { line-height: 1.5; }
+code, .mono { font-family: 'Geist Mono', ui-monospace, monospace; font-size: .82rem; }
+a { color: #2e5aa8; text-decoration: none; } a:hover { text-decoration: underline; }
+.muted { color: #4f5d75; }
+table { width: 100%; border-collapse: collapse; font-size: .86rem; }
+th { text-align: left; font-family: 'Geist Mono', ui-monospace, monospace; font-size: .66rem; letter-spacing: .14em;
+  text-transform: uppercase; color: #4f5d75; font-weight: 500; padding: .5rem .5rem;
+  border-bottom: 1px solid rgba(45,49,66,.25); }
+td { padding: .4rem .5rem; border-bottom: 1px solid rgba(45,49,66,.08); vertical-align: top; }
+td.num { font-family: 'Geist Mono', ui-monospace, monospace; text-align: right; }
+input { font: inherit; font-size: .9rem; padding: .45rem .7rem; border: 1px solid rgba(45,49,66,.25);
+  border-radius: 6px; background: #fff; width: min(24rem, 100%); margin-bottom: 1rem; }
+.overviews { display: grid; grid-template-columns: 1.1fr 1fr .9fr; gap: 12px; margin-bottom: 2rem; }
+.overviews a { display: block; background: #fff; border: 1px solid rgba(45,49,66,.12); border-radius: 6px;
+  padding: .9rem 1rem; color: #2d3142; }
+.overviews a:hover { border-color: #2d3142; text-decoration: none; }
+.overviews b { display: block; font-weight: 600; margin-bottom: .25rem; }
+.overviews span { font-size: .82rem; color: #4f5d75; }
+@media (max-width: 720px) { dl { grid-template-columns: 1fr; } .overviews { grid-template-columns: 1fr; } }
+@media print { .diagram-container { overflow-x: visible; } svg { min-width: 0; } }
+</style>
+</head>
+<body>
+<div class="frame">
+<p class="eyebrow">Flowchart · solver (M2)</p>
+<h1>How the solver answers a spec</h1><div class="diagram-container"><svg viewBox="0 0 960 716" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="solver-flow-title solver-flow-desc"><title id="solver-flow-title">How the solver answers a spec</title><desc id="solver-flow-desc">Flowchart: a spec is checked, then answered as Q1 eligibility or as a Q2 CP-SAT plan; an infeasible plan request returns the smallest set of conflicting rules.</desc><defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4f5d75"/></marker><marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#bf4520"/></marker></defs><rect width="100%" height="100%" fill="#f5f5f5"/><path d="M 400,84 V 116" fill="none" stroke="#4f5d75" stroke-width="1" marker-end="url(#arrow)"/>
+<path d="M 488,156 H 592" fill="none" stroke="#4f5d75" stroke-width="1" marker-end="url(#arrow)"/>
+<path d="M 400,196 V 236" fill="none" stroke="#4f5d75" stroke-width="1" marker-end="url(#arrow)"/>
+<path d="M 312,276 H 248" fill="none" stroke="#4f5d75" stroke-width="1" marker-end="url(#arrow)"/>
+<path d="M 400,316 V 356" fill="none" stroke="#4f5d75" stroke-width="1" marker-end="url(#arrow)"/>
+<path d="M 400,412 V 452" fill="none" stroke="#4f5d75" stroke-width="1" marker-end="url(#arrow)"/>
+<path d="M 488,492 H 592" fill="none" stroke="#4f5d75" stroke-width="1" marker-end="url(#arrow)"/>
+<path d="M 400,532 V 572" fill="none" stroke="#bf4520" stroke-width="1.2" marker-end="url(#arrow-accent)"/>
+<rect x="510" y="139" width="20" height="12" rx="2" fill="#f5f5f5"/><text x="520" y="148" fill="#4f5d75" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">NO</text>
+<rect x="408" y="211" width="24" height="12" rx="2" fill="#f5f5f5"/><text x="420" y="220" fill="#4f5d75" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">YES</text>
+<rect x="270" y="259" width="20" height="12" rx="2" fill="#f5f5f5"/><text x="280" y="268" fill="#4f5d75" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">Q1</text>
+<rect x="408" y="331" width="20" height="12" rx="2" fill="#f5f5f5"/><text x="418" y="340" fill="#4f5d75" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">Q2</text>
+<rect x="508" y="475" width="24" height="12" rx="2" fill="#f5f5f5"/><text x="520" y="484" fill="#4f5d75" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">YES</text>
+<rect x="408" y="547" width="20" height="12" rx="2" fill="#f5f5f5"/><text x="418" y="556" fill="#bf4520" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">NO</text>
+<rect x="320" y="40" width="160" height="44" rx="20" fill="#f5f5f5"/><rect x="320" y="40" width="160" height="44" rx="20" fill="#ffffff" stroke="#2d3142" stroke-width="1"/><text x="400" y="59" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Spec (JSON)</text><text x="400" y="74" fill="#4f5d75" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">from the LLM or by hand</text>
+<polygon points="400,116 488,156 400,196 312,156" fill="#f5f5f5"/><polygon points="400,116 488,156 400,196 312,156" fill="#ffffff" stroke="#2d3142" stroke-width="1"/><text x="400" y="152" fill="#2d3142" font-size="11" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Valid, in scope,</text><text x="400" y="168" fill="#2d3142" font-size="11" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">complete?</text>
+<rect x="592" y="134" width="256" height="44" rx="20" fill="#f5f5f5"/><rect x="592" y="134" width="256" height="44" rx="20" fill="#ffffff" stroke="#2d3142" stroke-width="1"/><text x="720" y="153" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Stop early</text><text x="720" y="168" fill="#4f5d75" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">INVALID_SPEC · OUT_OF_SCOPE · MISSING_INFO</text>
+<polygon points="400,236 488,276 400,316 312,276" fill="#f5f5f5"/><polygon points="400,236 488,276 400,316 312,276" fill="#ffffff" stroke="#2d3142" stroke-width="1"/><text x="400" y="280" fill="#2d3142" font-size="11" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Which query?</text>
+<rect x="48" y="254" width="200" height="44" rx="20" fill="#f5f5f5"/><rect x="48" y="254" width="200" height="44" rx="20" fill="#ffffff" stroke="#2d3142" stroke-width="1"/><text x="148" y="273" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">ELIGIBLE / NOT_ELIGIBLE</text><text x="148" y="288" fill="#4f5d75" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">can_take + reachable</text>
+<rect x="272" y="356" width="256" height="56" rx="6" fill="#f5f5f5"/><rect x="272" y="356" width="256" height="56" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/><text x="400" y="381" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CP-SAT model, staged optimum</text><text x="400" y="398" fill="#4f5d75" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">11 hard rules · objective &gt; added &gt; prefs</text>
+<polygon points="400,452 488,492 400,532 312,492" fill="#f5f5f5"/><polygon points="400,452 488,492 400,532 312,492" fill="#ffffff" stroke="#2d3142" stroke-width="1"/><text x="400" y="496" fill="#2d3142" font-size="11" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Plan exists?</text>
+<rect x="592" y="470" width="208" height="44" rx="20" fill="#f5f5f5"/><rect x="592" y="470" width="208" height="44" rx="20" fill="#ffffff" stroke="#2d3142" stroke-width="1"/><text x="696" y="489" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">PLAN</text><text x="696" y="504" fill="#4f5d75" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">courses per semester + prefs met</text>
+<rect x="288" y="572" width="224" height="44" rx="20" fill="#f5f5f5"/><rect x="288" y="572" width="224" height="44" rx="20" fill="#ffffff" stroke="#2d3142" stroke-width="1"/><text x="400" y="591" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">NO_PLAN + reasons</text><text x="400" y="606" fill="#4f5d75" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">smallest set of conflicting rules</text>
+<line x1="40" y1="652" x2="920" y2="652" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
+<text x="40" y="668" fill="#4f5d75" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.18em">LEGEND</text>
+<text x="40" y="689" fill="#4f5d75" font-size="8.5" font-family="'Geist', system-ui, sans-serif">Oval = start or answer · Rectangle = step · Diamond = decision</text>
+<text x="40" y="708" fill="#4f5d75" font-size="8.5" font-family="'Geist', system-ui, sans-serif">Q1 = “can I take X?”, Q2 = “plan my semesters”. Code: solver/run.py, spec.py, q1.py, model.py, objectives.py, explain.py.</text></svg></div>
+</div>
+</body>
+</html>

@@ -49,6 +49,8 @@ flowchart LR
 
 Run it yourself: `python -m solver.run examples/q1_eligible.json`.
 
+![How the solver answers a spec](diagrams/solver-flow.svg)
+
 ## 3. Follow one plan request: "Plan my remaining semesters" (Q2)
 
 `examples/q2_plan.json` asks to plan semesters 3–8 with a list of must-take courses, a credit
@@ -124,8 +126,9 @@ flowchart LR
 - **1 hour:** `solver/run.py` (74 lines) → `solver/q1.py` (52) → `m1_data/catalog.py` →
   `solver/model.py` `build()` → `solver/objectives.py` `answer()`. You can skip `backtrack.py`
   unless you are writing the ablation section.
-- **Writing the report:** sections 2–4 above are the formulation and method in plain words. The
-  exact rules are in `SOLVER_GUIDE.md` §4–7 and the data decisions in `DATA_SCHEMA.md`.
+- **Presenting or writing the report:** [`FORMULATION.md`](FORMULATION.md) has the full
+  formulation on one page. The exact rules are in `SOLVER_GUIDE.md` §4–7 and the data decisions in
+  `DATA_SCHEMA.md`.
 
 ## 7. Where to change things
 

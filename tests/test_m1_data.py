@@ -162,3 +162,13 @@ def test_scope_request_scan():
     assert not scan_request("I have a second major in Maths, can I take CS3263?").in_scope
     assert not scan_request("As a data science student can I take CS3263?").in_scope
     assert scan_request("Done CS1101S, CS1231S, CS2040S. Can I take CS3263?").in_scope
+
+
+def test_svg_copies_exist(cat):
+    from m1_data import paths
+    d = paths.processed_dir(cat.data["acad_year"]) / "diagrams"
+    svg = (d / "svg" / "CS3263.svg").read_text(encoding="utf-8")
+    assert svg.startswith("<?xml") and 'width="960"' in svg and "<a " not in svg
+    assert (d / "README.md").exists()
+    for name in ("cs-core-chain", "exclusion-trap", "solver-flow"):
+        assert (paths.ROOT / "docs" / "diagrams" / f"{name}.svg").exists()

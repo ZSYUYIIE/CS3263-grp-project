@@ -17,6 +17,8 @@ possibly a recorded video), report **Fri 13 Nov**.
 
 **New here? Read [`docs/CODE_GUIDE.md`](docs/CODE_GUIDE.md) first.** It explains in about 15 minutes
 how the code fits together and follows one request through it step by step.
+**Presenting or writing the report?** [`docs/FORMULATION.md`](docs/FORMULATION.md) has the whole problem
+formulation (data + solver) on one page.
 
 ## Data pipeline (M1)
 
@@ -61,15 +63,24 @@ Without Python, open `data/processed/AY2026-2027/COURSES.md` and search for `###
 
 ### See it as a graph
 
-- **Open `data/processed/AY2026-2027/diagrams/index.html` in a browser.** It has one dependency diagram
-  per course: what it needs, what needs it, and what it excludes. Click through course to course.
-- **Overviews for the report:** [`docs/diagrams/cs-core-chain.html`](docs/diagrams/cs-core-chain.html)
-  (year 1 → CS3263) and [`docs/diagrams/exclusion-trap.html`](docs/diagrams/exclusion-trap.html)
-  (why completing CS3244 makes CS3263 impossible).
-- **For code:** `graph.json` is a node-link graph that keeps the and/or structure.
-  `course_graph.graphml` opens in yEd, Gephi or Cytoscape.
+![Why completing CS3244 makes CS3263 impossible](docs/diagrams/exclusion-trap.svg)
 
-The diagrams follow the diagram-design skill (dependency-graph type, default skin) and pass its
+All diagrams come as `.svg` images, which GitHub and VS Code show directly, and as clickable `.html` pages:
+
+| Diagram | Image (GitHub / IDE) | For the report or slides |
+|---|---|---|
+| Every course: what it needs, what needs it, what it excludes | [`diagrams/` gallery](data/processed/AY2026-2027/diagrams/README.md) | – |
+| BComp CS core chain (year 1 → CS3263) | [svg](docs/diagrams/cs-core-chain.svg) | [png](docs/diagrams/cs-core-chain.png) |
+| The CS3244 trap (shown above) | [svg](docs/diagrams/exclusion-trap.svg) | [png](docs/diagrams/exclusion-trap.png) |
+| How the solver answers a spec | [svg](docs/diagrams/solver-flow.svg) | [png](docs/diagrams/solver-flow.png) |
+
+**Clickable version (one-time setup):** repo **Settings → Pages → Deploy from a branch → `main` / root → Save**.
+After a minute, the course explorer is at
+`https://zsyuyiie.github.io/cs3263-project/data/processed/AY2026-2027/diagrams/index.html`.
+Opening `index.html` from a local clone in a browser also works.
+
+**For code:** `graph.json` is a node-link graph that keeps the and/or structure; `course_graph.graphml`
+opens in yEd, Gephi or Cytoscape. The diagrams follow the diagram-design skill and pass its
 `self_check.py` and `verify-geometry.py`.
 
 **Scope:** BComp (CS) Hons, single major, AY2026/27. Requests about DDPs, second majors,

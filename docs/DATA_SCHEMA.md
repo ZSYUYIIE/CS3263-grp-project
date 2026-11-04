@@ -20,8 +20,8 @@ does not change without a version bump.
 | `data/processed/AY2026-2027/rules_literal.json` | auditing | The rule strings parsed into trees *before* any assumption was applied. |
 | `data/processed/AY2026-2027/graph.json` | code, agents | The whole catalogue as a node-link graph, with and/or nodes kept (see [Graph](#graph)). |
 | `data/processed/AY2026-2027/course_graph.graphml` | yEd, Gephi, Cytoscape | Courses only, with `needs` / `excludes` edges. Open it to explore or lay out the full web. |
-| `data/processed/AY2026-2027/diagrams/` | people | One dependency diagram per course plus `index.html`. **Open `index.html` in a browser.** |
-| `docs/diagrams/*.html` | report, slides | Hand-laid overview diagrams (BComp CS core chain, the CS3244 trap). |
+| `data/processed/AY2026-2027/diagrams/` | people | One dependency diagram per course: `svg/<CODE>.svg` (shows on GitHub / in an IDE; gallery in `README.md`) and `<CODE>.html` (clickable; start at `index.html`). |
+| `docs/diagrams/*.svg`, `*.png`, `*.html` | report, slides | Overviews: BComp CS core chain, the CS3244 trap, how the solver answers. PNGs are at 2× for documents. |
 | `data/manual/overrides.json` | M1 | Hand fixes, applied last, each with a reason. |
 | `data/manual/SPOT_CHECK.md` | everyone | Hand-verification checklist against nusmods.com. |
 | `data/config/scope.json` | M1 | Which courses are fetched. |
