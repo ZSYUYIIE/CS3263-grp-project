@@ -12,7 +12,8 @@ Scope: BComp (CS) Hons, NUSMods AY2026/27 data.
 | M3 | Instance generator and perturbations, pipelines A0/A/B/C, evaluation harness | `instances/`, `pipelines/`, `eval/` (to add) |
 
 Key dates: data parsed and spot-checked by **Thu 29 Oct**, feasible T2 results by
-**Wed 4 Nov** (fallback point), report and presentation **Fri 13 Nov**.
+**Wed 4 Nov** (fallback point), presentation in the **week of 9 Nov** (15 min + 5 min Q&A,
+possibly a recorded video), report **Fri 13 Nov**.
 
 ## Data pipeline (M1)
 
