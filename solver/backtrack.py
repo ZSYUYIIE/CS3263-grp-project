@@ -1,15 +1,28 @@
+"""Our own CSP solver for Q2: branch-and-bound backtracking, for the ablation.
+
+Independent of the CP-SAT model (it does not import `model.py` or `objectives.py`). Four
+cumulative variants: plain -> mrv (most constrained course first) -> fc (forward checking) ->
+mac (repeat pruning to a fixpoint). Searches the same stages as `objectives.py`, so it proves
+the same optimum. Entry point: `solve_with_stats(spec, catalog, variant, time_limit)`.
+See docs/SOLVER_GUIDE.md section 9.
+"""
 from __future__ import annotations
 
 import time
 
 from m1_data.catalog import Catalog, satisfied
-
 from solver import q1
+from solver.common import (
+    ATAP_CODE,
+    ATAP_OTHER_CAP,
+    GENERIC_REASON,
+    LAST_SEM,
+    rule_courses,
+    term_of,
+    tree_leaves,
+    unmet_codes,
+)
 from solver.run import prepare
-
-LAST_SEM = 8
-ATAP_CODE = "CP3880"
-ATAP_OTHER_CAP = 8
 
 VARIANTS = {
     "plain": {"mrv": False, "forward": False, "mac": False},
@@ -18,48 +31,12 @@ VARIANTS = {
     "mac": {"mrv": True, "forward": True, "mac": True},
 }
 
-GENERIC_REASON = ("no plan satisfies all the rules together (prerequisite order, offering terms, "
-                  "MC caps, exclusions and your must-rules conflict)")
-
-
 class TimeLimit(Exception):
     pass
 
 
 class Found(Exception):
     pass
-
-
-def term_of(semester: int) -> int:
-    return 1 if semester % 2 == 1 else 2
-
-
-def unmet_codes(node, done: set, found: set) -> None:
-    if node is None or node is True or node is False:
-        return
-    if satisfied(node, done):
-        return
-    if node["op"] == "course":
-        found.add(node["code"])
-        return
-    for arg in node["args"]:
-        unmet_codes(arg, done, found)
-
-
-def tree_leaves(node, found: set) -> None:
-    if node is None or node is True or node is False:
-        return
-    if node["op"] == "course":
-        found.add(node["code"])
-        return
-    for arg in node["args"]:
-        tree_leaves(arg, found)
-
-
-def rule_courses(rule: dict) -> list[str]:
-    if rule["type"] == "in_sem":
-        return [rule["course"]]
-    return [rule["a"], rule["b"]]
 
 
 class Stage:
@@ -82,6 +59,8 @@ class Pref:
 
 
 class Search:
+    """One branch-and-bound search over (course -> semester or 0) assignments."""
+
     def __init__(self, spec: dict, catalog, variant: str, deadline: float):
         options = VARIANTS[variant]
         self.use_mrv = options["mrv"]
@@ -573,7 +552,8 @@ class Search:
             else:
                 prefs.append(Pref("pair", label, rel=kind, a=a, b=b))
         for entry in self.light_entries():
-            label = "last semester lighter than average" if entry == "last" else f"semester {entry} lighter than average"
+            label = ("last semester lighter than average" if entry == "last"
+                     else f"semester {entry} lighter than average")
             prefs.append(Pref("light", label, entry=entry))
         if self.spec["balance_load"] and self.sems:
             prefs.append(Pref("balance", "largest semester load is as small as possible"))
@@ -828,6 +808,7 @@ class Search:
 
 
 def solve_with_stats(spec, catalog=None, variant: str = "mac", time_limit: float = 60):
+    """Solve a spec with one backtracking variant. Returns (answer, counters)."""
     if variant not in VARIANTS:
         raise ValueError(f"variant must be one of {list(VARIANTS)}, got {variant!r}")
     catalog = catalog or Catalog.load()

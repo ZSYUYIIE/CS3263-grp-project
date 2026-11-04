@@ -1,4 +1,12 @@
+"""Validate and clean a spec before solving.
+
+`validate()` returns errors (the spec is malformed -> INVALID_SPEC), problems (out of scope),
+warnings (ignored fields), the cleaned spec and the missing required fields (-> MISSING_INFO).
+Field meanings: docs/SOLVER_GUIDE.md section 2.
+"""
 from __future__ import annotations
+
+from solver.common import LAST_SEM
 
 QUERIES = ("eligible", "plan")
 OBJECTIVES = ("earliest_graduation", "min_total_mc", "none")
@@ -16,7 +24,6 @@ ALL_FIELDS = COMMON_FIELDS + Q1_ONLY_FIELDS + Q2_ONLY_FIELDS
 MISSING_ORDER = ("completed", "current_sem", "target", "must_take")
 
 DEFAULT_MC_MAX = 20
-LAST_SEM = 8
 
 
 def _is_int(value) -> bool:
@@ -51,6 +58,7 @@ def _unique(items: list) -> list:
 
 
 def validate(spec, catalog=None):
+    """Check and clean a spec. Returns (errors, problems, warnings, cleaned, missing)."""
     errors: list[str] = []
     problems: list[str] = []
     warnings: list[str] = []

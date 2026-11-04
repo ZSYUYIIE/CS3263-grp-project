@@ -28,7 +28,6 @@ course_graph.graphml (courses only, for yEd / Gephi / Cytoscape)
 """
 from __future__ import annotations
 
-import json
 from xml.sax.saxutils import escape
 
 KIND = {"and": "all", "or": "any", "n_of": "n_of"}
@@ -49,25 +48,8 @@ def build_graph(catalog: dict) -> dict:
 
     for code, c in cs.items():
         for role, logic in (("prereq", c["prereq"]["logic"]), ("coreq", c["coreq"]["logic"])):
-            if not isinstance(logic, dict):
-                continue
-            counter = [0]
-
-            def emit(node, parent, kind):
-                if node["op"] == "course":
-                    edges.append({"source": parent, "target": node["code"], "kind": kind})
-                    return
-                nid = f"{code}#{role[0]}{counter[0]}"
-                counter[0] += 1
-                n = {"id": nid, "kind": KIND[node["op"]], "of": code, "role": role}
-                if node["op"] == "n_of":
-                    n["n"] = node["n"]
-                nodes.append(n)
-                edges.append({"source": parent, "target": nid, "kind": kind})
-                for a in node["args"]:
-                    emit(a, nid, "arg")
-
-            emit(logic, code, role)
+            if isinstance(logic, dict):
+                _emit_logic(logic, code, role, code, role, [0], nodes, edges)
 
         for x in c["preclusion"]["mutually_exclusive_with"]:
             if code < x:
@@ -80,6 +62,23 @@ def build_graph(catalog: dict) -> dict:
         "nodes": nodes,
         "edges": edges,
     }
+
+
+def _emit_logic(node, parent, kind, code, role, counter, nodes, edges) -> None:
+    """Add one logic tree to the graph: a node per and/or/n_of, an edge per argument.
+    `counter` numbers the logic nodes of one course (ids like CS3263#p0)."""
+    if node["op"] == "course":
+        edges.append({"source": parent, "target": node["code"], "kind": kind})
+        return
+    nid = f"{code}#{role[0]}{counter[0]}"
+    counter[0] += 1
+    entry = {"id": nid, "kind": KIND[node["op"]], "of": code, "role": role}
+    if node["op"] == "n_of":
+        entry["n"] = node["n"]
+    nodes.append(entry)
+    edges.append({"source": parent, "target": nid, "kind": kind})
+    for arg in node["args"]:
+        _emit_logic(arg, nid, "arg", code, role, counter, nodes, edges)
 
 
 def _depths(cs: dict) -> dict:

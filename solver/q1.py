@@ -1,11 +1,15 @@
+"""Q1, "can I take X?": eligibility from the catalogue.
+
+Uses `Catalog.can_take` (prerequisites, exclusions, offering term, availability) and, when the
+answer is no, `Catalog.reachable` to say whether the student could ever become eligible.
+"""
 from __future__ import annotations
 
-
-def term_of(semester: int) -> int:
-    return 1 if semester % 2 == 1 else 2
+from solver.common import term_of
 
 
 def answer(spec: dict, catalog) -> dict:
+    """Q1 answer for a cleaned spec: ELIGIBLE or NOT_ELIGIBLE with reasons."""
     semester = spec.get("current_sem")
     if semester is None:
         return answer_without_semester(spec, catalog)
@@ -45,8 +49,10 @@ def answer_without_semester(spec: dict, catalog) -> dict:
     if ok:
         result["offered_in"] = offered_in
         if len(offered_in) == 2:
-            result["notes"] = ["no semester given; the course is offered in both Semester 1 and Semester 2, so the term does not matter"]
+            result["notes"] = ["no semester given; the course is offered in both Semester 1 and Semester 2, "
+                               "so the term does not matter"]
         else:
-            result["notes"] = [f"no semester given; the course is offered in Semester {offered_in[0]} only, so it can only be taken in that term"]
+            result["notes"] = [f"no semester given; the course is offered in Semester {offered_in[0]} only, "
+                               "so it can only be taken in that term"]
     add_reachability(result, spec, catalog, ok)
     return result

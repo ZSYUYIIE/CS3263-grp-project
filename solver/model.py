@@ -1,37 +1,22 @@
+"""Q2 CP-SAT model: variables and hard rules for "plan my remaining semesters".
+
+`PlanModel` creates one 0/1 variable per (candidate course, remaining semester) and adds the
+11 hard rules of docs/SOLVER_GUIDE.md section 4: offering term, prerequisites (strictly earlier),
+corequisites (same or earlier), exclusions, MC caps, minimum MC, must-rules, no padding and ATAP.
+With `explain=True` each rule group is switched by an assumption literal (`guards`) so that
+`explain.py` can find a minimal conflict. Optimisation lives in `objectives.py`.
+"""
 from __future__ import annotations
 
 from ortools.sat.python import cp_model
 
 from m1_data.catalog import satisfied
-
-LAST_SEM = 8
-ATAP_CODE = "CP3880"
-ATAP_OTHER_CAP = 8
-
-
-def term_of(semester: int) -> int:
-    return 1 if semester % 2 == 1 else 2
-
-
-def unmet_codes(node, done: set, found: set) -> None:
-    if node is None or node is True or node is False:
-        return
-    if satisfied(node, done):
-        return
-    if node["op"] == "course":
-        found.add(node["code"])
-        return
-    for arg in node["args"]:
-        unmet_codes(arg, done, found)
-
-
-def rule_courses(rule: dict) -> list[str]:
-    if rule["type"] == "in_sem":
-        return [rule["course"]]
-    return [rule["a"], rule["b"]]
+from solver.common import ATAP_CODE, ATAP_OTHER_CAP, LAST_SEM, rule_courses, term_of, unmet_codes
 
 
 class PlanModel:
+    """CP-SAT model of one Q2 request. `reasons` is non-empty when infeasibility is already known."""
+
     def __init__(self, spec: dict, catalog, explain: bool = False):
         self.spec = spec
         self.catalog = catalog
@@ -206,6 +191,7 @@ class PlanModel:
         return flag
 
     def require(self, node, semester: int, cond, inclusive: bool) -> None:
+        """If `cond` holds, the logic tree `node` must be done by `semester` (inclusive for corequisites)."""
         m = self.model
         if node is None or node is True:
             return
@@ -291,7 +277,7 @@ class PlanModel:
     def add_last(self) -> None:
         m = self.model
         self.last = m.NewIntVar(self.current - 1, LAST_SEM, "last")
-        for (code, s), v in self.var.items():
+        for (_code, s), v in self.var.items():
             m.Add(self.last >= s).OnlyEnforceIf(v)
         self.is_last: dict[int, cp_model.IntVar] = {}
         for value in range(self.current - 1, LAST_SEM + 1):

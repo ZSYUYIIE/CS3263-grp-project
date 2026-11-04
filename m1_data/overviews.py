@@ -11,10 +11,17 @@ drawing wrong fails loudly instead of silently going stale.
 from __future__ import annotations
 
 from .catalog import satisfied
-from .diagrams import (ACCENT, INK, MONO, MUTED, PAPER, SANS, SERIF, SOFT, TREAT, box, esc,
-                       page, tag, badge)
+from .diagrams import ACCENT, INK, MONO, MUTED, PAPER, SANS, SERIF, SOFT, TREAT, badge, box, esc, page, tag
 
 W, H = 960, 600
+
+
+COURSE_PAGES = "../../data/processed/AY2026-2027/diagrams/"
+
+
+def _page(code: str) -> str:
+    """Link from docs/diagrams/ to a course's generated page."""
+    return f"{COURSE_PAGES}{code}.html"
 
 
 def _node(x, y, name, sub, label, kind="backend", fan=None, w=160, h=56, href=None):
@@ -100,7 +107,6 @@ def core_chain(cat) -> str:
              ("ST2334", "MA1521"), ("CS2109S", "MA1521"), ("CS2109S", "CS2040S"),
              ("CS2040S", "CS1101S"), ("CS2040S", "CS1231S")]
     _check_edges(cat, edges)
-    t = lambda c: cat[c]["title"]
     body = []
     for i, y in enumerate((80, 200, 320, 440)):
         body.append(f'<text x="40" y="{y + 32}" fill="{MUTED}" font-size="8" font-family="{MONO}" '
@@ -121,14 +127,14 @@ def core_chain(cat) -> str:
         _path("M 668,376 V 384 Q 668,392 676,392 H 792 Q 800,392 800,400 V 440"),          # CS2040S -> CS1231S
     ]
     body += [
-        _node(400, 80, "CS3263", "Foundations of AI", "TARGET", fan=0, href="../../data/processed/AY2026-2027/diagrams/CS3263.html"),
-        _node(160, 200, "ST2334", "Probability & Statistics", "STATS", fan=1, href="../../data/processed/AY2026-2027/diagrams/ST2334.html"),
-        _node(400, 200, "CS2109S", "Intro to AI & ML", "AI", fan=1, href="../../data/processed/AY2026-2027/diagrams/CS2109S.html"),
-        _node(720, 200, "MA1522", "Linear Algebra", "MATH", "store", fan=1, href="../../data/processed/AY2026-2027/diagrams/MA1522.html"),
-        _node(240, 320, "MA1521", "Calculus for Computing", "MATH", "store", fan=2, href="../../data/processed/AY2026-2027/diagrams/MA1521.html"),
-        _node(560, 320, "CS2040S", "Data Structures & Algos", "CORE", fan=2, href="../../data/processed/AY2026-2027/diagrams/CS2040S.html"),
-        _node(520, 440, "CS1101S", "Programming Methodology", "CORE", "store", fan=1, href="../../data/processed/AY2026-2027/diagrams/CS1101S.html"),
-        _node(720, 440, "CS1231S", "Discrete Structures", "CORE", "store", fan=1, href="../../data/processed/AY2026-2027/diagrams/CS1231S.html"),
+        _node(400, 80, "CS3263", "Foundations of AI", "TARGET", fan=0, href=_page("CS3263")),
+        _node(160, 200, "ST2334", "Probability & Statistics", "STATS", fan=1, href=_page("ST2334")),
+        _node(400, 200, "CS2109S", "Intro to AI & ML", "AI", fan=1, href=_page("CS2109S")),
+        _node(720, 200, "MA1522", "Linear Algebra", "MATH", "store", fan=1, href=_page("MA1522")),
+        _node(240, 320, "MA1521", "Calculus for Computing", "MATH", "store", fan=2, href=_page("MA1521")),
+        _node(560, 320, "CS2040S", "Data Structures & Algos", "CORE", fan=2, href=_page("CS2040S")),
+        _node(520, 440, "CS1101S", "Programming Methodology", "CORE", "store", fan=1, href=_page("CS1101S")),
+        _node(720, 440, "CS1231S", "Discrete Structures", "CORE", "store", fan=1, href=_page("CS1231S")),
     ]
     body += _legend(524, [("box", "backend", "Course with prerequisites"),
                           ("box", "store", "Entry course (nothing needed for an H2 Maths student)"),
@@ -175,14 +181,14 @@ def exclusion_trap(cat) -> str:
     ]
     body += [
         _node(400, 80, "CS3263", "wanted next semester", "TARGET",
-              href="../../data/processed/AY2026-2027/diagrams/CS3263.html"),
+              href=_page("CS3263")),
         _node(184, 200, "3 other groups", "CS2040S · MA1522 · ST2334", "ALL MET", "store", w=192),
         _node(560, 200, "AI foundation", "CS2109S or CS2109HS", "ANY 1 OF", "store"),
         _node(200, 320, "CS3244", "Machine Learning", "COMPLETED", "input"),
         _node(480, 320, "CS2109S", "ruled out by CS3244", "COURSE",
-              href="../../data/processed/AY2026-2027/diagrams/CS2109S.html"),
+              href=_page("CS2109S")),
         _node(720, 320, "CS2109HS", "closed to CS Hons", "COURSE", "external",
-              href="../../data/processed/AY2026-2027/diagrams/CS2109HS.html"),
+              href=_page("CS2109HS")),
         f'<text x="200" y="424" fill="{INK}" font-size="14" font-style="italic" font-family="{SERIF}">'
         "Neither option survives, so no plan reaches CS3263.</text>",
         f'<text x="200" y="444" fill="{SOFT}" font-size="14" font-style="italic" font-family="{SERIF}">'
@@ -207,7 +213,8 @@ def _oval(x, y, w, name, sub, accent=False):
     h, cx = 44, x + w / 2
     stroke = ACCENT if accent else INK
     return (f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="20" fill="{PAPER}"/>'
-            f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="20" fill="#ffffff" stroke="{stroke}" stroke-width="1"/>'
+            f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="20" fill="#ffffff" '
+            f'stroke="{stroke}" stroke-width="1"/>'
             f'<text x="{cx:g}" y="{y + 19}" fill="{INK}" font-size="12" font-weight="600" font-family="{SANS}" '
             f'text-anchor="middle">{esc(name)}</text>'
             f'<text x="{cx:g}" y="{y + 34}" fill="{MUTED}" font-size="9" font-family="{MONO}" '

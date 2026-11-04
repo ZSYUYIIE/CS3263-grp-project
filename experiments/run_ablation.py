@@ -1,3 +1,10 @@
+"""Ablation runner: CP-SAT against the four backtracking variants.
+
+    python -m experiments.run_ablation instances.json --limit 30 --out rows.csv --time-limit 60
+
+Writes one CSV row per (instance, engine) and prints, per engine, instances finished, median
+seconds, median nodes and agreement with CP-SAT. See docs/SOLVER_GUIDE.md section 9.
+"""
 from __future__ import annotations
 
 import argparse
@@ -7,7 +14,6 @@ import statistics
 import time
 
 from m1_data.catalog import Catalog
-
 from solver.backtrack import VARIANTS, solve_with_stats
 from solver.run import run
 
@@ -44,7 +50,8 @@ def run_instance(instance: dict, catalog, time_limit: float) -> list[dict]:
 
 
 def same_answer(a: dict, b: dict) -> bool:
-    return (a["status"], a["last_semester"], a["preferences_met"]) == (b["status"], b["last_semester"], b["preferences_met"])
+    keys = ("status", "last_semester", "preferences_met")
+    return all(a[k] == b[k] for k in keys)
 
 
 def summarise(rows: list[dict]) -> list[dict]:

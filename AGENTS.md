@@ -13,8 +13,8 @@ This file covers what you need to avoid mistakes.
 2. **Do not edit `data/processed/`, `data/raw/` or `docs/diagrams/`.** They are generated. To change an output,
    fix the parser in `m1_data/` or add an entry with a `reason` to `data/manual/overrides.json`,
    then run `python -m m1_data build`.
-3. **After any change to `m1_data/`, run `python -m m1_data build` and `python -m pytest -q`.**
-   Both must pass. `build` already runs the invariant checks.
+3. **After any change, run `ruff check .` and `python -m pytest -q`; after a change to `m1_data/`,
+   also `python -m m1_data build`.** All must pass before pushing.
 4. **Keep the evaluation checker independent.** Code under `eval/` must not import
    `m1_data.catalog` or `m1_data.resolve`. It implements the rules from `docs/DATA_SCHEMA.md`
    itself, so a bug in one side shows up as a disagreement.

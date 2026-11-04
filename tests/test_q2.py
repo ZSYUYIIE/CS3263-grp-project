@@ -1,5 +1,6 @@
 import itertools
 import json
+import random
 
 import pytest
 
@@ -126,7 +127,6 @@ def loads_of(assign, cat):
 
 def preference_count(request, assign, tied, cat):
     count = 0
-    done = set(request["completed"])
     cur = request["current_sem"]
     loads = loads_of(assign, cat)
     last = max(assign.values())
@@ -356,8 +356,6 @@ def test_unsupported_wishes_are_reported(cat):
                "unsupported": ["no 8am classes"]}
     assert run(request, cat)["not_applied"] == ["no 8am classes"]
 
-
-import random
 
 POOL = ["CS2100", "CS2104", "CS2105", "CS2107", "CS2108", "CS2109S", "CS3230", "CS3231", "CS3233", "CS3234", "ST2334"]
 ATAP_DONE = BASE_DONE + ["CS2101", "CS2103T"]
@@ -620,7 +618,8 @@ def test_without_a_ranking_objective_the_plan_still_ends_as_early_as_possible(ca
 @pytest.mark.parametrize("request_maker", [
     lambda: spec(objective="earliest_graduation", light_sems=["last", 4], balance_load=True),
     lambda: spec(objective="none", early=["CS3263"], late=["CS2100"]),
-    lambda: spec(objective="min_total_mc", rules=[{"type": "apart", "a": "CS3230", "b": "CS3263", "strength": "prefer"}]),
+    lambda: spec(objective="min_total_mc",
+                 rules=[{"type": "apart", "a": "CS3230", "b": "CS3263", "strength": "prefer"}]),
     lambda: pool_spec(["CS3230", "CS3234"], current_sem=4, objective="earliest_graduation"),
 ])
 def test_answer_invariants(cat, request_maker):

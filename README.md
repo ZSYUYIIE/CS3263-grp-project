@@ -96,7 +96,8 @@ Python 3.10+ and the standard library only. Run from the repo root:
 python -m m1_data fetch    # download from NUSMods (internet; about 1 min)
 python -m m1_data build    # parse + write data/processed + run checks
 python -m m1_data check    # checks only
-python -m pytest -q        # tests (pip install pytest)
+python -m pytest -q        # tests
+ruff check .               # lint (style and likely bugs)
 ```
 
 Change which courses are fetched in `data/config/scope.json`, and the student that

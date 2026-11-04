@@ -1,3 +1,12 @@
+"""Entry point: answer one spec (a JSON request) with the solver.
+
+    from solver.run import run
+    run({"query": "eligible", "target": "CS3263", "completed": [...]})
+
+Order of checks (see docs/CODE_GUIDE.md, section 2): validate the spec, then scope, then missing
+information, then hand Q1 to `q1.answer` and Q2 to `objectives.answer`.
+CLI: `python -m solver.run path/to/spec.json`.
+"""
 from __future__ import annotations
 
 import json
@@ -5,7 +14,6 @@ import sys
 
 from m1_data.catalog import Catalog
 from m1_data.scope import OUT_OF_SCOPE_MESSAGE, ScopeResult, check_scope
-
 from solver import objectives, q1
 from solver.spec import validate
 
@@ -34,6 +42,7 @@ def missing_info(missing: list[str]) -> dict:
 
 
 def prepare(spec, catalog):
+    """Run the checks before solving. Returns (early answer or None, cleaned spec, warnings)."""
     errors, problems, warnings, cleaned, missing = validate(spec, catalog)
     if errors:
         return {"status": "INVALID_SPEC", "errors": errors}, None, warnings
@@ -46,6 +55,7 @@ def prepare(spec, catalog):
 
 
 def run(spec, catalog=None) -> dict:
+    """Answer one spec (a dict). Loads the catalogue if none is given."""
     catalog = catalog or Catalog.load()
     early, cleaned, warnings = prepare(spec, catalog)
     if early is not None:
@@ -60,6 +70,7 @@ def run(spec, catalog=None) -> dict:
 
 
 def run_text(text: str, catalog=None) -> dict:
+    """Answer one spec given as JSON text; bad JSON gives INVALID_SPEC."""
     try:
         spec = json.loads(text)
     except json.JSONDecodeError as error:

@@ -2,12 +2,11 @@ import json
 import random
 
 import pytest
+from test_q2 import ATAP_DONE, BASE_DONE, MUST, POOL, hard_rule_violations, pool_spec, random_request, semester_of, spec
 
 from m1_data.catalog import Catalog
 from solver.backtrack import VARIANTS, solve_with_stats
 from solver.run import run
-from test_q2 import (ATAP_DONE, BASE_DONE, MUST, POOL, hard_rule_violations, pool_spec,
-                     random_request, semester_of, spec)
 
 NAMES = list(VARIANTS)
 

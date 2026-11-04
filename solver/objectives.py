@@ -1,9 +1,17 @@
+"""Q2 staged optimisation and the answer format.
+
+`answer()` builds a `PlanModel`, then solves in stages, fixing each optimum before the next:
+objective (earliest graduation or least MC) -> fewest added courses -> most preferences met ->
+lighter chosen semesters -> earliest finish. See docs/SOLVER_GUIDE.md sections 5-6.
+An infeasible model returns NO_PLAN with reasons from a capacity check or `explain.py`.
+"""
 from __future__ import annotations
 
 from ortools.sat.python import cp_model
 
+from solver.common import ATAP_CODE, GENERIC_REASON, LAST_SEM
 from solver.explain import conflict_reasons
-from solver.model import ATAP_CODE, LAST_SEM, PlanModel
+from solver.model import PlanModel
 
 TIME_LIMIT_SECONDS = 60
 
@@ -32,10 +40,6 @@ def no_plan(reasons: list[str], spec: dict) -> dict:
     if spec["unsupported"]:
         result["not_applied"] = list(spec["unsupported"])
     return result
-
-
-GENERIC_REASON = ("no plan satisfies all the rules together (prerequisite order, offering terms, "
-                  "MC caps, exclusions and your must-rules conflict)")
 
 
 def infeasible_reasons(pm: PlanModel, spec: dict, catalog) -> list[str]:
@@ -128,6 +132,7 @@ def light_literal(pm: PlanModel, entry, total_other) -> Soft:
 
 
 def answer(spec: dict, catalog) -> dict:
+    """Q2 answer for a cleaned spec: PLAN (optimal) or NO_PLAN with reasons."""
     pm = PlanModel(spec, catalog)
     if pm.reasons:
         return no_plan(pm.reasons, spec)

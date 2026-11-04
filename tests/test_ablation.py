@@ -5,10 +5,10 @@ import subprocess
 import sys
 
 import pytest
-
-from m1_data.catalog import Catalog
-from experiments.run_ablation import COLUMNS, ENGINES, run_instance, same_answer, summarise
 from test_q2 import random_request
+
+from experiments.run_ablation import COLUMNS, ENGINES, run_instance, same_answer, summarise
+from m1_data.catalog import Catalog
 
 
 @pytest.fixture(scope="module")

@@ -1,13 +1,12 @@
-import json
 import random
 
 import pytest
+from test_q2 import ATAP_DONE, pool_spec, random_request, spec
 
 from m1_data.catalog import Catalog
 from solver.explain import conflict_reasons, find_conflict, holds_together
 from solver.run import run
 from solver.spec import validate
-from test_q2 import ATAP_DONE, BASE_DONE, pool_spec, random_request, spec
 
 PREFIX = "these cannot all hold together with the courses you must take: "
 

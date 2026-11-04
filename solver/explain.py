@@ -1,3 +1,9 @@
+"""Minimal conflicting rule set for a NO_PLAN answer.
+
+Every rule group in the model is guarded by an assumption literal. CP-SAT reports the
+assumptions it needed to prove infeasibility; groups are then removed one at a time while the
+rest stays infeasible, giving a sound and minimal conflict (docs/SOLVER_GUIDE.md section 8).
+"""
 from __future__ import annotations
 
 from ortools.sat.python import cp_model
@@ -36,6 +42,7 @@ def holds_together(spec: dict, catalog, keys) -> bool:
 
 
 def find_conflict(spec: dict, catalog):
+    """Smallest set of rule-group keys that cannot hold together, or None."""
     pm = build(spec, catalog)
     if pm is None:
         return None
@@ -96,6 +103,7 @@ def describe(key: tuple, spec: dict) -> str:
 
 
 def conflict_reasons(spec: dict, catalog) -> list[str]:
+    """The minimal conflict in plain words, for a NO_PLAN answer."""
     core = find_conflict(spec, catalog)
     if not core:
         return []

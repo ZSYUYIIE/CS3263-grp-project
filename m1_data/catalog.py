@@ -55,7 +55,7 @@ class Catalog:
         self.courses: dict[str, dict] = data["courses"]
 
     @classmethod
-    def load(cls, path: str | Path | None = None) -> "Catalog":
+    def load(cls, path: str | Path | None = None) -> Catalog:
         if path is None:
             ays = sorted((paths.DATA / "processed").glob("AY*/catalog.json"))
             if not ays:

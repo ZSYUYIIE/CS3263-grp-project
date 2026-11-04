@@ -108,6 +108,7 @@ flowchart LR
 | `m1_data/scope.py` | In or out of scope; the standard decline message | M1 |
 | `m1_data/graph.py`, `diagrams.py`, `overviews.py`, `docs.py` | Graph exports, diagrams, `COURSES.md` | M1 |
 | `solver/run.py` | Entry point for every spec | M2 |
+| `solver/common.py` | Constants and small helpers shared by both solvers (`term_of`, `LAST_SEM`, ATAP limits) | M2 |
 | `solver/spec.py` | Validate and clean a spec | M2 |
 | `solver/q1.py` | "Can I take X?" | M2 |
 | `solver/model.py`, `objectives.py` | CP-SAT model and staged optimisation for plans | M2 |
@@ -140,4 +141,5 @@ flowchart LR
 | Add a new spec field or rule type | `solver/spec.py` (validation) and `solver/model.py` (constraint) | `python -m pytest -q` |
 | Change what counts as out of scope | `m1_data/scope.py` | `python -m pytest -q` |
 
-Always finish with `python -m pytest -q`. The tests cover both the data and the solver.
+Always finish with `ruff check .` (style and likely bugs) and `python -m pytest -q` (the data and
+the solver). Both must pass before you push.

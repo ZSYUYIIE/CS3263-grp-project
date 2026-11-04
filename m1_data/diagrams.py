@@ -110,9 +110,9 @@ def route(pairs, y_src: int, y_dst: int, color=MUTED, marker="arrow", bus_base: 
 
 
 def levels_needed(pairs) -> int:
-    l = sum(1 for s, t in pairs if t < s)
-    r = sum(1 for s, t in pairs if t > s)
-    return max(l, r)
+    left = sum(1 for s, t in pairs if t < s)
+    right = sum(1 for s, t in pairs if t > s)
+    return max(left, right)
 
 
 def attach_points(left: int, width: int, targets: list[int]) -> list[int]:
@@ -243,9 +243,8 @@ def group_spec(node, ctx: Ctx):
     for a in node["args"]:
         for i, ln in enumerate(wrap(compact(a), chars - 2)):
             lines.append(("• " if i == 0 else "  ") + ln.lstrip())
-    more = 0
     if len(lines) > 10:
-        more, lines = len(lines) - 9, lines[:9] + ["  … (see text below)"]
+        lines = lines[:9] + ["  … (see text below)"]
     return ("lines", label, lines, 28 + len(lines) * LINE + 8)
 
 
@@ -462,7 +461,8 @@ def course_svg(code: str, ctx: Ctx) -> tuple[str, int, dict]:
                    f'{esc(text)}</text>')
         lx = g4(tx + sans_w(text, 8.5) + 28)
     leg.append(f'<text x="24" y="{ly + 56}" fill="{MUTED}" font-size="8.5" font-family="{SANS}">'
-               f'Struck through = cannot be planned this AY (closed to this student, not offered, or retired). Grey = outside the fetched scope. Arrows point to what a course needs.</text>')
+               'Struck through = cannot be planned this AY (closed to this student, not offered, or retired). '
+               'Grey = outside the fetched scope. Arrows point to what a course needs.</text>')
     svg += leg
 
     n_req = len(c["prereq"]["courses"])
