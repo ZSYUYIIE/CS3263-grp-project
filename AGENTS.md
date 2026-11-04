@@ -1,7 +1,8 @@
 # Guide for AI agents
 
 You are working in the CS3263 project repo (LLM vs constraint solver for NUS degree
-planning). Read `README.md` for the project and `docs/DATA_SCHEMA.md` for the data contract.
+planning). Read `README.md` for the project, `docs/CODE_GUIDE.md` for how the code fits together,
+and `docs/DATA_SCHEMA.md` for the data contract.
 This file covers what you need to avoid mistakes.
 
 ## Ground rules

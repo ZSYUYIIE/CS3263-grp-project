@@ -15,6 +15,9 @@ Key dates: data parsed and spot-checked by **Thu 29 Oct**, feasible T2 results b
 **Wed 4 Nov** (fallback point), presentation in the **week of 9 Nov** (15 min + 5 min Q&A,
 possibly a recorded video), report **Fri 13 Nov**.
 
+**New here? Read [`docs/CODE_GUIDE.md`](docs/CODE_GUIDE.md) first.** It explains in about 15 minutes
+how the code fits together and follows one request through it step by step.
+
 ## Data pipeline (M1)
 
 The NUSMods API gives prerequisites as rule strings with programme, cohort and A-level
