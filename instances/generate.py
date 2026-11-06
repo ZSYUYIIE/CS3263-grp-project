@@ -428,8 +428,7 @@ def main():
         if x["kind"] in seen:
             continue
         seen.add(x["kind"])
-        lines += [f"**{x['id']}**: {x['request']}", "",
-                  f"Gold status: `{x['gold_answer']['status']}`", ""]
+        lines += [f"- **{x['id']}** (gold status `{x['gold_answer']['status']}`): {x['request']}"]
     (Path(a.out).parent / "SUMMARY.md").write_text("\n".join(lines))
     print(f"wrote {len(rows)} instances to {a.out}")
     print(dict(kinds))
