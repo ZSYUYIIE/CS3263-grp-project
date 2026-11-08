@@ -1,0 +1,122 @@
+{
+ "id": "q2-loose-18",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "prompt_version": "route-a-v2",
+ "messages_sha256": "b83dce67e223d3dfc57dbf28afefb54359bb906dc1a29353585aec46746e54db",
+ "seconds": 374.45,
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\"CS2105\", \"CS2109S\", \"ST2334\", \"CS2100\"],\n    \"4\": [\"CS3264\", \"CS2102\", \"CS3230\", \"CS2101\"],\n    \"8\": []\n  },\n  \"reasons\": [\n    \"All seven must-take courses are scheduled by semester 4, with CS2105 placed in the earliest possible semester (3).\",\n    \"ST2334 is added as the required probability prerequisite for CS3264 and is completed in semester 3 before CS3264 in semester 4.\",\n    \"Each semester has 16 MC, within the 16 MC limit; semester 8 is reserved for the 0-MC NOC.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2105",
+    "CS2109S",
+    "ST2334",
+    "CS2100"
+   ],
+   "4": [
+    "CS3264",
+    "CS2102",
+    "CS3230",
+    "CS2101"
+   ],
+   "8": []
+  },
+  "reasons": [
+   "All seven must-take courses are scheduled by semester 4, with CS2105 placed in the earliest possible semester (3).",
+   "ST2334 is added as the required probability prerequisite for CS3264 and is completed in semester 3 before CS3264 in semester 4.",
+   "Each semester has 16 MC, within the 16 MC limit; semester 8 is reserved for the 0-MC NOC."
+  ]
+ },
+ "fenced": false,
+ "parse_error": null,
+ "finish_reason": "stop",
+ "budget_exhausted": false,
+ "budget_retried": true,
+ "schema_errors": [],
+ "format_valid": true,
+ "attempts": [
+  {
+   "raw": null,
+   "usage": {
+    "prompt_tokens": 7095,
+    "total_tokens": 23479,
+    "completion_tokens": 16384,
+    "prompt_tokens_details": {
+     "cached_tokens": 2432,
+     "created_cache_tokens": 4608,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 16384
+    }
+   },
+   "finish_reason": "length",
+   "max_tokens": 16384,
+   "answer": null,
+   "fenced": false,
+   "parse_error": "no final text",
+   "budget_exhausted": true,
+   "api_error": "API returned non-text content or no final text",
+   "seconds": 166.72
+  },
+  {
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\"CS2105\", \"CS2109S\", \"ST2334\", \"CS2100\"],\n    \"4\": [\"CS3264\", \"CS2102\", \"CS3230\", \"CS2101\"],\n    \"8\": []\n  },\n  \"reasons\": [\n    \"All seven must-take courses are scheduled by semester 4, with CS2105 placed in the earliest possible semester (3).\",\n    \"ST2334 is added as the required probability prerequisite for CS3264 and is completed in semester 3 before CS3264 in semester 4.\",\n    \"Each semester has 16 MC, within the 16 MC limit; semester 8 is reserved for the 0-MC NOC.\"\n  ]\n}",
+   "usage": {
+    "prompt_tokens": 7095,
+    "total_tokens": 21397,
+    "completion_tokens": 14302,
+    "prompt_tokens_details": {
+     "cached_tokens": 7040,
+     "created_cache_tokens": 0,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 14130
+    }
+   },
+   "finish_reason": "stop",
+   "max_tokens": 32768,
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2105",
+      "CS2109S",
+      "ST2334",
+      "CS2100"
+     ],
+     "4": [
+      "CS3264",
+      "CS2102",
+      "CS3230",
+      "CS2101"
+     ],
+     "8": []
+    },
+    "reasons": [
+     "All seven must-take courses are scheduled by semester 4, with CS2105 placed in the earliest possible semester (3).",
+     "ST2334 is added as the required probability prerequisite for CS3264 and is completed in semester 3 before CS3264 in semester 4.",
+     "Each semester has 16 MC, within the 16 MC limit; semester 8 is reserved for the 0-MC NOC."
+    ]
+   },
+   "fenced": false,
+   "parse_error": null,
+   "budget_exhausted": false,
+   "seconds": 207.73
+  }
+ ],
+ "usage": {
+  "prompt_tokens": 14190,
+  "total_tokens": 44876,
+  "completion_tokens": 30686,
+  "prompt_tokens_details": {
+   "cached_tokens": 9472,
+   "created_cache_tokens": 4608
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 30514
+  }
+ }
+}

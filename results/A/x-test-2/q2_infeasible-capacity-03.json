@@ -1,0 +1,31 @@
+{
+ "id": "q2_infeasible-capacity-03",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 36.12,
+ "usage": {
+  "prompt_tokens": 7109,
+  "total_tokens": 9576,
+  "completion_tokens": 2467,
+  "prompt_tokens_details": {
+   "cached_tokens": 3456,
+   "created_cache_tokens": 3584,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2301
+  }
+ },
+ "raw": "{\"status\":\"NO_PLAN\",\"reasons\":[\"At most 4 MC per semester means only one 4-MC course can be taken in each semester.\",\"From semester 5 to semester 8 there are only 4 available semesters, so at most 4 courses can be planned.\",\"The must-take courses plus required prerequisites total 9 courses: CS2102, CS3231, CS3223, CS2105, CS3233, CS3234, CS4224, CS4226, and CS4430. CS3231 is required before CS4430, CS2102 before CS3223, CS3223 before CS4224, and CS2105 before CS4226.\",\"Therefore no plan can satisfy all rules within semesters 5-8.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "At most 4 MC per semester means only one 4-MC course can be taken in each semester.",
+   "From semester 5 to semester 8 there are only 4 available semesters, so at most 4 courses can be planned.",
+   "The must-take courses plus required prerequisites total 9 courses: CS2102, CS3231, CS3223, CS2105, CS3233, CS3234, CS4224, CS4226, and CS4430. CS3231 is required before CS4430, CS2102 before CS3223, CS3223 before CS4224, and CS2105 before CS4226.",
+   "Therefore no plan can satisfy all rules within semesters 5-8."
+  ]
+ },
+ "fenced": false,
+ "parse_error": null
+}

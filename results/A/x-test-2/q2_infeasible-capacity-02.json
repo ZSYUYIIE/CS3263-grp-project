@@ -1,0 +1,30 @@
+{
+ "id": "q2_infeasible-capacity-02",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 16.41,
+ "usage": {
+  "prompt_tokens": 8182,
+  "total_tokens": 9250,
+  "completion_tokens": 1068,
+  "prompt_tokens_details": {
+   "cached_tokens": 1024,
+   "created_cache_tokens": 7040,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 893
+  }
+ },
+ "raw": "{\"status\":\"NO_PLAN\",\"reasons\":[\"Six required courses remain: CS4236, CS2102, CS3235, CS4221, CS4239, CS3219. All are 4 MC.\",\"Only semesters 5, 6, 7, and 8 remain, and the limit is at most 4 MC per semester, so at most four 4-MC courses can be taken.\",\"The prerequisite chain also requires additional courses: CS2107 is needed for CS4236 and CS3235, CS2105 is needed for CS3235, and CS3223 is needed for CS4221 (with CS2102 before CS3223). Thus at least nine courses would need to be planned, which cannot fit under the 4 MC/semester limit in the remaining four semesters.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "Six required courses remain: CS4236, CS2102, CS3235, CS4221, CS4239, CS3219. All are 4 MC.",
+   "Only semesters 5, 6, 7, and 8 remain, and the limit is at most 4 MC per semester, so at most four 4-MC courses can be taken.",
+   "The prerequisite chain also requires additional courses: CS2107 is needed for CS4236 and CS3235, CS2105 is needed for CS3235, and CS3223 is needed for CS4221 (with CS2102 before CS3223). Thus at least nine courses would need to be planned, which cannot fit under the 4 MC/semester limit in the remaining four semesters."
+  ]
+ },
+ "fenced": false,
+ "parse_error": null
+}

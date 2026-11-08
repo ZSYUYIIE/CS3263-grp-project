@@ -1,0 +1,63 @@
+{
+ "id": "q2-loose-04",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 88.06,
+ "usage": {
+  "prompt_tokens": 9272,
+  "total_tokens": 16668,
+  "completion_tokens": 7396,
+  "prompt_tokens_details": {
+   "cached_tokens": 9216,
+   "created_cache_tokens": 0,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 7139
+  }
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CS2100\",\"CS2103T\",\"CS2102\"],\"4\":[\"CS3223\",\"CS2109S\",\"ST2334\"],\"5\":[\"CS3263\",\"CS3230\",\"CS3237\"],\"6\":[\"CS3281\",\"CS4221\",\"CS3219\"],\"7\":[\"CS2105\",\"CS2101\"],\"8\":[\"CS2106\",\"CS3282\"]},\"reasons\":[\"CS2100 is placed in semester 3, the earliest possible semester.\",\"CS2106 and CS3282 are placed together in semester 8.\",\"CS4221 cannot be placed in semester 5 because it is offered only in Sem 2; it is placed in semester 6, the earliest feasible Sem 2 after its prerequisite CS3223.\",\"Added CS3223 as the prerequisite for CS4221 and CS3281 as the prerequisite for CS3282; these are the only added courses.\",\"Workload is spread evenly: 12 MC in semesters 3-6 and 8 MC in semesters 7-8.\",\"All prerequisites are satisfied by completed courses or by courses planned in strictly earlier semesters.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS2103T",
+    "CS2102"
+   ],
+   "4": [
+    "CS3223",
+    "CS2109S",
+    "ST2334"
+   ],
+   "5": [
+    "CS3263",
+    "CS3230",
+    "CS3237"
+   ],
+   "6": [
+    "CS3281",
+    "CS4221",
+    "CS3219"
+   ],
+   "7": [
+    "CS2105",
+    "CS2101"
+   ],
+   "8": [
+    "CS2106",
+    "CS3282"
+   ]
+  },
+  "reasons": [
+   "CS2100 is placed in semester 3, the earliest possible semester.",
+   "CS2106 and CS3282 are placed together in semester 8.",
+   "CS4221 cannot be placed in semester 5 because it is offered only in Sem 2; it is placed in semester 6, the earliest feasible Sem 2 after its prerequisite CS3223.",
+   "Added CS3223 as the prerequisite for CS4221 and CS3281 as the prerequisite for CS3282; these are the only added courses.",
+   "Workload is spread evenly: 12 MC in semesters 3-6 and 8 MC in semesters 7-8.",
+   "All prerequisites are satisfied by completed courses or by courses planned in strictly earlier semesters."
+  ]
+ },
+ "fenced": false,
+ "parse_error": null
+}

@@ -1,0 +1,92 @@
+{
+ "id": "q2-loose-21",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "prompt_version": "route-a-v2",
+ "messages_sha256": "c28c42372b2a2258c9538f1e1fde39f60fd0e600b6b7565a1efbf5295dc5901f",
+ "seconds": 53.5,
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS2105\",\"CS2107\",\"CS2102\"],\"7\":[\"CS3237\",\"CS3235\",\"CS4248\"]},\"reasons\":[\"Earliest possible graduation is semester 7 because CS3237 is offered only in Sem 1 and cannot be taken in the current Sem 2 (semester 6).\",\"CS2105 is placed in semester 6, as early as possible; CS2107 is added because it is a prerequisite for CS3235.\",\"All prerequisites are satisfied by completed courses or planned in strictly earlier semesters, and each semester is within the 20 MC limit.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS2105",
+    "CS2107",
+    "CS2102"
+   ],
+   "7": [
+    "CS3237",
+    "CS3235",
+    "CS4248"
+   ]
+  },
+  "reasons": [
+   "Earliest possible graduation is semester 7 because CS3237 is offered only in Sem 1 and cannot be taken in the current Sem 2 (semester 6).",
+   "CS2105 is placed in semester 6, as early as possible; CS2107 is added because it is a prerequisite for CS3235.",
+   "All prerequisites are satisfied by completed courses or planned in strictly earlier semesters, and each semester is within the 20 MC limit."
+  ]
+ },
+ "fenced": false,
+ "parse_error": null,
+ "finish_reason": "stop",
+ "budget_exhausted": false,
+ "budget_retried": false,
+ "schema_errors": [],
+ "format_valid": true,
+ "attempts": [
+  {
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS2105\",\"CS2107\",\"CS2102\"],\"7\":[\"CS3237\",\"CS3235\",\"CS4248\"]},\"reasons\":[\"Earliest possible graduation is semester 7 because CS3237 is offered only in Sem 1 and cannot be taken in the current Sem 2 (semester 6).\",\"CS2105 is placed in semester 6, as early as possible; CS2107 is added because it is a prerequisite for CS3235.\",\"All prerequisites are satisfied by completed courses or planned in strictly earlier semesters, and each semester is within the 20 MC limit.\"]}",
+   "usage": {
+    "prompt_tokens": 9823,
+    "total_tokens": 13846,
+    "completion_tokens": 4023,
+    "prompt_tokens_details": {
+     "cached_tokens": 1280,
+     "created_cache_tokens": 8448,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 3881
+    }
+   },
+   "finish_reason": "stop",
+   "max_tokens": 16384,
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS2105",
+      "CS2107",
+      "CS2102"
+     ],
+     "7": [
+      "CS3237",
+      "CS3235",
+      "CS4248"
+     ]
+    },
+    "reasons": [
+     "Earliest possible graduation is semester 7 because CS3237 is offered only in Sem 1 and cannot be taken in the current Sem 2 (semester 6).",
+     "CS2105 is placed in semester 6, as early as possible; CS2107 is added because it is a prerequisite for CS3235.",
+     "All prerequisites are satisfied by completed courses or planned in strictly earlier semesters, and each semester is within the 20 MC limit."
+    ]
+   },
+   "fenced": false,
+   "parse_error": null,
+   "budget_exhausted": false,
+   "seconds": 53.5
+  }
+ ],
+ "usage": {
+  "prompt_tokens": 9823,
+  "total_tokens": 13846,
+  "completion_tokens": 4023,
+  "prompt_tokens_details": {
+   "cached_tokens": 1280,
+   "created_cache_tokens": 8448
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3881
+  }
+ }
+}

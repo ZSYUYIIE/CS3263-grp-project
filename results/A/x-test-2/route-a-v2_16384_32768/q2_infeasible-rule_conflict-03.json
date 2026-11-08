@@ -1,0 +1,66 @@
+{
+ "id": "q2_infeasible-rule_conflict-03",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "prompt_version": "route-a-v2",
+ "messages_sha256": "c497d0bfc01a7f1d118243fce63fab2eb25f0ff4ff2bbead9e1874987552e69d",
+ "seconds": 14.33,
+ "raw": "{\"status\":\"NO_PLAN\",\"reasons\":[\"The stated ordering requirements are contradictory: CS4221 must come before CS4226, and CS4226 must come before CS4221. No semester ordering can satisfy both must-have wishes.\",\"Additionally, CS4221 requires CS3223, which is not in the completed list and would need to be added as a prerequisite, but the ordering cycle already makes the plan impossible.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "The stated ordering requirements are contradictory: CS4221 must come before CS4226, and CS4226 must come before CS4221. No semester ordering can satisfy both must-have wishes.",
+   "Additionally, CS4221 requires CS3223, which is not in the completed list and would need to be added as a prerequisite, but the ordering cycle already makes the plan impossible."
+  ]
+ },
+ "fenced": false,
+ "parse_error": null,
+ "finish_reason": "stop",
+ "budget_exhausted": false,
+ "budget_retried": false,
+ "schema_errors": [],
+ "format_valid": true,
+ "attempts": [
+  {
+   "raw": "{\"status\":\"NO_PLAN\",\"reasons\":[\"The stated ordering requirements are contradictory: CS4221 must come before CS4226, and CS4226 must come before CS4221. No semester ordering can satisfy both must-have wishes.\",\"Additionally, CS4221 requires CS3223, which is not in the completed list and would need to be added as a prerequisite, but the ordering cycle already makes the plan impossible.\"]}",
+   "usage": {
+    "prompt_tokens": 8760,
+    "total_tokens": 9605,
+    "completion_tokens": 845,
+    "prompt_tokens_details": {
+     "cached_tokens": 1280,
+     "created_cache_tokens": 7424,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 755
+    }
+   },
+   "finish_reason": "stop",
+   "max_tokens": 16384,
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "The stated ordering requirements are contradictory: CS4221 must come before CS4226, and CS4226 must come before CS4221. No semester ordering can satisfy both must-have wishes.",
+     "Additionally, CS4221 requires CS3223, which is not in the completed list and would need to be added as a prerequisite, but the ordering cycle already makes the plan impossible."
+    ]
+   },
+   "fenced": false,
+   "parse_error": null,
+   "budget_exhausted": false,
+   "seconds": 14.33
+  }
+ ],
+ "usage": {
+  "prompt_tokens": 8760,
+  "total_tokens": 9605,
+  "completion_tokens": 845,
+  "prompt_tokens_details": {
+   "cached_tokens": 1280,
+   "created_cache_tokens": 7424
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 755
+  }
+ }
+}

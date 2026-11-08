@@ -1,0 +1,164 @@
+{
+  "models": {
+    "qwen3.8:27b": {
+      "id": "qwen3.8:27b",
+      "object": "model",
+      "created": 0,
+      "owned_by": "soclaas",
+      "context_length": 262144,
+      "context_window": 262144,
+      "max_context_length": 262144,
+      "max_model_len": 262144,
+      "reasoning": {
+        "supported_efforts": [
+          "xhigh",
+          "medium",
+          "low"
+        ]
+      },
+      "supported_parameters": [
+        "reasoning",
+        "reasoning_effort"
+      ],
+      "soclaas": {
+        "display_name": "Qwen 3.8 27B",
+        "description": "High-quality general reasoning and multimodal tasks",
+        "capabilities": [
+          "chat"
+        ],
+        "input_microdollars_per_million_tokens": 421648,
+        "output_microdollars_per_million_tokens": 2529343,
+        "audio_microdollars_per_minute": 0,
+        "input_modalities": [
+          "text",
+          "vision"
+        ]
+      }
+    },
+    "x-test-1": {
+      "id": "x-test-1",
+      "object": "model",
+      "created": 0,
+      "owned_by": "soclaas",
+      "context_length": 1048576,
+      "context_window": 1048576,
+      "max_context_length": 1048576,
+      "max_model_len": 1048576,
+      "reasoning": {
+        "supported_efforts": [
+          "max",
+          "high",
+          "low"
+        ]
+      },
+      "supported_parameters": [
+        "reasoning",
+        "reasoning_effort"
+      ],
+      "soclaas": {
+        "display_name": "Test GLM 5.3 Flash",
+        "description": "",
+        "capabilities": [
+          "chat"
+        ],
+        "input_microdollars_per_million_tokens": 156508,
+        "output_microdollars_per_million_tokens": 505556,
+        "audio_microdollars_per_minute": 0,
+        "input_modalities": [
+          "text",
+          "vision"
+        ]
+      }
+    },
+    "x-test-2": {
+      "id": "x-test-2",
+      "object": "model",
+      "created": 0,
+      "owned_by": "soclaas",
+      "context_length": 1048576,
+      "context_window": 1048576,
+      "max_context_length": 1048576,
+      "max_model_len": 1048576,
+      "reasoning": {
+        "supported_efforts": [
+          "max",
+          "high",
+          "low",
+          "none"
+        ]
+      },
+      "supported_parameters": [
+        "reasoning",
+        "reasoning_effort"
+      ],
+      "soclaas": {
+        "display_name": "Test DeepSeek V4.1 Flash 1017",
+        "description": "",
+        "capabilities": [
+          "chat"
+        ],
+        "input_microdollars_per_million_tokens": 275729,
+        "output_microdollars_per_million_tokens": 1099025,
+        "audio_microdollars_per_minute": 0,
+        "input_modalities": [
+          "text",
+          "vision"
+        ]
+      }
+    },
+    "x-test-4": {
+      "id": "x-test-4",
+      "object": "model",
+      "created": 0,
+      "owned_by": "soclaas",
+      "context_length": 1048576,
+      "context_window": 1048576,
+      "max_context_length": 1048576,
+      "max_model_len": 1048576,
+      "reasoning": {
+        "supported_efforts": [
+          "max",
+          "xhigh",
+          "high",
+          "medium",
+          "low"
+        ]
+      },
+      "supported_parameters": [
+        "reasoning",
+        "reasoning_effort"
+      ],
+      "soclaas": {
+        "display_name": "Test MiniMax M3.1 Flash",
+        "description": "",
+        "capabilities": [
+          "chat"
+        ],
+        "input_microdollars_per_million_tokens": 150000,
+        "output_microdollars_per_million_tokens": 600000,
+        "audio_microdollars_per_minute": 0,
+        "input_modalities": [
+          "text",
+          "vision"
+        ]
+      }
+    }
+  },
+  "instances": [
+    "q1-wrong_term-01",
+    "q1-precluded-01",
+    "q2-loose-01",
+    "q2-tight-01",
+    "q2_infeasible-hidden-01",
+    "q2_infeasible-rule_conflict-01",
+    "missing_info-q2-01",
+    "out_of_scope-programme-01"
+  ],
+  "max_tokens": 8192,
+  "temperature": 0,
+  "reasoning_effort": "provider default",
+  "workers": 8,
+  "note": "Exploratory shared pilot; one response per model and instance.",
+  "comparison_stopped_at": "2026-11-08T07:14:07.926823+00:00",
+  "stopping_note": "Pilot stopped after approximately 10 minutes with Qwen requests still unfinished. All eight requests finished for the other three models, including responses without final text."
+}

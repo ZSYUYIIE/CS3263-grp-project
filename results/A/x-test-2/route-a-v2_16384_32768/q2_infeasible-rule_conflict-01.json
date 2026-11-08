@@ -1,0 +1,68 @@
+{
+ "id": "q2_infeasible-rule_conflict-01",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "prompt_version": "route-a-v2",
+ "messages_sha256": "4b18e243bc2fbfd1f0a97239c3966b38e2a385e039e75f2b9b0d3bd6de579fd4",
+ "seconds": 28.89,
+ "raw": "{\"status\":\"NO_PLAN\",\"reasons\":[\"The requested ordering is circular: CS3264 must come before ST2334, while ST2334 must also come before CS3264.\",\"CS3264 also has ST2334 (or an equivalent probability course) as a prerequisite, so CS3264 cannot be planned before ST2334.\",\"Because these ordering requirements cannot both be satisfied, no valid plan exists for the remaining semesters.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "The requested ordering is circular: CS3264 must come before ST2334, while ST2334 must also come before CS3264.",
+   "CS3264 also has ST2334 (or an equivalent probability course) as a prerequisite, so CS3264 cannot be planned before ST2334.",
+   "Because these ordering requirements cannot both be satisfied, no valid plan exists for the remaining semesters."
+  ]
+ },
+ "fenced": false,
+ "parse_error": null,
+ "finish_reason": "stop",
+ "budget_exhausted": false,
+ "budget_retried": false,
+ "schema_errors": [],
+ "format_valid": true,
+ "attempts": [
+  {
+   "raw": "{\"status\":\"NO_PLAN\",\"reasons\":[\"The requested ordering is circular: CS3264 must come before ST2334, while ST2334 must also come before CS3264.\",\"CS3264 also has ST2334 (or an equivalent probability course) as a prerequisite, so CS3264 cannot be planned before ST2334.\",\"Because these ordering requirements cannot both be satisfied, no valid plan exists for the remaining semesters.\"]}",
+   "usage": {
+    "prompt_tokens": 7945,
+    "total_tokens": 9491,
+    "completion_tokens": 1546,
+    "prompt_tokens_details": {
+     "cached_tokens": 1280,
+     "created_cache_tokens": 6656,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 1452
+    }
+   },
+   "finish_reason": "stop",
+   "max_tokens": 16384,
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "The requested ordering is circular: CS3264 must come before ST2334, while ST2334 must also come before CS3264.",
+     "CS3264 also has ST2334 (or an equivalent probability course) as a prerequisite, so CS3264 cannot be planned before ST2334.",
+     "Because these ordering requirements cannot both be satisfied, no valid plan exists for the remaining semesters."
+    ]
+   },
+   "fenced": false,
+   "parse_error": null,
+   "budget_exhausted": false,
+   "seconds": 28.89
+  }
+ ],
+ "usage": {
+  "prompt_tokens": 7945,
+  "total_tokens": 9491,
+  "completion_tokens": 1546,
+  "prompt_tokens_details": {
+   "cached_tokens": 1280,
+   "created_cache_tokens": 6656
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1452
+  }
+ }
+}

@@ -1,0 +1,23 @@
+{
+  "model": "x-test-2",
+  "base_url": "https://soclaas-api.comp.nus.edu.sg/v1",
+  "temperature": 0,
+  "stream": false,
+  "max_tokens": 8192,
+  "reasoning_effort": "provider default",
+  "workers": 8,
+  "fresh_conversation_per_instance": true,
+  "retries": 4,
+  "backoff_seconds": [
+    2,
+    4,
+    8,
+    16
+  ],
+  "api_key_environment_variable": "SOCLAAS_API_KEY",
+  "catalog_sha256": "9c386b925eaaf58b32ead638a34969d74973d2c83a4cedb7c2ca92f12039a015",
+  "instances_sha256": "9db263e9be775735897241493342338b21be9e88b3b8f5c42dcda00a3c704422",
+  "instructions_sha256": "eb16b2120cb5dac044eb60e42b486e8300da0be211983396a1e579f93404637d",
+  "note": "Includes the same eight cases from the model-selection pilot. Original replies are retained; official grading does not remove extra JSON wrappers.",
+  "resume_note": "The initial runner stopped on a response without final text after saving 44 answers. The runner was updated to retain failed-completion records and continue. Only cases without saved records were resumed, with the same model, prompt, temperature and 8192-token cap. Initial failed-call usage is unavailable."
+}

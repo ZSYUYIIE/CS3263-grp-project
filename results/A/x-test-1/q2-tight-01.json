@@ -1,0 +1,65 @@
+{
+ "id": "q2-tight-01",
+ "pipeline": "A",
+ "model": "x-test-1",
+ "seconds": 191.67,
+ "usage": {
+  "prompt_tokens": 7960,
+  "total_tokens": 15219,
+  "completion_tokens": 7259,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "created_cache_tokens": 0,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 6793
+  }
+ },
+ "raw": "{\n  \"eligibility\": {\n    \"status\": \"ELIGIBLE\",\n    \"reasons\": [\n      \"All eight outstanding courses (CS3264, CS3230, CS2106, CS4224, ST2334, CS2109S, CS2102, CS4330) are open to BComp CS Hons and schedulable from Y2S1 onwards.\"\n    ]\n  },\n  \"plan\": {\n    \"status\": \"PLAN\",\n    \"plan\": {\n      \"3\": [\"CS2102\", \"CS2220\"],\n      \"4\": [\"CS3223\", \"CS4330\"],\n      \"5\": [\"CS4224\", \"CS2100\"],\n      \"6\": [\"CS2106\", \"ST2334\"],\n      \"7\": [\"CS2109S\", \"CS3230\"],\n      \"8\": [\"CS3264\"]\n    },\n    \"reasons\": [\n      \"Three prerequisite courses must be added: CS2100 (needed for CS2106), CS3223 (needed for CS4224, itself requiring CS2102 first), and CS2220 (needed for CS4330; the ZB2101 route would require two added courses). This is the minimum possible, giving 8x4 + 3x4 = 44 MC total - the fewest total credits achievable.\",\n      \"CS4224 is offered only in Semester 1 (placed in Y3S1) and CS4330 only in Semester 2 (placed in Y2S2); CS2220 is Semester 1 only, so it goes in Y2S1 before CS4330.\",\n      \"Your preference is met: CS2106 (Y3S2) and CS4224 (Y3S1) are in different semesters.\",\n      \"CS3264 requires CS2109S and ST2334 strictly earlier, so it is placed in Y4S2 after both.\",\n      \"Every semester carries exactly 8 MC, within your limit; 11 courses at 8 MC per semester require all six remaining semesters, so Y4S2 is the earliest possible finish.\"\n    ]\n  }\n}",
+ "answer": {
+  "eligibility": {
+   "status": "ELIGIBLE",
+   "reasons": [
+    "All eight outstanding courses (CS3264, CS3230, CS2106, CS4224, ST2334, CS2109S, CS2102, CS4330) are open to BComp CS Hons and schedulable from Y2S1 onwards."
+   ]
+  },
+  "plan": {
+   "status": "PLAN",
+   "plan": {
+    "3": [
+     "CS2102",
+     "CS2220"
+    ],
+    "4": [
+     "CS3223",
+     "CS4330"
+    ],
+    "5": [
+     "CS4224",
+     "CS2100"
+    ],
+    "6": [
+     "CS2106",
+     "ST2334"
+    ],
+    "7": [
+     "CS2109S",
+     "CS3230"
+    ],
+    "8": [
+     "CS3264"
+    ]
+   },
+   "reasons": [
+    "Three prerequisite courses must be added: CS2100 (needed for CS2106), CS3223 (needed for CS4224, itself requiring CS2102 first), and CS2220 (needed for CS4330; the ZB2101 route would require two added courses). This is the minimum possible, giving 8x4 + 3x4 = 44 MC total - the fewest total credits achievable.",
+    "CS4224 is offered only in Semester 1 (placed in Y3S1) and CS4330 only in Semester 2 (placed in Y2S2); CS2220 is Semester 1 only, so it goes in Y2S1 before CS4330.",
+    "Your preference is met: CS2106 (Y3S2) and CS4224 (Y3S1) are in different semesters.",
+    "CS3264 requires CS2109S and ST2334 strictly earlier, so it is placed in Y4S2 after both.",
+    "Every semester carries exactly 8 MC, within your limit; 11 courses at 8 MC per semester require all six remaining semesters, so Y4S2 is the earliest possible finish."
+   ]
+  }
+ },
+ "fenced": false,
+ "parse_error": null
+}

@@ -1,0 +1,38 @@
+{
+ "id": "q1-precluded-01",
+ "pipeline": "A",
+ "model": "x-test-1",
+ "seconds": 41.69,
+ "usage": {
+  "prompt_tokens": 7031,
+  "total_tokens": 8557,
+  "completion_tokens": 1526,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "created_cache_tokens": 0,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1341
+  }
+ },
+ "raw": "{\n  \"eligibility\": {\n    \"status\": \"NOT_ELIGIBLE\",\n    \"reasons\": [\n      \"CS3244 lists 'cannot take if completed: CS3264', and you have completed CS3264 (they are also mutually exclusive).\",\n      \"CS3244 also lists 'cannot take if completed: CS2109S', and you have completed CS2109S (also mutually exclusive).\",\n      \"All other conditions are fine (CS3244 is offered in Sem 2, and your CS2040S, ST2334, MA1522 and MA1521 satisfy its prerequisites), but the completed-course blocks make it ineligible.\"\n    ]\n  },\n  \"plan\": {\n    \"status\": \"MISSING_INFO\",\n    \"reasons\": [\"No plan was requested; only eligibility for CS3244 was asked.\"]\n  }\n}",
+ "answer": {
+  "eligibility": {
+   "status": "NOT_ELIGIBLE",
+   "reasons": [
+    "CS3244 lists 'cannot take if completed: CS3264', and you have completed CS3264 (they are also mutually exclusive).",
+    "CS3244 also lists 'cannot take if completed: CS2109S', and you have completed CS2109S (also mutually exclusive).",
+    "All other conditions are fine (CS3244 is offered in Sem 2, and your CS2040S, ST2334, MA1522 and MA1521 satisfy its prerequisites), but the completed-course blocks make it ineligible."
+   ]
+  },
+  "plan": {
+   "status": "MISSING_INFO",
+   "reasons": [
+    "No plan was requested; only eligibility for CS3244 was asked."
+   ]
+  }
+ },
+ "fenced": false,
+ "parse_error": null
+}

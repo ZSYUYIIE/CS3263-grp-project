@@ -1,0 +1,397 @@
+[
+  {
+    "id": "q1-wrong_term-01",
+    "kind": "q1/wrong_term",
+    "request": "So far I have passed IS1108, CS3230, MA1522, CS2030S, CS2100, MA1521, CS2106, CS2101, CS1101S, ST2334, CS1231S, CS2109S, CS2103T and CS2040S. I am in year 2 semester 2 now. Can I take CS3236 next semester?",
+    "gold_spec": {
+      "query": "eligible",
+      "target": "CS3236",
+      "current_sem": 5,
+      "completed": [
+        "CS1101S",
+        "CS1231S",
+        "MA1521",
+        "CS2030S",
+        "CS2040S",
+        "MA1522",
+        "IS1108",
+        "CS2100",
+        "CS2101",
+        "CS2103T",
+        "ST2334",
+        "CS2106",
+        "CS2109S",
+        "CS3230"
+      ]
+    },
+    "gold_answer": {
+      "status": "NOT_ELIGIBLE",
+      "target": "CS3236",
+      "semester": 5,
+      "reasons": [
+        "not offered in semester 1 (offered: [2])"
+      ],
+      "can_still_become_eligible": true
+    }
+  },
+  {
+    "id": "q1-precluded-01",
+    "kind": "q1/precluded",
+    "request": "I have completed CS2103T, CS2101, CS2030S, CS2102, CS1231S, ES2660, MA1521, ST2334, CS3264, CS2106, CS2100, CS3219, CS1101S, CS2109S, CS2040S, MA1522 and IS1108. I am in semester 7 now. Can I take CS3244 next semester?",
+    "gold_spec": {
+      "query": "eligible",
+      "target": "CS3244",
+      "current_sem": 8,
+      "completed": [
+        "CS1101S",
+        "CS1231S",
+        "MA1521",
+        "ES2660",
+        "CS2030S",
+        "CS2040S",
+        "MA1522",
+        "IS1108",
+        "CS2100",
+        "CS2101",
+        "CS2103T",
+        "ST2334",
+        "CS2106",
+        "CS2109S",
+        "CS3219",
+        "CS2102",
+        "CS3264"
+      ]
+    },
+    "gold_answer": {
+      "status": "NOT_ELIGIBLE",
+      "target": "CS3244",
+      "semester": 8,
+      "reasons": [
+        "precluded: already completed CS2109S, CS3264"
+      ],
+      "can_still_become_eligible": false,
+      "never_eligible_because": "CS3244 is ruled out by completed CS2109S, CS3264"
+    }
+  },
+  {
+    "id": "q2-loose-01",
+    "kind": "q2/loose",
+    "request": "I am a Computer Science (BComp CS Hons) student. I've finished MA1521, CS2103T, CS2101, ES2660, IS1108, CS2030S, CS1101S, ST2334, MA1522, CS1231S, CS2040S and CS2100. I am in year 2 semester 2 now. I need to take CS3219, CS2109S, CS2105, CS3236 and CS3230. At most 5 modules per semester. I want the fewest total credits. Please plan my remaining semesters.",
+    "gold_spec": {
+      "query": "plan",
+      "current_sem": 4,
+      "completed": [
+        "CS1101S",
+        "CS1231S",
+        "MA1521",
+        "ES2660",
+        "CS2030S",
+        "CS2040S",
+        "MA1522",
+        "IS1108",
+        "CS2100",
+        "CS2101",
+        "CS2103T",
+        "ST2334"
+      ],
+      "must_take": [
+        "CS2109S",
+        "CS2105",
+        "CS3219",
+        "CS3230",
+        "CS3236"
+      ],
+      "mc_max": 20,
+      "objective": "min_total_mc",
+      "programme": "BComp CS Hons"
+    },
+    "gold_answer": {
+      "status": "PLAN",
+      "objective": "min_total_mc",
+      "last_semester": 4,
+      "plan": {
+        "4": [
+          "CS2105",
+          "CS2109S",
+          "CS3219",
+          "CS3230",
+          "CS3236"
+        ]
+      },
+      "mc_per_semester": {
+        "4": 20
+      },
+      "preferences_met": [],
+      "preferences_not_met": []
+    }
+  },
+  {
+    "id": "q2-tight-01",
+    "kind": "q2/tight",
+    "request": "So far I have passed IS1108, MA1522, CS1231S, MA1521, CS2030S, CS2040S and CS1101S. I am currently in year 2 semester 1. I still have to take CS3264, CS3230, CS2106, CS4224, ST2334, CS2109S, CS2102 and CS4330. I can take at most 8 MC per semester. I want the fewest total credits. I'd prefer CS2106 and CS4224 in different semesters. What should my plan look like?",
+    "gold_spec": {
+      "query": "plan",
+      "current_sem": 3,
+      "completed": [
+        "CS1101S",
+        "CS1231S",
+        "MA1521",
+        "CS2030S",
+        "CS2040S",
+        "MA1522",
+        "IS1108"
+      ],
+      "must_take": [
+        "CS2102",
+        "CS3230",
+        "ST2334",
+        "CS2106",
+        "CS2109S",
+        "CS4224",
+        "CS4330",
+        "CS3264"
+      ],
+      "objective": "min_total_mc",
+      "rules": [
+        {
+          "type": "apart",
+          "a": "CS2106",
+          "b": "CS4224",
+          "strength": "prefer"
+        }
+      ],
+      "mc_max": 8
+    },
+    "gold_answer": {
+      "status": "PLAN",
+      "objective": "min_total_mc",
+      "last_semester": 8,
+      "plan": {
+        "3": [
+          "CS2220"
+        ],
+        "4": [
+          "CS2100DE",
+          "CS2102"
+        ],
+        "5": [
+          "CS2106",
+          "CS3230"
+        ],
+        "6": [
+          "CS2109S",
+          "CS3223"
+        ],
+        "7": [
+          "CS4224",
+          "ST2334"
+        ],
+        "8": [
+          "CS3264",
+          "CS4330"
+        ]
+      },
+      "mc_per_semester": {
+        "3": 4,
+        "4": 8,
+        "5": 8,
+        "6": 8,
+        "7": 8,
+        "8": 8
+      },
+      "preferences_met": [
+        "CS2106 and CS4224 in different semesters"
+      ],
+      "preferences_not_met": [],
+      "added_prerequisites": [
+        "CS2100DE",
+        "CS2220",
+        "CS3223"
+      ]
+    }
+  },
+  {
+    "id": "q2_infeasible-hidden-01",
+    "kind": "q2_infeasible/hidden",
+    "request": "I've finished CS2040S, MA1521, CS2101, IS1108, CS1231S, CS2103T, MA1522, CS1101S, ST2334, CS2100, CS2030S and ES2660. I'm starting year 2 semester 2. I still have to take CS3247, CS4236, CS2102, CS4243, CS2106 and CS3230. CS4236 has to be in semester 4. Can you plan the rest of my degree?",
+    "gold_spec": {
+      "query": "plan",
+      "current_sem": 4,
+      "completed": [
+        "CS1101S",
+        "CS1231S",
+        "MA1521",
+        "ES2660",
+        "CS2030S",
+        "CS2040S",
+        "MA1522",
+        "IS1108",
+        "CS2100",
+        "CS2101",
+        "CS2103T",
+        "ST2334"
+      ],
+      "must_take": [
+        "CS2102",
+        "CS3230",
+        "CS2106",
+        "CS4243",
+        "CS4236",
+        "CS3247"
+      ],
+      "rules": [
+        {
+          "type": "in_sem",
+          "course": "CS4236",
+          "sem": 4,
+          "strength": "must"
+        }
+      ]
+    },
+    "gold_answer": {
+      "status": "NO_PLAN",
+      "reasons": [
+        "CS4236 cannot be placed in semester 4"
+      ]
+    }
+  },
+  {
+    "id": "q2_infeasible-rule_conflict-01",
+    "kind": "q2_infeasible/rule_conflict",
+    "request": "I have completed CS2040S, ES2660, CS2106, CS3219, CS1101S, CS1231S, MA1521, CS2100, CS2101, CS2109S, CS2030S, CS2103T, CS3230, CS2105 and MA1522. I'm starting semester 6. I need to take CS3233, ST2334, CS3264, CS3268 and IS1108. At most 2 modules per semester. I want to graduate as early as possible. CS3264 must come before ST2334. ST2334 must come before CS3264. Please plan my remaining semesters.",
+    "gold_spec": {
+      "query": "plan",
+      "current_sem": 6,
+      "completed": [
+        "CS1101S",
+        "CS1231S",
+        "MA1521",
+        "ES2660",
+        "CS2030S",
+        "CS2040S",
+        "MA1522",
+        "CS2100",
+        "CS2101",
+        "CS2103T",
+        "CS2106",
+        "CS2109S",
+        "CS3230",
+        "CS2105",
+        "CS3219"
+      ],
+      "must_take": [
+        "ST2334",
+        "IS1108",
+        "CS3268",
+        "CS3264",
+        "CS3233"
+      ],
+      "mc_max": 8,
+      "rules": [
+        {
+          "type": "before",
+          "a": "CS3264",
+          "b": "ST2334",
+          "strength": "must"
+        },
+        {
+          "type": "before",
+          "a": "ST2334",
+          "b": "CS3264",
+          "strength": "must"
+        }
+      ],
+      "objective": "earliest_graduation"
+    },
+    "gold_answer": {
+      "status": "NO_PLAN",
+      "reasons": [
+        "these cannot all hold together with the courses you must take: your rule: CS3264 before ST2334; your rule: ST2334 before CS3264"
+      ]
+    }
+  },
+  {
+    "id": "missing_info-q2-01",
+    "kind": "missing_info/q2",
+    "request": "I have completed CS2030S, MA1522, CS2109S, CS3230, ST2334, CS2101, CS2103T, CS1231S, IS1108, ES2660, CS2040S, CS1101S, CS2100, MA1521 and CS2106. I still have to take CS3263 and CS2102. Semester 7 is my exchange semester. I want to graduate as early as possible. Please spread the workload evenly. I would like CS2102 as early as possible. Can you plan the rest of my degree? I might fail CS2106, so keep that in mind.",
+    "gold_spec": {
+      "query": "plan",
+      "completed": [
+        "CS1101S",
+        "CS1231S",
+        "MA1521",
+        "ES2660",
+        "CS2030S",
+        "CS2040S",
+        "MA1522",
+        "IS1108",
+        "CS2100",
+        "CS2101",
+        "CS2103T",
+        "ST2334",
+        "CS2106",
+        "CS2109S",
+        "CS3230"
+      ],
+      "must_take": [
+        "CS2102",
+        "CS3263"
+      ],
+      "sem_caps": {
+        "7": 0
+      },
+      "objective": "earliest_graduation",
+      "early": [
+        "CS2102"
+      ],
+      "balance_load": true,
+      "unsupported": [
+        "might fail CS2106"
+      ]
+    },
+    "gold_answer": {
+      "status": "MISSING_INFO",
+      "missing": [
+        "current_sem"
+      ],
+      "message": "This cannot be answered yet. Please give: the semester you are in now (1 to 8)."
+    }
+  },
+  {
+    "id": "out_of_scope-programme-01",
+    "kind": "out_of_scope/programme",
+    "request": "I am doing BComp CS Hons with a minor in Economics. I've finished CS2101, CS2109S, CS2105, CS3230, CS2100, CS2040S, CS2030S, CS3219, CS2106, ES2660, MA1522, ST2334, CS2103T, MA1521, CS1101S, CS1231S and IS1108. I am in year 3 semester 1 now. Can I take CS3233 next semester?",
+    "gold_spec": {
+      "query": "eligible",
+      "target": "CS3233",
+      "current_sem": 6,
+      "completed": [
+        "CS1101S",
+        "CS1231S",
+        "MA1521",
+        "ES2660",
+        "CS2030S",
+        "CS2040S",
+        "MA1522",
+        "IS1108",
+        "CS2100",
+        "CS2101",
+        "CS2103T",
+        "ST2334",
+        "CS2106",
+        "CS2109S",
+        "CS3230",
+        "CS2105",
+        "CS3219"
+      ],
+      "programme": "BComp CS Hons with a minor in Economics"
+    },
+    "gold_answer": {
+      "status": "OUT_OF_SCOPE",
+      "reasons": [
+        "programme 'BComp CS Hons with a minor in Economics' is not BComp (CS) Hons"
+      ],
+      "message": "I can only plan for BComp (CS) Hons single-major students under AY2026/2027 rules, and this request is outside that (programme 'BComp CS Hons with a minor in Economics' is not BComp (CS) Hons). Course rules differ by programme and aren't in my data for your case, so please check with your faculty or academic advisor."
+    }
+  }
+]

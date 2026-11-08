@@ -1,0 +1,120 @@
+{
+ "id": "q2-loose-10",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "prompt_version": "route-a-v2",
+ "messages_sha256": "00fb9633bdd9012996e167c6b252d9424d57fe4fb374b88fa4a127ebfc4a16c3",
+ "seconds": 123.83,
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CS2100\",\"CS2103T\",\"CS2109S\",\"ST2334\"],\"4\":[\"CS2101\",\"CS2102\",\"CS2105\",\"CS2106\"],\"5\":[\"CS3219\",\"CS3230\",\"CS3263\",\"CS4226\"],\"6\":[\"CS4246\"],\"7\":[],\"8\":[]},\"reasons\":[\"All 11 must-take courses are planned, plus added prerequisites CS2100 for CS2106 and CS3263 for CS4246; CS3243 cannot be used because it is blocked by required CS2109S.\",\"CS2106 is placed in semester 4, the earliest possible, since its prerequisite CS2100 is planned in semester 3.\",\"CS4226 is in semester 5 (Sem 1) after CS2105 and ST2334; CS4246 is in semester 6 after ST2334 and CS3263.\",\"Semester 8 is the exchange semester with 0 MC, so no courses are planned there; every used semester is within the 16 MC limit.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS2103T",
+    "CS2109S",
+    "ST2334"
+   ],
+   "4": [
+    "CS2101",
+    "CS2102",
+    "CS2105",
+    "CS2106"
+   ],
+   "5": [
+    "CS3219",
+    "CS3230",
+    "CS3263",
+    "CS4226"
+   ],
+   "6": [
+    "CS4246"
+   ],
+   "7": [],
+   "8": []
+  },
+  "reasons": [
+   "All 11 must-take courses are planned, plus added prerequisites CS2100 for CS2106 and CS3263 for CS4246; CS3243 cannot be used because it is blocked by required CS2109S.",
+   "CS2106 is placed in semester 4, the earliest possible, since its prerequisite CS2100 is planned in semester 3.",
+   "CS4226 is in semester 5 (Sem 1) after CS2105 and ST2334; CS4246 is in semester 6 after ST2334 and CS3263.",
+   "Semester 8 is the exchange semester with 0 MC, so no courses are planned there; every used semester is within the 16 MC limit."
+  ]
+ },
+ "fenced": false,
+ "parse_error": null,
+ "finish_reason": "stop",
+ "budget_exhausted": false,
+ "budget_retried": false,
+ "schema_errors": [],
+ "format_valid": true,
+ "attempts": [
+  {
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CS2100\",\"CS2103T\",\"CS2109S\",\"ST2334\"],\"4\":[\"CS2101\",\"CS2102\",\"CS2105\",\"CS2106\"],\"5\":[\"CS3219\",\"CS3230\",\"CS3263\",\"CS4226\"],\"6\":[\"CS4246\"],\"7\":[],\"8\":[]},\"reasons\":[\"All 11 must-take courses are planned, plus added prerequisites CS2100 for CS2106 and CS3263 for CS4246; CS3243 cannot be used because it is blocked by required CS2109S.\",\"CS2106 is placed in semester 4, the earliest possible, since its prerequisite CS2100 is planned in semester 3.\",\"CS4226 is in semester 5 (Sem 1) after CS2105 and ST2334; CS4246 is in semester 6 after ST2334 and CS3263.\",\"Semester 8 is the exchange semester with 0 MC, so no courses are planned there; every used semester is within the 16 MC limit.\"]}",
+   "usage": {
+    "prompt_tokens": 9775,
+    "total_tokens": 19066,
+    "completion_tokens": 9291,
+    "prompt_tokens_details": {
+     "cached_tokens": 4224,
+     "created_cache_tokens": 5504,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 9051
+    }
+   },
+   "finish_reason": "stop",
+   "max_tokens": 16384,
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS2103T",
+      "CS2109S",
+      "ST2334"
+     ],
+     "4": [
+      "CS2101",
+      "CS2102",
+      "CS2105",
+      "CS2106"
+     ],
+     "5": [
+      "CS3219",
+      "CS3230",
+      "CS3263",
+      "CS4226"
+     ],
+     "6": [
+      "CS4246"
+     ],
+     "7": [],
+     "8": []
+    },
+    "reasons": [
+     "All 11 must-take courses are planned, plus added prerequisites CS2100 for CS2106 and CS3263 for CS4246; CS3243 cannot be used because it is blocked by required CS2109S.",
+     "CS2106 is placed in semester 4, the earliest possible, since its prerequisite CS2100 is planned in semester 3.",
+     "CS4226 is in semester 5 (Sem 1) after CS2105 and ST2334; CS4246 is in semester 6 after ST2334 and CS3263.",
+     "Semester 8 is the exchange semester with 0 MC, so no courses are planned there; every used semester is within the 16 MC limit."
+    ]
+   },
+   "fenced": false,
+   "parse_error": null,
+   "budget_exhausted": false,
+   "seconds": 123.83
+  }
+ ],
+ "usage": {
+  "prompt_tokens": 9775,
+  "total_tokens": 19066,
+  "completion_tokens": 9291,
+  "prompt_tokens_details": {
+   "cached_tokens": 4224,
+   "created_cache_tokens": 5504
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 9051
+  }
+ }
+}

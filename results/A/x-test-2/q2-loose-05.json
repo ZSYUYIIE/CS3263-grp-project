@@ -1,0 +1,52 @@
+{
+ "id": "q2-loose-05",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 80.15,
+ "usage": {
+  "prompt_tokens": 8347,
+  "total_tokens": 13855,
+  "completion_tokens": 5508,
+  "prompt_tokens_details": {
+   "cached_tokens": 896,
+   "created_cache_tokens": 7424,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5186
+  }
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"ST2334\",\"CS2102\",\"CS3219\",\"CS2101\"],\"6\":[\"CS3263\",\"CS4268\",\"CS3236\"],\"7\":[\"CS4278\"]},\"reasons\":[\"All listed must-take courses are included: CS4278, CS3219, CS2102, CS4268, ST2334, CS3236, CS2101.\",\"CS3263 is added because CS4278 requires CS3263 or CS3243; CS3243 is blocked by the completed CS2109S, so CS3263 is the viable prerequisite.\",\"ST2334 is placed in semester 5 so it is strictly before CS3263, CS4268, CS3236, and CS4278.\",\"CS3263 is placed in semester 6 so it is strictly before CS4278.\",\"CS4278 is placed in semester 7, the earliest odd semester after CS3263; it is offered only in Sem 1.\",\"CS4268 and CS3236 are placed in semester 6, an even semester when both are offered, after ST2334.\",\"CS3219, CS2102, and CS2101 have their prerequisites satisfied by completed courses and are placed in semester 5.\",\"MC limits are respected: semester 5 has 16 MC, semester 6 has 12 MC, and semester 7 has 4 MC.\",\"No semester 8 course is needed; the plan finishes in semester 7.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "ST2334",
+    "CS2102",
+    "CS3219",
+    "CS2101"
+   ],
+   "6": [
+    "CS3263",
+    "CS4268",
+    "CS3236"
+   ],
+   "7": [
+    "CS4278"
+   ]
+  },
+  "reasons": [
+   "All listed must-take courses are included: CS4278, CS3219, CS2102, CS4268, ST2334, CS3236, CS2101.",
+   "CS3263 is added because CS4278 requires CS3263 or CS3243; CS3243 is blocked by the completed CS2109S, so CS3263 is the viable prerequisite.",
+   "ST2334 is placed in semester 5 so it is strictly before CS3263, CS4268, CS3236, and CS4278.",
+   "CS3263 is placed in semester 6 so it is strictly before CS4278.",
+   "CS4278 is placed in semester 7, the earliest odd semester after CS3263; it is offered only in Sem 1.",
+   "CS4268 and CS3236 are placed in semester 6, an even semester when both are offered, after ST2334.",
+   "CS3219, CS2102, and CS2101 have their prerequisites satisfied by completed courses and are placed in semester 5.",
+   "MC limits are respected: semester 5 has 16 MC, semester 6 has 12 MC, and semester 7 has 4 MC.",
+   "No semester 8 course is needed; the plan finishes in semester 7."
+  ]
+ },
+ "fenced": false,
+ "parse_error": null
+}

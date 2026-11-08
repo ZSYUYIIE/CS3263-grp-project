@@ -1,0 +1,28 @@
+{
+ "id": "q1-wrong_term-01",
+ "pipeline": "A",
+ "model": "x-test-4",
+ "seconds": 14.34,
+ "usage": {
+  "prompt_tokens": 5125,
+  "total_tokens": 6241,
+  "completion_tokens": 1116,
+  "prompt_tokens_details": null
+ },
+ "raw": "\n\n{\n  \"eligibility\": {\n    \"status\": \"NOT_ELIGIBLE\",\n    \"reasons\": [\n      \"CS3236 is offered only in Sem 2 (even semesters). Next semester is Y3S1 = semester 5, which is an odd semester, so CS3236 is not offered then.\",\n      \"Note: your prerequisites are satisfied (CS1231S covers the first clause; ST2334 covers the second clause), and you have not completed CS3236, so the only blocker is the offering term.\"\n    ]\n  },\n  \"plan\": {\n    \"status\": \"OUT_OF_SCOPE\",\n    \"reasons\": []\n  }\n}",
+ "answer": {
+  "eligibility": {
+   "status": "NOT_ELIGIBLE",
+   "reasons": [
+    "CS3236 is offered only in Sem 2 (even semesters). Next semester is Y3S1 = semester 5, which is an odd semester, so CS3236 is not offered then.",
+    "Note: your prerequisites are satisfied (CS1231S covers the first clause; ST2334 covers the second clause), and you have not completed CS3236, so the only blocker is the offering term."
+   ]
+  },
+  "plan": {
+   "status": "OUT_OF_SCOPE",
+   "reasons": []
+  }
+ },
+ "fenced": false,
+ "parse_error": null
+}

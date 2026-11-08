@@ -1,0 +1,110 @@
+{
+ "id": "q2-loose-11",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "prompt_version": "route-a-v2",
+ "messages_sha256": "4ed5f21f03a8fa358ec9f24b2acb7dc7d98606175a99e64802ee600eddc588eb",
+ "seconds": 47.95,
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS2102\",\"CS2105\"],\"6\":[\"CS2111\",\"CS3223\"],\"7\":[\"CS3240\",\"CS4226\"],\"8\":[\"CS4221\"]},\"reasons\":[\"CS4221 is placed in semester 8, its latest offering, after adding CS2102 in semester 5 and CS3223 in semester 6 to satisfy its prerequisite chain.\",\"CS3240 requires CS2111, so CS2111 is added in semester 6 and CS3240 is placed in semester 7, when it is offered.\",\"CS4226 requires CS2105 as a strict prerequisite, so CS2105 is placed in semester 5 and CS4226 in semester 7; they cannot be taken together.\",\"All planned semesters stay within the 4-module limit and use courses open to BComp CS Hons.\"],\"not_applied\":[\"CS4226 and CS2105 together in one semester\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS2105"
+   ],
+   "6": [
+    "CS2111",
+    "CS3223"
+   ],
+   "7": [
+    "CS3240",
+    "CS4226"
+   ],
+   "8": [
+    "CS4221"
+   ]
+  },
+  "reasons": [
+   "CS4221 is placed in semester 8, its latest offering, after adding CS2102 in semester 5 and CS3223 in semester 6 to satisfy its prerequisite chain.",
+   "CS3240 requires CS2111, so CS2111 is added in semester 6 and CS3240 is placed in semester 7, when it is offered.",
+   "CS4226 requires CS2105 as a strict prerequisite, so CS2105 is placed in semester 5 and CS4226 in semester 7; they cannot be taken together.",
+   "All planned semesters stay within the 4-module limit and use courses open to BComp CS Hons."
+  ],
+  "not_applied": [
+   "CS4226 and CS2105 together in one semester"
+  ]
+ },
+ "fenced": false,
+ "parse_error": null,
+ "finish_reason": "stop",
+ "budget_exhausted": false,
+ "budget_retried": false,
+ "schema_errors": [],
+ "format_valid": true,
+ "attempts": [
+  {
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS2102\",\"CS2105\"],\"6\":[\"CS2111\",\"CS3223\"],\"7\":[\"CS3240\",\"CS4226\"],\"8\":[\"CS4221\"]},\"reasons\":[\"CS4221 is placed in semester 8, its latest offering, after adding CS2102 in semester 5 and CS3223 in semester 6 to satisfy its prerequisite chain.\",\"CS3240 requires CS2111, so CS2111 is added in semester 6 and CS3240 is placed in semester 7, when it is offered.\",\"CS4226 requires CS2105 as a strict prerequisite, so CS2105 is placed in semester 5 and CS4226 in semester 7; they cannot be taken together.\",\"All planned semesters stay within the 4-module limit and use courses open to BComp CS Hons.\"],\"not_applied\":[\"CS4226 and CS2105 together in one semester\"]}",
+   "usage": {
+    "prompt_tokens": 7496,
+    "total_tokens": 11055,
+    "completion_tokens": 3559,
+    "prompt_tokens_details": {
+     "cached_tokens": 1280,
+     "created_cache_tokens": 6144,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 3347
+    }
+   },
+   "finish_reason": "stop",
+   "max_tokens": 16384,
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2102",
+      "CS2105"
+     ],
+     "6": [
+      "CS2111",
+      "CS3223"
+     ],
+     "7": [
+      "CS3240",
+      "CS4226"
+     ],
+     "8": [
+      "CS4221"
+     ]
+    },
+    "reasons": [
+     "CS4221 is placed in semester 8, its latest offering, after adding CS2102 in semester 5 and CS3223 in semester 6 to satisfy its prerequisite chain.",
+     "CS3240 requires CS2111, so CS2111 is added in semester 6 and CS3240 is placed in semester 7, when it is offered.",
+     "CS4226 requires CS2105 as a strict prerequisite, so CS2105 is placed in semester 5 and CS4226 in semester 7; they cannot be taken together.",
+     "All planned semesters stay within the 4-module limit and use courses open to BComp CS Hons."
+    ],
+    "not_applied": [
+     "CS4226 and CS2105 together in one semester"
+    ]
+   },
+   "fenced": false,
+   "parse_error": null,
+   "budget_exhausted": false,
+   "seconds": 47.95
+  }
+ ],
+ "usage": {
+  "prompt_tokens": 7496,
+  "total_tokens": 11055,
+  "completion_tokens": 3559,
+  "prompt_tokens_details": {
+   "cached_tokens": 1280,
+   "created_cache_tokens": 6144
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3347
+  }
+ }
+}

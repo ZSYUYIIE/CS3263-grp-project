@@ -14,7 +14,7 @@ import json
 from collections import Counter, defaultdict
 from pathlib import Path
 
-from eval.checker import check_plan, measures, preferences_met
+from eval.checker import check_plan, measures, preference_bounds
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -26,7 +26,8 @@ def grade_one(inst, rec):
     status = (ans or {}).get("status", "UNPARSEABLE") if isinstance(ans, dict) else "UNPARSEABLE"
     row = {"id": inst["id"], "kind": inst["kind"], "group": inst["kind"].split("/")[0],
            "gold_status": gold["status"], "status": status, "status_correct": status == gold["status"],
-           "fenced": bool(rec and rec.get("fenced")), "violations": "", "class": ""}
+           "fenced": bool(rec and rec.get("fenced")), "violations": "", "class": "",
+           "api_error": rec.get("api_error", "") if rec else "", "unverified_preferences": ""}
     if gold["status"] == "PLAN":
         if status == "PLAN":
             v = check_plan(spec, ans.get("plan"))
@@ -40,11 +41,13 @@ def grade_one(inst, rec):
                         (obj == "min_total_mc" and m["total_mc"] > g["total_mc"])
                 better = (obj == "earliest_graduation" and m["last_semester"] < g["last_semester"]) or \
                          (obj == "min_total_mc" and m["total_mc"] < g["total_mc"])
-                p = preferences_met(spec, ans.get("plan"), gold["plan"])
+                p, upper, unknown = preference_bounds(spec, ans.get("plan"), gold)
+                row["unverified_preferences"] = " | ".join(unknown)
                 gp = len(gold.get("preferences_met", []))
                 row["class"] = ("BEATS GOLD: check" if better else "objective gap" if worse
                                 else "extra courses" if len(m["added"]) > len(g["added"])
-                                else "preference gap" if p < gp else "optimal")
+                                else "preference gap" if upper < gp
+                                else "preference unverified" if p < gp else "optimal")
         elif status == "NO_PLAN":
             row["class"] = "over-refusal"
         else:
@@ -86,7 +89,7 @@ def main():
     by = defaultdict(list)
     for r in rows:
         by[r["group"]].append(r)
-    L = [f"# Results: {out}", "", f"{len(rows)} of {len(insts)} instances answered.", "",
+    L = [f"# Results: {out}", "", f"{len(rows)} of {len(insts)} instances recorded.", "",
          "## Status accuracy by group", "", "| Group | Correct status |", "|---|---|"]
     L += [f"| {g} | {pct(sum(r['status_correct'] for r in rs), len(rs))} |" for g, rs in sorted(by.items())]
     L += [f"| **all** | {pct(sum(r['status_correct'] for r in rows), len(rows))} |"]
@@ -109,6 +112,7 @@ def main():
         L += [f"| {kind} | {pct(sum(r['class'] == 'correct refusal' for r in rs), len(rs))} |"
               f" {pct(sum(r['class'] == 'invented plan' for r in rs), len(rs))} |"]
     L += ["", "## Format", "", f"- unparseable replies: {sum(r['status'] == 'UNPARSEABLE' for r in rows)}",
+          f"- API/completion errors without an answer: {sum(bool(r['api_error']) for r in rows)}",
           f"- replies wrapped in fences or extra text: {sum(r['fenced'] for r in rows)}"]
     if usage:
         L += [f"- token usage: {dict(usage)}"]

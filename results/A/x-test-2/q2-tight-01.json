@@ -1,0 +1,58 @@
+{
+ "id": "q2-tight-01",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 136.0,
+ "usage": {
+  "prompt_tokens": 7876,
+  "total_tokens": 14978,
+  "completion_tokens": 7102,
+  "prompt_tokens_details": {
+   "cached_tokens": 896,
+   "created_cache_tokens": 6912,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 6889
+  }
+ },
+ "raw": "{\"plan\":{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CS2220\",\"CS2102\"],\"4\":[\"CS3223\",\"CS4330\"],\"5\":[\"CS4224\",\"CS2100\"],\"6\":[\"CS2106\",\"CS2109S\"],\"7\":[\"ST2334\",\"CS3230\"],\"8\":[\"CS3264\"]},\"reasons\":[\"All requested remaining courses are included, plus CS2100 (prerequisite for CS2106), CS3223 (prerequisite for CS4224), and CS2220 (prerequisite for CS4330).\",\"Total is 44 MC across 11 courses; this is minimal because those three prerequisite courses are required and no cheaper prerequisite path exists in the records.\",\"Each semester has at most 8 MC, and all prerequisites are completed or planned in strictly earlier semesters.\",\"CS2106 is in semester 6 and CS4224 is in semester 5, so the preference for different semesters is met.\"]}}",
+ "answer": {
+  "plan": {
+   "status": "PLAN",
+   "plan": {
+    "3": [
+     "CS2220",
+     "CS2102"
+    ],
+    "4": [
+     "CS3223",
+     "CS4330"
+    ],
+    "5": [
+     "CS4224",
+     "CS2100"
+    ],
+    "6": [
+     "CS2106",
+     "CS2109S"
+    ],
+    "7": [
+     "ST2334",
+     "CS3230"
+    ],
+    "8": [
+     "CS3264"
+    ]
+   },
+   "reasons": [
+    "All requested remaining courses are included, plus CS2100 (prerequisite for CS2106), CS3223 (prerequisite for CS4224), and CS2220 (prerequisite for CS4330).",
+    "Total is 44 MC across 11 courses; this is minimal because those three prerequisite courses are required and no cheaper prerequisite path exists in the records.",
+    "Each semester has at most 8 MC, and all prerequisites are completed or planned in strictly earlier semesters.",
+    "CS2106 is in semester 6 and CS4224 is in semester 5, so the preference for different semesters is met."
+   ]
+  }
+ },
+ "fenced": false,
+ "parse_error": null
+}

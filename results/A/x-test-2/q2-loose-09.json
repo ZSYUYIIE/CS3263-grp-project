@@ -1,0 +1,56 @@
+{
+ "id": "q2-loose-09",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 125.21,
+ "usage": {
+  "prompt_tokens": 7822,
+  "total_tokens": 12265,
+  "completion_tokens": 4443,
+  "prompt_tokens_details": {
+   "cached_tokens": 896,
+   "created_cache_tokens": 6912,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4213
+  }
+ },
+ "raw": "{\"plan\":{\"status\":\"PLAN\",\"plan\":{\"4\":[\"CS2102\",\"CS2105\"],\"5\":[\"CS4211\",\"CS3241\"],\"6\":[\"CS3230\",\"CS3247\"],\"7\":[\"CS2109S\",\"CS3219\"],\"8\":[\"CS4277\",\"CS2106\"]},\"reasons\":[\"All listed must-take courses are included; CS3241 is added only because it is the prerequisite for CS3247.\",\"CS4211 is placed in Sem 5 because it is offered only in Sem 1; CS3241 is also Sem 1 only and must precede CS3247.\",\"CS3230 and CS3247 are together in Sem 6, satisfying the requested pairing; CS3247 is offered in Sem 2 and its prerequisite CS3241 is completed in Sem 5.\",\"CS4277 is placed in Sem 8 because it is offered only in Sem 2.\",\"Each semester has exactly 2 modules (8 MC), so the workload is spread evenly and within the 4-module limit.\"]}}",
+ "answer": {
+  "plan": {
+   "status": "PLAN",
+   "plan": {
+    "4": [
+     "CS2102",
+     "CS2105"
+    ],
+    "5": [
+     "CS4211",
+     "CS3241"
+    ],
+    "6": [
+     "CS3230",
+     "CS3247"
+    ],
+    "7": [
+     "CS2109S",
+     "CS3219"
+    ],
+    "8": [
+     "CS4277",
+     "CS2106"
+    ]
+   },
+   "reasons": [
+    "All listed must-take courses are included; CS3241 is added only because it is the prerequisite for CS3247.",
+    "CS4211 is placed in Sem 5 because it is offered only in Sem 1; CS3241 is also Sem 1 only and must precede CS3247.",
+    "CS3230 and CS3247 are together in Sem 6, satisfying the requested pairing; CS3247 is offered in Sem 2 and its prerequisite CS3241 is completed in Sem 5.",
+    "CS4277 is placed in Sem 8 because it is offered only in Sem 2.",
+    "Each semester has exactly 2 modules (8 MC), so the workload is spread evenly and within the 4-module limit."
+   ]
+  }
+ },
+ "fenced": false,
+ "parse_error": null
+}
