@@ -106,8 +106,6 @@ which:
 | `atap_sems` | not allowed | optional | non-empty list of semesters | no ATAP |
 | `rules` | not allowed | optional | list of rule objects (section 2.3) | `[]` |
 | `objective` | not allowed | optional | `"earliest_graduation"`, `"min_total_mc"` or `"none"` | `"none"` |
-| `light_sems` | not allowed | optional | list of semesters, may include `"last"` | `[]` |
-| `balance_load` | not allowed | optional | `true` or `false` | `false` |
 | `early` | not allowed | optional | list of course codes | `[]` |
 | `late` | not allowed | optional | list of course codes | `[]` |
 
@@ -141,8 +139,6 @@ Missing, `null` and empty values:
 | `atap_sems` | Semesters in which ATAP (course code `CP3880`, 12 MC) may be planned. Giving the field asks for ATAP to be planned. See section 4. |
 | `rules` | Student wishes about specific courses, each marked `must` (hard) or `prefer` (soft). |
 | `objective` | What to optimise first (section 6). |
-| `light_sems` | Semesters that should carry less than the average load. `"last"` means the last semester the plan uses. |
-| `balance_load` | Make the largest per-semester load as small as possible. |
 | `early` / `late` | Courses that should be placed as early (or as late) as possible. |
 
 ### 2.3 Rule objects
@@ -162,8 +158,8 @@ courses.
 
 ### 2.4 Cleaning applied before solving
 
-Course codes are stripped of spaces and upper-cased. Duplicate entries in `completed`, `must_take`, `early`, `late`,
-`light_sems` and `rules` are removed. This is why two specs that differ only in letter case or duplicates give the same
+Course codes are stripped of spaces and upper-cased. Duplicate entries in `completed`, `must_take`, `early`, `late`
+and `rules` are removed. This is why two specs that differ only in letter case or duplicates give the same
 answer, and why a gold spec and a translated spec should be compared after cleaning, not as raw text.
 
 ### 2.5 Every way the input can be wrong
@@ -356,7 +352,6 @@ The main example:
   "mc_max": 8,
   "sem_caps": {"6": 0},
   "objective": "earliest_graduation",
-  "light_sems": ["last"],
   "early": ["CS2109S"],
   "rules": [
     {"type": "before", "a": "CS2100", "b": "CS2106", "strength": "must"},
@@ -378,7 +373,7 @@ The main example:
     "7": ["CS4248"]
   },
   "mc_per_semester": {"3": 8, "4": 8, "5": 8, "6": 0, "7": 4},
-  "preferences_met": ["CS3230 in semester 5", "last semester lighter than average", "CS2109S as early as possible"],
+  "preferences_met": ["CS3230 in semester 5", "CS2109S as early as possible"],
   "preferences_not_met": []
 }
 ```
@@ -474,8 +469,6 @@ The preference labels are fixed strings:
 | `apart` rule | `{a} and {b} in different semesters` |
 | `same_sem` rule | `{a} and {b} in the same semester` |
 | `in_sem` rule | `{course} in semester {sem}` |
-| `light_sems` entry | `semester {n} lighter than average` or `last semester lighter than average` |
-| `balance_load` | `largest semester load is as small as possible` |
 | `early` | `{code} as early as possible` |
 | `late` | `{code} as late as possible` |
 
@@ -587,7 +580,7 @@ one side.
    it cannot be placed in semester 5`).
 10. **Added courses.** A course that is not in `must_take` may be planned only because a planned course needs it, as
     part of its prerequisites (placed strictly before that course) or corequisites (same or earlier semester). Courses
-    are never added to fill a semester, to reach `mc_min`, or to make a light semester lighter.
+    are never added to fill a semester, or to reach `mc_min`.
 11. **ATAP.** ATAP is planned only when `atap_sems` is given (or `CP3880` is in `must_take` or in a `must` rule). It
     is placed in one of the `atap_sems`, at most once, **never in the last semester used** (some course has to come in a
     later semester), and the other courses in that semester total at most `min(8, the semester's cap)` MC. ATAP's own 12
@@ -611,8 +604,6 @@ the plans that are already best on the objective and use the fewest added course
 | `prefer` rule `apart` | `a` and `b` are planned in different semesters |
 | `prefer` rule `same_sem` | `a` and `b` are planned in the same semester |
 | `prefer` rule `in_sem` | the course is planned in that semester |
-| `light_sems` entry (a semester or `"last"`) | the non-ATAP MC of that semester is **strictly below** the average per-semester non-ATAP MC over a window. The window runs from `current_sem` to the last semester used; with objective `none` it runs from `current_sem` to semester 8. An empty plan never meets it. Entries before `current_sem` are ignored. |
-| `balance_load` | the largest non-ATAP semester load of the plan equals the smallest largest-load reachable by any plan that ties on the objective and the number of added courses |
 | `early` course | the course sits in the earliest semester reachable by any plan that ties on the objective and the number of added courses |
 | `late` course | the course sits in the latest such semester |
 
@@ -625,9 +616,8 @@ Special cases:
 - `early` and `late` on the same course are scored separately: they are two preferences, and the label of each says
   which one it is.
 
-After the count, two tie-breaks pick one plan among equals. They are **not** part of the graded optimum:
+After the count, one tie-break picks one plan among equals. It is **not** part of the graded optimum:
 
-- lower MC in the `light_sems` semesters;
 - the earliest last semester (only when the objective is not `earliest_graduation`).
 
 ## 6. Optimality
@@ -644,7 +634,7 @@ compared in this order:
 2. **Fewest added courses**: planned courses that are neither in `must_take` nor already completed.
 3. **Most preferences met** (section 5).
 
-The light-semester bonus and the earliest last semester are tie-breaks and are not graded.
+The earliest last semester is a tie-break and is not graded.
 
 The solver reaches this optimum with a staged search: it solves for the objective and fixes that value, then fixes the
 number of added courses, then fixes the preference count. This is why a plan that is faster to graduate is never traded
@@ -894,7 +884,7 @@ How the search is organised:
 
 - A variable is a candidate course. A course the student must take takes a value in its allowed semesters. A course
   that could be added also has the value 0 (not planned). Values are tried in ascending semester order, 0 first.
-- The search is **branch-and-bound** over the same stages as CP-SAT (objective, added courses, preferences, tie-breaks),
+- The search is **branch-and-bound** over the same stages as CP-SAT (objective, added courses, preferences, tie-break),
   so it proves the optimum instead of stopping at the first solution.
 - Every complete plan gets a full validity check, so pruning only changes speed, never the answer.
 

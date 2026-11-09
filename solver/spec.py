@@ -17,7 +17,7 @@ COMMON_FIELDS = ("query", "current_sem", "completed", "programme", "unsupported"
 Q1_ONLY_FIELDS = ("target",)
 Q2_ONLY_FIELDS = (
     "must_take", "mc_max", "mc_min", "sem_caps", "atap_sems", "rules",
-    "objective", "light_sems", "balance_load", "early", "late",
+    "objective", "early", "late",
 )
 ALL_FIELDS = COMMON_FIELDS + Q1_ONLY_FIELDS + Q2_ONLY_FIELDS
 
@@ -184,19 +184,6 @@ def _validate_plan_fields(spec: dict, errors: list[str], problems: list[str]) ->
     if "objective" in spec and spec["objective"] not in OBJECTIVES:
         errors.append(f"objective must be one of {list(OBJECTIVES)}, got {spec['objective']!r}")
 
-    if "light_sems" in spec:
-        light = spec["light_sems"]
-        if not isinstance(light, list):
-            errors.append("light_sems must be a list of semesters, optionally including \"last\"")
-        else:
-            for entry in light:
-                if entry == "last":
-                    continue
-                _check_semester(entry, "light_sems entry", errors, problems)
-
-    if "balance_load" in spec and not isinstance(spec["balance_load"], bool):
-        errors.append("balance_load must be true or false")
-
     for key in ("early", "late"):
         if key in spec and not _is_code_list(spec[key]):
             errors.append(f"{key} must be a list of course codes")
@@ -239,8 +226,6 @@ def _clean_plan_fields(spec: dict, cleaned: dict) -> None:
     if "mc_min" in spec:
         cleaned["mc_min"] = spec["mc_min"]
     cleaned["objective"] = spec.get("objective", "none")
-    cleaned["balance_load"] = spec.get("balance_load", False)
-    cleaned["light_sems"] = _unique(list(spec.get("light_sems", [])))
     cleaned["early"] = _upper_list(spec.get("early", []))
     cleaned["late"] = _upper_list(spec.get("late", []))
     rules = []

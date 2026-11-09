@@ -118,20 +118,8 @@ def enumerate_valid_plans(request, cat):
     return plans
 
 
-def loads_of(assign, cat):
-    loads = {}
-    for code, s in assign.items():
-        loads[s] = loads.get(s, 0) + int(cat[code]["mc"])
-    return loads
-
-
 def preference_count(request, assign, tied, cat):
     count = 0
-    cur = request["current_sem"]
-    loads = loads_of(assign, cat)
-    last = max(assign.values())
-    window = 8 - cur + 1 if request.get("objective", "none") == "none" else last - cur + 1
-    total = sum(loads.values())
     for rule in request.get("rules", []):
         if rule["strength"] != "prefer":
             continue
@@ -143,14 +131,6 @@ def preference_count(request, assign, tied, cat):
             count += assign[rule["a"]] != assign[rule["b"]]
         else:
             count += assign[rule["a"]] == assign[rule["b"]]
-    for entry in request.get("light_sems", []):
-        semester = last if entry == "last" else entry
-        if semester < cur:
-            continue
-        count += loads.get(semester, 0) * window < total
-    if request.get("balance_load"):
-        best = min(max(loads_of(a, cat).values()) for a in tied)
-        count += max(loads.values()) == best
     for code in request.get("early", []):
         count += assign[code] == min(a[code] for a in tied)
     for code in request.get("late", []):
@@ -174,7 +154,7 @@ def test_feasible_example_is_valid_and_optimal(cat):
     request = spec(
         rules=[{"type": "before", "a": "CS2100", "b": "CS2106", "strength": "must"},
                {"type": "in_sem", "course": "CS3230", "sem": 5, "strength": "prefer"}],
-        objective="earliest_graduation", light_sems=["last"], early=["CS2109S"],
+        objective="earliest_graduation", early=["CS2109S"],
     )
     out = run(request, cat)
     assert out["status"] == "PLAN"
@@ -182,7 +162,7 @@ def test_feasible_example_is_valid_and_optimal(cat):
     assert hard_rule_violations(request, assign, cat) == []
     tied, best = optimum(request, cat)
     assert out["last_semester"] == max(tied[0].values()) == 7
-    assert len(out["preferences_met"]) == best == 3
+    assert len(out["preferences_met"]) == best == 2
     assert out["preferences_not_met"] == []
     assert out["mc_per_semester"]["7"] == 4 and out["plan"]["6"] == []
 
@@ -276,11 +256,8 @@ def test_nothing_left_to_plan(cat):
 
 
 @pytest.mark.parametrize("extra", [
-    {"balance_load": True},
     {"late": ["CS2109S"]},
     {"early": ["CS3263"]},
-    {"light_sems": [4]},
-    {"light_sems": ["last", 5]},
     {"rules": [{"type": "apart", "a": "CS3263", "b": "CS4248", "strength": "prefer"},
                {"type": "same_sem", "a": "ST2334", "b": "CS2109S", "strength": "prefer"},
                {"type": "before", "a": "CS3230", "b": "CS2100", "strength": "prefer"}]},
@@ -344,7 +321,7 @@ def test_atap_other_courses_capped_at_eight_mc(cat):
 
 
 def test_output_is_deterministic(cat):
-    request = spec(objective="earliest_graduation", balance_load=True, light_sems=["last"])
+    request = spec(objective="earliest_graduation", early=["CS2109S"], late=["CS3263"])
     assert run(request, cat) == run(request, cat)
 
 
@@ -414,23 +391,6 @@ def test_min_total_mc_with_a_fixed_list_lets_preferences_decide(cat):
     assert sum(out["mc_per_semester"].values()) == 28
 
 
-def test_light_semester_bonus_picks_the_lowest_load(cat):
-    request = spec(objective="earliest_graduation", light_sems=[4])
-    out = run(request, cat)
-    best_plans, _, _ = expected_best_plans(request, cat)
-    expected = min(loads_of(a, cat).get(4, 0) for a in best_plans)
-    assert out["mc_per_semester"].get("4", 0) == expected
-
-
-@pytest.mark.parametrize("objective", ["earliest_graduation", "none", "min_total_mc"])
-def test_balance_load_reaches_the_smallest_possible_peak(cat, objective):
-    request = spec(objective=objective, balance_load=True)
-    out = run(request, cat)
-    tied, _ = optimum(request, cat)
-    assert max(out["mc_per_semester"].values()) == min(max(loads_of(a, cat).values()) for a in tied)
-    assert out["preferences_met"] == ["largest semester load is as small as possible"]
-
-
 def test_early_and_late_on_the_same_course_are_scored_separately(cat):
     request = pool_spec(["CS3230", "CS3231"], objective="none", early=["CS3230"], late=["CS3230"])
     out = run(request, cat)
@@ -447,26 +407,6 @@ def test_preferences_on_courses_outside_the_plan_are_not_met_and_add_nothing(cat
     assert "added_prerequisites" not in out
     assert sorted(out["preferences_not_met"]) == ["CS2100 as early as possible", "CS2100 in semester 4"]
     assert out["preferences_met"] == []
-
-
-@pytest.mark.parametrize("objective", ["earliest_graduation", "none"])
-@pytest.mark.parametrize("light", [[3], [4], ["last"]])
-def test_light_preference_never_pulls_in_unneeded_courses(cat, objective, light):
-    request = {"query": "plan", "current_sem": 3, "completed": list(BASE_DONE), "must_take": ["CS3263"],
-               "mc_max": 20, "objective": objective}
-    plain = run(request, cat)
-    with_light = run({**request, "light_sems": light}, cat)
-    assert len(with_light["added_prerequisites"]) == len(plain["added_prerequisites"]) == 2
-    assert sum(with_light["mc_per_semester"].values()) == sum(plain["mc_per_semester"].values()) == 12
-
-
-@pytest.mark.parametrize("objective", ["earliest_graduation", "none", "min_total_mc"])
-def test_light_preferences_on_an_empty_plan_are_not_met(cat, objective):
-    request = {"query": "plan", "current_sem": 3, "completed": ["CS2040S"], "must_take": ["CS2040S"],
-               "objective": objective, "light_sems": [4, "last"]}
-    out = run(request, cat)
-    assert out["plan"] == {} and out["preferences_met"] == []
-    assert len(out["preferences_not_met"]) == 2
 
 
 def test_atap_in_must_take_without_atap_sems_is_planned(cat):
@@ -616,7 +556,7 @@ def test_without_a_ranking_objective_the_plan_still_ends_as_early_as_possible(ca
 
 
 @pytest.mark.parametrize("request_maker", [
-    lambda: spec(objective="earliest_graduation", light_sems=["last", 4], balance_load=True),
+    lambda: spec(objective="earliest_graduation", early=["CS2109S"]),
     lambda: spec(objective="none", early=["CS3263"], late=["CS2100"]),
     lambda: spec(objective="min_total_mc",
                  rules=[{"type": "apart", "a": "CS3230", "b": "CS3263", "strength": "prefer"}]),
@@ -677,11 +617,6 @@ def random_request(rng):
     if rules:
         request["rules"] = rules
     request["objective"] = rng.choice(["earliest_graduation", "none", "min_total_mc"])
-    light = rng.sample(["last"] + list(range(cur, 9)), rng.randint(0, 2))
-    if light:
-        request["light_sems"] = light
-    if rng.random() < 0.5:
-        request["balance_load"] = True
     for key in ("early", "late"):
         picked = rng.sample(courses, rng.randint(0, 2))
         if picked:
@@ -691,7 +626,6 @@ def random_request(rng):
 
 def stated_preferences(request):
     return (sum(r["strength"] == "prefer" for r in request.get("rules", []))
-            + len(request.get("light_sems", [])) + bool(request.get("balance_load"))
             + len(request.get("early", [])) + len(request.get("late", [])))
 
 
@@ -742,7 +676,6 @@ def test_random_larger_requests_are_valid(cat, seed):
         "must_take": rng.sample(MUST, rng.randint(4, 7)),
         "mc_max": rng.choice([8, 12]),
         "objective": rng.choice(["earliest_graduation", "none", "min_total_mc"]),
-        "light_sems": ["last"], "balance_load": rng.random() < 0.5,
     }
     out = run(request, cat)
     assert out["status"] in ("PLAN", "NO_PLAN")
@@ -756,7 +689,7 @@ NEEDS_PREREQUISITES = [
      "objective": "earliest_graduation"},
     {"query": "plan", "current_sem": 3, "must_take": ["CS3263", "CS3230"], "mc_max": 8,
      "completed": ["CS1101S", "CS1231S", "CS2030S", "CS2040S", "MA1521", "MA1522"],
-     "objective": "none", "light_sems": [3, "last"], "balance_load": True},
+     "objective": "none", "early": ["CS3263"], "late": ["CS3230"]},
     {"query": "plan", "current_sem": 3, "must_take": ["CS3263"], "mc_max": 12,
      "completed": ["CS1101S", "CS1231S", "CS2030S", "CS2040S", "MA1521", "MA1522"],
      "objective": "min_total_mc", "early": ["CS3263"]},

@@ -2,14 +2,14 @@
 
 `answer()` builds a `PlanModel`, then solves in stages, fixing each optimum before the next:
 objective (earliest graduation or least MC) -> fewest added courses -> most preferences met ->
-lighter chosen semesters -> earliest finish. See docs/SOLVER_GUIDE.md sections 5-6.
+earliest finish. See docs/SOLVER_GUIDE.md sections 5-6.
 An infeasible model returns NO_PLAN with reasons from a capacity check or `explain.py`.
 """
 from __future__ import annotations
 
 from ortools.sat.python import cp_model
 
-from solver.common import ATAP_CODE, GENERIC_REASON, LAST_SEM
+from solver.common import ATAP_CODE, GENERIC_REASON
 from solver.explain import conflict_reasons
 from solver.model import PlanModel
 
@@ -106,31 +106,6 @@ def rule_literal(pm: PlanModel, rule: dict):
     return Soft(label, flag)
 
 
-def light_literal(pm: PlanModel, entry, total_other) -> Soft:
-    m = pm.model
-    fixed_window = pm.spec["objective"] == "none"
-    flag = m.NewBoolVar(f"light_{entry}")
-    window = LAST_SEM - pm.current + 1
-    m.AddImplication(flag, pm.is_last[pm.current - 1].Not())
-
-    def other(semester: int):
-        return pm.other_var[semester] if semester in pm.other_var else 0
-
-    if entry == "last":
-        for value in range(pm.current, LAST_SEM + 1):
-            n = window if fixed_window else value - pm.current + 1
-            m.Add(other(value) * n <= total_other - 1).OnlyEnforceIf([flag, pm.is_last[value]])
-        return Soft("last semester lighter than average", flag)
-    for value in range(pm.current, LAST_SEM + 1):
-        n = window if fixed_window else value - pm.current + 1
-        if fixed_window:
-            if value == pm.current:
-                m.Add(other(entry) * n <= total_other - 1).OnlyEnforceIf(flag)
-            continue
-        m.Add(other(entry) * n <= total_other - 1).OnlyEnforceIf([flag, pm.is_last[value]])
-    return Soft(f"semester {entry} lighter than average", flag)
-
-
 def answer(spec: dict, catalog) -> dict:
     """Q2 answer for a cleaned spec: PLAN (optimal) or NO_PLAN with reasons."""
     pm = PlanModel(spec, catalog)
@@ -163,20 +138,6 @@ def answer(spec: dict, catalog) -> dict:
         if rule["strength"] == "prefer":
             soft.append(rule_literal(pm, rule))
 
-    total_other = sum(pm.other_var.values())
-    light_entries = [e for e in spec["light_sems"] if e == "last" or e >= pm.current]
-    for entry in light_entries:
-        soft.append(light_literal(pm, entry, total_other))
-
-    if spec["balance_load"] and pm.other_var:
-        peak = m.NewIntVar(0, 200, "peak")
-        m.AddMaxEquality(peak, list(pm.other_var.values()))
-        status, solver = solve(pm, peak)
-        best_peak = int(round(solver.ObjectiveValue()))
-        flag = m.NewBoolVar("balance")
-        m.Add(peak <= best_peak).OnlyEnforceIf(flag)
-        soft.append(Soft("largest semester load is as small as possible", flag))
-
     wanted = [(code, True) for code in spec["early"]] + [(code, False) for code in spec["late"]]
     for code, is_early in wanted:
         word = "early" if is_early else "late"
@@ -195,23 +156,6 @@ def answer(spec: dict, catalog) -> dict:
     if variable:
         status, solver = solve(pm, sum(s.literal for s in variable), maximize=True)
         m.Add(sum(s.literal for s in variable) == int(round(solver.ObjectiveValue())))
-
-    bonus = []
-    for entry in light_entries:
-        if entry == "last":
-            last_load = m.NewIntVar(0, 200, "last_load")
-            for value in range(pm.current, LAST_SEM + 1):
-                other = pm.other_var.get(value)
-                if other is None:
-                    m.Add(last_load == 0).OnlyEnforceIf(pm.is_last[value])
-                else:
-                    m.Add(last_load == other).OnlyEnforceIf(pm.is_last[value])
-            bonus.append(last_load)
-        elif entry in pm.other_var:
-            bonus.append(pm.other_var[entry])
-    if bonus:
-        status, solver = solve(pm, sum(bonus))
-        m.Add(sum(bonus) == int(round(solver.ObjectiveValue())))
 
     if objective != "earliest_graduation":
         status, solver = solve(pm, pm.last)

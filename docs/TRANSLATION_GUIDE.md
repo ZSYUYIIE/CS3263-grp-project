@@ -53,7 +53,7 @@ OUTPUT FORMAT
 - Use only the fields listed below. Never add any other field.
 - Leave a field out when the request does not tell you its value. Never write null, "" or [] as a placeholder.
   Write [] only when the student says there are none (for example "I have not completed any module").
-- Write semesters and MC as JSON integers, and true/false as JSON booleans.
+- Write semesters and MC as JSON integers.
 - Write course codes in capitals without spaces (CS2040S, not "cs 2040s").
 
 STEP 1: CHOOSE THE QUESTION
@@ -90,8 +90,6 @@ FIELDS FOR "plan" ONLY
   (not 0, which would block ATAP itself).
 - "objective": "earliest_graduation" when the student wants to graduate as early as possible or take the fewest
   semesters; "min_total_mc" when they want the fewest total credits; leave it out otherwise.
-- "light_sems": list of semesters that should be lighter, for example [6]. A light final semester is ["last"].
-- "balance_load": true when the student wants the workload spread evenly or the heaviest semester kept small.
 - "early": courses the student wants as early as possible. "late": courses they want as late as possible.
 - "rules": list of rule objects, one per wish about where specific courses go:
     {"type": "before", "a": X, "b": Y, "strength": S}      X must be in an earlier semester than Y
@@ -115,8 +113,8 @@ JSON: {"query": "eligible", "target": "CS3263"}
 Request: I have not completed any module yet and I am in Y1S1. Plan my semesters so that I take CS1101S and CS1231S.
 JSON: {"query": "plan", "current_sem": 1, "completed": [], "must_take": ["CS1101S", "CS1231S"]}
 
-Request: I am in Y2S1. I have completed CS1101S, CS1231S, CS2030S, CS2040S, MA1521 and MA1522. I still have to take ST2334, CS2109S, CS3263, CS4248, CS3230, CS2100 and CS2106. I can take at most 8 MC per semester, and semester 6 is my exchange semester. I want to graduate as early as possible, with a light last semester. I would like to take CS2109S as early as possible. CS2100 must come before CS2106. If possible, I would like CS3230 in semester 5.
-JSON: {"query": "plan", "current_sem": 3, "completed": ["CS1101S", "CS1231S", "CS2030S", "CS2040S", "MA1521", "MA1522"], "must_take": ["ST2334", "CS2109S", "CS3263", "CS4248", "CS3230", "CS2100", "CS2106"], "mc_max": 8, "sem_caps": {"6": 0}, "objective": "earliest_graduation", "light_sems": ["last"], "early": ["CS2109S"], "rules": [{"type": "before", "a": "CS2100", "b": "CS2106", "strength": "must"}, {"type": "in_sem", "course": "CS3230", "sem": 5, "strength": "prefer"}]}
+Request: I am in Y2S1. I have completed CS1101S, CS1231S, CS2030S, CS2040S, MA1521 and MA1522. I still have to take ST2334, CS2109S, CS3263, CS4248, CS3230, CS2100 and CS2106. I can take at most 8 MC per semester, and semester 6 is my exchange semester. I want to graduate as early as possible. I would like to take CS2109S as early as possible. CS2100 must come before CS2106. If possible, I would like CS3230 in semester 5.
+JSON: {"query": "plan", "current_sem": 3, "completed": ["CS1101S", "CS1231S", "CS2030S", "CS2040S", "MA1521", "MA1522"], "must_take": ["ST2334", "CS2109S", "CS3263", "CS4248", "CS3230", "CS2100", "CS2106"], "mc_max": 8, "sem_caps": {"6": 0}, "objective": "earliest_graduation", "early": ["CS2109S"], "rules": [{"type": "before", "a": "CS2100", "b": "CS2106", "strength": "must"}, {"type": "in_sem", "course": "CS3230", "sem": 5, "strength": "prefer"}]}
 
 Request: I am in semester 5 now. I have completed CS1101S, CS1231S, CS2030S, CS2040S, CS2100, MA1521, MA1522, ST2334, CS2109S, CS2103T and CS2101. I want to take CS4248, CS3219, CS4218, CS4243, CS3263, CS3230 and CS2106, at most 3 modules per semester. Semester 6 is my ATAP semester and I do not want any other module in it. I prefer CS3230 and CS4243 early, and CS2106 late.
 JSON: {"query": "plan", "current_sem": 5, "completed": ["CS1101S", "CS1231S", "CS2030S", "CS2040S", "CS2100", "MA1521", "MA1522", "ST2334", "CS2109S", "CS2103T", "CS2101"], "must_take": ["CS4248", "CS3219", "CS4218", "CS4243", "CS3263", "CS3230", "CS2106"], "mc_max": 12, "sem_caps": {"6": 1}, "atap_sems": [6], "early": ["CS3230", "CS4243"], "late": ["CS2106"]}
@@ -138,11 +136,9 @@ JSON: {"query": "plan", "current_sem": 4, "completed": ["CS1101S", "CS1231S", "C
 | `unsupported` | both | no | list of strings | any wish no field can hold | there is no such wish |
 | `mc_max` | Q2 | no | integer | "at most N MC / modules per semester" | no limit stated (the solver uses 20) |
 | `mc_min` | Q2 | no | integer | "at least N MC each semester" | not stated |
-| `sem_caps` | Q2 | no | object (string key to integer) | exchange, NOC, a lighter semester | not stated |
+| `sem_caps` | Q2 | no | object (string key to integer) | exchange, NOC, a limit for one semester | not stated |
 | `atap_sems` | Q2 | no | list of integers | "ATAP in semester 6" | ATAP not mentioned |
 | `objective` | Q2 | no | enum | "graduate as early as possible" | no such wish |
-| `light_sems` | Q2 | no | list of integers or `"last"` | "light last semester" | no such wish |
-| `balance_load` | Q2 | no | boolean | "spread evenly" | no such wish |
 | `early`, `late` | Q2 | no | list of codes | "X as early as possible" | no such wish |
 | `rules` | Q2 | no | list of rule objects | "X before Y", "Z in semester 5" | no such wish |
 
@@ -169,9 +165,6 @@ the student did not state is correct, and a spec that invents a value is wrong.
 | "I will do ATAP, not sure when" (current_sem 5) | `"atap_sems": [5, 6, 7, 8]` |
 | "graduate as early as possible", "fewest semesters" | `"objective": "earliest_graduation"` |
 | "fewest total credits" | `"objective": "min_total_mc"` |
-| "a light last semester" | `"light_sems": ["last"]` |
-| "semester 6 should be light" | `"light_sems": [6]` |
-| "spread the workload evenly" | `"balance_load": true` |
 | "I want X as early as possible" | `"early": ["X"]` |
 | "I want X as late as possible" | `"late": ["X"]` |
 | "X must be before Y" | rule `before`, `a` = X, `b` = Y, `strength` = `"must"` |
@@ -272,7 +265,7 @@ Solver reply to this spec: `MISSING_INFO` (missing: completed)
 
 The main example, with caps, an objective, preferences and rules together:
 
-> I am in Y2S1. I have completed CS1101S, CS1231S, CS2030S, CS2040S, MA1521 and MA1522. I still have to take ST2334, CS2109S, CS3263, CS4248, CS3230, CS2100 and CS2106. I can take at most 8 MC per semester, and semester 6 is my exchange semester. I want to graduate as early as possible, with a light last semester. I would like to take CS2109S as early as possible. CS2100 must come before CS2106. If possible, I would like CS3230 in semester 5.
+> I am in Y2S1. I have completed CS1101S, CS1231S, CS2030S, CS2040S, MA1521 and MA1522. I still have to take ST2334, CS2109S, CS3263, CS4248, CS3230, CS2100 and CS2106. I can take at most 8 MC per semester, and semester 6 is my exchange semester. I want to graduate as early as possible. I would like to take CS2109S as early as possible. CS2100 must come before CS2106. If possible, I would like CS3230 in semester 5.
 
 ```json
 {
@@ -283,7 +276,6 @@ The main example, with caps, an objective, preferences and rules together:
   "mc_max": 8,
   "sem_caps": {"6": 0},
   "objective": "earliest_graduation",
-  "light_sems": ["last"],
   "early": ["CS2109S"],
   "rules": [
     {"type": "before", "a": "CS2100", "b": "CS2106", "strength": "must"},
@@ -350,9 +342,9 @@ Minimum credits, a hard in-semester rule and a minimum load:
 
 Solver reply to this spec: `PLAN`
 
-A balanced workload and a soft "apart" rule, with a limit given in modules:
+A soft "apart" rule, with a limit given in modules:
 
-> I am in Y2S2. Completed: CS1101S, CS1231S, CS2030S, CS2040S, MA1521, MA1522, ST2334 and CS2109S. I need CS3263, CS3230 and CS4248 and I want my workload spread evenly. I would rather not take CS3230 and CS4248 in the same semester. I can take at most 4 modules a semester.
+> I am in Y2S2. Completed: CS1101S, CS1231S, CS2030S, CS2040S, MA1521, MA1522, ST2334 and CS2109S. I need CS3263, CS3230 and CS4248. I would rather not take CS3230 and CS4248 in the same semester. I can take at most 4 modules a semester.
 
 ```json
 {
@@ -361,7 +353,6 @@ A balanced workload and a soft "apart" rule, with a limit given in modules:
   "completed": ["CS1101S", "CS1231S", "CS2030S", "CS2040S", "MA1521", "MA1522", "ST2334", "CS2109S"],
   "must_take": ["CS3263", "CS3230", "CS4248"],
   "mc_max": 16,
-  "balance_load": true,
   "rules": [
     {"type": "apart", "a": "CS3230", "b": "CS4248", "strength": "prefer"}
   ]
@@ -463,7 +454,6 @@ Solver reply to this spec: `OUT_OF_SCOPE`
 | an invented field | `INVALID_SPEC` |
 | an invented key inside a rule | `INVALID_SPEC` |
 | a rule type or strength that does not exist | `INVALID_SPEC` |
-| a boolean written as text | `INVALID_SPEC` |
 | a plan-only field in a Q1 spec | the field is ignored and the answer carries a warning |
 | `sem_caps` of 0 for the ATAP semester | `NO_PLAN`: ATAP cannot be placed in a blocked semester |
 
@@ -621,7 +611,7 @@ Solver reply (shortened):
 }
 ```
 
-**A boolean written as text:**
+**A number written as text:**
 
 ```json
 {
@@ -629,7 +619,7 @@ Solver reply (shortened):
   "current_sem": 3,
   "completed": [],
   "must_take": [],
-  "balance_load": "yes"
+  "mc_max": "twelve"
 }
 ```
 
@@ -638,7 +628,7 @@ Solver reply (shortened):
 ```json
 {
   "status": "INVALID_SPEC",
-  "errors": ["balance_load must be true or false"]
+  "errors": ["mc_max must be a positive integer"]
 }
 ```
 

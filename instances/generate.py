@@ -142,10 +142,6 @@ class Gen:
             spec["early"] = [r.choice(must)]
         if r.random() < 0.2:
             spec["late"] = [r.choice([c for c in must if c not in spec.get("early", [])] or must)]
-        if r.random() < 0.25:
-            spec["light_sems"] = ["last"]
-        if r.random() < 0.2:
-            spec["balance_load"] = True
         rules = []
         if r.random() < 0.35 and len(must) >= 2:
             a, b = r.sample(must, 2)
@@ -360,10 +356,6 @@ def render(spec, r) -> str:
             out.append(r.choice(["I want to graduate as early as possible.", "Please use the fewest semesters."]))
         elif obj == "min_total_mc":
             out.append("I want the fewest total credits.")
-        if spec.get("light_sems") == ["last"]:
-            out.append("I'd like a light last semester.")
-        if spec.get("balance_load"):
-            out.append("Please spread the workload evenly.")
         for c in spec.get("early", []):
             out.append(f"I would like {c} as early as possible.")
         for c in spec.get("late", []):

@@ -63,8 +63,7 @@ could need.
 | 11 | ATAP (CP3880, 12 MC) | only in allowed semesters; never the last one used; other courses that semester ≤ min(8, cap); its 12 MC is outside the cap |
 
 **Soft preferences** (counted, never allowed to break a hard rule; `SOLVER_GUIDE.md` §5): `prefer`
-versions of the four rules, light semesters (below the average load), balanced load (smallest
-peak), and a course as early or as late as possible.
+versions of the four rules, and a course as early or as late as possible.
 
 **Objective: lexicographic, solved in stages.** Each stage is solved, then its value is fixed before
 the next stage:
@@ -73,7 +72,7 @@ the next stage:
 2. **fewest added courses** (courses beyond the must-take list);
 3. **most preferences met.**
 
-Two tie-breaks follow (lighter chosen semesters, then an earlier finish); they aren't graded. Stage 1
+One tie-break follows (an earlier finish); it isn't graded. Stage 1
 always wins, so a later graduation is never traded for more preferences.
 
 ## 4. When no plan exists

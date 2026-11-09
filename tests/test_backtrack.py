@@ -42,16 +42,16 @@ def test_variants_do_not_change_the_answer_quality_on_the_feasible_example(cat, 
     request = spec(
         rules=[{"type": "before", "a": "CS2100", "b": "CS2106", "strength": "must"},
                {"type": "in_sem", "course": "CS3230", "sem": 5, "strength": "prefer"}],
-        objective="earliest_graduation", light_sems=["last"], early=["CS2109S"],
+        objective="earliest_graduation", early=["CS2109S"],
     )
     got, _ = agree(request, cat, variant)
-    assert got["last_semester"] == 7 and len(got["preferences_met"]) == 3
+    assert got["last_semester"] == 7 and len(got["preferences_met"]) == 2
 
 
 @pytest.mark.parametrize("variant", NAMES)
 def test_no_plan_example_agrees(cat, variant):
     request = spec(
-        objective="earliest_graduation", light_sems=["last"], early=["CS2109S"],
+        objective="earliest_graduation", early=["CS2109S"],
         rules=[{"type": "in_sem", "course": "CS4248", "sem": 4, "strength": "must"},
                {"type": "in_sem", "course": "CS3263", "sem": 4, "strength": "must"},
                {"type": "in_sem", "course": "CS2100", "sem": 3, "strength": "must"},
@@ -77,8 +77,8 @@ def test_infeasible_pool_requests_agree(cat, variant, seed):
 
 EXTRAS_CASES = [
     spec(objective="earliest_graduation"),
-    spec(objective="min_total_mc", light_sems=["last"]),
-    spec(objective="none", balance_load=True, early=["CS2109S"]),
+    spec(objective="min_total_mc", late=["CS3263"]),
+    spec(objective="none", early=["CS2109S"]),
     spec(objective="earliest_graduation", must_take=["CS3263", "CS2106"], mc_max=12),
     spec(objective="min_total_mc", must_take=["CS4248", "CS3230"], mc_max=8,
          rules=[{"type": "before", "a": "CS3230", "b": "CS4248", "strength": "prefer"}]),
@@ -98,10 +98,9 @@ def test_atap_request_agrees(cat):
     assert any("CP3880" in courses for courses in got["plan"].values())
 
 
-def test_light_and_balance_preferences_agree_with_extra_variants(cat):
+def test_early_and_late_preferences_agree_with_extra_variants(cat):
     for variant in ("fc", "mac"):
-        request = pool_spec(POOL[:4], objective="none", light_sems=["last", 6],
-                            balance_load=True, late=["CS2109S"], mc_max=12)
+        request = pool_spec(POOL[:4], objective="none", early=["CS2100"], late=["CS2109S"], mc_max=12)
         agree(request, cat, variant)
 
 
@@ -149,7 +148,7 @@ def test_forward_checking_and_mac_search_no_more_nodes_than_plain(cat):
 
 
 def test_tiny_time_limit_gives_timed_out(cat):
-    request = pool_spec(POOL[:6], objective="earliest_graduation", balance_load=True, mc_max=8)
+    request = pool_spec(POOL[:6], objective="earliest_graduation", mc_max=8)
     got, stats = solve_with_stats(request, cat, variant="plain", time_limit=0.0001)
     assert got["status"] == "TIMED_OUT" and got["reasons"]
     assert stats["timed_out"] is True
@@ -162,7 +161,7 @@ def test_unknown_variant_is_rejected(cat):
 
 @pytest.mark.parametrize("variant", NAMES)
 def test_answers_are_deterministic_and_json_serialisable(cat, variant):
-    request = pool_spec(POOL[:4], objective="earliest_graduation", light_sems=["last"], balance_load=True)
+    request = pool_spec(POOL[:4], objective="earliest_graduation", early=["CS2100"])
     first, _ = solve_with_stats(request, cat, variant=variant)
     second, _ = solve_with_stats(request, cat, variant=variant)
     assert first == second
@@ -170,7 +169,7 @@ def test_answers_are_deterministic_and_json_serialisable(cat, variant):
 
 
 def test_input_is_not_mutated(cat):
-    request = pool_spec(POOL[:4], objective="none", light_sems=["last"], early=["CS2109S"])
+    request = pool_spec(POOL[:4], objective="none", early=["CS2109S"])
     before = json.dumps(request, sort_keys=True)
     solve_with_stats(request, cat, variant="mac")
     assert json.dumps(request, sort_keys=True) == before

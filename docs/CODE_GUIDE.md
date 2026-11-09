@@ -60,7 +60,7 @@ cap, one blocked semester and some preferences. Steps 1–4 are the same as Q1, 
 |---|---|---|
 | 5 | `solver/objectives.py` → `answer()` | Builds the model and then optimises in stages (below). |
 | 6 | `solver/model.py` → `PlanModel` | Turns the request into a CP-SAT model. There is one yes/no variable per *(course, semester)*. Rules added: each course is offered in that term, prerequisites are done in an earlier semester, mutually exclusive courses are never both taken, credits fit per semester, and must-rules hold. Courses the plan needs but can never reach are caught early by `check_reachable()`. |
-| 7 | `objectives.py` | **Staged optimisation.** Each stage solves, then locks its best value before the next: (1) the objective, e.g. graduate as early as possible; (2) fewest extra courses; (3) as many "prefer" wishes as possible; (4) lighter chosen semesters; (5) if graduating early wasn't already the goal, finish as early as possible. |
+| 7 | `objectives.py` | **Staged optimisation.** Each stage solves, then locks its best value before the next: (1) the objective, e.g. graduate as early as possible; (2) fewest extra courses; (3) as many "prefer" wishes as possible; (4) if graduating early wasn't already the goal, finish as early as possible. |
 | 8a | plan found | `build_answer()` returns `PLAN`: courses per semester, credits, and which wishes were met. |
 | 8b | no plan | `solver/explain.py` → `find_conflict()` switches rules on and off, using CP-SAT "assumption" literals, until it finds a **smallest set of rules that cannot all hold**. It returns `NO_PLAN` with those rules in plain words. |
 

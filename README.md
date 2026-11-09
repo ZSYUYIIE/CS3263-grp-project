@@ -157,7 +157,7 @@ Pipeline B translation guide and prompt: [`docs/TRANSLATION_GUIDE.md`](docs/TRAN
 | `atap_sems` | Q2 | semesters where ATAP (`CP3880`, 12 MC) may be planned; giving the field asks for ATAP |
 | `rules` | Q2 | list of `{"type": before / in_sem / apart / same_sem, "strength": must / prefer, ...}` |
 | `objective` | Q2 | `earliest_graduation`, `min_total_mc` or `none` |
-| `light_sems`, `balance_load`, `early`, `late` | Q2 | preferences: lighter semesters (`"last"` or a number), smallest peak load, earlier or later courses |
+| `early`, `late` | Q2 | preferences: earlier or later courses |
 
 A field the student did not state is left out of the spec. `null`, `""` and `[]` are never used as placeholders;
 `[]` is written only when the student says there are none. Field values of the wrong type or unknown fields give
@@ -191,9 +191,8 @@ conflicting rules.
 1. Hard rules. No solution gives `NO_PLAN`.
 2. The objective (`earliest_graduation` minimises the last semester, `min_total_mc` minimises total MC); fixed.
 3. Fewest added courses; fixed.
-4. Preferences: the number met among `prefer` rules, `light_sems`, `balance_load`, `early` and `late`; fixed.
-5. Lower MC in the light semesters.
-6. Earliest last semester (only when the objective is not `earliest_graduation`; a presentation tie-break).
+4. Preferences: the number met among `prefer` rules, `early` and `late`; fixed.
+5. Earliest last semester (only when the objective is not `earliest_graduation`; a presentation tie-break).
 
 ### Files
 

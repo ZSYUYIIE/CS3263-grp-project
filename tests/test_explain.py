@@ -27,7 +27,7 @@ def must(kind, **fields):
 
 
 NO_PLAN_EXAMPLE = spec(
-    objective="earliest_graduation", light_sems=["last"], early=["CS2109S"],
+    objective="earliest_graduation", early=["CS2109S"],
     rules=[must("in_sem", course="CS4248", sem=4), must("in_sem", course="CS3263", sem=4),
            must("in_sem", course="CS2100", sem=3), must("before", a="CS2100", b="CS2106"),
            {"type": "in_sem", "course": "CS3230", "sem": 5, "strength": "prefer"}],

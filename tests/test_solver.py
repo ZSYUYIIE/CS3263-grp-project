@@ -97,7 +97,6 @@ def test_plan_defaults_are_filled(cat):
     assert cleaned["mc_max"] == 20
     assert cleaned["objective"] == "none"
     assert cleaned["sem_caps"] == {} and cleaned["rules"] == []
-    assert cleaned["balance_load"] is False and cleaned["light_sems"] == []
     assert "atap_sems" not in cleaned and "mc_min" not in cleaned
 
 
@@ -114,8 +113,6 @@ def test_full_plan_spec_is_accepted(cat):
             {"type": "same_sem", "a": "ST2334", "b": "CS2109S", "strength": "prefer"},
         ],
         objective="earliest_graduation",
-        light_sems=["last", 8],
-        balance_load=True,
         early=["CS2109S"],
         late=["CS3263"],
         unsupported=["no 8am classes"],
@@ -135,8 +132,6 @@ def test_full_plan_spec_is_accepted(cat):
     ({"sem_caps": {"6": -1}}, "non-negative integer"),
     ({"atap_sems": []}, "non-empty list"),
     ({"atap_sems": [2]}, "before current_sem"),
-    ({"light_sems": ["first"]}, "light_sems entry"),
-    ({"balance_load": "yes"}, "balance_load must be true or false"),
     ({"early": "CS2109S"}, "early must be a list"),
     ({"current_sem": "three"}, "current_sem must be an integer"),
     ({"rules": [{"type": "after", "a": "CS2100", "b": "CS2106", "strength": "must"}]}, "rules[0].type"),
@@ -154,7 +149,6 @@ def test_structure_errors(cat, changes, text):
     {"current_sem": 10},
     {"sem_caps": {"9": 0}},
     {"atap_sems": [9]},
-    {"light_sems": [0]},
     {"rules": [{"type": "in_sem", "course": "CS3263", "sem": 12, "strength": "must"}]},
 ])
 def test_out_of_range_semesters_are_content_problems(cat, changes):
@@ -408,7 +402,7 @@ def test_q2_missing_current_sem_with_atap_is_missing_info(cat):
 
 
 OPTIONAL_Q2_FIELDS = ["objective", "mc_min", "mc_max", "sem_caps", "atap_sems", "rules",
-                      "light_sems", "balance_load", "early", "late", "programme", "unsupported"]
+                      "early", "late", "programme", "unsupported"]
 
 
 @pytest.mark.parametrize("field", OPTIONAL_Q2_FIELDS)
@@ -432,7 +426,6 @@ def test_duplicate_entries_are_removed(cat):
     errors, _, _, cleaned, _ = validate(
         q2_spec(
             must_take=["ST2334", "st2334", "CS2109S"],
-            light_sems=[4, 4, "last", "last"],
             early=["CS2109S", "CS2109S"],
             late=["ST2334", "st2334"],
             rules=[
@@ -445,7 +438,6 @@ def test_duplicate_entries_are_removed(cat):
     )
     assert errors == []
     assert cleaned["must_take"] == ["ST2334", "CS2109S"]
-    assert cleaned["light_sems"] == [4, "last"]
     assert cleaned["early"] == ["CS2109S"] and cleaned["late"] == ["ST2334"]
     assert len(cleaned["rules"]) == 1
     assert cleaned["completed"] == ["CS1101S"]
@@ -476,12 +468,9 @@ def test_duplicate_entries_are_removed(cat):
     ({"rules": [{"type": "in_sem", "course": "CS3263", "strength": "must"}]}, "rules[0].sem must be an integer"),
     ({"rules": [{"type": "in_sem", "course": "CS3263", "sem": 4, "strength": "must", "a": "X"}]}, "unknown key 'a'"),
     ({"rules": [{"type": "before", "a": "CS2100", "strength": "must"}]}, "rules[0].b must be a course code"),
-    ({"light_sems": "last"}, "light_sems must be a list"),
-    ({"light_sems": [True]}, "light_sems entry must be an integer"),
     ({"early": [1]}, "early must be a list of course codes"),
     ({"late": "CS3263"}, "late must be a list of course codes"),
     ({"objective": 5}, "objective must be one of"),
-    ({"balance_load": 1}, "balance_load must be true or false"),
     ({"unsupported": "no mornings"}, "unsupported must be a list of strings"),
     ({"unsupported": [1]}, "unsupported must be a list of strings"),
     ({"programme": 5}, "programme must be a string"),
@@ -624,7 +613,7 @@ def test_every_status_is_json_serialisable(cat, make):
 
 @pytest.mark.parametrize("make", [
     lambda: q1_spec(),
-    lambda: q2_spec(objective="earliest_graduation", light_sems=["last"], balance_load=True, early=["CS3263"]),
+    lambda: q2_spec(objective="earliest_graduation", early=["CS3263"]),
     lambda: q2_spec(target="CS3263", rules=[{"type": "before", "a": "CS2109S", "b": "CS3263", "strength": "prefer"}]),
 ])
 def test_run_does_not_change_its_input_and_is_repeatable(cat, make):

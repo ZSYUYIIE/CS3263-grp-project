@@ -54,8 +54,7 @@ WHAT TO OPTIMISE, in this order
 1. If the student wants to graduate as early as possible: the smallest last semester used. If they want the
    fewest total credits: the smallest total MC. Otherwise no ranking here.
 2. The fewest added courses.
-3. The most of the student's soft wishes met ("prefer", "ideally", "if possible", "as early/late as possible",
-   "light last semester", "spread evenly").
+3. The most of the student's soft wishes met ("prefer", "ideally", "if possible", "as early/late as possible").
 Never trade a better step 1 or 2 for more soft wishes.
 
 WHEN TO REFUSE

@@ -456,16 +456,6 @@ class Search:
     def extras_count(self, planned: dict) -> int:
         return sum(1 for c in planned if c not in self.required)
 
-    def other_loads(self, planned: dict) -> dict:
-        loads = {s: 0 for s in self.sems}
-        for code, s in planned.items():
-            if code != ATAP_CODE:
-                loads[s] += self.mc[code]
-        return loads
-
-    def peak_of(self, planned: dict) -> int:
-        return max(self.other_loads(planned).values())
-
     def last_bound(self, assign: dict, dom: dict) -> int:
         bound = self.current - 1
         for code in self.order:
@@ -485,10 +475,6 @@ class Search:
     def extras_bound(self, assign: dict, dom: dict) -> int:
         return sum(1 for c in self.extras if assign.get(c))
 
-    def peak_bound(self, assign: dict, dom: dict) -> int:
-        planned = {c: t for c, t in assign.items() if t}
-        return max(self.other_loads(planned).values())
-
     def sem_bound(self, code: str, low: bool):
         def bound(assign: dict, dom: dict) -> int:
             if code in assign:
@@ -496,26 +482,6 @@ class Search:
             nonzero = [t for t in dom[code] if t]
             return min(nonzero) if low else max(nonzero)
         return bound
-
-    def light_entries(self) -> list:
-        return [e for e in self.spec["light_sems"] if e == "last" or e >= self.current]
-
-    def bonus_terms(self) -> list:
-        return [e for e in self.light_entries() if e == "last" or e in self.sems]
-
-    def bonus_leaf(self, planned: dict) -> int:
-        loads = self.other_loads(planned)
-        last = self.last_of(planned)
-        total = 0
-        for entry in self.bonus_terms():
-            total += loads.get(last, 0) if entry == "last" and last >= self.current else (
-                0 if entry == "last" else loads[entry])
-        return total
-
-    def bonus_bound(self, assign: dict, dom: dict) -> int:
-        planned = {c: t for c, t in assign.items() if t}
-        loads = self.other_loads(planned)
-        return sum(loads[e] for e in self.bonus_terms() if e != "last")
 
     def build_prefs(self) -> list[Pref]:
         prefs: list[Pref] = []
@@ -551,12 +517,6 @@ class Search:
                 prefs.append(Pref("const", label, False))
             else:
                 prefs.append(Pref("pair", label, rel=kind, a=a, b=b))
-        for entry in self.light_entries():
-            label = ("last semester lighter than average" if entry == "last"
-                     else f"semester {entry} lighter than average")
-            prefs.append(Pref("light", label, entry=entry))
-        if self.spec["balance_load"] and self.sems:
-            prefs.append(Pref("balance", "largest semester load is as small as possible"))
         wanted = [(c, True) for c in self.spec["early"]] + [(c, False) for c in self.spec["late"]]
         for code, early in wanted:
             label = f"{code} as {'early' if early else 'late'} as possible"
@@ -567,16 +527,6 @@ class Search:
             else:
                 prefs.append(Pref("sem", label, code=code, early=early))
         return prefs
-
-    def light_holds(self, entry, planned: dict) -> bool:
-        last = self.last_of(planned)
-        if last < self.current:
-            return False
-        loads = self.other_loads(planned)
-        total = sum(loads.values())
-        window = LAST_SEM - self.current + 1 if self.objective == "none" else last - self.current + 1
-        semester = last if entry == "last" else entry
-        return loads.get(semester, 0) * window <= total - 1
 
     def holds(self, pref: Pref, planned: dict) -> bool:
         kind, d = pref.kind, pref.data
@@ -589,10 +539,6 @@ class Search:
             if not a or not b:
                 return False
             return {"before": a + 1 <= b, "apart": a != b, "same_sem": a == b}[d["rel"]]
-        if kind == "light":
-            return self.light_holds(d["entry"], planned)
-        if kind == "balance":
-            return self.peak_of(planned) <= pref.target
         return planned.get(d["code"]) == pref.target
 
     def possible(self, pref: Pref, assign: dict, dom: dict) -> bool:
@@ -608,10 +554,6 @@ class Search:
             rel = {"before": lambda x, y: x + 1 <= y, "apart": lambda x, y: x != y,
                    "same_sem": lambda x, y: x == y}[d["rel"]]
             return any(rel(x, y) for x in xs for y in ys)
-        if kind == "light":
-            return True
-        if kind == "balance":
-            return self.peak_bound(assign, dom) <= pref.target
         code = d["code"]
         return assign[code] == pref.target if code in assign else pref.target in dom[code]
 
@@ -746,11 +688,7 @@ class Search:
 
         prefs = self.build_prefs()
         for pref in prefs:
-            if pref.kind == "balance":
-                stage = Stage("min", self.peak_of, self.peak_bound)
-                self.optimize(stage, fixed)
-                pref.target = stage.best
-            elif pref.kind == "sem":
+            if pref.kind == "sem":
                 code, early = pref.data["code"], pref.data["early"]
                 stage = Stage("min" if early else "max", lambda planned, c=code: planned[c],
                               self.sem_bound(code, early))
@@ -760,11 +698,6 @@ class Search:
             stage = Stage("max", lambda planned: sum(self.holds(p, planned) for p in prefs),
                           lambda assign, dom: sum(self.possible(p, assign, dom) for p in prefs),
                           len(prefs))
-            final = self.optimize(stage, fixed)
-            fixed.append((stage, stage.best))
-
-        if self.bonus_terms():
-            stage = Stage("min", self.bonus_leaf, self.bonus_bound, 0)
             final = self.optimize(stage, fixed)
             fixed.append((stage, stage.best))
 

@@ -55,9 +55,9 @@ def must_rule_courses(spec) -> set[str]:
 def check_plan(spec: dict, plan) -> list[str]:
     v: list[str] = []
     plan = normalise_plan(plan)
-    k = spec["current_sem"]
     done = set(spec.get("completed") or [])
     must = set(spec.get("must_take") or [])
+    k = spec["current_sem"]
     sem_of: dict[str, int] = {}
     for s, codes in plan.items():
         if codes and not (k <= s <= 8):
@@ -149,38 +149,20 @@ def measures(spec, plan) -> dict:
             "added": sorted(c for c in codes if c not in required)}
 
 
-def loads(plan, k, last):
-    plan = normalise_plan(plan)
-    return {s: sum(C[c]["mc"] or 0 for c in plan.get(s, []) if c in C and c != ATAP) for s in range(k, last + 1)}
-
-
 def preferences_met(spec, plan, gold_plan) -> int:
-    """Soft wishes met, by SOLVER_GUIDE section 5. early / late / balance_load are relative to the best
+    """Soft wishes met, by SOLVER_GUIDE section 5. early / late are relative to the best
     value among tied plans, which only the solver knows; the gold plan stands in for it (met if at least as
     good as the gold plan). This can only under-count the LLM when the gold plan itself missed the wish."""
     plan_n, gold_n = normalise_plan(plan), normalise_plan(gold_plan)
     sem_of = {c: s for s, cs in plan_n.items() for c in cs}
     gsem = {c: s for s, cs in gold_n.items() for c in cs}
     done = set(spec.get("completed") or [])
-    k = spec["current_sem"]
     met = 0
     for r in spec.get("rules") or []:
         if r.get("strength") == "prefer":
             if r["type"] == "in_sem" and r["course"] in done:
                 continue
             met += rule_holds(r, sem_of, done)
-    used = [s for s, cs in plan_n.items() if cs]
-    if used:
-        last = max(used) if spec.get("objective", "none") != "none" else 8
-        ld = loads(plan, k, max(last, max(used)))
-        window = loads(plan, k, last)
-        avg = sum(window.values()) / len(window)
-        for s in spec.get("light_sems") or []:
-            s = max(used) if s == "last" else s
-            if s >= k and ld.get(s, 0) < avg:
-                met += 1
-        if spec.get("balance_load") and gold_n:
-            met += max(ld.values()) <= max(loads(gold_plan, k, max(int(x) for x in gold_n)).values())
     for c in spec.get("early") or []:
         met += c in done or (c in sem_of and c in gsem and sem_of[c] <= gsem[c])
     for c in spec.get("late") or []:
