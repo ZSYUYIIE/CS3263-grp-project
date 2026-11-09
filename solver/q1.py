@@ -5,6 +5,7 @@ answer is no, `Catalog.reachable` to say whether the student could ever become e
 """
 from __future__ import annotations
 
+from m1_data.catalog import data_limited
 from solver.common import term_of
 
 
@@ -27,9 +28,16 @@ def answer(spec: dict, catalog) -> dict:
 def add_reachability(result: dict, spec: dict, catalog, ok: bool) -> None:
     if not ok and spec["target"] not in spec["completed"]:
         reachable, note = catalog.reachable(spec["target"], spec["completed"])
-        result["can_still_become_eligible"] = reachable
-        if not reachable:
-            result["never_eligible_because"] = note
+        if not reachable and data_limited([note]):
+            # Missing data, not a rule: don't claim the student can never take it.
+            result["can_still_become_eligible"] = "unknown"
+            result["unknown_because"] = note
+        else:
+            result["can_still_become_eligible"] = reachable
+            if not reachable:
+                result["never_eligible_because"] = note
+    if data_limited(result.get("reasons")) or data_limited([result.get("unknown_because")]):
+        result["data_limited"] = True
     if spec["unsupported"]:
         result["not_applied"] = list(spec["unsupported"])
 

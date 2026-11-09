@@ -108,9 +108,9 @@ conditions are resolved for in `data/config/student_context.json`. Hand fixes go
 
 | | |
 |---|---|
-| Courses with full data | 306 (all CS 1000–4999 + prerequisite closure + referenced) |
-| Rule strings parsed | 918 / 918, 0 errors |
-| Cross-check with NUSMods prereqTree | 198 match, 31 differ (all explained in `PARSE_REPORT.md`) |
+| Courses with full data | 393 (all SoC prefixes 1000–4999 + prerequisite closure of these and of every course they reference) |
+| Rule strings parsed | all, 0 parse errors |
+| Cross-check with NUSMods prereqTree | 255 match, 37 differ (all explained in `PARSE_REPORT.md`) |
 | Invariant checks | pass |
 | Hand spot-check | **to do:** `data/manual/SPOT_CHECK.md` (before generating instances) |
 

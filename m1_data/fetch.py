@@ -5,8 +5,20 @@ Scope comes from data/config/scope.json:
              is within [seed_level_min, seed_level_max], plus seed_codes.
   2. close = repeatedly add every course named in a fetched course's
              prerequisites (transitive closure).
-  3. refs  = add (without expanding) courses named in preclusions and
-             corequisites, so a transcript containing them can be checked.
+  3. refs  = add courses named in preclusions and corequisites, so a
+             transcript containing them can be checked.
+Wildcards in a prerequisite (CS2040%, ST%, NM1%) are not followed: they
+mean "any course with this prefix", their matches are alternatives in an OR,
+and following them pulls in most of FASS. build expands them against the AY
+module list, and matches that were not fetched become stubs.
+With expand_all_refs (default true) the closure in step 2 also runs over the
+courses added in step 3, so every course named in any rule of a seed or
+prerequisite-chain course has full details, and so do all of their
+prerequisites. Preclusions of those referenced-only courses are not followed
+further (that would pull in most of NUS through chains of preclusions), so
+their stubs are only ever names. Without expand_all_refs, the referenced
+courses' own prerequisites become "outside fetch scope" stubs, which the
+planner can only treat as unknown (m1_data.catalog.DATA_GAP_TAG).
 
 Raw files are written to data/raw/AY<ay>/modules/<CODE>.json with the
 per-lesson timetable removed (it is large and not needed). A manifest with
@@ -68,11 +80,14 @@ def _slim(mod: dict) -> dict:
 
 
 def _prereq_refs(mod: dict) -> set[str]:
+    """Course codes named in the prerequisite, wildcards ('CS2040%:D') skipped."""
     refs: set[str] = set()
 
     def walk(t):
         if isinstance(t, str):
-            refs.update(CODE_RE.findall(t.split(":")[0].replace("%", "")))
+            item = t.split(":")[0]
+            if "%" not in item:
+                refs.update(CODE_RE.findall(item))
         elif isinstance(t, list):
             for x in t:
                 walk(x)
@@ -81,7 +96,8 @@ def _prereq_refs(mod: dict) -> set[str]:
                 walk(v)
 
     walk(mod.get("prereqTree"))
-    refs.update(CODE_RE.findall(mod.get("prerequisiteRule", "") or ""))
+    rule = mod.get("prerequisiteRule", "") or ""
+    refs.update(CODE_RE.findall(re.sub(r"[A-Z]{2,4}\d*%", "", rule)))
     return refs
 
 
@@ -112,11 +128,13 @@ def fetch(workers: int = 8) -> dict:
         json.dumps(module_list, ensure_ascii=False, separators=(",", ":")), encoding="utf-8", newline="\n")
     exclude = set(cfg.get("exclude_codes", []))
 
+    expand_all = cfg.get("expand_all_refs", True)
+
     reason: dict[str, str] = {}
     for m in module_list:
         c = m["moduleCode"]
         lvl = _level(c)
-        if (any(c.startswith(p) and re.match(p + r"\d", c) for p in cfg["seed_prefixes"])
+        if (any(re.match(p + r"\d", c) for p in cfg["seed_prefixes"])
                 and lvl is not None
                 and cfg["seed_level_min"] <= lvl <= cfg["seed_level_max"]):
             reason[c] = "seed:prefix"
@@ -127,6 +145,7 @@ def fetch(workers: int = 8) -> dict:
 
     fetched: dict[str, dict | None] = {}
     expand = set(reason)            # codes whose prereqs we follow
+    core = set(reason)              # seeds and their prereq chains: we also follow their preclusions
     frontier = sorted(reason)
     with ThreadPoolExecutor(workers) as pool:
         while frontier:
@@ -135,21 +154,34 @@ def fetch(workers: int = 8) -> dict:
             for c, mod in zip(todo, pool.map(lambda c: _get(f"{base}/modules/{c}.json"), todo)):
                 fetched[c] = _slim(mod) if mod else None
             nxt: set[str] = set()
-            for c in todo:
-                mod = fetched[c]
+
+            def promote(r: str, to_core: bool, nxt: set[str] = nxt) -> None:
+                # Queue r if it is new, or if it was already seen with a weaker role
+                # (so its prereqs / preclusions get followed now).
+                grew = r not in expand or (to_core and r not in core)
+                expand.add(r)
+                if to_core:
+                    core.add(r)
+                if grew or r not in fetched:
+                    nxt.add(r)
+
+            for c in frontier:
+                mod = fetched.get(c)
                 if not mod:
                     continue
                 if c in expand:
                     for r in _prereq_refs(mod) - exclude:
-                        if r not in reason:
-                            reason[r] = f"prereq-of:{c}"
-                        expand.add(r)
-                        nxt.add(r)
+                        reason.setdefault(r, f"prereq-of:{c}")
+                        promote(r, c in core)
+                if c not in core:
+                    continue
                 for r in _other_refs(mod, cfg) - exclude:
                     if r not in reason:
                         reason[r] = f"referenced-by:{c}"
                         nxt.add(r)
-            frontier = sorted(nxt - set(fetched))
+                    if expand_all:
+                        promote(r, False)
+            frontier = sorted(nxt)
 
     missing = sorted(c for c, m in fetched.items() if m is None)
     for c, mod in fetched.items():
@@ -168,6 +200,7 @@ def fetch(workers: int = 8) -> dict:
         "in_module_list_but_404": sorted(c for c in missing if c in known),
         "reasons": dict(sorted(reason.items())),
         "expanded": sorted(expand & set(fetched)),
+        "expand_all_refs": expand_all,
     }
     (paths.raw_dir(ay) / "manifest.json").write_text(
         json.dumps(manifest, indent=1), encoding="utf-8", newline="\n")

@@ -18,6 +18,17 @@ from pathlib import Path
 from . import paths
 from .resolve import render
 
+# Marks a reason that comes from missing data rather than from a course rule. A course that exists
+# this AY but whose details were not fetched ("outside fetch scope" stub) can't be planned, but that
+# says nothing about whether the student could take it. Answers built on such a reason should carry
+# `data_limited: true` instead of claiming academic impossibility.
+DATA_GAP_TAG = "[data gap]"
+
+
+def data_limited(reasons) -> bool:
+    """True if any reason in the list comes from missing data (see DATA_GAP_TAG)."""
+    return any(DATA_GAP_TAG in str(r) for r in reasons or ())
+
 
 def satisfied(node, completed: set[str]) -> bool:
     """Does the set of completed course codes satisfy a logic tree?"""
@@ -68,6 +79,11 @@ class Catalog:
 
     def __contains__(self, code: str) -> bool:
         return code.upper() in self.courses
+
+    def is_data_gap(self, code: str) -> bool:
+        """Exists this AY, but only a stub is in the catalogue (details not fetched)."""
+        c = self.courses.get(code.upper())
+        return bool(c) and c["exists_in_ay"] and c.get("details") == "stub"
 
     def plannable(self) -> list[str]:
         """Courses that exist this AY and are open to the configured student."""
@@ -134,6 +150,8 @@ class Catalog:
             if x in stack:
                 return False, f"{x}: cycle"
             c = self.courses.get(x)
+            if self.is_data_gap(x):
+                return False, f"{x} {DATA_GAP_TAG}"
             if c is None or not c["exists_in_ay"] or not c["available"]:
                 why = "; ".join(c["unavailable_reasons"]) if c else "unknown course"
                 return False, f"{x} unavailable ({why})"
@@ -158,8 +176,20 @@ class Catalog:
             if good >= need:
                 return True, "satisfiable"
             fails = [p[1] for p in parts if not p[0]]
+            real = [f for f in fails if DATA_GAP_TAG not in f]
             if n["op"] == "and":
-                return False, fails[0]
-            return False, "every option fails: " + " | ".join(fails)
+                # A genuine failure settles it; a data gap only makes it unknown.
+                return False, (real or fails)[0]
+            is_gap = [f.count(" ") == 2 and f.endswith(DATA_GAP_TAG) for f in fails]  # "CODE [data gap]"
+            gaps = [f.split()[0] for f, g in zip(fails, is_gap) if g]
+            deep = [f for f, g in zip(fails, is_gap) if not g and DATA_GAP_TAG in f]
+            msg = real + deep
+            if gaps:
+                msg.append(f"{', '.join(gaps)} {DATA_GAP_TAG}")
+            return False, "every option fails: " + " | ".join(msg)
 
-        return ok(code.upper(), frozenset())
+        ok_, why = ok(code.upper(), frozenset())
+        if not ok_ and DATA_GAP_TAG in why:
+            why += (f" ({DATA_GAP_TAG} = the course exists in AY{self.data.get('acad_year', '')} but its "
+                    "details are not in our dataset, so this is a data limitation, not an academic rule)")
+        return ok_, why

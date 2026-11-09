@@ -1,6 +1,77 @@
 {
   "BN1111": {},
+  "BN2102": {},
   "BN2111": {},
+  "BSP1703": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "cohort", "rule": "MUST_BE_IN", "values": ["S:2017"]}
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "BSP1703", "pattern": true, "min_grade": "D"},
+              {"code": "EC1101", "pattern": true, "min_grade": "D"},
+              {"code": "BSP1005", "pattern": false, "min_grade": "D"},
+              {"code": "BSP1005A", "pattern": false, "min_grade": "D"},
+              {"code": "BSP1005B", "pattern": false, "min_grade": "D"},
+              {"code": "BSP1005X", "pattern": false, "min_grade": "D"},
+              {"code": "EC1301", "pattern": false, "min_grade": "D"},
+              {"code": "EC2101", "pattern": false, "min_grade": "D"},
+              {"code": "RE1704", "pattern": false, "min_grade": "D"}
+            ]
+          },
+          {"op": "group", "group": "2ND_MAJOR", "rule": "MUST_NOT_BE_IN", "n": null, "values": ["0103EC2MJ"]},
+          {"op": "group", "group": "MINOR", "rule": "MUST_NOT_BE_IN", "n": null, "values": ["0103ECMIN"]}
+        ]
+      }
+    }
+  },
+  "BSP1703X": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "cohort", "rule": "MUST_BE_IN", "values": ["S:2017"]}
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "BSP1703", "pattern": true, "min_grade": "D"},
+              {"code": "BSP1005", "pattern": true, "min_grade": "D"},
+              {"code": "EC1101", "pattern": false, "min_grade": "D"},
+              {"code": "EC1101E", "pattern": false, "min_grade": "D"},
+              {"code": "EC1301", "pattern": false, "min_grade": "D"},
+              {"code": "EC2101", "pattern": false, "min_grade": "D"}
+            ]
+          },
+          {"op": "group", "group": "2ND_MAJOR", "rule": "MUST_NOT_BE_IN", "n": null, "values": ["0103EC2MJ"]},
+          {"op": "group", "group": "MINOR", "rule": "MUST_NOT_BE_IN", "n": null, "values": ["0103ECMIN"]},
+          {
+            "op": "group",
+            "group": "PROGRAMS",
+            "rule": "MUST_NOT_BE_IN",
+            "n": 1,
+            "values": ["0200ACCHON", "0200BBAHON"]
+          }
+        ]
+      }
+    }
+  },
   "BT1101": {
     "preclusionRule": {
       "op": "if",
@@ -32,6 +103,44 @@
           {"code": "DSA1101", "pattern": false, "min_grade": null}
         ]
       }
+    }
+  },
+  "BT2101": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "MA1521", "pattern": false, "min_grade": "D"},
+              {"code": "MA1102R", "pattern": false, "min_grade": "D"},
+              {"code": "MA2002", "pattern": false, "min_grade": "D"},
+              {"code": "MA1505", "pattern": false, "min_grade": "D"}
+            ]
+          },
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "BT1101", "pattern": false, "min_grade": "D"},
+              {"code": "BT1101HS", "pattern": false, "min_grade": "D"},
+              {"code": "EC2303", "pattern": false, "min_grade": "D"},
+              {"code": "ST1131", "pattern": false, "min_grade": "D"},
+              {"code": "DSA1101", "pattern": false, "min_grade": "D"},
+              {"code": "DSE1101", "pattern": false, "min_grade": "D"}
+            ]
+          }
+        ]
+      }
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "BT3105", "pattern": false, "min_grade": "D"}]}
     }
   },
   "BT2102": {
@@ -72,6 +181,95 @@
       }
     }
   },
+  "BT3017": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "or",
+        "args": [
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "courses",
+                "n": 1,
+                "items": [
+                  {"code": "BT1101", "pattern": false, "min_grade": "D"},
+                  {"code": "BT1101HS", "pattern": false, "min_grade": "D"}
+                ]
+              },
+              {
+                "op": "courses",
+                "n": 1,
+                "items": [
+                  {"code": "CS1010J", "pattern": false, "min_grade": "D"},
+                  {"code": "CS1010E", "pattern": false, "min_grade": "D"},
+                  {"code": "CS1010S", "pattern": false, "min_grade": "D"},
+                  {"code": "CS1010X", "pattern": false, "min_grade": "D"},
+                  {"code": "CS1010", "pattern": false, "min_grade": "D"},
+                  {"code": "CS1101S", "pattern": false, "min_grade": "D"},
+                  {"code": "CS1010A", "pattern": false, "min_grade": "D"},
+                  {"code": "CS1010HS", "pattern": false, "min_grade": "D"},
+                  {"code": "UTC2851", "pattern": false, "min_grade": "D"}
+                ]
+              },
+              {"op": "courses", "n": 1, "items": [{"code": "ST2334", "pattern": false, "min_grade": "D"}]}
+            ]
+          },
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "courses",
+                "n": 2,
+                "items": [
+                  {"code": "ST2131", "pattern": false, "min_grade": "D"},
+                  {"code": "ST2132", "pattern": false, "min_grade": "D"}
+                ]
+              },
+              {
+                "op": "courses",
+                "n": 1,
+                "items": [
+                  {"code": "MA2001", "pattern": false, "min_grade": "D"},
+                  {"code": "MA1522", "pattern": false, "min_grade": "D"},
+                  {"code": "MA1311", "pattern": false, "min_grade": "D"}
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "BT3102": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {"op": "courses", "n": 1, "items": [{"code": "BT2101", "pattern": false, "min_grade": "D"}]},
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "CS2030", "pattern": false, "min_grade": "D"},
+              {"code": "CS2030S", "pattern": false, "min_grade": "D"},
+              {"code": "CS2030HS", "pattern": false, "min_grade": "D"},
+              {"code": "CS2030DE", "pattern": false, "min_grade": "D"},
+              {"code": "CS2103", "pattern": false, "min_grade": "D"},
+              {"code": "CS2103DE", "pattern": false, "min_grade": "D"},
+              {"code": "CS2103T", "pattern": false, "min_grade": "D"},
+              {"code": "CS2113", "pattern": false, "min_grade": "D"},
+              {"code": "CS2113T", "pattern": false, "min_grade": "D"}
+            ]
+          }
+        ]
+      }
+    }
+  },
   "BT3103": {
     "prerequisiteRule": {
       "op": "if",
@@ -84,6 +282,225 @@
           {"code": "IS1112FC", "pattern": false, "min_grade": "D"},
           {"code": "IS1112", "pattern": false, "min_grade": "D"},
           {"code": "IS1112X", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "BT4012": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "BT3102", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "BT4013": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "BT2101", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "BT4014": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "BT2102", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "BT4015": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "ST2131", "pattern": false, "min_grade": "D"},
+              {"code": "MA2116", "pattern": false, "min_grade": "D"},
+              {"code": "MA2116T", "pattern": false, "min_grade": "D"},
+              {"code": "ST2334", "pattern": false, "min_grade": "D"},
+              {"code": "MA2216", "pattern": false, "min_grade": "D"}
+            ]
+          },
+          {
+            "op": "courses",
+            "n": 2,
+            "items": [
+              {"code": "BT2101", "pattern": false, "min_grade": "D"},
+              {"code": "BT2102", "pattern": false, "min_grade": "D"}
+            ]
+          },
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "CS2040S", "pattern": false, "min_grade": "D"},
+              {"code": "CS2040", "pattern": false, "min_grade": "D"},
+              {"code": "CS2040C", "pattern": false, "min_grade": "D"},
+              {"code": "CS2040DE", "pattern": false, "min_grade": "D"},
+              {"code": "CS2040HS", "pattern": false, "min_grade": "D"}
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "BT4016": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {"op": "courses", "n": 1, "items": [{"code": "BT2101", "pattern": false, "min_grade": "D"}]},
+          {"op": "courses", "n": 1, "items": [{"code": "BT2102", "pattern": false, "min_grade": "D"}]}
+        ]
+      }
+    }
+  },
+  "BT4101": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "units", "min": 112}
+    }
+  },
+  "BT4103": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "if",
+            "cond": {"op": "cohort", "rule": "IF_IN", "values": ["E:2021"]},
+            "then": {
+              "op": "and",
+              "args": [
+                {
+                  "op": "courses",
+                  "n": null,
+                  "items": [{"code": "BT3102", "pattern": false, "min_grade": "D"}]
+                },
+                {
+                  "op": "courses",
+                  "n": null,
+                  "items": [{"code": "BT3103", "pattern": false, "min_grade": "D"}]
+                },
+                {
+                  "op": "courses",
+                  "n": 1,
+                  "items": [
+                    {"code": "IS2101", "pattern": false, "min_grade": "D"},
+                    {"code": "ES1601", "pattern": false, "min_grade": "D"},
+                    {"code": "ES2002", "pattern": false, "min_grade": "D"}
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "op": "if",
+            "cond": {"op": "cohort", "rule": "IF_IN", "values": ["S:2022"]},
+            "then": {
+              "op": "and",
+              "args": [
+                {
+                  "op": "courses",
+                  "n": null,
+                  "items": [
+                    {"code": "BT2101", "pattern": false, "min_grade": "D"},
+                    {"code": "BT3103", "pattern": false, "min_grade": "D"}
+                  ]
+                },
+                {
+                  "op": "courses",
+                  "n": 1,
+                  "items": [
+                    {"code": "IS2101", "pattern": false, "min_grade": "D"},
+                    {"code": "UWC2101", "pattern": true, "min_grade": "D"},
+                    {"code": "ES2002", "pattern": false, "min_grade": "D"},
+                    {"code": "ES1601", "pattern": false, "min_grade": "D"}
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "BT3101", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "BT4211": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "or",
+        "args": [
+          {
+            "op": "and",
+            "args": [
+              {"op": "courses", "n": null, "items": [{"code": "BT2101", "pattern": false, "min_grade": "D"}]},
+              {"op": "courses", "n": null, "items": [{"code": "BT2102", "pattern": false, "min_grade": "D"}]}
+            ]
+          },
+          {
+            "op": "and",
+            "args": [
+              {"op": "courses", "n": null, "items": [{"code": "DBA3803", "pattern": false, "min_grade": "D"}]},
+              {"op": "courses", "n": null, "items": [{"code": "IT3010", "pattern": false, "min_grade": "D"}]}
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "BT4212": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "or",
+        "args": [
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "courses",
+                "n": 1,
+                "items": [
+                  {"code": "CS1010", "pattern": false, "min_grade": "D"},
+                  {"code": "CS1010E", "pattern": false, "min_grade": "D"},
+                  {"code": "CS1101S", "pattern": false, "min_grade": "D"},
+                  {"code": "CS1010J", "pattern": false, "min_grade": "D"},
+                  {"code": "CS1010S", "pattern": false, "min_grade": "D"},
+                  {"code": "CS1010X", "pattern": false, "min_grade": "D"},
+                  {"code": "CS1010FC", "pattern": false, "min_grade": "D"},
+                  {"code": "CS1010A", "pattern": false, "min_grade": "D"},
+                  {"code": "CS1010HS", "pattern": false, "min_grade": "D"},
+                  {"code": "UTC2851", "pattern": false, "min_grade": "D"}
+                ]
+              },
+              {"op": "courses", "n": 1, "items": [{"code": "BT2101", "pattern": false, "min_grade": "D"}]}
+            ]
+          },
+          {
+            "op": "courses",
+            "n": 2,
+            "items": [
+              {"code": "DAO2702", "pattern": false, "min_grade": "D"},
+              {"code": "DBA3803", "pattern": false, "min_grade": "D"}
+            ]
+          }
         ]
       }
     }
@@ -148,6 +565,54 @@
       }
     }
   },
+  "BT4222": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "or",
+        "args": [
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "courses",
+                "n": 1,
+                "items": [
+                  {"code": "CS1010", "pattern": false, "min_grade": "D"},
+                  {"code": "CS1010E", "pattern": false, "min_grade": "D"},
+                  {"code": "CS1101S", "pattern": false, "min_grade": "D"},
+                  {"code": "CS1010J", "pattern": false, "min_grade": "D"},
+                  {"code": "CS1010S", "pattern": false, "min_grade": "D"},
+                  {"code": "CS1010X", "pattern": false, "min_grade": "D"},
+                  {"code": "CS1010A", "pattern": false, "min_grade": "D"},
+                  {"code": "CS1010HS", "pattern": false, "min_grade": "D"},
+                  {"code": "UTC2851", "pattern": false, "min_grade": "D"}
+                ]
+              },
+              {
+                "op": "courses",
+                "n": 2,
+                "items": [
+                  {"code": "BT2101", "pattern": false, "min_grade": "D"},
+                  {"code": "BT2102", "pattern": false, "min_grade": "D"}
+                ]
+              }
+            ]
+          },
+          {
+            "op": "courses",
+            "n": 3,
+            "items": [
+              {"code": "DAO2702", "pattern": false, "min_grade": "D"},
+              {"code": "DBA3803", "pattern": false, "min_grade": "D"},
+              {"code": "IT3010", "pattern": false, "min_grade": "D"}
+            ]
+          }
+        ]
+      }
+    }
+  },
   "BT4240": {
     "prerequisiteRule": {
       "op": "if",
@@ -192,6 +657,27 @@
           {"code": "IS4240", "pattern": false, "min_grade": "D"}
         ]
       }
+    }
+  },
+  "BT4241": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 2,
+        "items": [
+          {"code": "ST2334", "pattern": false, "min_grade": "D"},
+          {"code": "BT2101", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "BT4301": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "BT3103", "pattern": false, "min_grade": "D"}]}
     }
   },
   "CE2407": {
@@ -257,6 +743,34 @@
           {"code": "ESP2111", "pattern": false, "min_grade": null},
           {"code": "ME2105", "pattern": false, "min_grade": null},
           {"code": "RB2101", "pattern": false, "min_grade": null}
+        ]
+      }
+    }
+  },
+  "CG2023": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "MA1512", "pattern": false, "min_grade": "D"},
+          {"code": "CE2407B", "pattern": false, "min_grade": "D"},
+          {"code": "MA1506", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "EE2023", "pattern": false, "min_grade": "D"},
+          {"code": "EE2023E", "pattern": false, "min_grade": "D"},
+          {"code": "TEE2023", "pattern": false, "min_grade": "D"}
         ]
       }
     }
@@ -377,76 +891,33 @@
       "then": {"op": "courses", "n": null, "items": [{"code": "TEE3207", "pattern": false, "min_grade": null}]}
     }
   },
-  "CN2116": {
-    "corequisiteRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {"op": "courses", "n": 1, "items": [{"code": "CN2125", "pattern": false, "min_grade": null}]}
-    }
-  },
-  "CN2122": {
+  "CG4001": {
     "prerequisiteRule": {
       "op": "if",
       "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
       "then": {
-        "op": "or",
+        "op": "and",
         "args": [
-          {
-            "op": "and",
-            "args": [
-              {"op": "cohort", "rule": "MUST_BE_IN", "values": ["E:2016"]},
-              {
-                "op": "courses",
-                "n": 2,
-                "items": [
-                  {"code": "MA1505", "pattern": false, "min_grade": "D"},
-                  {"code": "MA1506", "pattern": false, "min_grade": "D"}
-                ]
-              }
-            ]
-          },
-          {
-            "op": "and",
-            "args": [
-              {"op": "cohort", "rule": "MUST_BE_IN", "values": ["S:2017"]},
-              {
-                "op": "courses",
-                "n": 2,
-                "items": [
-                  {"code": "MA1511", "pattern": false, "min_grade": "D"},
-                  {"code": "MA1512", "pattern": false, "min_grade": "D"}
-                ]
-              }
-            ]
-          }
+          {"op": "group", "group": "PROGRAMS", "rule": "MUST_BE_IN", "n": 1, "values": ["2001CEGHON"]},
+          {"op": "special", "rule": "MUST_BE_IN", "value": "ACAD_LEVEL=3-4"}
         ]
       }
-    }
-  },
-  "CN2122A": {
-    "prerequisiteRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {
-        "op": "courses",
-        "n": 2,
-        "items": [
-          {"code": "MA1511", "pattern": false, "min_grade": "D"},
-          {"code": "MA1512", "pattern": false, "min_grade": "D"}
-        ]
-      }
-    }
-  },
-  "CN2125": {
-    "corequisiteRule": {
+    },
+    "preclusionRule": {
       "op": "if",
       "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
       "then": {
         "op": "courses",
         "n": 1,
         "items": [
-          {"code": "CN2122", "pattern": false, "min_grade": null},
-          {"code": "CN2122A", "pattern": false, "min_grade": null}
+          {"code": "EE4001", "pattern": false, "min_grade": "D"},
+          {"code": "CP4101", "pattern": false, "min_grade": "D"},
+          {"code": "EG4301", "pattern": false, "min_grade": "D"},
+          {"code": "EG4301A", "pattern": false, "min_grade": "D"},
+          {"code": "CP4106", "pattern": false, "min_grade": "D"},
+          {"code": "EE4002R", "pattern": false, "min_grade": "D"},
+          {"code": "EE4002D", "pattern": false, "min_grade": "D"},
+          {"code": "CG4003", "pattern": false, "min_grade": "D"}
         ]
       }
     }
@@ -496,6 +967,133 @@
       "then": {"op": "courses", "n": null, "items": [{"code": "CN2116", "pattern": false, "min_grade": null}]}
     }
   },
+  "CP1001": {},
+  "CP1002": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": null, "items": [{"code": "CP1001", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "CP1008": {},
+  "CP2106": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "CS1010", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010S", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010J", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010X", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010E", "pattern": false, "min_grade": "D"},
+          {"code": "CS1101S", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010XCP", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010HS", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010A", "pattern": false, "min_grade": "D"},
+          {"code": "UTC2851", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "CS2103", "pattern": false, "min_grade": "D"},
+          {"code": "CS2103DE", "pattern": false, "min_grade": "D"},
+          {"code": "CS2103T", "pattern": false, "min_grade": "D"},
+          {"code": "CS2113", "pattern": false, "min_grade": "D"},
+          {"code": "CS2113T", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "CP2107": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "CS1010", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010J", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010E", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010S", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010X", "pattern": false, "min_grade": "D"},
+          {"code": "CS1101S", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010A", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010HS", "pattern": false, "min_grade": "D"},
+          {"code": "UTC2851", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "CP3106": {},
+  "CP3107": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "CS2030", "pattern": false, "min_grade": "D"},
+              {"code": "CS2030S", "pattern": false, "min_grade": "D"},
+              {"code": "CS2030DE", "pattern": false, "min_grade": "D"},
+              {"code": "CS2030HS", "pattern": false, "min_grade": "D"},
+              {"code": "CS2113T", "pattern": false, "min_grade": "D"},
+              {"code": "CS2113", "pattern": false, "min_grade": "D"}
+            ]
+          },
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "CS2040", "pattern": false, "min_grade": "D"},
+              {"code": "CS2040C", "pattern": false, "min_grade": "D"},
+              {"code": "CS2040S", "pattern": false, "min_grade": "D"},
+              {"code": "CS2040DE", "pattern": false, "min_grade": "D"},
+              {"code": "CS2040HS", "pattern": false, "min_grade": "D"}
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "CP3108A": {},
+  "CP3108B": {},
+  "CP3111": {},
+  "CP3201": {},
+  "CP3208": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "units", "min": 60}
+    }
+  },
+  "CP3209": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "units", "min": 60}
+    }
+  },
+  "CP3209R": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "units", "min": 60}
+    }
+  },
   "CP3880": {
     "prerequisiteRule": {
       "op": "if",
@@ -533,6 +1131,114 @@
               {"code": "IS2108", "pattern": false, "min_grade": "D"}
             ]
           }
+        ]
+      }
+    }
+  },
+  "CP4101": {},
+  "CP4106": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "units", "min": 112}
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "CG4001", "pattern": false, "min_grade": "D"},
+          {"code": "CP4101", "pattern": false, "min_grade": "D"},
+          {"code": "BT4101", "pattern": false, "min_grade": "D"},
+          {"code": "XF", "pattern": true, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "CP4281": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": null, "items": [{"code": "CS3241", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "CP4282": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {"op": "courses", "n": null, "items": [{"code": "CS3241", "pattern": false, "min_grade": "D"}]},
+          {
+            "op": "or",
+            "args": [
+              {
+                "op": "courses",
+                "n": 1,
+                "items": [
+                  {"code": "MA1521", "pattern": false, "min_grade": "D"},
+                  {"code": "MA2002", "pattern": false, "min_grade": "D"},
+                  {"code": "MA1505", "pattern": false, "min_grade": "D"}
+                ]
+              },
+              {
+                "op": "courses",
+                "n": 2,
+                "items": [
+                  {"code": "MA1511", "pattern": false, "min_grade": "D"},
+                  {"code": "MA1512", "pattern": false, "min_grade": "D"}
+                ]
+              }
+            ]
+          },
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "MA1522", "pattern": false, "min_grade": "D"},
+              {"code": "MA1508E", "pattern": false, "min_grade": "D"},
+              {"code": "MA1513", "pattern": false, "min_grade": "D"},
+              {"code": "MA2001", "pattern": false, "min_grade": "D"}
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "CP4283": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": null, "items": [{"code": "CS3264", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "CP4284": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 2,
+        "items": [
+          {"code": "CS4248", "pattern": false, "min_grade": "D"},
+          {"code": "CS3263", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "CP4285": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": null,
+        "items": [
+          {"code": "CS2109S", "pattern": false, "min_grade": "D"},
+          {"code": "CS2109HS", "pattern": false, "min_grade": "D"}
         ]
       }
     }
@@ -673,6 +1379,27 @@
           {"code": "CS1101S", "pattern": false, "min_grade": "D"},
           {"code": "CS1010A", "pattern": false, "min_grade": "D"},
           {"code": "CS1010HS", "pattern": false, "min_grade": "D"},
+          {"code": "UTC2851", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "CS1010XCP": {
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "CS1010", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010A", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010E", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010J", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010S", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010X", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010HS", "pattern": false, "min_grade": "D"},
+          {"code": "CS1101S", "pattern": false, "min_grade": "D"},
           {"code": "UTC2851", "pattern": false, "min_grade": "D"}
         ]
       }
@@ -4835,7 +5562,141 @@
       "then": {"op": "courses", "n": null, "items": [{"code": "CS4278", "pattern": false, "min_grade": "D"}]}
     }
   },
-  "DBA3701": {
+  "DAO1704": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "or",
+        "args": [
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "group",
+                "group": "PROGRAMS",
+                "rule": "MUST_BE_IN",
+                "n": 1,
+                "values": ["0200ACCHON", "0200BBAHON"]
+              },
+              {"op": "cohort", "rule": "MUST_BE_IN", "values": ["S:2017"]}
+            ]
+          },
+          {
+            "op": "and",
+            "args": [
+              {"op": "group", "group": "PROGRAMS", "rule": "MUST_BE_IN", "n": null, "values": ["0200RSTHON"]},
+              {"op": "cohort", "rule": "MUST_BE_IN", "values": ["S:2023/24"]}
+            ]
+          },
+          {
+            "op": "group",
+            "group": "PROGRAMS",
+            "rule": "MUST_BE_IN",
+            "n": 1,
+            "values": [
+              "0200BIZMAJ",
+              "0200BREHON",
+              "0200OSCHON",
+              "0200INEHON",
+              "0200ABAHON",
+              "0200FINHON",
+              "0200LHCHON",
+              "0200ACYHON",
+              "0200MKTHON",
+              "0200BECHON",
+              "0200BIZHON"
+            ]
+          }
+        ]
+      }
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "DAO1704", "pattern": true, "min_grade": "D"},
+          {"code": "DSC1007", "pattern": false, "min_grade": "D"},
+          {"code": "DSC1007X", "pattern": false, "min_grade": "D"},
+          {"code": "RE1702", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "DAO2702": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "DAO1704", "pattern": true, "min_grade": "D"},
+              {"code": "RE1702", "pattern": false, "min_grade": "D"}
+            ]
+          },
+          {
+            "op": "or",
+            "args": [
+              {
+                "op": "group",
+                "group": "PROGRAMS",
+                "rule": "MUST_BE_IN",
+                "n": 1,
+                "values": [
+                  "0200BIZMAJ",
+                  "0200BREHON",
+                  "0200OSCHON",
+                  "0200BIZHON",
+                  "0200INEHON",
+                  "0200FINHON",
+                  "0200LHCHON",
+                  "0200ACYHON",
+                  "0200MKTHON",
+                  "0200BECHON",
+                  "0200ABAHON",
+                  "0200BBAHON",
+                  "0200ACCHON"
+                ]
+              },
+              {
+                "op": "and",
+                "args": [
+                  {
+                    "op": "group",
+                    "group": "PROGRAMS",
+                    "rule": "MUST_BE_IN",
+                    "n": null,
+                    "values": ["0200RSTHON"]
+                  },
+                  {"op": "cohort", "rule": "MUST_BE_IN", "values": ["S:2023/24"]}
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "DSC2008", "pattern": false, "min_grade": "D"},
+          {"code": "DAO2702", "pattern": true, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "DBA3803": {
     "prerequisiteRule": {
       "op": "if",
       "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
@@ -4850,15 +5711,79 @@
     "preclusionRule": {
       "op": "if",
       "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "DSC3216", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "DBA4714": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
       "then": {
         "op": "and",
         "args": [
-          {"op": "courses", "n": 1, "items": [{"code": "DSC3214", "pattern": false, "min_grade": "D"}]},
-          {"op": "courses", "n": 1, "items": [{"code": "IE2110", "pattern": false, "min_grade": "D"}]}
+          {"op": "courses", "n": 1, "items": [{"code": "DAO2702", "pattern": true, "min_grade": "D"}]},
+          {
+            "op": "or",
+            "args": [
+              {
+                "op": "and",
+                "args": [
+                  {
+                    "op": "group",
+                    "group": "PROGRAMS",
+                    "rule": "MUST_BE_IN",
+                    "n": 1,
+                    "values": ["0200ACCHON", "0200BBAHON"]
+                  },
+                  {"op": "special", "rule": "MUST_BE_IN", "value": "ACAD_LEVEL=4"}
+                ]
+              },
+              {
+                "op": "and",
+                "args": [
+                  {
+                    "op": "group",
+                    "group": "PROGRAMS",
+                    "rule": "MUST_BE_IN",
+                    "n": 1,
+                    "values": ["0200ACCHON", "0200BBAHON"]
+                  },
+                  {"op": "special", "rule": "MUST_BE_IN", "value": "ACAD_LEVEL=3"},
+                  {"op": "gpa", "min": 3.2}
+                ]
+              },
+              {
+                "op": "and",
+                "args": [
+                  {
+                    "op": "group",
+                    "group": "PROGRAMS",
+                    "rule": "MUST_BE_IN",
+                    "n": 1,
+                    "values": [
+                      "0200OSCHON",
+                      "0200BREHON",
+                      "0200ACYHON",
+                      "0200BECHON",
+                      "0200ABAHON",
+                      "0200INEHON",
+                      "0200BIZHON",
+                      "0200FINHON",
+                      "0200LHCHON",
+                      "0200MKTHON"
+                    ]
+                  },
+                  {"op": "special", "rule": "MUST_BE_IN", "value": "ACAD_LEVEL=3-4"}
+                ]
+              }
+            ]
+          },
+          {"op": "cohort", "rule": "MUST_BE_IN", "values": ["S:2017"]}
         ]
       }
     }
   },
+  "DBA5114": {},
   "DMX1401AI": {},
   "DMX1501AI": {},
   "DSA1101": {
@@ -5005,7 +5930,7 @@
       "then": {"op": "courses", "n": null, "items": [{"code": "CS4248", "pattern": false, "min_grade": "D"}]}
     }
   },
-  "DSC3214": {
+  "DSC3216": {
     "prerequisiteRule": {
       "op": "if",
       "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
@@ -5016,18 +5941,16 @@
             "op": "courses",
             "n": 1,
             "items": [
+              {"code": "ST1131A", "pattern": false, "min_grade": "D"},
+              {"code": "ST1131", "pattern": false, "min_grade": "D"},
+              {"code": "ST1232", "pattern": false, "min_grade": "D"},
+              {"code": "MA2216", "pattern": false, "min_grade": "D"},
+              {"code": "ST2131", "pattern": false, "min_grade": "D"},
+              {"code": "ST2334", "pattern": false, "min_grade": "D"},
+              {"code": "EE2003", "pattern": false, "min_grade": "D"},
+              {"code": "ME2491", "pattern": false, "min_grade": "D"},
               {"code": "DSC1007", "pattern": false, "min_grade": "D"},
-              {"code": "DSC1007X", "pattern": false, "min_grade": "D"},
-              {"code": "MA1101R", "pattern": false, "min_grade": "D"},
-              {"code": "MA1311", "pattern": false, "min_grade": "D"}
-            ]
-          },
-          {
-            "op": "courses",
-            "n": 1,
-            "items": [
-              {"code": "MA1521", "pattern": false, "min_grade": "D"},
-              {"code": "MA1102R", "pattern": false, "min_grade": "D"}
+              {"code": "DSC2008", "pattern": false, "min_grade": "D"}
             ]
           },
           {"op": "cohort", "rule": "MUST_BE_IN", "values": ["E:2016"]}
@@ -5040,8 +5963,9 @@
       "then": {
         "op": "and",
         "args": [
-          {"op": "courses", "n": 1, "items": [{"code": "IE2110", "pattern": false, "min_grade": "D"}]},
-          {"op": "courses", "n": 1, "items": [{"code": "DBA3701", "pattern": false, "min_grade": "D"}]}
+          {"op": "courses", "n": 1, "items": [{"code": "BH3216", "pattern": false, "min_grade": "D"}]},
+          {"op": "courses", "n": 1, "items": [{"code": "DBA3803", "pattern": false, "min_grade": "D"}]},
+          {"op": "group", "group": "PROGRAMS", "rule": "MUST_NOT_BE_IN", "n": 1, "values": ["0607ISEHON"]}
         ]
       }
     }
@@ -5086,6 +6010,80 @@
       "op": "if",
       "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
       "then": {"op": "courses", "n": null, "items": [{"code": "DSA1101", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "EC1101E": {
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "or",
+        "args": [
+          {
+            "op": "group",
+            "group": "PROGRAMS",
+            "rule": "MUST_NOT_BE_IN",
+            "n": 1,
+            "values": [
+              "0200BBAHON",
+              "0200ACCHON",
+              "0200BIZHON",
+              "0200FINHON",
+              "0200OSCHON",
+              "0200ABAHON",
+              "0200ACYHON",
+              "0200LHCHON",
+              "0200INEHON",
+              "0200BECHON",
+              "0200BREHON",
+              "0200MKTHON",
+              "0200BIZMAJ"
+            ]
+          },
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "EC1301", "pattern": false, "min_grade": "D"},
+              {"code": "BSP1703X", "pattern": false, "min_grade": "D"},
+              {"code": "BSP1703", "pattern": false, "min_grade": "D"},
+              {"code": "RE1704", "pattern": false, "min_grade": "D"}
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "EC1301": {
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "and",
+            "args": [
+              {"op": "group", "group": "PROGRAMS", "rule": "MUST_NOT_BE_IN", "n": 1, "values": ["0200ACCHON"]},
+              {"op": "cohort", "rule": "MUST_NOT_BE_IN", "values": ["E:2016"]}
+            ]
+          },
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "EC1101E", "pattern": false, "min_grade": "D"},
+              {"code": "BSP1005", "pattern": false, "min_grade": "D"},
+              {"code": "BSP1005A", "pattern": false, "min_grade": "D"},
+              {"code": "BSP1005B", "pattern": false, "min_grade": "D"},
+              {"code": "BSP1005X", "pattern": false, "min_grade": "D"},
+              {"code": "BSP1703", "pattern": false, "min_grade": "D"},
+              {"code": "BSP1703X", "pattern": false, "min_grade": "D"},
+              {"code": "RE1704", "pattern": false, "min_grade": "D"}
+            ]
+          }
+        ]
+      }
     }
   },
   "EC2303": {
@@ -5288,6 +6286,25 @@
       }
     }
   },
+  "EE2023": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "MA1512", "pattern": false, "min_grade": "D"}]}
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "CG2023", "pattern": false, "min_grade": "D"},
+          {"code": "TEE2023", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
   "EE2024": {
     "prerequisiteRule": {
       "op": "if",
@@ -5475,26 +6492,6 @@
       "then": {"op": "courses", "n": 1, "items": [{"code": "CS2109S", "pattern": false, "min_grade": "D"}]}
     }
   },
-  "EE3207E": {
-    "prerequisiteRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {
-        "op": "courses",
-        "n": 1,
-        "items": [
-          {"code": "EE2007E", "pattern": false, "min_grade": null},
-          {"code": "EE2024E", "pattern": false, "min_grade": null},
-          {"code": "TEE2028", "pattern": false, "min_grade": null}
-        ]
-      }
-    },
-    "preclusionRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {"op": "courses", "n": 1, "items": [{"code": "TEE3207", "pattern": false, "min_grade": "D"}]}
-    }
-  },
   "EE3703": {
     "prerequisiteRule": {
       "op": "if",
@@ -5518,6 +6515,34 @@
           },
           {"op": "courses", "n": 1, "items": [{"code": "EE2211", "pattern": false, "min_grade": "D"}]},
           {"op": "courses", "n": 1, "items": [{"code": "EE2213", "pattern": false, "min_grade": "D"}]}
+        ]
+      }
+    }
+  },
+  "EE3731C": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "EE2012A", "pattern": false, "min_grade": "D"},
+              {"code": "EE2012", "pattern": false, "min_grade": "D"},
+              {"code": "ST2334", "pattern": false, "min_grade": "D"}
+            ]
+          },
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "EE2023", "pattern": false, "min_grade": "D"},
+              {"code": "CG2023", "pattern": false, "min_grade": "D"}
+            ]
+          }
         ]
       }
     }
@@ -5573,52 +6598,17 @@
       }
     }
   },
-  "EE4204E": {
+  "EE4210": {
     "prerequisiteRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {"op": "courses", "n": 1, "items": [{"code": "TE2003", "pattern": false, "min_grade": null}]}
-    },
-    "preclusionRule": {
       "op": "if",
       "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
       "then": {
         "op": "courses",
         "n": 1,
         "items": [
-          {"code": "CS2105", "pattern": false, "min_grade": "D"},
-          {"code": "CS3103", "pattern": false, "min_grade": "D"},
-          {"code": "TEE3204", "pattern": false, "min_grade": "D"},
-          {"code": "EE3204E", "pattern": false, "min_grade": "D"},
-          {"code": "TEE4204", "pattern": false, "min_grade": "D"}
-        ]
-      }
-    }
-  },
-  "EE4211": {
-    "prerequisiteRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {
-        "op": "and",
-        "args": [
-          {
-            "op": "courses",
-            "n": 1,
-            "items": [
-              {"code": "EE2211", "pattern": false, "min_grade": "D"},
-              {"code": "EE2213", "pattern": false, "min_grade": "D"}
-            ]
-          },
-          {
-            "op": "courses",
-            "n": 1,
-            "items": [
-              {"code": "EE2012", "pattern": false, "min_grade": "D"},
-              {"code": "ST2334", "pattern": false, "min_grade": "D"},
-              {"code": "CE2407A", "pattern": false, "min_grade": "D"}
-            ]
-          }
+          {"code": "EE2012", "pattern": false, "min_grade": "D"},
+          {"code": "ST2334", "pattern": false, "min_grade": "D"},
+          {"code": "CE2407A", "pattern": false, "min_grade": "D"}
         ]
       }
     },
@@ -5628,7 +6618,14 @@
         {
           "op": "if",
           "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Graduate Degree Coursework"]},
-          "then": {"op": "courses", "n": 1, "items": [{"code": "EE5020", "pattern": false, "min_grade": "D"}]}
+          "then": {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "EE5310", "pattern": false, "min_grade": "D"},
+              {"code": "EE6310", "pattern": false, "min_grade": "D"}
+            ]
+          }
         },
         {
           "op": "if",
@@ -5637,8 +6634,8 @@
             "op": "courses",
             "n": 1,
             "items": [
-              {"code": "EE4802", "pattern": false, "min_grade": "D"},
-              {"code": "IT3011", "pattern": false, "min_grade": "D"}
+              {"code": "EE4210E", "pattern": false, "min_grade": "D"},
+              {"code": "TEE4210", "pattern": false, "min_grade": "D"}
             ]
           }
         }
@@ -5716,37 +6713,6 @@
       "then": {"op": "courses", "n": 1, "items": [{"code": "EE4214E", "pattern": false, "min_grade": "D"}]}
     }
   },
-  "EE4214E": {
-    "prerequisiteRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {
-        "op": "and",
-        "args": [
-          {"op": "courses", "n": 1, "items": [{"code": "TE2101", "pattern": false, "min_grade": null}]},
-          {
-            "op": "or",
-            "args": [
-              {"op": "courses", "n": 1, "items": [{"code": "EE2024E", "pattern": false, "min_grade": null}]},
-              {"op": "courses", "n": 1, "items": [{"code": "TEE2028", "pattern": false, "min_grade": null}]}
-            ]
-          }
-        ]
-      }
-    },
-    "preclusionRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {
-        "op": "courses",
-        "n": 1,
-        "items": [
-          {"code": "TEE4214", "pattern": false, "min_grade": "D"},
-          {"code": "TIC2401", "pattern": false, "min_grade": "D"}
-        ]
-      }
-    }
-  },
   "EE4704": {
     "prerequisiteRule": {
       "op": "if",
@@ -5793,7 +6759,6 @@
       ]
     }
   },
-  "EE4704E": {},
   "EE4802": {
     "prerequisiteRule": {
       "op": "if",
@@ -5842,58 +6807,6 @@
       }
     }
   },
-  "EE5020": {},
-  "EE5023": {},
-  "EE5024": {},
-  "EE5132": {
-    "prerequisiteRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {
-        "op": "courses",
-        "n": 1,
-        "items": [
-          {"code": "EE4204", "pattern": false, "min_grade": "D"},
-          {"code": "EE4210", "pattern": false, "min_grade": "D"}
-        ]
-      }
-    },
-    "preclusionRule": {
-      "op": "or",
-      "args": [
-        {
-          "op": "if",
-          "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Graduate Degree Coursework"]},
-          "then": {
-            "op": "courses",
-            "n": 1,
-            "items": [
-              {"code": "EE5406", "pattern": false, "min_grade": "D"},
-              {"code": "EE5913", "pattern": false, "min_grade": "D"},
-              {"code": "EE5023", "pattern": false, "min_grade": "D"},
-              {"code": "EE5024", "pattern": false, "min_grade": "D"},
-              {"code": "CS4222", "pattern": false, "min_grade": "D"}
-            ]
-          }
-        },
-        {
-          "op": "if",
-          "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-          "then": {
-            "op": "courses",
-            "n": 1,
-            "items": [
-              {"code": "EE5406", "pattern": false, "min_grade": "D"},
-              {"code": "EE5913", "pattern": false, "min_grade": "D"},
-              {"code": "EE5023", "pattern": false, "min_grade": "D"},
-              {"code": "EE5024", "pattern": false, "min_grade": "D"},
-              {"code": "CS4222", "pattern": false, "min_grade": "D"}
-            ]
-          }
-        }
-      ]
-    }
-  },
   "EE5310": {
     "prerequisiteRule": {
       "op": "if",
@@ -5927,38 +6840,18 @@
       ]
     }
   },
-  "EE5731": {
-    "prerequisiteRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {"op": "courses", "n": null, "items": [{"code": "EE4704", "pattern": false, "min_grade": "D"}]}
-    },
-    "preclusionRule": {
-      "op": "if",
-      "cond": {
-        "op": "or",
-        "args": [
-          {"op": "program_type", "rule": "IF_IN", "values": ["Graduate Degree Coursework"]},
-          {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-          {"op": "program_type", "rule": "IF_IN", "values": ["Graduate Degree Research"]}
-        ]
-      },
-      "then": {
-        "op": "courses",
-        "n": 1,
-        "items": [
-          {"code": "EE6904", "pattern": false, "min_grade": "D"},
-          {"code": "EE5731R", "pattern": false, "min_grade": "D"},
-          {"code": "EE4212", "pattern": false, "min_grade": "D"}
-        ]
-      }
-    }
-  },
   "EE6310": {
     "preclusionRule": {
       "op": "if",
       "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Graduate Degree Coursework"]},
       "then": {"op": "courses", "n": 1, "items": [{"code": "EE5310", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "EG2401A": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "special", "rule": "MUST_BE_IN", "value": "ACAD_LEVEL=2-3-4"}
     }
   },
   "ES1000": {
@@ -6415,11 +7308,27 @@
       }
     }
   },
+  "FT5012": {
+    "preclusionRule": {
+      "op": "if",
+      "cond": {
+        "op": "program_type",
+        "rule": "IF_IN",
+        "values": ["Undergraduate Degree", "Graduate Degree Coursework", "Graduate Degree Research"]
+      },
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "IS4234", "pattern": false, "min_grade": "D"},
+          {"code": "AI5205", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
   "GEK1549": {},
   "GET1021": {},
-  "ID2116": {},
-  "ID3131": {},
-  "IE2110": {
+  "HS1501": {
     "preclusionRule": {
       "op": "if",
       "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
@@ -6427,10 +7336,50 @@
         "op": "courses",
         "n": 1,
         "items": [
-          {"code": "DBA3701", "pattern": false, "min_grade": "D"},
-          {"code": "MA2215", "pattern": false, "min_grade": "D"},
-          {"code": "MA3236", "pattern": false, "min_grade": "D"},
-          {"code": "MA3252", "pattern": false, "min_grade": "D"}
+          {"code": "HS1502", "pattern": false, "min_grade": "D"},
+          {"code": "HS1503", "pattern": false, "min_grade": "D"},
+          {"code": "HS1504", "pattern": false, "min_grade": "D"},
+          {"code": "IT1244", "pattern": false, "min_grade": "D"},
+          {"code": "CS2109S", "pattern": false, "min_grade": "D"},
+          {"code": "CS2109HS", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "ID2116": {},
+  "ID3131": {},
+  "IE1111R": {
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "IE1111", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "IE2100": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": null, "items": [{"code": "IE1111R", "pattern": false, "min_grade": "D"}]}
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": null, "items": [{"code": "DBA3711", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "IE3101": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "ST2334", "pattern": false, "min_grade": null},
+          {"code": "EE2012", "pattern": false, "min_grade": null},
+          {"code": "CE2407A", "pattern": false, "min_grade": null},
+          {"code": "BN2102", "pattern": false, "min_grade": null},
+          {"code": "IE2100", "pattern": false, "min_grade": null}
         ]
       }
     }
@@ -6477,7 +7426,89 @@
       }
     }
   },
+  "IE4280": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "EE2211", "pattern": false, "min_grade": null},
+          {"code": "EE2213", "pattern": false, "min_grade": null},
+          {"code": "CS2109S", "pattern": false, "min_grade": null}
+        ]
+      }
+    }
+  },
+  "IFS4103": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "CS3235", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "IFS4201": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "CP3880", "pattern": false, "min_grade": "D"}]}
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "IFS4205", "pattern": false, "min_grade": "D"},
+          {"code": "CS3205", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "IFS4202": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "IFS4201", "pattern": false, "min_grade": "D"}]}
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "IFS4201", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "IFS4205": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "CS3235", "pattern": false, "min_grade": "D"}]}
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "CS3205", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "IS1103": {
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "CS1105", "pattern": false, "min_grade": "D"},
+          {"code": "CS1105A", "pattern": false, "min_grade": "D"},
+          {"code": "IS1103FC", "pattern": false, "min_grade": "D"},
+          {"code": "IS1103X", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
   "IS1108": {},
+  "IS1128": {},
   "IS2101": {
     "prerequisiteRule": {
       "op": "if",
@@ -6496,6 +7527,26 @@
           {"code": "CS2101", "pattern": false, "min_grade": null},
           {"code": "CS2103T", "pattern": false, "min_grade": null},
           {"code": "IS2101", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "IS2102": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "CS1010", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010A", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010S", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010J", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010E", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010X", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010HS", "pattern": false, "min_grade": "D"},
+          {"code": "UTC2851", "pattern": false, "min_grade": "D"}
         ]
       }
     }
@@ -6532,6 +7583,56 @@
       }
     }
   },
+  "IS2109": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {"op": "courses", "n": 1, "items": [{"code": "MA1521", "pattern": false, "min_grade": "D"}]},
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "CS1010", "pattern": false, "min_grade": "D"},
+              {"code": "CS1010A", "pattern": false, "min_grade": "D"},
+              {"code": "CS1010S", "pattern": false, "min_grade": "D"},
+              {"code": "CS1010J", "pattern": false, "min_grade": "D"},
+              {"code": "CS1010E", "pattern": false, "min_grade": "D"},
+              {"code": "CS1101S", "pattern": false, "min_grade": "D"},
+              {"code": "CS1010X", "pattern": false, "min_grade": "D"},
+              {"code": "CS1010HS", "pattern": false, "min_grade": "D"},
+              {"code": "UTC2851", "pattern": false, "min_grade": "D"}
+            ]
+          },
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "MA1522", "pattern": false, "min_grade": "D"},
+              {"code": "MA1311", "pattern": false, "min_grade": "D"}
+            ]
+          },
+          {"op": "courses", "n": 1, "items": [{"code": "ST2334", "pattern": false, "min_grade": "D"}]}
+        ]
+      }
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "CS2109S", "pattern": false, "min_grade": "D"},
+          {"code": "IS4242", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "IS2218": {},
+  "IS2238": {},
   "IS3103": {
     "prerequisiteRule": {
       "op": "if",
@@ -6574,6 +7675,337 @@
       }
     }
   },
+  "IS3107": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "BT2102", "pattern": false, "min_grade": "D"},
+          {"code": "CS2102", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "IS3108": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "IS2108", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "IS3109": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "IS2109", "pattern": false, "min_grade": "D"}]}
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "CG3201", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "IS3150": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "IS2101", "pattern": false, "min_grade": "D"},
+          {"code": "ES1601", "pattern": false, "min_grade": "D"},
+          {"code": "ES2002", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "IS3240": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "IS1108", "pattern": false, "min_grade": "D"},
+              {"code": "IS1103", "pattern": false, "min_grade": "D"}
+            ]
+          },
+          {"op": "courses", "n": 1, "items": [{"code": "BT2102", "pattern": false, "min_grade": "D"}]}
+        ]
+      }
+    }
+  },
+  "IS3251": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "IS1108", "pattern": false, "min_grade": "D"},
+          {"code": "IS1103", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "IS4010": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {"op": "courses", "n": null, "items": [{"code": "IS3103", "pattern": false, "min_grade": "D"}]},
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "IS2108", "pattern": false, "min_grade": "D"},
+              {"code": "IS3106", "pattern": false, "min_grade": "D"},
+              {"code": "BT3103", "pattern": false, "min_grade": "D"}
+            ]
+          }
+        ]
+      }
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": null, "items": [{"code": "CP3880", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "IS4100": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "IS2108", "pattern": false, "min_grade": "D"},
+              {"code": "IS2103", "pattern": false, "min_grade": "D"}
+            ]
+          },
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "IS1103", "pattern": false, "min_grade": "D"},
+              {"code": "IS1108", "pattern": false, "min_grade": "D"},
+              {"code": "EG2401", "pattern": false, "min_grade": "D"},
+              {"code": "EG2401A", "pattern": false, "min_grade": "D"}
+            ]
+          }
+        ]
+      }
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "CS5212", "pattern": false, "min_grade": "D"},
+          {"code": "IS5110", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "IS4108": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {"op": "courses", "n": 1, "items": [{"code": "IS3103", "pattern": false, "min_grade": "D"}]},
+          {"op": "courses", "n": 1, "items": [{"code": "IS2108", "pattern": false, "min_grade": "D"}]},
+          {"op": "courses", "n": 1, "items": [{"code": "IS2109", "pattern": false, "min_grade": "D"}]}
+        ]
+      }
+    }
+  },
+  "IS4151": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "or",
+        "args": [
+          {"op": "courses", "n": 1, "items": [{"code": "IS2108", "pattern": false, "min_grade": "D"}]},
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "courses",
+                "n": 2,
+                "items": [
+                  {"code": "IS2103", "pattern": false, "min_grade": "D"},
+                  {"code": "IS3106", "pattern": false, "min_grade": "D"}
+                ]
+              },
+              {
+                "op": "courses",
+                "n": 1,
+                "items": [
+                  {"code": "BT1101", "pattern": false, "min_grade": "D"},
+                  {"code": "BT1101HS", "pattern": false, "min_grade": "D"}
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "IS5451", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "IS4226": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "BT2102", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "IS4228": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "IS3101", "pattern": false, "min_grade": "D"},
+          {"code": "IS3103", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "IS4231": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "CS2107", "pattern": false, "min_grade": "D"}]}
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "CS3254", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "IS4233": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "or",
+        "args": [
+          {"op": "courses", "n": 1, "items": [{"code": "IS3103", "pattern": false, "min_grade": "D"}]},
+          {
+            "op": "and",
+            "args": [
+              {"op": "courses", "n": 1, "items": [{"code": "IS1108", "pattern": false, "min_grade": "D"}]},
+              {
+                "op": "courses",
+                "n": 1,
+                "items": [
+                  {"code": "IS2218", "pattern": false, "min_grade": "D"},
+                  {"code": "IS2238", "pattern": false, "min_grade": "D"}
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "CS4259", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "IS4234": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "or",
+        "args": [
+          {"op": "courses", "n": 1, "items": [{"code": "IS3103", "pattern": false, "min_grade": "D"}]},
+          {
+            "op": "and",
+            "args": [
+              {"op": "courses", "n": 1, "items": [{"code": "IS1108", "pattern": false, "min_grade": "D"}]},
+              {
+                "op": "courses",
+                "n": 1,
+                "items": [
+                  {"code": "IS2218", "pattern": false, "min_grade": "D"},
+                  {"code": "IS2238", "pattern": false, "min_grade": "D"}
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": null, "items": [{"code": "FT5012", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "IS4236": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "BT3103", "pattern": false, "min_grade": "D"},
+              {"code": "IS3106", "pattern": false, "min_grade": "D"},
+              {"code": "IS2108", "pattern": false, "min_grade": "D"}
+            ]
+          },
+          {"op": "courses", "n": 1, "items": [{"code": "IS3103", "pattern": false, "min_grade": "D"}]}
+        ]
+      }
+    }
+  },
+  "IS4238": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "IS3103", "pattern": false, "min_grade": "D"},
+          {"code": "CS2107", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
   "IS4240": {
     "prerequisiteRule": {
       "op": "if",
@@ -6602,6 +8034,384 @@
               {"code": "MA2216", "pattern": false, "min_grade": "D"}
             ]
           }
+        ]
+      }
+    }
+  },
+  "IS4242": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "or",
+            "args": [
+              {
+                "op": "courses",
+                "n": 1,
+                "items": [
+                  {"code": "MA1312", "pattern": false, "min_grade": "D"},
+                  {"code": "MA1521", "pattern": false, "min_grade": "D"},
+                  {"code": "MA2002", "pattern": false, "min_grade": "D"},
+                  {"code": "MA1505", "pattern": false, "min_grade": "D"}
+                ]
+              },
+              {
+                "op": "courses",
+                "n": 2,
+                "items": [
+                  {"code": "MA1511", "pattern": false, "min_grade": "D"},
+                  {"code": "MA1512", "pattern": false, "min_grade": "D"}
+                ]
+              }
+            ]
+          },
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "ST2334", "pattern": false, "min_grade": "D"},
+              {"code": "MA2216", "pattern": false, "min_grade": "D"},
+              {"code": "MA2116", "pattern": false, "min_grade": "D"},
+              {"code": "MA2116T", "pattern": false, "min_grade": "D"},
+              {"code": "ST2131", "pattern": false, "min_grade": "D"},
+              {"code": "ST2132", "pattern": false, "min_grade": "D"}
+            ]
+          },
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "IS3106", "pattern": false, "min_grade": "D"},
+              {"code": "BT3103", "pattern": false, "min_grade": "D"}
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "IS4243": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "IS3103", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "IS4246": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "BT3103", "pattern": false, "min_grade": "D"},
+              {"code": "IS3106", "pattern": false, "min_grade": "D"},
+              {"code": "IS2108", "pattern": false, "min_grade": "D"}
+            ]
+          },
+          {"op": "courses", "n": 1, "items": [{"code": "IS3103", "pattern": false, "min_grade": "D"}]}
+        ]
+      }
+    }
+  },
+  "IS4250": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "IS1108", "pattern": false, "min_grade": "D"},
+          {"code": "IS1103", "pattern": false, "min_grade": "D"},
+          {"code": "IS1103X", "pattern": false, "min_grade": "D"},
+          {"code": "IS1103FC", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "IS4261": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "IS3106", "pattern": false, "min_grade": "D"},
+              {"code": "BT3103", "pattern": false, "min_grade": "D"},
+              {"code": "IS2108", "pattern": false, "min_grade": "D"}
+            ]
+          },
+          {"op": "courses", "n": null, "items": [{"code": "IS3103", "pattern": false, "min_grade": "D"}]}
+        ]
+      }
+    }
+  },
+  "IS4262": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "IS3106", "pattern": false, "min_grade": "D"},
+          {"code": "BT3103", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "IS4301": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "IS2108", "pattern": false, "min_grade": "D"},
+              {"code": "IS2103", "pattern": false, "min_grade": "D"}
+            ]
+          },
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "IS1108", "pattern": false, "min_grade": "D"},
+              {"code": "IS1103", "pattern": false, "min_grade": "D"},
+              {"code": "EG2401", "pattern": false, "min_grade": "D"},
+              {"code": "EG2401A", "pattern": false, "min_grade": "D"}
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "IS4302": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "CS2102", "pattern": false, "min_grade": "D"},
+              {"code": "BT2102", "pattern": false, "min_grade": "D"}
+            ]
+          },
+          {
+            "op": "courses",
+            "n": 1,
+            "items": [
+              {"code": "CS2030", "pattern": false, "min_grade": "D"},
+              {"code": "CS2030S", "pattern": false, "min_grade": "D"},
+              {"code": "CS2030DE", "pattern": false, "min_grade": "D"},
+              {"code": "CS2030HS", "pattern": false, "min_grade": "D"},
+              {"code": "CS2103", "pattern": false, "min_grade": "D"},
+              {"code": "CS2103T", "pattern": false, "min_grade": "D"},
+              {"code": "CS2103DE", "pattern": false, "min_grade": "D"},
+              {"code": "CS2113", "pattern": false, "min_grade": "D"},
+              {"code": "CS2113T", "pattern": false, "min_grade": "D"}
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "IS4303": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "IS1128", "pattern": false, "min_grade": "D"},
+          {"code": "IS2218", "pattern": false, "min_grade": "D"},
+          {"code": "IS2238", "pattern": false, "min_grade": "D"},
+          {"code": "BT2101", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "IS4400": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "IS2109", "pattern": false, "min_grade": "D"}]}
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "IS5006", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "IS4401": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "IS3109", "pattern": false, "min_grade": "D"}]}
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "DBA4714", "pattern": false, "min_grade": "D"},
+          {"code": "IE4280", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "IS4402": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "IS3109", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "IS4403": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {"op": "courses", "n": null, "items": [{"code": "IS3109", "pattern": false, "min_grade": "D"}]},
+          {
+            "op": "or",
+            "args": [
+              {"op": "courses", "n": null, "items": [{"code": "IS2108", "pattern": false, "min_grade": "D"}]},
+              {"op": "courses", "n": null, "items": [{"code": "BT3103", "pattern": false, "min_grade": "D"}]}
+            ]
+          }
+        ]
+      }
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "or",
+        "args": [
+          {"op": "courses", "n": null, "items": [{"code": "DBA5114", "pattern": false, "min_grade": null}]},
+          {"op": "courses", "n": null, "items": [{"code": "ISY5005", "pattern": false, "min_grade": "D"}]}
+        ]
+      }
+    }
+  },
+  "IS5006": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": null, "items": [{"code": "CS2109S", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "IS5110": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "IS3103", "pattern": false, "min_grade": "D"}]}
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {
+        "op": "program_type",
+        "rule": "IF_IN",
+        "values": ["Undergraduate Degree", "Graduate Degree Coursework", "Graduate Degree Research"]
+      },
+      "then": {"op": "courses", "n": 1, "items": [{"code": "IS4100", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "IS5451": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 3,
+        "items": [
+          {"code": "IS2103", "pattern": false, "min_grade": "D"},
+          {"code": "IS3106", "pattern": false, "min_grade": "D"},
+          {"code": "BT1101", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {
+        "op": "program_type",
+        "rule": "IF_IN",
+        "values": ["Undergraduate Degree", "Graduate Degree Coursework", "Graduate Degree Research"]
+      },
+      "then": {"op": "courses", "n": null, "items": [{"code": "IS4151", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "ISC3550": {},
+  "ISE3550": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "group",
+            "group": "2ND_MAJOR",
+            "rule": "MUST_BE_IN",
+            "n": 1,
+            "values": ["0115SE2MJ", "0115SEHON", "0115SEMAJ", "0115SESMJ"]
+          },
+          {"op": "courses", "n": 6, "items": [{"code": "SE", "pattern": true, "min_grade": "D"}]}
+        ]
+      }
+    },
+    "corequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "SE3550", "pattern": false, "min_grade": null}]}
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "I%3550", "pattern": false, "min_grade": "D"}]}
+    }
+  },
+  "ISY5005": {},
+  "IT1007": {},
+  "IT1244": {
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "HS1501", "pattern": false, "min_grade": "D"},
+          {"code": "CS2109S", "pattern": false, "min_grade": "D"},
+          {"code": "CS3243", "pattern": false, "min_grade": "D"},
+          {"code": "CS3244", "pattern": false, "min_grade": "D"},
+          {"code": "CS3263", "pattern": false, "min_grade": "D"},
+          {"code": "CS3264", "pattern": false, "min_grade": "D"},
+          {"code": "IT3011", "pattern": false, "min_grade": "D"}
         ]
       }
     }
@@ -6640,6 +8450,41 @@
             "values": ["0300CSHON", "0300ISCHON", "0300ISPHON", "0300ISHON", "0300BZPHON", "0300BZAHON", "2001CEGHON"]
           },
           {"op": "courses", "n": 1, "items": [{"code": "CS2102", "pattern": false, "min_grade": "D"}]}
+        ]
+      }
+    }
+  },
+  "IT2900": {},
+  "IT3010": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "DAO2702", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010S", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010X", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010A", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010E", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010J", "pattern": false, "min_grade": "D"},
+          {"code": "CS1101S", "pattern": false, "min_grade": "D"},
+          {"code": "CS1010HS", "pattern": false, "min_grade": "D"},
+          {"code": "UTC2851", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "BT2102", "pattern": false, "min_grade": "D"},
+          {"code": "CS2102", "pattern": false, "min_grade": "D"}
         ]
       }
     }
@@ -7485,12 +9330,18 @@
               "0607ISEHON",
               "0608MSEHON",
               "0609MEHON",
+              "0609RMIHON",
+              "0611CHEHON",
+              "0611MEHON",
+              "0613ESHON",
+              "0616IPMHON",
               "2001CEGHON",
               "0300CSHON",
               "0300BZAHON",
               "0300ISHON",
-              "0616IPMHON",
-              "0300ISCHON"
+              "0300ISCHON",
+              "0300AISHON",
+              "0300AIHON"
             ]
           }
         ]
@@ -7875,76 +9726,6 @@
       }
     }
   },
-  "MA3236": {
-    "prerequisiteRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {
-        "op": "courses",
-        "n": 1,
-        "items": [
-          {"code": "MA1505", "pattern": false, "min_grade": "D"},
-          {"code": "MA1511", "pattern": false, "min_grade": "D"},
-          {"code": "MA2104", "pattern": false, "min_grade": "D"},
-          {"code": "MA2311", "pattern": false, "min_grade": "D"}
-        ]
-      }
-    },
-    "preclusionRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {
-        "op": "and",
-        "args": [
-          {
-            "op": "courses",
-            "n": 1,
-            "items": [
-              {"code": "DSA3102", "pattern": false, "min_grade": "D"},
-              {"code": "DBA3701", "pattern": false, "min_grade": "D"},
-              {"code": "DSN3701", "pattern": false, "min_grade": "D"}
-            ]
-          },
-          {
-            "op": "group",
-            "group": "PROGRAMS",
-            "rule": "MUST_NOT_BE_IN",
-            "n": 1,
-            "values": ["1006DSAHON", "1006DSEXDP"]
-          }
-        ]
-      }
-    }
-  },
-  "MA3252": {
-    "prerequisiteRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {
-        "op": "courses",
-        "n": 1,
-        "items": [
-          {"code": "MA1311", "pattern": false, "min_grade": "D"},
-          {"code": "MA2001", "pattern": false, "min_grade": "D"},
-          {"code": "MA1508E", "pattern": false, "min_grade": "D"},
-          {"code": "MA1513", "pattern": false, "min_grade": "D"},
-          {"code": "MA1522", "pattern": false, "min_grade": "D"}
-        ]
-      }
-    },
-    "preclusionRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {
-        "op": "courses",
-        "n": 1,
-        "items": [
-          {"code": "DBA3701", "pattern": false, "min_grade": "D"},
-          {"code": "IE2110", "pattern": false, "min_grade": "D"}
-        ]
-      }
-    }
-  },
   "MA3270": {
     "prerequisiteRule": {
       "op": "if",
@@ -8017,40 +9798,6 @@
           {"code": "ME2143", "pattern": false, "min_grade": "D"},
           {"code": "TME2143", "pattern": false, "min_grade": "D"},
           {"code": "ESP2111", "pattern": false, "min_grade": "D"}
-        ]
-      }
-    }
-  },
-  "ME2143": {
-    "prerequisiteRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {"op": "courses", "n": null, "items": [{"code": "ME2104", "pattern": false, "min_grade": "D"}]}
-    },
-    "preclusionRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {
-        "op": "courses",
-        "n": null,
-        "items": [
-          {"code": "ME2105", "pattern": false, "min_grade": "D"},
-          {"code": "TME2143", "pattern": false, "min_grade": "D"}
-        ]
-      }
-    }
-  },
-  "ME2143E": {
-    "preclusionRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {
-        "op": "courses",
-        "n": 1,
-        "items": [
-          {"code": "TM2141", "pattern": false, "min_grade": "D"},
-          {"code": "TME2143", "pattern": false, "min_grade": "D"},
-          {"code": "ME2143", "pattern": false, "min_grade": "D"}
         ]
       }
     }
@@ -8350,121 +10097,6 @@
       }
     }
   },
-  "PC1432": {
-    "prerequisiteRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {
-        "op": "or",
-        "args": [
-          {
-            "op": "subjects",
-            "n": 1,
-            "items": [
-              {"subject": "08", "grade": "E"},
-              {"subject": "64", "grade": "E"},
-              {"subject": "0008", "grade": "E"}
-            ]
-          },
-          {"op": "courses", "n": 1, "items": [{"code": "PC1201", "pattern": false, "min_grade": "D"}]},
-          {
-            "op": "courses",
-            "n": 2,
-            "items": [
-              {"code": "PC1221", "pattern": false, "min_grade": "D"},
-              {"code": "PC1221FC", "pattern": false, "min_grade": "D"},
-              {"code": "PC1221X", "pattern": false, "min_grade": "D"},
-              {"code": "PC1222", "pattern": false, "min_grade": "D"},
-              {"code": "PC1222X", "pattern": false, "min_grade": "D"}
-            ]
-          }
-        ]
-      }
-    },
-    "preclusionRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {
-        "op": "and",
-        "args": [
-          {
-            "op": "group",
-            "group": "PROGRAMS",
-            "rule": "MUST_NOT_BE_IN",
-            "n": null,
-            "values": ["1005PCHON", "1005PCJDU"]
-          },
-          {"op": "group", "group": "2ND_MAJOR", "rule": "MUST_NOT_BE_IN", "n": null, "values": ["1005PC2MJ"]},
-          {
-            "op": "courses",
-            "n": 1,
-            "items": [
-              {"code": "PC1143", "pattern": false, "min_grade": "D"},
-              {"code": "PC1144", "pattern": false, "min_grade": "D"},
-              {"code": "PC1432X", "pattern": false, "min_grade": "D"}
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "PC1432X": {
-    "prerequisiteRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {
-        "op": "or",
-        "args": [
-          {
-            "op": "subjects",
-            "n": 1,
-            "items": [
-              {"subject": "08", "grade": "E"},
-              {"subject": "64", "grade": "E"},
-              {"subject": "0008", "grade": "E"}
-            ]
-          },
-          {
-            "op": "courses",
-            "n": 2,
-            "items": [
-              {"code": "PC1221", "pattern": false, "min_grade": "D"},
-              {"code": "PC1221FC", "pattern": false, "min_grade": "D"},
-              {"code": "PC1221X", "pattern": false, "min_grade": "D"},
-              {"code": "PC1222", "pattern": false, "min_grade": "D"},
-              {"code": "PC1222X", "pattern": false, "min_grade": "D"}
-            ]
-          }
-        ]
-      }
-    },
-    "preclusionRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {
-        "op": "and",
-        "args": [
-          {
-            "op": "group",
-            "group": "PROGRAMS",
-            "rule": "MUST_NOT_BE_IN",
-            "n": null,
-            "values": ["1005PCHON", "1005PCJDU"]
-          },
-          {"op": "group", "group": "2ND_MAJOR", "rule": "MUST_NOT_BE_IN", "n": null, "values": ["1005PC2MJ"]},
-          {
-            "op": "courses",
-            "n": 1,
-            "items": [
-              {"code": "PC1143", "pattern": false, "min_grade": "D"},
-              {"code": "PC1144", "pattern": false, "min_grade": "D"},
-              {"code": "PC1432X", "pattern": false, "min_grade": "D"}
-            ]
-          }
-        ]
-      }
-    }
-  },
   "PC2134": {
     "prerequisiteRule": {
       "op": "if",
@@ -8530,13 +10162,6 @@
       }
     }
   },
-  "RB1101": {
-    "preclusionRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {"op": "courses", "n": null, "items": [{"code": "ME1102", "pattern": false, "min_grade": "D"}]}
-    }
-  },
   "RB2101": {
     "preclusionRule": {
       "op": "if",
@@ -8553,99 +10178,50 @@
       }
     }
   },
-  "SP1541": {
-    "prerequisiteRule": {
+  "RE1702": {
+    "preclusionRule": {
       "op": "if",
       "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {"op": "subjects", "n": null, "items": [{"subject": "EP", "grade": "N"}]}
-    },
+      "then": {"op": "courses", "n": null, "items": [{"code": "DAO1704", "pattern": true, "min_grade": "D"}]}
+    }
+  },
+  "RE1704": {
     "preclusionRule": {
       "op": "if",
       "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
       "then": {
-        "op": "and",
-        "args": [
-          {
-            "op": "courses",
-            "n": 1,
-            "items": [
-              {"code": "SP1541", "pattern": false, "min_grade": "D"},
-              {"code": "FAS1101", "pattern": false, "min_grade": null},
-              {"code": "ES2531", "pattern": false, "min_grade": null},
-              {"code": "ES2631", "pattern": false, "min_grade": null},
-              {"code": "ES2660", "pattern": false, "min_grade": null},
-              {"code": "SP2271", "pattern": false, "min_grade": null},
-              {"code": "UTW1001", "pattern": true, "min_grade": null},
-              {"code": "UTW2001", "pattern": true, "min_grade": null},
-              {"code": "SP1541X", "pattern": false, "min_grade": "D"}
-            ]
-          },
-          {
-            "op": "group",
-            "group": "SPECIAL_PROGRAMME",
-            "rule": "MUST_NOT_BE_IN",
-            "n": 1,
-            "values": ["1501TMBSPL", "1501TMRSPL", "1502ANGSPL", "1502ANRSPL", "1503R4RSPL", "1503RC4SPL", "1520RVCSPL"]
-          }
-        ]
-      }
-    }
-  },
-  "SP1541X": {
-    "prerequisiteRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {"op": "subjects", "n": null, "items": [{"subject": "EP", "grade": "N"}]}
-    },
-    "preclusionRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {
-        "op": "and",
-        "args": [
-          {
-            "op": "courses",
-            "n": 1,
-            "items": [
-              {"code": "SP1541", "pattern": false, "min_grade": "D"},
-              {"code": "FAS1101", "pattern": false, "min_grade": null},
-              {"code": "ES2531", "pattern": false, "min_grade": null},
-              {"code": "ES2631", "pattern": false, "min_grade": null},
-              {"code": "ES2660", "pattern": false, "min_grade": null},
-              {"code": "SP2271", "pattern": false, "min_grade": null},
-              {"code": "UTW1001", "pattern": true, "min_grade": null},
-              {"code": "UTW2001", "pattern": true, "min_grade": null},
-              {"code": "SP1541X", "pattern": false, "min_grade": "D"}
-            ]
-          },
-          {
-            "op": "group",
-            "group": "SPECIAL_PROGRAMME",
-            "rule": "MUST_NOT_BE_IN",
-            "n": 1,
-            "values": ["1501TMBSPL", "1501TMRSPL", "1502ANGSPL", "1502ANRSPL", "1503R4RSPL", "1503RC4SPL", "1520RVCSPL"]
-          }
-        ]
-      }
-    }
-  },
-  "SP2271": {
-    "prerequisiteRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {
-        "op": "subjects",
-        "n": 2,
+        "op": "courses",
+        "n": 1,
         "items": [
-          {"subject": "11", "grade": "E"},
-          {"subject": "09", "grade": "E"},
-          {"subject": "08", "grade": "E"},
-          {"subject": "06", "grade": "E"},
-          {"subject": "07", "grade": "E"},
-          {"subject": "63", "grade": "E"},
-          {"subject": "64", "grade": "E"}
+          {"code": "EC1301", "pattern": false, "min_grade": "D"},
+          {"code": "EC1101E", "pattern": false, "min_grade": "D"},
+          {"code": "BSP1703", "pattern": false, "min_grade": "D"}
         ]
       }
+    }
+  },
+  "SE3550": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "group",
+            "group": "2ND_MAJOR",
+            "rule": "MUST_BE_IN",
+            "n": 1,
+            "values": ["0115SE2MJ", "0115SEHON", "0115SEMAJ", "0115SESMJ"]
+          },
+          {"op": "courses", "n": 6, "items": [{"code": "SE", "pattern": true, "min_grade": "D"}]}
+        ]
+      }
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {"op": "courses", "n": 1, "items": [{"code": "%3550", "pattern": false, "min_grade": "D"}]}
     }
   },
   "ST1131": {
@@ -8765,6 +10341,23 @@
       }
     }
   },
+  "ST2137": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "ST1131", "pattern": false, "min_grade": "D"},
+          {"code": "ST2334", "pattern": false, "min_grade": "D"},
+          {"code": "ST2131", "pattern": false, "min_grade": "D"},
+          {"code": "MA2116", "pattern": false, "min_grade": "D"},
+          {"code": "MA2116T", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
   "ST2334": {
     "prerequisiteRule": {
       "op": "if",
@@ -8855,11 +10448,18 @@
       "then": {"op": "courses", "n": 1, "items": [{"code": "YSC4216", "pattern": false, "min_grade": "D"}]}
     }
   },
-  "TCE2407": {
+  "TEE2002": {
     "prerequisiteRule": {
       "op": "if",
       "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {"op": "courses", "n": 1, "items": [{"code": "TTG1401", "pattern": false, "min_grade": "D"}]}
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "TE2102", "pattern": false, "min_grade": null},
+          {"code": "TTG1401", "pattern": false, "min_grade": null}
+        ]
+      }
     },
     "preclusionRule": {
       "op": "if",
@@ -8868,23 +10468,103 @@
         "op": "courses",
         "n": 1,
         "items": [
-          {"code": "CE2407", "pattern": false, "min_grade": "D"},
-          {"code": "CE2407A", "pattern": false, "min_grade": "D"},
-          {"code": "CE2407B", "pattern": false, "min_grade": "D"}
+          {"code": "TE2002", "pattern": false, "min_grade": "D"},
+          {"code": "TM2401", "pattern": false, "min_grade": "D"},
+          {"code": "TME2401", "pattern": false, "min_grade": "D"}
         ]
       }
     }
   },
-  "TCX3222": {
+  "TEE2003": {
     "prerequisiteRule": {
       "op": "if",
       "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {"op": "courses", "n": 1, "items": [{"code": "TCX2004", "pattern": false, "min_grade": "D"}]}
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "TEE2002", "pattern": false, "min_grade": null},
+          {"code": "TTG2401", "pattern": false, "min_grade": null}
+        ]
+      }
     },
     "preclusionRule": {
       "op": "if",
       "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {"op": "courses", "n": 1, "items": [{"code": "TIC2401", "pattern": false, "min_grade": "D"}]}
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "TE2003", "pattern": false, "min_grade": "D"},
+          {"code": "TE2401", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "TEE2026": {
+    "corequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "TE2101", "pattern": false, "min_grade": null},
+          {"code": "TEE2101", "pattern": false, "min_grade": null}
+        ]
+      }
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "EE2020E", "pattern": false, "min_grade": "D"},
+          {"code": "TEE2020", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "TEE2028": {
+    "prerequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "EE2020E", "pattern": false, "min_grade": null},
+          {"code": "TEE2020", "pattern": false, "min_grade": null},
+          {"code": "TEE2026", "pattern": false, "min_grade": null}
+        ]
+      }
+    },
+    "corequisiteRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "TE2101", "pattern": false, "min_grade": null},
+          {"code": "TEE2101", "pattern": false, "min_grade": null}
+        ]
+      }
+    },
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "EE2007E", "pattern": false, "min_grade": "D"},
+          {"code": "EE2024E", "pattern": false, "min_grade": "D"},
+          {"code": "TEE2024", "pattern": false, "min_grade": "D"}
+        ]
+      }
     }
   },
   "TEE3207": {
@@ -8928,21 +10608,49 @@
       }
     }
   },
-  "TEE4214": {
+  "TG1401": {
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "TE2102", "pattern": false, "min_grade": "D"},
+          {"code": "TM1401", "pattern": false, "min_grade": "D"},
+          {"code": "TTG1401", "pattern": false, "min_grade": "D"},
+          {"code": "TC1411", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "TTG1401": {
+    "preclusionRule": {
+      "op": "if",
+      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
+      "then": {
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "TE2102", "pattern": false, "min_grade": "D"},
+          {"code": "TM1401", "pattern": false, "min_grade": "D"},
+          {"code": "TG1401", "pattern": false, "min_grade": "D"},
+          {"code": "TC1411", "pattern": false, "min_grade": "D"},
+          {"code": "TCN1411", "pattern": false, "min_grade": "D"}
+        ]
+      }
+    }
+  },
+  "TTG2401": {
     "prerequisiteRule": {
       "op": "if",
       "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
       "then": {
-        "op": "and",
-        "args": [
-          {"op": "courses", "n": 1, "items": [{"code": "TEE2101", "pattern": false, "min_grade": null}]},
-          {
-            "op": "or",
-            "args": [
-              {"op": "courses", "n": 1, "items": [{"code": "TEE2024", "pattern": false, "min_grade": null}]},
-              {"op": "courses", "n": 1, "items": [{"code": "TEE2028", "pattern": false, "min_grade": null}]}
-            ]
-          }
+        "op": "courses",
+        "n": 1,
+        "items": [
+          {"code": "TTG1401", "pattern": false, "min_grade": "D"},
+          {"code": "TG1401", "pattern": false, "min_grade": "D"}
         ]
       }
     },
@@ -8953,63 +10661,10 @@
         "op": "courses",
         "n": 1,
         "items": [
-          {"code": "EE4214E", "pattern": false, "min_grade": "D"},
-          {"code": "TIC2401", "pattern": false, "min_grade": "D"}
-        ]
-      }
-    }
-  },
-  "TEE4704": {
-    "prerequisiteRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {"op": "courses", "n": 1, "items": [{"code": "TEE2023", "pattern": false, "min_grade": null}]}
-    },
-    "preclusionRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {
-        "op": "courses",
-        "n": 1,
-        "items": [
-          {"code": "CS4243", "pattern": false, "min_grade": "D"},
-          {"code": "EE3206E", "pattern": false, "min_grade": "D"},
-          {"code": "TEE3206", "pattern": false, "min_grade": "D"},
-          {"code": "EE4704E", "pattern": false, "min_grade": "D"}
-        ]
-      }
-    }
-  },
-  "TIC2401": {
-    "prerequisiteRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {"op": "courses", "n": 1, "items": [{"code": "TIC1002", "pattern": false, "min_grade": "D"}]}
-    },
-    "preclusionRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {
-        "op": "courses",
-        "n": 1,
-        "items": [
-          {"code": "TEE4214", "pattern": false, "min_grade": "D"},
-          {"code": "TCX3222", "pattern": false, "min_grade": "D"}
-        ]
-      }
-    }
-  },
-  "TME2143": {
-    "preclusionRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {
-        "op": "courses",
-        "n": 1,
-        "items": [
-          {"code": "TM2141", "pattern": false, "min_grade": "D"},
-          {"code": "ME2143E", "pattern": false, "min_grade": "D"},
-          {"code": "ME2143", "pattern": false, "min_grade": "D"}
+          {"code": "TE2002", "pattern": false, "min_grade": "D"},
+          {"code": "TEE2002", "pattern": false, "min_grade": "D"},
+          {"code": "TM2401", "pattern": false, "min_grade": "D"},
+          {"code": "TME2401", "pattern": false, "min_grade": "D"}
         ]
       }
     }
@@ -9213,32 +10868,6 @@
       "op": "if",
       "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
       "then": {"op": "courses", "n": 1, "items": [{"code": "YSC2229", "pattern": false, "min_grade": "D"}]}
-    }
-  },
-  "YSC3206": {
-    "prerequisiteRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {
-        "op": "courses",
-        "n": 1,
-        "items": [
-          {"code": "YSC2209", "pattern": false, "min_grade": "D"},
-          {"code": "YSC2232", "pattern": false, "min_grade": "D"}
-        ]
-      }
-    },
-    "preclusionRule": {
-      "op": "if",
-      "cond": {"op": "program_type", "rule": "IF_IN", "values": ["Undergraduate Degree"]},
-      "then": {
-        "op": "courses",
-        "n": 2,
-        "items": [
-          {"code": "MA2108", "pattern": false, "min_grade": "D"},
-          {"code": "MA3110", "pattern": false, "min_grade": "D"}
-        ]
-      }
     }
   },
   "YSC3217": {

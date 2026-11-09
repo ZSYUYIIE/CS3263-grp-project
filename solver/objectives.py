@@ -9,6 +9,7 @@ from __future__ import annotations
 
 from ortools.sat.python import cp_model
 
+from m1_data.catalog import data_limited
 from solver.common import ATAP_CODE, GENERIC_REASON
 from solver.explain import conflict_reasons
 from solver.model import PlanModel
@@ -37,6 +38,8 @@ def solved(status) -> bool:
 
 def no_plan(reasons: list[str], spec: dict) -> dict:
     result = {"status": "NO_PLAN", "reasons": reasons}
+    if data_limited(reasons):
+        result["data_limited"] = True
     if spec["unsupported"]:
         result["not_applied"] = list(spec["unsupported"])
     return result

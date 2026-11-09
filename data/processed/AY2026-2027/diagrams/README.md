@@ -14,70 +14,108 @@ Overviews: [BComp CS core chain](../../../../docs/diagrams/cs-core-chain.svg) ·
 | Course | Title | MC | Offered | Needed by | Plannable |
 |---|---|---|---|---|---|
 | [BN1111](svg/BN1111.svg) | Biomedical Engineering Principles and Practice I | 4 | not offered | 0 | no |
+| [BN2102](svg/BN2102.svg) | Bioengineering Data Analysis | 4 | S2 | 3 | yes |
 | [BN2111](svg/BN2111.svg) | Biomedical Engineering Principles and Practice II | 4 | S2 | 0 | yes |
-| [BT1101](svg/BT1101.svg) | Introduction to Business Analytics | 4 | S1 S2 | 2 | yes |
-| [BT1101HS](svg/BT1101HS.svg) | Introduction to Business Analytics | 4 | S1 S2 | 1 | yes |
-| [BT2102](svg/BT2102.svg) | Data Management and Visualisation | 4 | S1 S2 | 2 | yes |
-| [BT3103](svg/BT3103.svg) | Application Systems Development for Business Analytics | 4 | S1 S2 | 1 | yes |
+| [BSP1703](svg/BSP1703.svg) | Managerial Economics | 4 | S1 S2 | 1 | yes |
+| [BSP1703X](svg/BSP1703X.svg) | Managerial Economics | 4 | not offered | 1 | no |
+| [BT1101](svg/BT1101.svg) | Introduction to Business Analytics | 4 | S1 S2 | 6 | yes |
+| [BT1101HS](svg/BT1101HS.svg) | Introduction to Business Analytics | 4 | S1 S2 | 4 | yes |
+| [BT2101](svg/BT2101.svg) | Econometrics Modeling for Business Analytics | 4 | S1 S2 | 12 | yes |
+| [BT2102](svg/BT2102.svg) | Data Management and Visualisation | 4 | S1 S2 | 11 | yes |
+| [BT3017](svg/BT3017.svg) | Feature Engineering for Machine Learning | 4 | S2 | 0 | yes |
+| [BT3102](svg/BT3102.svg) | Computational Methods for Business Analytics | 4 | S1 | 1 | yes |
+| [BT3103](svg/BT3103.svg) | Application Systems Development for Business Analytics | 4 | S1 S2 | 10 | yes |
+| [BT4012](svg/BT4012.svg) | Fraud Analytics | 4 | S1 | 0 | yes |
+| [BT4013](svg/BT4013.svg) | Analytics for Capital Market Trading and Investment | 4 | S2 | 0 | yes |
+| [BT4014](svg/BT4014.svg) | Analytics Driven Design of Adaptive Systems | 4 | S2 | 0 | yes |
+| [BT4015](svg/BT4015.svg) | Geospatial Analytics | 4 | S1 | 0 | yes |
+| [BT4016](svg/BT4016.svg) | Risk Analytics for Financial Services | 4 | S2 | 0 | yes |
+| [BT4101](svg/BT4101.svg) | B.Sc. (Business Analytics) Dissertation | 12 | S1 S2 ST1 ST2 | 0 | yes |
+| [BT4103](svg/BT4103.svg) | Business Analytics Capstone Project | 8 | S1 S2 | 0 | yes |
+| [BT4211](svg/BT4211.svg) | Data-Driven Marketing | 4 | S1 | 0 | yes |
+| [BT4212](svg/BT4212.svg) | Search Engine Optimization and Analytics | 4 | S1 | 0 | yes |
 | [BT4221](svg/BT4221.svg) | Advanced Analytics with Big Data Technologies | 4 | S2 | 0 | yes |
+| [BT4222](svg/BT4222.svg) | Mining Web Data for Business Insights | 4 | S1 S2 | 0 | yes |
 | [BT4240](svg/BT4240.svg) | Machine Learning for Predictive Data Analytics | 4 | S2 | 0 | yes |
+| [BT4241](svg/BT4241.svg) | Causal Impact Analytics for Business Applications | 4 | S2 | 0 | yes |
+| [BT4301](svg/BT4301.svg) | Data and AI Operations Engineering | 4 | S2 | 0 | yes |
 | [CE2407](svg/CE2407.svg) | Engineering & Uncertainty Analyses | 4 | not offered | 2 | no |
-| [CE2407A](svg/CE2407A.svg) | Uncertainty Analysis for Engineers | 2 | S1 | 3 | yes |
-| [CE2407B](svg/CE2407B.svg) | Introduction to Numerical Methods for Engineers | 2 | S2 | 0 | yes |
+| [CE2407A](svg/CE2407A.svg) | Uncertainty Analysis for Engineers | 2 | S1 | 4 | yes |
+| [CE2407B](svg/CE2407B.svg) | Introduction to Numerical Methods for Engineers | 2 | S2 | 1 | yes |
 | [CEG5101](svg/CEG5101.svg) | Modern Computer Networking | 4 | S1 S2 | 0 | yes |
 | [CG1111A](svg/CG1111A.svg) | Engineering Principles and Practice I | 4 | S1 | 2 | yes |
+| [CG2023](svg/CG2023.svg) | Signals and Systems | 4 | S2 | 2 | yes |
 | [CG2028](svg/CG2028.svg) | Computer Organization | 2 | S1 S2 | 3 | yes |
 | [CG2271](svg/CG2271.svg) | Real-Time Operating Systems | 4 | S1 S2 | 5 | yes |
 | [CG3201](svg/CG3201.svg) | Machine Learning and Deep Learning | 4 | S1 S2 | 2 | yes |
 | [CG3207](svg/CG3207.svg) | Computer Architecture | 4 | S1 S2 | 1 | yes |
-| [CN2116](svg/CN2116.svg) | Chemical Kinetics & Reactor Design | 4 | not offered | 0 | no |
-| [CN2122](svg/CN2122.svg) | Fluid Mechanics | 5 | not offered | 0 | no |
-| [CN2122A](svg/CN2122A.svg) | Fluid Mechanics | 4 | not offered | 0 | no |
-| [CN2125](svg/CN2125.svg) | Heat & Mass Transfer | 4 | not offered | 0 | no |
+| [CG4001](svg/CG4001.svg) | B. Eng. Dissertation | 12 | S1 S2 ST1 ST2 | 0 | no |
 | [CN3421](svg/CN3421.svg) | Process Modeling And Numerical Simulation | 4 | not offered | 0 | no |
-| [CP3880](svg/CP3880.svg) | Advanced Technology Attachment Programme | 12 | S1 S2 ST1 ST2 | 0 | yes |
-| [CS1010](svg/CS1010.svg) | Programming Methodology | 4 | S1 S2 | 29 | yes |
-| [CS1010A](svg/CS1010A.svg) | Programming Methodology | 4 | S1 S2 | 27 | yes |
-| [CS1010E](svg/CS1010E.svg) | Programming Methodology | 4 | S1 S2 ST2 | 29 | yes |
-| [CS1010HS](svg/CS1010HS.svg) | Programming Methodology | 4 | S2 | 20 | yes |
-| [CS1010J](svg/CS1010J.svg) | Programming Methodology | 4 | not offered | 25 | no |
+| [CP1001](svg/CP1001.svg) | Foundations of Innovation in Computing | 2 | S1 | 1 | yes |
+| [CP1002](svg/CP1002.svg) | Frontiers of Innovation in Computing | 2 | S2 | 0 | yes |
+| [CP1008](svg/CP1008.svg) | Learning with Generative AI Tools | 2 | S2 | 0 | yes |
+| [CP2106](svg/CP2106.svg) | Independent Software Development Project (Orbital) | 4 | S1 | 0 | yes |
+| [CP2107](svg/CP2107.svg) | Independent Introduction to CS Research (Odyssey) | 4 | S1 S2 | 0 | yes |
+| [CP3106](svg/CP3106.svg) | Independent Project | 4 | S1 S2 | 0 | yes |
+| [CP3107](svg/CP3107.svg) | Computing for Social Service Agencies I | 6 | S1 | 0 | yes |
+| [CP3108A](svg/CP3108A.svg) | Independent Work | 2 | S1 S2 | 0 | yes |
+| [CP3108B](svg/CP3108B.svg) | Independent Work | 4 | S1 S2 | 0 | yes |
+| [CP3111](svg/CP3111.svg) | Independent Project II | 4 | S1 | 0 | yes |
+| [CP3201](svg/CP3201.svg) | Industry Seminar for Computing | 2 | S1 | 0 | yes |
+| [CP3208](svg/CP3208.svg) | Undergraduate Research in Computing I | 4 | S1 | 0 | yes |
+| [CP3209](svg/CP3209.svg) | Undergraduate Research Project in Computing | 8 | S1 S2 | 0 | yes |
+| [CP3209R](svg/CP3209R.svg) | Undergraduate Research Project in Computing (REx) | 0 | S1 S2 | 0 | yes |
+| [CP3880](svg/CP3880.svg) | Advanced Technology Attachment Programme | 12 | S1 S2 ST1 ST2 | 1 | yes |
+| [CP4101](svg/CP4101.svg) | B.Comp. Dissertation | 12 | S1 S2 | 0 | yes |
+| [CP4106](svg/CP4106.svg) | Computing Project | 8 | S1 S2 | 0 | yes |
+| [CP4281](svg/CP4281.svg) | Emerging Topics in Computing I: AI for Graphics | 4 | S1 | 0 | yes |
+| [CP4282](svg/CP4282.svg) | Emerging Topics in Computing II: Gaussian Splatting | 4 | S1 | 0 | yes |
+| [CP4283](svg/CP4283.svg) | Emerging Topics in Computing III: Deep Generative Models | 4 | S1 | 0 | yes |
+| [CP4284](svg/CP4284.svg) | Emerging Topics in Computing IV: Large Language Model Reasoning Agents | 4 | S2 | 0 | yes |
+| [CP4285](svg/CP4285.svg) | Emerging Topics in Computing V: Modern Recommendation Systems | 4 | S1 | 0 | yes |
+| [CS1010](svg/CS1010.svg) | Programming Methodology | 4 | S1 S2 | 37 | yes |
+| [CS1010A](svg/CS1010A.svg) | Programming Methodology | 4 | S1 S2 | 35 | yes |
+| [CS1010E](svg/CS1010E.svg) | Programming Methodology | 4 | S1 S2 ST2 | 37 | yes |
+| [CS1010HS](svg/CS1010HS.svg) | Programming Methodology | 4 | S2 | 28 | yes |
+| [CS1010J](svg/CS1010J.svg) | Programming Methodology | 4 | not offered | 33 | no |
 | [CS1010R](svg/CS1010R.svg) | Programming Methodology | 1 | S1 S2 | 5 | yes |
-| [CS1010S](svg/CS1010S.svg) | Programming Methodology | 4 | S1 S2 | 26 | yes |
-| [CS1010X](svg/CS1010X.svg) | Programming Methodology | 4 | S2 ST1 | 28 | yes |
-| [CS1101S](svg/CS1101S.svg) | Programming Methodology | 4 | S1 S2 | 23 | yes |
+| [CS1010S](svg/CS1010S.svg) | Programming Methodology | 4 | S1 S2 | 34 | yes |
+| [CS1010X](svg/CS1010X.svg) | Programming Methodology | 4 | S2 ST1 | 36 | yes |
+| [CS1010XCP](svg/CS1010XCP.svg) | Programming Methodology | 4 | not offered | 6 | no |
+| [CS1101S](svg/CS1101S.svg) | Programming Methodology | 4 | S1 S2 | 30 | yes |
 | [CS1231](svg/CS1231.svg) | Discrete Structures | 4 | S1 S2 | 18 | yes |
 | [CS1231R](svg/CS1231R.svg) | Discrete Structures | 1 | S1 S2 | 0 | yes |
 | [CS1231S](svg/CS1231S.svg) | Discrete Structures | 4 | S1 S2 | 18 | yes |
-| [CS2030](svg/CS2030.svg) | Programming Methodology II | 4 | S1 S2 | 14 | yes |
-| [CS2030DE](svg/CS2030DE.svg) | Programming Methodology II | 4 | S1 S2 | 14 | yes |
-| [CS2030HS](svg/CS2030HS.svg) | Programming Methodology II | 4 | S2 | 12 | no |
-| [CS2030S](svg/CS2030S.svg) | Programming Methodology II | 4 | S1 S2 | 14 | yes |
-| [CS2040](svg/CS2040.svg) | Data Structures and Algorithms | 4 | S1 S2 | 31 | yes |
-| [CS2040C](svg/CS2040C.svg) | Data Structures and Algorithms | 4 | S1 S2 | 32 | yes |
-| [CS2040DE](svg/CS2040DE.svg) | Data Structures and Algorithms | 4 | S1 S2 | 29 | yes |
-| [CS2040HS](svg/CS2040HS.svg) | Data Structures and Algorithms | 4 | S1 S2 | 27 | no |
-| [CS2040S](svg/CS2040S.svg) | Data Structures and Algorithms | 4 | S1 S2 | 32 | yes |
+| [CS2030](svg/CS2030.svg) | Programming Methodology II | 4 | S1 S2 | 17 | yes |
+| [CS2030DE](svg/CS2030DE.svg) | Programming Methodology II | 4 | S1 S2 | 17 | yes |
+| [CS2030HS](svg/CS2030HS.svg) | Programming Methodology II | 4 | S2 | 15 | no |
+| [CS2030S](svg/CS2030S.svg) | Programming Methodology II | 4 | S1 S2 | 17 | yes |
+| [CS2040](svg/CS2040.svg) | Data Structures and Algorithms | 4 | S1 S2 | 33 | yes |
+| [CS2040C](svg/CS2040C.svg) | Data Structures and Algorithms | 4 | S1 S2 | 34 | yes |
+| [CS2040DE](svg/CS2040DE.svg) | Data Structures and Algorithms | 4 | S1 S2 | 31 | yes |
+| [CS2040HS](svg/CS2040HS.svg) | Data Structures and Algorithms | 4 | S1 S2 | 29 | no |
+| [CS2040S](svg/CS2040S.svg) | Data Structures and Algorithms | 4 | S1 S2 | 34 | yes |
 | [CS2100](svg/CS2100.svg) | Computer Organisation | 4 | S1 S2 | 3 | yes |
 | [CS2100DE](svg/CS2100DE.svg) | Computer Organisation | 4 | S2 | 3 | yes |
 | [CS2100HS](svg/CS2100HS.svg) | Computer Organisation | 4 | S1 | 3 | yes |
 | [CS2100R](svg/CS2100R.svg) | Computer Organisation | 1 | not offered | 0 | no |
 | [CS2101](svg/CS2101.svg) | Effective Communication for Computing Professionals | 4 | S1 S2 | 2 | yes |
 | [CS2101X](svg/CS2101X.svg) | Effective Communication for Computing Professionals | 4 | S2 | 0 | no |
-| [CS2102](svg/CS2102.svg) | Database Systems | 4 | S1 S2 | 3 | yes |
-| [CS2103](svg/CS2103.svg) | Software Engineering | 4 | S1 S2 | 11 | yes |
-| [CS2103DE](svg/CS2103DE.svg) | Software Engineering | 4 | S2 | 9 | yes |
+| [CS2102](svg/CS2102.svg) | Database Systems | 4 | S1 S2 | 5 | yes |
+| [CS2103](svg/CS2103.svg) | Software Engineering | 4 | S1 S2 | 13 | yes |
+| [CS2103DE](svg/CS2103DE.svg) | Software Engineering | 4 | S2 | 11 | yes |
 | [CS2103R](svg/CS2103R.svg) | Software Engineering | 1 | S1 S2 | 0 | yes |
-| [CS2103T](svg/CS2103T.svg) | Software Engineering | 4 | S1 S2 | 11 | yes |
+| [CS2103T](svg/CS2103T.svg) | Software Engineering | 4 | S1 S2 | 13 | yes |
 | [CS2104](svg/CS2104.svg) | Programming Language Concepts | 4 | S1 | 1 | yes |
 | [CS2105](svg/CS2105.svg) | Introduction to Computer Networks | 4 | S1 S2 | 5 | yes |
 | [CS2106](svg/CS2106.svg) | Introduction to Operating Systems | 4 | S1 S2 | 6 | yes |
-| [CS2107](svg/CS2107.svg) | Introduction to Information Security | 4 | S1 S2 | 3 | yes |
+| [CS2107](svg/CS2107.svg) | Introduction to Information Security | 4 | S1 S2 | 5 | yes |
 | [CS2108](svg/CS2108.svg) | Introduction to Media Computing | 4 | S2 | 0 | yes |
-| [CS2109HS](svg/CS2109HS.svg) | Introduction to AI and Machine Learning | 4 | S1 | 3 | no |
-| [CS2109S](svg/CS2109S.svg) | Introduction to AI and Machine Learning | 4 | S1 S2 | 5 | yes |
+| [CS2109HS](svg/CS2109HS.svg) | Introduction to AI and Machine Learning | 4 | S1 | 4 | no |
+| [CS2109S](svg/CS2109S.svg) | Introduction to AI and Machine Learning | 4 | S1 S2 | 8 | yes |
 | [CS2111](svg/CS2111.svg) | Human-Centred Computing | 4 | S2 | 2 | yes |
-| [CS2113](svg/CS2113.svg) | Software Engineering & Object-Oriented Programming | 4 | S1 S2 | 17 | yes |
-| [CS2113T](svg/CS2113T.svg) | Software Engineering & Object-Oriented Programming | 4 | not offered | 14 | no |
+| [CS2113](svg/CS2113.svg) | Software Engineering & Object-Oriented Programming | 4 | S1 S2 | 20 | yes |
+| [CS2113T](svg/CS2113T.svg) | Software Engineering & Object-Oriented Programming | 4 | not offered | 17 | no |
 | [CS2220](svg/CS2220.svg) | Introduction to Computational Biology | 4 | S1 | 3 | yes |
 | [CS2251](svg/CS2251.svg) | Optimization for Machine Learning | 4 | S1 | 0 | yes |
 | [CS2309](svg/CS2309.svg) | CS Research Methodology | 4 | S1 | 0 | yes |
@@ -97,12 +135,12 @@ Overviews: [BComp CS core chain](../../../../docs/diagrams/cs-core-chain.svg) ·
 | [CS3231](svg/CS3231.svg) | Theory of Computation | 4 | S1 | 2 | yes |
 | [CS3233](svg/CS3233.svg) | Competitive Programming | 4 | S2 | 0 | yes |
 | [CS3234](svg/CS3234.svg) | Logic for Proofs and Programs | 4 | S2 | 0 | yes |
-| [CS3235](svg/CS3235.svg) | Computer Security | 4 | S1 S2 | 3 | yes |
+| [CS3235](svg/CS3235.svg) | Computer Security | 4 | S1 S2 | 5 | yes |
 | [CS3236](svg/CS3236.svg) | Introduction to Information Theory | 4 | S2 | 0 | yes |
 | [CS3236R](svg/CS3236R.svg) | Introduction to Information Theory | 1 | S1 | 0 | yes |
 | [CS3237](svg/CS3237.svg) | Introduction to Internet of Things | 4 | S1 | 0 | yes |
 | [CS3240](svg/CS3240.svg) | Interaction Design | 4 | S1 | 3 | yes |
-| [CS3241](svg/CS3241.svg) | Computer Graphics | 4 | S1 | 3 | yes |
+| [CS3241](svg/CS3241.svg) | Computer Graphics | 4 | S1 | 5 | yes |
 | [CS3241R](svg/CS3241R.svg) | Computer Graphics | 1 | S1 | 0 | yes |
 | [CS3242](svg/CS3242.svg) | 3D Modeling and Animation | 4 | S2 | 0 | yes |
 | [CS3243](svg/CS3243.svg) | Introduction to Artificial Intelligence | 4 | S2 | 5 | yes |
@@ -110,8 +148,8 @@ Overviews: [BComp CS core chain](../../../../docs/diagrams/cs-core-chain.svg) ·
 | [CS3245R](svg/CS3245R.svg) | Information Retrieval | 1 | S1 | 0 | yes |
 | [CS3247](svg/CS3247.svg) | Game Development | 4 | S2 | 1 | yes |
 | [CS3249](svg/CS3249.svg) | Conversational User Interface | 4 | S1 | 0 | yes |
-| [CS3263](svg/CS3263.svg) | Foundations of Artificial Intelligence | 4 | S1 S2 | 4 | yes |
-| [CS3264](svg/CS3264.svg) | Foundations of Machine Learning | 4 | S1 S2 | 2 | yes |
+| [CS3263](svg/CS3263.svg) | Foundations of Artificial Intelligence | 4 | S1 S2 | 5 | yes |
+| [CS3264](svg/CS3264.svg) | Foundations of Machine Learning | 4 | S1 S2 | 3 | yes |
 | [CS3268](svg/CS3268.svg) | Responsible AI: from Algorithms to Impact | 4 | S1 | 0 | yes |
 | [CS3281](svg/CS3281.svg) | Software Engineering for Evolving Production Systems I | 4 | S2 | 1 | yes |
 | [CS3282](svg/CS3282.svg) | Software Engineering for Evolving Production Systems II | 4 | S2 | 0 | yes |
@@ -136,7 +174,7 @@ Overviews: [BComp CS core chain](../../../../docs/diagrams/cs-core-chain.svg) ·
 | [CS4243](svg/CS4243.svg) | Computer Vision and Pattern Recognition | 4 | S1 S2 | 0 | yes |
 | [CS4246](svg/CS4246.svg) | Reinforcement Learning and Sequential Decision Making | 4 | S1 S2 | 0 | yes |
 | [CS4247](svg/CS4247.svg) | Graphics Rendering Techniques | 4 | S2 | 0 | yes |
-| [CS4248](svg/CS4248.svg) | Introduction to Large Language Models | 4 | S1 S2 | 0 | yes |
+| [CS4248](svg/CS4248.svg) | Introduction to Large Language Models | 4 | S1 S2 | 1 | yes |
 | [CS4249](svg/CS4249.svg) | Quantitative Methods of Human-Computer Interaction | 4 | S2 | 0 | yes |
 | [CS4261](svg/CS4261.svg) | Algorithmic Mechanism Design | 4 | S1 | 0 | yes |
 | [CS4262](svg/CS4262.svg) | Machine Learning Systems | 4 | S2 | 0 | yes |
@@ -162,49 +200,49 @@ Overviews: [BComp CS core chain](../../../../docs/diagrams/cs-core-chain.svg) ·
 | [CS5462](svg/CS5462.svg) | Machine Learning Systems | 4 | S2 | 0 | yes |
 | [CS5477](svg/CS5477.svg) | 3D Computer Vision | 4 | S2 | 0 | yes |
 | [CS5478](svg/CS5478.svg) | Intelligent Robots: Algorithms and Systems | 4 | S1 | 0 | yes |
-| [DBA3701](svg/DBA3701.svg) | Introduction to Optimization | 4 | S1 S2 | 0 | yes |
+| [DAO1704](svg/DAO1704.svg) | Decision Analytics using Spreadsheets and AI | 4 | S1 S2 | 0 | no |
+| [DAO2702](svg/DAO2702.svg) | Programming for Business Analytics and AI | 4 | S1 S2 | 5 | no |
+| [DBA3803](svg/DBA3803.svg) | Predictive Analytics in Business | 4 | S1 S2 | 4 | yes |
+| [DBA4714](svg/DBA4714.svg) | Deep Learning and Generative AI in Business | 4 | S2 | 0 | no |
+| [DBA5114](svg/DBA5114.svg) | AI Agents for Business Analytics | 4 | S2 | 0 | yes |
 | [DMX1401AI](svg/DMX1401AI.svg) | Design Your Own Course | 4 | S1 S2 ST1 ST2 | 0 | yes |
 | [DMX1501AI](svg/DMX1501AI.svg) | Design Your Own Course | 5 | S1 S2 ST1 ST2 | 0 | yes |
-| [DSA1101](svg/DSA1101.svg) | Introduction to Data Science | 4 | S1 S2 | 1 | yes |
+| [DSA1101](svg/DSA1101.svg) | Introduction to Data Science | 4 | S1 S2 | 2 | yes |
 | [DSA3102](svg/DSA3102.svg) | Essential Data Analytics Tools: Convex Optimisation | 4 | S1 S2 | 0 | yes |
 | [DSA4213](svg/DSA4213.svg) | Natural Language Processing for Data Science | 4 | S1 | 0 | no |
-| [DSC3214](svg/DSC3214.svg) | Introduction To Optimisation | 4 | not offered | 0 | no |
-| [DSE1101](svg/DSE1101.svg) | Introductory Data Science for Economics | 4 | S1 | 1 | no |
-| [EC2303](svg/EC2303.svg) | Foundations for Econometrics | 4 | S1 S2 | 2 | yes |
+| [DSC3216](svg/DSC3216.svg) | Predictive Analytics in Business | 4 | not offered | 0 | no |
+| [DSE1101](svg/DSE1101.svg) | Introductory Data Science for Economics | 4 | S1 | 2 | no |
+| [EC1101E](svg/EC1101E.svg) | Introduction to Economic Analysis | 4 | S1 S2 | 1 | yes |
+| [EC1301](svg/EC1301.svg) | Principles of Economics | 4 | not offered | 1 | no |
+| [EC2303](svg/EC2303.svg) | Foundations for Econometrics | 4 | S1 S2 | 3 | yes |
 | [EC3303](svg/EC3303.svg) | Econometrics I | 4 | S1 S2 | 0 | yes |
 | [EE1111](svg/EE1111.svg) | Engineering Principles and Practice I | 6 | not offered | 0 | no |
 | [EE1111A](svg/EE1111A.svg) | Electrical Engineering Principles and Practice I | 4 | S1 | 1 | yes |
 | [EE1111B](svg/EE1111B.svg) | Electrical & Computer Engineering Principles & Practice | 4 | ST1 | 2 | yes |
-| [EE2012](svg/EE2012.svg) | Analytical Methods in Electrical and Computer Engineering | 4 | S1 S2 | 23 | yes |
-| [EE2012A](svg/EE2012A.svg) | Analytical Methods in Electrical and Computer Engineering | 3 | not offered | 22 | no |
+| [EE2012](svg/EE2012.svg) | Analytical Methods in Electrical and Computer Engineering | 4 | S1 S2 | 25 | yes |
+| [EE2012A](svg/EE2012A.svg) | Analytical Methods in Electrical and Computer Engineering | 3 | not offered | 23 | no |
 | [EE2020](svg/EE2020.svg) | Digital Fundamentals | 5 | not offered | 1 | no |
+| [EE2023](svg/EE2023.svg) | Signals and Systems | 4 | S1 S2 | 2 | yes |
 | [EE2024](svg/EE2024.svg) | Programming for Computer Interfaces | 5 | not offered | 4 | no |
 | [EE2026](svg/EE2026.svg) | Digital Design | 4 | S1 S2 | 1 | yes |
 | [EE2028](svg/EE2028.svg) | Microcontroller Programming and Interfacing | 4 | S1 S2 | 4 | yes |
 | [EE2111A](svg/EE2111A.svg) | Electrical Engineering Principles and Practice II | 4 | S2 | 2 | yes |
 | [EE2211](svg/EE2211.svg) | Introduction to Machine Learning | 4 | S1 S2 | 3 | yes |
 | [EE2213](svg/EE2213.svg) | Introduction to Artificial Intelligence | 4 | S1 S2 | 3 | yes |
-| [EE3207E](svg/EE3207E.svg) | Computer Architecture | 4 | not offered | 0 | no |
 | [EE3703](svg/EE3703.svg) | Machine Learning with Applications | 4 | S1 S2 | 0 | yes |
-| [EE4204](svg/EE4204.svg) | Computer Networks | 4 | S1 S2 | 7 | yes |
-| [EE4204E](svg/EE4204E.svg) | Computer Networks | 4 | not offered | 0 | no |
-| [EE4211](svg/EE4211.svg) | Data Science for the Internet of Things | 4 | S1 | 0 | yes |
+| [EE3731C](svg/EE3731C.svg) | Signal Analytics | 4 | S1 | 1 | yes |
+| [EE4204](svg/EE4204.svg) | Computer Networks | 4 | S1 S2 | 6 | yes |
+| [EE4210](svg/EE4210.svg) | Network Protocols and Applications | 4 | not offered | 1 | no |
 | [EE4212](svg/EE4212.svg) | Computer Vision | 4 | S2 | 0 | yes |
 | [EE4214](svg/EE4214.svg) | Real-Time Embedded Systems | 4 | not offered | 0 | no |
-| [EE4214E](svg/EE4214E.svg) | Real-Time Embedded Systems | 4 | not offered | 0 | no |
-| [EE4704](svg/EE4704.svg) | Image Processing and Analysis | 4 | S1 | 2 | yes |
-| [EE4704E](svg/EE4704E.svg) | Introduction to Computer Vision and Image Processing | 4 | not offered | 0 | no |
+| [EE4704](svg/EE4704.svg) | Image Processing and Analysis | 4 | S1 | 1 | yes |
 | [EE4802](svg/EE4802.svg) | Learning from Data | 4 | S2 | 0 | yes |
-| [EE5020](svg/EE5020.svg) | Data Science for Internet of Things | 2 | S2 | 0 | yes |
-| [EE5023](svg/EE5023.svg) | Wireless Networks | 2 | S2 | 0 | yes |
-| [EE5024](svg/EE5024.svg) | IoT Sensor Networks | 2 | S2 | 0 | yes |
-| [EE5132](svg/EE5132.svg) | Wireless and Sensor Networks | 4 | not offered | 0 | no |
 | [EE5310](svg/EE5310.svg) | Communication Networking Fundamentals | 4 | not offered | 0 | no |
-| [EE5731](svg/EE5731.svg) | Visual Computing | 4 | S1 | 0 | yes |
 | [EE6310](svg/EE6310.svg) | Communication Networking Fundamentals (Advanced) | 4 | not offered | 0 | no |
+| [EG2401A](svg/EG2401A.svg) | Engineering Professionalism | 2 | S1 S2 | 3 | yes |
 | [ES1000](svg/ES1000.svg) | Foundation Academic English | 0 | S1 S2 | 0 | yes |
 | [ES1531](svg/ES1531.svg) | Critical Thinking And Writing | 4 | not offered | 0 | no |
-| [ES2002](svg/ES2002.svg) | Business Communication for Leaders (BBA) | 4 | S1 S2 | 2 | no |
+| [ES2002](svg/ES2002.svg) | Business Communication for Leaders (BBA) | 4 | S1 S2 | 4 | no |
 | [ES2007D](svg/ES2007D.svg) | Professional Communication | 4 | not offered | 1 | no |
 | [ES2531](svg/ES2531.svg) | Critical Thinking And Writing | 4 | not offered | 1 | no |
 | [ES2631](svg/ES2631.svg) | Critique and Communication of Thinking and Design | 4 | S1 S2 | 1 | no |
@@ -213,20 +251,75 @@ Overviews: [BComp CS core chain](../../../../docs/diagrams/cs-core-chain.svg) ·
 | [ESP2107](svg/ESP2107.svg) | Numerical Methods and Statistics | 4 | S2 | 1 | yes |
 | [ESP2111](svg/ESP2111.svg) | Sensor System Electronics | 4 | S2 | 0 | yes |
 | [FAS1101](svg/FAS1101.svg) | Writing Academically: Arts and Social Sciences | 4 | S1 S2 | 0 | no |
+| [FT5012](svg/FT5012.svg) | Digital Trust in Banking and Finance | 4 | S1 | 0 | yes |
 | [GEK1549](svg/GEK1549.svg) | Critical Thinking And Writing | 4 | not offered | 0 | no |
 | [GET1021](svg/GET1021.svg) | Critical Thinking And Writing | 4 | not offered | 0 | no |
+| [HS1501](svg/HS1501.svg) | Artificial Intelligence and Society | 4 | S1 S2 | 0 | yes |
 | [ID2116](svg/ID2116.svg) | Computing for Design | 4 | S1 S2 | 1 | yes |
 | [ID3131](svg/ID3131.svg) | Techniques in Interaction Design and User Experience | 4 | S1 S2 | 1 | yes |
-| [IE2110](svg/IE2110.svg) | Operations Research I | 4 | S1 | 0 | yes |
+| [IE1111R](svg/IE1111R.svg) | Industrial & Systems Engrg Principles & Practice I | 4 | S1 | 1 | yes |
+| [IE2100](svg/IE2100.svg) | Probability Models With Applications | 4 | S2 | 1 | yes |
+| [IE3101](svg/IE3101.svg) | Statistics For Engineering Applications | 4 | S1 | 1 | yes |
 | [IE4213](svg/IE4213.svg) | Learning from Data | 4 | S2 | 0 | yes |
-| [IS1108](svg/IS1108.svg) | Digital and AI Ethics | 4 | S1 S2 | 2 | yes |
-| [IS2101](svg/IS2101.svg) | Business and Technical Communication | 4 | S1 S2 | 2 | yes |
-| [IS2103](svg/IS2103.svg) | Enterprise Systems Server-side Design and Development | 4 | not offered | 1 | no |
-| [IS2108](svg/IS2108.svg) | Full-stack Software Engineering for AI Solutions I | 4 | S1 | 1 | yes |
-| [IS3103](svg/IS3103.svg) | Digital Transformation and Leadership Communication | 4 | S1 S2 | 0 | yes |
-| [IS3106](svg/IS3106.svg) | Enterprise Systems Interface Design and Development | 4 | not offered | 1 | no |
+| [IE4280](svg/IE4280.svg) | Generative AI and FinTech Technologies | 4 | S2 | 0 | yes |
+| [IFS4103](svg/IFS4103.svg) | Penetration Testing Practice | 4 | S1 S2 | 0 | yes |
+| [IFS4201](svg/IFS4201.svg) | Information Security Industry Capstone Project | 8 | S2 ST1 ST2 | 1 | yes |
+| [IFS4202](svg/IFS4202.svg) | Information Security Practicum Programme | 6 | S2 ST1 ST2 | 0 | yes |
+| [IFS4205](svg/IFS4205.svg) | Information Security Capstone Project. | 8 | S1 | 0 | yes |
+| [IS1103](svg/IS1103.svg) | Ethics in Computing | 4 | not offered | 6 | no |
+| [IS1108](svg/IS1108.svg) | Digital and AI Ethics | 4 | S1 S2 | 9 | yes |
+| [IS1128](svg/IS1128.svg) | IT, Management and Organisation | 4 | S1 S2 | 1 | yes |
+| [IS2101](svg/IS2101.svg) | Business and Technical Communication | 4 | S1 S2 | 4 | yes |
+| [IS2102](svg/IS2102.svg) | Requirements Analysis for Business IT Systems | 4 | S1 | 0 | yes |
+| [IS2103](svg/IS2103.svg) | Enterprise Systems Server-side Design and Development | 4 | not offered | 5 | no |
+| [IS2108](svg/IS2108.svg) | Full-stack Software Engineering for AI Solutions I | 4 | S1 | 11 | yes |
+| [IS2109](svg/IS2109.svg) | AI and Machine Learning Techniques I | 4 | S2 | 3 | yes |
+| [IS2218](svg/IS2218.svg) | Digital Platforms for Business | 4 | S1 S2 | 3 | yes |
+| [IS2238](svg/IS2238.svg) | Economics of IT and AI | 4 | S1 S2 | 3 | yes |
+| [IS3103](svg/IS3103.svg) | Digital Transformation and Leadership Communication | 4 | S1 S2 | 11 | yes |
+| [IS3106](svg/IS3106.svg) | Enterprise Systems Interface Design and Development | 4 | not offered | 9 | no |
+| [IS3107](svg/IS3107.svg) | Data Engineering | 4 | S1 S2 | 0 | yes |
+| [IS3108](svg/IS3108.svg) | Full-stack Software Engineering for AI Solutions II | 4 | S2 | 0 | yes |
+| [IS3109](svg/IS3109.svg) | AI and Machine Learning Techniques II | 4 | S1 | 3 | yes |
+| [IS3150](svg/IS3150.svg) | Digital Media Marketing | 4 | S2 | 0 | yes |
+| [IS3240](svg/IS3240.svg) | Digital Platform Strategy and Architecture | 4 | S1 | 0 | yes |
+| [IS3251](svg/IS3251.svg) | Principles of Technology Entrepreneurship | 4 | S2 | 0 | yes |
+| [IS4010](svg/IS4010.svg) | Digital Transformation Leadership Programme | 12 | S1 S2 ST1 ST2 | 0 | yes |
+| [IS4100](svg/IS4100.svg) | IT Project Management | 4 | S2 | 0 | yes |
+| [IS4108](svg/IS4108.svg) | AI Solutioning Capstone Project | 8 | S1 S2 | 0 | yes |
+| [IS4151](svg/IS4151.svg) | AIoT Solutions and Development | 4 | S2 | 0 | yes |
+| [IS4226](svg/IS4226.svg) | Systematic Trading Strategies and Systems | 4 | S1 | 0 | yes |
+| [IS4228](svg/IS4228.svg) | Information Technologies in Financial Services | 4 | S1 S2 | 0 | yes |
+| [IS4231](svg/IS4231.svg) | Information Security Management | 4 | S2 | 0 | yes |
+| [IS4233](svg/IS4233.svg) | Legal Aspects of Information Technology | 4 | S2 | 0 | yes |
+| [IS4234](svg/IS4234.svg) | Governance, Regulation, and Compliance Technology | 4 | S1 | 0 | yes |
+| [IS4236](svg/IS4236.svg) | Cloud Services and Infrastructure Management | 4 | S2 | 0 | yes |
+| [IS4238](svg/IS4238.svg) | Strategic Cybersecurity | 4 | S1 | 0 | yes |
 | [IS4240](svg/IS4240.svg) | Business Intelligence Systems | 4 | not offered | 0 | no |
+| [IS4242](svg/IS4242.svg) | Intelligent Systems and Techniques | 4 | not offered | 0 | no |
+| [IS4243](svg/IS4243.svg) | Digital Transformation Consulting | 4 | S2 | 0 | yes |
+| [IS4246](svg/IS4246.svg) | Smart Systems and AI Governance | 4 | S1 | 0 | yes |
+| [IS4250](svg/IS4250.svg) | IT-enabled Healthcare Solutioning | 4 | S1 | 0 | yes |
+| [IS4261](svg/IS4261.svg) | Designing AI-driven Business Innovations | 4 | S2 | 0 | yes |
+| [IS4262](svg/IS4262.svg) | Digital Product Management | 4 | S2 | 0 | yes |
+| [IS4301](svg/IS4301.svg) | Agile IT with DevOps | 4 | S1 | 0 | yes |
+| [IS4302](svg/IS4302.svg) | Blockchain and Distributed Ledger Technologies | 4 | S1 S2 | 0 | yes |
+| [IS4303](svg/IS4303.svg) | IT-mediated financial solutions and platforms | 4 | S2 | 0 | yes |
+| [IS4400](svg/IS4400.svg) | Human-AI Interaction | 4 | S2 | 0 | yes |
+| [IS4401](svg/IS4401.svg) | Generative AI and Business Applications | 4 | S1 | 0 | yes |
+| [IS4402](svg/IS4402.svg) | Machine Learning with Unstructured Data | 4 | S2 | 0 | yes |
+| [IS4403](svg/IS4403.svg) | Agentic AI Solutions and Development | 4 | S2 | 0 | yes |
+| [IS5006](svg/IS5006.svg) | Human-Centred Intelligent Systems | 4 | not offered | 0 | no |
+| [IS5110](svg/IS5110.svg) | Software Project Management | 4 | not offered | 0 | no |
+| [IS5451](svg/IS5451.svg) | AIoT Solutions and Development | 4 | S2 | 0 | yes |
+| [ISC3550](svg/ISC3550.svg) | Extended Sociology Internship | 4 | ST1 ST2 | 0 | yes |
+| [ISE3550](svg/ISE3550.svg) | Extended Internship | 4 | S1 S2 | 0 | no |
+| [ISY5005](svg/ISY5005.svg) | Intelligent Software Agents | 10 | not offered | 0 | no |
+| [IT1007](svg/IT1007.svg) | Introduction to Programming with Python and C | 4 | not offered | 1 | no |
+| [IT1244](svg/IT1244.svg) | Artificial Intelligence: Technology and Impact | 4 | S1 S2 | 0 | yes |
 | [IT2002](svg/IT2002.svg) | Database Technology and Management | 4 | S2 | 3 | no |
+| [IT2900](svg/IT2900.svg) | Technical Management and Leadership | 4 | S1 | 0 | yes |
+| [IT3010](svg/IT3010.svg) | Data Management for Business Analytics | 4 | S1 S2 | 3 | yes |
 | [IT3011](svg/IT3011.svg) | Introduction to Machine Learning and Applications | 4 | not offered | 0 | no |
 | [LSM1301](svg/LSM1301.svg) | General Biology | 4 | S1 S2 | 2 | yes |
 | [LSM2241](svg/LSM2241.svg) | Introductory Bioinformatics | 4 | not offered | 3 | no |
@@ -234,33 +327,29 @@ Overviews: [BComp CS core chain](../../../../docs/diagrams/cs-core-chain.svg) ·
 | [MA1100T](svg/MA1100T.svg) | Basic Discrete Mathematics (T) | 4 | S1 | 18 | yes |
 | [MA1301](svg/MA1301.svg) | Introductory Mathematics | 4 | S1 S2 | 0 | yes |
 | [MA1301X](svg/MA1301X.svg) | Introductory Mathematics | 4 | S2 ST1 | 0 | yes |
-| [MA1311](svg/MA1311.svg) | Matrix Algebra | 4 | not offered | 17 | no |
-| [MA1312](svg/MA1312.svg) | Calculus with Applications | 4 | not offered | 7 | no |
-| [MA1505](svg/MA1505.svg) | Mathematics I | 4 | S1 | 21 | yes |
+| [MA1311](svg/MA1311.svg) | Matrix Algebra | 4 | not offered | 18 | no |
+| [MA1312](svg/MA1312.svg) | Calculus with Applications | 4 | not offered | 8 | no |
+| [MA1505](svg/MA1505.svg) | Mathematics I | 4 | S1 | 23 | yes |
 | [MA1508E](svg/MA1508E.svg) | Linear Algebra for Engineering | 4 | S2 | 23 | yes |
-| [MA1511](svg/MA1511.svg) | Engineering Calculus | 2 | S1 S2 | 25 | yes |
-| [MA1512](svg/MA1512.svg) | Differential Equations for Engineering | 2 | S1 S2 | 15 | yes |
+| [MA1511](svg/MA1511.svg) | Engineering Calculus | 2 | S1 S2 | 24 | yes |
+| [MA1512](svg/MA1512.svg) | Differential Equations for Engineering | 2 | S1 S2 | 17 | yes |
 | [MA1513](svg/MA1513.svg) | Linear Algebra with Differential Equations | 2 | S1 S2 | 20 | yes |
-| [MA1521](svg/MA1521.svg) | Calculus for Computing | 4 | S1 S2 | 18 | yes |
-| [MA1522](svg/MA1522.svg) | Linear Algebra for Computing | 4 | S1 S2 | 20 | yes |
+| [MA1521](svg/MA1521.svg) | Calculus for Computing | 4 | S1 S2 | 22 | yes |
+| [MA1522](svg/MA1522.svg) | Linear Algebra for Computing | 4 | S1 S2 | 22 | yes |
 | [MA1531](svg/MA1531.svg) | Calculus for Data Science | 4 | S1 S2 | 1 | no |
-| [MA2001](svg/MA2001.svg) | Linear Algebra I | 4 | S1 S2 | 21 | no |
-| [MA2002](svg/MA2002.svg) | Calculus | 4 | S1 S2 | 18 | no |
-| [MA2104](svg/MA2104.svg) | Multivariable Calculus | 4 | S1 S2 | 4 | yes |
+| [MA2001](svg/MA2001.svg) | Linear Algebra I | 4 | S1 S2 | 22 | no |
+| [MA2002](svg/MA2002.svg) | Calculus | 4 | S1 S2 | 21 | no |
+| [MA2104](svg/MA2104.svg) | Multivariable Calculus | 4 | S1 S2 | 3 | yes |
 | [MA2108](svg/MA2108.svg) | Mathematical Analysis I | 4 | S1 S2 | 0 | yes |
 | [MA2108S](svg/MA2108S.svg) | Mathematical Analysis I (S) | 5 | S2 | 0 | yes |
-| [MA2116](svg/MA2116.svg) | Probability | 4 | S1 S2 | 25 | yes |
-| [MA2116T](svg/MA2116T.svg) | Probability (T) | 4 | S1 | 25 | yes |
+| [MA2116](svg/MA2116.svg) | Probability | 4 | S1 S2 | 28 | yes |
+| [MA2116T](svg/MA2116T.svg) | Probability (T) | 4 | S1 | 28 | yes |
 | [MA2301](svg/MA2301.svg) | Basic Applied Mathematics | 4 | not offered | 0 | no |
-| [MA2311](svg/MA2311.svg) | Techniques in Advanced Calculus | 4 | S1 S2 | 4 | yes |
-| [MA3236](svg/MA3236.svg) | Non-Linear Programming | 4 | S1 | 0 | yes |
-| [MA3252](svg/MA3252.svg) | Linear and Network Optimisation | 4 | S2 | 0 | yes |
+| [MA2311](svg/MA2311.svg) | Techniques in Advanced Calculus | 4 | S1 S2 | 3 | yes |
 | [MA3270](svg/MA3270.svg) | Mathematics for Artificial Intelligence | 4 | S1 | 2 | yes |
 | [ME1102](svg/ME1102.svg) | Engineering Principles and Practice I | 4 | not offered | 0 | no |
-| [ME2104](svg/ME2104.svg) | Engineering Principles and Practice II | 4 | not offered | 1 | no |
+| [ME2104](svg/ME2104.svg) | Engineering Principles and Practice II | 4 | not offered | 0 | no |
 | [ME2105](svg/ME2105.svg) | Principles of Mechatronics and Automation | 4 | S1 S2 | 0 | yes |
-| [ME2143](svg/ME2143.svg) | Sensors and Actuators | 4 | S1 | 0 | yes |
-| [ME2143E](svg/ME2143E.svg) | Sensors and Actuators | 4 | not offered | 0 | no |
 | [MNO2706](svg/MNO2706.svg) | Business Communication for Leaders (ACC) | 4 | not offered | 0 | no |
 | [NM2207](svg/NM2207.svg) | Computational Media Literacy | 4 | S2 | 5 | yes |
 | [NM3221](svg/NM3221.svg) | Mobile Interaction Design | 4 | not offered | 2 | no |
@@ -270,48 +359,46 @@ Overviews: [BComp CS core chain](../../../../docs/diagrams/cs-core-chain.svg) ·
 | [NM4260](svg/NM4260.svg) | Game Design | 4 | S1 | 2 | yes |
 | [NM4260HM](svg/NM4260HM.svg) | Game Design | 5 | not offered | 3 | no |
 | [PC1101](svg/PC1101.svg) | Frontiers of Physics | 4 | S1 S2 | 0 | yes |
-| [PC1201](svg/PC1201.svg) | Fundamentals of Physics | 4 | S1 S2 | 2 | yes |
-| [PC1432](svg/PC1432.svg) | Physics IIE | 4 | not offered | 0 | no |
-| [PC1432X](svg/PC1432X.svg) | Physics IIE | 4 | not offered | 0 | no |
+| [PC1201](svg/PC1201.svg) | Fundamentals of Physics | 4 | S1 S2 | 1 | yes |
 | [PC2134](svg/PC2134.svg) | Mathematical Mtds in Physics I | 4 | not offered | 0 | no |
 | [PC2174A](svg/PC2174A.svg) | Mathematical Methods in Physics I | 4 | S1 S2 | 0 | yes |
-| [RB1101](svg/RB1101.svg) | Fundamentals of Robotics I | 4 | S1 | 0 | yes |
 | [RB2101](svg/RB2101.svg) | Fundamentals of Robotics II | 4 | S2 | 0 | yes |
-| [SP1541](svg/SP1541.svg) | Communication Practices in Popular Science | 4 | S1 S2 | 0 | yes |
-| [SP1541X](svg/SP1541X.svg) | Communication Practices in Popular Science | 4 | S1 S2 | 0 | yes |
-| [SP2271](svg/SP2271.svg) | Introduction to the Scientific Literature | 4 | S2 | 0 | yes |
-| [ST1131](svg/ST1131.svg) | Introduction to Statistics and Statistical Computing | 4 | S1 S2 | 7 | yes |
+| [RE1702](svg/RE1702.svg) | Real Estate Data Analytics | 4 | S1 S2 | 0 | yes |
+| [RE1704](svg/RE1704.svg) | Principles of Real Estate Economics | 4 | not offered | 1 | no |
+| [SE3550](svg/SE3550.svg) | Southeast Asian Studies Internship | 4 | S1 S2 ST1 ST2 | 0 | no |
+| [ST1131](svg/ST1131.svg) | Introduction to Statistics and Statistical Computing | 4 | S1 S2 | 9 | yes |
 | [ST1232](svg/ST1232.svg) | Statistics for Life Sciences | 4 | not offered | 4 | no |
-| [ST2131](svg/ST2131.svg) | Probability | 4 | S1 S2 | 29 | yes |
-| [ST2132](svg/ST2132.svg) | Mathematical Statistics | 4 | S1 S2 | 6 | yes |
-| [ST2334](svg/ST2334.svg) | Probability and Statistics | 4 | S1 S2 | 33 | yes |
+| [ST2131](svg/ST2131.svg) | Probability | 4 | S1 S2 | 33 | yes |
+| [ST2132](svg/ST2132.svg) | Mathematical Statistics | 4 | S1 S2 | 8 | yes |
+| [ST2137](svg/ST2137.svg) | Statistical Computing and Programming | 4 | S2 | 1 | yes |
+| [ST2334](svg/ST2334.svg) | Probability and Statistics | 4 | S1 S2 | 41 | yes |
 | [ST3131](svg/ST3131.svg) | Regression Analysis | 4 | S1 S2 | 2 | yes |
 | [ST3248](svg/ST3248.svg) | Statistical Learning I | 4 | S1 | 2 | yes |
 | [ST4248](svg/ST4248.svg) | Statistical Learning II | 4 | S2 | 3 | yes |
-| [TCE2407](svg/TCE2407.svg) | Engineering & Uncertainty Analyses | 4 | ST1 | 0 | yes |
-| [TCX3222](svg/TCX3222.svg) | Systems Programming | 4 | S2 | 0 | yes |
+| [TEE2002](svg/TEE2002.svg) | Engineering Mathematics II | 4 | not offered | 1 | no |
+| [TEE2003](svg/TEE2003.svg) | Advanced Mathematics for Engineers | 4 | S1 | 1 | yes |
+| [TEE2026](svg/TEE2026.svg) | Digital Design | 4 | S2 | 1 | yes |
+| [TEE2028](svg/TEE2028.svg) | Microcontroller Programming and Interfacing | 4 | S1 | 1 | yes |
 | [TEE3207](svg/TEE3207.svg) | Computer Architecture | 4 | not offered | 0 | no |
 | [TEE4204](svg/TEE4204.svg) | Computer Networks | 4 | S1 | 0 | yes |
-| [TEE4214](svg/TEE4214.svg) | Real-Time Embedded Systems | 4 | not offered | 0 | no |
-| [TEE4704](svg/TEE4704.svg) | Introduction to Computer Vision and Image Processing | 4 | not offered | 0 | no |
-| [TIC2401](svg/TIC2401.svg) | Introduction to Computer Systems | 4 | S2 | 0 | yes |
-| [TME2143](svg/TME2143.svg) | Sensors and Actuators | 4 | not offered | 0 | no |
-| [UTC2851](svg/UTC2851.svg) | Problem Solving for Computing and AI | 4 | S1 S2 | 20 | yes |
+| [TG1401](svg/TG1401.svg) | Engineering Mathematics I | 4 | not offered | 1 | no |
+| [TTG1401](svg/TTG1401.svg) | Engineering Mathematics I | 4 | S1 S2 | 2 | yes |
+| [TTG2401](svg/TTG2401.svg) | Engineering Mathematics II | 4 | S1 S2 | 1 | yes |
+| [UTC2851](svg/UTC2851.svg) | Problem Solving for Computing and AI | 4 | S1 S2 | 28 | yes |
 | [UTC2852](svg/UTC2852.svg) | Computational Thinking with AI | 4 | S1 S2 | 0 | yes |
 | [YCC1122](svg/YCC1122.svg) | Quantitative Reasoning | 5 | not offered | 2 | no |
 | [YSC1212](svg/YSC1212.svg) | Introduction to Computer Science | 5 | not offered | 7 | no |
 | [YSC1213](svg/YSC1213.svg) | General Physics | 5 | not offered | 1 | no |
 | [YSC1216](svg/YSC1216.svg) | Calculus | 5 | not offered | 7 | no |
 | [YSC2203](svg/YSC2203.svg) | Classical Mechanics | 5 | not offered | 1 | no |
-| [YSC2209](svg/YSC2209.svg) | Proof | 5 | not offered | 2 | no |
+| [YSC2209](svg/YSC2209.svg) | Proof | 5 | not offered | 1 | no |
 | [YSC2221](svg/YSC2221.svg) | Introduction to Python | 2.5 | not offered | 2 | no |
 | [YSC2229](svg/YSC2229.svg) | Introductory Data Structures and Algorithms | 5 | not offered | 11 | no |
-| [YSC2232](svg/YSC2232.svg) | Linear Algebra | 5 | not offered | 4 | no |
+| [YSC2232](svg/YSC2232.svg) | Linear Algebra | 5 | not offered | 3 | no |
 | [YSC2239](svg/YSC2239.svg) | Introduction to Data Science | 5 | not offered | 2 | no |
 | [YSC2243](svg/YSC2243.svg) | Probability | 5 | not offered | 3 | no |
 | [YSC2252](svg/YSC2252.svg) | Multivariable Calculus | 5 | not offered | 0 | no |
 | [YSC3203](svg/YSC3203.svg) | Advanced Algorithms and Data Structures | 5 | not offered | 1 | no |
-| [YSC3206](svg/YSC3206.svg) | Introduction to Real Analysis | 5 | not offered | 0 | no |
 | [YSC3217](svg/YSC3217.svg) | Programming Operating Systems, Interfaces & eXtras | 5 | not offered | 1 | no |
 | [YSC3232](svg/YSC3232.svg) | Software Engineering | 5 | not offered | 2 | no |
 | [YSC4216](svg/YSC4216.svg) | Machine Learning | 5 | not offered | 0 | no |
