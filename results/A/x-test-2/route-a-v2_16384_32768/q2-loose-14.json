@@ -1,0 +1,128 @@
+{
+ "id": "q2-loose-14",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "prompt_version": "route-a-v2",
+ "messages_sha256": "0aabb3f159e666d37838beaed46b1de2866ef50fd14a68aa3cab5cc90bcc6485",
+ "seconds": 122.5,
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\"CS2220\", \"CS2104\", \"CS2100\", \"ST2334\"],\n    \"4\": [\"CS4220\", \"CS4212\", \"CS2106\", \"CS2105\"],\n    \"5\": [\"CS4226\", \"CS3210\", \"CS2103T\", \"CS2102\"],\n    \"6\": [\"CS3219\", \"CS2101\", \"CS2109S\", \"CS3230\"],\n    \"7\": [\"CS4223\"]\n  },\n  \"reasons\": [\n    \"All 13 must-take courses are planned, plus the minimal four prerequisite courses CS2220, CS2104, CS2105, and CS3210, for 68 MC total.\",\n    \"Prerequisites are satisfied in strictly earlier semesters: CS2220 before CS4220, CS2104 before CS4212, CS2105 and ST2334 before CS4226, CS2100 before CS2106/CS3210, and CS2106+CS3210 before CS4223.\",\n    \"CS4223 is placed in semester 7, its latest possible offering because it is Sem 1 only, and the final used semester has only CS4223, giving a light last semester.\",\n    \"No semester exceeds 4 modules (16 MC), and no planned course is blocked by a completed course or mutually exclusive with another planned course.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2220",
+    "CS2104",
+    "CS2100",
+    "ST2334"
+   ],
+   "4": [
+    "CS4220",
+    "CS4212",
+    "CS2106",
+    "CS2105"
+   ],
+   "5": [
+    "CS4226",
+    "CS3210",
+    "CS2103T",
+    "CS2102"
+   ],
+   "6": [
+    "CS3219",
+    "CS2101",
+    "CS2109S",
+    "CS3230"
+   ],
+   "7": [
+    "CS4223"
+   ]
+  },
+  "reasons": [
+   "All 13 must-take courses are planned, plus the minimal four prerequisite courses CS2220, CS2104, CS2105, and CS3210, for 68 MC total.",
+   "Prerequisites are satisfied in strictly earlier semesters: CS2220 before CS4220, CS2104 before CS4212, CS2105 and ST2334 before CS4226, CS2100 before CS2106/CS3210, and CS2106+CS3210 before CS4223.",
+   "CS4223 is placed in semester 7, its latest possible offering because it is Sem 1 only, and the final used semester has only CS4223, giving a light last semester.",
+   "No semester exceeds 4 modules (16 MC), and no planned course is blocked by a completed course or mutually exclusive with another planned course."
+  ]
+ },
+ "fenced": false,
+ "parse_error": null,
+ "finish_reason": "stop",
+ "budget_exhausted": false,
+ "budget_retried": false,
+ "schema_errors": [],
+ "format_valid": true,
+ "attempts": [
+  {
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\"CS2220\", \"CS2104\", \"CS2100\", \"ST2334\"],\n    \"4\": [\"CS4220\", \"CS4212\", \"CS2106\", \"CS2105\"],\n    \"5\": [\"CS4226\", \"CS3210\", \"CS2103T\", \"CS2102\"],\n    \"6\": [\"CS3219\", \"CS2101\", \"CS2109S\", \"CS3230\"],\n    \"7\": [\"CS4223\"]\n  },\n  \"reasons\": [\n    \"All 13 must-take courses are planned, plus the minimal four prerequisite courses CS2220, CS2104, CS2105, and CS3210, for 68 MC total.\",\n    \"Prerequisites are satisfied in strictly earlier semesters: CS2220 before CS4220, CS2104 before CS4212, CS2105 and ST2334 before CS4226, CS2100 before CS2106/CS3210, and CS2106+CS3210 before CS4223.\",\n    \"CS4223 is placed in semester 7, its latest possible offering because it is Sem 1 only, and the final used semester has only CS4223, giving a light last semester.\",\n    \"No semester exceeds 4 modules (16 MC), and no planned course is blocked by a completed course or mutually exclusive with another planned course.\"\n  ]\n}",
+   "usage": {
+    "prompt_tokens": 9401,
+    "total_tokens": 19584,
+    "completion_tokens": 10183,
+    "prompt_tokens_details": {
+     "cached_tokens": 1280,
+     "created_cache_tokens": 8064,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 9872
+    }
+   },
+   "finish_reason": "stop",
+   "max_tokens": 16384,
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2220",
+      "CS2104",
+      "CS2100",
+      "ST2334"
+     ],
+     "4": [
+      "CS4220",
+      "CS4212",
+      "CS2106",
+      "CS2105"
+     ],
+     "5": [
+      "CS4226",
+      "CS3210",
+      "CS2103T",
+      "CS2102"
+     ],
+     "6": [
+      "CS3219",
+      "CS2101",
+      "CS2109S",
+      "CS3230"
+     ],
+     "7": [
+      "CS4223"
+     ]
+    },
+    "reasons": [
+     "All 13 must-take courses are planned, plus the minimal four prerequisite courses CS2220, CS2104, CS2105, and CS3210, for 68 MC total.",
+     "Prerequisites are satisfied in strictly earlier semesters: CS2220 before CS4220, CS2104 before CS4212, CS2105 and ST2334 before CS4226, CS2100 before CS2106/CS3210, and CS2106+CS3210 before CS4223.",
+     "CS4223 is placed in semester 7, its latest possible offering because it is Sem 1 only, and the final used semester has only CS4223, giving a light last semester.",
+     "No semester exceeds 4 modules (16 MC), and no planned course is blocked by a completed course or mutually exclusive with another planned course."
+    ]
+   },
+   "fenced": false,
+   "parse_error": null,
+   "budget_exhausted": false,
+   "seconds": 122.5
+  }
+ ],
+ "usage": {
+  "prompt_tokens": 9401,
+  "total_tokens": 19584,
+  "completion_tokens": 10183,
+  "prompt_tokens_details": {
+   "cached_tokens": 1280,
+   "created_cache_tokens": 8064
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 9872
+  }
+ }
+}

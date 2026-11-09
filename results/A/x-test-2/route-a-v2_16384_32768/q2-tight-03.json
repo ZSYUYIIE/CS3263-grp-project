@@ -1,0 +1,162 @@
+{
+ "id": "q2-tight-03",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "prompt_version": "route-a-v2",
+ "messages_sha256": "98b1ce4eca2b2ffdf1ddcf1e6aaaa86f72fd2793c2bf1f965714bc79290771af",
+ "seconds": 343.09,
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CS2100\",\"CS2103T\",\"ST2334\",\"CS2102\"],\"4\":[\"CS2106\",\"CS2109S\",\"CS2105\",\"CS2107\"],\"5\":[\"CS3230\",\"CS3235\",\"CS3219\",\"CS4248\"],\"6\":[],\"7\":[\"CS4234\",\"CS4238\",\"IS1108\"],\"8\":[\"CS3281\",\"ES2660\",\"CS2101\"]},\"reasons\":[\"All 16 must-take courses are scheduled, with CS3235 and CS2107 added only because CS4238 requires CS3235 and CS3235 requires CS2107.\",\"Semester 6 is left empty for NOC (0 MC). CS2103T and CS2109S are in different semesters, satisfying that preference.\",\"Prerequisite order is respected: CS2100 before CS2106; CS2105/CS2106/CS2107 before CS3235; CS3235 before CS4238; CS3230 before CS4234; CS2109S and ST2334 before CS4248; CS2103T before CS3219 and CS3281.\",\"No semester exceeds 16 MC: semesters 3-5 are 16 MC each, semester 6 is 0 MC, and semesters 7-8 are 12 MC each.\"],\"not_applied\":[\"CS4248 in semester 6: semester 6 is the NOC semester with 0 MC, so no course can be placed there.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS2103T",
+    "ST2334",
+    "CS2102"
+   ],
+   "4": [
+    "CS2106",
+    "CS2109S",
+    "CS2105",
+    "CS2107"
+   ],
+   "5": [
+    "CS3230",
+    "CS3235",
+    "CS3219",
+    "CS4248"
+   ],
+   "6": [],
+   "7": [
+    "CS4234",
+    "CS4238",
+    "IS1108"
+   ],
+   "8": [
+    "CS3281",
+    "ES2660",
+    "CS2101"
+   ]
+  },
+  "reasons": [
+   "All 16 must-take courses are scheduled, with CS3235 and CS2107 added only because CS4238 requires CS3235 and CS3235 requires CS2107.",
+   "Semester 6 is left empty for NOC (0 MC). CS2103T and CS2109S are in different semesters, satisfying that preference.",
+   "Prerequisite order is respected: CS2100 before CS2106; CS2105/CS2106/CS2107 before CS3235; CS3235 before CS4238; CS3230 before CS4234; CS2109S and ST2334 before CS4248; CS2103T before CS3219 and CS3281.",
+   "No semester exceeds 16 MC: semesters 3-5 are 16 MC each, semester 6 is 0 MC, and semesters 7-8 are 12 MC each."
+  ],
+  "not_applied": [
+   "CS4248 in semester 6: semester 6 is the NOC semester with 0 MC, so no course can be placed there."
+  ]
+ },
+ "fenced": false,
+ "parse_error": null,
+ "finish_reason": "stop",
+ "budget_exhausted": false,
+ "budget_retried": true,
+ "schema_errors": [],
+ "format_valid": true,
+ "attempts": [
+  {
+   "raw": null,
+   "usage": {
+    "prompt_tokens": 11156,
+    "total_tokens": 27540,
+    "completion_tokens": 16384,
+    "prompt_tokens_details": {
+     "cached_tokens": 1280,
+     "created_cache_tokens": 9856,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 16384
+    }
+   },
+   "finish_reason": "length",
+   "max_tokens": 16384,
+   "answer": null,
+   "fenced": false,
+   "parse_error": "no final text",
+   "budget_exhausted": true,
+   "api_error": "API returned non-text content or no final text",
+   "seconds": 174.64
+  },
+  {
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CS2100\",\"CS2103T\",\"ST2334\",\"CS2102\"],\"4\":[\"CS2106\",\"CS2109S\",\"CS2105\",\"CS2107\"],\"5\":[\"CS3230\",\"CS3235\",\"CS3219\",\"CS4248\"],\"6\":[],\"7\":[\"CS4234\",\"CS4238\",\"IS1108\"],\"8\":[\"CS3281\",\"ES2660\",\"CS2101\"]},\"reasons\":[\"All 16 must-take courses are scheduled, with CS3235 and CS2107 added only because CS4238 requires CS3235 and CS3235 requires CS2107.\",\"Semester 6 is left empty for NOC (0 MC). CS2103T and CS2109S are in different semesters, satisfying that preference.\",\"Prerequisite order is respected: CS2100 before CS2106; CS2105/CS2106/CS2107 before CS3235; CS3235 before CS4238; CS3230 before CS4234; CS2109S and ST2334 before CS4248; CS2103T before CS3219 and CS3281.\",\"No semester exceeds 16 MC: semesters 3-5 are 16 MC each, semester 6 is 0 MC, and semesters 7-8 are 12 MC each.\"],\"not_applied\":[\"CS4248 in semester 6: semester 6 is the NOC semester with 0 MC, so no course can be placed there.\"]}",
+   "usage": {
+    "prompt_tokens": 11156,
+    "total_tokens": 22483,
+    "completion_tokens": 11327,
+    "prompt_tokens_details": {
+     "cached_tokens": 11136,
+     "created_cache_tokens": 0,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 10993
+    }
+   },
+   "finish_reason": "stop",
+   "max_tokens": 32768,
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS2103T",
+      "ST2334",
+      "CS2102"
+     ],
+     "4": [
+      "CS2106",
+      "CS2109S",
+      "CS2105",
+      "CS2107"
+     ],
+     "5": [
+      "CS3230",
+      "CS3235",
+      "CS3219",
+      "CS4248"
+     ],
+     "6": [],
+     "7": [
+      "CS4234",
+      "CS4238",
+      "IS1108"
+     ],
+     "8": [
+      "CS3281",
+      "ES2660",
+      "CS2101"
+     ]
+    },
+    "reasons": [
+     "All 16 must-take courses are scheduled, with CS3235 and CS2107 added only because CS4238 requires CS3235 and CS3235 requires CS2107.",
+     "Semester 6 is left empty for NOC (0 MC). CS2103T and CS2109S are in different semesters, satisfying that preference.",
+     "Prerequisite order is respected: CS2100 before CS2106; CS2105/CS2106/CS2107 before CS3235; CS3235 before CS4238; CS3230 before CS4234; CS2109S and ST2334 before CS4248; CS2103T before CS3219 and CS3281.",
+     "No semester exceeds 16 MC: semesters 3-5 are 16 MC each, semester 6 is 0 MC, and semesters 7-8 are 12 MC each."
+    ],
+    "not_applied": [
+     "CS4248 in semester 6: semester 6 is the NOC semester with 0 MC, so no course can be placed there."
+    ]
+   },
+   "fenced": false,
+   "parse_error": null,
+   "budget_exhausted": false,
+   "seconds": 168.45
+  }
+ ],
+ "usage": {
+  "prompt_tokens": 22312,
+  "total_tokens": 50023,
+  "completion_tokens": 27711,
+  "prompt_tokens_details": {
+   "cached_tokens": 12416,
+   "created_cache_tokens": 9856
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 27377
+  }
+ }
+}

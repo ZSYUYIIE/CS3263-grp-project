@@ -1,0 +1,45 @@
+{
+ "id": "q2-loose-17",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 56.05,
+ "usage": {
+  "prompt_tokens": 7551,
+  "total_tokens": 12271,
+  "completion_tokens": 4720,
+  "prompt_tokens_details": {
+   "cached_tokens": 896,
+   "created_cache_tokens": 6528,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4492
+  }
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS3281\",\"CS4215\",\"CS3236\"],\"7\":[\"CS4261\"],\"8\":[\"CS3282\"]},\"reasons\":[\"Current semester is Y3S2 = semester 6; remaining semesters are 6, 7, and 8.\",\"CS4261 is offered only in Sem 1, so it must be placed in semester 7 (Y4S1).\",\"CS3282 requires CS3281 and is offered only in Sem 2. CS3281 is added as a prerequisite and placed in semester 6 (Sem 2), allowing CS3282 in semester 8 (Sem 2).\",\"CS4215 and CS3236 are offered only in Sem 2, so they are placed in semester 6. CS3236 cannot be placed in semester 7 because semester 7 is Sem 1.\",\"All planned courses are open to BComp CS Hons, prerequisites are satisfied by completed or earlier planned courses, and each semester is within the 20 MC limit.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS3281",
+    "CS4215",
+    "CS3236"
+   ],
+   "7": [
+    "CS4261"
+   ],
+   "8": [
+    "CS3282"
+   ]
+  },
+  "reasons": [
+   "Current semester is Y3S2 = semester 6; remaining semesters are 6, 7, and 8.",
+   "CS4261 is offered only in Sem 1, so it must be placed in semester 7 (Y4S1).",
+   "CS3282 requires CS3281 and is offered only in Sem 2. CS3281 is added as a prerequisite and placed in semester 6 (Sem 2), allowing CS3282 in semester 8 (Sem 2).",
+   "CS4215 and CS3236 are offered only in Sem 2, so they are placed in semester 6. CS3236 cannot be placed in semester 7 because semester 7 is Sem 1.",
+   "All planned courses are open to BComp CS Hons, prerequisites are satisfied by completed or earlier planned courses, and each semester is within the 20 MC limit."
+  ]
+ },
+ "fenced": false,
+ "parse_error": null
+}

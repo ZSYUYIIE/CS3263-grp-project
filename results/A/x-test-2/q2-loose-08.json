@@ -1,0 +1,55 @@
+{
+ "id": "q2-loose-08",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 113.79,
+ "usage": {
+  "prompt_tokens": 9892,
+  "total_tokens": 16602,
+  "completion_tokens": 6710,
+  "prompt_tokens_details": {
+   "cached_tokens": 896,
+   "created_cache_tokens": 8960,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 6431
+  }
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CS2100\",\"CS2103T\",\"CS2105\"],\"4\":[\"CS2111\",\"CS2106\",\"CS3219\"],\"5\":[\"CS3240\",\"CS3230\",\"ST2334\"],\"6\":[\"CS2109S\",\"CS2102\"],\"7\":[\"CS4353\"]},\"reasons\":[\"Earliest possible graduation is semester 7: CS4353 requires CS3240, and CS3240 requires CS2111. CS2111 is only offered in Sem 2, while CS3240 and CS4353 are only offered in Sem 1, forcing CS2111 in semester 4, CS3240 in semester 5, and CS4353 in semester 7.\",\"CS2100 is added because it is a prerequisite for CS2106. CS2111 and CS3240 are added because they are prerequisites for CS4353.\",\"CS2103T is placed before CS3219, and CS2100 is placed before CS2106, satisfying strict prerequisite ordering.\",\"The last semester is kept light with only CS4353 (4 MC). The earlier workloads are 12, 12, 12, and 8 MC, which is as even as possible while preserving the prerequisite chain and the light final semester.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS2103T",
+    "CS2105"
+   ],
+   "4": [
+    "CS2111",
+    "CS2106",
+    "CS3219"
+   ],
+   "5": [
+    "CS3240",
+    "CS3230",
+    "ST2334"
+   ],
+   "6": [
+    "CS2109S",
+    "CS2102"
+   ],
+   "7": [
+    "CS4353"
+   ]
+  },
+  "reasons": [
+   "Earliest possible graduation is semester 7: CS4353 requires CS3240, and CS3240 requires CS2111. CS2111 is only offered in Sem 2, while CS3240 and CS4353 are only offered in Sem 1, forcing CS2111 in semester 4, CS3240 in semester 5, and CS4353 in semester 7.",
+   "CS2100 is added because it is a prerequisite for CS2106. CS2111 and CS3240 are added because they are prerequisites for CS4353.",
+   "CS2103T is placed before CS3219, and CS2100 is placed before CS2106, satisfying strict prerequisite ordering.",
+   "The last semester is kept light with only CS4353 (4 MC). The earlier workloads are 12, 12, 12, and 8 MC, which is as even as possible while preserving the prerequisite chain and the light final semester."
+  ]
+ },
+ "fenced": false,
+ "parse_error": null
+}

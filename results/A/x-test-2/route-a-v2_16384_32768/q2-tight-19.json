@@ -1,0 +1,110 @@
+{
+ "id": "q2-tight-19",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "prompt_version": "route-a-v2",
+ "messages_sha256": "c5aca67ffce1e8bb8d4ed8a98b16a7bf4726681c4125a1e3ff43970f3e63aa72",
+ "seconds": 72.39,
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\"CS3241\", \"CS2105\", \"CS2107\"],\n    \"6\": [\"CS4247\", \"CS2111\", \"CS3235\"],\n    \"7\": [\"CS3230\", \"ST2334\", \"CS3249\"]\n  },\n  \"reasons\": [\n    \"All five must-take courses are planned, plus only the required prerequisites CS3241 for CS4247, CS2105 and CS2107 for CS3235, and CS2111 for CS3249.\",\n    \"Prerequisites are satisfied in strictly earlier semesters: CS3241 before CS4247, CS2105 and CS2107 before CS3235, and CS2111 before CS3249.\",\n    \"The plan uses the minimum 3 semesters: CS2111 is Sem 2 only and CS3249 is Sem 1 only, so CS3249 cannot be earlier than semester 7; 9 courses at max 3 per semester require exactly 3 semesters.\",\n    \"Each used semester has 3 modules, so workload is evenly spread; a lighter final semester would require a fourth semester and conflicts with the fewest-semesters priority.\"\n  ],\n  \"not_applied\": [\"light last semester\"]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS3241",
+    "CS2105",
+    "CS2107"
+   ],
+   "6": [
+    "CS4247",
+    "CS2111",
+    "CS3235"
+   ],
+   "7": [
+    "CS3230",
+    "ST2334",
+    "CS3249"
+   ]
+  },
+  "reasons": [
+   "All five must-take courses are planned, plus only the required prerequisites CS3241 for CS4247, CS2105 and CS2107 for CS3235, and CS2111 for CS3249.",
+   "Prerequisites are satisfied in strictly earlier semesters: CS3241 before CS4247, CS2105 and CS2107 before CS3235, and CS2111 before CS3249.",
+   "The plan uses the minimum 3 semesters: CS2111 is Sem 2 only and CS3249 is Sem 1 only, so CS3249 cannot be earlier than semester 7; 9 courses at max 3 per semester require exactly 3 semesters.",
+   "Each used semester has 3 modules, so workload is evenly spread; a lighter final semester would require a fourth semester and conflicts with the fewest-semesters priority."
+  ],
+  "not_applied": [
+   "light last semester"
+  ]
+ },
+ "fenced": false,
+ "parse_error": null,
+ "finish_reason": "stop",
+ "budget_exhausted": false,
+ "budget_retried": false,
+ "schema_errors": [],
+ "format_valid": true,
+ "attempts": [
+  {
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\"CS3241\", \"CS2105\", \"CS2107\"],\n    \"6\": [\"CS4247\", \"CS2111\", \"CS3235\"],\n    \"7\": [\"CS3230\", \"ST2334\", \"CS3249\"]\n  },\n  \"reasons\": [\n    \"All five must-take courses are planned, plus only the required prerequisites CS3241 for CS4247, CS2105 and CS2107 for CS3235, and CS2111 for CS3249.\",\n    \"Prerequisites are satisfied in strictly earlier semesters: CS3241 before CS4247, CS2105 and CS2107 before CS3235, and CS2111 before CS3249.\",\n    \"The plan uses the minimum 3 semesters: CS2111 is Sem 2 only and CS3249 is Sem 1 only, so CS3249 cannot be earlier than semester 7; 9 courses at max 3 per semester require exactly 3 semesters.\",\n    \"Each used semester has 3 modules, so workload is evenly spread; a lighter final semester would require a fourth semester and conflicts with the fewest-semesters priority.\"\n  ],\n  \"not_applied\": [\"light last semester\"]\n}",
+   "usage": {
+    "prompt_tokens": 8048,
+    "total_tokens": 13165,
+    "completion_tokens": 5117,
+    "prompt_tokens_details": {
+     "cached_tokens": 1408,
+     "created_cache_tokens": 6528,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 4843
+    }
+   },
+   "finish_reason": "stop",
+   "max_tokens": 16384,
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS3241",
+      "CS2105",
+      "CS2107"
+     ],
+     "6": [
+      "CS4247",
+      "CS2111",
+      "CS3235"
+     ],
+     "7": [
+      "CS3230",
+      "ST2334",
+      "CS3249"
+     ]
+    },
+    "reasons": [
+     "All five must-take courses are planned, plus only the required prerequisites CS3241 for CS4247, CS2105 and CS2107 for CS3235, and CS2111 for CS3249.",
+     "Prerequisites are satisfied in strictly earlier semesters: CS3241 before CS4247, CS2105 and CS2107 before CS3235, and CS2111 before CS3249.",
+     "The plan uses the minimum 3 semesters: CS2111 is Sem 2 only and CS3249 is Sem 1 only, so CS3249 cannot be earlier than semester 7; 9 courses at max 3 per semester require exactly 3 semesters.",
+     "Each used semester has 3 modules, so workload is evenly spread; a lighter final semester would require a fourth semester and conflicts with the fewest-semesters priority."
+    ],
+    "not_applied": [
+     "light last semester"
+    ]
+   },
+   "fenced": false,
+   "parse_error": null,
+   "budget_exhausted": false,
+   "seconds": 72.39
+  }
+ ],
+ "usage": {
+  "prompt_tokens": 8048,
+  "total_tokens": 13165,
+  "completion_tokens": 5117,
+  "prompt_tokens_details": {
+   "cached_tokens": 1408,
+   "created_cache_tokens": 6528
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4843
+  }
+ }
+}

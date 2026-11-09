@@ -1,0 +1,100 @@
+{
+ "id": "q2-loose-16",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "prompt_version": "route-a-v2",
+ "messages_sha256": "d6ecba08a87aa023aeb418eb19b1024fcf86645afeb692552a6054b52ec9021d",
+ "seconds": 49.76,
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS4215\",\"CS4230\",\"CS2107\",\"PC1201\"],\"7\":[\"CS3235\",\"CS3241\"],\"8\":[\"CS3242\"]},\"reasons\":[\"All four must-take courses are included; CS4215 and CS4230 can be taken in Y3S2 because their prerequisites are already completed.\",\"CS3235 requires CS2107, so CS2107 is added in semester 6 and CS3235 is placed in semester 7.\",\"CS3242 requires PC1201 and CS3241; PC1201 is added in semester 6, CS3241 in semester 7 (offered only in Sem 1), so CS3242 can only be taken in semester 8.\",\"Semester 8 is therefore the earliest possible graduation semester, and each semester is within the 20 MC limit.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS4215",
+    "CS4230",
+    "CS2107",
+    "PC1201"
+   ],
+   "7": [
+    "CS3235",
+    "CS3241"
+   ],
+   "8": [
+    "CS3242"
+   ]
+  },
+  "reasons": [
+   "All four must-take courses are included; CS4215 and CS4230 can be taken in Y3S2 because their prerequisites are already completed.",
+   "CS3235 requires CS2107, so CS2107 is added in semester 6 and CS3235 is placed in semester 7.",
+   "CS3242 requires PC1201 and CS3241; PC1201 is added in semester 6, CS3241 in semester 7 (offered only in Sem 1), so CS3242 can only be taken in semester 8.",
+   "Semester 8 is therefore the earliest possible graduation semester, and each semester is within the 20 MC limit."
+  ]
+ },
+ "fenced": false,
+ "parse_error": null,
+ "finish_reason": "stop",
+ "budget_exhausted": false,
+ "budget_retried": false,
+ "schema_errors": [],
+ "format_valid": true,
+ "attempts": [
+  {
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS4215\",\"CS4230\",\"CS2107\",\"PC1201\"],\"7\":[\"CS3235\",\"CS3241\"],\"8\":[\"CS3242\"]},\"reasons\":[\"All four must-take courses are included; CS4215 and CS4230 can be taken in Y3S2 because their prerequisites are already completed.\",\"CS3235 requires CS2107, so CS2107 is added in semester 6 and CS3235 is placed in semester 7.\",\"CS3242 requires PC1201 and CS3241; PC1201 is added in semester 6, CS3241 in semester 7 (offered only in Sem 1), so CS3242 can only be taken in semester 8.\",\"Semester 8 is therefore the earliest possible graduation semester, and each semester is within the 20 MC limit.\"]}",
+   "usage": {
+    "prompt_tokens": 9100,
+    "total_tokens": 13001,
+    "completion_tokens": 3901,
+    "prompt_tokens_details": {
+     "cached_tokens": 1280,
+     "created_cache_tokens": 7808,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 3708
+    }
+   },
+   "finish_reason": "stop",
+   "max_tokens": 16384,
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS4215",
+      "CS4230",
+      "CS2107",
+      "PC1201"
+     ],
+     "7": [
+      "CS3235",
+      "CS3241"
+     ],
+     "8": [
+      "CS3242"
+     ]
+    },
+    "reasons": [
+     "All four must-take courses are included; CS4215 and CS4230 can be taken in Y3S2 because their prerequisites are already completed.",
+     "CS3235 requires CS2107, so CS2107 is added in semester 6 and CS3235 is placed in semester 7.",
+     "CS3242 requires PC1201 and CS3241; PC1201 is added in semester 6, CS3241 in semester 7 (offered only in Sem 1), so CS3242 can only be taken in semester 8.",
+     "Semester 8 is therefore the earliest possible graduation semester, and each semester is within the 20 MC limit."
+    ]
+   },
+   "fenced": false,
+   "parse_error": null,
+   "budget_exhausted": false,
+   "seconds": 49.76
+  }
+ ],
+ "usage": {
+  "prompt_tokens": 9100,
+  "total_tokens": 13001,
+  "completion_tokens": 3901,
+  "prompt_tokens_details": {
+   "cached_tokens": 1280,
+   "created_cache_tokens": 7808
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3708
+  }
+ }
+}

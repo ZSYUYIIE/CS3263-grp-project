@@ -1,0 +1,49 @@
+{
+ "id": "q2-loose-11",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 109.36,
+ "usage": {
+  "prompt_tokens": 7126,
+  "total_tokens": 12774,
+  "completion_tokens": 5648,
+  "prompt_tokens_details": {
+   "cached_tokens": 896,
+   "created_cache_tokens": 6144,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5420
+  }
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\"CS2102\", \"CS2105\"],\n    \"6\": [\"CS2111\", \"CS3223\"],\n    \"7\": [\"CS3240\", \"CS4226\"],\n    \"8\": [\"CS4221\"]\n  },\n  \"reasons\": [\n    \"CS4221 is placed in semester 8, the latest semester it is offered (Sem 2).\",\n    \"CS2102 and CS3223 are added because CS3223 is a prerequisite for CS4221 and CS2102 is a prerequisite for CS3223.\",\n    \"CS2111 is added because it is a prerequisite for CS3240; NM2207 is blocked by completed CS1101S.\",\n    \"CS2105 and CS4226 cannot be taken together in one semester because CS2105 is a prerequisite of CS4226 and must be completed in a strictly earlier semester.\",\n    \"All prerequisites are satisfied in strictly earlier semesters, offerings are respected, and each semester has at most 4 modules.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS2105"
+   ],
+   "6": [
+    "CS2111",
+    "CS3223"
+   ],
+   "7": [
+    "CS3240",
+    "CS4226"
+   ],
+   "8": [
+    "CS4221"
+   ]
+  },
+  "reasons": [
+   "CS4221 is placed in semester 8, the latest semester it is offered (Sem 2).",
+   "CS2102 and CS3223 are added because CS3223 is a prerequisite for CS4221 and CS2102 is a prerequisite for CS3223.",
+   "CS2111 is added because it is a prerequisite for CS3240; NM2207 is blocked by completed CS1101S.",
+   "CS2105 and CS4226 cannot be taken together in one semester because CS2105 is a prerequisite of CS4226 and must be completed in a strictly earlier semester.",
+   "All prerequisites are satisfied in strictly earlier semesters, offerings are respected, and each semester has at most 4 modules."
+  ]
+ },
+ "fenced": false,
+ "parse_error": null
+}

@@ -1,0 +1,68 @@
+{
+ "id": "q2_infeasible-capacity-02",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "prompt_version": "route-a-v2",
+ "messages_sha256": "bd0e44667c0c6f403754d093e6f3816cf4f9a2658bdf56ee706080342f52554c",
+ "seconds": 15.36,
+ "raw": "{\"status\":\"NO_PLAN\",\"reasons\":[\"You are starting in semester 5, so only semesters 5-8 remain (4 semesters), and your limit is 4 MC per semester.\",\"You still must take 6 courses, each 4 MC: CS4236, CS2102, CS3235, CS4221, CS4239, CS3219. At 4 MC per semester, only 4 of these can be taken in the remaining 4 semesters.\",\"The prerequisite chain makes this worse: CS3235 requires CS2105 and CS2107, and CS4221 requires CS3223, so additional prerequisite courses would also need to be planned.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "You are starting in semester 5, so only semesters 5-8 remain (4 semesters), and your limit is 4 MC per semester.",
+   "You still must take 6 courses, each 4 MC: CS4236, CS2102, CS3235, CS4221, CS4239, CS3219. At 4 MC per semester, only 4 of these can be taken in the remaining 4 semesters.",
+   "The prerequisite chain makes this worse: CS3235 requires CS2105 and CS2107, and CS4221 requires CS3223, so additional prerequisite courses would also need to be planned."
+  ]
+ },
+ "fenced": false,
+ "parse_error": null,
+ "finish_reason": "stop",
+ "budget_exhausted": false,
+ "budget_retried": false,
+ "schema_errors": [],
+ "format_valid": true,
+ "attempts": [
+  {
+   "raw": "{\"status\":\"NO_PLAN\",\"reasons\":[\"You are starting in semester 5, so only semesters 5-8 remain (4 semesters), and your limit is 4 MC per semester.\",\"You still must take 6 courses, each 4 MC: CS4236, CS2102, CS3235, CS4221, CS4239, CS3219. At 4 MC per semester, only 4 of these can be taken in the remaining 4 semesters.\",\"The prerequisite chain makes this worse: CS3235 requires CS2105 and CS2107, and CS4221 requires CS3223, so additional prerequisite courses would also need to be planned.\"]}",
+   "usage": {
+    "prompt_tokens": 8552,
+    "total_tokens": 9558,
+    "completion_tokens": 1006,
+    "prompt_tokens_details": {
+     "cached_tokens": 1408,
+     "created_cache_tokens": 7040,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 859
+    }
+   },
+   "finish_reason": "stop",
+   "max_tokens": 16384,
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "You are starting in semester 5, so only semesters 5-8 remain (4 semesters), and your limit is 4 MC per semester.",
+     "You still must take 6 courses, each 4 MC: CS4236, CS2102, CS3235, CS4221, CS4239, CS3219. At 4 MC per semester, only 4 of these can be taken in the remaining 4 semesters.",
+     "The prerequisite chain makes this worse: CS3235 requires CS2105 and CS2107, and CS4221 requires CS3223, so additional prerequisite courses would also need to be planned."
+    ]
+   },
+   "fenced": false,
+   "parse_error": null,
+   "budget_exhausted": false,
+   "seconds": 15.36
+  }
+ ],
+ "usage": {
+  "prompt_tokens": 8552,
+  "total_tokens": 9558,
+  "completion_tokens": 1006,
+  "prompt_tokens_details": {
+   "cached_tokens": 1408,
+   "created_cache_tokens": 7040
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 859
+  }
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "id": "q2-loose-16",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 39.34,
+ "usage": {
+  "prompt_tokens": 8730,
+  "total_tokens": 11892,
+  "completion_tokens": 3162,
+  "prompt_tokens_details": {
+   "cached_tokens": 896,
+   "created_cache_tokens": 7808,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2882
+  }
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS4215\",\"CS4230\",\"CS2107\",\"PC1201\"],\"7\":[\"CS3241\",\"CS3235\"],\"8\":[\"CS3242\"]},\"reasons\":[\"Earliest possible graduation is semester 8: CS3242 is offered only in Sem 2 and requires CS3241, which is offered only in Sem 1. Since you are now in Y3S2 (semester 6), CS3241 can only be taken in semester 7 and CS3242 in semester 8.\",\"CS4215 and CS4230 are offered in Sem 2 and their prerequisites are already satisfied, so they can be taken in semester 6.\",\"CS3235 requires CS2107, which you have not completed, so CS2107 is added as a prerequisite in semester 6 and CS3235 is planned in semester 7.\",\"CS3242 also requires PC1201 and CS3241. PC1201 is added in semester 6, and CS3241 is planned in semester 7, both strictly before CS3242 in semester 8.\",\"All planned semesters are within the 20 MC limit: semester 6 has 16 MC, semester 7 has 8 MC, and semester 8 has 4 MC.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS4215",
+    "CS4230",
+    "CS2107",
+    "PC1201"
+   ],
+   "7": [
+    "CS3241",
+    "CS3235"
+   ],
+   "8": [
+    "CS3242"
+   ]
+  },
+  "reasons": [
+   "Earliest possible graduation is semester 8: CS3242 is offered only in Sem 2 and requires CS3241, which is offered only in Sem 1. Since you are now in Y3S2 (semester 6), CS3241 can only be taken in semester 7 and CS3242 in semester 8.",
+   "CS4215 and CS4230 are offered in Sem 2 and their prerequisites are already satisfied, so they can be taken in semester 6.",
+   "CS3235 requires CS2107, which you have not completed, so CS2107 is added as a prerequisite in semester 6 and CS3235 is planned in semester 7.",
+   "CS3242 also requires PC1201 and CS3241. PC1201 is added in semester 6, and CS3241 is planned in semester 7, both strictly before CS3242 in semester 8.",
+   "All planned semesters are within the 20 MC limit: semester 6 has 16 MC, semester 7 has 8 MC, and semester 8 has 4 MC."
+  ]
+ },
+ "fenced": false,
+ "parse_error": null
+}

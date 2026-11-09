@@ -1,0 +1,128 @@
+{
+ "id": "q2-loose-25",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "prompt_version": "route-a-v2",
+ "messages_sha256": "c3e406331572d607914e874460c1fd8775125cfa13a35de5bd196752c793bff5",
+ "seconds": 147.2,
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CS2102\",\"CS2107\"],\"4\":[\"CS2103DE\",\"CS3223\"],\"5\":[\"CS3219\",\"CS4236\"],\"6\":[\"ST2334\",\"CS2109S\"],\"7\":[\"CS3268\",\"CS2105\",\"CS2101\"],\"8\":[\"CS4221\"]},\"reasons\":[\"All eight must-take courses are scheduled; CS2107, CS2109S, CS2103DE, and CS3223 are added only as prerequisites for CS4236, CS3268, CS3219, and CS4221 respectively.\",\"Prerequisite chains are respected: CS2102 before CS3223; CS2103DE before CS3219; CS2107 before CS4236; ST2334 and CS2109S before CS3268; CS3223 before CS4221.\",\"CS3219 is placed in semester 5, the earliest possible after CS2103DE, which is offered only in Sem 2 and is taken in semester 4.\",\"Workload is spread with at most 3 modules per semester, and the last semester has only CS4221 (1 module).\"],\"not_applied\":[\"Preference for modules with no final exam cannot be evaluated from the course records.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2102",
+    "CS2107"
+   ],
+   "4": [
+    "CS2103DE",
+    "CS3223"
+   ],
+   "5": [
+    "CS3219",
+    "CS4236"
+   ],
+   "6": [
+    "ST2334",
+    "CS2109S"
+   ],
+   "7": [
+    "CS3268",
+    "CS2105",
+    "CS2101"
+   ],
+   "8": [
+    "CS4221"
+   ]
+  },
+  "reasons": [
+   "All eight must-take courses are scheduled; CS2107, CS2109S, CS2103DE, and CS3223 are added only as prerequisites for CS4236, CS3268, CS3219, and CS4221 respectively.",
+   "Prerequisite chains are respected: CS2102 before CS3223; CS2103DE before CS3219; CS2107 before CS4236; ST2334 and CS2109S before CS3268; CS3223 before CS4221.",
+   "CS3219 is placed in semester 5, the earliest possible after CS2103DE, which is offered only in Sem 2 and is taken in semester 4.",
+   "Workload is spread with at most 3 modules per semester, and the last semester has only CS4221 (1 module)."
+  ],
+  "not_applied": [
+   "Preference for modules with no final exam cannot be evaluated from the course records."
+  ]
+ },
+ "fenced": false,
+ "parse_error": null,
+ "finish_reason": "stop",
+ "budget_exhausted": false,
+ "budget_retried": false,
+ "schema_errors": [],
+ "format_valid": true,
+ "attempts": [
+  {
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CS2102\",\"CS2107\"],\"4\":[\"CS2103DE\",\"CS3223\"],\"5\":[\"CS3219\",\"CS4236\"],\"6\":[\"ST2334\",\"CS2109S\"],\"7\":[\"CS3268\",\"CS2105\",\"CS2101\"],\"8\":[\"CS4221\"]},\"reasons\":[\"All eight must-take courses are scheduled; CS2107, CS2109S, CS2103DE, and CS3223 are added only as prerequisites for CS4236, CS3268, CS3219, and CS4221 respectively.\",\"Prerequisite chains are respected: CS2102 before CS3223; CS2103DE before CS3219; CS2107 before CS4236; ST2334 and CS2109S before CS3268; CS3223 before CS4221.\",\"CS3219 is placed in semester 5, the earliest possible after CS2103DE, which is offered only in Sem 2 and is taken in semester 4.\",\"Workload is spread with at most 3 modules per semester, and the last semester has only CS4221 (1 module).\"],\"not_applied\":[\"Preference for modules with no final exam cannot be evaluated from the course records.\"]}",
+   "usage": {
+    "prompt_tokens": 8019,
+    "total_tokens": 18931,
+    "completion_tokens": 10912,
+    "prompt_tokens_details": {
+     "cached_tokens": 1280,
+     "created_cache_tokens": 6656,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 10632
+    }
+   },
+   "finish_reason": "stop",
+   "max_tokens": 16384,
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2102",
+      "CS2107"
+     ],
+     "4": [
+      "CS2103DE",
+      "CS3223"
+     ],
+     "5": [
+      "CS3219",
+      "CS4236"
+     ],
+     "6": [
+      "ST2334",
+      "CS2109S"
+     ],
+     "7": [
+      "CS3268",
+      "CS2105",
+      "CS2101"
+     ],
+     "8": [
+      "CS4221"
+     ]
+    },
+    "reasons": [
+     "All eight must-take courses are scheduled; CS2107, CS2109S, CS2103DE, and CS3223 are added only as prerequisites for CS4236, CS3268, CS3219, and CS4221 respectively.",
+     "Prerequisite chains are respected: CS2102 before CS3223; CS2103DE before CS3219; CS2107 before CS4236; ST2334 and CS2109S before CS3268; CS3223 before CS4221.",
+     "CS3219 is placed in semester 5, the earliest possible after CS2103DE, which is offered only in Sem 2 and is taken in semester 4.",
+     "Workload is spread with at most 3 modules per semester, and the last semester has only CS4221 (1 module)."
+    ],
+    "not_applied": [
+     "Preference for modules with no final exam cannot be evaluated from the course records."
+    ]
+   },
+   "fenced": false,
+   "parse_error": null,
+   "budget_exhausted": false,
+   "seconds": 147.2
+  }
+ ],
+ "usage": {
+  "prompt_tokens": 8019,
+  "total_tokens": 18931,
+  "completion_tokens": 10912,
+  "prompt_tokens_details": {
+   "cached_tokens": 1280,
+   "created_cache_tokens": 6656
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 10632
+  }
+ }
+}

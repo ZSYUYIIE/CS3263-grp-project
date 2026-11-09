@@ -1,0 +1,118 @@
+{
+ "id": "q2-loose-08",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "prompt_version": "route-a-v2",
+ "messages_sha256": "d7473b263becec0ca82ae980bb297cea92876c8a747455ff6bbef2ce964f257f",
+ "seconds": 86.49,
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CS2100\",\"CS2103T\"],\"4\":[\"CS2111\",\"CS3219\",\"CS3230\"],\"5\":[\"CS3240\",\"CS2106\",\"ST2334\"],\"6\":[\"CS2109S\",\"CS2102\",\"CS2105\"],\"7\":[\"CS4353\"]},\"reasons\":[\"Earliest possible completion is semester 7 because CS4353 is Sem 1 only and requires CS3240, which is Sem 1 only and requires CS2111, which is Sem 2 only; this forces CS2111 in semester 4, CS3240 in semester 5, and CS4353 in semester 7.\",\"Added only necessary prerequisites: CS2100 for CS2106, and CS2111 plus CS3240 for CS4353.\",\"All nine must-take courses are included, all offerings and prerequisites are respected, and the last semester is light with only CS4353.\",\"Workload is spread across semesters 3-6 as 2, 3, 3, and 3 courses respectively, with semester 7 having 1 course.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS2103T"
+   ],
+   "4": [
+    "CS2111",
+    "CS3219",
+    "CS3230"
+   ],
+   "5": [
+    "CS3240",
+    "CS2106",
+    "ST2334"
+   ],
+   "6": [
+    "CS2109S",
+    "CS2102",
+    "CS2105"
+   ],
+   "7": [
+    "CS4353"
+   ]
+  },
+  "reasons": [
+   "Earliest possible completion is semester 7 because CS4353 is Sem 1 only and requires CS3240, which is Sem 1 only and requires CS2111, which is Sem 2 only; this forces CS2111 in semester 4, CS3240 in semester 5, and CS4353 in semester 7.",
+   "Added only necessary prerequisites: CS2100 for CS2106, and CS2111 plus CS3240 for CS4353.",
+   "All nine must-take courses are included, all offerings and prerequisites are respected, and the last semester is light with only CS4353.",
+   "Workload is spread across semesters 3-6 as 2, 3, 3, and 3 courses respectively, with semester 7 having 1 course."
+  ]
+ },
+ "fenced": false,
+ "parse_error": null,
+ "finish_reason": "stop",
+ "budget_exhausted": false,
+ "budget_retried": false,
+ "schema_errors": [],
+ "format_valid": true,
+ "attempts": [
+  {
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CS2100\",\"CS2103T\"],\"4\":[\"CS2111\",\"CS3219\",\"CS3230\"],\"5\":[\"CS3240\",\"CS2106\",\"ST2334\"],\"6\":[\"CS2109S\",\"CS2102\",\"CS2105\"],\"7\":[\"CS4353\"]},\"reasons\":[\"Earliest possible completion is semester 7 because CS4353 is Sem 1 only and requires CS3240, which is Sem 1 only and requires CS2111, which is Sem 2 only; this forces CS2111 in semester 4, CS3240 in semester 5, and CS4353 in semester 7.\",\"Added only necessary prerequisites: CS2100 for CS2106, and CS2111 plus CS3240 for CS4353.\",\"All nine must-take courses are included, all offerings and prerequisites are respected, and the last semester is light with only CS4353.\",\"Workload is spread across semesters 3-6 as 2, 3, 3, and 3 courses respectively, with semester 7 having 1 course.\"]}",
+   "usage": {
+    "prompt_tokens": 10262,
+    "total_tokens": 16001,
+    "completion_tokens": 5739,
+    "prompt_tokens_details": {
+     "cached_tokens": 1280,
+     "created_cache_tokens": 8960,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 5490
+    }
+   },
+   "finish_reason": "stop",
+   "max_tokens": 16384,
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS2103T"
+     ],
+     "4": [
+      "CS2111",
+      "CS3219",
+      "CS3230"
+     ],
+     "5": [
+      "CS3240",
+      "CS2106",
+      "ST2334"
+     ],
+     "6": [
+      "CS2109S",
+      "CS2102",
+      "CS2105"
+     ],
+     "7": [
+      "CS4353"
+     ]
+    },
+    "reasons": [
+     "Earliest possible completion is semester 7 because CS4353 is Sem 1 only and requires CS3240, which is Sem 1 only and requires CS2111, which is Sem 2 only; this forces CS2111 in semester 4, CS3240 in semester 5, and CS4353 in semester 7.",
+     "Added only necessary prerequisites: CS2100 for CS2106, and CS2111 plus CS3240 for CS4353.",
+     "All nine must-take courses are included, all offerings and prerequisites are respected, and the last semester is light with only CS4353.",
+     "Workload is spread across semesters 3-6 as 2, 3, 3, and 3 courses respectively, with semester 7 having 1 course."
+    ]
+   },
+   "fenced": false,
+   "parse_error": null,
+   "budget_exhausted": false,
+   "seconds": 86.49
+  }
+ ],
+ "usage": {
+  "prompt_tokens": 10262,
+  "total_tokens": 16001,
+  "completion_tokens": 5739,
+  "prompt_tokens_details": {
+   "cached_tokens": 1280,
+   "created_cache_tokens": 8960
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5490
+  }
+ }
+}

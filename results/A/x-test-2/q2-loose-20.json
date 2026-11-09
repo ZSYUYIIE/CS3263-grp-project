@@ -1,0 +1,49 @@
+{
+ "id": "q2-loose-20",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 100.72,
+ "usage": {
+  "prompt_tokens": 6998,
+  "total_tokens": 13345,
+  "completion_tokens": 6347,
+  "prompt_tokens_details": {
+   "cached_tokens": 896,
+   "created_cache_tokens": 6016,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 6089
+  }
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS3210\",\"CS2102\",\"CS2105\"],\"6\":[],\"7\":[\"CS4223\"],\"8\":[\"CS3233\",\"CS3281\"]},\"reasons\":[\"Current semester is Y3S1 (semester 5); semester 6 is the exchange semester, so it has 0 MC and no courses.\",\"CS3210 is added because it is a prerequisite for CS4223. It is placed in semester 5 so CS4223 can be taken in semester 7, since CS4223 is offered only in Sem 1.\",\"CS3233 and CS3281 are offered only in Sem 2. With semester 6 as exchange, they must be placed in semester 8.\",\"CS2105 is placed in semester 5, the earliest possible semester.\",\"CS2102 is placed in semester 5; its prerequisites are satisfied by completed CS1231S and CS2030S/CS2040S.\",\"CS2106 is treated as completed; the possibility of failing is not acted on per the rules.\",\"Total planned MC is 24 including the added prerequisite CS3210, and no semester exceeds 20 MC.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS3210",
+    "CS2102",
+    "CS2105"
+   ],
+   "6": [],
+   "7": [
+    "CS4223"
+   ],
+   "8": [
+    "CS3233",
+    "CS3281"
+   ]
+  },
+  "reasons": [
+   "Current semester is Y3S1 (semester 5); semester 6 is the exchange semester, so it has 0 MC and no courses.",
+   "CS3210 is added because it is a prerequisite for CS4223. It is placed in semester 5 so CS4223 can be taken in semester 7, since CS4223 is offered only in Sem 1.",
+   "CS3233 and CS3281 are offered only in Sem 2. With semester 6 as exchange, they must be placed in semester 8.",
+   "CS2105 is placed in semester 5, the earliest possible semester.",
+   "CS2102 is placed in semester 5; its prerequisites are satisfied by completed CS1231S and CS2030S/CS2040S.",
+   "CS2106 is treated as completed; the possibility of failing is not acted on per the rules.",
+   "Total planned MC is 24 including the added prerequisite CS3210, and no semester exceeds 20 MC."
+  ]
+ },
+ "fenced": false,
+ "parse_error": null
+}

@@ -1,0 +1,120 @@
+{
+ "id": "q2-tight-10",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "prompt_version": "route-a-v2",
+ "messages_sha256": "4e9619750bd646b7086ab095f887e6163f049a588720765b359392ca85c53634",
+ "seconds": 67.7,
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CS3241\",\"CS2100\",\"CS2103T\"],\"4\":[\"CS4247\",\"CS3213\",\"CS2106\"],\"5\":[\"CS3237\",\"CS3231\",\"CS3230\"],\"6\":[\"ST2334\",\"CS3219\",\"CS2102\"],\"7\":[\"CS2109S\",\"CS2101\"]},\"reasons\":[\"Minimum 5 semesters are needed: 14 courses at max 3 per semester cannot fit in semesters 3-6 (4 semesters, capacity 12), so the plan ends in semester 7.\",\"CS3241 is added only because it is the prerequisite for CS4247; all other planned courses are from the requested list.\",\"All prerequisites are satisfied by completed courses or by earlier planned semesters, and every course is placed in a term it is offered in.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS3241",
+    "CS2100",
+    "CS2103T"
+   ],
+   "4": [
+    "CS4247",
+    "CS3213",
+    "CS2106"
+   ],
+   "5": [
+    "CS3237",
+    "CS3231",
+    "CS3230"
+   ],
+   "6": [
+    "ST2334",
+    "CS3219",
+    "CS2102"
+   ],
+   "7": [
+    "CS2109S",
+    "CS2101"
+   ]
+  },
+  "reasons": [
+   "Minimum 5 semesters are needed: 14 courses at max 3 per semester cannot fit in semesters 3-6 (4 semesters, capacity 12), so the plan ends in semester 7.",
+   "CS3241 is added only because it is the prerequisite for CS4247; all other planned courses are from the requested list.",
+   "All prerequisites are satisfied by completed courses or by earlier planned semesters, and every course is placed in a term it is offered in."
+  ]
+ },
+ "fenced": false,
+ "parse_error": null,
+ "finish_reason": "stop",
+ "budget_exhausted": false,
+ "budget_retried": false,
+ "schema_errors": [],
+ "format_valid": true,
+ "attempts": [
+  {
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CS3241\",\"CS2100\",\"CS2103T\"],\"4\":[\"CS4247\",\"CS3213\",\"CS2106\"],\"5\":[\"CS3237\",\"CS3231\",\"CS3230\"],\"6\":[\"ST2334\",\"CS3219\",\"CS2102\"],\"7\":[\"CS2109S\",\"CS2101\"]},\"reasons\":[\"Minimum 5 semesters are needed: 14 courses at max 3 per semester cannot fit in semesters 3-6 (4 semesters, capacity 12), so the plan ends in semester 7.\",\"CS3241 is added only because it is the prerequisite for CS4247; all other planned courses are from the requested list.\",\"All prerequisites are satisfied by completed courses or by earlier planned semesters, and every course is placed in a term it is offered in.\"]}",
+   "usage": {
+    "prompt_tokens": 7970,
+    "total_tokens": 13427,
+    "completion_tokens": 5457,
+    "prompt_tokens_details": {
+     "cached_tokens": 1408,
+     "created_cache_tokens": 6528,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 5264
+    }
+   },
+   "finish_reason": "stop",
+   "max_tokens": 16384,
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS3241",
+      "CS2100",
+      "CS2103T"
+     ],
+     "4": [
+      "CS4247",
+      "CS3213",
+      "CS2106"
+     ],
+     "5": [
+      "CS3237",
+      "CS3231",
+      "CS3230"
+     ],
+     "6": [
+      "ST2334",
+      "CS3219",
+      "CS2102"
+     ],
+     "7": [
+      "CS2109S",
+      "CS2101"
+     ]
+    },
+    "reasons": [
+     "Minimum 5 semesters are needed: 14 courses at max 3 per semester cannot fit in semesters 3-6 (4 semesters, capacity 12), so the plan ends in semester 7.",
+     "CS3241 is added only because it is the prerequisite for CS4247; all other planned courses are from the requested list.",
+     "All prerequisites are satisfied by completed courses or by earlier planned semesters, and every course is placed in a term it is offered in."
+    ]
+   },
+   "fenced": false,
+   "parse_error": null,
+   "budget_exhausted": false,
+   "seconds": 67.7
+  }
+ ],
+ "usage": {
+  "prompt_tokens": 7970,
+  "total_tokens": 13427,
+  "completion_tokens": 5457,
+  "prompt_tokens_details": {
+   "cached_tokens": 1408,
+   "created_cache_tokens": 6528
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5264
+  }
+ }
+}

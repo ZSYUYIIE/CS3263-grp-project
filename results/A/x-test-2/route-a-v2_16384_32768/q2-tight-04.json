@@ -1,0 +1,136 @@
+{
+ "id": "q2-tight-04",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "prompt_version": "route-a-v2",
+ "messages_sha256": "08ab08c7731ac59f577e1d4f98f91e20cc51c0f3dcd1ce1be1b934f72e8c3410",
+ "seconds": 222.34,
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"4\":[\"CS2109S\",\"CS3230\",\"CS2105\"],\"5\":[\"CS3268\",\"CS3241\",\"CS2220\"],\"6\":[\"CS4247\",\"CS4330\",\"CS2102\"],\"7\":[\"CS2106\",\"CS3219\"]},\"reasons\":[\"All nine must-take courses are scheduled; CS3241 and CS2220 are added only as prerequisites for CS4247 and CS4330.\",\"Prerequisites are satisfied in strictly earlier semesters: CS2109S before CS3268, CS3241 before CS4247, and CS2220 before CS4330.\",\"Each semester has at most 3 modules (12 MC), and CS3268 and CS2106 are in different semesters (5 and 7).\",\"Total is 44 MC (11 courses), the minimum given the required prerequisite additions.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2109S",
+    "CS3230",
+    "CS2105"
+   ],
+   "5": [
+    "CS3268",
+    "CS3241",
+    "CS2220"
+   ],
+   "6": [
+    "CS4247",
+    "CS4330",
+    "CS2102"
+   ],
+   "7": [
+    "CS2106",
+    "CS3219"
+   ]
+  },
+  "reasons": [
+   "All nine must-take courses are scheduled; CS3241 and CS2220 are added only as prerequisites for CS4247 and CS4330.",
+   "Prerequisites are satisfied in strictly earlier semesters: CS2109S before CS3268, CS3241 before CS4247, and CS2220 before CS4330.",
+   "Each semester has at most 3 modules (12 MC), and CS3268 and CS2106 are in different semesters (5 and 7).",
+   "Total is 44 MC (11 courses), the minimum given the required prerequisite additions."
+  ]
+ },
+ "fenced": false,
+ "parse_error": null,
+ "finish_reason": "stop",
+ "budget_exhausted": false,
+ "budget_retried": true,
+ "schema_errors": [],
+ "format_valid": true,
+ "attempts": [
+  {
+   "raw": null,
+   "usage": {
+    "prompt_tokens": 9097,
+    "total_tokens": 25481,
+    "completion_tokens": 16384,
+    "prompt_tokens_details": {
+     "cached_tokens": 1280,
+     "created_cache_tokens": 7808,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 16384
+    }
+   },
+   "finish_reason": "length",
+   "max_tokens": 16384,
+   "answer": null,
+   "fenced": false,
+   "parse_error": "no final text",
+   "budget_exhausted": true,
+   "api_error": "API returned non-text content or no final text",
+   "seconds": 130.19
+  },
+  {
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"4\":[\"CS2109S\",\"CS3230\",\"CS2105\"],\"5\":[\"CS3268\",\"CS3241\",\"CS2220\"],\"6\":[\"CS4247\",\"CS4330\",\"CS2102\"],\"7\":[\"CS2106\",\"CS3219\"]},\"reasons\":[\"All nine must-take courses are scheduled; CS3241 and CS2220 are added only as prerequisites for CS4247 and CS4330.\",\"Prerequisites are satisfied in strictly earlier semesters: CS2109S before CS3268, CS3241 before CS4247, and CS2220 before CS4330.\",\"Each semester has at most 3 modules (12 MC), and CS3268 and CS2106 are in different semesters (5 and 7).\",\"Total is 44 MC (11 courses), the minimum given the required prerequisite additions.\"]}",
+   "usage": {
+    "prompt_tokens": 9097,
+    "total_tokens": 14039,
+    "completion_tokens": 4942,
+    "prompt_tokens_details": {
+     "cached_tokens": 9088,
+     "created_cache_tokens": 0,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 4748
+    }
+   },
+   "finish_reason": "stop",
+   "max_tokens": 32768,
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "CS2109S",
+      "CS3230",
+      "CS2105"
+     ],
+     "5": [
+      "CS3268",
+      "CS3241",
+      "CS2220"
+     ],
+     "6": [
+      "CS4247",
+      "CS4330",
+      "CS2102"
+     ],
+     "7": [
+      "CS2106",
+      "CS3219"
+     ]
+    },
+    "reasons": [
+     "All nine must-take courses are scheduled; CS3241 and CS2220 are added only as prerequisites for CS4247 and CS4330.",
+     "Prerequisites are satisfied in strictly earlier semesters: CS2109S before CS3268, CS3241 before CS4247, and CS2220 before CS4330.",
+     "Each semester has at most 3 modules (12 MC), and CS3268 and CS2106 are in different semesters (5 and 7).",
+     "Total is 44 MC (11 courses), the minimum given the required prerequisite additions."
+    ]
+   },
+   "fenced": false,
+   "parse_error": null,
+   "budget_exhausted": false,
+   "seconds": 92.16
+  }
+ ],
+ "usage": {
+  "prompt_tokens": 18194,
+  "total_tokens": 39520,
+  "completion_tokens": 21326,
+  "prompt_tokens_details": {
+   "cached_tokens": 10368,
+   "created_cache_tokens": 7808
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 21132
+  }
+ }
+}

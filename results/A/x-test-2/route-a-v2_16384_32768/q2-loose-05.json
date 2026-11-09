@@ -1,0 +1,128 @@
+{
+ "id": "q2-loose-05",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "prompt_version": "route-a-v2",
+ "messages_sha256": "5a7938439a347001f5cec4fbebb5e163f9412059006ac3722cd0f48ceaffa22e",
+ "seconds": 196.7,
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"ST2334\",\"CS3219\",\"CS2102\",\"CS2101\"],\"6\":[\"CS3263\",\"CS4268\",\"CS3236\"],\"7\":[\"CS4278\"]},\"reasons\":[\"CS4278 requires CS3263 or CS3243; CS3243 is blocked by completed CS2109S, so CS3263 is added as the required prerequisite path.\",\"ST2334 is placed in semester 5 because it is required before CS3263, CS4268, CS3236, and CS4278.\",\"CS3263 is placed in semester 6 after ST2334; CS4268 and CS3236 are also semester-2-only and become eligible after ST2334.\",\"CS4278 is semester-1-only and is placed in semester 7 after CS3263 and ST2334.\",\"All planned courses are open to BComp CS Hons, offered in their assigned terms, and MC loads are 16, 12, and 4 respectively, within the 20 MC limit.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "ST2334",
+    "CS3219",
+    "CS2102",
+    "CS2101"
+   ],
+   "6": [
+    "CS3263",
+    "CS4268",
+    "CS3236"
+   ],
+   "7": [
+    "CS4278"
+   ]
+  },
+  "reasons": [
+   "CS4278 requires CS3263 or CS3243; CS3243 is blocked by completed CS2109S, so CS3263 is added as the required prerequisite path.",
+   "ST2334 is placed in semester 5 because it is required before CS3263, CS4268, CS3236, and CS4278.",
+   "CS3263 is placed in semester 6 after ST2334; CS4268 and CS3236 are also semester-2-only and become eligible after ST2334.",
+   "CS4278 is semester-1-only and is placed in semester 7 after CS3263 and ST2334.",
+   "All planned courses are open to BComp CS Hons, offered in their assigned terms, and MC loads are 16, 12, and 4 respectively, within the 20 MC limit."
+  ]
+ },
+ "fenced": false,
+ "parse_error": null,
+ "finish_reason": "stop",
+ "budget_exhausted": false,
+ "budget_retried": true,
+ "schema_errors": [],
+ "format_valid": true,
+ "attempts": [
+  {
+   "raw": null,
+   "usage": {
+    "prompt_tokens": 8717,
+    "total_tokens": 25101,
+    "completion_tokens": 16384,
+    "prompt_tokens_details": {
+     "cached_tokens": 1280,
+     "created_cache_tokens": 7424,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 16384
+    }
+   },
+   "finish_reason": "length",
+   "max_tokens": 16384,
+   "answer": null,
+   "fenced": false,
+   "parse_error": "no final text",
+   "budget_exhausted": true,
+   "api_error": "API returned non-text content or no final text",
+   "seconds": 137.78
+  },
+  {
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"ST2334\",\"CS3219\",\"CS2102\",\"CS2101\"],\"6\":[\"CS3263\",\"CS4268\",\"CS3236\"],\"7\":[\"CS4278\"]},\"reasons\":[\"CS4278 requires CS3263 or CS3243; CS3243 is blocked by completed CS2109S, so CS3263 is added as the required prerequisite path.\",\"ST2334 is placed in semester 5 because it is required before CS3263, CS4268, CS3236, and CS4278.\",\"CS3263 is placed in semester 6 after ST2334; CS4268 and CS3236 are also semester-2-only and become eligible after ST2334.\",\"CS4278 is semester-1-only and is placed in semester 7 after CS3263 and ST2334.\",\"All planned courses are open to BComp CS Hons, offered in their assigned terms, and MC loads are 16, 12, and 4 respectively, within the 20 MC limit.\"]}",
+   "usage": {
+    "prompt_tokens": 8717,
+    "total_tokens": 13359,
+    "completion_tokens": 4642,
+    "prompt_tokens_details": {
+     "cached_tokens": 8704,
+     "created_cache_tokens": 0,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 4412
+    }
+   },
+   "finish_reason": "stop",
+   "max_tokens": 32768,
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "ST2334",
+      "CS3219",
+      "CS2102",
+      "CS2101"
+     ],
+     "6": [
+      "CS3263",
+      "CS4268",
+      "CS3236"
+     ],
+     "7": [
+      "CS4278"
+     ]
+    },
+    "reasons": [
+     "CS4278 requires CS3263 or CS3243; CS3243 is blocked by completed CS2109S, so CS3263 is added as the required prerequisite path.",
+     "ST2334 is placed in semester 5 because it is required before CS3263, CS4268, CS3236, and CS4278.",
+     "CS3263 is placed in semester 6 after ST2334; CS4268 and CS3236 are also semester-2-only and become eligible after ST2334.",
+     "CS4278 is semester-1-only and is placed in semester 7 after CS3263 and ST2334.",
+     "All planned courses are open to BComp CS Hons, offered in their assigned terms, and MC loads are 16, 12, and 4 respectively, within the 20 MC limit."
+    ]
+   },
+   "fenced": false,
+   "parse_error": null,
+   "budget_exhausted": false,
+   "seconds": 58.92
+  }
+ ],
+ "usage": {
+  "prompt_tokens": 17434,
+  "total_tokens": 38460,
+  "completion_tokens": 21026,
+  "prompt_tokens_details": {
+   "cached_tokens": 9984,
+   "created_cache_tokens": 7424
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 20796
+  }
+ }
+}

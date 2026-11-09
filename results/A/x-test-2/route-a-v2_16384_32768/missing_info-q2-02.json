@@ -1,0 +1,72 @@
+{
+ "id": "missing_info-q2-02",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "prompt_version": "route-a-v2",
+ "messages_sha256": "020158d4e1f29efdc5e520c8196e7d03917d3f86a0c0ff0ff7729a428bbcd9a2",
+ "seconds": 12.11,
+ "raw": "{\"status\":\"MISSING_INFO\",\"reasons\":[\"A remaining-semester plan requires the student's current semester, but the request does not state it.\",\"Completed courses and must-take courses are provided, but the starting semester cannot be inferred without guessing.\"],\"missing_fields\":[\"current_sem\"]}",
+ "answer": {
+  "status": "MISSING_INFO",
+  "reasons": [
+   "A remaining-semester plan requires the student's current semester, but the request does not state it.",
+   "Completed courses and must-take courses are provided, but the starting semester cannot be inferred without guessing."
+  ],
+  "missing_fields": [
+   "current_sem"
+  ]
+ },
+ "fenced": false,
+ "parse_error": null,
+ "finish_reason": "stop",
+ "budget_exhausted": false,
+ "budget_retried": false,
+ "schema_errors": [],
+ "format_valid": true,
+ "attempts": [
+  {
+   "raw": "{\"status\":\"MISSING_INFO\",\"reasons\":[\"A remaining-semester plan requires the student's current semester, but the request does not state it.\",\"Completed courses and must-take courses are provided, but the starting semester cannot be inferred without guessing.\"],\"missing_fields\":[\"current_sem\"]}",
+   "usage": {
+    "prompt_tokens": 6979,
+    "total_tokens": 7268,
+    "completion_tokens": 289,
+    "prompt_tokens_details": {
+     "cached_tokens": 2432,
+     "created_cache_tokens": 4480,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 224
+    }
+   },
+   "finish_reason": "stop",
+   "max_tokens": 16384,
+   "answer": {
+    "status": "MISSING_INFO",
+    "reasons": [
+     "A remaining-semester plan requires the student's current semester, but the request does not state it.",
+     "Completed courses and must-take courses are provided, but the starting semester cannot be inferred without guessing."
+    ],
+    "missing_fields": [
+     "current_sem"
+    ]
+   },
+   "fenced": false,
+   "parse_error": null,
+   "budget_exhausted": false,
+   "seconds": 12.11
+  }
+ ],
+ "usage": {
+  "prompt_tokens": 6979,
+  "total_tokens": 7268,
+  "completion_tokens": 289,
+  "prompt_tokens_details": {
+   "cached_tokens": 2432,
+   "created_cache_tokens": 4480
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 224
+  }
+ }
+}

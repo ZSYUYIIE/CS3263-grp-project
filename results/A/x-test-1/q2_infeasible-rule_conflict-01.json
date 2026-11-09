@@ -1,0 +1,38 @@
+{
+ "id": "q2_infeasible-rule_conflict-01",
+ "pipeline": "A",
+ "model": "x-test-1",
+ "seconds": 155.53,
+ "usage": {
+  "prompt_tokens": 7665,
+  "total_tokens": 13627,
+  "completion_tokens": 5962,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "created_cache_tokens": 0,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5621
+  }
+ },
+ "raw": "{\"eligibility\": {\"status\": \"ELIGIBLE\", \"reasons\": [\"CS3233, ST2334, CS3264, CS3268 and IS1108 are all open to BComp CS Hons, none is completed or blocked by a completed course, and their prerequisites are satisfied by completed courses (CS3233: CS2030S and CS2040S; ST2334: MA1521) or can be satisfied by planned ST2334 (CS3264, CS3268).\"]}, \"plan\": {\"status\": \"NO_PLAN\", \"reasons\": [\"The must-wishes contradict each other: 'CS3264 must come before ST2334' and 'ST2334 must come before CS3264' cannot both hold in any plan.\", \"The prerequisite structure also forces ST2334 first: CS3264 requires ST2334 (or a mutually exclusive alternative such as ST2131/MA2116/EE2012, which would block the required ST2334), and CS3268 requires ST2334 strictly earlier and is offered only in Sem 1 (semester 7), so ST2334 must be in semester 6, before CS3264. The wish 'CS3264 before ST2334' is therefore impossible.\"], \"note\": \"Ignoring the impossible wish, the earliest-graduation schedule would be Sem 6: ST2334, CS3233; Sem 7: CS3268, CS3264; Sem 8: IS1108.\"}}",
+ "answer": {
+  "eligibility": {
+   "status": "ELIGIBLE",
+   "reasons": [
+    "CS3233, ST2334, CS3264, CS3268 and IS1108 are all open to BComp CS Hons, none is completed or blocked by a completed course, and their prerequisites are satisfied by completed courses (CS3233: CS2030S and CS2040S; ST2334: MA1521) or can be satisfied by planned ST2334 (CS3264, CS3268)."
+   ]
+  },
+  "plan": {
+   "status": "NO_PLAN",
+   "reasons": [
+    "The must-wishes contradict each other: 'CS3264 must come before ST2334' and 'ST2334 must come before CS3264' cannot both hold in any plan.",
+    "The prerequisite structure also forces ST2334 first: CS3264 requires ST2334 (or a mutually exclusive alternative such as ST2131/MA2116/EE2012, which would block the required ST2334), and CS3268 requires ST2334 strictly earlier and is offered only in Sem 1 (semester 7), so ST2334 must be in semester 6, before CS3264. The wish 'CS3264 before ST2334' is therefore impossible."
+   ],
+   "note": "Ignoring the impossible wish, the earliest-graduation schedule would be Sem 6: ST2334, CS3233; Sem 7: CS3268, CS3264; Sem 8: IS1108."
+  }
+ },
+ "fenced": false,
+ "parse_error": null
+}
