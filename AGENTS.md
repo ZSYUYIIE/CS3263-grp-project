@@ -56,6 +56,6 @@ satisfy a tree when they appear in a transcript, but can't be planned.
 - `MA1521` and similar have no prerequisite. The "A-level H2 Maths or MA1301" alternative is
   resolved by the student context, which holds H2 Maths.
 - `CS2309` follows NUSMods' bracket reading, not normal precedence (see its `warnings`).
-- 117 codes have `exists_in_ay: false`. They are old courses that are still named in preclusions.
-- 285 codes are `exists_in_ay: true` stubs (wildcard matches such as `NM1%`, none with an SoC
+- 160 codes have `exists_in_ay: false`. They are old courses that are still named in preclusions.
+- 186 codes are `exists_in_ay: true` stubs (wildcard matches such as `NM1%` and graduate MA/ST, none with an SoC
   prefix). Reasons built on them carry `[data gap]` and answers get `data_limited: true`.

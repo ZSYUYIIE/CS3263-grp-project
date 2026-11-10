@@ -16,8 +16,8 @@ Overviews: [BComp CS core chain](../../../../docs/diagrams/cs-core-chain.svg) ·
 | [BN1111](svg/BN1111.svg) | Biomedical Engineering Principles and Practice I | 4 | not offered | 0 | no |
 | [BN2102](svg/BN2102.svg) | Bioengineering Data Analysis | 4 | S2 | 3 | yes |
 | [BN2111](svg/BN2111.svg) | Biomedical Engineering Principles and Practice II | 4 | S2 | 0 | yes |
-| [BSP1703](svg/BSP1703.svg) | Managerial Economics | 4 | S1 S2 | 1 | yes |
-| [BSP1703X](svg/BSP1703X.svg) | Managerial Economics | 4 | not offered | 1 | no |
+| [BSP1703](svg/BSP1703.svg) | Managerial Economics | 4 | S1 S2 | 2 | yes |
+| [BSP1703X](svg/BSP1703X.svg) | Managerial Economics | 4 | not offered | 2 | no |
 | [BT1101](svg/BT1101.svg) | Introduction to Business Analytics | 4 | S1 S2 | 6 | yes |
 | [BT1101HS](svg/BT1101HS.svg) | Introduction to Business Analytics | 4 | S1 S2 | 4 | yes |
 | [BT2101](svg/BT2101.svg) | Econometrics Modeling for Business Analytics | 4 | S1 S2 | 12 | yes |
@@ -47,9 +47,37 @@ Overviews: [BComp CS core chain](../../../../docs/diagrams/cs-core-chain.svg) ·
 | [CG2023](svg/CG2023.svg) | Signals and Systems | 4 | S2 | 2 | yes |
 | [CG2028](svg/CG2028.svg) | Computer Organization | 2 | S1 S2 | 3 | yes |
 | [CG2271](svg/CG2271.svg) | Real-Time Operating Systems | 4 | S1 S2 | 5 | yes |
-| [CG3201](svg/CG3201.svg) | Machine Learning and Deep Learning | 4 | S1 S2 | 2 | yes |
+| [CG3201](svg/CG3201.svg) | Machine Learning and Deep Learning | 4 | S1 S2 | 3 | yes |
 | [CG3207](svg/CG3207.svg) | Computer Architecture | 4 | S1 S2 | 1 | yes |
 | [CG4001](svg/CG4001.svg) | B. Eng. Dissertation | 12 | S1 S2 ST1 ST2 | 0 | no |
+| [CM1102](svg/CM1102.svg) | Chemistry - The Central Science | 4 | S1 S2 | 3 | yes |
+| [CM1111](svg/CM1111.svg) | Inorganic Chemistry 1 | 4 | not offered | 2 | no |
+| [CM1121](svg/CM1121.svg) | Organic Chemistry 1 | 4 | not offered | 2 | no |
+| [CM1131](svg/CM1131.svg) | Physical Chemistry 1 | 4 | not offered | 3 | no |
+| [CM1417](svg/CM1417.svg) | Fundamentals of Chemistry | 4 | S1 | 3 | yes |
+| [CM1417X](svg/CM1417X.svg) | Fundamentals of Chemistry | 4 | not offered | 3 | no |
+| [CM2288](svg/CM2288.svg) | Basic UROPS in Chemistry I | 4 | S1 S2 ST1 ST2 | 0 | yes |
+| [CM2288R](svg/CM2288R.svg) | Basic UROPS in Chemistry I (REx) | 4 | S1 S2 | 0 | yes |
+| [CM2289](svg/CM2289.svg) | Basic UROPS In Chemistry II | 4 | S1 S2 ST1 ST2 | 0 | yes |
+| [CM2289R](svg/CM2289R.svg) | Basic UROPS In Chemistry II (REx) | 4 | S1 S2 | 0 | yes |
+| [CM2310](svg/CM2310.svg) | FOS Undergraduate Professional Internship Programme 1ST | 4 | not offered | 0 | no |
+| [CM2312](svg/CM2312.svg) | FOS Undergraduate Professional Internship Programme 2S1 | 12 | S1 | 0 | no |
+| [CM2313](svg/CM2313.svg) | FOS Undergraduate Professional Internship Programme 2S2 | 12 | S2 | 0 | no |
+| [CM3288](svg/CM3288.svg) | Advanced UROPS in Chemistry I | 4 | S1 S2 ST1 ST2 | 0 | yes |
+| [CM3288N](svg/CM3288N.svg) | Advanced UROPS in Nanochemistry I | 4 | S1 S2 | 0 | yes |
+| [CM3288NR](svg/CM3288NR.svg) | Advanced UROPS in Nanochemistry I (REx) | 4 | S1 S2 | 0 | yes |
+| [CM3288R](svg/CM3288R.svg) | Advanced UROPS in Chemistry I (REx) | 4 | S1 S2 | 0 | yes |
+| [CM3289](svg/CM3289.svg) | Advanced UROPS in Chemistry II | 4 | S1 S2 ST1 ST2 | 0 | yes |
+| [CM3289N](svg/CM3289N.svg) | Advanced UROPS in Nanochemistry II | 4 | S1 S2 | 0 | yes |
+| [CM3289NR](svg/CM3289NR.svg) | Advanced UROPS in Nanochemistry II (REx) | 4 | S1 S2 | 0 | yes |
+| [CM3289R](svg/CM3289R.svg) | Advanced UROPS in Chemistry II (REx) | 4 | S1 S2 | 0 | yes |
+| [CM3310](svg/CM3310.svg) | FOS Undergraduate Professional Internship Programme 2ST | 4 | ST1 ST2 | 0 | no |
+| [CM3311](svg/CM3311.svg) | Undergraduate Professional Internship Programme | 4 | ST1 ST2 | 0 | no |
+| [CM3312](svg/CM3312.svg) | FOS Undergraduate Professional Internship Programme 3S1 | 12 | S1 S2 | 0 | no |
+| [CM3313](svg/CM3313.svg) | FOS Undergraduate Professional Internship Programme 3S2 | 12 | S2 | 0 | no |
+| [CM4310](svg/CM4310.svg) | FOS Undergraduate Professional Internship Programme 3ST | 4 | not offered | 0 | no |
+| [CM4312](svg/CM4312.svg) | FOS Undergraduate Professional Internship Programme 4S1 | 12 | S1 | 0 | no |
+| [CM4313](svg/CM4313.svg) | FOS Undergraduate Professional Internship Programme 4S2 | 12 | S2 | 0 | no |
 | [CN3421](svg/CN3421.svg) | Process Modeling And Numerical Simulation | 4 | not offered | 0 | no |
 | [CP1001](svg/CP1001.svg) | Foundations of Innovation in Computing | 2 | S1 | 1 | yes |
 | [CP1002](svg/CP1002.svg) | Frontiers of Innovation in Computing | 2 | S2 | 0 | yes |
@@ -73,19 +101,19 @@ Overviews: [BComp CS core chain](../../../../docs/diagrams/cs-core-chain.svg) ·
 | [CP4283](svg/CP4283.svg) | Emerging Topics in Computing III: Deep Generative Models | 4 | S1 | 0 | yes |
 | [CP4284](svg/CP4284.svg) | Emerging Topics in Computing IV: Large Language Model Reasoning Agents | 4 | S2 | 0 | yes |
 | [CP4285](svg/CP4285.svg) | Emerging Topics in Computing V: Modern Recommendation Systems | 4 | S1 | 0 | yes |
-| [CS1010](svg/CS1010.svg) | Programming Methodology | 4 | S1 S2 | 37 | yes |
-| [CS1010A](svg/CS1010A.svg) | Programming Methodology | 4 | S1 S2 | 35 | yes |
-| [CS1010E](svg/CS1010E.svg) | Programming Methodology | 4 | S1 S2 ST2 | 37 | yes |
-| [CS1010HS](svg/CS1010HS.svg) | Programming Methodology | 4 | S2 | 28 | yes |
-| [CS1010J](svg/CS1010J.svg) | Programming Methodology | 4 | not offered | 33 | no |
-| [CS1010R](svg/CS1010R.svg) | Programming Methodology | 1 | S1 S2 | 5 | yes |
-| [CS1010S](svg/CS1010S.svg) | Programming Methodology | 4 | S1 S2 | 34 | yes |
-| [CS1010X](svg/CS1010X.svg) | Programming Methodology | 4 | S2 ST1 | 36 | yes |
-| [CS1010XCP](svg/CS1010XCP.svg) | Programming Methodology | 4 | not offered | 6 | no |
-| [CS1101S](svg/CS1101S.svg) | Programming Methodology | 4 | S1 S2 | 30 | yes |
-| [CS1231](svg/CS1231.svg) | Discrete Structures | 4 | S1 S2 | 18 | yes |
+| [CS1010](svg/CS1010.svg) | Programming Methodology | 4 | S1 S2 | 38 | yes |
+| [CS1010A](svg/CS1010A.svg) | Programming Methodology | 4 | S1 S2 | 36 | yes |
+| [CS1010E](svg/CS1010E.svg) | Programming Methodology | 4 | S1 S2 ST2 | 38 | yes |
+| [CS1010HS](svg/CS1010HS.svg) | Programming Methodology | 4 | S2 | 29 | yes |
+| [CS1010J](svg/CS1010J.svg) | Programming Methodology | 4 | not offered | 34 | no |
+| [CS1010R](svg/CS1010R.svg) | Programming Methodology | 1 | S1 S2 | 6 | yes |
+| [CS1010S](svg/CS1010S.svg) | Programming Methodology | 4 | S1 S2 | 35 | yes |
+| [CS1010X](svg/CS1010X.svg) | Programming Methodology | 4 | S2 ST1 | 37 | yes |
+| [CS1010XCP](svg/CS1010XCP.svg) | Programming Methodology | 4 | not offered | 7 | no |
+| [CS1101S](svg/CS1101S.svg) | Programming Methodology | 4 | S1 S2 | 31 | yes |
+| [CS1231](svg/CS1231.svg) | Discrete Structures | 4 | S1 S2 | 25 | yes |
 | [CS1231R](svg/CS1231R.svg) | Discrete Structures | 1 | S1 S2 | 0 | yes |
-| [CS1231S](svg/CS1231S.svg) | Discrete Structures | 4 | S1 S2 | 18 | yes |
+| [CS1231S](svg/CS1231S.svg) | Discrete Structures | 4 | S1 S2 | 25 | yes |
 | [CS2030](svg/CS2030.svg) | Programming Methodology II | 4 | S1 S2 | 17 | yes |
 | [CS2030DE](svg/CS2030DE.svg) | Programming Methodology II | 4 | S1 S2 | 17 | yes |
 | [CS2030HS](svg/CS2030HS.svg) | Programming Methodology II | 4 | S2 | 15 | no |
@@ -144,12 +172,12 @@ Overviews: [BComp CS core chain](../../../../docs/diagrams/cs-core-chain.svg) ·
 | [CS3241R](svg/CS3241R.svg) | Computer Graphics | 1 | S1 | 0 | yes |
 | [CS3242](svg/CS3242.svg) | 3D Modeling and Animation | 4 | S2 | 0 | yes |
 | [CS3243](svg/CS3243.svg) | Introduction to Artificial Intelligence | 4 | S2 | 5 | yes |
-| [CS3244](svg/CS3244.svg) | Machine Learning | 4 | S1 S2 | 4 | yes |
+| [CS3244](svg/CS3244.svg) | Machine Learning | 4 | S1 S2 | 5 | yes |
 | [CS3245R](svg/CS3245R.svg) | Information Retrieval | 1 | S1 | 0 | yes |
 | [CS3247](svg/CS3247.svg) | Game Development | 4 | S2 | 1 | yes |
 | [CS3249](svg/CS3249.svg) | Conversational User Interface | 4 | S1 | 0 | yes |
 | [CS3263](svg/CS3263.svg) | Foundations of Artificial Intelligence | 4 | S1 S2 | 5 | yes |
-| [CS3264](svg/CS3264.svg) | Foundations of Machine Learning | 4 | S1 S2 | 3 | yes |
+| [CS3264](svg/CS3264.svg) | Foundations of Machine Learning | 4 | S1 S2 | 4 | yes |
 | [CS3268](svg/CS3268.svg) | Responsible AI: from Algorithms to Impact | 4 | S1 | 0 | yes |
 | [CS3281](svg/CS3281.svg) | Software Engineering for Evolving Production Systems I | 4 | S2 | 1 | yes |
 | [CS3282](svg/CS3282.svg) | Software Engineering for Evolving Production Systems II | 4 | S2 | 0 | yes |
@@ -189,6 +217,7 @@ Overviews: [BComp CS core chain](../../../../docs/diagrams/cs-core-chain.svg) ·
 | [CS4430](svg/CS4430.svg) | Computational Complexity | 4 | S2 | 0 | yes |
 | [CS5230](svg/CS5230.svg) | Computational Complexity | 4 | S2 | 0 | yes |
 | [CS5246](svg/CS5246.svg) | Text Mining | 4 | S2 | 0 | yes |
+| [CS5339](svg/CS5339.svg) | Theory and Algorithms for Machine Learning | 4 | S2 | 0 | yes |
 | [CS5421](svg/CS5421.svg) | Database Applications Design and Tuning | 4 | S2 | 0 | yes |
 | [CS5422](svg/CS5422.svg) | Wireless Networking | 4 | S2 | 0 | yes |
 | [CS5424](svg/CS5424.svg) | Distributed Databases | 4 | S1 | 0 | yes |
@@ -201,28 +230,60 @@ Overviews: [BComp CS core chain](../../../../docs/diagrams/cs-core-chain.svg) ·
 | [CS5477](svg/CS5477.svg) | 3D Computer Vision | 4 | S2 | 0 | yes |
 | [CS5478](svg/CS5478.svg) | Intelligent Robots: Algorithms and Systems | 4 | S1 | 0 | yes |
 | [DAO1704](svg/DAO1704.svg) | Decision Analytics using Spreadsheets and AI | 4 | S1 S2 | 0 | no |
-| [DAO2702](svg/DAO2702.svg) | Programming for Business Analytics and AI | 4 | S1 S2 | 5 | no |
+| [DAO2702](svg/DAO2702.svg) | Programming for Business Analytics and AI | 4 | S1 S2 | 6 | no |
+| [DBA3701](svg/DBA3701.svg) | Introduction to Optimization | 4 | S1 S2 | 2 | yes |
 | [DBA3803](svg/DBA3803.svg) | Predictive Analytics in Business | 4 | S1 S2 | 4 | yes |
 | [DBA4714](svg/DBA4714.svg) | Deep Learning and Generative AI in Business | 4 | S2 | 0 | no |
 | [DBA5114](svg/DBA5114.svg) | AI Agents for Business Analytics | 4 | S2 | 0 | yes |
 | [DMX1401AI](svg/DMX1401AI.svg) | Design Your Own Course | 4 | S1 S2 ST1 ST2 | 0 | yes |
 | [DMX1501AI](svg/DMX1501AI.svg) | Design Your Own Course | 5 | S1 S2 ST1 ST2 | 0 | yes |
 | [DSA1101](svg/DSA1101.svg) | Introduction to Data Science | 4 | S1 S2 | 2 | yes |
-| [DSA3102](svg/DSA3102.svg) | Essential Data Analytics Tools: Convex Optimisation | 4 | S1 S2 | 0 | yes |
+| [DSA2102](svg/DSA2102.svg) | Essential Data Analytics Tools: Numerical Computation | 4 | S1 S2 | 3 | yes |
+| [DSA2310](svg/DSA2310.svg) | FOS Undergraduate Professional Internship Programme 1ST | 4 | ST1 ST2 | 0 | no |
+| [DSA2312](svg/DSA2312.svg) | FOS Undergraduate Professional Internship Programme 2S1 | 12 | S1 | 0 | no |
+| [DSA2313](svg/DSA2313.svg) | FOS Undergraduate Professional Internship Programme 2S2 | 12 | S2 | 0 | no |
+| [DSA3102](svg/DSA3102.svg) | Essential Data Analytics Tools: Convex Optimisation | 4 | S1 S2 | 1 | yes |
+| [DSA3288](svg/DSA3288.svg) | Advanced UROPS in Data Science and Analytics I | 4 | S1 S2 ST1 ST2 | 0 | no |
+| [DSA3288R](svg/DSA3288R.svg) | Advanced UROPS in Data Science and Analytics I (REx) | 4 | S1 | 0 | yes |
+| [DSA3289](svg/DSA3289.svg) | Advanced UROPS in Data Science and Analytics II | 4 | S1 | 0 | no |
+| [DSA3289R](svg/DSA3289R.svg) | Advanced UROPS in Data Science and Analytics II (REx) | 4 | S1 | 0 | yes |
+| [DSA3310](svg/DSA3310.svg) | FOS Undergraduate Professional Internship Programme 2ST | 4 | ST1 ST2 | 0 | no |
+| [DSA3311](svg/DSA3311.svg) | Undergraduate Professional Internship Programme | 4 | ST1 ST2 | 0 | no |
+| [DSA3312](svg/DSA3312.svg) | FOS Undergraduate Professional Internship Programme 3S1 | 12 | S1 S2 | 0 | no |
+| [DSA3313](svg/DSA3313.svg) | FOS Undergraduate Professional Internship Programme 3S2 | 12 | S2 | 0 | no |
 | [DSA4213](svg/DSA4213.svg) | Natural Language Processing for Data Science | 4 | S1 | 0 | no |
+| [DSA4310](svg/DSA4310.svg) | FOS Undergraduate Professional Internship Programme 3ST | 4 | ST1 ST2 | 0 | no |
+| [DSA4312](svg/DSA4312.svg) | FOS Undergraduate Professional Internship Programme 4S1 | 12 | S1 S2 | 0 | no |
+| [DSA4312C](svg/DSA4312C.svg) | FOS Undergraduate Professional Internship Programme 4S1 | 12 | not offered | 0 | no |
+| [DSA4313](svg/DSA4313.svg) | FOS Undergraduate Professional Internship Programme 4S2 | 12 | S2 | 0 | no |
+| [DSA4313C](svg/DSA4313C.svg) | FOS Undergraduate Professional Internship Programme 4S2 | 12 | not offered | 0 | no |
+| [DSA5102](svg/DSA5102.svg) | Foundations of Machine Learning | 4 | S1 | 0 | yes |
+| [DSC3214](svg/DSC3214.svg) | Introduction To Optimisation | 4 | not offered | 0 | no |
 | [DSC3216](svg/DSC3216.svg) | Predictive Analytics in Business | 4 | not offered | 0 | no |
 | [DSE1101](svg/DSE1101.svg) | Introductory Data Science for Economics | 4 | S1 | 2 | no |
-| [EC1101E](svg/EC1101E.svg) | Introduction to Economic Analysis | 4 | S1 S2 | 1 | yes |
-| [EC1301](svg/EC1301.svg) | Principles of Economics | 4 | not offered | 1 | no |
+| [DSE2310](svg/DSE2310.svg) | FOS Undergraduate Professional Internship Programme 1ST | 4 | ST1 ST2 | 0 | no |
+| [DSE2312](svg/DSE2312.svg) | FOS Undergraduate Professional Internship Programme 2S1 | 12 | S1 | 0 | no |
+| [DSE2313](svg/DSE2313.svg) | FOS Undergraduate Professional Internship Programme 2S2 | 12 | S2 | 0 | no |
+| [DSE3310](svg/DSE3310.svg) | FOS Undergraduate Professional Internship Programme 2ST | 4 | ST1 ST2 | 0 | no |
+| [DSE3312](svg/DSE3312.svg) | FOS Undergraduate Professional Internship Programme 3S1 | 12 | S1 | 0 | no |
+| [DSE3313](svg/DSE3313.svg) | FOS Undergraduate Professional Internship Programme 3S2 | 12 | S2 | 0 | no |
+| [DSE4310](svg/DSE4310.svg) | FOS Undergraduate Professional Internship Programme 3ST | 4 | ST1 ST2 | 0 | no |
+| [DSE4312](svg/DSE4312.svg) | FOS Undergraduate Professional Internship Programme 4S1 | 12 | S1 | 0 | no |
+| [DSE4313](svg/DSE4313.svg) | FOS Undergraduate Professional Internship Programme 4S2 | 12 | S2 | 0 | no |
+| [EC1101E](svg/EC1101E.svg) | Introduction to Economic Analysis | 4 | S1 S2 | 2 | yes |
+| [EC1301](svg/EC1301.svg) | Principles of Economics | 4 | not offered | 2 | no |
+| [EC2101](svg/EC2101.svg) | Microeconomic Analysis I | 4 | S1 S2 | 1 | yes |
+| [EC2104](svg/EC2104.svg) | Quantitative Methods for Economic Analysis | 4 | S1 S2 | 1 | yes |
 | [EC2303](svg/EC2303.svg) | Foundations for Econometrics | 4 | S1 S2 | 3 | yes |
 | [EC3303](svg/EC3303.svg) | Econometrics I | 4 | S1 S2 | 0 | yes |
+| [EC3312](svg/EC3312.svg) | Game Theory & Applications to Economics | 4 | S1 S2 | 0 | yes |
 | [EE1111](svg/EE1111.svg) | Engineering Principles and Practice I | 6 | not offered | 0 | no |
 | [EE1111A](svg/EE1111A.svg) | Electrical Engineering Principles and Practice I | 4 | S1 | 1 | yes |
 | [EE1111B](svg/EE1111B.svg) | Electrical & Computer Engineering Principles & Practice | 4 | ST1 | 2 | yes |
-| [EE2012](svg/EE2012.svg) | Analytical Methods in Electrical and Computer Engineering | 4 | S1 S2 | 25 | yes |
-| [EE2012A](svg/EE2012A.svg) | Analytical Methods in Electrical and Computer Engineering | 3 | not offered | 23 | no |
+| [EE2012](svg/EE2012.svg) | Analytical Methods in Electrical and Computer Engineering | 4 | S1 S2 | 28 | yes |
+| [EE2012A](svg/EE2012A.svg) | Analytical Methods in Electrical and Computer Engineering | 3 | not offered | 25 | no |
 | [EE2020](svg/EE2020.svg) | Digital Fundamentals | 5 | not offered | 1 | no |
-| [EE2023](svg/EE2023.svg) | Signals and Systems | 4 | S1 S2 | 2 | yes |
+| [EE2023](svg/EE2023.svg) | Signals and Systems | 4 | S1 S2 | 3 | yes |
 | [EE2024](svg/EE2024.svg) | Programming for Computer Interfaces | 5 | not offered | 4 | no |
 | [EE2026](svg/EE2026.svg) | Digital Design | 4 | S1 S2 | 1 | yes |
 | [EE2028](svg/EE2028.svg) | Microcontroller Programming and Interfacing | 4 | S1 S2 | 4 | yes |
@@ -231,15 +292,27 @@ Overviews: [BComp CS core chain](../../../../docs/diagrams/cs-core-chain.svg) ·
 | [EE2213](svg/EE2213.svg) | Introduction to Artificial Intelligence | 4 | S1 S2 | 3 | yes |
 | [EE3703](svg/EE3703.svg) | Machine Learning with Applications | 4 | S1 S2 | 0 | yes |
 | [EE3731C](svg/EE3731C.svg) | Signal Analytics | 4 | S1 | 1 | yes |
+| [EE4131](svg/EE4131.svg) | Random Signals | 4 | not offered | 1 | no |
 | [EE4204](svg/EE4204.svg) | Computer Networks | 4 | S1 S2 | 6 | yes |
 | [EE4210](svg/EE4210.svg) | Network Protocols and Applications | 4 | not offered | 1 | no |
 | [EE4212](svg/EE4212.svg) | Computer Vision | 4 | S2 | 0 | yes |
 | [EE4214](svg/EE4214.svg) | Real-Time Embedded Systems | 4 | not offered | 0 | no |
 | [EE4704](svg/EE4704.svg) | Image Processing and Analysis | 4 | S1 | 1 | yes |
 | [EE4802](svg/EE4802.svg) | Learning from Data | 4 | S2 | 0 | yes |
+| [EE5139](svg/EE5139.svg) | Information Theory and its Applications | 4 | S1 | 0 | yes |
 | [EE5310](svg/EE5310.svg) | Communication Networking Fundamentals | 4 | not offered | 0 | no |
+| [EE6139](svg/EE6139.svg) | Information Theory and its Applications (Advanced) | 4 | S1 | 0 | yes |
 | [EE6310](svg/EE6310.svg) | Communication Networking Fundamentals (Advanced) | 4 | not offered | 0 | no |
 | [EG2401A](svg/EG2401A.svg) | Engineering Professionalism | 2 | S1 S2 | 3 | yes |
+| [ENV2310](svg/ENV2310.svg) | FOS Undergraduate Professional Internship Programme 1ST | 4 | not offered | 0 | no |
+| [ENV2312](svg/ENV2312.svg) | FOS Undergraduate Professional Internship Programme 2S1 | 12 | not offered | 0 | no |
+| [ENV2313](svg/ENV2313.svg) | FOS Undergraduate Professional Internship Programme 2S2 | 12 | not offered | 0 | no |
+| [ENV3310](svg/ENV3310.svg) | FOS Undergraduate Professional Internship Programme 2ST | 4 | not offered | 0 | no |
+| [ENV3312](svg/ENV3312.svg) | FOS Undergraduate Professional Internship Programme 3S1 | 12 | not offered | 0 | no |
+| [ENV3313](svg/ENV3313.svg) | FOS Undergraduate Professional Internship Programme 3S2 | 12 | not offered | 0 | no |
+| [ENV4310](svg/ENV4310.svg) | FOS Undergraduate Professional Internship Programme 3ST | 4 | not offered | 0 | no |
+| [ENV4312](svg/ENV4312.svg) | FOS Undergraduate Professional Internship Programme 4S1 | 12 | not offered | 0 | no |
+| [ENV4313](svg/ENV4313.svg) | FOS Undergraduate Professional Internship Programme 4S2 | 12 | not offered | 0 | no |
 | [ES1000](svg/ES1000.svg) | Foundation Academic English | 0 | S1 S2 | 0 | yes |
 | [ES1531](svg/ES1531.svg) | Critical Thinking And Writing | 4 | not offered | 0 | no |
 | [ES2002](svg/ES2002.svg) | Business Communication for Leaders (BBA) | 4 | S1 S2 | 4 | no |
@@ -248,10 +321,31 @@ Overviews: [BComp CS core chain](../../../../docs/diagrams/cs-core-chain.svg) ·
 | [ES2631](svg/ES2631.svg) | Critique and Communication of Thinking and Design | 4 | S1 S2 | 1 | no |
 | [ES2660](svg/ES2660.svg) | Communicating in the Information Age | 4 | S1 S2 | 0 | yes |
 | [ESP1111](svg/ESP1111.svg) | Engineering Principles In-Action | 4 | S1 | 0 | yes |
+| [ESP2106](svg/ESP2106.svg) | Principles of Continua | 4 | not offered | 1 | no |
 | [ESP2107](svg/ESP2107.svg) | Numerical Methods and Statistics | 4 | S2 | 1 | yes |
 | [ESP2111](svg/ESP2111.svg) | Sensor System Electronics | 4 | S2 | 0 | yes |
 | [FAS1101](svg/FAS1101.svg) | Writing Academically: Arts and Social Sciences | 4 | S1 S2 | 0 | no |
+| [FST1101B](svg/FST1101B.svg) | Science and Technology of Foods | 4 | S1 S2 | 4 | yes |
+| [FST2288](svg/FST2288.svg) | Basic UROPS in Food Science & Technology I | 4 | S1 S2 ST1 ST2 | 0 | yes |
+| [FST2288R](svg/FST2288R.svg) | Basic UROPS in Food Science & Technology I (REx) | 4 | S1 S2 | 0 | yes |
+| [FST2289](svg/FST2289.svg) | Basic UROPS in Food Science & Technology II | 4 | S1 S2 ST1 ST2 | 0 | yes |
+| [FST2289R](svg/FST2289R.svg) | Basic UROPS in Food Science & Technology II (REx) | 4 | S1 S2 | 0 | yes |
+| [FST2310](svg/FST2310.svg) | FOS Undergraduate Professional Internship Programme 1ST | 4 | not offered | 0 | no |
+| [FST2312](svg/FST2312.svg) | FOS Undergraduate Professional Internship Programme 2S1 | 12 | S1 | 0 | no |
+| [FST2313](svg/FST2313.svg) | FOS Undergraduate Professional Internship Programme 2S2 | 12 | S2 | 0 | no |
+| [FST3288](svg/FST3288.svg) | Advanced UROPS in Food Science & Technology I | 4 | S1 S2 ST1 ST2 | 2 | yes |
+| [FST3288R](svg/FST3288R.svg) | Advanced UROPS in Food Science & Technology I (REx) | 4 | S1 S2 | 0 | yes |
+| [FST3289](svg/FST3289.svg) | Advanced UROPS in Food Science & Technology II | 4 | S1 S2 ST1 ST2 | 0 | yes |
+| [FST3289R](svg/FST3289R.svg) | Advanced UROPS in Food Science & Technology II (REx) | 4 | not offered | 0 | no |
+| [FST3310](svg/FST3310.svg) | FOS Undergraduate Professional Internship Programme 2ST | 4 | ST1 ST2 | 0 | no |
+| [FST3311](svg/FST3311.svg) | Undergraduate Professional Internship Programme | 4 | ST1 ST2 | 0 | no |
+| [FST3312](svg/FST3312.svg) | FOS Undergraduate Professional Internship Programme 3S1 | 12 | S1 | 0 | no |
+| [FST3313](svg/FST3313.svg) | FOS Undergraduate Professional Internship Programme 3S2 | 12 | S2 | 0 | no |
+| [FST4310](svg/FST4310.svg) | FOS Undergraduate Professional Internship Programme 3ST | 4 | not offered | 0 | no |
+| [FST4312](svg/FST4312.svg) | FOS Undergraduate Professional Internship Programme 4S1 | 12 | S1 | 0 | no |
+| [FST4313](svg/FST4313.svg) | FOS Undergraduate Professional Internship Programme 4S2 | 12 | S2 | 0 | no |
 | [FT5012](svg/FT5012.svg) | Digital Trust in Banking and Finance | 4 | S1 | 0 | yes |
+| [GEK1509](svg/GEK1509.svg) | The Emerging Nanoworld | 4 | not offered | 1 | no |
 | [GEK1549](svg/GEK1549.svg) | Critical Thinking And Writing | 4 | not offered | 0 | no |
 | [GET1021](svg/GET1021.svg) | Critical Thinking And Writing | 4 | not offered | 0 | no |
 | [HS1501](svg/HS1501.svg) | Artificial Intelligence and Society | 4 | S1 S2 | 0 | yes |
@@ -259,6 +353,7 @@ Overviews: [BComp CS core chain](../../../../docs/diagrams/cs-core-chain.svg) ·
 | [ID3131](svg/ID3131.svg) | Techniques in Interaction Design and User Experience | 4 | S1 S2 | 1 | yes |
 | [IE1111R](svg/IE1111R.svg) | Industrial & Systems Engrg Principles & Practice I | 4 | S1 | 1 | yes |
 | [IE2100](svg/IE2100.svg) | Probability Models With Applications | 4 | S2 | 1 | yes |
+| [IE2110](svg/IE2110.svg) | Operations Research I | 4 | S1 | 0 | yes |
 | [IE3101](svg/IE3101.svg) | Statistics For Engineering Applications | 4 | S1 | 1 | yes |
 | [IE4213](svg/IE4213.svg) | Learning from Data | 4 | S2 | 0 | yes |
 | [IE4280](svg/IE4280.svg) | Generative AI and FinTech Technologies | 4 | S2 | 0 | yes |
@@ -321,35 +416,132 @@ Overviews: [BComp CS core chain](../../../../docs/diagrams/cs-core-chain.svg) ·
 | [IT2900](svg/IT2900.svg) | Technical Management and Leadership | 4 | S1 | 0 | yes |
 | [IT3010](svg/IT3010.svg) | Data Management for Business Analytics | 4 | S1 S2 | 3 | yes |
 | [IT3011](svg/IT3011.svg) | Introduction to Machine Learning and Applications | 4 | not offered | 0 | no |
-| [LSM1301](svg/LSM1301.svg) | General Biology | 4 | S1 S2 | 2 | yes |
+| [LSM1111](svg/LSM1111.svg) | Biological Challenges and Opportunities for Humankind | 4 | S1 S2 | 3 | yes |
+| [LSM1301](svg/LSM1301.svg) | General Biology | 4 | S1 S2 | 4 | yes |
 | [LSM2241](svg/LSM2241.svg) | Introductory Bioinformatics | 4 | not offered | 3 | no |
-| [MA1100](svg/MA1100.svg) | Basic Discrete Mathematics | 4 | S1 S2 | 18 | yes |
-| [MA1100T](svg/MA1100T.svg) | Basic Discrete Mathematics (T) | 4 | S1 | 18 | yes |
+| [LSM2288](svg/LSM2288.svg) | Basic UROPS in Life Sciences I | 4 | S1 S2 ST1 ST2 | 0 | yes |
+| [LSM2288R](svg/LSM2288R.svg) | Basic UROPS in Life Sciences I (REx) | 4 | S1 S2 | 0 | yes |
+| [LSM2289](svg/LSM2289.svg) | Basic UROPS in Life Sciences II | 4 | S1 S2 ST1 ST2 | 0 | yes |
+| [LSM2289R](svg/LSM2289R.svg) | Basic UROPS in Life Sciences II (REx) | 4 | S1 S2 | 0 | yes |
+| [LSM2310](svg/LSM2310.svg) | FOS Undergraduate Professional Internship Programme 1ST | 4 | S1 S2 | 0 | no |
+| [LSM2312](svg/LSM2312.svg) | FOS Undergraduate Professional Internship Programme 2S1 | 12 | S1 S2 | 0 | no |
+| [LSM2313](svg/LSM2313.svg) | FOS Undergraduate Professional Internship Programme 2S2 | 12 | S1 S2 | 0 | no |
+| [LSM3288](svg/LSM3288.svg) | Advanced UROPS in Life Sciences I | 4 | S1 S2 ST1 ST2 | 0 | yes |
+| [LSM3288R](svg/LSM3288R.svg) | Advanced UROPS in Life Sciences I (REx) | 4 | S1 S2 | 0 | yes |
+| [LSM3289](svg/LSM3289.svg) | Advanced UROPS in Life Sciences II | 4 | S1 S2 ST1 ST2 | 0 | yes |
+| [LSM3289R](svg/LSM3289R.svg) | Advanced UROPS in Life Sciences II (REx) | 4 | S1 S2 | 0 | yes |
+| [LSM3310](svg/LSM3310.svg) | FOS Undergraduate Professional Internship Programme 2ST | 4 | ST1 ST2 | 0 | no |
+| [LSM3311](svg/LSM3311.svg) | Undergraduate Professional Internship Programme | 4 | S1 S2 ST1 ST2 | 0 | no |
+| [LSM3312](svg/LSM3312.svg) | FOS Undergraduate Professional Internship Programme 3S1 | 12 | S1 S2 | 0 | no |
+| [LSM3313](svg/LSM3313.svg) | FOS Undergraduate Professional Internship Programme 3S2 | 12 | S2 | 0 | no |
+| [LSM4310](svg/LSM4310.svg) | FOS Undergraduate Professional Internship Programme 3ST | 4 | not offered | 0 | no |
+| [LSM4312](svg/LSM4312.svg) | FOS Undergraduate Professional Internship Programme 4S1 | 12 | S1 S2 | 0 | no |
+| [LSM4313](svg/LSM4313.svg) | FOS Undergraduate Professional Internship Programme 4S2 | 12 | S2 | 0 | no |
+| [MA1100](svg/MA1100.svg) | Basic Discrete Mathematics | 4 | S1 S2 | 25 | yes |
+| [MA1100T](svg/MA1100T.svg) | Basic Discrete Mathematics (T) | 4 | S1 | 24 | yes |
 | [MA1301](svg/MA1301.svg) | Introductory Mathematics | 4 | S1 S2 | 0 | yes |
 | [MA1301X](svg/MA1301X.svg) | Introductory Mathematics | 4 | S2 ST1 | 0 | yes |
-| [MA1311](svg/MA1311.svg) | Matrix Algebra | 4 | not offered | 18 | no |
-| [MA1312](svg/MA1312.svg) | Calculus with Applications | 4 | not offered | 8 | no |
-| [MA1505](svg/MA1505.svg) | Mathematics I | 4 | S1 | 23 | yes |
-| [MA1508E](svg/MA1508E.svg) | Linear Algebra for Engineering | 4 | S2 | 23 | yes |
-| [MA1511](svg/MA1511.svg) | Engineering Calculus | 2 | S1 S2 | 24 | yes |
-| [MA1512](svg/MA1512.svg) | Differential Equations for Engineering | 2 | S1 S2 | 17 | yes |
-| [MA1513](svg/MA1513.svg) | Linear Algebra with Differential Equations | 2 | S1 S2 | 20 | yes |
-| [MA1521](svg/MA1521.svg) | Calculus for Computing | 4 | S1 S2 | 22 | yes |
-| [MA1522](svg/MA1522.svg) | Linear Algebra for Computing | 4 | S1 S2 | 22 | yes |
+| [MA1311](svg/MA1311.svg) | Matrix Algebra | 4 | not offered | 21 | no |
+| [MA1312](svg/MA1312.svg) | Calculus with Applications | 4 | not offered | 10 | no |
+| [MA1505](svg/MA1505.svg) | Mathematics I | 4 | S1 | 32 | yes |
+| [MA1508E](svg/MA1508E.svg) | Linear Algebra for Engineering | 4 | S2 | 33 | yes |
+| [MA1511](svg/MA1511.svg) | Engineering Calculus | 2 | S1 S2 | 32 | yes |
+| [MA1512](svg/MA1512.svg) | Differential Equations for Engineering | 2 | S1 S2 | 20 | yes |
+| [MA1513](svg/MA1513.svg) | Linear Algebra with Differential Equations | 2 | S1 S2 | 30 | yes |
+| [MA1521](svg/MA1521.svg) | Calculus for Computing | 4 | S1 S2 | 28 | yes |
+| [MA1522](svg/MA1522.svg) | Linear Algebra for Computing | 4 | S1 S2 | 32 | yes |
 | [MA1531](svg/MA1531.svg) | Calculus for Data Science | 4 | S1 S2 | 1 | no |
-| [MA2001](svg/MA2001.svg) | Linear Algebra I | 4 | S1 S2 | 22 | no |
-| [MA2002](svg/MA2002.svg) | Calculus | 4 | S1 S2 | 21 | no |
-| [MA2104](svg/MA2104.svg) | Multivariable Calculus | 4 | S1 S2 | 3 | yes |
-| [MA2108](svg/MA2108.svg) | Mathematical Analysis I | 4 | S1 S2 | 0 | yes |
-| [MA2108S](svg/MA2108S.svg) | Mathematical Analysis I (S) | 5 | S2 | 0 | yes |
-| [MA2116](svg/MA2116.svg) | Probability | 4 | S1 S2 | 28 | yes |
-| [MA2116T](svg/MA2116T.svg) | Probability (T) | 4 | S1 | 28 | yes |
+| [MA2001](svg/MA2001.svg) | Linear Algebra I | 4 | S1 S2 | 36 | no |
+| [MA2002](svg/MA2002.svg) | Calculus | 4 | S1 S2 | 24 | no |
+| [MA2101](svg/MA2101.svg) | Linear Algebra II | 4 | S1 S2 | 7 | yes |
+| [MA2101S](svg/MA2101S.svg) | Linear Algebra II (S) | 5 | S1 | 7 | yes |
+| [MA2104](svg/MA2104.svg) | Multivariable Calculus | 4 | S1 S2 | 10 | yes |
+| [MA2108](svg/MA2108.svg) | Mathematical Analysis I | 4 | S1 S2 | 10 | yes |
+| [MA2108S](svg/MA2108S.svg) | Mathematical Analysis I (S) | 5 | S2 | 10 | yes |
+| [MA2116](svg/MA2116.svg) | Probability | 4 | S1 S2 | 39 | yes |
+| [MA2116T](svg/MA2116T.svg) | Probability (T) | 4 | S1 | 37 | yes |
+| [MA2202](svg/MA2202.svg) | Algebra I | 4 | S2 | 4 | yes |
+| [MA2202S](svg/MA2202S.svg) | Algebra I (S) | 5 | S2 | 4 | yes |
+| [MA2213](svg/MA2213.svg) | Numerical Analysis I | 4 | S2 | 3 | yes |
+| [MA2214](svg/MA2214.svg) | Combinatorics and Graphs I | 4 | S1 | 1 | yes |
+| [MA2288](svg/MA2288.svg) | Basic UROPS in Mathematics I | 4 | S1 S2 ST1 ST2 | 0 | yes |
+| [MA2288R](svg/MA2288R.svg) | Basic UROPS in Mathematics I (REx) | 4 | S1 S2 | 0 | yes |
+| [MA2289](svg/MA2289.svg) | Basic UROPS in Mathematics II | 4 | S1 S2 ST1 ST2 | 0 | yes |
+| [MA2289R](svg/MA2289R.svg) | Basic UROPS in Mathematics II (REx) | 4 | S1 S2 | 0 | yes |
 | [MA2301](svg/MA2301.svg) | Basic Applied Mathematics | 4 | not offered | 0 | no |
-| [MA2311](svg/MA2311.svg) | Techniques in Advanced Calculus | 4 | S1 S2 | 3 | yes |
-| [MA3270](svg/MA3270.svg) | Mathematics for Artificial Intelligence | 4 | S1 | 2 | yes |
-| [ME1102](svg/ME1102.svg) | Engineering Principles and Practice I | 4 | not offered | 0 | no |
+| [MA2310](svg/MA2310.svg) | FOS Undergraduate Professional Internship Programme 1ST | 4 | ST1 ST2 | 0 | no |
+| [MA2311](svg/MA2311.svg) | Techniques in Advanced Calculus | 4 | S1 S2 | 8 | yes |
+| [MA2312U](svg/MA2312U.svg) | FOS Undergraduate Professional Internship Programme 2S1 | 12 | S1 | 0 | no |
+| [MA2313](svg/MA2313.svg) | FOS Undergraduate Professional Internship Programme 2S2 | 12 | S2 | 0 | no |
+| [MA2401](svg/MA2401.svg) | Mathematical Foundations of Data Analysis | 4 | S2 | 0 | yes |
+| [MA3201](svg/MA3201.svg) | Algebra II | 4 | S1 | 4 | yes |
+| [MA3205](svg/MA3205.svg) | Set Theory | 4 | S2 | 3 | yes |
+| [MA3209](svg/MA3209.svg) | Metric and Topological Spaces | 4 | S1 | 4 | yes |
+| [MA3210](svg/MA3210.svg) | Mathematical Analysis II | 4 | S1 | 1 | yes |
+| [MA3211](svg/MA3211.svg) | Complex Analysis I | 4 | S2 | 0 | yes |
+| [MA3211S](svg/MA3211S.svg) | Complex Analysis I (S) | 5 | S2 | 0 | yes |
+| [MA3219](svg/MA3219.svg) | Computability Theory | 4 | not offered | 1 | no |
+| [MA3220](svg/MA3220.svg) | Ordinary Differential Equations | 4 | S1 | 2 | yes |
+| [MA3233](svg/MA3233.svg) | Combinatorics and Graphs II | 4 | S2 | 1 | yes |
+| [MA3236](svg/MA3236.svg) | Non-Linear Programming | 4 | S1 | 1 | yes |
+| [MA3238](svg/MA3238.svg) | Stochastic Processes I | 4 | S1 | 3 | yes |
+| [MA3238S](svg/MA3238S.svg) | Stochastic Processes I (S) | 5 | S2 | 2 | yes |
+| [MA3252](svg/MA3252.svg) | Linear and Network Optimisation | 4 | S2 | 2 | yes |
+| [MA3264](svg/MA3264.svg) | Mathematical Modelling | 4 | S1 | 0 | yes |
+| [MA3265](svg/MA3265.svg) | Introduction to Number Theory | 4 | S2 | 2 | yes |
+| [MA3270](svg/MA3270.svg) | Mathematics for Artificial Intelligence | 4 | S1 | 3 | yes |
+| [MA3288](svg/MA3288.svg) | Advanced UROPS in Mathematics I | 4 | S1 S2 ST1 ST2 | 0 | yes |
+| [MA3288R](svg/MA3288R.svg) | Advanced UROPS in Mathematics I (REx) | 4 | S1 | 0 | yes |
+| [MA3289](svg/MA3289.svg) | Advanced UROPS in Mathematics II | 4 | S1 S2 ST1 ST2 | 0 | yes |
+| [MA3289R](svg/MA3289R.svg) | Advanced UROPS in Mathematics II (REx) | 4 | not offered | 0 | no |
+| [MA3310](svg/MA3310.svg) | FOS Undergraduate Professional Internship Programme 2ST | 4 | ST1 ST2 | 0 | no |
+| [MA3311](svg/MA3311.svg) | Undergraduate Professional Internship Programme | 4 | not offered | 0 | no |
+| [MA3312](svg/MA3312.svg) | FOS Undergraduate Professional Internship Programme 3S1 | 12 | S1 S2 | 0 | no |
+| [MA3313](svg/MA3313.svg) | FOS Undergraduate Professional Internship Programme 3S2 | 12 | S1 S2 | 0 | no |
+| [MA4198](svg/MA4198.svg) | Mathematics Capstone Project | 4 | S1 S2 | 0 | yes |
+| [MA4203](svg/MA4203.svg) | Galois Theory | 4 | S2 | 2 | yes |
+| [MA4207](svg/MA4207.svg) | Mathematical Logic | 4 | S1 | 2 | yes |
+| [MA4211](svg/MA4211.svg) | Functional Analysis | 4 | S2 | 2 | yes |
+| [MA4221](svg/MA4221.svg) | Partial Differential Equations | 4 | S1 | 2 | yes |
+| [MA4229](svg/MA4229.svg) | Fourier Analysis and Approximation | 4 | S2 | 0 | yes |
+| [MA4230](svg/MA4230.svg) | Matrix Computation | 4 | S1 | 0 | yes |
+| [MA4233](svg/MA4233.svg) | Dynamical Systems | 4 | S2 | 0 | yes |
+| [MA4235](svg/MA4235.svg) | Topics in Graph Theory | 4 | S1 | 1 | yes |
+| [MA4251](svg/MA4251.svg) | Stochastic Processes II | 4 | S2 | 0 | yes |
+| [MA4254](svg/MA4254.svg) | Discrete Optimization | 4 | S1 | 0 | yes |
+| [MA4255](svg/MA4255.svg) | Numerical Methods in Differential Equations | 4 | S2 | 0 | yes |
+| [MA4261](svg/MA4261.svg) | Information and Coding Theory | 4 | S2 | 0 | yes |
+| [MA4262](svg/MA4262.svg) | Measure and Integration | 4 | S1 | 1 | yes |
+| [MA4264](svg/MA4264.svg) | Game Theory | 4 | S2 | 0 | yes |
+| [MA4266](svg/MA4266.svg) | Introduction to Algebraic Topology | 4 | S1 | 1 | yes |
+| [MA4270](svg/MA4270.svg) | Data Modelling and Computation | 4 | S1 | 0 | yes |
+| [MA4273](svg/MA4273.svg) | Algebraic Geometry of Curves and Surfaces | 4 | S2 | 0 | yes |
+| [MA4275](svg/MA4275.svg) | Mathematics of Reinforcement Learning | 4 | S2 | 0 | yes |
+| [MA4276](svg/MA4276.svg) | Theory of Algebraic Numbers | 4 | S1 | 0 | yes |
+| [MA4288D](svg/MA4288D.svg) | Undergraduate Project in Mathematics | 4 | not offered | 0 | no |
+| [MA4288O](svg/MA4288O.svg) | Undergraduate Project in Mathematics | 4 | S1 S2 | 0 | yes |
+| [MA4288P](svg/MA4288P.svg) | Undergraduate Project in Mathematics | 4 | S1 S2 | 0 | yes |
+| [MA4310](svg/MA4310.svg) | FOS Undergraduate Professional Internship Programme 3ST | 4 | ST1 ST2 | 0 | no |
+| [MA4312](svg/MA4312.svg) | FOS Undergraduate Professional Internship Programme 4S1 | 12 | S1 | 0 | no |
+| [MA4313](svg/MA4313.svg) | FOS Undergraduate Professional Internship Programme 4S2 | 12 | S2 | 0 | no |
+| [MA5202](svg/MA5202.svg) | Number Theory | 4 | S2 | 0 | yes |
+| [MA5204](svg/MA5204.svg) | Commutative and Homological Algebra | 4 | S2 | 1 | yes |
+| [MA5205](svg/MA5205.svg) | Graduate Analysis I | 4 | S1 | 0 | yes |
+| [MA5208](svg/MA5208.svg) | Algebraic Geometry | 4 | not offered | 0 | no |
+| [MA5209](svg/MA5209.svg) | Algebraic Topology | 4 | not offered | 0 | no |
+| [MA5213](svg/MA5213.svg) | Advanced Partial Differential Equations | 4 | S2 | 0 | yes |
+| [MA5219](svg/MA5219.svg) | Logic and Foundation of Mathematics I | 4 | S2 | 0 | yes |
+| [MA5220](svg/MA5220.svg) | Logic and Foundation of Mathematics II | 4 | not offered | 0 | no |
+| [MA5235](svg/MA5235.svg) | Advanced Graph Theory | 4 | not offered | 0 | no |
+| [MA5252](svg/MA5252.svg) | Methods of Applied Mathematics | 4 | S1 | 0 | yes |
+| [MA5270](svg/MA5270.svg) | Game Theory and applications | 4 | S1 | 0 | yes |
+| [ME1102](svg/ME1102.svg) | Engineering Principles and Practice I | 4 | not offered | 1 | no |
+| [ME1103](svg/ME1103.svg) | Principles of Mechanics and Materials | 4 | S1 S2 | 0 | yes |
 | [ME2104](svg/ME2104.svg) | Engineering Principles and Practice II | 4 | not offered | 0 | no |
 | [ME2105](svg/ME2105.svg) | Principles of Mechatronics and Automation | 4 | S1 S2 | 0 | yes |
+| [ME2134](svg/ME2134.svg) | Fluid Mechanics I | 4 | S1 S2 | 1 | yes |
+| [ME3291](svg/ME3291.svg) | Numerical Methods In Engineering | 4 | S2 | 0 | yes |
+| [ME4233](svg/ME4233.svg) | Computational Methods In Fluid Mechanics | 4 | S1 | 0 | yes |
 | [MNO2706](svg/MNO2706.svg) | Business Communication for Leaders (ACC) | 4 | not offered | 0 | no |
 | [NM2207](svg/NM2207.svg) | Computational Media Literacy | 4 | S2 | 5 | yes |
 | [NM3221](svg/NM3221.svg) | Mobile Interaction Design | 4 | not offered | 2 | no |
@@ -358,23 +550,136 @@ Overviews: [BComp CS core chain](../../../../docs/diagrams/cs-core-chain.svg) ·
 | [NM4259HM](svg/NM4259HM.svg) | Mobile Interaction Design | 5 | not offered | 2 | no |
 | [NM4260](svg/NM4260.svg) | Game Design | 4 | S1 | 2 | yes |
 | [NM4260HM](svg/NM4260HM.svg) | Game Design | 5 | not offered | 3 | no |
-| [PC1101](svg/PC1101.svg) | Frontiers of Physics | 4 | S1 S2 | 0 | yes |
-| [PC1201](svg/PC1201.svg) | Fundamentals of Physics | 4 | S1 S2 | 1 | yes |
+| [PC1101](svg/PC1101.svg) | Frontiers of Physics | 4 | S1 S2 | 7 | yes |
+| [PC1201](svg/PC1201.svg) | Fundamentals of Physics | 4 | S1 S2 | 3 | yes |
+| [PC1431](svg/PC1431.svg) | Physics IE | 4 | not offered | 0 | no |
+| [PC1431X](svg/PC1431X.svg) | Physics IE | 4 | not offered | 0 | no |
+| [PC1432](svg/PC1432.svg) | Physics IIE | 4 | not offered | 1 | no |
+| [PC1432X](svg/PC1432X.svg) | Physics IIE | 4 | not offered | 1 | no |
+| [PC1433](svg/PC1433.svg) | Mechanics and Waves | 4 | not offered | 0 | no |
+| [PC2031](svg/PC2031.svg) | Electricity & Magnetism I | 4 | S1 S2 | 4 | yes |
+| [PC2032](svg/PC2032.svg) | Classical Mechanics I | 4 | S1 S2 | 5 | yes |
+| [PC2130](svg/PC2130.svg) | Quantum Mechanics I | 4 | S1 S2 | 4 | yes |
 | [PC2134](svg/PC2134.svg) | Mathematical Mtds in Physics I | 4 | not offered | 0 | no |
-| [PC2174A](svg/PC2174A.svg) | Mathematical Methods in Physics I | 4 | S1 S2 | 0 | yes |
+| [PC2174A](svg/PC2174A.svg) | Mathematical Methods in Physics I | 4 | S1 S2 | 3 | yes |
+| [PC2288](svg/PC2288.svg) | Basic UROPS in Physics I | 4 | S1 S2 ST1 ST2 | 0 | yes |
+| [PC2288R](svg/PC2288R.svg) | Basic UROPS in Physics I (REx) | 4 | S1 S2 | 0 | yes |
+| [PC2289](svg/PC2289.svg) | Basic UROPS in Physics II | 4 | S1 S2 ST1 ST2 | 0 | yes |
+| [PC2289R](svg/PC2289R.svg) | Basic UROPS in Physics II (REx) | 4 | S1 S2 | 0 | yes |
+| [PC2310](svg/PC2310.svg) | FOS Undergraduate Professional Internship Programme 1ST | 4 | ST1 ST2 | 0 | no |
+| [PC2312](svg/PC2312.svg) | FOS Undergraduate Professional Internship Programme 2S1 | 12 | S1 | 0 | no |
+| [PC2313](svg/PC2313.svg) | FOS Undergraduate Professional Internship Programme 2S2 | 12 | S2 | 0 | no |
+| [PC3288](svg/PC3288.svg) | Advanced UROPS in Physics I | 4 | S1 S2 ST1 ST2 | 0 | yes |
+| [PC3288A](svg/PC3288A.svg) | Advanced UROPS in Astrophysics I | 4 | S1 S2 | 0 | yes |
+| [PC3288AR](svg/PC3288AR.svg) | Advanced UROPS in Astrophysics I (REx) | 4 | not offered | 0 | no |
+| [PC3288N](svg/PC3288N.svg) | Advanced UROPS in Nanophysics I | 4 | S1 S2 | 0 | yes |
+| [PC3288NR](svg/PC3288NR.svg) | Advanced UROPS in Nanophysics I (REx) | 4 | not offered | 0 | no |
+| [PC3288Q](svg/PC3288Q.svg) | Advanced UROPS in Quantum Technologies I | 4 | S1 S2 | 0 | yes |
+| [PC3288QR](svg/PC3288QR.svg) | Advanced UROPS in Quantum Technologies I (REx) | 4 | S1 | 0 | yes |
+| [PC3288R](svg/PC3288R.svg) | Advanced UROPS in Physics I (REx) | 4 | S1 S2 | 0 | yes |
+| [PC3289](svg/PC3289.svg) | Advanced UROPS in Physics II | 4 | S1 S2 ST1 ST2 | 0 | yes |
+| [PC3289A](svg/PC3289A.svg) | Advanced UROPS in Astrophysics II | 4 | S1 S2 | 0 | yes |
+| [PC3289AR](svg/PC3289AR.svg) | Advanced UROPS in Astrophysics II (REx) | 4 | not offered | 0 | no |
+| [PC3289N](svg/PC3289N.svg) | Advanced UROPS in Nanophysics II | 4 | S1 S2 | 0 | yes |
+| [PC3289NR](svg/PC3289NR.svg) | Advanced UROPS in Nanophysics II (REx) | 4 | not offered | 0 | no |
+| [PC3289Q](svg/PC3289Q.svg) | Advanced UROPS in Quantum Technologies II | 4 | S1 S2 | 0 | yes |
+| [PC3289QR](svg/PC3289QR.svg) | Advanced UROPS in Quantum Technologies II (REx) | 4 | not offered | 0 | no |
+| [PC3289R](svg/PC3289R.svg) | Advanced UROPS in Physics II (REx) | 4 | S1 S2 | 0 | yes |
+| [PC3310](svg/PC3310.svg) | FOS Undergraduate Professional Internship Programme 2ST | 4 | ST1 ST2 | 0 | no |
+| [PC3311](svg/PC3311.svg) | Undergraduate Professional Internship Programme | 4 | ST1 ST2 | 0 | no |
+| [PC3312](svg/PC3312.svg) | FOS Undergraduate Professional Internship Programme 3S1 | 12 | S1 S2 | 0 | no |
+| [PC3313](svg/PC3313.svg) | FOS Undergraduate Professional Internship Programme 3S2 | 12 | S2 | 0 | no |
+| [PC4310](svg/PC4310.svg) | FOS Undergraduate Professional Internship Programme 3ST | 4 | ST1 | 0 | no |
+| [PC4312](svg/PC4312.svg) | FOS Undergraduate Professional Internship Programme 4S1 | 12 | S1 | 0 | no |
+| [PC4313](svg/PC4313.svg) | FOS Undergraduate Professional Internship Programme 4S2 | 12 | S2 | 0 | no |
+| [PHS1101](svg/PHS1101.svg) | The Billion-Dollar Pill - Bench to Bedside Drug Development | 4 | S1 S2 | 2 | no |
+| [PHS1110](svg/PHS1110.svg) | Foundation for Medicinal and Synthetic Chemistry | 4 | not offered | 6 | no |
+| [PHS1120](svg/PHS1120.svg) | Essential Topics in Pharmaceutical Chemistry | 4 | not offered | 1 | no |
+| [PHS2102](svg/PHS2102.svg) | Physicochemical and Biochemical Principles of Drug Action | 4 | S2 | 1 | yes |
+| [PHS2103](svg/PHS2103.svg) | Essentials of Pharmaceutical and Synthetic Chemistry | 4 | S1 | 1 | yes |
+| [PHS2143](svg/PHS2143.svg) | Analytical Techniques and Pharmaceutical Applications | 4 | not offered | 1 | no |
+| [PHS2191](svg/PHS2191.svg) | Laboratory Techniques in Pharmaceutical Science I | 4 | S2 | 4 | yes |
+| [PHS2310](svg/PHS2310.svg) | FOS Undergraduate Professional Internship Programme 1ST | 4 | ST1 ST2 | 0 | no |
+| [PHS2312](svg/PHS2312.svg) | FOS Undergraduate Professional Internship Programme 2S1 | 12 | S1 S2 | 0 | no |
+| [PHS2313](svg/PHS2313.svg) | FOS Undergraduate Professional Internship Programme 2S2 | 12 | S2 | 0 | no |
+| [PHS3288](svg/PHS3288.svg) | UROPS in Pharmaceutical Science I | 4 | S1 S2 | 0 | yes |
+| [PHS3288R](svg/PHS3288R.svg) | UROPS in Pharmaceutical Science I (REx) | 4 | S1 S2 | 0 | yes |
+| [PHS3289](svg/PHS3289.svg) | UROPS in Pharmaceutical Science II | 4 | S1 S2 | 0 | yes |
+| [PHS3289R](svg/PHS3289R.svg) | UROPS in Pharmaceutical Science II (REx) | 4 | S1 S2 | 0 | yes |
+| [PHS3310](svg/PHS3310.svg) | FOS Undergraduate Professional Internship Programme 2ST | 4 | ST1 ST2 | 0 | no |
+| [PHS3311](svg/PHS3311.svg) | Undergraduate Professional Internship Programme | 4 | not offered | 0 | no |
+| [PHS3312](svg/PHS3312.svg) | FOS Undergraduate Professional Internship Programme 3S1 | 12 | S1 S2 | 0 | no |
+| [PHS3313](svg/PHS3313.svg) | FOS Undergraduate Professional Internship Programme 3S2 | 12 | S2 | 0 | no |
+| [PHS4310](svg/PHS4310.svg) | FOS Undergraduate Professional Internship Programme 3ST | 4 | ST1 ST2 | 0 | no |
+| [PHS4312](svg/PHS4312.svg) | FOS Undergraduate Professional Internship Programme 4S1 | 12 | S1 S2 | 0 | no |
+| [PHS4313](svg/PHS4313.svg) | FOS Undergraduate Professional Internship Programme 4S2 | 12 | S2 | 0 | no |
+| [PR1152](svg/PR1152.svg) | Pharmacy Foundations: Science & Therapeutics I | 6 | S1 | 4 | no |
+| [PR2288](svg/PR2288.svg) | Basic UROPS in Pharmacy I | 4 | S1 S2 ST1 ST2 | 4 | yes |
+| [PR2288R](svg/PR2288R.svg) | Basic UROPS in Pharmacy I (REx) | 4 | S1 S2 | 0 | yes |
+| [PR2289](svg/PR2289.svg) | Basic UROPS in Pharmacy II | 4 | S1 S2 ST1 ST2 | 4 | yes |
+| [PR2289R](svg/PR2289R.svg) | Basic UROPS in Pharmacy II (REx) | 4 | S1 S2 | 0 | yes |
+| [PR3288](svg/PR3288.svg) | Advanced UROPS in Pharmacy I | 4 | S1 S2 ST1 ST2 | 0 | yes |
+| [PR3288R](svg/PR3288R.svg) | Advanced UROPS in Pharmacy I (REx) | 4 | not offered | 0 | no |
+| [PR3289](svg/PR3289.svg) | Advanced UROPS in Pharmacy II | 4 | S1 S2 ST1 ST2 | 0 | yes |
+| [PR3289R](svg/PR3289R.svg) | Advanced UROPS in Pharmacy II (REx) | 4 | not offered | 0 | no |
+| [QF2310](svg/QF2310.svg) | FOS Undergraduate Professional Internship Programme 1ST | 4 | ST1 ST2 | 0 | no |
+| [QF2312](svg/QF2312.svg) | FOS Undergraduate Professional Internship Programme 2S1 | 12 | S1 | 0 | no |
+| [QF2313](svg/QF2313.svg) | FOS Undergraduate Professional Internship Programme 2S2 | 12 | S2 | 0 | no |
+| [QF3310](svg/QF3310.svg) | FOS Undergraduate Professional Internship Programme 2ST | 4 | ST1 ST2 | 0 | no |
+| [QF3311](svg/QF3311.svg) | Undergraduate Professional Internship Programme | 4 | not offered | 0 | no |
+| [QF3312](svg/QF3312.svg) | FOS Undergraduate Professional Internship Programme 3S1 | 12 | S1 S2 | 0 | no |
+| [QF3313](svg/QF3313.svg) | FOS Undergraduate Professional Internship Programme 3S2 | 12 | S1 S2 | 0 | no |
+| [QF4310](svg/QF4310.svg) | FOS Undergraduate Professional Internship Programme 3ST | 4 | ST1 ST2 | 0 | no |
+| [QF4312](svg/QF4312.svg) | FOS Undergraduate Professional Internship Programme 4S1 | 12 | S1 | 0 | no |
+| [QF4313](svg/QF4313.svg) | FOS Undergraduate Professional Internship Programme 4S2 | 12 | S2 | 0 | no |
 | [RB2101](svg/RB2101.svg) | Fundamentals of Robotics II | 4 | S2 | 0 | yes |
 | [RE1702](svg/RE1702.svg) | Real Estate Data Analytics | 4 | S1 S2 | 0 | yes |
-| [RE1704](svg/RE1704.svg) | Principles of Real Estate Economics | 4 | not offered | 1 | no |
+| [RE1704](svg/RE1704.svg) | Principles of Real Estate Economics | 4 | not offered | 2 | no |
 | [SE3550](svg/SE3550.svg) | Southeast Asian Studies Internship | 4 | S1 S2 ST1 ST2 | 0 | no |
-| [ST1131](svg/ST1131.svg) | Introduction to Statistics and Statistical Computing | 4 | S1 S2 | 9 | yes |
+| [SP2251](svg/SP2251.svg) | Science at the Nanoscale | 4 | S2 | 4 | yes |
+| [ST1131](svg/ST1131.svg) | Introduction to Statistics and Statistical Computing | 4 | S1 S2 | 13 | yes |
 | [ST1232](svg/ST1232.svg) | Statistics for Life Sciences | 4 | not offered | 4 | no |
-| [ST2131](svg/ST2131.svg) | Probability | 4 | S1 S2 | 33 | yes |
-| [ST2132](svg/ST2132.svg) | Mathematical Statistics | 4 | S1 S2 | 8 | yes |
+| [ST2131](svg/ST2131.svg) | Probability | 4 | S1 S2 | 44 | yes |
+| [ST2132](svg/ST2132.svg) | Mathematical Statistics | 4 | S1 S2 | 13 | yes |
 | [ST2137](svg/ST2137.svg) | Statistical Computing and Programming | 4 | S2 | 1 | yes |
-| [ST2334](svg/ST2334.svg) | Probability and Statistics | 4 | S1 S2 | 41 | yes |
-| [ST3131](svg/ST3131.svg) | Regression Analysis | 4 | S1 S2 | 2 | yes |
+| [ST2288](svg/ST2288.svg) | Basic UROPS in Statistics and Applied Probability I | 4 | S1 S2 ST1 ST2 | 1 | yes |
+| [ST2288R](svg/ST2288R.svg) | Basic UROPS in Statistics and Applied Probability I (REx) | 4 | S1 S2 | 1 | yes |
+| [ST2289](svg/ST2289.svg) | Basic UROPS in Statistics and Applied Probability II | 4 | S1 S2 ST1 ST2 | 1 | yes |
+| [ST2289R](svg/ST2289R.svg) | Basic UROPS in Statistics and Applied Probability II (REx) | 4 | S1 S2 | 1 | yes |
+| [ST2310](svg/ST2310.svg) | FOS Undergraduate Professional Internship Programme 1ST | 4 | ST1 ST2 | 1 | no |
+| [ST2312](svg/ST2312.svg) | FOS Undergraduate Professional Internship Programme 2S1 | 12 | S1 S2 | 1 | no |
+| [ST2313](svg/ST2313.svg) | FOS Undergraduate Professional Internship Programme 2S2 | 12 | S2 | 1 | no |
+| [ST2334](svg/ST2334.svg) | Probability and Statistics | 4 | S1 S2 | 54 | yes |
+| [ST3131](svg/ST3131.svg) | Regression Analysis | 4 | S1 S2 | 5 | yes |
+| [ST3232](svg/ST3232.svg) | Design & Analysis of Experiments | 4 | S2 | 1 | yes |
+| [ST3236](svg/ST3236.svg) | Stochastic Processes I | 4 | S1 | 4 | yes |
+| [ST3239](svg/ST3239.svg) | Survey Methodology | 4 | S1 | 1 | yes |
+| [ST3244](svg/ST3244.svg) | Demographic Methods | 4 | S2 | 1 | yes |
+| [ST3246](svg/ST3246.svg) | Statistical Models for Actuarial Science | 4 | S2 | 1 | yes |
+| [ST3247](svg/ST3247.svg) | Simulation | 4 | S2 | 1 | yes |
 | [ST3248](svg/ST3248.svg) | Statistical Learning I | 4 | S1 | 2 | yes |
+| [ST3288](svg/ST3288.svg) | Advanced UROPS in Statistics & Applied Probability I | 4 | S1 S2 ST1 ST2 | 1 | no |
+| [ST3288R](svg/ST3288R.svg) | Advanced UROPS in Statistics & Applied Probability I (REx) | 4 | S1 S2 | 1 | yes |
+| [ST3289](svg/ST3289.svg) | Advanced UROPS in Statistics & Applied Probability II | 4 | S1 S2 ST1 ST2 | 1 | no |
+| [ST3289R](svg/ST3289R.svg) | Advanced UROPS in Statistics & Applied Probability II (REx) | 4 | S1 S2 | 1 | yes |
+| [ST3310](svg/ST3310.svg) | FOS Undergraduate Professional Internship Programme 2ST | 4 | ST1 ST2 | 1 | no |
+| [ST3311](svg/ST3311.svg) | Undergraduate Professional Internship Programme | 4 | ST1 ST2 | 1 | no |
+| [ST3312](svg/ST3312.svg) | FOS Undergraduate Professional Internship Programme 3S1 | 12 | S1 S2 | 1 | no |
+| [ST3313](svg/ST3313.svg) | FOS Undergraduate Professional Internship Programme 3S2 | 12 | S2 | 1 | no |
+| [ST4199](svg/ST4199.svg) | Honours Project in Statistics | 12 | S1 S2 | 1 | no |
+| [ST4231](svg/ST4231.svg) | Computer Intensive Statistical Methods | 4 | S1 | 1 | yes |
+| [ST4233](svg/ST4233.svg) | Linear Models | 4 | S1 | 1 | yes |
+| [ST4234](svg/ST4234.svg) | Bayesian Statistics | 4 | S2 | 1 | yes |
+| [ST4238](svg/ST4238.svg) | Stochastic Processes II | 4 | S2 | 1 | yes |
+| [ST4245](svg/ST4245.svg) | Statistical Methods for Finance | 4 | S2 | 1 | yes |
 | [ST4248](svg/ST4248.svg) | Statistical Learning II | 4 | S2 | 3 | yes |
+| [ST4250](svg/ST4250.svg) | Multivariate Statistical Analysis | 4 | S1 | 1 | yes |
+| [ST4253](svg/ST4253.svg) | Applied Time Series Analysis | 4 | S1 | 1 | yes |
+| [ST4288](svg/ST4288.svg) | Honours Project in Statistics | 8 | S1 S2 | 1 | no |
+| [ST4299](svg/ST4299.svg) | Applied Project in Statistics | 12 | S1 S2 | 1 | no |
+| [ST4310](svg/ST4310.svg) | FOS Undergraduate Professional Internship Programme 3ST | 4 | ST1 ST2 | 1 | no |
+| [ST4312](svg/ST4312.svg) | FOS Undergraduate Professional Internship Programme 4S1 | 12 | S1 S2 | 1 | no |
+| [ST4313](svg/ST4313.svg) | FOS Undergraduate Professional Internship Programme 4S2 | 12 | S2 | 1 | no |
 | [TEE2002](svg/TEE2002.svg) | Engineering Mathematics II | 4 | not offered | 1 | no |
 | [TEE2003](svg/TEE2003.svg) | Advanced Mathematics for Engineers | 4 | S1 | 1 | yes |
 | [TEE2026](svg/TEE2026.svg) | Digital Design | 4 | S2 | 1 | yes |
@@ -391,18 +696,24 @@ Overviews: [BComp CS core chain](../../../../docs/diagrams/cs-core-chain.svg) ·
 | [YSC1213](svg/YSC1213.svg) | General Physics | 5 | not offered | 1 | no |
 | [YSC1216](svg/YSC1216.svg) | Calculus | 5 | not offered | 7 | no |
 | [YSC2203](svg/YSC2203.svg) | Classical Mechanics | 5 | not offered | 1 | no |
-| [YSC2209](svg/YSC2209.svg) | Proof | 5 | not offered | 1 | no |
+| [YSC2209](svg/YSC2209.svg) | Proof | 5 | not offered | 3 | no |
 | [YSC2221](svg/YSC2221.svg) | Introduction to Python | 2.5 | not offered | 2 | no |
 | [YSC2229](svg/YSC2229.svg) | Introductory Data Structures and Algorithms | 5 | not offered | 11 | no |
-| [YSC2232](svg/YSC2232.svg) | Linear Algebra | 5 | not offered | 3 | no |
+| [YSC2232](svg/YSC2232.svg) | Linear Algebra | 5 | not offered | 4 | no |
 | [YSC2239](svg/YSC2239.svg) | Introduction to Data Science | 5 | not offered | 2 | no |
 | [YSC2243](svg/YSC2243.svg) | Probability | 5 | not offered | 3 | no |
 | [YSC2252](svg/YSC2252.svg) | Multivariable Calculus | 5 | not offered | 0 | no |
 | [YSC3203](svg/YSC3203.svg) | Advanced Algorithms and Data Structures | 5 | not offered | 1 | no |
+| [YSC3206](svg/YSC3206.svg) | Introduction to Real Analysis | 5 | not offered | 0 | no |
 | [YSC3217](svg/YSC3217.svg) | Programming Operating Systems, Interfaces & eXtras | 5 | not offered | 1 | no |
 | [YSC3232](svg/YSC3232.svg) | Software Engineering | 5 | not offered | 2 | no |
+| [YSC3237](svg/YSC3237.svg) | Introduction to Modern Algebra | 5 | not offered | 0 | no |
 | [YSC4216](svg/YSC4216.svg) | Machine Learning | 5 | not offered | 0 | no |
 | [YSS1203](svg/YSS1203.svg) | Principles of Economics | 5 | not offered | 2 | no |
 | [YSS2203](svg/YSS2203.svg) | Intermediate Microeconomics | 5 | not offered | 1 | no |
 | [YSS2211](svg/YSS2211.svg) | Econometrics | 5 | not offered | 1 | no |
 | [ZB2101](svg/ZB2101.svg) | Introductory Bioinformatics | 4 | S1 S2 | 2 | yes |
+| [ZB3310](svg/ZB3310.svg) | Undergraduate Professional Internship Programme | 4 | ST1 ST2 | 0 | no |
+| [ZB3311](svg/ZB3311.svg) | Undergraduate Professional Internship Programme | 4 | S1 S2 ST1 ST2 | 0 | no |
+| [ZB3312](svg/ZB3312.svg) | Enhanced Undergraduate Professional Internship Programme | 12 | S1 S2 | 0 | no |
+| [ZB3313](svg/ZB3313.svg) | Undergraduate Professional Internship Programme Extended | 12 | not offered | 0 | no |

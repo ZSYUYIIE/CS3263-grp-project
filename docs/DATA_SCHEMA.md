@@ -100,15 +100,16 @@ record with `details: "stub"`, `available: false`, no prereq and no MC. If one o
 student's *completed* list it still counts for satisfying trees and for exclusions. It just can't
 be *planned*.
 
-- `exists_in_ay: false`: no AY2026/27 page (retired or renamed). 117 of these.
+- `exists_in_ay: false`: no AY2026/27 page (retired or renamed). 160 of these.
 - `exists_in_ay: true, details: "stub"`: exists, but outside the fetch scope (a **data gap**).
-  Its `offered` comes from the module list. 285 of these, none with a School of Computing
-  prefix: they are wildcard matches (`MA%`, `ST%`, `NM1%`, ...) and preclusions of courses that
-  were fetched only because a rule names them. To plan one, add it to `seed_codes` in
+  Its `offered` comes from the module list. 186 of these, none with a School of Computing
+  prefix and no undergraduate MA/ST course: they are wildcard matches (`NM1%`, `SA%`, ...),
+  graduate MA/ST courses (5000+), and preclusions of courses that were fetched only because a
+  rule names them. To plan one, add it to `seed_codes` in
   `scope.json` and rebuild.
 
 Fetch scope (`data/config/scope.json`): every SoC prefix (CS, CSA, IS, ISC, ISD, ISE, ISY, IFS,
-BT, IT, CP) at levels 1000-4999, plus `seed_codes`, plus the full prerequisite closure of all of
+BT, IT, CP) plus MA and ST at levels 1000-4999, plus `seed_codes`, plus the full prerequisite closure of all of
 these and of every course their preclusions or corequisites name (`expand_all_refs`). So every
 code that appears in a non-wildcard prerequisite of any fetched course has full details.
 
