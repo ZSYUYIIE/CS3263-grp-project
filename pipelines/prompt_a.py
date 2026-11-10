@@ -3,7 +3,8 @@
 Record selection rule (state this in the report):
   every course named in the request (completed, must-take, target, rule courses), plus the transitive
   closure of prerequisite and corequisite courses of the courses not yet completed, restricted to codes
-  that exist in AY2026/27. Records are factual catalogue data only: no field that does the reasoning
+  that exist in AY2026/27. When the student does ATAP, the ATAP course (CP3880) and its prerequisite closure
+  are included. Records are factual catalogue data only: no field that does the reasoning
   (no "reachable", no "eligible"). A course closed to BComp CS Hons says so, because that is a catalogue
   fact the student could look up.
 
@@ -34,6 +35,8 @@ QUESTION TYPES
   Hons, the student has not completed X, X's prerequisite is satisfied by the completed courses, X is not
   blocked by a completed course ("Cannot take if completed"), and X is offered in that semester's term.
   If the request gives no semester, judge eligibility for any term X is offered in.
+  Grade conditions in a prerequisite (written [>=A-], [>=D] and so on) are treated as met by every completed
+  course: students do not give grades, so a completed course counts at any grade. Do not ask for grades.
 - "Plan my remaining semesters" -> plan from the semester the student is in now (inclusive) to semester 8.
 
 PLANNING RULES (all must hold)
@@ -48,7 +51,16 @@ PLANNING RULES (all must hold)
    "N modules" means N x 4 MC.
 7. Every "must"/"has to" wish holds.
 8. Add a course the student did not ask for ONLY when it is a prerequisite needed by a planned course.
-   Never add courses to fill a semester.
+   Never add courses to fill a semester or to reach a minimum MC.
+9. If the student states a minimum MC per semester, every semester that has at least one course must reach it.
+   Empty semesters are fine.
+10. ATAP (Advanced Technology Attachment Programme) is an internship semester, planned as the course CP3880
+   worth 12 MC. Plan it only when the student says they will do ATAP: once, in one of the semesters they allow
+   (any semester from the current one to 8 if they name none), and never in the last semester used (some
+   course must be planned in a later semester). The other courses in the ATAP semester total at most 8 MC, or the
+   semester's own limit if that is lower. Its 12 MC do not count against the per-semester limits, but they do
+   count towards a minimum-MC wish and towards the total credits. It has its own prerequisite (see its record).
+   List it as "CP3880" in the plan.
 
 WHAT TO OPTIMISE, in this order
 1. If the student wants to graduate as early as possible: the smallest last semester used. If they want the
@@ -60,18 +72,30 @@ Never trade a better step 1 or 2 for more soft wishes.
 WHEN TO REFUSE
 - If no plan satisfies all the rules, say so: status "NO_PLAN", with the reason.
 - If the student does not say which courses they have completed (and "none" was not said), or (for a plan)
-  which semester they are in or which courses they must take, do not guess: status "MISSING_INFO".
+  which semester they are in or which courses they must take, do not guess: status "MISSING_INFO". A semester that is only mentioned as an exchange, NOC or ATAP semester
+  does not tell you which semester the student is in now.
 - If the student is not a single-major BComp CS Hons student (another programme, second major, minor, double
   degree), or asks about a course that is not in the records and is not a real AY2026/27 course you were given,
   status "OUT_OF_SCOPE".
-- Wishes you cannot act on (timetable, S/U, waivers, failing) do not change the answer.
+- If the student asks about a semester after semester 8 (Y4S2, for example Y5S1 or semester 10) or before
+  semester 1, the programme has no such semester: status "OUT_OF_SCOPE".
+- Wishes you cannot act on (timetable, S/U, waivers, failing, a light last semester, spreading the workload
+  evenly) do not change the answer and are not counted as soft wishes.
 
 OUTPUT
-Reply with exactly one JSON object and nothing else (no markdown fences):
-- eligibility: {"status": "ELIGIBLE" | "NOT_ELIGIBLE" | "MISSING_INFO" | "OUT_OF_SCOPE", "reasons": ["..."]}
-- plan:        {"status": "PLAN" | "NO_PLAN" | "MISSING_INFO" | "OUT_OF_SCOPE",
-                "plan": {"<semester>": ["CODE", ...], ...},   (only when status is PLAN)
-                "reasons": ["..."]}
+Reply with exactly one JSON object and nothing else: the first character of your reply is { and the last is }.
+No markdown fences, no text before or after, and only one object. The object has "status" as a top-level key.
+If the student asks "Can I take X?", reply in this form:
+{"status": "ELIGIBLE", "reasons": ["..."]}
+where status is one of "ELIGIBLE", "NOT_ELIGIBLE", "MISSING_INFO", "OUT_OF_SCOPE".
+If the student asks for a plan, reply in this form:
+{"status": "PLAN", "plan": {"5": ["CODE", "CODE"], "6": ["CODE"]}, "reasons": ["..."]}
+where status is one of "PLAN", "NO_PLAN", "MISSING_INFO", "OUT_OF_SCOPE". The "plan" key is present only when status is "PLAN".
+Write "status" first, then "plan", then "reasons". Never wrap the object inside another key, and never write both forms
+in one reply.
+"reasons" has at most 3 short strings, each under 200 characters. Do your checking before you write the reply, not
+inside it: do not copy course records, prerequisite lists or step-by-step checks into "reasons". Do not use double
+quotation marks inside a string; use single quotes. Do not change your answer after writing it.
 Semester keys are strings ("5"). List only semesters from the current one to 8; empty semesters may be omitted.
 """
 
@@ -107,6 +131,8 @@ def select_records(spec: dict, request: str) -> list[str]:
     for ru in spec.get("rules") or []:
         named |= {ru[k] for k in ("a", "b", "course") if k in ru}
     named |= set(CODE_RE.findall(request))       # anything the student typed
+    if spec.get("atap_sems"):
+        named.add("CP3880")
     seen: set[str] = set()
     queue = [c for c in named if c in CATALOG and c not in done]
     while queue:
