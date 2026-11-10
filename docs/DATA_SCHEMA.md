@@ -100,16 +100,16 @@ record with `details: "stub"`, `available: false`, no prereq and no MC. If one o
 student's *completed* list it still counts for satisfying trees and for exclusions. It just can't
 be *planned*.
 
-- `exists_in_ay: false`: no AY2026/27 page (retired or renamed). 160 of these.
+- `exists_in_ay: false`: no AY2026/27 page (retired or renamed). 117 of these.
 - `exists_in_ay: true, details: "stub"`: exists, but outside the fetch scope (a **data gap**).
-  Its `offered` comes from the module list. 186 of these, none with a School of Computing
-  prefix and no undergraduate MA/ST course: they are wildcard matches (`NM1%`, `SA%`, ...),
-  graduate MA/ST courses (5000+), and preclusions of courses that were fetched only because a
-  rule names them. To plan one, add it to `seed_codes` in
+  Its `offered` comes from the module list. 285 of these, none with a School of Computing
+  prefix: they are wildcard matches (`MA%`, `ST%`, `NM1%`, ...) and preclusions of courses that
+  were fetched only because a rule names them. Every MA/ST course that a CS or SoC rule names
+  is fetched in full. To plan one, add it to `seed_codes` in
   `scope.json` and rebuild.
 
 Fetch scope (`data/config/scope.json`): every SoC prefix (CS, CSA, IS, ISC, ISD, ISE, ISY, IFS,
-BT, IT, CP) plus MA and ST at levels 1000-4999, plus `seed_codes`, plus the full prerequisite closure of all of
+BT, IT, CP) at levels 1000-4999, plus `seed_codes`, plus the full prerequisite closure of all of
 these and of every course their preclusions or corequisites name (`expand_all_refs`). So every
 code that appears in a non-wildcard prerequisite of any fetched course has full details.
 
@@ -128,8 +128,7 @@ or a Q2 `must_take` / `early` / `late` / `rules` course that is a data-gap stub 
 `OUT_OF_SCOPE` with the reason "a real AY course, but its details are not in the catalogue
 (outside our data coverage)", exactly like a code that is not in the catalogue at all. So
 `OUT_OF_SCOPE` has two causes: the **student** is outside BComp CS Hons single major, or the
-**course** is outside our data coverage (SoC, MA and ST courses plus every course their rules
-reference). The `[data gap]` / `data_limited` path above is what remains: a fully known course
+**course** is outside our data coverage (SoC courses plus every course their rules reference). The `[data gap]` / `data_limited` path above is what remains: a fully known course
 whose only route runs through a wildcard-matched stub (e.g. NM4259 via `NM1%`).
 
 ## Student context
