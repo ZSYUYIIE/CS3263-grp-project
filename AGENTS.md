@@ -58,4 +58,5 @@ satisfy a tree when they appear in a transcript, but can't be planned.
 - `CS2309` follows NUSMods' bracket reading, not normal precedence (see its `warnings`).
 - 160 codes have `exists_in_ay: false`. They are old courses that are still named in preclusions.
 - 186 codes are `exists_in_ay: true` stubs (wildcard matches such as `NM1%` and graduate MA/ST, none with an SoC
-  prefix). Reasons built on them carry `[data gap]` and answers get `data_limited: true`.
+  prefix). Asking about one directly gives OUT_OF_SCOPE (outside data
+  coverage); reaching one through a prerequisite chain gives `[data gap]` / `data_limited: true`.

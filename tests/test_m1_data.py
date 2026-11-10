@@ -222,3 +222,14 @@ def test_no_soc_course_is_a_stub():
     assert gaps == []
     assert cat["BT2101"]["details"] == "full"
     assert cat.reachable("BT4240", set())[0]
+
+
+def test_stub_target_is_out_of_scope():
+    """A real course we only know by name is declined, never answered 'never eligible'."""
+    from m1_data.catalog import Catalog
+    from solver.run import run
+    cat = Catalog.load()
+    stub = next(c for c in cat.courses if cat.is_data_gap(c))
+    ans = run({"query": "eligible", "target": stub, "completed": [], "current_sem": 1}, cat)
+    assert ans["status"] == "OUT_OF_SCOPE", ans
+    assert any("outside our data coverage" in r for r in ans["reasons"])

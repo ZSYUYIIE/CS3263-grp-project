@@ -123,6 +123,15 @@ with that tag when the only obstacles are data gaps, and the solver turns this i
 
 Read `data_limited: true` as "our dataset can't answer this", not as "impossible".
 
+**Answering boundary.** We answer about a course only if we have its full record. A Q1 `target`
+or a Q2 `must_take` / `early` / `late` / `rules` course that is a data-gap stub is declined as
+`OUT_OF_SCOPE` with the reason "a real AY course, but its details are not in the catalogue
+(outside our data coverage)", exactly like a code that is not in the catalogue at all. So
+`OUT_OF_SCOPE` has two causes: the **student** is outside BComp CS Hons single major, or the
+**course** is outside our data coverage (SoC, MA and ST courses plus every course their rules
+reference). The `[data gap]` / `data_limited` path above is what remains: a fully known course
+whose only route runs through a wildcard-matched stub (e.g. NM4259 via `NM1%`).
+
 ## Student context
 
 NUSMods rules contain conditions that are not about courses: programme, cohort,

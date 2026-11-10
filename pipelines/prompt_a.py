@@ -83,8 +83,11 @@ def term_text(offered):
 
 def record_text(code: str) -> str:
     x = CATALOG[code]
-    if not x["exists_in_ay"] or x.get("details") == "stub":
+    if not x["exists_in_ay"]:
         return f"{code}: no AY2026/27 offering (old or retired course; can count as completed, cannot be planned)"
+    if x.get("details") == "stub":
+        return (f"{code}: a real AY2026/27 course, but its details are not in the records "
+                "(can count as completed; its rules are unknown)")
     lines = [f"{code} {x['title']} | {x['mc']} MC | offered: {term_text(x['offered'])}"]
     if not x["available"]:
         lines.append("  NOT open to BComp CS Hons students: " + "; ".join(x["unavailable_reasons"]))
