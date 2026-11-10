@@ -179,3 +179,57 @@ def test_svg_copies_exist(cat):
     assert (d / "README.md").exists()
     for name in ("cs-core-chain", "exclusion-trap", "solver-flow"):
         assert (paths.ROOT / "docs" / "diagrams" / f"{name}.svg").exists()
+
+
+def test_data_gap_is_unknown_not_impossible():
+    """A course whose only route goes through a not-fetched stub is 'unknown', not 'never'."""
+    from m1_data.catalog import DATA_GAP_TAG, Catalog, data_limited
+    from solver import q1
+
+    def rec(code, details="full", prereq=None, exists=True):
+        return {"code": code, "exists_in_ay": exists, "details": details,
+                "available": details == "full", "offered": [1, 2],
+                "unavailable_reasons": [] if details == "full" else
+                [f"details not in dataset {DATA_GAP_TAG}" if exists else "no AY2026/27 page"],
+                "prereq": {"logic": prereq},
+                "preclusion": {"blocked_if": None, "courses": [], "mutually_exclusive_with": []}}
+
+    gap = {"op": "course", "code": "XX2000"}
+    cat = Catalog({"acad_year": "2026-2027", "courses": {
+        "XX3000": rec("XX3000", prereq=gap),
+        "XX2000": rec("XX2000", details="stub"),
+        "OLD1000": rec("OLD1000", details="stub", exists=False),
+        "XX3001": rec("XX3001", prereq={"op": "course", "code": "OLD1000"}),
+    }})
+    ok, why = cat.reachable("XX3000", set())
+    assert not ok and data_limited([why])
+    ok, why = cat.reachable("XX3001", set())          # retired course: a real "never"
+    assert not ok and not data_limited([why])
+    assert cat.reachable("XX3000", {"XX2000"})[0]     # a stub in the transcript still counts
+
+    spec = {"target": "XX3000", "completed": [], "unsupported": []}
+    res = {"status": "NOT_ELIGIBLE", "reasons": ["missing prerequisite: XX2000"]}
+    q1.add_reachability(res, spec, cat, ok=False)
+    assert res["can_still_become_eligible"] == "unknown" and res["data_limited"]
+    assert "never_eligible_because" not in res
+
+
+def test_no_soc_course_is_a_stub():
+    from m1_data.catalog import Catalog
+    cat = Catalog.load()
+    soc = ("CS", "IS", "BT", "IT", "CP", "IFS")
+    gaps = [c for c in cat.courses if c.startswith(soc) and cat.is_data_gap(c)]
+    assert gaps == []
+    assert cat["BT2101"]["details"] == "full"
+    assert cat.reachable("BT4240", set())[0]
+
+
+def test_stub_target_is_out_of_scope():
+    """A real course we only know by name is declined, never answered 'never eligible'."""
+    from m1_data.catalog import Catalog
+    from solver.run import run
+    cat = Catalog.load()
+    stub = next(c for c in cat.courses if cat.is_data_gap(c))
+    ans = run({"query": "eligible", "target": stub, "completed": [], "current_sem": 1}, cat)
+    assert ans["status"] == "OUT_OF_SCOPE", ans
+    assert any("outside our data coverage" in r for r in ans["reasons"])

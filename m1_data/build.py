@@ -205,7 +205,8 @@ def build() -> dict:
             "offered": sorted(lm.get("semesters", [])) if lm else [],
             "exists_in_ay": bool(lm), "details": "stub", "scope": "referenced_only",
             "available": False,
-            "unavailable_reasons": ["outside fetch scope (details not downloaded)" if lm else
+            "unavailable_reasons": ["details not in dataset [data gap]: outside fetch scope, so this is a "
+                                    "data limitation, not an academic rule" if lm else
                                     f"no AY{ay} page on NUSMods (retired, renamed or not offered)"],
             "prereq": _req_block(True, None), "coreq": _req_block(True, None),
             "preclusion": {"text": "none", "blocked_if": None, "courses": [],

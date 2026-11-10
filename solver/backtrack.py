@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import time
 
-from m1_data.catalog import Catalog, satisfied
+from m1_data.catalog import Catalog, data_limited, satisfied
 from solver import q1
 from solver.common import (
     ATAP_CODE,
@@ -653,6 +653,8 @@ class Search:
 
     def no_plan(self, reasons: list[str]) -> dict:
         result = {"status": "NO_PLAN", "reasons": reasons}
+        if data_limited(reasons):
+            result["data_limited"] = True
         if self.spec["unsupported"]:
             result["not_applied"] = list(self.spec["unsupported"])
         return result

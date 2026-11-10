@@ -261,3 +261,7 @@ def _check_catalogue(cleaned: dict, catalog, problems: list[str], warnings: list
     for field, code in named:
         if code not in catalog:
             problems.append(f"course {code} (in {field}) is not in the catalogue")
+        elif catalog.is_data_gap(code):
+            # Known only by name (outside the fetch scope): answering would guess, so decline.
+            problems.append(f"course {code} (in {field}) is a real AY course, but its details are not "
+                            "in the catalogue (outside our data coverage)")

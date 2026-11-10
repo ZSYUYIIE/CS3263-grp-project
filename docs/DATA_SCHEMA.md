@@ -95,14 +95,41 @@ other course lists the preclusion.
 ### Stubs
 
 Some codes only appear inside other courses' rules. Examples: `CS1010` (an old course still
-named in preclusions) and `BT2101` (an alternative prerequisite outside our scope). They get a
+named in preclusions) and `NM2101` (matched by an `NM1%`-style wildcard). They get a
 record with `details: "stub"`, `available: false`, no prereq and no MC. If one of them is in a
 student's *completed* list it still counts for satisfying trees and for exclusions. It just can't
 be *planned*.
 
-- `exists_in_ay: false`: no AY2026/27 page (retired or renamed). 95 of these.
-- `exists_in_ay: true, details: "stub"`: exists, but outside the fetch scope. Its `offered` comes
-  from the module list. To plan it, add it to `seed_codes` in `scope.json` and rebuild.
+- `exists_in_ay: false`: no AY2026/27 page (retired or renamed). 117 of these.
+- `exists_in_ay: true, details: "stub"`: exists, but outside the fetch scope (a **data gap**).
+  Its `offered` comes from the module list. 285 of these, none with a School of Computing
+  prefix: they are wildcard matches (`MA%`, `ST%`, `NM1%`, ...) and preclusions of courses that
+  were fetched only because a rule names them. Every MA/ST course that a CS or SoC rule names
+  is fetched in full. To plan one, add it to `seed_codes` in
+  `scope.json` and rebuild.
+
+Fetch scope (`data/config/scope.json`): every SoC prefix (CS, CSA, IS, ISC, ISD, ISE, ISY, IFS,
+BT, IT, CP) at levels 1000-4999, plus `seed_codes`, plus the full prerequisite closure of all of
+these and of every course their preclusions or corequisites name (`expand_all_refs`). So every
+code that appears in a non-wildcard prerequisite of any fetched course has full details.
+
+A data gap is not an academic rule. Its `unavailable_reasons` entry and any reason built on it
+carry the tag `[data gap]` (`m1_data.catalog.DATA_GAP_TAG`). `Catalog.reachable` returns False
+with that tag when the only obstacles are data gaps, and the solver turns this into:
+
+- Q1: `can_still_become_eligible: "unknown"` with `unknown_because`, plus `data_limited: true`
+  (instead of `never_eligible_because`).
+- Q2 `NO_PLAN`: `data_limited: true` when any reason carries the tag.
+
+Read `data_limited: true` as "our dataset can't answer this", not as "impossible".
+
+**Answering boundary.** We answer about a course only if we have its full record. A Q1 `target`
+or a Q2 `must_take` / `early` / `late` / `rules` course that is a data-gap stub is declined as
+`OUT_OF_SCOPE` with the reason "a real AY course, but its details are not in the catalogue
+(outside our data coverage)", exactly like a code that is not in the catalogue at all. So
+`OUT_OF_SCOPE` has two causes: the **student** is outside BComp CS Hons single major, or the
+**course** is outside our data coverage (SoC courses plus every course their rules reference). The `[data gap]` / `data_limited` path above is what remains: a fully known course
+whose only route runs through a wildcard-matched stub (e.g. NM4259 via `NM1%`).
 
 ## Student context
 
@@ -251,5 +278,6 @@ parsing and recorded in the course's `overrides` list.
   completed courses, with an explanation, e.g. *"CS3263: every option fails: CS2109S is ruled
   out by completed CS3244 | CS2109HS unavailable (not open to PROGRAMS 0300CSHON)"*. This
   is useful for building perturbation type 5 ("hidden conflict two or more hops away").
+  A False whose reason contains `[data gap]` means unknown, not impossible (see Stubs).
 - To keep the checker independent (as the doc requires), implement the checks from this
   document rather than importing `m1_data.catalog`.

@@ -87,6 +87,7 @@ opens in yEd, Gephi or Cytoscape. The diagrams follow the diagram-design skill a
 minors or other programmes are answered `OUT_OF_SCOPE` with a reason (`m1_data/scope.py`).
 
 **Field reference and every interpretation decision: [`docs/DATA_SCHEMA.md`](docs/DATA_SCHEMA.md).**
+**Which courses we answer for, and why (coverage by dependency): [`docs/DATA_COVERAGE.md`](docs/DATA_COVERAGE.md).**
 
 ### Rebuild the data
 
@@ -108,9 +109,9 @@ conditions are resolved for in `data/config/student_context.json`. Hand fixes go
 
 | | |
 |---|---|
-| Courses with full data | 306 (all CS 1000–4999 + prerequisite closure + referenced) |
-| Rule strings parsed | 918 / 918, 0 errors |
-| Cross-check with NUSMods prereqTree | 198 match, 31 differ (all explained in `PARSE_REPORT.md`) |
+| Courses with full data | 393 (all SoC prefixes 1000–4999 + prerequisite closure of these and of every course they reference) |
+| Rule strings parsed | all, 0 parse errors |
+| Cross-check with NUSMods prereqTree | 255 match, 37 differ (all explained in `PARSE_REPORT.md`) |
 | Invariant checks | pass |
 | Hand spot-check | **to do:** `data/manual/SPOT_CHECK.md` (before generating instances) |
 
@@ -256,7 +257,7 @@ data/config/        scope.json, student_context.json
 data/raw/           NUSMods responses, kept so results are reproducible (data drifts year to year)
 data/processed/     generated outputs (do not edit)
 data/manual/        overrides.json, SPOT_CHECK.md
-docs/               DATA_SCHEMA.md, SOLVER_GUIDE.md, TRANSLATION_GUIDE.md, diagrams/ (hand-laid overviews)
+docs/               DATA_SCHEMA.md, DATA_COVERAGE.md, SOLVER_GUIDE.md, TRANSLATION_GUIDE.md, diagrams/ (hand-laid overviews)
 tests/              pytest
 AGENTS.md           orientation for AI coding agents working in this repo
 ```
