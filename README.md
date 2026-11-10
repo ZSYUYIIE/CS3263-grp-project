@@ -87,6 +87,7 @@ opens in yEd, Gephi or Cytoscape. The diagrams follow the diagram-design skill a
 minors or other programmes are answered `OUT_OF_SCOPE` with a reason (`m1_data/scope.py`).
 
 **Field reference and every interpretation decision: [`docs/DATA_SCHEMA.md`](docs/DATA_SCHEMA.md).**
+**Which courses we answer for, and why (coverage by dependency): [`docs/DATA_COVERAGE.md`](docs/DATA_COVERAGE.md).**
 
 ### Rebuild the data
 
@@ -256,7 +257,7 @@ data/config/        scope.json, student_context.json
 data/raw/           NUSMods responses, kept so results are reproducible (data drifts year to year)
 data/processed/     generated outputs (do not edit)
 data/manual/        overrides.json, SPOT_CHECK.md
-docs/               DATA_SCHEMA.md, SOLVER_GUIDE.md, TRANSLATION_GUIDE.md, diagrams/ (hand-laid overviews)
+docs/               DATA_SCHEMA.md, DATA_COVERAGE.md, SOLVER_GUIDE.md, TRANSLATION_GUIDE.md, diagrams/ (hand-laid overviews)
 tests/              pytest
 AGENTS.md           orientation for AI coding agents working in this repo
 ```
