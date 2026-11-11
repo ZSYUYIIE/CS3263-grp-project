@@ -1,0 +1,123 @@
+{
+ "id": "q2-S4-068",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 11.91,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2900,
+  "total_tokens": 4285,
+  "completion_tokens": 1385,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1059
+  },
+  "finish_reason": "stop",
+  "request_seconds": 11.19,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"programme\":\"BComp CS Hons\",\"current_sem\":4,\"completed\":[\"CS2040S\",\"MA1522\",\"CS2030S\",\"CS3244\",\"IS1108\",\"ST2334\",\"CS2103T\",\"MA1521\",\"CS1231S\",\"CS2101\",\"CS1101S\",\"CS2100\",\"ES2660\"],\"must_take\":[\"CS4218\",\"CS2106\",\"CS3230\",\"CS4249\",\"CS3264\",\"CS4278\"],\"sem_caps\":{\"8\":0},\"objective\":\"min_total_mc\",\"late\":[\"CS4278\"],\"rules\":[{\"type\":\"before\",\"a\":\"CS2106\",\"b\":\"CS4249\",\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS2106\",\"b\":\"CS4218\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3230\",\"sem\":7,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS2106\",\"sem\":5,\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS4278\",\"b\":\"CS2106\",\"strength\":\"prefer\"},{\"type\":\"same_sem\",\"a\":\"CS4278\",\"b\":\"CS3230\",\"strength\":\"prefer\"},{\"type\":\"same_sem\",\"a\":\"CS4249\",\"b\":\"CS4278\",\"strength\":\"prefer\"}],\"unsupported\":[\"avoid modules with heavy group projects\",\"might fail one module this semester and have to retake it\"]}",
+ "spec": {
+  "query": "plan",
+  "programme": "BComp CS Hons",
+  "current_sem": 4,
+  "completed": [
+   "CS2040S",
+   "MA1522",
+   "CS2030S",
+   "CS3244",
+   "IS1108",
+   "ST2334",
+   "CS2103T",
+   "MA1521",
+   "CS1231S",
+   "CS2101",
+   "CS1101S",
+   "CS2100",
+   "ES2660"
+  ],
+  "must_take": [
+   "CS4218",
+   "CS2106",
+   "CS3230",
+   "CS4249",
+   "CS3264",
+   "CS4278"
+  ],
+  "sem_caps": {
+   "8": 0
+  },
+  "objective": "min_total_mc",
+  "late": [
+   "CS4278"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2106",
+    "b": "CS4249",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2106",
+    "b": "CS4218",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3230",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2106",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4278",
+    "b": "CS2106",
+    "strength": "prefer"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4278",
+    "b": "CS3230",
+    "strength": "prefer"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4249",
+    "b": "CS4278",
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "avoid modules with heavy group projects",
+   "might fail one module this semester and have to retake it"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3264 is ruled out by completed CS3244"
+  ],
+  "not_applied": [
+   "avoid modules with heavy group projects",
+   "might fail one module this semester and have to retake it"
+  ]
+ }
+}

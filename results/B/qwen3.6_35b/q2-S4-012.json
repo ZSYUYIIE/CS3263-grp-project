@@ -1,0 +1,84 @@
+{
+ "id": "q2-S4-012",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 21.16,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3135,
+  "total_tokens": 3505,
+  "completion_tokens": 370,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 21.16,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 5,\n\"programme\": \"BComp CS Hons\",\n\"completed\": [\n\"MA1522\",\n\"CS2103T\",\n\"CS2040S\",\n\"ST2334\",\n\"CS2101\",\n\"IS1108\",\n\"CS2100\",\n\"CS1231S\",\n\"CS2030S\",\n\"ES2660\",\n\"CS1101S\",\n\"MA1521\",\n\"CS2106\",\n\"CS2109S\"\n],\n\"must_take\": [\n\"CS3219\",\n\"CS3240\",\n\"CS2102\",\n\"CS2105\",\n\"CS4225\",\n\"CS3230\"\n],\n\"mc_max\": 4,\n\"objective\": \"earliest_graduation\",\n\"early\": [\n\"CS3240\",\n\"CS3230\"\n],\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2102\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3230\",\n\"sem\": 7,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS2105\",\n\"b\": \"CS4225\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "MA1522",
+   "CS2103T",
+   "CS2040S",
+   "ST2334",
+   "CS2101",
+   "IS1108",
+   "CS2100",
+   "CS1231S",
+   "CS2030S",
+   "ES2660",
+   "CS1101S",
+   "MA1521",
+   "CS2106",
+   "CS2109S"
+  ],
+  "must_take": [
+   "CS3219",
+   "CS3240",
+   "CS2102",
+   "CS2105",
+   "CS4225",
+   "CS3230"
+  ],
+  "mc_max": 4,
+  "objective": "earliest_graduation",
+  "early": [
+   "CS3240",
+   "CS3230"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3230",
+    "sem": 7,
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS2105",
+    "b": "CS4225",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "the required courses need 24 MC but the remaining semesters [5, 6, 7, 8] allow at most 16 MC"
+  ]
+ }
+}

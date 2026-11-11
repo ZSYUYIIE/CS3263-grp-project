@@ -1,0 +1,93 @@
+{
+ "id": "q2-S4-260",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.04,
+ "solver_seconds": 0.1,
+ "max_tokens": 49152,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 3129,
+  "total_tokens": 3527,
+  "completion_tokens": 398,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.94,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"programme\": \"BComp CS Hons\",\n\"current_sem\": 5,\n\"completed\": [\n\"CS2040S\",\n\"MA1522\",\n\"IS1108\",\n\"CS2101\",\n\"CS1231S\",\n\"CS2030S\",\n\"CS3230\",\n\"CS2106\",\n\"ES2660\",\n\"CS2100\",\n\"CS1101S\",\n\"CS3234\",\n\"MA1521\",\n\"CS2109S\",\n\"CS2103T\"\n],\n\"must_take\": [\n\"CS4268\",\n\"CS4223\",\n\"CS2102\",\n\"CS4211\"\n],\n\"objective\": \"earliest_graduation\",\n\"early\": [\n\"CS4211\"\n],\n\"late\": [\n\"CS4268\"\n],\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS4223\",\n\"b\": \"CS2102\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4223\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2102\",\n\"sem\": 6,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4211\",\n\"b\": \"CS4268\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "programme": "BComp CS Hons",
+  "current_sem": 5,
+  "completed": [
+   "CS2040S",
+   "MA1522",
+   "IS1108",
+   "CS2101",
+   "CS1231S",
+   "CS2030S",
+   "CS3230",
+   "CS2106",
+   "ES2660",
+   "CS2100",
+   "CS1101S",
+   "CS3234",
+   "MA1521",
+   "CS2109S",
+   "CS2103T"
+  ],
+  "must_take": [
+   "CS4268",
+   "CS4223",
+   "CS2102",
+   "CS4211"
+  ],
+  "objective": "earliest_graduation",
+  "early": [
+   "CS4211"
+  ],
+  "late": [
+   "CS4268"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS4223",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4223",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4211",
+    "b": "CS4268",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS4223 before CS2102; your rule: CS4223 in semester 7; your rule: CS2102 in semester 6"
+  ]
+ }
+}

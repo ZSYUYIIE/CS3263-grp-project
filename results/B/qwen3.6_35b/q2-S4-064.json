@@ -1,0 +1,74 @@
+{
+ "id": "q2-S4-064",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 5.6,
+ "solver_seconds": 0.309,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3032,
+  "total_tokens": 3302,
+  "completion_tokens": 270,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 5.29,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 1,\n\"completed\": [],\n\"must_take\": [\n\"CS3244\",\n\"CS3236\",\n\"CS2109S\",\n\"CS4278\",\n\"IS1108\"\n],\n\"sem_caps\": {\n\"2\": 0\n},\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS3236\",\n\"b\": \"CS4278\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3236\",\n\"b\": \"IS1108\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS4278\",\n\"b\": \"IS1108\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3236\",\n\"sem\": 4,\n\"strength\": \"prefer\"\n}\n],\n\"late\": [\n\"CS4278\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "completed": [],
+  "must_take": [
+   "CS3244",
+   "CS3236",
+   "CS2109S",
+   "CS4278",
+   "IS1108"
+  ],
+  "sem_caps": {
+   "2": 0
+  },
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3236",
+    "b": "CS4278",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3236",
+    "b": "IS1108",
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS4278",
+    "b": "IS1108",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3236",
+    "sem": 4,
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "CS4278"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the course exclusions (courses that cannot be taken together)"
+  ]
+ }
+}

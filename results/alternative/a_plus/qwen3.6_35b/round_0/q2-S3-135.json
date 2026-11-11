@@ -1,0 +1,48 @@
+{
+ "id": "q2-S3-135",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 8.1,
+ "usage": {
+  "prompt_tokens": 11257,
+  "total_tokens": 11669,
+  "completion_tokens": 412,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 8.1,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS2101\",\n      \"CS2102\"\n    ],\n    \"7\": [\n      \"CS4223\",\n      \"CS3237\"\n    ],\n    \"8\": [\n      \"ES2660\",\n      \"CS4222\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2101 and CS2102 are planned in Sem 6 as they have no unmet prerequisites and satisfy the 8 MC minimum.\",\n    \"CS4223 and CS3237 are planned in Sem 7. CS4223 requires CS2106 and CS2100 (completed). CS3237 requires CS2100 and a programming module (completed).\",\n    \"ES2660 is placed in Sem 8 as requested. CS4222 is placed in Sem 8 as it requires CS2105 (completed) and ST2131/MA2116 (ST2334 completed satisfies the probability requirement via mutual exclusivity logic or direct prerequisite check if ST2334 is accepted as equivalent, but strictly ST2334 is mutually exclusive with ST2131/MA2116. However, CS4222 prereq is (EE3204 or EE3204E or EE4204 or CS2105) AND (EE2012A or EE2012 or ST2131 or ST2334 or MA2116...). Since ST2334 is completed, the second part of the AND is satisfied. Thus CS4222 is eligible in Sem 8.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS2101",
+    "CS2102"
+   ],
+   "7": [
+    "CS4223",
+    "CS3237"
+   ],
+   "8": [
+    "ES2660",
+    "CS4222"
+   ]
+  },
+  "reasons": [
+   "CS2101 and CS2102 are planned in Sem 6 as they have no unmet prerequisites and satisfy the 8 MC minimum.",
+   "CS4223 and CS3237 are planned in Sem 7. CS4223 requires CS2106 and CS2100 (completed). CS3237 requires CS2100 and a programming module (completed).",
+   "ES2660 is placed in Sem 8 as requested. CS4222 is placed in Sem 8 as it requires CS2105 (completed) and ST2131/MA2116 (ST2334 completed satisfies the probability requirement via mutual exclusivity logic or direct prerequisite check if ST2334 is accepted as equivalent, but strictly ST2334 is mutually exclusive with ST2131/MA2116. However, CS4222 prereq is (EE3204 or EE3204E or EE4204 or CS2105) AND (EE2012A or EE2012 or ST2131 or ST2334 or MA2116...). Since ST2334 is completed, the second part of the AND is satisfied. Thus CS4222 is eligible in Sem 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

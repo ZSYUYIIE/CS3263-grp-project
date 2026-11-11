@@ -1,0 +1,114 @@
+{
+ "id": "q2-S4-276",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 10.33,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3193,
+  "total_tokens": 3733,
+  "completion_tokens": 540,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 10.33,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 5,\n\"completed\": [\n\"CS2106\",\n\"ST2334\",\n\"CS2040S\",\n\"ES2660\",\n\"MA1521\",\n\"CS2109S\",\n\"CS3264\",\n\"CS1231S\",\n\"IS1108\",\n\"MA1522\",\n\"CS2101\",\n\"CS2030S\",\n\"CS2100\",\n\"CS1101S\",\n\"CS3230\",\n\"CS2103T\"\n],\n\"must_take\": [\n\"CS3234\",\n\"CS4224\",\n\"CS3281\",\n\"CS4211\",\n\"CS3219\",\n\"CS2102\",\n\"CS2105\"\n],\n\"mc_max\": 12,\n\"sem_caps\": {\n\"8\": 0\n},\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3219\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2102\",\n\"b\": \"CS4211\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4224\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3281\",\n\"b\": \"CS2105\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2105\",\n\"b\": \"CS3219\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4224\",\n\"sem\": 7,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"late\",\n\"a\": \"CS4224\",\n\"b\": \"CS4224\",\n\"strength\": \"prefer\"\n}\n],\n\"unsupported\": [\n\"applying to have one module waived\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "completed": [
+   "CS2106",
+   "ST2334",
+   "CS2040S",
+   "ES2660",
+   "MA1521",
+   "CS2109S",
+   "CS3264",
+   "CS1231S",
+   "IS1108",
+   "MA1522",
+   "CS2101",
+   "CS2030S",
+   "CS2100",
+   "CS1101S",
+   "CS3230",
+   "CS2103T"
+  ],
+  "must_take": [
+   "CS3234",
+   "CS4224",
+   "CS3281",
+   "CS4211",
+   "CS3219",
+   "CS2102",
+   "CS2105"
+  ],
+  "mc_max": 12,
+  "sem_caps": {
+   "8": 0
+  },
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3219",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2102",
+    "b": "CS4211",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4224",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3281",
+    "b": "CS2105",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS2105",
+    "b": "CS3219",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4224",
+    "sem": 7,
+    "strength": "prefer"
+   },
+   {
+    "type": "late",
+    "a": "CS4224",
+    "b": "CS4224",
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "applying to have one module waived"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [
+  "rules[6].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'"
+ ],
+ "answer": {
+  "status": "INVALID_SPEC",
+  "errors": [
+   "rules[6].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'"
+  ]
+ }
+}

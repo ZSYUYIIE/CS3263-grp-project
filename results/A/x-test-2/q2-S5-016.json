@@ -1,0 +1,53 @@
+{
+ "id": "q2-S5-016",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 48.17,
+ "usage": {
+  "prompt_tokens": 11042,
+  "total_tokens": 14262,
+  "completion_tokens": 3220,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 9472,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3073
+  },
+  "finish_reason": "stop",
+  "request_seconds": 48.17,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"ES2660\",\"CS4222\",\"CS2107\",\"CS4218\"],\"7\":[\"CS2102\",\"CS3235\",\"CS4243\"],\"8\":[\"CS4231\",\"CS3211\"]},\"reasons\":[\"Added CS2107 because it is a prerequisite for CS3235; no other extra courses are needed.\",\"All constraints hold: ES2660 before CS2102, CS4218 before CS3235, CS2102 in semester 7, and CS4222 early and separate from CS4231.\",\"Total is 36 MC, the minimum since all eight requested courses plus CS2107 are required.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "ES2660",
+    "CS4222",
+    "CS2107",
+    "CS4218"
+   ],
+   "7": [
+    "CS2102",
+    "CS3235",
+    "CS4243"
+   ],
+   "8": [
+    "CS4231",
+    "CS3211"
+   ]
+  },
+  "reasons": [
+   "Added CS2107 because it is a prerequisite for CS3235; no other extra courses are needed.",
+   "All constraints hold: ES2660 before CS2102, CS4218 before CS3235, CS2102 in semester 7, and CS4222 early and separate from CS4231.",
+   "Total is 36 MC, the minimum since all eight requested courses plus CS2107 are required."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 4
+}

@@ -1,0 +1,26 @@
+{
+ "id": "q2-S4-033",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "not a plan",
+ "seconds": 20.55,
+ "usage": {
+  "prompt_tokens": 11839,
+  "total_tokens": 13104,
+  "completion_tokens": 1265,
+  "finish_reason": "stop",
+  "request_seconds": 20.55,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"Per-semester limit of 4 MC is too low to complete required prerequisites for mandatory courses (e.g., CS2102 requires CS2030S and CS2040S which are completed, but CS2103T requires CS2030S and CS2040S; however, CS4262 requires CS2106 and CS3244/CS3264/CG3201. CS2106 requires CS2100. CS2100 is taken in Y3S2. Thus CS2106 can be taken in Y3S2 or later. CS4262 requires CS2106 and a ML course. The student must take CS2109S (prereq: CS2040S/CS2040C/etc and Math). CS2109S is completed? No, listed as must take. Prereq for CS2109S is CS2040S (completed) and Math (MA1521 completed). So CS2109S can be taken early. But CS4262 needs CS2106 and CS3244/CS3264/CG3201. CS2106 needs CS2100. CS2100 is fixed in Y3S2. So CS2106 earliest Y3S2. CS4262 earliest Y3S2 (if ML course done) or Y4S1. The ML course (CS3244/CS3264/CG3201) needs CS2109S and Math. CS2109S can be done in Y1S2 or Y2S1. If CS2109S done in Y2S1, ML course can be Y2S2. Then CS2106 Y3S2, CS4262 Y3S2. But CS2103T needs CS2030S and CS2040S (both completed). So CS2103T can be taken anytime. CS2102 needs CS2030S and CS2040S (both completed). So CS2102 can be taken anytime. CS2105 needs CS2040S (completed). So CS2105 can be taken anytime. CS4238 needs CS3235. CS3235 needs CS2105, CS2106, CS2107. CS2107 needs CS1010 (not completed). The student has NOT completed CS1010 (or variants). CS1010 is a prerequisite for CS2107. CS2107 is a prerequisite for CS3235. CS3235 is a prerequisite for CS4238. The student must take CS1010. CS1010 is 4 MC. The student's limit is 4 MC per semester. They have many mandatory courses. CS1010 is missing from the 'must take' list but is a hard prerequisite for CS4238. The student did not list CS1010 as completed. Therefore, CS1010 must be planned. With a 4 MC limit, taking CS1010 (4MC) leaves 0 MC for other courses. The student must take CS2100 (4MC) in Y3S2. In Y2S1 (current), they can take CS1010 (4MC). In Y2S2, they can take CS2105 (4MC) or CS2102 (4MC) or CS2103T (4MC) or CS2109S (4MC). In Y3S1, they can take more. In Y3S2, CS2100 (4MC). Then CS2106 (4MC) in Y3S2? No, CS2106 prereq is CS2100. If CS2100 is in Y3S2, CS2106 can be Y3S2 (coreq? No, prereq. So CS2106 must be AFTER CS2100. So Y4S1. Then CS4238 needs CS3235. CS3235 needs CS2106. So CS3235 Y4S1. CS4238 Y4S2. CS4262 needs CS2106 and ML. ML needs CS2109S. CS2109S needs Math. CS2109S can be Y2S1/Y2S2. ML can be Y2S2/Y3S1. CS4262 can be Y4S1. The bottleneck is the 4 MC limit. The student has 8 semesters. Y2S1 to Y4S2 is 7 semesters. Mandatory courses: CS1010 (4), CS2105 (4), CS2102 (4), CS2103T (4), CS2109S (4), CS2100 (4), CS2106 (4), ST2334 (4), CS3235 (4), CS4238 (4), CS4262 (4), CS2107 (4). Total 12 courses * 4 MC = 48 MC. 7 semesters * 4 MC = 28 MC capacity. 48 > 28. Impossible.\", \"status\": \"NO_PLAN\"}",
+ "answer": {
+  "status": "NO_PLAN"
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

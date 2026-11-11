@@ -1,0 +1,134 @@
+{
+ "id": "q2-S1-014",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.18,
+ "solver_seconds": 0.164,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3066,
+  "total_tokens": 3400,
+  "completion_tokens": 334,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 6.01,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 1,\n\"completed\": [],\n\"must_take\": [\n\"CS2040S\",\n\"CS3240\",\n\"CS3237\",\n\"CS3244\"\n],\n\"mc_max\": 12,\n\"objective\": \"earliest_graduation\",\n\"early\": [\n\"CS3244\"\n],\n\"rules\": [\n{\n\"type\": \"same_sem\",\n\"a\": \"CS3244\",\n\"b\": \"CS3237\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3240\",\n\"b\": \"CS3244\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2040S\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2040S\",\n\"b\": \"CS3237\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3244\",\n\"b\": \"CS2040S\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3244\",\n\"sem\": 8,\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "completed": [],
+  "must_take": [
+   "CS2040S",
+   "CS3240",
+   "CS3237",
+   "CS3244"
+  ],
+  "mc_max": 12,
+  "objective": "earliest_graduation",
+  "early": [
+   "CS3244"
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS3244",
+    "b": "CS3237",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3240",
+    "b": "CS3244",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2040S",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2040S",
+    "b": "CS3237",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS3244",
+    "b": "CS2040S",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3244",
+    "sem": 8,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "earliest_graduation",
+  "last_semester": 7,
+  "plan": {
+   "1": [],
+   "2": [
+    "NM2207"
+   ],
+   "3": [
+    "MA1100"
+   ],
+   "4": [
+    "UTC2851"
+   ],
+   "5": [
+    "CS2040S",
+    "CS3240",
+    "MA1521"
+   ],
+   "6": [
+    "CG2028",
+    "MA1508E",
+    "ST2334"
+   ],
+   "7": [
+    "CS3237",
+    "CS3244"
+   ]
+  },
+  "mc_per_semester": {
+   "1": 0,
+   "2": 4,
+   "3": 4,
+   "4": 4,
+   "5": 12,
+   "6": 10,
+   "7": 8
+  },
+  "preferences_met": [
+   "CS2040S before CS3237",
+   "CS3244 as early as possible"
+  ],
+  "preferences_not_met": [
+   "CS3244 before CS2040S",
+   "CS3244 in semester 8"
+  ],
+  "added_prerequisites": [
+   "CG2028",
+   "MA1100",
+   "MA1508E",
+   "MA1521",
+   "NM2207",
+   "ST2334",
+   "UTC2851"
+  ]
+ }
+}

@@ -1,0 +1,110 @@
+{
+ "id": "q2-S4-031",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 8.38,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2867,
+  "total_tokens": 3765,
+  "completion_tokens": 898,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 611
+  },
+  "finish_reason": "stop",
+  "request_seconds": 8.38,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":8,\"programme\":\"BComp CS Hons\",\"completed\":[\"CS2102\",\"MA1522\",\"CS3230\",\"CS2109S\",\"IS1108\",\"CS2030S\",\"CS3210\",\"CS1231S\",\"CS2105\",\"CS2100\",\"CS3231\",\"CS3219\",\"CS2103T\",\"CS2106\",\"ST2334\",\"CS2101\",\"MA1521\",\"CS2040S\",\"CS1101S\"],\"must_take\":[\"ES2660\",\"CS3223\",\"CS4248\"],\"mc_max\":8,\"early\":[\"ES2660\",\"CS3223\"],\"rules\":[{\"type\":\"same_sem\",\"a\":\"ES2660\",\"b\":\"CS3223\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS4248\",\"sem\":8,\"strength\":\"must\"},{\"type\":\"same_sem\",\"a\":\"CS3223\",\"b\":\"CS4248\",\"strength\":\"must\"},{\"type\":\"same_sem\",\"a\":\"ES2660\",\"b\":\"CS4248\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3223\",\"sem\":8,\"strength\":\"prefer\"},{\"type\":\"in_sem\",\"course\":\"ES2660\",\"sem\":8,\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 8,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "CS2102",
+   "MA1522",
+   "CS3230",
+   "CS2109S",
+   "IS1108",
+   "CS2030S",
+   "CS3210",
+   "CS1231S",
+   "CS2105",
+   "CS2100",
+   "CS3231",
+   "CS3219",
+   "CS2103T",
+   "CS2106",
+   "ST2334",
+   "CS2101",
+   "MA1521",
+   "CS2040S",
+   "CS1101S"
+  ],
+  "must_take": [
+   "ES2660",
+   "CS3223",
+   "CS4248"
+  ],
+  "mc_max": 8,
+  "early": [
+   "ES2660",
+   "CS3223"
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "ES2660",
+    "b": "CS3223",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4248",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3223",
+    "b": "CS4248",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "ES2660",
+    "b": "CS4248",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3223",
+    "sem": 8,
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "ES2660",
+    "sem": 8,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "the required courses need 12 MC but the remaining semesters [8] allow at most 8 MC"
+  ]
+ }
+}

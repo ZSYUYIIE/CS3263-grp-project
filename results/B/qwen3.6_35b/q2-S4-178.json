@@ -1,0 +1,78 @@
+{
+ "id": "q2-S4-178",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 20.36,
+ "solver_seconds": 0.063,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3089,
+  "total_tokens": 3337,
+  "completion_tokens": 248,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 20.3,
+  "attempts": 1
+ },
+ "raw": "{\"query\": \"plan\", \"current_sem\": 5, \"completed\": [\"CS1231S\", \"CS1101S\", \"MA1522\", \"CS2040S\", \"CS2106\", \"CS2100\", \"CS2101\", \"CS2103T\", \"MA1521\", \"CS2109S\", \"IS1108\", \"ST2334\", \"CS3230\", \"CS2030S\"], \"must_take\": [\"CS3282\", \"CS2105\", \"CS4239\", \"CS3219\"], \"sem_caps\": {\"7\": 0}, \"rules\": [{\"type\": \"in_sem\", \"course\": \"CS3219\", \"sem\": 5, \"strength\": \"must\"}, {\"type\": \"before\", \"a\": \"CS3282\", \"b\": \"CS3219\", \"strength\": \"prefer\"}], \"early\": [\"CS3282\"], \"late\": [\"CS2105\"]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "completed": [
+   "CS1231S",
+   "CS1101S",
+   "MA1522",
+   "CS2040S",
+   "CS2106",
+   "CS2100",
+   "CS2101",
+   "CS2103T",
+   "MA1521",
+   "CS2109S",
+   "IS1108",
+   "ST2334",
+   "CS3230",
+   "CS2030S"
+  ],
+  "must_take": [
+   "CS3282",
+   "CS2105",
+   "CS4239",
+   "CS3219"
+  ],
+  "sem_caps": {
+   "7": 0
+  },
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3219",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3282",
+    "b": "CS3219",
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS3282"
+  ],
+  "late": [
+   "CS2105"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the prerequisites of CS4239; the MC limits (at most 20 MC per semester; semesters 7 blocked); the semesters in which the courses are offered"
+  ]
+ }
+}

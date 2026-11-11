@@ -1,0 +1,62 @@
+{
+ "id": "q1-ex-011-h",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 5.61,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2573,
+  "total_tokens": 3148,
+  "completion_tokens": 575,
+  "prompt_tokens_details": {
+   "cached_tokens": 2432,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 494
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.61,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\":\"eligible\",\"target\":\"CS4246\",\"current_sem\":7,\"completed\":[\"MA1522\",\"CS2251\",\"CS4277\",\"CS2107\",\"CS2100\",\"MA1521\",\"CS2102\",\"CS3243\",\"CS5446\",\"CS1101S\",\"CS5478\",\"CS1231S\",\"IS1108\",\"ST2334\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS4246",
+  "current_sem": 7,
+  "completed": [
+   "MA1522",
+   "CS2251",
+   "CS4277",
+   "CS2107",
+   "CS2100",
+   "MA1521",
+   "CS2102",
+   "CS3243",
+   "CS5446",
+   "CS1101S",
+   "CS5478",
+   "CS1231S",
+   "IS1108",
+   "ST2334"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS4246",
+  "semester": 7,
+  "reasons": [
+   "precluded: already completed CS5446"
+  ],
+  "can_still_become_eligible": false,
+  "never_eligible_because": "CS4246 is ruled out by completed CS5446"
+ }
+}

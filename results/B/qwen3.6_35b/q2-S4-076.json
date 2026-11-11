@@ -1,0 +1,88 @@
+{
+ "id": "q2-S4-076",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.23,
+ "solver_seconds": 0.382,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3108,
+  "total_tokens": 3471,
+  "completion_tokens": 363,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 6.85,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 2,\n\"completed\": [\n\"CS1231S\",\n\"CS1101S\",\n\"MA1521\"\n],\n\"must_take\": [\n\"ES2660\",\n\"CS3219\",\n\"CS2103T\",\n\"CS4220\",\n\"CS4263\",\n\"CS4353\",\n\"CS4247\",\n\"CS4221\",\n\"CS3263\"\n],\n\"mc_max\": 16,\n\"objective\": \"earliest_graduation\",\n\"early\": [\n\"CS4220\"\n],\n\"rules\": [\n{\n\"type\": \"same_sem\",\n\"a\": \"ES2660\",\n\"b\": \"CS4353\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2103T\",\n\"b\": \"CS4221\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS4247\",\n\"b\": \"CS2103T\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"ES2660\",\n\"b\": \"CS4220\",\n\"strength\": \"prefer\"\n}\n],\n\"unsupported\": [\n\"at most two modules with final exams in a semester\",\n\"like modules taught by my favourite lecturer when possible\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 2,
+  "completed": [
+   "CS1231S",
+   "CS1101S",
+   "MA1521"
+  ],
+  "must_take": [
+   "ES2660",
+   "CS3219",
+   "CS2103T",
+   "CS4220",
+   "CS4263",
+   "CS4353",
+   "CS4247",
+   "CS4221",
+   "CS3263"
+  ],
+  "mc_max": 16,
+  "objective": "earliest_graduation",
+  "early": [
+   "CS4220"
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "ES2660",
+    "b": "CS4353",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2103T",
+    "b": "CS4221",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS4247",
+    "b": "CS2103T",
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "ES2660",
+    "b": "CS4220",
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "at most two modules with final exams in a semester",
+   "like modules taught by my favourite lecturer when possible"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the course exclusions (courses that cannot be taken together)"
+  ],
+  "not_applied": [
+   "at most two modules with final exams in a semester",
+   "like modules taught by my favourite lecturer when possible"
+  ]
+ }
+}

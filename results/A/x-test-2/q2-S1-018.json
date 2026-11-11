@@ -1,0 +1,59 @@
+{
+ "id": "q2-S1-018",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 39.71,
+ "usage": {
+  "prompt_tokens": 5465,
+  "total_tokens": 8727,
+  "completion_tokens": 3262,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 3840,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3092
+  },
+  "finish_reason": "stop",
+  "request_seconds": 39.71,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"1\":[\"CS1010\",\"CS1231\"],\"2\":[\"CS2040\",\"CS2107\"],\"3\":[\"CS4236\"],\"4\":[\"CS3230\"],\"5\":[\"MA1522\",\"CG2271\"],\"8\":[\"CS3211\"]},\"reasons\":[\"Plan uses 36 MC: the four required courses plus five prerequisites (CS1010, CS1231, CS2040, CS2107, CG2271).\",\"CS4236 is fixed in semester 3; CS3230 is earliest in semester 4, so MA1522 follows in semester 5.\",\"Semester 7 is empty for LOA; CS3211 is fixed in semester 8, so it cannot precede CS3230.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1010",
+    "CS1231"
+   ],
+   "2": [
+    "CS2040",
+    "CS2107"
+   ],
+   "3": [
+    "CS4236"
+   ],
+   "4": [
+    "CS3230"
+   ],
+   "5": [
+    "MA1522",
+    "CG2271"
+   ],
+   "8": [
+    "CS3211"
+   ]
+  },
+  "reasons": [
+   "Plan uses 36 MC: the four required courses plus five prerequisites (CS1010, CS1231, CS2040, CS2107, CG2271).",
+   "CS4236 is fixed in semester 3; CS3230 is earliest in semester 4, so MA1522 follows in semester 5.",
+   "Semester 7 is empty for LOA; CS3211 is fixed in semester 8, so it cannot precede CS3230."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

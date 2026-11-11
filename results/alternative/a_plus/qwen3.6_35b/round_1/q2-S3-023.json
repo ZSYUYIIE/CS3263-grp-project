@@ -1,0 +1,51 @@
+{
+ "id": "q2-S3-023",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 3,
+ "end": "valid",
+ "seconds": 12.66,
+ "usage": {
+  "prompt_tokens": 21039,
+  "total_tokens": 21612,
+  "completion_tokens": 573,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 12.66,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"4\": [\n      \"CS3231\",\n      \"CS2102\"\n    ],\n    \"5\": [\n      \"CS3264\",\n      \"CS2109S\",\n      \"CS3219\"\n    ],\n    \"6\": [\n      \"CS3230\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3231 is offered in Sem 1, so it is placed in Sem 5 (Y3S1) instead of Sem 4.\",\n    \"CS2102 and CS3231 are taken together in Sem 5 to satisfy the 'same semester' constraint.\",\n    \"CS3264 requires CS2109S, so both are taken in Sem 6 (Y3S2).\",\n    \"CS3230 is placed in Sem 7 (Y4S1) to satisfy the 'not together with CS2109S' and 'as late as possible' wishes.\",\n    \"CS3219 is taken in Sem 6 after CS2103T (completed) and CS2103/CS2103T prerequisites are met.\",\n    \"All hard constraints and prerequisites are satisfied.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS3231",
+    "CS2102"
+   ],
+   "5": [
+    "CS3264",
+    "CS2109S",
+    "CS3219"
+   ],
+   "6": [
+    "CS3230"
+   ]
+  },
+  "reasons": [
+   "CS3231 is offered in Sem 1, so it is placed in Sem 5 (Y3S1) instead of Sem 4.",
+   "CS2102 and CS3231 are taken together in Sem 5 to satisfy the 'same semester' constraint.",
+   "CS3264 requires CS2109S, so both are taken in Sem 6 (Y3S2).",
+   "CS3230 is placed in Sem 7 (Y4S1) to satisfy the 'not together with CS2109S' and 'as late as possible' wishes.",
+   "CS3219 is taken in Sem 6 after CS2103T (completed) and CS2103/CS2103T prerequisites are met.",
+   "All hard constraints and prerequisites are satisfied."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

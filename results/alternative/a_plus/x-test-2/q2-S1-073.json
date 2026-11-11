@@ -1,0 +1,100 @@
+{
+ "id": "q2-S1-073",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 33.84,
+ "usage": {
+  "prompt_tokens": 5566,
+  "total_tokens": 8089,
+  "completion_tokens": 2523,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 2944
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2398
+  },
+  "finish_reason": "stop",
+  "request_seconds": 33.84,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CS2101\",\"CS2100\",\"CS2105\",\"CS3230\"],\"4\":[\"CS2109S\"],\"6\":[\"ST2334\"]},\"reasons\":[\"CS2101 is in semester 3, the earliest possible, and CS2109S is in semester 4 so they are not together.\",\"CS2105 and CS3230 are paired in semester 3.\",\"ST2334 is in semester 6, keeping it apart from CS2109S; semester 5 is the leave of absence.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2101",
+    "CS2100",
+    "CS2105",
+    "CS3230"
+   ],
+   "4": [
+    "CS2109S"
+   ],
+   "6": [
+    "ST2334"
+   ]
+  },
+  "reasons": [
+   "CS2101 is in semester 3, the earliest possible, and CS2109S is in semester 4 so they are not together.",
+   "CS2105 and CS3230 are paired in semester 3.",
+   "ST2334 is in semester 6, keeping it apart from CS2109S; semester 5 is the leave of absence."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CS2101\",\"CS2100\",\"CS2105\",\"CS3230\"],\"4\":[\"CS2109S\"],\"6\":[\"ST2334\"]},\"reasons\":[\"CS2101 is in semester 3, the earliest possible, and CS2109S is in semester 4 so they are not together.\",\"CS2105 and CS3230 are paired in semester 3.\",\"ST2334 is in semester 6, keeping it apart from CS2109S; semester 5 is the leave of absence.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2101",
+      "CS2100",
+      "CS2105",
+      "CS3230"
+     ],
+     "4": [
+      "CS2109S"
+     ],
+     "6": [
+      "ST2334"
+     ]
+    },
+    "reasons": [
+     "CS2101 is in semester 3, the earliest possible, and CS2109S is in semester 4 so they are not together.",
+     "CS2105 and CS3230 are paired in semester 3.",
+     "ST2334 is in semester 6, keeping it apart from CS2109S; semester 5 is the leave of absence."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 5566,
+    "total_tokens": 8089,
+    "completion_tokens": 2523,
+    "prompt_tokens_details": {
+     "cached_tokens": 2560,
+     "created_cache_tokens": 2944,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 2398
+    },
+    "finish_reason": "stop",
+    "request_seconds": 33.84,
+    "attempts": 1
+   },
+   "seconds": 33.84,
+   "violations": []
+  }
+ ]
+}

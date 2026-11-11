@@ -1,0 +1,100 @@
+{
+ "id": "q2-S3-155",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 13.05,
+ "usage": {
+  "prompt_tokens": 32458,
+  "total_tokens": 32985,
+  "completion_tokens": 527,
+  "finish_reason": "stop",
+  "request_seconds": 13.05,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS3247 requires CS3241 as a prerequisite, but CS3241 is not in the list of required courses and cannot be added as it is not a prerequisite for any other required course.\",\n\"CS2105 must be taken before ST2334, but ST2334 is required for ATAP eligibility (via the communication prerequisite chain or simply because ATAP is in Sem 5 and ST2334 is a required course that needs to be taken). Even if ST2334 is taken in Sem 5, CS2105 must be in Sem 4 or earlier. However, the student is in Sem 5 now. CS2105 cannot be taken in Sem 5 if it must be before ST2334 (which is in Sem 5). If ST2334 is moved to Sem 6, CS2105 can be in Sem 5. But CS2105 prerequisite is CS2040S (met). So CS2105 in Sem 5, ST2334 in Sem 6 is possible. However, CS3247 still requires CS3241 which is missing.\"\n]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3247 requires CS3241 as a prerequisite, but CS3241 is not in the list of required courses and cannot be added as it is not a prerequisite for any other required course.",
+   "CS2105 must be taken before ST2334, but ST2334 is required for ATAP eligibility (via the communication prerequisite chain or simply because ATAP is in Sem 5 and ST2334 is a required course that needs to be taken). Even if ST2334 is taken in Sem 5, CS2105 must be in Sem 4 or earlier. However, the student is in Sem 5 now. CS2105 cannot be taken in Sem 5 if it must be before ST2334 (which is in Sem 5). If ST2334 is moved to Sem 6, CS2105 can be in Sem 5. But CS2105 prerequisite is CS2040S (met). So CS2105 in Sem 5, ST2334 in Sem 6 is possible. However, CS3247 still requires CS3241 which is missing."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CP3880\",\n\"ST2334\"\n],\n\"6\": [\n\"CS3219\",\n\"CS2105\",\n\"CS2102\"\n],\n\"7\": [\n\"CS3247\",\n\"CS4248\"\n]\n},\n\"reasons\": [\n\"ATAP (CP3880) planned in Sem 5 with ST2334 (4MC) to satisfy the ATAP rule (other courses <= 8MC).\",\n\"CS3219 is fixed in Sem 6 as requested. CS2105 and CS2102 are placed in Sem 6 to satisfy prerequisites and the 'CS2105 before ST2334' constraint (ST2334 in Sem 5).\",\n\"CS3247 and CS4248 are planned in Sem 7, respecting the preference for CS3247 before CS4248 and their prerequisites.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CP3880",
+      "ST2334"
+     ],
+     "6": [
+      "CS3219",
+      "CS2105",
+      "CS2102"
+     ],
+     "7": [
+      "CS3247",
+      "CS4248"
+     ]
+    },
+    "reasons": [
+     "ATAP (CP3880) planned in Sem 5 with ST2334 (4MC) to satisfy the ATAP rule (other courses <= 8MC).",
+     "CS3219 is fixed in Sem 6 as requested. CS2105 and CS2102 are placed in Sem 6 to satisfy prerequisites and the 'CS2105 before ST2334' constraint (ST2334 in Sem 5).",
+     "CS3247 and CS4248 are planned in Sem 7, respecting the preference for CS3247 before CS4248 and their prerequisites."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 16051,
+    "total_tokens": 16298,
+    "completion_tokens": 247,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.98,
+    "attempts": 1
+   },
+   "seconds": 5.98,
+   "violations": [
+    "R3 CS3247 not offered in Sem 1 (semester 7)",
+    "R4 CS3247 in semester 7: prerequisite not met (CS3241)",
+    "R9 must rule not met: before CS2105 ST2334"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS3247 requires CS3241 as a prerequisite, but CS3241 is not in the list of required courses and cannot be added as it is not a prerequisite for any other required course.\",\n\"CS2105 must be taken before ST2334, but ST2334 is required for ATAP eligibility (via the communication prerequisite chain or simply because ATAP is in Sem 5 and ST2334 is a required course that needs to be taken). Even if ST2334 is taken in Sem 5, CS2105 must be in Sem 4 or earlier. However, the student is in Sem 5 now. CS2105 cannot be taken in Sem 5 if it must be before ST2334 (which is in Sem 5). If ST2334 is moved to Sem 6, CS2105 can be in Sem 5. But CS2105 prerequisite is CS2040S (met). So CS2105 in Sem 5, ST2334 in Sem 6 is possible. However, CS3247 still requires CS3241 which is missing.\"\n]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3247 requires CS3241 as a prerequisite, but CS3241 is not in the list of required courses and cannot be added as it is not a prerequisite for any other required course.",
+     "CS2105 must be taken before ST2334, but ST2334 is required for ATAP eligibility (via the communication prerequisite chain or simply because ATAP is in Sem 5 and ST2334 is a required course that needs to be taken). Even if ST2334 is taken in Sem 5, CS2105 must be in Sem 4 or earlier. However, the student is in Sem 5 now. CS2105 cannot be taken in Sem 5 if it must be before ST2334 (which is in Sem 5). If ST2334 is moved to Sem 6, CS2105 can be in Sem 5. But CS2105 prerequisite is CS2040S (met). So CS2105 in Sem 5, ST2334 in Sem 6 is possible. However, CS3247 still requires CS3241 which is missing."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 16407,
+    "total_tokens": 16687,
+    "completion_tokens": 280,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 7.07,
+    "attempts": 1
+   },
+   "seconds": 7.07,
+   "violations": null
+  }
+ ]
+}

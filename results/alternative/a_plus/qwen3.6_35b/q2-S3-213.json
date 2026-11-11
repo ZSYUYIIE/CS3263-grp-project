@@ -1,0 +1,104 @@
+{
+ "id": "q2-S3-213",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 9.89,
+ "usage": {
+  "prompt_tokens": 17108,
+  "total_tokens": 17608,
+  "completion_tokens": 500,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 9.89,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4236 requires CS2107, which is not in the completed list nor the remaining required modules, making it impossible to satisfy prerequisites.\",\n    \"CS4236 must be taken in Sem 7, but CS2102 must be taken before CS4236, forcing CS2102 into Sem 5 or 6. However, CS2102 requires CS2030S (completed) and CS2040S (completed) and a discrete math module (CS1231S completed), so CS2102 is eligible earlier. The constraint 'CS2102 before CS4236' is satisfiable, but the missing CS2107 is not.\",\n    \"CS2105, CS3219, and CS4236 must be in the same semester. CS4236 is fixed in Sem 7. CS3219 requires CS2103T (completed) or YSC3232 (not offered/open). CS2105 requires CS2040S (completed). While CS2105 and CS3219 are eligible in Sem 7, the missing CS2107 prerequisite for CS4236 makes the entire plan impossible.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4236 requires CS2107, which is not in the completed list nor the remaining required modules, making it impossible to satisfy prerequisites.",
+   "CS4236 must be taken in Sem 7, but CS2102 must be taken before CS4236, forcing CS2102 into Sem 5 or 6. However, CS2102 requires CS2030S (completed) and CS2040S (completed) and a discrete math module (CS1231S completed), so CS2102 is eligible earlier. The constraint 'CS2102 before CS4236' is satisfiable, but the missing CS2107 is not.",
+   "CS2105, CS3219, and CS4236 must be in the same semester. CS4236 is fixed in Sem 7. CS3219 requires CS2103T (completed) or YSC3232 (not offered/open). CS2105 requires CS2040S (completed). While CS2105 and CS3219 are eligible in Sem 7, the missing CS2107 prerequisite for CS4236 makes the entire plan impossible."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2105\",\n      \"CS3219\"\n    ],\n    \"7\": [\n      \"CS4236\",\n      \"CS2102\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2105 and CS3219 are planned in Sem 5 as their prerequisites are met by completed modules.\",\n    \"CS4236 is planned in Sem 7 (Y4S1) to satisfy the mandatory timing constraint.\",\n    \"CS2102 is planned in Sem 7 after CS2105 (Sem 5) and CS3230 (completed) satisfy its prerequisites, ensuring CS2102 is taken before CS4236.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2105",
+      "CS3219"
+     ],
+     "7": [
+      "CS4236",
+      "CS2102"
+     ]
+    },
+    "reasons": [
+     "CS2105 and CS3219 are planned in Sem 5 as their prerequisites are met by completed modules.",
+     "CS4236 is planned in Sem 7 (Y4S1) to satisfy the mandatory timing constraint.",
+     "CS2102 is planned in Sem 7 after CS2105 (Sem 5) and CS3230 (completed) satisfy its prerequisites, ensuring CS2102 is taken before CS4236."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 8357,
+    "total_tokens": 8551,
+    "completion_tokens": 194,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 3.97,
+    "attempts": 1
+   },
+   "seconds": 3.97,
+   "violations": [
+    "R4 CS4236 in semester 7: prerequisite not met ((YSC2229 or CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS) and CS2107 and (CS1231 or CS1231S or MA1100T or MA1100))",
+    "R9 must rule not met: before CS2102 CS4236",
+    "R9 must rule not met: same_sem CS2105 CS4236",
+    "R9 must rule not met: same_sem CS3219 CS4236"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4236 requires CS2107, which is not in the completed list nor the remaining required modules, making it impossible to satisfy prerequisites.\",\n    \"CS4236 must be taken in Sem 7, but CS2102 must be taken before CS4236, forcing CS2102 into Sem 5 or 6. However, CS2102 requires CS2030S (completed) and CS2040S (completed) and a discrete math module (CS1231S completed), so CS2102 is eligible earlier. The constraint 'CS2102 before CS4236' is satisfiable, but the missing CS2107 is not.\",\n    \"CS2105, CS3219, and CS4236 must be in the same semester. CS4236 is fixed in Sem 7. CS3219 requires CS2103T (completed) or YSC3232 (not offered/open). CS2105 requires CS2040S (completed). While CS2105 and CS3219 are eligible in Sem 7, the missing CS2107 prerequisite for CS4236 makes the entire plan impossible.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4236 requires CS2107, which is not in the completed list nor the remaining required modules, making it impossible to satisfy prerequisites.",
+     "CS4236 must be taken in Sem 7, but CS2102 must be taken before CS4236, forcing CS2102 into Sem 5 or 6. However, CS2102 requires CS2030S (completed) and CS2040S (completed) and a discrete math module (CS1231S completed), so CS2102 is eligible earlier. The constraint 'CS2102 before CS4236' is satisfiable, but the missing CS2107 is not.",
+     "CS2105, CS3219, and CS4236 must be in the same semester. CS4236 is fixed in Sem 7. CS3219 requires CS2103T (completed) or YSC3232 (not offered/open). CS2105 requires CS2040S (completed). While CS2105 and CS3219 are eligible in Sem 7, the missing CS2107 prerequisite for CS4236 makes the entire plan impossible."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 8751,
+    "total_tokens": 9057,
+    "completion_tokens": 306,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.92,
+    "attempts": 1
+   },
+   "seconds": 5.92,
+   "violations": null
+  }
+ ]
+}

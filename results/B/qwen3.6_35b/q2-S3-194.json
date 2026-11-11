@@ -1,0 +1,92 @@
+{
+ "id": "q2-S3-194",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.54,
+ "solver_seconds": 0.235,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3097,
+  "total_tokens": 3467,
+  "completion_tokens": 370,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 6.31,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 2,\n\"completed\": [\n\"CS1101S\",\n\"CS1231S\",\n\"ES2660\",\n\"MA1521\"\n],\n\"must_take\": [\n\"CS3227\",\n\"MA1522\",\n\"CS3230\",\n\"CS2100\",\n\"CS3281\",\n\"CS4261\",\n\"CS2030S\",\n\"CS2109S\",\n\"CS3219\",\n\"CS2103T\",\n\"IS1108\",\n\"CS2101\"\n],\n\"objective\": \"min_total_mc\",\n\"atap_sems\": [\n5\n],\n\"sem_caps\": {\n\"5\": 1\n},\n\"early\": [\n\"IS1108\"\n],\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2100\",\n\"sem\": 2,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2109S\",\n\"b\": \"CS3230\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4261\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2101\",\n\"sem\": 2,\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 2,
+  "completed": [
+   "CS1101S",
+   "CS1231S",
+   "ES2660",
+   "MA1521"
+  ],
+  "must_take": [
+   "CS3227",
+   "MA1522",
+   "CS3230",
+   "CS2100",
+   "CS3281",
+   "CS4261",
+   "CS2030S",
+   "CS2109S",
+   "CS3219",
+   "CS2103T",
+   "IS1108",
+   "CS2101"
+  ],
+  "objective": "min_total_mc",
+  "atap_sems": [
+   5
+  ],
+  "sem_caps": {
+   "5": 1
+  },
+  "early": [
+   "IS1108"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS2100",
+    "sem": 2,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2109S",
+    "b": "CS3230",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4261",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2101",
+    "sem": 2,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS4261 in semester 5; the MC limits (at most 20 MC per semester; semester 5 at most 1 MC)"
+  ]
+ }
+}

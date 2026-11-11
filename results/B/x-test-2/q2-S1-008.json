@@ -1,0 +1,138 @@
+{
+ "id": "q2-S1-008",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 7.1,
+ "solver_seconds": 0.065,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2788,
+  "total_tokens": 3590,
+  "completion_tokens": 802,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "created_cache_tokens": 2688,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 594
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.01,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":2,\"completed\":[\"CS1101S\",\"MA1521\",\"CS1231S\",\"ES2660\"],\"programme\":\"BComp CS Hons\",\"must_take\":[\"CS3241\",\"MA1522\",\"CS4223\",\"CS4240\"],\"sem_caps\":{\"4\":0},\"objective\":\"earliest_graduation\",\"early\":[\"MA1522\"],\"rules\":[{\"type\":\"before\",\"a\":\"CS3241\",\"b\":\"MA1522\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS4223\",\"sem\":7,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3241\",\"sem\":3,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS4240\",\"sem\":6,\"strength\":\"must\"},{\"type\":\"same_sem\",\"a\":\"MA1522\",\"b\":\"CS4240\",\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 2,
+  "completed": [
+   "CS1101S",
+   "MA1521",
+   "CS1231S",
+   "ES2660"
+  ],
+  "programme": "BComp CS Hons",
+  "must_take": [
+   "CS3241",
+   "MA1522",
+   "CS4223",
+   "CS4240"
+  ],
+  "sem_caps": {
+   "4": 0
+  },
+  "objective": "earliest_graduation",
+  "early": [
+   "MA1522"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3241",
+    "b": "MA1522",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4223",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3241",
+    "sem": 3,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4240",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "MA1522",
+    "b": "CS4240",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "earliest_graduation",
+  "last_semester": 7,
+  "plan": {
+   "2": [
+    "CS2030S",
+    "CS2040S",
+    "CS2100DE",
+    "CS2111"
+   ],
+   "3": [
+    "CS3241"
+   ],
+   "4": [],
+   "5": [
+    "CS3240"
+   ],
+   "6": [
+    "CG2271",
+    "CS3210",
+    "CS4240",
+    "MA1522"
+   ],
+   "7": [
+    "CS4223"
+   ]
+  },
+  "mc_per_semester": {
+   "2": 16,
+   "3": 4,
+   "4": 0,
+   "5": 4,
+   "6": 16,
+   "7": 4
+  },
+  "preferences_met": [
+   "MA1522 and CS4240 in the same semester"
+  ],
+  "preferences_not_met": [
+   "MA1522 as early as possible"
+  ],
+  "added_prerequisites": [
+   "CG2271",
+   "CS2030S",
+   "CS2040S",
+   "CS2100DE",
+   "CS2111",
+   "CS3210",
+   "CS3240"
+  ]
+ }
+}

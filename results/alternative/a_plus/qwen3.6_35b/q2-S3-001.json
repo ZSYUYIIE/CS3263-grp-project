@@ -1,0 +1,185 @@
+{
+ "id": "q2-S3-001",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 2,
+ "end": "repeated plan",
+ "seconds": 20.49,
+ "usage": {
+  "prompt_tokens": 45959,
+  "total_tokens": 46998,
+  "completion_tokens": 1039,
+  "finish_reason": "stop",
+  "request_seconds": 20.49,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CP3880\",\n      \"CS2102\",\n      \"CS3103\"\n    ],\n    \"7\": [\n      \"CS3227\",\n      \"CS3281\",\n      \"CS3282\",\n      \"CS4218\",\n      \"CS3210\"\n    ]\n  },\n  \"reasons\": [\n    \"ATAP (CP3880) placed in Sem 6 with 8 MC of other courses to allow graduation in Sem 7.\",\n    \"CS3103 placed in Sem 6 as it is only offered in Sem 1.\",\n    \"CS3282 requires CS3281; CS3281 placed in Sem 7 before CS3282.\",\n    \"CS3210 placed in Sem 7 to satisfy 'late as possible' wish.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CP3880",
+    "CS2102",
+    "CS3103"
+   ],
+   "7": [
+    "CS3227",
+    "CS3281",
+    "CS3282",
+    "CS4218",
+    "CS3210"
+   ]
+  },
+  "reasons": [
+   "ATAP (CP3880) placed in Sem 6 with 8 MC of other courses to allow graduation in Sem 7.",
+   "CS3103 placed in Sem 6 as it is only offered in Sem 1.",
+   "CS3282 requires CS3281; CS3281 placed in Sem 7 before CS3282.",
+   "CS3210 placed in Sem 7 to satisfy 'late as possible' wish."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"6\": [\"CS2102\", \"CS3103\", \"CS3227\", \"CS3282\"], \"7\": [\"CS4218\", \"CS3210\"]}, \"reasons\": [\"Completed prerequisites for all planned courses. CS3210 placed in Sem 7 to satisfy 'late as possible' wish. CS4218 in Sem 7 after CS3219 (completed) and CS3282 in Sem 6. ATAP (CP3880) not included as student did not explicitly request it in the plan constraints, only mentioned 'plan to do ATAP at some point' but the primary goal is graduating early with specific courses; however, rule 10 says 'Plan it only when the student says they will do ATAP'. The student said 'I plan to do ATAP at some point'. This is a statement of intent. I must include it. Let's re-evaluate. ATAP is 12 MC. It must be in a semester from current (6) to 8, but not the last used. If I put ATAP in 6, I can't take other courses? No, max 8 MC other courses. In sem 6, I have CS2102, CS3103, CS3227, CS3282. That's 16 MC. Too many for ATAP semester. In sem 7, I have CS4218, CS3210. That's 8 MC. If I add ATAP to sem 7, total other MC is 8. This fits the 'at most 8 MC' rule for ATAP semesters. But ATAP cannot be in the last semester used. If I use sem 7 as last, I can't put ATAP there. If I put ATAP in sem 6, I need to move courses. Sem 6: ATAP + max 8 MC. I need to fit CS2102, CS3103, CS3227, CS3282. That's 16 MC. I can only take 8 MC of other courses. So I must split them. Sem 6: ATAP + CS2102 + CS3103 (8 MC). Sem 7: CS3227 + CS3282 + CS4218 + CS3210 (16 MC). This works. Last semester is 7. ATAP is in 6. This satisfies 'graduate as early as possible' (last sem 7) and 'ATAP at some point'.\"]}}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS2102",
+      "CS3103",
+      "CS3227",
+      "CS3282"
+     ],
+     "7": [
+      "CS4218",
+      "CS3210"
+     ]
+    },
+    "reasons": [
+     "Completed prerequisites for all planned courses. CS3210 placed in Sem 7 to satisfy 'late as possible' wish. CS4218 in Sem 7 after CS3219 (completed) and CS3282 in Sem 6. ATAP (CP3880) not included as student did not explicitly request it in the plan constraints, only mentioned 'plan to do ATAP at some point' but the primary goal is graduating early with specific courses; however, rule 10 says 'Plan it only when the student says they will do ATAP'. The student said 'I plan to do ATAP at some point'. This is a statement of intent. I must include it. Let's re-evaluate. ATAP is 12 MC. It must be in a semester from current (6) to 8, but not the last used. If I put ATAP in 6, I can't take other courses? No, max 8 MC other courses. In sem 6, I have CS2102, CS3103, CS3227, CS3282. That's 16 MC. Too many for ATAP semester. In sem 7, I have CS4218, CS3210. That's 8 MC. If I add ATAP to sem 7, total other MC is 8. This fits the 'at most 8 MC' rule for ATAP semesters. But ATAP cannot be in the last semester used. If I use sem 7 as last, I can't put ATAP there. If I put ATAP in sem 6, I need to move courses. Sem 6: ATAP + max 8 MC. I need to fit CS2102, CS3103, CS3227, CS3282. That's 16 MC. I can only take 8 MC of other courses. So I must split them. Sem 6: ATAP + CS2102 + CS3103 (8 MC). Sem 7: CS3227 + CS3282 + CS4218 + CS3210 (16 MC). This works. Last semester is 7. ATAP is in 6. This satisfies 'graduate as early as possible' (last sem 7) and 'ATAP at some point'."
+    ]
+   },
+   "repair": "extra_text",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 14967,
+    "total_tokens": 15546,
+    "completion_tokens": 579,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 12.26,
+    "attempts": 1
+   },
+   "seconds": 12.26,
+   "violations": [
+    "R3 CS3103 not offered in Sem 2 (semester 6)",
+    "R4 CS3282 in semester 6: prerequisite not met (CS3281)",
+    "R11 ATAP asked for but not planned"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CP3880\",\n      \"CS2102\",\n      \"CS3103\"\n    ],\n    \"7\": [\n      \"CS3227\",\n      \"CS3281\",\n      \"CS3282\",\n      \"CS4218\",\n      \"CS3210\"\n    ]\n  },\n  \"reasons\": [\n    \"ATAP (CP3880) placed in Sem 6 with 8 MC of other courses to allow graduation in Sem 7.\",\n    \"CS3103 placed in Sem 6 as it is only offered in Sem 1.\",\n    \"CS3282 requires CS3281; CS3281 placed in Sem 7 before CS3282.\",\n    \"CS3210 placed in Sem 7 to satisfy 'late as possible' wish.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CP3880",
+      "CS2102",
+      "CS3103"
+     ],
+     "7": [
+      "CS3227",
+      "CS3281",
+      "CS3282",
+      "CS4218",
+      "CS3210"
+     ]
+    },
+    "reasons": [
+     "ATAP (CP3880) placed in Sem 6 with 8 MC of other courses to allow graduation in Sem 7.",
+     "CS3103 placed in Sem 6 as it is only offered in Sem 1.",
+     "CS3282 requires CS3281; CS3281 placed in Sem 7 before CS3282.",
+     "CS3210 placed in Sem 7 to satisfy 'late as possible' wish."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 15647,
+    "total_tokens": 15877,
+    "completion_tokens": 230,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.28,
+    "attempts": 1
+   },
+   "seconds": 4.28,
+   "violations": [
+    "R3 CS3103 not offered in Sem 2 (semester 6)",
+    "R3 CS3281 not offered in Sem 1 (semester 7)",
+    "R3 CS3282 not offered in Sem 1 (semester 7)",
+    "R4 CS3282 in semester 7: prerequisite not met (CS3281)",
+    "R10 CS3281 was added but no later planned course needs it"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CP3880\",\n      \"CS2102\",\n      \"CS3103\"\n    ],\n    \"7\": [\n      \"CS3227\",\n      \"CS3281\",\n      \"CS3282\",\n      \"CS4218\",\n      \"CS3210\"\n    ]\n  },\n  \"reasons\": [\n    \"ATAP (CP3880) placed in Sem 6 with 8 MC of other courses to allow graduation in Sem 7.\",\n    \"CS3103 placed in Sem 6 as it is only offered in Sem 1.\",\n    \"CS3282 requires CS3281; CS3281 placed in Sem 7 before CS3282.\",\n    \"CS3210 placed in Sem 7 to satisfy 'late as possible' wish.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CP3880",
+      "CS2102",
+      "CS3103"
+     ],
+     "7": [
+      "CS3227",
+      "CS3281",
+      "CS3282",
+      "CS4218",
+      "CS3210"
+     ]
+    },
+    "reasons": [
+     "ATAP (CP3880) placed in Sem 6 with 8 MC of other courses to allow graduation in Sem 7.",
+     "CS3103 placed in Sem 6 as it is only offered in Sem 1.",
+     "CS3282 requires CS3281; CS3281 placed in Sem 7 before CS3282.",
+     "CS3210 placed in Sem 7 to satisfy 'late as possible' wish."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 15345,
+    "total_tokens": 15575,
+    "completion_tokens": 230,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 3.95,
+    "attempts": 1
+   },
+   "seconds": 3.95,
+   "violations": [
+    "R3 CS3103 not offered in Sem 2 (semester 6)",
+    "R3 CS3281 not offered in Sem 1 (semester 7)",
+    "R3 CS3282 not offered in Sem 1 (semester 7)",
+    "R4 CS3282 in semester 7: prerequisite not met (CS3281)",
+    "R10 CS3281 was added but no later planned course needs it"
+   ]
+  }
+ ]
+}

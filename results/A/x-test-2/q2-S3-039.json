@@ -1,0 +1,50 @@
+{
+ "id": "q2-S3-039",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 93.22,
+ "usage": {
+  "prompt_tokens": 8035,
+  "total_tokens": 15351,
+  "completion_tokens": 7316,
+  "prompt_tokens_details": {
+   "cached_tokens": 7808,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 7149
+  },
+  "finish_reason": "stop",
+  "request_seconds": 93.22,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS2109S\", \"CS2105\", \"CS3210\", \"CS3219\", \"ST2334\"], \"6\": [\"CS2106\", \"CS2102\", \"CS3230\"]}, \"reasons\": [\"Semester 5 is NOC with 0 MC; all eight required courses are placed in semesters 4 and 6.\", \"Semester 4 has 5 modules and semester 6 has 3, meeting the minimum 3 modules; CS3219 is in semester 4 as early as possible.\", \"CS3210 precedes CS2102; CS2102 and CS2106 are both in semester 6 because CS2106 is fixed there and CS2102 cannot be earlier.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2109S",
+    "CS2105",
+    "CS3210",
+    "CS3219",
+    "ST2334"
+   ],
+   "6": [
+    "CS2106",
+    "CS2102",
+    "CS3230"
+   ]
+  },
+  "reasons": [
+   "Semester 5 is NOC with 0 MC; all eight required courses are placed in semesters 4 and 6.",
+   "Semester 4 has 5 modules and semester 6 has 3, meeting the minimum 3 modules; CS3219 is in semester 4 as early as possible.",
+   "CS3210 precedes CS2102; CS2102 and CS2106 are both in semester 6 because CS2106 is fixed there and CS2102 cannot be earlier."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

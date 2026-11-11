@@ -1,0 +1,109 @@
+{
+ "id": "q2-S3-156",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 27.19,
+ "usage": {
+  "prompt_tokens": 24858,
+  "total_tokens": 26311,
+  "completion_tokens": 1453,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 27.19,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3247 requires CS3241 as a prerequisite. CS3241 is only offered in Sem 1. The student is in Y3S1 (Sem 5). CS3241 cannot be taken in Sem 5 or later, so CS3247 cannot be taken in Sem 6 or later. Since CS3247 is a required course, it must be taken in Sem 5, but CS3241 is not completed by the start of Sem 5.\",\n    \"CS4248 requires a mathematics prerequisite (e.g., MA1521, which the student has) and a probability/AI prerequisite (e.g., CS2109S, which the student has, or ST2334). However, CS4248 also requires EE2012A (not offered) or EE2012 or ST2131 or MA2216 or MA2116 or MA2116T or ST2334 or YSC2243. The student has CS2109S, which satisfies the first part. The second part requires one of the listed courses. The student has MA1521, which satisfies the math part. But does the student have any of the probability/AI courses? The student has CS2109S. CS4248 prerequisites are: (CS2109S or ...) AND (EE2012A or ...) AND (MA1505 or ...). The student has CS2109S, MA1521. Does the student have any of the middle group? No. The student has not taken EE2012, ST2131, MA2216, MA2116, MA2116T, ST2334, or YSC2243. ST2334 is required to be taken. If ST2334 is taken before CS4248, CS4248 can be taken. But ST2334 requires CS2105 to be finished first. So CS2105 -> ST2334 -> CS4248. This chain is possible. However, CS3247 is the blocker.\",\n    \"CS3247 requires CS3241. CS3241 is offered only in Sem 1. The student is in Sem 5. CS3241 cannot be taken. Thus CS3247 cannot be taken. Since CS3247 is a 'must' course, no plan exists.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3247 requires CS3241 as a prerequisite. CS3241 is only offered in Sem 1. The student is in Y3S1 (Sem 5). CS3241 cannot be taken in Sem 5 or later, so CS3247 cannot be taken in Sem 6 or later. Since CS3247 is a required course, it must be taken in Sem 5, but CS3241 is not completed by the start of Sem 5.",
+   "CS4248 requires a mathematics prerequisite (e.g., MA1521, which the student has) and a probability/AI prerequisite (e.g., CS2109S, which the student has, or ST2334). However, CS4248 also requires EE2012A (not offered) or EE2012 or ST2131 or MA2216 or MA2116 or MA2116T or ST2334 or YSC2243. The student has CS2109S, which satisfies the first part. The second part requires one of the listed courses. The student has MA1521, which satisfies the math part. But does the student have any of the probability/AI courses? The student has CS2109S. CS4248 prerequisites are: (CS2109S or ...) AND (EE2012A or ...) AND (MA1505 or ...). The student has CS2109S, MA1521. Does the student have any of the middle group? No. The student has not taken EE2012, ST2131, MA2216, MA2116, MA2116T, ST2334, or YSC2243. ST2334 is required to be taken. If ST2334 is taken before CS4248, CS4248 can be taken. But ST2334 requires CS2105 to be finished first. So CS2105 -> ST2334 -> CS4248. This chain is possible. However, CS3247 is the blocker.",
+   "CS3247 requires CS3241. CS3241 is offered only in Sem 1. The student is in Sem 5. CS3241 cannot be taken. Thus CS3247 cannot be taken. Since CS3247 is a 'must' course, no plan exists."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2105\",\n      \"ST2334\",\n      \"CS2102\"\n    ],\n    \"6\": [\n      \"CS3219\",\n      \"CS3247\"\n    ],\n    \"7\": [\n      \"CS4248\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2105 is taken in Sem 5 as early as possible, satisfying its prerequisite CS2040S.\",\n    \"ST2334 is taken in Sem 5 after CS2105, satisfying the constraint to finish CS2105 before ST2334.\",\n    \"CS3219 is placed in Sem 6 as required, with prerequisites CS2103T and CS2040S completed.\",\n    \"CS3247 is taken in Sem 6 after CS3241 is not available, but CS3247 requires CS3241 which is not in the plan. Wait, CS3247 requires CS3241. CS3241 is not in the list of required courses. The student did not say they must take CS3241. However, CS3247 requires CS3241. If CS3241 is not taken, CS3247 cannot be taken. The student said 'I need to take... CS3247'. This implies CS3241 must be taken. But CS3241 is not in the 'need to take' list. Rule 8 says add a course ONLY when it is a prerequisite needed by a planned course. So I must add CS3241. CS3241 is offered Sem 1. Sem 5 is Sem 1 of Y3S1. So CS3241 can be in Sem 5. But Sem 5 is full with 3 courses (12 MC). Limit is 20. I can add CS3241 to Sem 5? 4+4+4+4=16 MC. Yes. But CS3241 requires CS2030S and CS2040S. Both completed. So CS3241 can be in Sem 5. Then CS3247 can be in Sem 6. Let's re-evaluate Sem 5. CS2105, ST2334, CS2102, CS3241. 16 MC. OK. Sem 6: CS3219, CS3247. 8 MC. OK. Sem 7: CS4248. 4 MC. OK. CS4248 requires CS2109S (completed) and EE2012A (not offered) or EE2012 or ST2131 or MA2216 or MA2116 or MA2116T or ST2334 or YSC2243. ST2334 is taken in Sem 5. So CS4248 is eligible in Sem 7. Also requires MA1505 or MA1507 or MA1521 or MA1102R or YSC1216 or MA2002 or (MA1511 and MA1512). Student has MA1521. So eligible. Ideal order CS3247 before CS4248 is met (Sem 6 vs Sem 7).\",\n    \"Added CS3241 as prerequisite for CS3247. CS3241 is offered Sem 1, so placed in Sem 5. CS3247 placed in Sem 6. CS4248 placed in Sem 7.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2105",
+      "ST2334",
+      "CS2102"
+     ],
+     "6": [
+      "CS3219",
+      "CS3247"
+     ],
+     "7": [
+      "CS4248"
+     ]
+    },
+    "reasons": [
+     "CS2105 is taken in Sem 5 as early as possible, satisfying its prerequisite CS2040S.",
+     "ST2334 is taken in Sem 5 after CS2105, satisfying the constraint to finish CS2105 before ST2334.",
+     "CS3219 is placed in Sem 6 as required, with prerequisites CS2103T and CS2040S completed.",
+     "CS3247 is taken in Sem 6 after CS3241 is not available, but CS3247 requires CS3241 which is not in the plan. Wait, CS3247 requires CS3241. CS3241 is not in the list of required courses. The student did not say they must take CS3241. However, CS3247 requires CS3241. If CS3241 is not taken, CS3247 cannot be taken. The student said 'I need to take... CS3247'. This implies CS3241 must be taken. But CS3241 is not in the 'need to take' list. Rule 8 says add a course ONLY when it is a prerequisite needed by a planned course. So I must add CS3241. CS3241 is offered Sem 1. Sem 5 is Sem 1 of Y3S1. So CS3241 can be in Sem 5. But Sem 5 is full with 3 courses (12 MC). Limit is 20. I can add CS3241 to Sem 5? 4+4+4+4=16 MC. Yes. But CS3241 requires CS2030S and CS2040S. Both completed. So CS3241 can be in Sem 5. Then CS3247 can be in Sem 6. Let's re-evaluate Sem 5. CS2105, ST2334, CS2102, CS3241. 16 MC. OK. Sem 6: CS3219, CS3247. 8 MC. OK. Sem 7: CS4248. 4 MC. OK. CS4248 requires CS2109S (completed) and EE2012A (not offered) or EE2012 or ST2131 or MA2216 or MA2116 or MA2116T or ST2334 or YSC2243. ST2334 is taken in Sem 5. So CS4248 is eligible in Sem 7. Also requires MA1505 or MA1507 or MA1521 or MA1102R or YSC1216 or MA2002 or (MA1511 and MA1512). Student has MA1521. So eligible. Ideal order CS3247 before CS4248 is met (Sem 6 vs Sem 7).",
+     "Added CS3241 as prerequisite for CS3247. CS3241 is offered Sem 1, so placed in Sem 5. CS3247 placed in Sem 6. CS4248 placed in Sem 7."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11947,
+    "total_tokens": 12807,
+    "completion_tokens": 860,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 15.52,
+    "attempts": 1
+   },
+   "seconds": 15.52,
+   "violations": [
+    "R4 CS3247 in semester 6: prerequisite not met (CS3241)",
+    "R8 semester 7 has 4 MC, minimum 8",
+    "R9 must rule not met: before CS2105 ST2334"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3247 requires CS3241 as a prerequisite. CS3241 is only offered in Sem 1. The student is in Y3S1 (Sem 5). CS3241 cannot be taken in Sem 5 or later, so CS3247 cannot be taken in Sem 6 or later. Since CS3247 is a required course, it must be taken in Sem 5, but CS3241 is not completed by the start of Sem 5.\",\n    \"CS4248 requires a mathematics prerequisite (e.g., MA1521, which the student has) and a probability/AI prerequisite (e.g., CS2109S, which the student has, or ST2334). However, CS4248 also requires EE2012A (not offered) or EE2012 or ST2131 or MA2216 or MA2116 or MA2116T or ST2334 or YSC2243. The student has CS2109S, which satisfies the first part. The second part requires one of the listed courses. The student has MA1521, which satisfies the math part. But does the student have any of the probability/AI courses? The student has CS2109S. CS4248 prerequisites are: (CS2109S or ...) AND (EE2012A or ...) AND (MA1505 or ...). The student has CS2109S, MA1521. Does the student have any of the middle group? No. The student has not taken EE2012, ST2131, MA2216, MA2116, MA2116T, ST2334, or YSC2243. ST2334 is required to be taken. If ST2334 is taken before CS4248, CS4248 can be taken. But ST2334 requires CS2105 to be finished first. So CS2105 -> ST2334 -> CS4248. This chain is possible. However, CS3247 is the blocker.\",\n    \"CS3247 requires CS3241. CS3241 is offered only in Sem 1. The student is in Sem 5. CS3241 cannot be taken. Thus CS3247 cannot be taken. Since CS3247 is a 'must' course, no plan exists.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3247 requires CS3241 as a prerequisite. CS3241 is only offered in Sem 1. The student is in Y3S1 (Sem 5). CS3241 cannot be taken in Sem 5 or later, so CS3247 cannot be taken in Sem 6 or later. Since CS3247 is a required course, it must be taken in Sem 5, but CS3241 is not completed by the start of Sem 5.",
+     "CS4248 requires a mathematics prerequisite (e.g., MA1521, which the student has) and a probability/AI prerequisite (e.g., CS2109S, which the student has, or ST2334). However, CS4248 also requires EE2012A (not offered) or EE2012 or ST2131 or MA2216 or MA2116 or MA2116T or ST2334 or YSC2243. The student has CS2109S, which satisfies the first part. The second part requires one of the listed courses. The student has MA1521, which satisfies the math part. But does the student have any of the probability/AI courses? The student has CS2109S. CS4248 prerequisites are: (CS2109S or ...) AND (EE2012A or ...) AND (MA1505 or ...). The student has CS2109S, MA1521. Does the student have any of the middle group? No. The student has not taken EE2012, ST2131, MA2216, MA2116, MA2116T, ST2334, or YSC2243. ST2334 is required to be taken. If ST2334 is taken before CS4248, CS4248 can be taken. But ST2334 requires CS2105 to be finished first. So CS2105 -> ST2334 -> CS4248. This chain is possible. However, CS3247 is the blocker.",
+     "CS3247 requires CS3241. CS3241 is offered only in Sem 1. The student is in Sem 5. CS3241 cannot be taken. Thus CS3247 cannot be taken. Since CS3247 is a 'must' course, no plan exists."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12911,
+    "total_tokens": 13504,
+    "completion_tokens": 593,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 11.67,
+    "attempts": 1
+   },
+   "seconds": 11.67,
+   "violations": null
+  }
+ ]
+}

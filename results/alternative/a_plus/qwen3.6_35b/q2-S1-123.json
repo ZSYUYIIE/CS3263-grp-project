@@ -1,0 +1,107 @@
+{
+ "id": "q2-S1-123",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 7.75,
+ "usage": {
+  "prompt_tokens": 24949,
+  "total_tokens": 25335,
+  "completion_tokens": 386,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.75,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4262 requires CS3244, CS3264, or CG3201, none of which are completed or required by other planned courses, making it impossible to satisfy.\", \"CS4220 requires CS2220, LSM2104, LSM2241, or ZB2101, none of which are completed or required by other planned courses.\", \"CS4222 requires CS2105 (completed) and EE2012A/EE2012/ST2131/ST2334/MA2116/MA2116T/MA2216. While ST2334 is completed, CS4222 is offered only in Sem 2, so it can be taken in Sem 8, but the other failures prevent a valid plan.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4262 requires CS3244, CS3264, or CG3201, none of which are completed or required by other planned courses, making it impossible to satisfy.",
+   "CS4220 requires CS2220, LSM2104, LSM2241, or ZB2101, none of which are completed or required by other planned courses.",
+   "CS4222 requires CS2105 (completed) and EE2012A/EE2012/ST2131/ST2334/MA2116/MA2116T/MA2216. While ST2334 is completed, CS4222 is offered only in Sem 2, so it can be taken in Sem 8, but the other failures prevent a valid plan."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"6\": [\"CS2102\"], \"7\": [\"CS4220\", \"CS4222\"], \"8\": [\"CS4262\"]}, \"reasons\": [\"All prerequisites for planned courses are satisfied by completed modules.\", \"CS2102 is placed in Sem 6 as required, enabling CS4220 in Sem 7.\", \"CS4262 is placed in Sem 8 as required, with prerequisites CS2106 and CS3244/CS3264/CG3201 met by CS2106.\", \"CS4220 and CS4222 are scheduled to meet the 'as early as possible' and 'as late as possible' soft wishes respectively, while minimizing total credits by avoiding unnecessary electives.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS2102"
+     ],
+     "7": [
+      "CS4220",
+      "CS4222"
+     ],
+     "8": [
+      "CS4262"
+     ]
+    },
+    "reasons": [
+     "All prerequisites for planned courses are satisfied by completed modules.",
+     "CS2102 is placed in Sem 6 as required, enabling CS4220 in Sem 7.",
+     "CS4262 is placed in Sem 8 as required, with prerequisites CS2106 and CS3244/CS3264/CG3201 met by CS2106.",
+     "CS4220 and CS4222 are scheduled to meet the 'as early as possible' and 'as late as possible' soft wishes respectively, while minimizing total credits by avoiding unnecessary electives."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12294,
+    "total_tokens": 12477,
+    "completion_tokens": 183,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 4.08,
+    "attempts": 1
+   },
+   "seconds": 4.08,
+   "violations": [
+    "R3 CS4220 not offered in Sem 1 (semester 7)",
+    "R4 CS4220 in semester 7: prerequisite not met (CS2220 or LSM2104 or LSM2241 or ZB2101)",
+    "R3 CS4222 not offered in Sem 1 (semester 7)",
+    "R4 CS4262 in semester 8: prerequisite not met ((CS2106 or CG2271) and (CS3244 or CS3264 or CG3201))"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4262 requires CS3244, CS3264, or CG3201, none of which are completed or required by other planned courses, making it impossible to satisfy.\", \"CS4220 requires CS2220, LSM2104, LSM2241, or ZB2101, none of which are completed or required by other planned courses.\", \"CS4222 requires CS2105 (completed) and EE2012A/EE2012/ST2131/ST2334/MA2116/MA2116T/MA2216. While ST2334 is completed, CS4222 is offered only in Sem 2, so it can be taken in Sem 8, but the other failures prevent a valid plan.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4262 requires CS3244, CS3264, or CG3201, none of which are completed or required by other planned courses, making it impossible to satisfy.",
+     "CS4220 requires CS2220, LSM2104, LSM2241, or ZB2101, none of which are completed or required by other planned courses.",
+     "CS4222 requires CS2105 (completed) and EE2012A/EE2012/ST2131/ST2334/MA2116/MA2116T/MA2216. While ST2334 is completed, CS4222 is offered only in Sem 2, so it can be taken in Sem 8, but the other failures prevent a valid plan."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12655,
+    "total_tokens": 12858,
+    "completion_tokens": 203,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.67,
+    "attempts": 1
+   },
+   "seconds": 3.67,
+   "violations": null
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+{
+ "id": "q2-S6-051",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 8.02,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3081,
+  "total_tokens": 3340,
+  "completion_tokens": 259,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 8.02,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 9,\n\"programme\": \"BComp CS Hons\",\n\"completed\": [\n\"CS2100\",\n\"IS1108\",\n\"CS2040S\",\n\"CS3230\",\n\"ES2660\",\n\"CS2102\",\n\"CS1101S\",\n\"ST2334\",\n\"CS3227\",\n\"CS2030S\",\n\"CS2105\",\n\"CS1231S\",\n\"CS3219\",\n\"CS4226\",\n\"CS4231\",\n\"CS2103T\",\n\"MA1522\",\n\"CS3213\",\n\"CS2109S\",\n\"MA1521\",\n\"CS2106\"\n],\n\"must_take\": [\n\"CS2101\",\n\"CS4225\",\n\"CS4248\",\n\"CS4215\"\n],\n\"mc_max\": 16\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 9,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "CS2100",
+   "IS1108",
+   "CS2040S",
+   "CS3230",
+   "ES2660",
+   "CS2102",
+   "CS1101S",
+   "ST2334",
+   "CS3227",
+   "CS2030S",
+   "CS2105",
+   "CS1231S",
+   "CS3219",
+   "CS4226",
+   "CS4231",
+   "CS2103T",
+   "MA1522",
+   "CS3213",
+   "CS2109S",
+   "MA1521",
+   "CS2106"
+  ],
+  "must_take": [
+   "CS2101",
+   "CS4225",
+   "CS4248",
+   "CS4215"
+  ],
+  "mc_max": 16
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "OUT_OF_SCOPE",
+  "reasons": [
+   "current_sem is 9, outside the modelled semesters 1 to 8"
+  ],
+  "message": "I can only plan for BComp (CS) Hons single-major students under AY2026/2027 rules, and this request is outside that (current_sem is 9, outside the modelled semesters 1 to 8). Course rules differ by programme and aren't in my data for your case, so please check with your faculty or academic advisor."
+ }
+}

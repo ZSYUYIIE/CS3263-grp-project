@@ -1,0 +1,58 @@
+{
+ "id": "q2-S4-197",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 79.4,
+ "usage": {
+  "prompt_tokens": 10081,
+  "total_tokens": 17737,
+  "completion_tokens": 7656,
+  "prompt_tokens_details": {
+   "cached_tokens": 9728,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 7501
+  },
+  "finish_reason": "stop",
+  "request_seconds": 79.4,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"4\":[\"CS2106\"],\"5\":[\"CS2220\",\"CS3241\"],\"6\":[\"CS4220\",\"CS3247\",\"CS2105\"],\"7\":[\"CS3219\",\"CS2102\",\"CS4350\",\"CS3230\"]},\"reasons\":[\"Earliest finish is semester 7 because CS4350 requires CS3247, which requires CS3241.\",\"CS2220, CS3241 and CS3247 are added only as prerequisites for required CS4220 and CS4350.\",\"CS3219 and CS2102 are together in semester 7; CS2105 precedes CS3230; CS2106 is not with CS3230.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2106"
+   ],
+   "5": [
+    "CS2220",
+    "CS3241"
+   ],
+   "6": [
+    "CS4220",
+    "CS3247",
+    "CS2105"
+   ],
+   "7": [
+    "CS3219",
+    "CS2102",
+    "CS4350",
+    "CS3230"
+   ]
+  },
+  "reasons": [
+   "Earliest finish is semester 7 because CS4350 requires CS3247, which requires CS3241.",
+   "CS2220, CS3241 and CS3247 are added only as prerequisites for required CS4220 and CS4350.",
+   "CS3219 and CS2102 are together in semester 7; CS2105 precedes CS3230; CS2106 is not with CS3230."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,59 @@
+{
+ "id": "q2-S1-151",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 77.78,
+ "usage": {
+  "prompt_tokens": 8518,
+  "total_tokens": 15484,
+  "completion_tokens": 6966,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 6912
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 6790
+  },
+  "finish_reason": "stop",
+  "request_seconds": 77.78,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS2102\",\"CS3219\",\"ST2334\"],\"6\":[\"CS2111\",\"CS4218\",\"CS2105\"],\"7\":[\"CS3249\",\"CS4226\",\"CS4211\"],\"8\":[\"CS4230\",\"ES2660\"]},\"reasons\":[\"CS2111 is added in semester 6 because it is the prerequisite for CS3249 in semester 7.\",\"CS4218 is placed as early as possible in semester 6; CS2105 is as late as possible in semester 6 while still allowing CS4226 in semester 7.\",\"CS4230 is placed as late as possible in semester 8; CS4218 before CS2105 is not possible because CS2105 must precede CS4226 in semester 7.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS3219",
+    "ST2334"
+   ],
+   "6": [
+    "CS2111",
+    "CS4218",
+    "CS2105"
+   ],
+   "7": [
+    "CS3249",
+    "CS4226",
+    "CS4211"
+   ],
+   "8": [
+    "CS4230",
+    "ES2660"
+   ]
+  },
+  "reasons": [
+   "CS2111 is added in semester 6 because it is the prerequisite for CS3249 in semester 7.",
+   "CS4218 is placed as early as possible in semester 6; CS2105 is as late as possible in semester 6 while still allowing CS4226 in semester 7.",
+   "CS4230 is placed as late as possible in semester 8; CS4218 before CS2105 is not possible because CS2105 must precede CS4226 in semester 7."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

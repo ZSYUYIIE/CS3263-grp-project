@@ -1,0 +1,91 @@
+{
+ "id": "q2-S4-116",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.65,
+ "solver_seconds": 0.003,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3163,
+  "total_tokens": 3629,
+  "completion_tokens": 466,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 6.64,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"current_sem\": 5,\n  \"completed\": [\n    \"CS2109S\",\n    \"MA1521\",\n    \"MA1522\",\n    \"CS2103T\",\n    \"CS2106\",\n    \"CS3230\",\n    \"CS3233\",\n    \"CS1231S\",\n    \"CS2101\",\n    \"CS1101S\",\n    \"IS1108\",\n    \"CS2100\",\n    \"CS2040S\",\n    \"ES2660\",\n    \"CS2030S\"\n  ],\n  \"must_take\": [\n    \"CS3247\",\n    \"CS2105\",\n    \"CS2102\",\n    \"CS4211\",\n    \"CS4261\",\n    \"CS4220\"\n  ],\n  \"mc_max\": 16,\n  \"sem_caps\": {\n    \"5\": 0,\n    \"7\": 0\n  },\n  \"objective\": \"earliest_graduation\",\n  \"early\": [\n    \"CS3247\"\n  ],\n  \"late\": [\n    \"CS2102\"\n  ],\n  \"rules\": [\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS2102\",\n      \"b\": \"CS2105\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS2102\",\n      \"b\": \"CS4220\",\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"same_sem\",\n      \"a\": \"CS4261\",\n      \"b\": \"CS2102\",\n      \"strength\": \"prefer\"\n    }\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "completed": [
+   "CS2109S",
+   "MA1521",
+   "MA1522",
+   "CS2103T",
+   "CS2106",
+   "CS3230",
+   "CS3233",
+   "CS1231S",
+   "CS2101",
+   "CS1101S",
+   "IS1108",
+   "CS2100",
+   "CS2040S",
+   "ES2660",
+   "CS2030S"
+  ],
+  "must_take": [
+   "CS3247",
+   "CS2105",
+   "CS2102",
+   "CS4211",
+   "CS4261",
+   "CS4220"
+  ],
+  "mc_max": 16,
+  "sem_caps": {
+   "5": 0,
+   "7": 0
+  },
+  "objective": "earliest_graduation",
+  "early": [
+   "CS3247"
+  ],
+  "late": [
+   "CS2102"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS2102",
+    "b": "CS2105",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2102",
+    "b": "CS4220",
+    "strength": "prefer"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4261",
+    "b": "CS2102",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4211 cannot be placed in any remaining semester (offered in terms [1]; semesters left [6, 8])",
+   "CS4261 cannot be placed in any remaining semester (offered in terms [1]; semesters left [6, 8])"
+  ]
+ }
+}

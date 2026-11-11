@@ -1,0 +1,26 @@
+{
+ "id": "q2-S5-017",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "not a plan",
+ "seconds": 28.86,
+ "usage": {
+  "prompt_tokens": 13854,
+  "total_tokens": 15532,
+  "completion_tokens": 1678,
+  "finish_reason": "stop",
+  "request_seconds": 28.86,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4222 requires EE2012A or EE2012 or ST2334 or ESP2107. The student has completed ST2334, satisfying this prerequisite. However, CS4222 also requires (EE2012A or EE2012 or ST2131 or ST2334 or MA2116 or MA2116T or MA2216). The student has completed ST2334, so this part is satisfied. Wait, let's re-read CS4222 prereq: (EE3204 or EE3204E or EE4204 or CS2105) AND (EE2012A or EE2012 or ST2131 or ST2334 or MA2116 or MA2116T or MA2216). Student has CS2105 and ST2334. So CS4222 is eligible. CS3235 requires CS2105, CS2106, CS2107. Student has CS2105, CS2106. Does student have CS2107? No. CS2107 has no prereqs. So CS2107 must be taken. CS3235 also requires CS2107. CS4218 requires CS3213 or CS3219. Student has CS3219. So CS4218 is eligible. CS3211 requires CS2106 or CG2271. Student has CS2106. So CS3211 is eligible. CS4231 requires CS3210 or CS3230. Student has both. So CS4231 is eligible. CS4243 requires many math prereqs. Student has MA1521, MA1522. CS4243 prereq: (YSC2232 or MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522) AND (ST1131 or ...) AND (CS2030 or ...) AND (YSC2229 or CS2040 or ...). Student has MA1522, CS2030S, CS2040S. Student needs ST1131 or similar. Student has not completed ST1131, ST1232, ST2131, ST2334, MA2116, MA2116T, MA2216, EE2012A, EE2012, ST2334, YSC2243. Student has ST2334. So CS4243 is eligible. ES2660 has no prereqs. CS2102 requires (CS1231 or ...) AND (CS2030S or ...). Student has CS1231S and CS2030S. So CS2102 is eligible. CS2107 has no prereqs. The constraint is MC limit 16. Sem 6 (Y3S2) is current. Sem 7 (Y4S1) is next. Sem 8 (Y4S2) is last. CS2102 must be in Sem 7. CS4222 as early as possible. CS4222 can be Sem 6. CS3211 can be Sem 6. CS4218 can be Sem 6. CS4231 can be Sem 6. CS4243 can be Sem 6. CS3235 needs CS2107. CS2107 can be Sem 6. If CS2107 is Sem 6, CS3235 can be Sem 7 or 8. CS4222 and CS4231 not same semester. CS3211 and CS4218 prefer different semesters. ES2660 before CS2102 (Sem 7). So ES2660 in Sem 6. Let's try Sem 6: CS4222 (4), CS3211 (4), CS4218 (4), CS4231 (4), CS4243 (4), CS2107 (4), ES2660 (4). Total 28 MC. Too high. Limit 16. Must spread. CS2102 in Sem 7. ES2660 in Sem 6. CS4222 in Sem 6? If CS4222 in Sem 6, CS4231 in Sem 7 or 8. CS3211 in Sem 6 or 7. CS4218 in Sem 6 or 7. CS3235 in Sem 7 or 8 (needs CS2107). CS2107 in Sem 6 or 7. If CS2107 in Sem 6, CS3235 in Sem 7. Sem 6: ES2660 (4), CS4222 (4), CS3211 (4), CS4218 (4), CS2107 (4). Total 20. Over 16. Try fewer in Sem 6. CS4222 (4), ES2660 (4), CS2107 (4). Total 12. OK. Sem 7: CS2102 (4, mandatory), CS3235 (4, needs CS2107 done), CS4231 (4, not with CS4222), CS3211 (4), CS4218 (4). Total 20. Over 16. Try moving CS4231 to Sem 8. Sem 7: CS2102 (4), CS3235 (4), CS3211 (4), CS4218 (4). Total 16. OK. Sem 8: CS4231 (4). OK. CS3211 and CS4218 in same semester (Sem 7). Student prefers different. Can we move one? CS3211 to Sem 6? Sem 6: CS4222 (4), ES2660 (4), CS2107 (4), CS3211 (4). Total 16. OK. Sem 7: CS2102 (4), CS3235 (4), CS4218 (4). Total 12. OK. Sem 8: CS4231 (4). OK. This works. CS4222 in Sem 6 (earliest). CS3211 in Sem 6, CS4218 in Sem 7 (different). ES2660 in Sem 6 (before CS2102 Sem 7). CS2102 in Sem 7. CS3235 in Sem 7 (after CS2107 Sem 6). CS4231 in Sem 8 (not with CS4222 Sem 6). All constraints met. MC limits 16, 12, 4. All <= 16. Fewest total credits? All modules taken once. Yes. Status PLAN.)",
+ "answer": {
+  "status": "NO_PLAN"
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

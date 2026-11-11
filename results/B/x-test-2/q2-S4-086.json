@@ -1,0 +1,77 @@
+{
+ "id": "q2-S4-086",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 6.48,
+ "solver_seconds": 0.105,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2802,
+  "total_tokens": 3563,
+  "completion_tokens": 761,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 613
+  },
+  "finish_reason": "stop",
+  "request_seconds": 6.37,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":2,\"completed\":[\"CS1101S\",\"MA1521\",\"ES2660\",\"CS1231S\"],\"must_take\":[\"CS3227\",\"CS2102\",\"CS3244\",\"MA1522\",\"CS3264\",\"CS4236\",\"CS2103T\",\"ST2334\"],\"sem_caps\":{\"3\":0},\"early\":[\"ST2334\",\"CS2103T\"],\"rules\":[{\"type\":\"same_sem\",\"a\":\"CS3227\",\"b\":\"ST2334\",\"strength\":\"must\"},{\"type\":\"same_sem\",\"a\":\"CS2102\",\"b\":\"ST2334\",\"strength\":\"must\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 2,
+  "completed": [
+   "CS1101S",
+   "MA1521",
+   "ES2660",
+   "CS1231S"
+  ],
+  "must_take": [
+   "CS3227",
+   "CS2102",
+   "CS3244",
+   "MA1522",
+   "CS3264",
+   "CS4236",
+   "CS2103T",
+   "ST2334"
+  ],
+  "sem_caps": {
+   "3": 0
+  },
+  "early": [
+   "ST2334",
+   "CS2103T"
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS3227",
+    "b": "ST2334",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2102",
+    "b": "ST2334",
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the course exclusions (courses that cannot be taken together)"
+  ]
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "id": "q2-S3-237",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 6.46,
+ "usage": {
+  "prompt_tokens": 11564,
+  "total_tokens": 11854,
+  "completion_tokens": 290,
+  "finish_reason": "stop",
+  "request_seconds": 6.46,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS2103T\",\n      \"CS2105\"\n    ],\n    \"4\": [\n      \"CS3219\",\n      \"CS3230\",\n      \"CS3281\"\n    ],\n    \"5\": [\n      \"CS2102\",\n      \"CS3213\"\n    ],\n    \"6\": [\n      \"CS4218\",\n      \"CS4221\"\n    ],\n    \"7\": [\n      \"CS4243\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2100 is taken in Sem 3 to satisfy the prerequisite for CS3281.\",\n    \"CS3219 is taken in Sem 4 to satisfy the prerequisite for CS2102 in Sem 5.\",\n    \"CS3281 is placed in Sem 4 to allow CS2103T (Sem 3) and CS2100 (Sem 3) prerequisites to be met, while keeping CS2103T as late as possible relative to its prerequisites.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS2103T",
+    "CS2105"
+   ],
+   "4": [
+    "CS3219",
+    "CS3230",
+    "CS3281"
+   ],
+   "5": [
+    "CS2102",
+    "CS3213"
+   ],
+   "6": [
+    "CS4218",
+    "CS4221"
+   ],
+   "7": [
+    "CS4243"
+   ]
+  },
+  "reasons": [
+   "CS2100 is taken in Sem 3 to satisfy the prerequisite for CS3281.",
+   "CS3219 is taken in Sem 4 to satisfy the prerequisite for CS2102 in Sem 5.",
+   "CS3281 is placed in Sem 4 to allow CS2103T (Sem 3) and CS2100 (Sem 3) prerequisites to be met, while keeping CS2103T as late as possible relative to its prerequisites."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

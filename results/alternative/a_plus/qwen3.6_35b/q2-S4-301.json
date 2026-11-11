@@ -1,0 +1,142 @@
+{
+ "id": "q2-S4-301",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "valid",
+ "seconds": 13.89,
+ "usage": {
+  "prompt_tokens": 20295,
+  "total_tokens": 20980,
+  "completion_tokens": 685,
+  "finish_reason": "stop",
+  "request_seconds": 13.89,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2103T\",\n      \"CS3230\"\n    ],\n    \"4\": [\n      \"CS2105\",\n      \"CS2101\"\n    ],\n    \"5\": [\n      \"CS3103\",\n      \"CS3219\"\n    ],\n    \"6\": [\n      \"CS4231\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3103 is offered only in Sem 1, so it must be in an odd semester (5). CS2105 is a prerequisite for CS3103, so CS2105 must be in Sem 3 or 4. Placing CS2105 in Sem 4 allows CS3103 in Sem 5.\",\n    \"CS4231 is offered only in Sem 2, so it must be in an even semester (6). Its prerequisite is CS3210 or CS3230. CS3230 is planned in Sem 3, satisfying this.\",\n    \"CS3219 requires CS2103T. CS2103T is planned in Sem 3. CS3219 is offered in both semesters, so it can be in Sem 5. CS2101 has no prerequisites and is offered in both semesters, placed in Sem 4.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2103T",
+    "CS3230"
+   ],
+   "4": [
+    "CS2105",
+    "CS2101"
+   ],
+   "5": [
+    "CS3103",
+    "CS3219"
+   ],
+   "6": [
+    "CS4231"
+   ]
+  },
+  "reasons": [
+   "CS3103 is offered only in Sem 1, so it must be in an odd semester (5). CS2105 is a prerequisite for CS3103, so CS2105 must be in Sem 3 or 4. Placing CS2105 in Sem 4 allows CS3103 in Sem 5.",
+   "CS4231 is offered only in Sem 2, so it must be in an even semester (6). Its prerequisite is CS3210 or CS3230. CS3230 is planned in Sem 3, satisfying this.",
+   "CS3219 requires CS2103T. CS2103T is planned in Sem 3. CS3219 is offered in both semesters, so it can be in Sem 5. CS2101 has no prerequisites and is offered in both semesters, placed in Sem 4."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2103T\",\n      \"CS3230\"\n    ],\n    \"4\": [\n      \"CS2105\",\n      \"CS3103\",\n      \"CS3219\"\n    ],\n    \"5\": [\n      \"CS4231\",\n      \"CS2101\"\n    ]\n  },\n  \"reasons\": [\n    \"All required courses are planned in semesters 3-5, leaving semester 8 for leave.\",\n    \"Prerequisites are satisfied: CS2103T requires CS2030S/CS2040S (completed); CS3230 requires CS2040S/CS1231S (completed); CS2105 requires CS2040S (completed); CS3103 requires CS2105 (planned in sem 4); CS3219 requires CS2103T (planned in sem 3); CS4231 requires CS3210 or CS3230 (CS3230 planned in sem 3).\",\n    \"Soft wishes met: CS3230 and CS2103T taken as early as possible (Sem 3); CS3219 taken as late as possible (Sem 4, before CS4231 in Sem 5); fewest semesters used (3).\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2103T",
+      "CS3230"
+     ],
+     "4": [
+      "CS2105",
+      "CS3103",
+      "CS3219"
+     ],
+     "5": [
+      "CS4231",
+      "CS2101"
+     ]
+    },
+    "reasons": [
+     "All required courses are planned in semesters 3-5, leaving semester 8 for leave.",
+     "Prerequisites are satisfied: CS2103T requires CS2030S/CS2040S (completed); CS3230 requires CS2040S/CS1231S (completed); CS2105 requires CS2040S (completed); CS3103 requires CS2105 (planned in sem 4); CS3219 requires CS2103T (planned in sem 3); CS4231 requires CS3210 or CS3230 (CS3230 planned in sem 3).",
+     "Soft wishes met: CS3230 and CS2103T taken as early as possible (Sem 3); CS3219 taken as late as possible (Sem 4, before CS4231 in Sem 5); fewest semesters used (3)."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9911,
+    "total_tokens": 10256,
+    "completion_tokens": 345,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 7.86,
+    "attempts": 1
+   },
+   "seconds": 7.86,
+   "violations": [
+    "R3 CS3103 not offered in Sem 2 (semester 4)",
+    "R4 CS3103 in semester 4: prerequisite not met (CS2105 or EE3204 or EE3204E or EE4204)",
+    "R3 CS4231 not offered in Sem 1 (semester 5)"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2103T\",\n      \"CS3230\"\n    ],\n    \"4\": [\n      \"CS2105\",\n      \"CS2101\"\n    ],\n    \"5\": [\n      \"CS3103\",\n      \"CS3219\"\n    ],\n    \"6\": [\n      \"CS4231\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3103 is offered only in Sem 1, so it must be in an odd semester (5). CS2105 is a prerequisite for CS3103, so CS2105 must be in Sem 3 or 4. Placing CS2105 in Sem 4 allows CS3103 in Sem 5.\",\n    \"CS4231 is offered only in Sem 2, so it must be in an even semester (6). Its prerequisite is CS3210 or CS3230. CS3230 is planned in Sem 3, satisfying this.\",\n    \"CS3219 requires CS2103T. CS2103T is planned in Sem 3. CS3219 is offered in both semesters, so it can be in Sem 5. CS2101 has no prerequisites and is offered in both semesters, placed in Sem 4.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2103T",
+      "CS3230"
+     ],
+     "4": [
+      "CS2105",
+      "CS2101"
+     ],
+     "5": [
+      "CS3103",
+      "CS3219"
+     ],
+     "6": [
+      "CS4231"
+     ]
+    },
+    "reasons": [
+     "CS3103 is offered only in Sem 1, so it must be in an odd semester (5). CS2105 is a prerequisite for CS3103, so CS2105 must be in Sem 3 or 4. Placing CS2105 in Sem 4 allows CS3103 in Sem 5.",
+     "CS4231 is offered only in Sem 2, so it must be in an even semester (6). Its prerequisite is CS3210 or CS3230. CS3230 is planned in Sem 3, satisfying this.",
+     "CS3219 requires CS2103T. CS2103T is planned in Sem 3. CS3219 is offered in both semesters, so it can be in Sem 5. CS2101 has no prerequisites and is offered in both semesters, placed in Sem 4."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10384,
+    "total_tokens": 10724,
+    "completion_tokens": 340,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 6.03,
+    "attempts": 1
+   },
+   "seconds": 6.03,
+   "violations": []
+  }
+ ]
+}

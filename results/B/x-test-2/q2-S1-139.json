@@ -1,0 +1,137 @@
+{
+ "id": "q2-S1-139",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 11.26,
+ "solver_seconds": 0.015,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2864,
+  "total_tokens": 3956,
+  "completion_tokens": 1092,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 848
+  },
+  "finish_reason": "stop",
+  "request_seconds": 11.24,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":6,\"completed\":[\"CS2106\",\"ES2660\",\"CS2030S\",\"MA1521\",\"CS1101S\",\"CS3227\",\"ST2334\",\"CS2101\",\"CS2103T\",\"CS2040S\",\"CS2109S\",\"CS3230\",\"IS1108\",\"CS3263\",\"CS2100\",\"CS1231S\",\"MA1522\",\"CS3219\"],\"must_take\":[\"CS3282\",\"CS4247\",\"CS3103\",\"CS4218\",\"CS4225\",\"CS4246\",\"CS2102\",\"CS2105\"],\"early\":[\"CS2105\",\"CS3103\"],\"late\":[\"CS4247\"],\"rules\":[{\"type\":\"same_sem\",\"a\":\"CS4247\",\"b\":\"CS4246\",\"strength\":\"must\"},{\"type\":\"apart\",\"a\":\"CS3282\",\"b\":\"CS3103\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS4218\",\"sem\":7,\"strength\":\"must\"}],\"unsupported\":[\"take modules with friend where possible\",\"no semester much heavier than another\"]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 6,
+  "completed": [
+   "CS2106",
+   "ES2660",
+   "CS2030S",
+   "MA1521",
+   "CS1101S",
+   "CS3227",
+   "ST2334",
+   "CS2101",
+   "CS2103T",
+   "CS2040S",
+   "CS2109S",
+   "CS3230",
+   "IS1108",
+   "CS3263",
+   "CS2100",
+   "CS1231S",
+   "MA1522",
+   "CS3219"
+  ],
+  "must_take": [
+   "CS3282",
+   "CS4247",
+   "CS3103",
+   "CS4218",
+   "CS4225",
+   "CS4246",
+   "CS2102",
+   "CS2105"
+  ],
+  "early": [
+   "CS2105",
+   "CS3103"
+  ],
+  "late": [
+   "CS4247"
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS4247",
+    "b": "CS4246",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3282",
+    "b": "CS3103",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4218",
+    "sem": 7,
+    "strength": "must"
+   }
+  ],
+  "unsupported": [
+   "take modules with friend where possible",
+   "no semester much heavier than another"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 8,
+  "plan": {
+   "6": [
+    "CS2102",
+    "CS2105",
+    "CS3281"
+   ],
+   "7": [
+    "CS3103",
+    "CS3241",
+    "CS4218"
+   ],
+   "8": [
+    "CS3282",
+    "CS4225",
+    "CS4246",
+    "CS4247"
+   ]
+  },
+  "mc_per_semester": {
+   "6": 12,
+   "7": 12,
+   "8": 16
+  },
+  "preferences_met": [
+   "CS2105 as early as possible",
+   "CS3103 as early as possible",
+   "CS4247 as late as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS3241",
+   "CS3281"
+  ],
+  "not_applied": [
+   "take modules with friend where possible",
+   "no semester much heavier than another"
+  ]
+ }
+}

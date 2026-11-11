@@ -1,0 +1,56 @@
+{
+ "id": "q2-S3-269",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 2,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 50.79,
+ "usage": {
+  "prompt_tokens": 7244,
+  "total_tokens": 12109,
+  "completion_tokens": 4865,
+  "prompt_tokens_details": {
+   "cached_tokens": 7040,
+   "created_cache_tokens": 128
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4734
+  },
+  "finish_reason": "stop",
+  "request_seconds": 50.79,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"4\":[\"CS2105\",\"CS2102\",\"CS3230\"],\"5\":[\"CS2109S\",\"CS3103\"],\"6\":[\"ST2334\",\"CS3234\"],\"7\":[\"CS4226\"]},\"reasons\":[\"All must-take courses are scheduled within semesters 4-7 with prerequisites satisfied.\",\"CS2109S is in semester 5 and precedes CS3234; CS3230 is before CS3234.\",\"ST2334 is in semester 6 and CS4226 in semester 7, the latest feasible placements.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2105",
+    "CS2102",
+    "CS3230"
+   ],
+   "5": [
+    "CS2109S",
+    "CS3103"
+   ],
+   "6": [
+    "ST2334",
+    "CS3234"
+   ],
+   "7": [
+    "CS4226"
+   ]
+  },
+  "reasons": [
+   "All must-take courses are scheduled within semesters 4-7 with prerequisites satisfied.",
+   "CS2109S is in semester 5 and precedes CS3234; CS3230 is before CS3234.",
+   "ST2334 is in semester 6 and CS4226 in semester 7, the latest feasible placements."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

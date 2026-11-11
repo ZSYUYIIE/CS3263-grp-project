@@ -1,0 +1,88 @@
+{
+ "id": "q2-S4-229",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.93,
+ "solver_seconds": 0.295,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3064,
+  "total_tokens": 3427,
+  "completion_tokens": 363,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 6.63,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"programme\": \"BComp CS Hons\",\n\"current_sem\": 2,\n\"completed\": [\n\"ES2660\",\n\"MA1521\",\n\"CS1231S\",\n\"CS1101S\"\n],\n\"must_take\": [\n\"ST2334\",\n\"CS4234\",\n\"CS3103\",\n\"CS3242\"\n],\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS3103\",\n\"b\": \"CS3242\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3103\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"ST2334\",\n\"sem\": 3,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS3103\",\n\"b\": \"ST2334\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3242\",\n\"sem\": 8,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"ST2334\",\n\"sem\": 3,\n\"strength\": \"prefer\"\n}\n],\n\"late\": [\n\"CS3242\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "programme": "BComp CS Hons",
+  "current_sem": 2,
+  "completed": [
+   "ES2660",
+   "MA1521",
+   "CS1231S",
+   "CS1101S"
+  ],
+  "must_take": [
+   "ST2334",
+   "CS4234",
+   "CS3103",
+   "CS3242"
+  ],
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3103",
+    "b": "CS3242",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3103",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "ST2334",
+    "sem": 3,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3103",
+    "b": "ST2334",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3242",
+    "sem": 8,
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "ST2334",
+    "sem": 3,
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "CS3242"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS3103 in semester 7; your rule: ST2334 in semester 3; your rule: CS3103 and ST2334 in the same semester"
+  ]
+ }
+}

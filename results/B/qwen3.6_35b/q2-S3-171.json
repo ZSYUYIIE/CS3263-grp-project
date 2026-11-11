@@ -1,0 +1,104 @@
+{
+ "id": "q2-S3-171",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 11.68,
+ "solver_seconds": 0.222,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3059,
+  "total_tokens": 3281,
+  "completion_tokens": 222,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 11.43,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 1,\n\"completed\": [],\n\"must_take\": [\n\"IS1108\",\n\"ES2660\",\n\"MA1521\",\n\"CS1101S\",\n\"CS2101\",\n\"MA1522\",\n\"ST2334\",\n\"CS2109S\",\n\"CS2103T\",\n\"CS3219\",\n\"CS3230\",\n\"CS2105\"\n],\n\"sem_caps\": {\n\"6\": 0\n},\n\"mc_min\": 3,\n\"early\": [\n\"IS1108\",\n\"MA1522\"\n],\n\"rules\": [\n{\n\"type\": \"apart\",\n\"a\": \"ST2334\",\n\"b\": \"CS3230\",\n\"strength\": \"must\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "completed": [],
+  "must_take": [
+   "IS1108",
+   "ES2660",
+   "MA1521",
+   "CS1101S",
+   "CS2101",
+   "MA1522",
+   "ST2334",
+   "CS2109S",
+   "CS2103T",
+   "CS3219",
+   "CS3230",
+   "CS2105"
+  ],
+  "sem_caps": {
+   "6": 0
+  },
+  "mc_min": 3,
+  "early": [
+   "IS1108",
+   "MA1522"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "ST2334",
+    "b": "CS3230",
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 4,
+  "plan": {
+   "1": [
+    "CS1101S",
+    "CS2101",
+    "IS1108",
+    "MA1521",
+    "MA1522"
+   ],
+   "2": [
+    "CS2030S",
+    "CS2040DE",
+    "ES2660",
+    "ST2334"
+   ],
+   "3": [
+    "CS2103T",
+    "MA1100"
+   ],
+   "4": [
+    "CS2105",
+    "CS2109S",
+    "CS3219",
+    "CS3230"
+   ]
+  },
+  "mc_per_semester": {
+   "1": 20,
+   "2": 16,
+   "3": 8,
+   "4": 16
+  },
+  "preferences_met": [
+   "IS1108 as early as possible",
+   "MA1522 as early as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS2030S",
+   "CS2040DE",
+   "MA1100"
+  ]
+ }
+}

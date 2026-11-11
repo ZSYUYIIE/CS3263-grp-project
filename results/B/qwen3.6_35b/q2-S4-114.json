@@ -1,0 +1,120 @@
+{
+ "id": "q2-S4-114",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 5.7,
+ "solver_seconds": 0.017,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3129,
+  "total_tokens": 3576,
+  "completion_tokens": 447,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 5.68,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 7,\n\"completed\": [\n\"CS2040S\",\n\"CS2106\",\n\"CS1101S\",\n\"CS3230\",\n\"ES2660\",\n\"CS2100\",\n\"ST2334\",\n\"CS2030S\",\n\"CS2102\",\n\"MA1522\",\n\"CS1231S\",\n\"MA1521\",\n\"CS3241\",\n\"CS3219\",\n\"IS1108\",\n\"CS2103T\",\n\"CS2109S\"\n],\n\"must_take\": [\n\"CS3268\",\n\"CS3263\",\n\"CS4243\",\n\"CS3242\"\n],\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS4243\",\n\"b\": \"CS3263\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3263\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3242\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3242\",\n\"b\": \"CS3263\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS3242\",\n\"b\": \"CS4243\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4243\",\n\"sem\": 8,\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "completed": [
+   "CS2040S",
+   "CS2106",
+   "CS1101S",
+   "CS3230",
+   "ES2660",
+   "CS2100",
+   "ST2334",
+   "CS2030S",
+   "CS2102",
+   "MA1522",
+   "CS1231S",
+   "MA1521",
+   "CS3241",
+   "CS3219",
+   "IS1108",
+   "CS2103T",
+   "CS2109S"
+  ],
+  "must_take": [
+   "CS3268",
+   "CS3263",
+   "CS4243",
+   "CS3242"
+  ],
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS4243",
+    "b": "CS3263",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3263",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3242",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3242",
+    "b": "CS3263",
+    "strength": "prefer"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3242",
+    "b": "CS4243",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4243",
+    "sem": 8,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 8,
+  "plan": {
+   "7": [
+    "CS3268",
+    "CS4243",
+    "PC1201"
+   ],
+   "8": [
+    "CS3242",
+    "CS3263"
+   ]
+  },
+  "mc_per_semester": {
+   "7": 12,
+   "8": 8
+  },
+  "preferences_met": [],
+  "preferences_not_met": [
+   "CS3242 before CS3263",
+   "CS3242 and CS4243 in the same semester",
+   "CS4243 in semester 8"
+  ],
+  "added_prerequisites": [
+   "PC1201"
+  ]
+ }
+}

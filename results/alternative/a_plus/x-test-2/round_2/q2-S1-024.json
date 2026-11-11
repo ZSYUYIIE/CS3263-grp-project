@@ -1,0 +1,63 @@
+{
+ "id": "q2-S1-024",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 2,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 142.25,
+ "usage": {
+  "prompt_tokens": 6795,
+  "total_tokens": 16841,
+  "completion_tokens": 10046,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "created_cache_tokens": 6784
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 9817
+  },
+  "finish_reason": "stop",
+  "request_seconds": 142.25,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"2\": [\"CS2030S\", \"CS2040\", \"PC1201\"], \"3\": [\"CS2104\", \"CS3241\", \"MA1513\"], \"4\": [\"CS3242\", \"CS2111\"], \"5\": [\"CS2105\", \"CS2109S\", \"CS3240\"], \"6\": [\"CS4212\", \"CS4240\"]}, \"reasons\": [\"Total is 50 MC, the minimum; added prerequisites are CS2040, CS2104, CS2111, CS3240, CS3241, PC1201 and MA1513.\", \"CS3242 is in semester 4, before CS2109S in semester 5 and CS4212 in semester 6; CS2105 and CS2109S are together; CS4240 is not with CS2105.\", \"The wish for CS2109S before CS2030S is impossible because CS2030S is needed for CS3241 and CS3242, which must precede CS2109S.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "2": [
+    "CS2030S",
+    "CS2040",
+    "PC1201"
+   ],
+   "3": [
+    "CS2104",
+    "CS3241",
+    "MA1513"
+   ],
+   "4": [
+    "CS3242",
+    "CS2111"
+   ],
+   "5": [
+    "CS2105",
+    "CS2109S",
+    "CS3240"
+   ],
+   "6": [
+    "CS4212",
+    "CS4240"
+   ]
+  },
+  "reasons": [
+   "Total is 50 MC, the minimum; added prerequisites are CS2040, CS2104, CS2111, CS3240, CS3241, PC1201 and MA1513.",
+   "CS3242 is in semester 4, before CS2109S in semester 5 and CS4212 in semester 6; CS2105 and CS2109S are together; CS4240 is not with CS2105.",
+   "The wish for CS2109S before CS2030S is impossible because CS2030S is needed for CS3241 and CS3242, which must precede CS2109S."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

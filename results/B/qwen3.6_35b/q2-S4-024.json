@@ -1,0 +1,91 @@
+{
+ "id": "q2-S4-024",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.88,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3134,
+  "total_tokens": 3526,
+  "completion_tokens": 392,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.88,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 8,\n\"completed\": [\n\"CS3233\",\n\"CS2100\",\n\"CS1231S\",\n\"CS3227\",\n\"MA1521\",\n\"CS2040S\",\n\"CS2109S\",\n\"CS2103T\",\n\"CS3219\",\n\"CS3237\",\n\"CS2101\",\n\"ES2660\",\n\"MA1522\",\n\"IS1108\",\n\"CS3211\",\n\"CS1101S\",\n\"CS2030S\",\n\"CS3230\",\n\"CS2106\",\n\"CS2102\"\n],\n\"must_take\": [\n\"ST2334\",\n\"CS2105\",\n\"CS4218\"\n],\n\"mc_max\": 8,\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"same_sem\",\n\"a\": \"ST2334\",\n\"b\": \"CS2105\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4218\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"ST2334\",\n\"b\": \"CS4218\",\n\"strength\": \"prefer\"\n}\n],\n\"early\": [\n\"CS2105\"\n],\n\"late\": [\n\"ST2334\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 8,
+  "completed": [
+   "CS3233",
+   "CS2100",
+   "CS1231S",
+   "CS3227",
+   "MA1521",
+   "CS2040S",
+   "CS2109S",
+   "CS2103T",
+   "CS3219",
+   "CS3237",
+   "CS2101",
+   "ES2660",
+   "MA1522",
+   "IS1108",
+   "CS3211",
+   "CS1101S",
+   "CS2030S",
+   "CS3230",
+   "CS2106",
+   "CS2102"
+  ],
+  "must_take": [
+   "ST2334",
+   "CS2105",
+   "CS4218"
+  ],
+  "mc_max": 8,
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "ST2334",
+    "b": "CS2105",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4218",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "ST2334",
+    "b": "CS4218",
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS2105"
+  ],
+  "late": [
+   "ST2334"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "the required courses need 12 MC but the remaining semesters [8] allow at most 8 MC"
+  ]
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "id": "q2-S4-015",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 5.49,
+ "usage": {
+  "prompt_tokens": 11222,
+  "total_tokens": 11494,
+  "completion_tokens": 272,
+  "finish_reason": "stop",
+  "request_seconds": 5.49,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"7\": [\n\"CS3241\",\n\"CS3268\"\n],\n\"8\": [\n\"CS3234\",\n\"CS4247\",\n\"CS4231\"\n]\n},\n\"reasons\": [\n\"CS3241 and CS3268 are taken in Sem 7 to satisfy the mutual exclusivity and prerequisite constraints, allowing CS3241 as early as possible.\",\n\"CS3234, CS4247, and CS4231 are taken in Sem 8. CS4231 requires CS3230 (completed) or CS3210 (not taken, but CS3230 is sufficient). CS4247 requires CS3241 (taken in Sem 7). CS3234 requires CS1231S (completed).\",\n\"All prerequisites are met. CS3241 is taken before CS3234. CS3268 is taken with CS3241. CS3234 and CS4247 are taken together. The student finishes in Sem 8.\"\n]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "7": [
+    "CS3241",
+    "CS3268"
+   ],
+   "8": [
+    "CS3234",
+    "CS4247",
+    "CS4231"
+   ]
+  },
+  "reasons": [
+   "CS3241 and CS3268 are taken in Sem 7 to satisfy the mutual exclusivity and prerequisite constraints, allowing CS3241 as early as possible.",
+   "CS3234, CS4247, and CS4231 are taken in Sem 8. CS4231 requires CS3230 (completed) or CS3210 (not taken, but CS3230 is sufficient). CS4247 requires CS3241 (taken in Sem 7). CS3234 requires CS1231S (completed).",
+   "All prerequisites are met. CS3241 is taken before CS3234. CS3268 is taken with CS3241. CS3234 and CS4247 are taken together. The student finishes in Sem 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

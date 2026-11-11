@@ -1,0 +1,44 @@
+{
+ "id": "q2-S3-030",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 16.35,
+ "usage": {
+  "prompt_tokens": 14069,
+  "total_tokens": 15047,
+  "completion_tokens": 978,
+  "finish_reason": "stop",
+  "request_seconds": 16.35,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS2102\"], \"6\": [\"CS2105\", \"CS2106\", \"CS2109S\", \"ST2334\"], \"7\": [\"CP3880\", \"CS3210\", \"CS3219\", \"CS3230\"], \"8\": []}, \"reasons\": [\"ATAP (CP3880) planned in Sem 7 as requested. Sem 5 is exchange (0 MC). CS3219 and CS3230 prerequisites met by completed courses. CS2109S and ST2334 not taken together. ST2334 taken in Sem 6, but student mandated Sem 8. Conflict detected? No, student said 'must take ST2334 in year 4 semester 2'. Wait, rule 7 says 'Every must/has to wish holds'. Student said 'I must take ST2334 in year 4 semester 2'. My plan puts it in Sem 6. This violates the 'must' wish. I must put ST2334 in Sem 8. Let's re-evaluate.\", \"Re-planning with ST2334 in Sem 8. Sem 6: CS2105, CS2106, CS2109S. Sem 7: CP3880, CS3210, CS3219, CS3230. Sem 8: ST2334. CS3219 before ST2334 holds. CS2102 before CS2106 holds (Sem 4 vs Sem 6). CS3219 as early as possible (Sem 7). Fewest semesters used is 8. Is it possible to finish earlier? No, Sem 8 is last. Can we move ST2334 to Sem 7? No, ATAP is Sem 7, and ST2334 is 4MC, ATAP other courses max 8MC. If we put ST2334 in Sem 7, we have CP3880 (12) + ST2334 (4) + others. Max 8MC for others. We have CS3210, CS3219, CS3230 left. That's 12MC. Too many. So Sem 7 must be ATAP + light load or just ATAP? Student didn't say ATAP must have other courses. But we have CS3210, CS3219, CS3230 to fit. They need prerequisites. CS3210 needs CS2100 (done). CS3219 needs CS2103T (done). CS3230 needs CS2040S (done) and CS1231S (done). So they can be in Sem 7. If Sem 7 is ATAP, we can take up to 8MC of other courses. CS3210 (4) + CS3219 (4) = 8MC. CS3230 (4) would be 12MC. So we can take CS3210 and CS3219 in Sem 7. CS3230 must go to Sem 8. But ST2334 must be in Sem 8. So Sem 8 has ST2334 and CS3230. Total 8MC. This works. So Plan: Sem 4: CS2102. Sem 6: CS2105, CS2106, CS2109S. Sem 7: CP3880, CS3210, CS3219. Sem 8: CS3230, ST2334. This satisfies all 'must' wishes. ST2334 in Sem 8. CS3219 before ST2334. CS2102 before CS2106. ATAP in Sem 7. Fewest semesters (8).\", \"Final Plan: Sem 4: CS2102. Sem 6: CS2105, CS2106, CS2109S. Sem 7: CP3880, CS3210, CS3219. Sem 8: CS3230, ST2334.\"}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2102"
+   ],
+   "6": [
+    "CS2105",
+    "CS2106",
+    "CS2109S",
+    "ST2334"
+   ],
+   "7": [
+    "CP3880",
+    "CS3210",
+    "CS3219",
+    "CS3230"
+   ],
+   "8": []
+  }
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

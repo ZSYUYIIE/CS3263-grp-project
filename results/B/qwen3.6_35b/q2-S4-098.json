@@ -1,0 +1,88 @@
+{
+ "id": "q2-S4-098",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 11.81,
+ "solver_seconds": 0.099,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3102,
+  "total_tokens": 3481,
+  "completion_tokens": 379,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 11.7,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 3,\n\"completed\": [\n\"MA1522\",\n\"CS1101S\",\n\"CS1231S\",\n\"CS2040S\",\n\"CS2030S\",\n\"ES2660\",\n\"IS1108\",\n\"MA1521\"\n],\n\"must_take\": [\n\"CS3244\",\n\"ST2334\",\n\"CS3219\",\n\"CS4240\",\n\"CS2109S\",\n\"CS3231\"\n],\n\"mc_max\": 16,\n\"rules\": [\n{\n\"type\": \"apart\",\n\"a\": \"CS4240\",\n\"b\": \"CS3219\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4240\",\n\"b\": \"ST2334\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3231\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3231\",\n\"b\": \"CS3219\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3231\",\n\"b\": \"ST2334\",\n\"strength\": \"prefer\"\n}\n],\n\"early\": [\n\"CS3219\",\n\"CS4240\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "completed": [
+   "MA1522",
+   "CS1101S",
+   "CS1231S",
+   "CS2040S",
+   "CS2030S",
+   "ES2660",
+   "IS1108",
+   "MA1521"
+  ],
+  "must_take": [
+   "CS3244",
+   "ST2334",
+   "CS3219",
+   "CS4240",
+   "CS2109S",
+   "CS3231"
+  ],
+  "mc_max": 16,
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS4240",
+    "b": "CS3219",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4240",
+    "b": "ST2334",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3231",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3231",
+    "b": "CS3219",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS3231",
+    "b": "ST2334",
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS3219",
+   "CS4240"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the course exclusions (courses that cannot be taken together)"
+  ]
+ }
+}

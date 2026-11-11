@@ -1,0 +1,131 @@
+{
+ "id": "q2-S1-084",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 5.17,
+ "solver_seconds": 0.063,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2819,
+  "total_tokens": 3453,
+  "completion_tokens": 634,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 415
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.11,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":3,\"programme\":\"BComp CS Hons\",\"completed\":[\"CS1231S\",\"ES2660\",\"IS1108\",\"MA1521\",\"CS2040S\",\"CS1101S\",\"CS2030S\",\"MA1522\"],\"must_take\":[\"CS3281\",\"CS3241\",\"CS3227\",\"CS2105\",\"CS2103T\",\"CS4221\",\"CS2100\",\"CS4236\"],\"objective\":\"min_total_mc\",\"early\":[\"CS3241\",\"CS3227\"],\"rules\":[{\"type\":\"same_sem\",\"a\":\"CS2105\",\"b\":\"CS2103T\",\"strength\":\"must\"},{\"type\":\"apart\",\"a\":\"CS3241\",\"b\":\"CS3227\",\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS2100\",\"b\":\"CS3241\",\"strength\":\"prefer\"},{\"type\":\"apart\",\"a\":\"CS4236\",\"b\":\"CS4221\",\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "CS1231S",
+   "ES2660",
+   "IS1108",
+   "MA1521",
+   "CS2040S",
+   "CS1101S",
+   "CS2030S",
+   "MA1522"
+  ],
+  "must_take": [
+   "CS3281",
+   "CS3241",
+   "CS3227",
+   "CS2105",
+   "CS2103T",
+   "CS4221",
+   "CS2100",
+   "CS4236"
+  ],
+  "objective": "min_total_mc",
+  "early": [
+   "CS3241",
+   "CS3227"
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS2105",
+    "b": "CS2103T",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3241",
+    "b": "CS3227",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2100",
+    "b": "CS3241",
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS4236",
+    "b": "CS4221",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 6,
+  "plan": {
+   "3": [
+    "CS2102",
+    "CS2103T",
+    "CS2105",
+    "CS3241"
+   ],
+   "4": [
+    "CS2100",
+    "CS2107",
+    "CS3227"
+   ],
+   "5": [
+    "CS3223",
+    "CS4236"
+   ],
+   "6": [
+    "CS3281",
+    "CS4221"
+   ]
+  },
+  "mc_per_semester": {
+   "3": 16,
+   "4": 12,
+   "5": 8,
+   "6": 8
+  },
+  "preferences_met": [
+   "CS4236 and CS4221 in different semesters",
+   "CS3241 as early as possible",
+   "CS3227 as early as possible"
+  ],
+  "preferences_not_met": [
+   "CS2100 before CS3241"
+  ],
+  "added_prerequisites": [
+   "CS2102",
+   "CS2107",
+   "CS3223"
+  ]
+ }
+}

@@ -1,0 +1,119 @@
+{
+ "id": "q2-S4-283",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 5.26,
+ "solver_seconds": 0.017,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2786,
+  "total_tokens": 3358,
+  "completion_tokens": 572,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 374
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.25,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":3,\"completed\":[\"CS2040S\",\"MA1522\",\"ES2660\",\"CS1101S\",\"IS1108\",\"CS2030S\",\"MA1521\",\"CS1231S\"],\"programme\":\"BComp CS Hons\",\"must_take\":[\"CS3264\",\"CS2100\",\"CS2101\"],\"mc_max\":16,\"sem_caps\":{\"4\":0},\"early\":[\"CS2101\"],\"rules\":[{\"type\":\"in_sem\",\"course\":\"CS2100\",\"sem\":6,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3264\",\"sem\":5,\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS2101\",\"b\":\"CS2100\",\"strength\":\"prefer\"},{\"type\":\"same_sem\",\"a\":\"CS3264\",\"b\":\"CS2100\",\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "completed": [
+   "CS2040S",
+   "MA1522",
+   "ES2660",
+   "CS1101S",
+   "IS1108",
+   "CS2030S",
+   "MA1521",
+   "CS1231S"
+  ],
+  "programme": "BComp CS Hons",
+  "must_take": [
+   "CS3264",
+   "CS2100",
+   "CS2101"
+  ],
+  "mc_max": 16,
+  "sem_caps": {
+   "4": 0
+  },
+  "early": [
+   "CS2101"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS2100",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3264",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2101",
+    "b": "CS2100",
+    "strength": "prefer"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3264",
+    "b": "CS2100",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 6,
+  "plan": {
+   "3": [
+    "CS2101",
+    "CS2109S",
+    "ST2334"
+   ],
+   "4": [],
+   "5": [
+    "CS3264"
+   ],
+   "6": [
+    "CS2100"
+   ]
+  },
+  "mc_per_semester": {
+   "3": 12,
+   "4": 0,
+   "5": 4,
+   "6": 4
+  },
+  "preferences_met": [
+   "CS2101 before CS2100",
+   "CS2101 as early as possible"
+  ],
+  "preferences_not_met": [
+   "CS3264 and CS2100 in the same semester"
+  ],
+  "added_prerequisites": [
+   "CS2109S",
+   "ST2334"
+  ]
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "id": "q1-mp-025-p",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 20.34,
+ "usage": {
+  "prompt_tokens": 4258,
+  "total_tokens": 5466,
+  "completion_tokens": 1208,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 20.34,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"ELIGIBLE\",\n\"reasons\": [\n\"Prerequisites for MA2116T are (CS1231 or CS1231S or MA1100 or MA1100T) and (MA2104 or MA2311).\",\n\"Student has completed CS1231S, satisfying the first part of the prerequisite.\",\n\"Student has completed MA1521, which is a prerequisite for MA2104. Since MA2104 is a valid prerequisite option for MA2116T, and MA2104 is eligible to be taken (or considered satisfied via its own prerequisite chain in planning contexts, but strictly speaking MA2104 itself is not completed). However, looking at the rule: 'Prerequisites must be completed or planned in a STRICTLY earlier semester'. MA2104 is NOT completed. MA2311 is NOT completed. Therefore, the second part of the prerequisite (MA2104 or MA2311) is NOT satisfied by completed courses.\"\n]\n}\n\nWait, let me re-read the eligibility rule carefully.\n\"X is eligible when: ... X's prerequisite is satisfied by the completed courses...\"\nThe prerequisite for MA2116T is `(CS1231 or CS1231S or MA1100 or MA1100T) AND (MA2104 or MA2311)`.\nCompleted courses: CS1231S is present. So the first clause is satisfied.\nMA2104 is NOT in the completed list.\nMA2311 is NOT in the completed list.\nSo the second clause is NOT satisfied by completed courses.\nTherefore, the student is NOT eligible to take MA2116T in Y4S1 unless they have completed MA2104 or MA2311. They have not.\n\nLet me double check if MA2104 can be taken concurrently? No, prerequisites must be completed or planned in a STRICTLY earlier semester. You cannot take a prerequisite in the same semester.\nSo, is MA2116T eligible? No.\n\nLet me re-read the \"cannot take if completed\" for MA2116T.\n\"cannot take if completed: MA2116 or ST2131 or ST2334 or YSC2243 or MA2301 or EC2303\"\nStudent has not completed any of these.\n\nLet me re-read the prerequisite for MA2104.\n\"prerequisite: MA2002 or MA1505 or MA1511 or MA1521\"\nStudent has completed MA1521. So MA2104 is eligible to be taken.\nBut MA2104 is not completed.\nThe prerequisite for MA2116T requires MA2104 OR MA2311 to be completed.\nSince neither is completed, the prerequisite is not satisfied.\n\nTherefore, the status is NOT_ELIGIBLE.\n\nLet me check if I missed any completed course that acts as a substitute.\nMA2311 prerequisite: MA2002 or MA1312 or MA1521. Student has MA1521. So MA2311 is eligible. But not completed.\n\nSo, the student has NOT completed MA2104 or MA2311.\nThus, MA2116T is NOT eligible.\n\nOne detail: \"CS1231S\" is completed. This satisfies the first part of the AND.\nBut the second part `(MA2104 or MA2311)` is not satisfied.\n\nSo the answer is NOT_ELIGIBLE.\n\nReason: Prerequisite MA2104 or MA2311 is not completed.\n\nLet's format the JSON.\n\n{\"status\": \"NOT_ELIGIBLE\", \"reasons\": [\"Prerequisite (MA2104 or MA2311) is not satisfied as neither course is completed.\"]}\n\nWait, did I miss anything?\n\"CS1231S\" is completed.\n\"MA1521\" is completed.\n\"CS2040S\" is completed.\n\"CS2100\" is completed.\n\"CS2101\" is completed.\n\"CS2102\" is completed.\n\"CS2105\" is completed.\n\"CS3210\" is completed.\n\"CS3230\" is completed.\n\"CS4263\" is completed.\n\"ES2660\" is completed.\n\"CS1010HS\" is completed.\n\"CS2030S\" is completed.\n\nNone of these are MA2104 or MA2311.\n\nSo, NOT_ELIGIBLE.\n\nOne edge case: Is MA2116T offered in Sem 1?\n\"MA2116T Probability (T) | 4 MC | offered: Sem 1\"\nYes.\n\nIs it open to BComp CS Hons?\nIt doesn't say \"NOT open to BComp CS Hons\". So it is open.\n\nSo the only blocker is the prerequisite.\n\nFinal Answer: NOT_ELIGIBLE.\n\n{\"status\": \"NOT_ELIGIBLE\", \"reasons\": [\"Prerequisite (MA2104 or MA2311) is not satisfied as neither course is completed.\"]}",
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "reasons": [
+   "Prerequisite (MA2104 or MA2311) is not satisfied as neither course is completed."
+  ]
+ },
+ "fenced": true,
+ "repair": "last_of_several",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 4,
+ "ablation": 1
+}

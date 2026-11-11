@@ -1,0 +1,32 @@
+{
+ "id": "q2-S4-034",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "not a plan",
+ "seconds": 5.64,
+ "usage": {
+  "prompt_tokens": 13562,
+  "total_tokens": 13835,
+  "completion_tokens": 273,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.64,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"The constraint 'At most 1 module per semester' makes it impossible to complete the 8 required courses (CS3213, ST2334, CS3281, CS4249, CS4262, CS4248, CS2109S, CS3230) plus their prerequisites within the remaining 4 semesters (5-8). Specifically, CS3230 requires CS2103T (completed) and CS1231/CS1231S (completed), but CS3213 requires CS3230. CS2109S requires CS2040S (completed) and Math prerequisites (MA1521/MA1522 completed). CS4262 requires CS2106/CG2271 and CS3244/CS3264/CG3201. CS4248 requires CS2109S/CS3244 etc. The prerequisite chains and mutual exclusions force multiple courses into single semesters or require more than 4 semesters to fit 8 distinct courses with dependencies, violating the 1-module limit.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "The constraint 'At most 1 module per semester' makes it impossible to complete the 8 required courses (CS3213, ST2334, CS3281, CS4249, CS4262, CS4248, CS2109S, CS3230) plus their prerequisites within the remaining 4 semesters (5-8). Specifically, CS3230 requires CS2103T (completed) and CS1231/CS1231S (completed), but CS3213 requires CS3230. CS2109S requires CS2040S (completed) and Math prerequisites (MA1521/MA1522 completed). CS4262 requires CS2106/CG2271 and CS3244/CS3264/CG3201. CS4248 requires CS2109S/CS3244 etc. The prerequisite chains and mutual exclusions force multiple courses into single semesters or require more than 4 semesters to fit 8 distinct courses with dependencies, violating the 1-module limit."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

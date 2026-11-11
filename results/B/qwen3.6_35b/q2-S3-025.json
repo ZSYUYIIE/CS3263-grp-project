@@ -1,0 +1,96 @@
+{
+ "id": "q2-S3-025",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 8.15,
+ "solver_seconds": 0.002,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3136,
+  "total_tokens": 3562,
+  "completion_tokens": 426,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 8.15,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 4,\n\"completed\": [\n\"IS1108\",\n\"CS1231S\",\n\"CS2103T\",\n\"ES2660\",\n\"CS2040S\",\n\"CS1101S\",\n\"MA1522\",\n\"CS2030S\",\n\"CS2101\",\n\"CS2100\",\n\"MA1521\",\n\"ST2334\"\n],\n\"must_take\": [\n\"CS2102\",\n\"CS3230\",\n\"CS2109S\",\n\"CS3231\",\n\"CS3264\",\n\"CS3219\"\n],\n\"sem_caps\": {\n\"4\": 0\n},\n\"atap_sems\": [\n4\n],\n\"rules\": [\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2102\",\n\"b\": \"CS3264\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS3231\",\n\"b\": \"CS2102\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS3230\",\n\"b\": \"CS2109S\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS3231\",\n\"b\": \"CS3264\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2102\",\n\"b\": \"CS3219\",\n\"strength\": \"prefer\"\n}\n],\n\"late\": [\n\"CS3230\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "IS1108",
+   "CS1231S",
+   "CS2103T",
+   "ES2660",
+   "CS2040S",
+   "CS1101S",
+   "MA1522",
+   "CS2030S",
+   "CS2101",
+   "CS2100",
+   "MA1521",
+   "ST2334"
+  ],
+  "must_take": [
+   "CS2102",
+   "CS3230",
+   "CS2109S",
+   "CS3231",
+   "CS3264",
+   "CS3219"
+  ],
+  "sem_caps": {
+   "4": 0
+  },
+  "atap_sems": [
+   4
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS2102",
+    "b": "CS3264",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3231",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3230",
+    "b": "CS2109S",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3231",
+    "b": "CS3264",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS2102",
+    "b": "CS3219",
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "CS3230"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CP3880 cannot be placed in any remaining semester (offered in terms [1, 2, 3, 4]; semesters left [5, 6, 7, 8])"
+  ]
+ }
+}

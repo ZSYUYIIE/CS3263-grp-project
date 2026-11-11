@@ -1,0 +1,51 @@
+{
+ "id": "q2-S4-311",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 3,
+ "end": "cap",
+ "seconds": 161.63,
+ "usage": {
+  "prompt_tokens": 39214,
+  "total_tokens": 45088,
+  "completion_tokens": 5874,
+  "finish_reason": "stop",
+  "request_seconds": 161.63,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"4\": [\n      \"CS2102\",\n      \"CS2106\",\n      \"CS2111\",\n      \"CS2220\"\n    ],\n    \"5\": [\n      \"CS3240\",\n      \"CS3268\"\n    ],\n    \"6\": [\n      \"CS2109S\",\n      \"CS3223\",\n      \"CS3230\"\n    ],\n    \"7\": [\n      \"CS4330\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2220 is only offered in Sem 1, so it must be taken in Sem 4. CS4330 is only offered in Sem 2, so it must be taken in Sem 7 or later.\",\n    \"CS3268 is only offered in Sem 1. It requires CS2109S. Therefore, CS2109S must be completed in a Sem 1 prior to the Sem 1 where CS3268 is taken. Since CS2109S is offered in Sem 1 and Sem 2, and CS3268 in Sem 1, we can take CS2109S in Sem 6 (Sem 2) and CS3268 in Sem 5? No, Sem 5 is before Sem 6. We must take CS2109S in Sem 5 (Sem 1) and CS3268 in Sem 5? No, CS3268 is Sem 1 only. CS2109S is Sem 1 and 2. If we take CS2109S in Sem 5 (Sem 1), we can take CS3268 in Sem 5? No, they are in the same semester. Prerequisites must be completed or planned in a STRICTLY earlier semester. So CS2109S must be in Sem 4 or earlier to allow CS3268 in Sem 5. But CS2109S requires CS2040S (done) and Math. CS2109S is offered Sem 1 and 2. Sem 4 is Sem 2. So we can take CS2109S in Sem 4. Then CS3268 in Sem 5 (Sem 1).\",\n    \"Revised Plan: Sem 4 takes CS2109S (Sem 2 offering). Sem 5 takes CS3268 (Sem 1 offering). This satisfies the prerequisite order. CS3240 requires CS2111 (Sem 4). CS3240 is Sem 1. So CS3240 can be in Sem 5. CS3223 requires CS2102 (Sem 4) and CS2040S (done). CS3223 is Sem 1 and 2. Can be in Sem 6. CS3230 requires CS2040S and CS1231S (done). CS3230 is Sem 1 and 2. Can be in Sem 6. CS4330 requires CS2040S and CS2220 (Sem 4). CS4330 is Sem 2. Can be in Sem 7.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2102",
+    "CS2106",
+    "CS2111",
+    "CS2220"
+   ],
+   "5": [
+    "CS3240",
+    "CS3268"
+   ],
+   "6": [
+    "CS2109S",
+    "CS3223",
+    "CS3230"
+   ],
+   "7": [
+    "CS4330"
+   ]
+  },
+  "reasons": [
+   "CS2220 is only offered in Sem 1, so it must be taken in Sem 4. CS4330 is only offered in Sem 2, so it must be taken in Sem 7 or later.",
+   "CS3268 is only offered in Sem 1. It requires CS2109S. Therefore, CS2109S must be completed in a Sem 1 prior to the Sem 1 where CS3268 is taken. Since CS2109S is offered in Sem 1 and Sem 2, and CS3268 in Sem 1, we can take CS2109S in Sem 6 (Sem 2) and CS3268 in Sem 5? No, Sem 5 is before Sem 6. We must take CS2109S in Sem 5 (Sem 1) and CS3268 in Sem 5? No, CS3268 is Sem 1 only. CS2109S is Sem 1 and 2. If we take CS2109S in Sem 5 (Sem 1), we can take CS3268 in Sem 5? No, they are in the same semester. Prerequisites must be completed or planned in a STRICTLY earlier semester. So CS2109S must be in Sem 4 or earlier to allow CS3268 in Sem 5. But CS2109S requires CS2040S (done) and Math. CS2109S is offered Sem 1 and 2. Sem 4 is Sem 2. So we can take CS2109S in Sem 4. Then CS3268 in Sem 5 (Sem 1).",
+   "Revised Plan: Sem 4 takes CS2109S (Sem 2 offering). Sem 5 takes CS3268 (Sem 1 offering). This satisfies the prerequisite order. CS3240 requires CS2111 (Sem 4). CS3240 is Sem 1. So CS3240 can be in Sem 5. CS3223 requires CS2102 (Sem 4) and CS2040S (done). CS3223 is Sem 1 and 2. Can be in Sem 6. CS3230 requires CS2040S and CS1231S (done). CS3230 is Sem 1 and 2. Can be in Sem 6. CS4330 requires CS2040S and CS2220 (Sem 4). CS4330 is Sem 2. Can be in Sem 7."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

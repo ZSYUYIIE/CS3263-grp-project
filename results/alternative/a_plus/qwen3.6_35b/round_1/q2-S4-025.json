@@ -1,0 +1,26 @@
+{
+ "id": "q2-S4-025",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "not a plan",
+ "seconds": 19.12,
+ "usage": {
+  "prompt_tokens": 10331,
+  "total_tokens": 11174,
+  "completion_tokens": 843,
+  "finish_reason": "stop",
+  "request_seconds": 19.12,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"The per-semester MC limit of 4 MC is too restrictive to complete the required courses. CS2100 (4 MC) and CS2106 (4 MC) are prerequisites for later courses. CS2106 requires CS2100. CS3230 requires CS2040S (completed) and CS1231S (completed), so it can be taken early. However, CS2102 requires CS2030S (completed) and CS2040S (completed) and CS1231S (completed). CS2102 is 4 MC. CS4212 requires CS2100 or CS3212. CS3219 requires CS2103 or similar. The student must take CS2100, CS2106, CS2102, CS4212, CS3219, CS3230, CS3235, CS2101. CS2100 (4MC) is a prereq for CS2106 (4MC). CS2106 is a prereq for CS3235 (4MC). CS2102 (4MC) is a prereq for CS4212 (4MC). CS4212 is a prereq for... wait, CS4212 is not a prereq for CS3219. CS3219 requires CS2103/CS2103T/CS2103DE/CS2113T/CS2113. The student has NOT completed CS2103 or any of its prerequisites (CS2030S/CS2030/CS2030DE/CS2030HS AND CS2040S/CS2040/CS2040C/CS2040HS/CS2040DE). The student has CS2030S and CS2040S. So CS2103 is eligible. CS2103 is 4 MC. CS2103 is a prereq for CS3219. So the chain is: CS2103 -> CS3219. CS2100 -> CS2106 -> CS3235. CS2102 -> CS4212. CS3230 is independent of these chains except for the mutual exclusion with CS3235. The student has 8 courses left: CS2100, CS2106, CS2102, CS4212, CS3219, CS3230, CS3235, CS2101. All are 4 MC. Total 32 MC. Semesters available: Y2S1 (5), Y2S2 (6), Y3S1 (7). Y3S2 is exchange (0 MC). Y4S1 (8), Y4S2 (9? No, max 8). Wait, Y3S2 is semester 6? No. Y1S1=1, Y1S2=2, Y2S1=3, Y2S2=4, Y3S1=5, Y3S2=6, Y4S1=7, Y4S2=8. Student is in Y2S1, which is Semester 3. Exchange in Y3S2, which is Semester 6. So available semesters for coursework: 3, 4, 5, 7, 8. That is 5 semesters. Limit 4 MC per semester. Max MC = 20. Required MC = 32. 32 > 20. Impossible.\"]",
+ "answer": {
+  "status": "NO_PLAN"
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,48 @@
+{
+ "id": "q2-S3-116",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "repeated plan",
+ "seconds": 12.61,
+ "usage": {
+  "prompt_tokens": 28717,
+  "total_tokens": 29362,
+  "completion_tokens": 645,
+  "finish_reason": "stop",
+  "request_seconds": 12.61,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS3227\",\n      \"CS3231\"\n    ],\n    \"7\": [\n      \"CP3880\",\n      \"CS2102\",\n      \"ST2334\"\n    ],\n    \"8\": [\n      \"CS3237\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3231 is offered in Sem 1, so it cannot be in Sem 6. It must be moved to Sem 7 or 8.\",\n    \"CS3237 is offered in Sem 1, so it cannot be in Sem 8. It must be moved to Sem 7.\",\n    \"Re-planning: CS3231 in Sem 7, CS3237 in Sem 7. But CS3237 needs ST2334 before it. ST2334 in Sem 7 blocks CS3237 in Sem 7. ST2334 in Sem 6? CS3227 is in Sem 6. Sem 6 limit 20 MC. CS3227 (4) + ST2334 (4) = 8 MC. OK. CS3231 in Sem 7? CS3231 prereq CS2040S (done). OK. CS3237 in Sem 7? Prereq CS2100 (done) and CS1101S (done). OK. But CS3237 and CS2102 cannot be same semester. CS2102 in Sem 7? Then CS3237 cannot be in Sem 7. CS3237 in Sem 8? Not offered. Conflict.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS3227",
+    "CS3231"
+   ],
+   "7": [
+    "CP3880",
+    "CS2102",
+    "ST2334"
+   ],
+   "8": [
+    "CS3237"
+   ]
+  },
+  "reasons": [
+   "CS3231 is offered in Sem 1, so it cannot be in Sem 6. It must be moved to Sem 7 or 8.",
+   "CS3237 is offered in Sem 1, so it cannot be in Sem 8. It must be moved to Sem 7.",
+   "Re-planning: CS3231 in Sem 7, CS3237 in Sem 7. But CS3237 needs ST2334 before it. ST2334 in Sem 7 blocks CS3237 in Sem 7. ST2334 in Sem 6? CS3227 is in Sem 6. Sem 6 limit 20 MC. CS3227 (4) + ST2334 (4) = 8 MC. OK. CS3231 in Sem 7? CS3231 prereq CS2040S (done). OK. CS3237 in Sem 7? Prereq CS2100 (done) and CS1101S (done). OK. But CS3237 and CS2102 cannot be same semester. CS2102 in Sem 7? Then CS3237 cannot be in Sem 7. CS3237 in Sem 8? Not offered. Conflict."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

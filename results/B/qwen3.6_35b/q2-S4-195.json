@@ -1,0 +1,91 @@
+{
+ "id": "q2-S4-195",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.73,
+ "solver_seconds": 0.007,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3143,
+  "total_tokens": 3556,
+  "completion_tokens": 413,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 7.73,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 8,\n\"completed\": [\n\"IS1108\",\n\"CS3230\",\n\"MA1521\",\n\"CS2100\",\n\"CS4231\",\n\"CS2030S\",\n\"CS3219\",\n\"CS2101\",\n\"CS2106\",\n\"CS2040S\",\n\"CS2109S\",\n\"CS2103T\",\n\"MA1522\",\n\"ES2660\",\n\"CS3264\",\n\"CS2105\",\n\"ST2334\",\n\"CS1101S\",\n\"CS1231S\"\n],\n\"must_take\": [\n\"CS3247\",\n\"CS2102\",\n\"CS4222\",\n\"CS3263\"\n],\n\"mc_max\": 16,\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2102\",\n\"b\": \"CS4222\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3263\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4222\",\n\"b\": \"CS3263\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4222\",\n\"sem\": 8,\n\"strength\": \"prefer\"\n}\n],\n\"early\": [\n\"CS2102\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 8,
+  "completed": [
+   "IS1108",
+   "CS3230",
+   "MA1521",
+   "CS2100",
+   "CS4231",
+   "CS2030S",
+   "CS3219",
+   "CS2101",
+   "CS2106",
+   "CS2040S",
+   "CS2109S",
+   "CS2103T",
+   "MA1522",
+   "ES2660",
+   "CS3264",
+   "CS2105",
+   "ST2334",
+   "CS1101S",
+   "CS1231S"
+  ],
+  "must_take": [
+   "CS3247",
+   "CS2102",
+   "CS4222",
+   "CS3263"
+  ],
+  "mc_max": 16,
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS2102",
+    "b": "CS4222",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3263",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4222",
+    "b": "CS3263",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4222",
+    "sem": 8,
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS2102"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the prerequisites of CS3247"
+  ]
+ }
+}

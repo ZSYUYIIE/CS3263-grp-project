@@ -1,0 +1,26 @@
+{
+ "id": "q2-S4-111",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "not a plan",
+ "seconds": 35.26,
+ "usage": {
+  "prompt_tokens": 10196,
+  "total_tokens": 11625,
+  "completion_tokens": 1429,
+  "finish_reason": "stop",
+  "request_seconds": 35.26,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS3235 requires CS2105, but the student wants CS3235 in Semester 6 (exchange, 0 MC) and CS2105 in a different semester. CS3235 cannot be taken in Semester 6 as it requires 0 MC limit and has prerequisites that must be completed/planned earlier. Even if CS2105 is taken in Sem 5, CS3235 cannot be taken in Sem 6 due to 0 MC limit. If CS3235 is taken in Sem 7, it conflicts with the 'finish before CS3211' if CS3211 is Sem 7 or 8. More critically, CS3235 requires CS2105. If CS2105 is in Sem 5, CS3235 can be Sem 7. But Sem 6 is exchange (0 MC). The student wants CS3235 in Sem 6, which is impossible due to 0 MC. If we ignore that wish, can we plan? CS3235 prereq: CS2105, CS2106, CS2107. CS2106 completed. CS2107 not completed. CS2107 prereq: CS1101S (completed). So CS2107 can be taken. CS2105 prereq: CS2040S (completed). So CS2105 can be taken. CS3235 prereq: CS2105, CS2106, CS2107. All can be done by Sem 5. CS3211 prereq: CS2106 (completed). CS3281 prereq: CS2103T (completed). CS2102 prereq: CS1231S (completed), CS2030S (completed). So all remaining modules are eligible. Sem 5: CS2105, CS2107, CS3235? CS3235 prereq CS2105. If CS2105 in Sem 5, CS3235 cannot be in Sem 5. So CS3235 in Sem 7. CS3211 in Sem 7 or 8. CS3281 in Sem 7 or 8. CS2102 in Sem 5, 7, 8. Sem 6 is exchange (0 MC). Sem 8 is NOC (0 MC). So Sem 5, 7 are the only ones with courses. Sem 5: CS2105, CS2107, CS2102 (12 MC). Sem 7: CS3235, CS3211, CS3281 (12 MC). This works. But student wants CS3235 in Sem 6. Impossible. Student wants CS3235 before CS2102. CS3235 in Sem 7, CS2102 in Sem 5. This violates 'CS3235 before CS2102'. If CS2102 in Sem 7, CS3235 in Sem 5? No, CS3235 needs CS2105. If CS2105 in Sem 5, CS3235 in Sem 7. CS2102 in Sem 5. CS3235 (Sem 7) is AFTER CS2102 (Sem 5). Violates wish. If CS2102 in Sem 7, CS3235 in Sem 5? No. If CS2105 in Sem 5, CS3235 in Sem 7. CS2102 in Sem 7. CS3235 and CS2102 same sem. 'Before' usually means strictly earlier. If 'before' allows same sem, then ok. But student said 'before'. Also 'CS3235 in Sem 6' is impossible. So NO_PLAN due to conflicting hard constraints/wishes? The prompt says 'If possible' for wishes. 'Finish CS3235 before CS3211' is a hard constraint? 'I need to finish CS3235 before I start CS3211'. This is a hard constraint. 'CS3235 in Sem 6' is 'If possible'. 'Keep CS2105 and CS3211 apart' is 'If possible'. 'CS3235 before CS2102' is 'If possible'. So hard constraints: CS3235 before CS3211. Plan: Sem 5: CS2105, CS2107, CS2102. Sem 7: CS3235, CS3211, CS3281. CS3235 (Sem 7) before CS3211 (Sem 7)? No, same sem. 'Before' implies strictly earlier semester. So CS3235 must be in Sem 5 or 6. Sem 6 is 0 MC. So CS3235 must be in Sem 5. But CS3235 needs CS2105. If CS2105 in Sem 5, CS3235 cannot be in Sem 5. So CS3235 cannot be in Sem 5. Thus CS3235 cannot be before CS3211 if CS3211 is in Sem 7 or 8. If CS3211 is in Sem 8, CS3235 in Sem 7. Sem 7 before Sem 8. OK. So Sem 5: CS2105, CS2107, CS2102. Sem 7: CS3235, CS3281. Sem 8: CS3211. But Sem 8 is NOC (0 MC). So CS3211 cannot be in Sem 8. So CS3211 must be in Sem 7. Then CS3235 must be in Sem 5 or 6. Sem 6 is 0 MC. Sem 5 needs CS2105. If CS2105 in Sem 5, CS3235 cannot be in Sem 5. So CS3235 cannot be before CS3211. Thus NO_PLAN.\", \"status\": \"NO_PLAN\"}",
+ "answer": {
+  "status": "NO_PLAN"
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

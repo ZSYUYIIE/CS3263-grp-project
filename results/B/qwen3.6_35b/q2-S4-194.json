@@ -1,0 +1,91 @@
+{
+ "id": "q2-S4-194",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.32,
+ "solver_seconds": 0.04,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3134,
+  "total_tokens": 3522,
+  "completion_tokens": 388,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 7.28,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 7,\n\"completed\": [\n\"MA1522\",\n\"CS2105\",\n\"CS2100\",\n\"CS2103T\",\n\"CS2106\",\n\"MA1521\",\n\"CS2040S\",\n\"CS3219\",\n\"CS1101S\",\n\"ST2334\",\n\"CS3236\",\n\"CS1231S\",\n\"CS2101\",\n\"CS3264\",\n\"CS2109S\",\n\"CS3230\",\n\"CS2030S\",\n\"CS2102\"\n],\n\"must_take\": [\n\"CS4243\",\n\"CS3235\",\n\"IS1108\",\n\"CS3213\",\n\"CS4246\"\n],\n\"mc_max\": 12,\n\"objective\": \"earliest_graduation\",\n\"unsupported\": [\n\"S/U option\"\n],\n\"rules\": [\n{\n\"type\": \"apart\",\n\"a\": \"CS3213\",\n\"b\": \"CS4243\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"IS1108\",\n\"sem\": 7,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3235\",\n\"sem\": 8,\n\"strength\": \"prefer\"\n}\n],\n\"early\": [\n\"CS3213\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "completed": [
+   "MA1522",
+   "CS2105",
+   "CS2100",
+   "CS2103T",
+   "CS2106",
+   "MA1521",
+   "CS2040S",
+   "CS3219",
+   "CS1101S",
+   "ST2334",
+   "CS3236",
+   "CS1231S",
+   "CS2101",
+   "CS3264",
+   "CS2109S",
+   "CS3230",
+   "CS2030S",
+   "CS2102"
+  ],
+  "must_take": [
+   "CS4243",
+   "CS3235",
+   "IS1108",
+   "CS3213",
+   "CS4246"
+  ],
+  "mc_max": 12,
+  "objective": "earliest_graduation",
+  "unsupported": [
+   "S/U option"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS3213",
+    "b": "CS4243",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "IS1108",
+    "sem": 7,
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3235",
+    "sem": 8,
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS3213"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the prerequisites of CS3235; the prerequisites of CS4246; the MC limits (at most 12 MC per semester)"
+  ],
+  "not_applied": [
+   "S/U option"
+  ]
+ }
+}

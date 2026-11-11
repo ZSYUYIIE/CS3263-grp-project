@@ -1,0 +1,107 @@
+{
+ "id": "q2-S4-224",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 37.19,
+ "solver_seconds": 0.078,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2869,
+  "total_tokens": 6520,
+  "completion_tokens": 3651,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3378
+  },
+  "finish_reason": "stop",
+  "request_seconds": 37.11,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"completed\":[\"CS1101S\",\"CS2100\",\"CS2030S\",\"IS1108\",\"CS2103T\",\"MA1521\",\"CS4231\",\"ES2660\",\"CS2106\",\"CS1231S\",\"CS2109S\",\"MA1522\",\"CS3230\",\"CS2101\",\"CS2040S\"],\"current_sem\":5,\"must_take\":[\"CS4262\",\"CS3237\",\"CS2105\",\"CS4248\",\"CS4223\"],\"mc_max\":16,\"objective\":\"min_total_mc\",\"rules\":[{\"type\":\"apart\",\"a\":\"CS3237\",\"b\":\"CS4223\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS4248\",\"sem\":6,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS2105\",\"sem\":8,\"strength\":\"must\"},{\"type\":\"same_sem\",\"a\":\"CS4248\",\"b\":\"CS2105\",\"strength\":\"must\"},{\"type\":\"same_sem\",\"a\":\"CS2105\",\"b\":\"CS3237\",\"strength\":\"prefer\"},{\"type\":\"same_sem\",\"a\":\"CS4248\",\"b\":\"CS4223\",\"strength\":\"prefer\"}],\"late\":[\"CS4223\"]}",
+ "spec": {
+  "query": "plan",
+  "completed": [
+   "CS1101S",
+   "CS2100",
+   "CS2030S",
+   "IS1108",
+   "CS2103T",
+   "MA1521",
+   "CS4231",
+   "ES2660",
+   "CS2106",
+   "CS1231S",
+   "CS2109S",
+   "MA1522",
+   "CS3230",
+   "CS2101",
+   "CS2040S"
+  ],
+  "current_sem": 5,
+  "must_take": [
+   "CS4262",
+   "CS3237",
+   "CS2105",
+   "CS4248",
+   "CS4223"
+  ],
+  "mc_max": 16,
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS3237",
+    "b": "CS4223",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4248",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2105",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4248",
+    "b": "CS2105",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2105",
+    "b": "CS3237",
+    "strength": "prefer"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4248",
+    "b": "CS4223",
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "CS4223"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS4248 in semester 6; your rule: CS2105 in semester 8; your rule: CS4248 and CS2105 in the same semester"
+  ]
+ }
+}

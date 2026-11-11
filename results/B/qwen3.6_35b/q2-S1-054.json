@@ -1,0 +1,143 @@
+{
+ "id": "q2-S1-054",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.93,
+ "solver_seconds": 0.39,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3098,
+  "total_tokens": 3491,
+  "completion_tokens": 393,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.04,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 1,\n\"completed\": [],\n\"must_take\": [\n\"CS2102\",\n\"CS2105\",\n\"CS4230\",\n\"CS3230\",\n\"MA1521\",\n\"CS2101\",\n\"CS1231S\",\n\"CS2109S\",\n\"CS2106\",\n\"CS2103T\",\n\"CS2040S\",\n\"ST2334\"\n],\n\"mc_max\": 16,\n\"objective\": \"min_total_mc\",\n\"early\": [\n\"CS4230\"\n],\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2109S\",\n\"sem\": 6,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2103T\",\n\"sem\": 4,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3230\",\n\"sem\": 3,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"MA1521\",\n\"sem\": 1,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2106\",\n\"sem\": 7,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"ST2334\",\n\"b\": \"CS2103T\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "completed": [],
+  "must_take": [
+   "CS2102",
+   "CS2105",
+   "CS4230",
+   "CS3230",
+   "MA1521",
+   "CS2101",
+   "CS1231S",
+   "CS2109S",
+   "CS2106",
+   "CS2103T",
+   "CS2040S",
+   "ST2334"
+  ],
+  "mc_max": 16,
+  "objective": "min_total_mc",
+  "early": [
+   "CS4230"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS2109S",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2103T",
+    "sem": 4,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3230",
+    "sem": 3,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "MA1521",
+    "sem": 1,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2106",
+    "sem": 7,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "ST2334",
+    "b": "CS2103T",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 7,
+  "plan": {
+   "1": [
+    "CS1010S",
+    "CS1231S",
+    "MA1521"
+   ],
+   "2": [
+    "CS2030S",
+    "CS2040S",
+    "ST2334"
+   ],
+   "3": [
+    "CS3230"
+   ],
+   "4": [
+    "CS2103T",
+    "CS4230"
+   ],
+   "5": [],
+   "6": [
+    "CS2100DE",
+    "CS2109S"
+   ],
+   "7": [
+    "CS2101",
+    "CS2102",
+    "CS2105",
+    "CS2106"
+   ]
+  },
+  "mc_per_semester": {
+   "1": 12,
+   "2": 12,
+   "3": 4,
+   "4": 8,
+   "5": 0,
+   "6": 8,
+   "7": 16
+  },
+  "preferences_met": [
+   "CS2106 in semester 7",
+   "ST2334 before CS2103T",
+   "CS4230 as early as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS1010S",
+   "CS2030S",
+   "CS2100DE"
+  ]
+ }
+}

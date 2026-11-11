@@ -1,0 +1,47 @@
+{
+ "id": "q2-S4-055",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 3,
+ "end": "cap",
+ "seconds": 103.57,
+ "usage": {
+  "prompt_tokens": 37324,
+  "total_tokens": 43828,
+  "completion_tokens": 6504,
+  "finish_reason": "stop",
+  "request_seconds": 103.56,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"2\": [\"CS2040\", \"MA1522\", \"ST2334\"], \"3\": [\"CS4261\", \"CS3230\"], \"4\": [\"CS4263\"], \"5\": [\"CS2105\", \"CS3243\"]}, \"reasons\": [\"CS4263 is offered only in Sem 1, so it must be in an odd semester. Sem 3 is full with CS4261 and CS3230. Sem 5 has CS2105 (fixed) and CS3243. CS3243 is offered in Sem 2, so it can be in Sem 5. CS4263 in Sem 4 is invalid as it is not offered. CS4263 must be in Sem 1 or 3 or 5. Sem 1 is past. Sem 3 is full. So CS4263 must be in Sem 5? No, Sem 5 has CS2105. Can we swap? CS2105 is fixed in Sem 5. CS4263 is offered Sem 1. So it must be in Sem 3 or 5. Sem 3 has CS4261. Can we move CS4261? No, fixed in Sem 3. So CS4263 must be in Sem 5? But CS3243 is also needed. CS3243 is offered Sem 2. So it can be in Sem 4 or 6. CS4263 is offered Sem 1. So it can be in Sem 3 or 5. Sem 3 is full. So CS4263 in Sem 5. CS3243 in Sem 4. This works. CS3230 prerequisites: CS2040 (Sem 2) and CS1231 (completed). OK. CS4261 prerequisites: CS2040 (Sem 2), CS1231 (completed), and Math prereqs. MA1522 (Sem 2) satisfies MA1522 part? CS4261 prereq: (EE2012A or EE2012 or ST2131 or MA2216 or ST2334 or MA2116 or MA2116T) AND (CS2040...) AND (MA1100...) AND (MA2001...). Student has MA1521, CS1101S, ES2660, CS1231S. MA1521 is not in the list for CS4261 math prereqs. The list is MA2001, MA1101R, MA1311, MA1508E, MA1513, MA1522. Student has MA1522 in Sem 2. So MA1522 satisfies one of the math prereqs? No, the prereq is a list of courses, you need ONE of them? Or ALL? Usually \"and\" between groups means all groups must be satisfied. Group 1: Math Stats. Group 2: Data Structures. Group 3: Discrete Math. Group 4: Linear Algebra. CS4261 prereq: (EE2012A or ...) AND (CS2040...) AND (MA1100...) AND (MA2001 or ...). Student has CS1231S (satisfies Group 3). Student has CS2040 (satisfies Group 2). Student has MA1522 (satisfies Group 4? MA1522 is in the list for Group 4? No, Group 4 is MA2001, MA1101R, MA1311, MA1508E, MA1513, MA1522. Yes, MA1522 is in the list. So Group 4 satisfied by MA1522. Group 1: EE2012A or EE2012 or ST2131 or MA2216 or ST2334 or MA2116 or MA2116T. Student has ST2334 in Sem 2. So Group 1 satisfied by ST2334. So CS4261 can be taken in Sem 3. CS3230 prereq: (YSC2229 or CS2040S or CS2040 or CS2040C or CS2040DE or CS2040HS) AND (CS1231 or CS1231S or MA1100T or MA1100). Student has CS2040 (Sem 2) and CS1231S (completed). So CS3230 can be taken in Sem 3. CS3243 prereq: (CS2040...) AND (CS1231S or CS1231 or MA1100T or MA1100). Student has CS2040 and CS1231S. So CS3243 can be taken in Sem 4. CS2105 prereq: YSC2229 or CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS. Student has CS2040. So CS2105 can be taken in Sem 5. CS4263 prereq: (CS2040...) AND (CS1231 or CS1231S or MA1100 or MA1100T). Student has CS2040 and CS1231S. So CS4263 can be taken in Sem 5. CS4263 is offered Sem 1. So it can be in Sem 3 or 5. Sem 3 is full. Sem 5 is available. So CS4263 in Sem 5. CS3243 is offered Sem 2. So it can be in Sem 4. This plan works. CS4263 and CS3243 are mutually exclusive? No, CS4263 is mutually exclusive with CS2109S, CS3243, CS3263. Wait. CS4263 mutually exclusive with CS3243. So they cannot be taken in the same semester. They are in different semesters (5 and 4). So this is fine.\"}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "2": [
+    "CS2040",
+    "MA1522",
+    "ST2334"
+   ],
+   "3": [
+    "CS4261",
+    "CS3230"
+   ],
+   "4": [
+    "CS4263"
+   ],
+   "5": [
+    "CS2105",
+    "CS3243"
+   ]
+  }
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

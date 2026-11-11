@@ -1,0 +1,71 @@
+{
+ "id": "q2-S1-036",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 105.67,
+ "usage": {
+  "prompt_tokens": 7474,
+  "total_tokens": 17346,
+  "completion_tokens": 9872,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 5888
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 9670
+  },
+  "finish_reason": "stop",
+  "request_seconds": 105.67,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"1\":[\"CS1010\",\"CS1231S\",\"MA1522\",\"ES2660\"],\"2\":[\"CS2040\",\"CS2030S\",\"CS2101\"],\"3\":[\"CS2102\",\"CS3230\"],\"4\":[\"CS2103DE\",\"CS3223\"],\"5\":[\"CS2100\",\"CS3219\",\"CS4211\"],\"6\":[\"CS4221\",\"CS4277\"],\"7\":[\"CS4234\"]},\"reasons\":[\"Plan uses 68 MC, the minimum: all 9 required courses plus 8 prerequisite courses.\",\"CS2100 is in semester 5 and precedes CS4234; CS4277 is in semester 6; MA1522 precedes CS4221.\",\"ES2660 is earliest in semester 1; CS3219 is earliest possible in semester 5; ES2660 and CS2100 are in different semesters.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1010",
+    "CS1231S",
+    "MA1522",
+    "ES2660"
+   ],
+   "2": [
+    "CS2040",
+    "CS2030S",
+    "CS2101"
+   ],
+   "3": [
+    "CS2102",
+    "CS3230"
+   ],
+   "4": [
+    "CS2103DE",
+    "CS3223"
+   ],
+   "5": [
+    "CS2100",
+    "CS3219",
+    "CS4211"
+   ],
+   "6": [
+    "CS4221",
+    "CS4277"
+   ],
+   "7": [
+    "CS4234"
+   ]
+  },
+  "reasons": [
+   "Plan uses 68 MC, the minimum: all 9 required courses plus 8 prerequisite courses.",
+   "CS2100 is in semester 5 and precedes CS4234; CS4277 is in semester 6; MA1522 precedes CS4221.",
+   "ES2660 is earliest in semester 1; CS3219 is earliest possible in semester 5; ES2660 and CS2100 are in different semesters."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

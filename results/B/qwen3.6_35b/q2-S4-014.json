@@ -1,0 +1,104 @@
+{
+ "id": "q2-S4-014",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 39.12,
+ "solver_seconds": 0.01,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3188,
+  "total_tokens": 3772,
+  "completion_tokens": 584,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 39.11,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"current_sem\": 7,\n  \"completed\": [\n    \"MA1522\",\n    \"ES2660\",\n    \"CS2102\",\n    \"CS2109S\",\n    \"CS2040S\",\n    \"CS1101S\",\n    \"CS2106\",\n    \"CS3219\",\n    \"CS2103T\",\n    \"CS1231S\",\n    \"IS1108\",\n    \"MA1521\",\n    \"ST2334\",\n    \"CS3230\",\n    \"CS2030S\",\n    \"CS2100\",\n    \"CS2101\",\n    \"CS3211\",\n    \"CS2105\"\n  ],\n  \"must_take\": [\n    \"CS3234\",\n    \"CS4231\",\n    \"CS4247\",\n    \"CS3241\",\n    \"CS3268\"\n  ],\n  \"mc_max\": 8,\n  \"objective\": \"earliest_graduation\",\n  \"early\": [\n    \"CS3241\"\n  ],\n  \"rules\": [\n    {\n      \"type\": \"before\",\n      \"a\": \"CS3241\",\n      \"b\": \"CS3234\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"same_sem\",\n      \"a\": \"CS3241\",\n      \"b\": \"CS3268\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"same_sem\",\n      \"a\": \"CS3234\",\n      \"b\": \"CS4247\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS3268\",\n      \"b\": \"CS3234\",\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS3268\",\n      \"b\": \"CS4247\",\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS4231\",\n      \"sem\": 8,\n      \"strength\": \"prefer\"\n    }\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "completed": [
+   "MA1522",
+   "ES2660",
+   "CS2102",
+   "CS2109S",
+   "CS2040S",
+   "CS1101S",
+   "CS2106",
+   "CS3219",
+   "CS2103T",
+   "CS1231S",
+   "IS1108",
+   "MA1521",
+   "ST2334",
+   "CS3230",
+   "CS2030S",
+   "CS2100",
+   "CS2101",
+   "CS3211",
+   "CS2105"
+  ],
+  "must_take": [
+   "CS3234",
+   "CS4231",
+   "CS4247",
+   "CS3241",
+   "CS3268"
+  ],
+  "mc_max": 8,
+  "objective": "earliest_graduation",
+  "early": [
+   "CS3241"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3241",
+    "b": "CS3234",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3241",
+    "b": "CS3268",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3234",
+    "b": "CS4247",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3268",
+    "b": "CS3234",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS3268",
+    "b": "CS4247",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4231",
+    "sem": 8,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "the required courses need 20 MC but the remaining semesters [7, 8] allow at most 16 MC"
+  ]
+ }
+}

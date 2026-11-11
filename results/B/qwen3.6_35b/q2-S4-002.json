@@ -1,0 +1,124 @@
+{
+ "id": "q2-S4-002",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.7,
+ "solver_seconds": 0.047,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3078,
+  "total_tokens": 3440,
+  "completion_tokens": 362,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 6.65,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"current_sem\": 3,\n  \"completed\": [\n    \"MA1521\",\n    \"MA1522\",\n    \"IS1108\",\n    \"CS1231S\",\n    \"CS2030S\",\n    \"CS2040S\",\n    \"CS1101S\"\n  ],\n  \"must_take\": [\n    \"CS3237\",\n    \"CS3241\",\n    \"CS4247\",\n    \"CS3230\",\n    \"CS4221\",\n    \"CS2103T\",\n    \"CS2105\"\n  ],\n  \"mc_max\": 8,\n  \"unsupported\": [\n    \"at most two modules with final exams in a semester\",\n    \"avoid modules with heavy group projects\"\n  ],\n  \"rules\": [\n    {\n      \"type\": \"before\",\n      \"a\": \"CS2103T\",\n      \"b\": \"CS3241\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS3237\",\n      \"b\": \"CS3241\",\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS2103T\",\n      \"b\": \"CS2105\",\n      \"strength\": \"prefer\"\n    }\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "completed": [
+   "MA1521",
+   "MA1522",
+   "IS1108",
+   "CS1231S",
+   "CS2030S",
+   "CS2040S",
+   "CS1101S"
+  ],
+  "must_take": [
+   "CS3237",
+   "CS3241",
+   "CS4247",
+   "CS3230",
+   "CS4221",
+   "CS2103T",
+   "CS2105"
+  ],
+  "mc_max": 8,
+  "unsupported": [
+   "at most two modules with final exams in a semester",
+   "avoid modules with heavy group projects"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2103T",
+    "b": "CS3241",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3237",
+    "b": "CS3241",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS2103T",
+    "b": "CS2105",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 8,
+  "plan": {
+   "3": [
+    "CS2103T"
+   ],
+   "4": [
+    "CG2028",
+    "CS2105"
+   ],
+   "5": [
+    "CS2102",
+    "CS3237"
+   ],
+   "6": [
+    "CS3223",
+    "CS3230"
+   ],
+   "7": [
+    "CS3241"
+   ],
+   "8": [
+    "CS4221",
+    "CS4247"
+   ]
+  },
+  "mc_per_semester": {
+   "3": 4,
+   "4": 6,
+   "5": 8,
+   "6": 8,
+   "7": 4,
+   "8": 8
+  },
+  "preferences_met": [
+   "CS3237 before CS3241",
+   "CS2103T before CS2105"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CG2028",
+   "CS2102",
+   "CS3223"
+  ],
+  "not_applied": [
+   "at most two modules with final exams in a semester",
+   "avoid modules with heavy group projects"
+  ]
+ }
+}

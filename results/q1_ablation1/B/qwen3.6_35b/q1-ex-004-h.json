@@ -1,0 +1,54 @@
+{
+ "id": "q1-ex-004-h",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 2.13,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2856,
+  "total_tokens": 3002,
+  "completion_tokens": 146,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 2.13,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\n\"query\": \"eligible\",\n\"target\": \"CS5425\",\n\"current_sem\": 8,\n\"completed\": [\n\"CS4225\",\n\"CS1231S\",\n\"ES2660\",\n\"CS2105\",\n\"CS2100\",\n\"CS2030S\",\n\"CS3231\",\n\"CS2102\",\n\"CS2040S\",\n\"CS3230\",\n\"IS2101\",\n\"CS1101S\",\n\"MA1301X\"\n]\n}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS5425",
+  "current_sem": 8,
+  "completed": [
+   "CS4225",
+   "CS1231S",
+   "ES2660",
+   "CS2105",
+   "CS2100",
+   "CS2030S",
+   "CS3231",
+   "CS2102",
+   "CS2040S",
+   "CS3230",
+   "IS2101",
+   "CS1101S",
+   "MA1301X"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS5425",
+  "semester": 8,
+  "reasons": [
+   "precluded: already completed CS4225"
+  ],
+  "can_still_become_eligible": false,
+  "never_eligible_because": "CS5425 is ruled out by completed CS4225"
+ }
+}

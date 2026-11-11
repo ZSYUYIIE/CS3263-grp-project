@@ -1,0 +1,48 @@
+{
+ "id": "q2-S2-025",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 2,
+ "end": "valid",
+ "seconds": 43.41,
+ "usage": {
+  "prompt_tokens": 31212,
+  "total_tokens": 33074,
+  "completion_tokens": 1862,
+  "finish_reason": "stop",
+  "request_seconds": 43.41,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS3227\",\n      \"ST2334\"\n    ],\n    \"7\": [\n      \"CS3231\",\n      \"CS3237\"\n    ],\n    \"8\": [\n      \"CS2102\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3227 is placed in Sem 6 as required.\",\n    \"ST2334 is placed in Sem 6 to satisfy the prerequisite 'ST2334 before CS3237' and to keep it as late as possible while allowing CS3237 in Sem 7.\",\n    \"CS3231 and CS3237 are placed in Sem 7 to meet the ideal wish of being in the same semester, respecting their Sem 1 offering constraint.\",\n    \"CS2102 is placed in Sem 8 to ensure it is not taken together with CS3237, satisfying the hard constraint.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS3227",
+    "ST2334"
+   ],
+   "7": [
+    "CS3231",
+    "CS3237"
+   ],
+   "8": [
+    "CS2102"
+   ]
+  },
+  "reasons": [
+   "CS3227 is placed in Sem 6 as required.",
+   "ST2334 is placed in Sem 6 to satisfy the prerequisite 'ST2334 before CS3237' and to keep it as late as possible while allowing CS3237 in Sem 7.",
+   "CS3231 and CS3237 are placed in Sem 7 to meet the ideal wish of being in the same semester, respecting their Sem 1 offering constraint.",
+   "CS2102 is placed in Sem 8 to ensure it is not taken together with CS3237, satisfying the hard constraint."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,106 @@
+{
+ "id": "q2-S3-253",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 2.53,
+ "solver_seconds": 0.015,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2777,
+  "total_tokens": 3131,
+  "completion_tokens": 354,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 196
+  },
+  "finish_reason": "stop",
+  "request_seconds": 2.52,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":3,\"completed\":[\"MA1522\",\"CS1231S\",\"ES2660\",\"CS2030S\",\"CS1101S\",\"MA1521\",\"IS1108\",\"CS2040S\"],\"must_take\":[\"CS2105\",\"ST2334\",\"CS2101\",\"CS2100\",\"CS2109S\",\"CS3230\"],\"mc_max\":16,\"sem_caps\":{\"5\":0},\"late\":[\"CS2105\"],\"rules\":[{\"type\":\"apart\",\"a\":\"CS2109S\",\"b\":\"CS2101\",\"strength\":\"must\"},{\"type\":\"same_sem\",\"a\":\"CS2105\",\"b\":\"CS3230\",\"strength\":\"must\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "completed": [
+   "MA1522",
+   "CS1231S",
+   "ES2660",
+   "CS2030S",
+   "CS1101S",
+   "MA1521",
+   "IS1108",
+   "CS2040S"
+  ],
+  "must_take": [
+   "CS2105",
+   "ST2334",
+   "CS2101",
+   "CS2100",
+   "CS2109S",
+   "CS3230"
+  ],
+  "mc_max": 16,
+  "sem_caps": {
+   "5": 0
+  },
+  "late": [
+   "CS2105"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS2109S",
+    "b": "CS2101",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2105",
+    "b": "CS3230",
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 8,
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS2109S",
+    "ST2334"
+   ],
+   "4": [],
+   "5": [],
+   "6": [],
+   "7": [],
+   "8": [
+    "CS2101",
+    "CS2105",
+    "CS3230"
+   ]
+  },
+  "mc_per_semester": {
+   "3": 12,
+   "4": 0,
+   "5": 0,
+   "6": 0,
+   "7": 0,
+   "8": 12
+  },
+  "preferences_met": [
+   "CS2105 as late as possible"
+  ],
+  "preferences_not_met": []
+ }
+}

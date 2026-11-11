@@ -1,0 +1,81 @@
+{
+ "id": "q2-S4-259",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 5.78,
+ "solver_seconds": 0.053,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3073,
+  "total_tokens": 3401,
+  "completion_tokens": 328,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 5.72,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 4,\n\"completed\": [\n\"ES2660\",\n\"CS2103T\",\n\"IS1108\",\n\"MA1521\",\n\"ST2334\",\n\"CS2040S\",\n\"CS1231S\",\n\"CS2100\",\n\"CS1101S\",\n\"MA1522\",\n\"CS2030S\"\n],\n\"must_take\": [\n\"CS4246\",\n\"CS4211\",\n\"CS3230\"\n],\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS4211\",\n\"b\": \"CS4246\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4211\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4246\",\n\"sem\": 4,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3230\",\n\"sem\": 6,\n\"strength\": \"prefer\"\n}\n],\n\"late\": [\n\"CS3230\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "ES2660",
+   "CS2103T",
+   "IS1108",
+   "MA1521",
+   "ST2334",
+   "CS2040S",
+   "CS1231S",
+   "CS2100",
+   "CS1101S",
+   "MA1522",
+   "CS2030S"
+  ],
+  "must_take": [
+   "CS4246",
+   "CS4211",
+   "CS3230"
+  ],
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS4211",
+    "b": "CS4246",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4211",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4246",
+    "sem": 4,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3230",
+    "sem": 6,
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "CS3230"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS4246 in semester 4; the prerequisites of CS4246"
+  ]
+ }
+}

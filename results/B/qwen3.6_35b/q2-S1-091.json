@@ -1,0 +1,121 @@
+{
+ "id": "q2-S1-091",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 20.57,
+ "solver_seconds": 0.187,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3090,
+  "total_tokens": 3400,
+  "completion_tokens": 310,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 20.38,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 3,\n\"completed\": [\n\"CS1101S\",\n\"CS2040S\",\n\"CS1231S\",\n\"MA1521\",\n\"IS1108\",\n\"ES2660\",\n\"MA1522\",\n\"CS2030S\"\n],\n\"must_take\": [\n\"CS2100\",\n\"CS2103T\",\n\"CS4221\",\n\"CS2102\",\n\"CS3268\",\n\"CS3230\",\n\"CS3223\",\n\"CS4211\",\n\"CS4230\",\n\"CS2106\"\n],\n\"early\": [],\n\"late\": [\n\"CS3223\",\n\"CS2102\"\n],\n\"rules\": [\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2100\",\n\"b\": \"CS4230\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4221\",\n\"sem\": 8,\n\"strength\": \"must\"\n}\n],\n\"unsupported\": [\n\"applying to have one module waived\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "completed": [
+   "CS1101S",
+   "CS2040S",
+   "CS1231S",
+   "MA1521",
+   "IS1108",
+   "ES2660",
+   "MA1522",
+   "CS2030S"
+  ],
+  "must_take": [
+   "CS2100",
+   "CS2103T",
+   "CS4221",
+   "CS2102",
+   "CS3268",
+   "CS3230",
+   "CS3223",
+   "CS4211",
+   "CS4230",
+   "CS2106"
+  ],
+  "early": [],
+  "late": [
+   "CS3223",
+   "CS2102"
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS2100",
+    "b": "CS4230",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4221",
+    "sem": 8,
+    "strength": "must"
+   }
+  ],
+  "unsupported": [
+   "applying to have one module waived"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 8,
+  "plan": {
+   "3": [
+    "CS2103T",
+    "CS2109S",
+    "ST2334"
+   ],
+   "4": [],
+   "5": [
+    "CS3230"
+   ],
+   "6": [
+    "CS2100",
+    "CS2102",
+    "CS4230"
+   ],
+   "7": [
+    "CS2106",
+    "CS3223",
+    "CS3268",
+    "CS4211"
+   ],
+   "8": [
+    "CS4221"
+   ]
+  },
+  "mc_per_semester": {
+   "3": 12,
+   "4": 0,
+   "5": 4,
+   "6": 12,
+   "7": 16,
+   "8": 4
+  },
+  "preferences_met": [
+   "CS3223 as late as possible",
+   "CS2102 as late as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS2109S",
+   "ST2334"
+  ],
+  "not_applied": [
+   "applying to have one module waived"
+  ]
+ }
+}

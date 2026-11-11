@@ -1,0 +1,45 @@
+{
+ "id": "q2-S3-081",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 1,
+ "end": "valid",
+ "seconds": 29.27,
+ "usage": {
+  "prompt_tokens": 29527,
+  "total_tokens": 31020,
+  "completion_tokens": 1493,
+  "finish_reason": "stop",
+  "request_seconds": 29.27,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS3210\",\n      \"CS3219\",\n      \"CS2102\"\n    ],\n    \"6\": [\n      \"CP3880\"\n    ],\n    \"7\": [\n      \"CS4223\",\n      \"CS2105\"\n    ]\n  },\n  \"reasons\": [\n    \"CS4223 requires CS3210 (prereq met by CS2100). CS3210 must be taken before Sem 7. Sem 6 is ATAP, so CS3210 is in Sem 5.\",\n    \"CS3219 is placed in Sem 5 to satisfy the soft wish. CS2102 is placed in Sem 5 to satisfy 'as early as possible'.\",\n    \"CS2105 is placed in Sem 7 to satisfy 'as late as possible'. ATAP is in Sem 6. All hard constraints met.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS3210",
+    "CS3219",
+    "CS2102"
+   ],
+   "6": [
+    "CP3880"
+   ],
+   "7": [
+    "CS4223",
+    "CS2105"
+   ]
+  },
+  "reasons": [
+   "CS4223 requires CS3210 (prereq met by CS2100). CS3210 must be taken before Sem 7. Sem 6 is ATAP, so CS3210 is in Sem 5.",
+   "CS3219 is placed in Sem 5 to satisfy the soft wish. CS2102 is placed in Sem 5 to satisfy 'as early as possible'.",
+   "CS2105 is placed in Sem 7 to satisfy 'as late as possible'. ATAP is in Sem 6. All hard constraints met."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

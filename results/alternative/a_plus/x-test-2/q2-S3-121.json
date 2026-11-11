@@ -1,0 +1,116 @@
+{
+ "id": "q2-S3-121",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 138.58,
+ "usage": {
+  "prompt_tokens": 8929,
+  "total_tokens": 22827,
+  "completion_tokens": 13898,
+  "prompt_tokens_details": {
+   "cached_tokens": 4480,
+   "created_cache_tokens": 4352
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 13715
+  },
+  "finish_reason": "stop",
+  "request_seconds": 138.58,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS2111\", \"CS3233\", \"ST2334\"], \"5\": [\"CS3249\", \"CS2105\", \"CS2107\"], \"6\": [\"CS4222\", \"CS2109S\", \"CS3219\"], \"7\": [\"CS3264\", \"CS4236\", \"CS3230\"]}, \"reasons\": [\"Plan uses semesters 4,5,6,7 with 12 MC each; CS2107 and CS2111 are added as prerequisites for CS4236 and CS3249.\", \"CS2105 and ST2334 are in separate semesters; CS3233 is before CS2105.\", \"CS4212 is not included to keep total MC minimal; CS3264 is in semester 7 and CS3249 in semester 5.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2111",
+    "CS3233",
+    "ST2334"
+   ],
+   "5": [
+    "CS3249",
+    "CS2105",
+    "CS2107"
+   ],
+   "6": [
+    "CS4222",
+    "CS2109S",
+    "CS3219"
+   ],
+   "7": [
+    "CS3264",
+    "CS4236",
+    "CS3230"
+   ]
+  },
+  "reasons": [
+   "Plan uses semesters 4,5,6,7 with 12 MC each; CS2107 and CS2111 are added as prerequisites for CS4236 and CS3249.",
+   "CS2105 and ST2334 are in separate semesters; CS3233 is before CS2105.",
+   "CS4212 is not included to keep total MC minimal; CS3264 is in semester 7 and CS3249 in semester 5."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS2111\", \"CS3233\", \"ST2334\"], \"5\": [\"CS3249\", \"CS2105\", \"CS2107\"], \"6\": [\"CS4222\", \"CS2109S\", \"CS3219\"], \"7\": [\"CS3264\", \"CS4236\", \"CS3230\"]}, \"reasons\": [\"Plan uses semesters 4,5,6,7 with 12 MC each; CS2107 and CS2111 are added as prerequisites for CS4236 and CS3249.\", \"CS2105 and ST2334 are in separate semesters; CS3233 is before CS2105.\", \"CS4212 is not included to keep total MC minimal; CS3264 is in semester 7 and CS3249 in semester 5.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "CS2111",
+      "CS3233",
+      "ST2334"
+     ],
+     "5": [
+      "CS3249",
+      "CS2105",
+      "CS2107"
+     ],
+     "6": [
+      "CS4222",
+      "CS2109S",
+      "CS3219"
+     ],
+     "7": [
+      "CS3264",
+      "CS4236",
+      "CS3230"
+     ]
+    },
+    "reasons": [
+     "Plan uses semesters 4,5,6,7 with 12 MC each; CS2107 and CS2111 are added as prerequisites for CS4236 and CS3249.",
+     "CS2105 and ST2334 are in separate semesters; CS3233 is before CS2105.",
+     "CS4212 is not included to keep total MC minimal; CS3264 is in semester 7 and CS3249 in semester 5."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 8929,
+    "total_tokens": 22827,
+    "completion_tokens": 13898,
+    "prompt_tokens_details": {
+     "cached_tokens": 4480,
+     "created_cache_tokens": 4352,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 13715
+    },
+    "finish_reason": "stop",
+    "request_seconds": 138.58,
+    "attempts": 1
+   },
+   "seconds": 138.58,
+   "violations": []
+  }
+ ]
+}

@@ -31,10 +31,15 @@ ROOT = Path(__file__).resolve().parent.parent
 
 Q1_META = ("reason", "level", "style", "role", "base_id", "pair_id", "term_form", "missing_course_takeable_now",
            "correction_kind", "retraction_flips_answer")
-Q2_META = ("set", "twin", "answer_type", "visible", "wording", "log10_omega", "rho", "n_cand", "n_sems", "added")
+Q2_META = ("set", "twin", "answer_type", "visible", "wording", "log10_omega", "rho", "n_cand", "n_sems", "added",
+           "nokind", "ladder", "band", "oos", "missing")
+SIZE_EDGES = ((-1, 3, "below 3"), (3, 6, "3 to below 6"), (6, 10, "6 to below 10"), (10, 24, "10 to below 24"),
+              (24, 1e9, "24 and above"))
+BAND_ORDER = ("1-2", "3-4", "5-6", "7-8", "not given", "outside 1-8")
+NOKIND_ORDER = ("capacity", "exclusion", "parity", "chain", "rule_conflict", "hidden")
 CLASSES = ("optimal", "preference gap", "extra courses", "objective gap", "invalid", "over-refusal", "wrong status",
            "BEATS GOLD: check")
-RHO_ORDER = ("up to 0.4", "0.4-0.6", "0.6-0.8", "0.8-1.0", "above 1")
+RHO_ORDER = ("below 0.4", "0.4 to below 0.6", "0.6 to below 0.8", "0.8 to 1.0", "above 1")
 OBJECTIVE_ORDER = ("none", "earliest_graduation", "min_total_mc")
 SPEC_FIELDS = ("query", "current_sem", "completed", "must_take", "mc_max", "mc_min", "sem_caps", "atap_sems",
                "objective", "early", "late", "rules", "unsupported", "programme")
@@ -291,10 +296,10 @@ def capped(value, top=3):
 def rho_bin(value):
     if value > 1:
         return "above 1"
-    for edge, name in ((0.4, "up to 0.4"), (0.6, "0.4-0.6"), (0.8, "0.6-0.8")):
-        if value <= edge:
+    for edge, name in ((0.4, "below 0.4"), (0.6, "0.4 to below 0.6"), (0.8, "0.6 to below 0.8")):
+        if value < edge:
             return name
-    return "0.8-1.0"
+    return "0.8 to 1.0"
 
 
 def semester_band(value):
@@ -316,31 +321,60 @@ def yes_no(value):
     return "yes" if value else "no"
 
 
+def size_bin(value):
+    return next(name for lo, hi, name in SIZE_EDGES if lo <= value < hi)
+
+
+def m_group(r):
+    if r["must_take"] == "" or r["answer_type"] == "MISSING_INFO" and r["missing"] == "must_take":
+        return "not given"
+    m = int(r["must_take"])
+    return "2-4" if m <= 4 else "6-8" if m <= 8 else "10-12"
+
+
+def rho_population(q):
+    return [r for r in q if r["rho"] != "" and (r["set"] in ("S1", "S2") or (r["set"] == "S4" and r["nokind"] == "capacity"
+            and r["gold_status"] == "NO_PLAN"))]
+
+
 def q2_tables(q):
     plan = [r for r in q if r["gold_status"] == "PLAN"]
-    size = [r for r in plan if r["set"] == "S1" and r["log10_omega"] != ""]
     s1 = [r for r in plan if r["set"] == "S1"]
-    tight = [r for r in q if r["set"] in ("S1", "S2") and r["rho"] != ""]
-    ladder_ids = {r["base_id"] for r in q if r["set"] == "S3"}
-    ladder = [r for r in plan if r["set"] == "S3" or r["id"] in ladder_ids]
-    wording_ids = {r["base_id"] for r in q if r["set"] == "S5"}
-    wording = [r for r in plan if r["set"] == "S5" or r["id"] in wording_ids]
-    size_bins = [(f"{lo:.2f} to {hi:.2f}", rs) for lo, hi, rs in k_bins([(float(r["log10_omega"]), r) for r in size])]
+    size = [r for r in s1 if r["log10_omega"] != ""]
+    rule_ladder = [r for r in plan if r["ladder"] == "rule"]
+    pref_ladder = [r for r in plan if r["ladder"] == "preference"]
+    obj_ladder = [r for r in plan if r["ladder"] == "objective"]
+    twins = [r for r in plan if r["twin"] in ("base", "atap", "mc_min")]
+    wording = [r for r in plan if r["set"] == "S5"]
     return [
         ("By set", level_groups(q, lambda r: r["set"])),
-        ("By answer type", level_groups(q, lambda r: r["answer_type"] or None)),
-        ("State space size, log10 of |Omega| (S1, gold PLAN, equal-size bins by rank)", size_bins),
-        ("Must-take courses M (S1, gold PLAN)", level_groups(s1, lambda r: int(r["must_take"]))),
-        ("Current semester (S1, gold PLAN)", level_groups(s1, lambda r: semester_band(r["cur_sem"]))),
+        ("By answer type (gold status)", level_groups(q, lambda r: r["answer_type"] or None)),
+        ("Current semester band (all instances)", level_groups(q, lambda r: r["band"], BAND_ORDER)),
+        ("Must-take courses M (all instances)", level_groups(q, m_group, ("2-4", "6-8", "10-12", "not given"))),
+        ("Objective (all instances with a plan request)", level_groups([r for r in q if r["objective"] != ""],
+                                                                       lambda r: r["objective"], OBJECTIVE_ORDER)),
+        ("Number of preferences (all instances with a plan request)",
+         level_groups([r for r in q if r["n_prefs"] != ""], lambda r: capped(r["n_prefs"], 4))),
+        ("Number of must rules (all instances with a plan request)",
+         level_groups([r for r in q if r["n_must_rules"] != ""], lambda r: capped(r["n_must_rules"], 4))),
+        ("ATAP in the request (all instances with a plan request)",
+         level_groups([r for r in q if r["atap"] != ""], lambda r: yes_no(r["atap"]))),
+        ("Minimum MC in the request (all instances with a plan request)",
+         level_groups([r for r in q if r["mc_min"] != ""], lambda r: yes_no(r["mc_min"]))),
+        ("Wording (all instances)", level_groups(q, lambda r: r["wording"] or "plain", ("plain", "scattered", "unsupported"))),
+        ("State space size, log10 of |Omega| (S1, gold PLAN, fixed bins)",
+         level_groups(size, lambda r: size_bin(float(r["log10_omega"])), [n for _, _, n in SIZE_EDGES])),
         ("Usable semesters |S| (S1, gold PLAN)", level_groups([r for r in s1 if r["n_sems"] != ""], lambda r: int(r["n_sems"]))),
         ("Added courses in the gold plan (S1, gold PLAN)", level_groups([r for r in s1 if r["added"] != ""], lambda r: capped(r["added"]))),
-        ("Capacity ratio rho (S1 and S2, all gold answers)", level_groups(tight, lambda r: rho_bin(float(r["rho"])), RHO_ORDER)),
-        ("Number of must rules (S3 twins and their bases, descriptive)", level_groups(ladder, lambda r: capped(r["n_must_rules"]))),
-        ("Number of preferences (S3 twins and their bases, descriptive)", level_groups(ladder, lambda r: capped(r["n_prefs"]))),
-        ("Objective (S3 twins and their bases, descriptive)", level_groups(ladder, lambda r: r["objective"], OBJECTIVE_ORDER)),
-        ("ATAP in the request (S3 twins and their bases, descriptive)", level_groups(ladder, lambda r: yes_no(r["atap"]))),
-        ("Minimum MC in the request (S3 twins and their bases, descriptive)", level_groups(ladder, lambda r: yes_no(r["mc_min"]))),
-        ("Wording (S5 rewordings and their bases, descriptive)", level_groups(wording, lambda r: r["wording"] or "plain")),
+        ("Capacity ratio rho (S1, S2 and capacity-impossible requests)",
+         level_groups(rho_population(q), lambda r: rho_bin(float(r["rho"])), RHO_ORDER)),
+        ("Must-rule ladder (same students, 0 to 3 must rules added)", level_groups(rule_ladder, lambda r: str(r["n_must_rules"]))),
+        ("Preference ladder (same students, 0 to 3 preferences added)", level_groups(pref_ladder, lambda r: str(r["n_prefs"]))),
+        ("Objective ladder (same students, objective changed)", level_groups(obj_ladder, lambda r: r["objective"], OBJECTIVE_ORDER)),
+        ("ATAP and minimum-MC twins and their bases", level_groups(twins, lambda r: {"base": "base", "atap": "with ATAP", "mc_min": "with minimum MC"}[r["twin"]],
+                                                                    ("base", "with ATAP", "with minimum MC"))),
+        ("Wording twins (S5, same student in three wordings)", level_groups(wording, lambda r: r["wording"] or "plain",
+                                                                           ("plain", "scattered", "unsupported"))),
     ]
 
 
@@ -411,6 +445,12 @@ def no_plan_table(q):
         L.append(f"| {name} | {len(rs)} | {pct(sum(r['class'] == 'correct refusal' for r in rs), len(rs))} | "
                  f"{pct(sum(r['class'] == 'invented plan' for r in rs), len(rs))} | "
                  f"{pct(sum(r['class'] == 'wrong status' for r in rs), len(rs))} |")
+    L += ["", "**Impossible requests by kind**", "",
+          "| Kind | Instances | Correct refusal | Invented plan | Wrong status |", "|---|---|---|---|---|"]
+    for name, rs in level_groups(nop, lambda r: r["nokind"], NOKIND_ORDER):
+        L.append(f"| {name} | {len(rs)} | {pct(sum(r['class'] == 'correct refusal' for r in rs), len(rs))} | "
+                 f"{pct(sum(r['class'] == 'invented plan' for r in rs), len(rs))} | "
+                 f"{pct(sum(r['class'] == 'wrong status' for r in rs), len(rs))} |")
     return L + [""]
 
 
@@ -445,10 +485,10 @@ def paired_lines(q):
             L += [f"**Paired twins, {title.lower()} outcome** (same student, one factor changed; exact McNemar on the "
                   f"discordant pairs)", ""] + header + rows + [""]
     near = [r for r in q if r["set"] == "S4" and r["pair_id"] != ""]
-    kinds = sorted({r["answer_type"] for r in near if r["gold_status"] == "NO_PLAN"})
+    kinds = [k for k in NOKIND_ORDER if k in {r["nokind"] for r in near}]
     rows = []
     for kind in kinds:
-        counts = pair_counts([r for r in near if r["gold_status"] == "NO_PLAN" and r["answer_type"] == kind],
+        counts = pair_counts([r for r in near if r["gold_status"] == "NO_PLAN" and r["nokind"] == kind],
                              [r for r in near if r["gold_status"] == "PLAN"], valid_ok, key="pair_id")
         if counts[0]:
             rows.append(pair_row(kind, counts))

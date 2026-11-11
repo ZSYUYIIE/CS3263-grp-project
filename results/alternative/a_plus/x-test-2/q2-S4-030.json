@@ -1,0 +1,72 @@
+{
+ "id": "q2-S4-030",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "not a plan",
+ "seconds": 22.73,
+ "usage": {
+  "prompt_tokens": 7823,
+  "total_tokens": 9813,
+  "completion_tokens": 1990,
+  "prompt_tokens_details": {
+   "cached_tokens": 4096,
+   "created_cache_tokens": 3712
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1868
+  },
+  "finish_reason": "stop",
+  "request_seconds": 22.73,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"NO_PLAN\",\"reasons\":[\"Five required 4-MC courses total 20 MC, but semesters 7-8 allow at most 16 MC at 8 MC per semester.\",\"CS4226 is Sem1-only and must pair with CS3230 in semester 7, filling it; CS3236 and CS3234 are Sem2-only, filling semester 8, so CS2102 cannot fit.\",\"CS3223 in semester 8 would also require CS2102 in an earlier semester, which is impossible under the 8 MC cap.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "Five required 4-MC courses total 20 MC, but semesters 7-8 allow at most 16 MC at 8 MC per semester.",
+   "CS4226 is Sem1-only and must pair with CS3230 in semester 7, filling it; CS3236 and CS3234 are Sem2-only, filling semester 8, so CS2102 cannot fit.",
+   "CS3223 in semester 8 would also require CS2102 in an earlier semester, which is impossible under the 8 MC cap."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\":\"NO_PLAN\",\"reasons\":[\"Five required 4-MC courses total 20 MC, but semesters 7-8 allow at most 16 MC at 8 MC per semester.\",\"CS4226 is Sem1-only and must pair with CS3230 in semester 7, filling it; CS3236 and CS3234 are Sem2-only, filling semester 8, so CS2102 cannot fit.\",\"CS3223 in semester 8 would also require CS2102 in an earlier semester, which is impossible under the 8 MC cap.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "Five required 4-MC courses total 20 MC, but semesters 7-8 allow at most 16 MC at 8 MC per semester.",
+     "CS4226 is Sem1-only and must pair with CS3230 in semester 7, filling it; CS3236 and CS3234 are Sem2-only, filling semester 8, so CS2102 cannot fit.",
+     "CS3223 in semester 8 would also require CS2102 in an earlier semester, which is impossible under the 8 MC cap."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 7823,
+    "total_tokens": 9813,
+    "completion_tokens": 1990,
+    "prompt_tokens_details": {
+     "cached_tokens": 4096,
+     "created_cache_tokens": 3712,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 1868
+    },
+    "finish_reason": "stop",
+    "request_seconds": 22.73,
+    "attempts": 1
+   },
+   "seconds": 22.73,
+   "violations": null
+  }
+ ]
+}

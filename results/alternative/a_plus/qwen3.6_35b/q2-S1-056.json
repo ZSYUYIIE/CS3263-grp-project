@@ -1,0 +1,170 @@
+{
+ "id": "q2-S1-056",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 3,
+ "end": "switched to NO_PLAN",
+ "seconds": 12.73,
+ "usage": {
+  "prompt_tokens": 31019,
+  "total_tokens": 31651,
+  "completion_tokens": 632,
+  "finish_reason": "stop",
+  "request_seconds": 12.73,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4236 is only offered in Sem 1 (odd semesters).\",\n    \"The student is in Sem 6 (Y2S2) and Sem 7 is an exchange semester (0 MC).\",\n    \"The next available Sem 1 is Sem 9, which is outside the 8-semester programme limit.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4236 is only offered in Sem 1 (odd semesters).",
+   "The student is in Sem 6 (Y2S2) and Sem 7 is an exchange semester (0 MC).",
+   "The next available Sem 1 is Sem 9, which is outside the 8-semester programme limit."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS4211\"\n    ],\n    \"6\": [\n      \"CS3219\",\n      \"CS4236\"\n    ]\n  },\n  \"reasons\": [\n    \"CS4211 is placed in Sem 5 as required.\",\n    \"CS3219 is placed in Sem 6 to satisfy its prerequisite (CS2103T completed) and allow CS4236 in the same semester.\",\n    \"CS4236 is placed in Sem 6 as early as possible, satisfying prerequisites (CS2040S, CS2107, CS1231S) and the constraint that CS3219 precedes it.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS4211"
+     ],
+     "6": [
+      "CS3219",
+      "CS4236"
+     ]
+    },
+    "reasons": [
+     "CS4211 is placed in Sem 5 as required.",
+     "CS3219 is placed in Sem 6 to satisfy its prerequisite (CS2103T completed) and allow CS4236 in the same semester.",
+     "CS4236 is placed in Sem 6 as early as possible, satisfying prerequisites (CS2040S, CS2107, CS1231S) and the constraint that CS3219 precedes it."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 7521,
+    "total_tokens": 7708,
+    "completion_tokens": 187,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.45,
+    "attempts": 1
+   },
+   "seconds": 4.45,
+   "violations": [
+    "R3 CS4236 not offered in Sem 2 (semester 6)",
+    "R4 CS4236 in semester 6: prerequisite not met ((YSC2229 or CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS) and CS2107 and (CS1231 or CS1231S or MA1100T or MA1100))",
+    "R9 must rule not met: before CS3219 CS4236"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS4211\",\n      \"CS3219\"\n    ],\n    \"6\": [\n      \"CS4236\"\n    ]\n  },\n  \"reasons\": [\n    \"CS4211 is placed in Sem 5 as required.\",\n    \"CS3219 is placed in Sem 5 to satisfy its prerequisite (CS2103T completed) and precede CS4236.\",\n    \"CS4236 is placed in Sem 6 (Sem 1 of AY2027/28) as it is only offered in Sem 1, satisfying all prerequisites.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS4211",
+      "CS3219"
+     ],
+     "6": [
+      "CS4236"
+     ]
+    },
+    "reasons": [
+     "CS4211 is placed in Sem 5 as required.",
+     "CS3219 is placed in Sem 5 to satisfy its prerequisite (CS2103T completed) and precede CS4236.",
+     "CS4236 is placed in Sem 6 (Sem 1 of AY2027/28) as it is only offered in Sem 1, satisfying all prerequisites."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 7886,
+    "total_tokens": 8057,
+    "completion_tokens": 171,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.28,
+    "attempts": 1
+   },
+   "seconds": 3.28,
+   "violations": [
+    "R3 CS4236 not offered in Sem 2 (semester 6)",
+    "R4 CS4236 in semester 6: prerequisite not met ((YSC2229 or CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS) and CS2107 and (CS1231 or CS1231S or MA1100T or MA1100))"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS4211\",\n      \"CS3219\",\n      \"CS2107\"\n    ],\n    \"6\": [\n      \"CS4236\"\n    ]\n  },\n  \"reasons\": [\n    \"CS4211 is placed in Sem 5 as required.\",\n    \"CS3219 is placed in Sem 5 to precede CS4236 and satisfy prerequisites.\",\n    \"CS2107 is added in Sem 5 to satisfy CS4236's prerequisite, allowing CS4236 in Sem 6 (Sem 1 of AY2027/28).\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS4211",
+      "CS3219",
+      "CS2107"
+     ],
+     "6": [
+      "CS4236"
+     ]
+    },
+    "reasons": [
+     "CS4211 is placed in Sem 5 as required.",
+     "CS3219 is placed in Sem 5 to precede CS4236 and satisfy prerequisites.",
+     "CS2107 is added in Sem 5 to satisfy CS4236's prerequisite, allowing CS4236 in Sem 6 (Sem 1 of AY2027/28)."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 7850,
+    "total_tokens": 8026,
+    "completion_tokens": 176,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.24,
+    "attempts": 1
+   },
+   "seconds": 3.24,
+   "violations": [
+    "R3 CS4236 not offered in Sem 2 (semester 6)"
+   ]
+  },
+  {
+   "round": 3,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4236 is only offered in Sem 1 (odd semesters).\",\n    \"The student is in Sem 6 (Y2S2) and Sem 7 is an exchange semester (0 MC).\",\n    \"The next available Sem 1 is Sem 9, which is outside the 8-semester programme limit.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4236 is only offered in Sem 1 (odd semesters).",
+     "The student is in Sem 6 (Y2S2) and Sem 7 is an exchange semester (0 MC).",
+     "The next available Sem 1 is Sem 9, which is outside the 8-semester programme limit."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 7762,
+    "total_tokens": 7860,
+    "completion_tokens": 98,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 1.76,
+    "attempts": 1
+   },
+   "seconds": 1.76,
+   "violations": null
+  }
+ ]
+}

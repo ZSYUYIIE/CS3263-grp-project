@@ -1,0 +1,99 @@
+{
+ "id": "q2-S3-027",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 7.49,
+ "usage": {
+  "prompt_tokens": 28315,
+  "total_tokens": 28591,
+  "completion_tokens": 276,
+  "finish_reason": "stop",
+  "request_seconds": 7.49,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"ATAP (CP3880) is planned in semester 7, but the student has no courses planned in semester 8, violating the rule that ATAP cannot be in the last semester used. Additionally, semester 6 has 24 MC which exceeds the 20 MC limit, and semester 5 has 8 MC which exceeds the 0 MC limit for an NOC semester.\"]}}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "ATAP (CP3880) is planned in semester 7, but the student has no courses planned in semester 8, violating the rule that ATAP cannot be in the last semester used. Additionally, semester 6 has 24 MC which exceeds the 20 MC limit, and semester 5 has 8 MC which exceeds the 0 MC limit for an NOC semester."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"5\": [\"CS2102\", \"CS2106\"], \"6\": [\"CS2105\", \"CS3210\", \"CS3219\", \"CS3230\", \"CS2109S\", \"ST2334\"], \"7\": [\"CP3880\"], \"8\": []}, \"reasons\": [\"ATAP (CP3880) planned in Sem 7 as requested. NOC in Sem 5 implies 0 MC, so remaining core courses are scheduled in Sem 6. CS2102 is taken before CS2106 per preference. All prerequisites are satisfied by completed courses or earlier planned courses. Graduation in Sem 8 is the earliest possible given the course load and ATAP constraint.\"]}}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2102",
+      "CS2106"
+     ],
+     "6": [
+      "CS2105",
+      "CS3210",
+      "CS3219",
+      "CS3230",
+      "CS2109S",
+      "ST2334"
+     ],
+     "7": [
+      "CP3880"
+     ],
+     "8": []
+    },
+    "reasons": [
+     "ATAP (CP3880) planned in Sem 7 as requested. NOC in Sem 5 implies 0 MC, so remaining core courses are scheduled in Sem 6. CS2102 is taken before CS2106 per preference. All prerequisites are satisfied by completed courses or earlier planned courses. Graduation in Sem 8 is the earliest possible given the course load and ATAP constraint."
+    ]
+   },
+   "repair": "extra_text",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 14021,
+    "total_tokens": 14201,
+    "completion_tokens": 180,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.18,
+    "attempts": 1
+   },
+   "seconds": 5.18,
+   "violations": [
+    "R7 semester 5 has 8 MC, limit 0",
+    "R7 semester 6 has 24 MC, limit 20",
+    "R11 ATAP in semester 7, the last semester used"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"ATAP (CP3880) is planned in semester 7, but the student has no courses planned in semester 8, violating the rule that ATAP cannot be in the last semester used. Additionally, semester 6 has 24 MC which exceeds the 20 MC limit, and semester 5 has 8 MC which exceeds the 0 MC limit for an NOC semester.\"]}}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "ATAP (CP3880) is planned in semester 7, but the student has no courses planned in semester 8, violating the rule that ATAP cannot be in the last semester used. Additionally, semester 6 has 24 MC which exceeds the 20 MC limit, and semester 5 has 8 MC which exceeds the 0 MC limit for an NOC semester."
+    ]
+   },
+   "repair": "extra_text",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 14294,
+    "total_tokens": 14390,
+    "completion_tokens": 96,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.31,
+    "attempts": 1
+   },
+   "seconds": 2.31,
+   "violations": null
+  }
+ ]
+}

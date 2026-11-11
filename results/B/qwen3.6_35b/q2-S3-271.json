@@ -1,0 +1,117 @@
+{
+ "id": "q2-S3-271",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 8.03,
+ "solver_seconds": 0.034,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3126,
+  "total_tokens": 3531,
+  "completion_tokens": 405,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 7.99,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 4,\n\"programme\": \"BComp CS Hons\",\n\"completed\": [\n\"CS2030S\",\n\"MA1522\",\n\"CS1101S\",\n\"CS2101\",\n\"CS1231S\",\n\"ES2660\",\n\"CS2100\",\n\"MA1521\",\n\"CS2040S\",\n\"CS2103T\",\n\"IS1108\"\n],\n\"must_take\": [\n\"CS3103\",\n\"CS4226\",\n\"ST2334\",\n\"CS3234\",\n\"CS2109S\",\n\"CS3230\",\n\"CS2102\",\n\"CS2105\"\n],\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS2109S\",\n\"b\": \"CS3234\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2109S\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3230\",\n\"b\": \"CS3234\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"ST2334\",\n\"sem\": 8,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4226\",\n\"sem\": 8,\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "CS2030S",
+   "MA1522",
+   "CS1101S",
+   "CS2101",
+   "CS1231S",
+   "ES2660",
+   "CS2100",
+   "MA1521",
+   "CS2040S",
+   "CS2103T",
+   "IS1108"
+  ],
+  "must_take": [
+   "CS3103",
+   "CS4226",
+   "ST2334",
+   "CS3234",
+   "CS2109S",
+   "CS3230",
+   "CS2102",
+   "CS2105"
+  ],
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2109S",
+    "b": "CS3234",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2109S",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3230",
+    "b": "CS3234",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "ST2334",
+    "sem": 8,
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4226",
+    "sem": 8,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 6,
+  "plan": {
+   "4": [
+    "CS2102",
+    "CS2105",
+    "ST2334"
+   ],
+   "5": [
+    "CS2109S",
+    "CS3103",
+    "CS3230",
+    "CS4226"
+   ],
+   "6": [
+    "CS3234"
+   ]
+  },
+  "mc_per_semester": {
+   "4": 12,
+   "5": 16,
+   "6": 4
+  },
+  "preferences_met": [
+   "CS3230 before CS3234"
+  ],
+  "preferences_not_met": [
+   "ST2334 in semester 8",
+   "CS4226 in semester 8"
+  ]
+ }
+}

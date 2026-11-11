@@ -1,0 +1,72 @@
+{
+ "id": "q2-S4-055",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 4.52,
+ "solver_seconds": 0.088,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3038,
+  "total_tokens": 3304,
+  "completion_tokens": 266,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 4.43,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 2,\n\"completed\": [\n\"MA1521\",\n\"CS1101S\",\n\"ES2660\",\n\"CS1231S\"\n],\n\"must_take\": [\n\"MA1522\",\n\"CS4263\",\n\"CS2105\",\n\"CS3230\",\n\"CS3243\",\n\"ST2334\",\n\"CS4261\"\n],\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4261\",\n\"sem\": 3,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2105\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"MA1522\",\n\"b\": \"CS4261\",\n\"strength\": \"prefer\"\n}\n],\n\"early\": [\n\"ST2334\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 2,
+  "completed": [
+   "MA1521",
+   "CS1101S",
+   "ES2660",
+   "CS1231S"
+  ],
+  "must_take": [
+   "MA1522",
+   "CS4263",
+   "CS2105",
+   "CS3230",
+   "CS3243",
+   "ST2334",
+   "CS4261"
+  ],
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS4261",
+    "sem": 3,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2105",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "MA1522",
+    "b": "CS4261",
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "ST2334"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the course exclusions (courses that cannot be taken together)"
+  ]
+ }
+}

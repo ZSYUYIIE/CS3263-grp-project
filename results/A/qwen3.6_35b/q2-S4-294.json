@@ -1,0 +1,42 @@
+{
+ "id": "q2-S4-294",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 5.53,
+ "usage": {
+  "prompt_tokens": 12517,
+  "total_tokens": 12887,
+  "completion_tokens": 370,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.53,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"5\": [\"CS2102\", \"CS3219\", \"CS4236\", \"CS2105\"], \"6\": [\"CS3233\", \"CS4261\"], \"7\": [\"CS4223\"]}, \"reasons\": [\"All prerequisites for planned courses are satisfied by completed courses or earlier semesters.\", \"CS3219 and CS4236 are placed in Sem 5 as required. CS3233 is taken in Sem 6 before CS4223 in Sem 7.\", \"CS2105 and CS4261 are kept apart (Sem 5 and Sem 6). CS4261 is scheduled as late as possible (Sem 6) to allow for potential Sem 7 flexibility, though Sem 7 is the latest possible slot for CS4223 which requires CS4261's prerequisite chain? No, CS4223 requires CS2106/CG2271 and CS3210/CS3220/CG3207. Wait, let's re-verify CS4223 prereqs.\", \"CS4223 Prereq: (CS2106 or CG2271) AND (CS3210 or CS3220 or CG3207). Student has CS2106. Does student have CS3210, CS3220, or CG3207? No. These are not in the 'must take' list. Therefore, CS4223 cannot be taken because its prerequisites are not met. Status should be NO_PLAN.\"}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS3219",
+    "CS4236",
+    "CS2105"
+   ],
+   "6": [
+    "CS3233",
+    "CS4261"
+   ],
+   "7": [
+    "CS4223"
+   ]
+  }
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

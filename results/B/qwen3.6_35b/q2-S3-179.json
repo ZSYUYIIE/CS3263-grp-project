@@ -1,0 +1,123 @@
+{
+ "id": "q2-S3-179",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 5.07,
+ "solver_seconds": 0.152,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3060,
+  "total_tokens": 3320,
+  "completion_tokens": 260,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 4.79,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 1,\n\"completed\": [],\n\"must_take\": [\n\"IS1108\",\n\"CS2109S\",\n\"CS3219\",\n\"MA1522\",\n\"ST2334\",\n\"CS2105\",\n\"CS2103T\",\n\"MA1521\",\n\"CS2101\",\n\"CS1101S\",\n\"ES2660\",\n\"CS3230\"\n],\n\"sem_caps\": {\n\"6\": 0\n},\n\"objective\": \"earliest_graduation\",\n\"early\": [\n\"IS1108\",\n\"MA1522\"\n],\n\"rules\": [\n{\n\"type\": \"apart\",\n\"a\": \"CS3230\",\n\"b\": \"ES2660\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"ST2334\",\n\"sem\": 8,\n\"strength\": \"must\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "completed": [],
+  "must_take": [
+   "IS1108",
+   "CS2109S",
+   "CS3219",
+   "MA1522",
+   "ST2334",
+   "CS2105",
+   "CS2103T",
+   "MA1521",
+   "CS2101",
+   "CS1101S",
+   "ES2660",
+   "CS3230"
+  ],
+  "sem_caps": {
+   "6": 0
+  },
+  "objective": "earliest_graduation",
+  "early": [
+   "IS1108",
+   "MA1522"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS3230",
+    "b": "ES2660",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "ST2334",
+    "sem": 8,
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "earliest_graduation",
+  "last_semester": 8,
+  "plan": {
+   "1": [
+    "CS1101S",
+    "IS1108",
+    "MA1522"
+   ],
+   "2": [
+    "CS2040DE",
+    "MA1521"
+   ],
+   "3": [
+    "CS2105",
+    "ES2660"
+   ],
+   "4": [],
+   "5": [
+    "CS2030",
+    "CS2109S"
+   ],
+   "6": [],
+   "7": [
+    "CS2101",
+    "CS2103T",
+    "MA1100T"
+   ],
+   "8": [
+    "CS3219",
+    "CS3230",
+    "ST2334"
+   ]
+  },
+  "mc_per_semester": {
+   "1": 12,
+   "2": 8,
+   "3": 8,
+   "4": 0,
+   "5": 8,
+   "6": 0,
+   "7": 12,
+   "8": 12
+  },
+  "preferences_met": [
+   "IS1108 as early as possible",
+   "MA1522 as early as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS2030",
+   "CS2040DE",
+   "MA1100T"
+  ]
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "id": "q2-S1-119",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 2,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 37.51,
+ "usage": {
+  "prompt_tokens": 7381,
+  "total_tokens": 11214,
+  "completion_tokens": 3833,
+  "prompt_tokens_details": {
+   "cached_tokens": 4352,
+   "created_cache_tokens": 2944
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3693
+  },
+  "finish_reason": "stop",
+  "request_seconds": 37.51,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS2102\",\"CS4230\"],\"7\":[\"CS2101\",\"CS3241\"],\"8\":[\"CS4247\"]},\"reasons\":[\"CS2102 is fixed in semester 6; CS4230 is also placed there because it is offered in Sem 2 and is as early as possible.\",\"CS3241 is added as the prerequisite for CS4247; it is offered only in Sem 1, so it is placed in semester 7.\",\"CS2101 is placed in semester 7, the latest possible before CS4247 in semester 8, satisfying the prerequisite order.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS2102",
+    "CS4230"
+   ],
+   "7": [
+    "CS2101",
+    "CS3241"
+   ],
+   "8": [
+    "CS4247"
+   ]
+  },
+  "reasons": [
+   "CS2102 is fixed in semester 6; CS4230 is also placed there because it is offered in Sem 2 and is as early as possible.",
+   "CS3241 is added as the prerequisite for CS4247; it is offered only in Sem 1, so it is placed in semester 7.",
+   "CS2101 is placed in semester 7, the latest possible before CS4247 in semester 8, satisfying the prerequisite order."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

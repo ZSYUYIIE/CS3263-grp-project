@@ -1,0 +1,55 @@
+{
+ "id": "q2-S1-148",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 140.69,
+ "usage": {
+  "prompt_tokens": 33360,
+  "total_tokens": 40707,
+  "completion_tokens": 7347,
+  "finish_reason": "stop",
+  "request_seconds": 140.69,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS2111\",\n      \"CS3210\",\n      \"CS3264\",\n      \"CS4222\"\n    ],\n    \"7\": [\n      \"CS3237\",\n      \"CS3240\",\n      \"CS2102\"\n    ],\n    \"8\": [\n      \"CS2101\",\n      \"CS3230\",\n      \"CS3249\",\n      \"CS4240\",\n      \"CS4262\",\n      \"CS4220\"\n    ]\n  },\n  \"reasons\": [\n    \"Added CS2111 for CS3249 and CS3240 prerequisites.\",\n    \"Added CS3264 for CS4262 prerequisite.\",\n    \"CS3249 is offered in Sem 1 and Sem 2; Sem 8 is Sem 2, so it is valid.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS2111",
+    "CS3210",
+    "CS3264",
+    "CS4222"
+   ],
+   "7": [
+    "CS3237",
+    "CS3240",
+    "CS2102"
+   ],
+   "8": [
+    "CS2101",
+    "CS3230",
+    "CS3249",
+    "CS4240",
+    "CS4262",
+    "CS4220"
+   ]
+  },
+  "reasons": [
+   "Added CS2111 for CS3249 and CS3240 prerequisites.",
+   "Added CS3264 for CS4262 prerequisite.",
+   "CS3249 is offered in Sem 1 and Sem 2; Sem 8 is Sem 2, so it is valid."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

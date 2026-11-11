@@ -1,0 +1,89 @@
+{
+ "id": "q2-S4-170",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.01,
+ "solver_seconds": 0.129,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3145,
+  "total_tokens": 3526,
+  "completion_tokens": 381,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 6.88,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 4,\n\"completed\": [\n\"CS2100\",\n\"CS1101S\",\n\"CS2030S\",\n\"CS2103T\",\n\"IS1108\",\n\"MA1521\",\n\"MA1522\",\n\"CS2040S\",\n\"CS1231S\",\n\"ST2334\"\n],\n\"must_take\": [\n\"CS3230\",\n\"CS2101\",\n\"CS2106\",\n\"CS4350\"\n],\n\"mc_max\": 12,\n\"sem_caps\": {\n\"6\": 0\n},\n\"objective\": \"earliest_graduation\",\n\"early\": [\n\"CS3230\"\n],\n\"late\": [\n\"CS2101\",\n\"CS2106\"\n],\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS2101\",\n\"b\": \"CS2106\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2106\",\n\"b\": \"CS3230\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS3230\",\n\"b\": \"CS2101\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3230\",\n\"sem\": 6,\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "CS2100",
+   "CS1101S",
+   "CS2030S",
+   "CS2103T",
+   "IS1108",
+   "MA1521",
+   "MA1522",
+   "CS2040S",
+   "CS1231S",
+   "ST2334"
+  ],
+  "must_take": [
+   "CS3230",
+   "CS2101",
+   "CS2106",
+   "CS4350"
+  ],
+  "mc_max": 12,
+  "sem_caps": {
+   "6": 0
+  },
+  "objective": "earliest_graduation",
+  "early": [
+   "CS3230"
+  ],
+  "late": [
+   "CS2101",
+   "CS2106"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2101",
+    "b": "CS2106",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2106",
+    "b": "CS3230",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3230",
+    "b": "CS2101",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3230",
+    "sem": 6,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the prerequisites of CS3247; the prerequisites of CS4350; the prerequisites of NM4260; the MC limits (at most 12 MC per semester; semesters 6 blocked); the semesters in which the courses are offered"
+  ]
+ }
+}

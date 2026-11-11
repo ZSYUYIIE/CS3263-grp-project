@@ -1,0 +1,100 @@
+{
+ "id": "q2-S6-014",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "valid",
+ "seconds": 3.53,
+ "usage": {
+  "prompt_tokens": 8436,
+  "total_tokens": 8591,
+  "completion_tokens": 155,
+  "finish_reason": "stop",
+  "request_seconds": 3.53,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"7\": [], \"8\": []}, \"reasons\": [\"All required courses for the single major BComp CS Hons are already completed.\", \"No further courses are needed to graduate.\", \"The student is in Y4S1 (Semester 7) and has no remaining requirements.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "7": [],
+   "8": []
+  },
+  "reasons": [
+   "All required courses for the single major BComp CS Hons are already completed.",
+   "No further courses are needed to graduate.",
+   "The student is in Y4S1 (Semester 7) and has no remaining requirements."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"7\": [\"CS2101\"], \"8\": []}, \"reasons\": [\"All required courses are completed except CS2101 which is planned in Y4S1.\", \"CS2101 has no prerequisites and is offered in Sem 1.\", \"No other courses are required for the single major BComp CS Hons.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "7": [
+      "CS2101"
+     ],
+     "8": []
+    },
+    "reasons": [
+     "All required courses are completed except CS2101 which is planned in Y4S1.",
+     "CS2101 has no prerequisites and is offered in Sem 1.",
+     "No other courses are required for the single major BComp CS Hons."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 4138,
+    "total_tokens": 4222,
+    "completion_tokens": 84,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.03,
+    "attempts": 1
+   },
+   "seconds": 2.03,
+   "violations": [
+    "R1 CS2101 is already completed",
+    "R10 CS2101 was added but no later planned course needs it"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"7\": [], \"8\": []}, \"reasons\": [\"All required courses for the single major BComp CS Hons are already completed.\", \"No further courses are needed to graduate.\", \"The student is in Y4S1 (Semester 7) and has no remaining requirements.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "7": [],
+     "8": []
+    },
+    "reasons": [
+     "All required courses for the single major BComp CS Hons are already completed.",
+     "No further courses are needed to graduate.",
+     "The student is in Y4S1 (Semester 7) and has no remaining requirements."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 4298,
+    "total_tokens": 4369,
+    "completion_tokens": 71,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 1.5,
+    "attempts": 1
+   },
+   "seconds": 1.5,
+   "violations": []
+  }
+ ]
+}

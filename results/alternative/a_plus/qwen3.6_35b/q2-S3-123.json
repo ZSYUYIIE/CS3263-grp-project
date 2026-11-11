@@ -1,0 +1,113 @@
+{
+ "id": "q2-S3-123",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 8.21,
+ "usage": {
+  "prompt_tokens": 20553,
+  "total_tokens": 20869,
+  "completion_tokens": 316,
+  "finish_reason": "stop",
+  "request_seconds": 8.21,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS4212 requires CS2104 or CS3212 as prerequisites, neither of which is in the student's must-take list or completed courses, making it impossible to satisfy the requirement for Semester 8.\",\n\"CS3233 is only offered in Semester 2, but the student is in Y2S2 (Semester 4) and needs to take it; it cannot be taken in Semester 7 (Y3S1).\",\n\"CS4222 is only offered in Semester 2, but the student is in Y2S2 (Semester 4) and needs to take it; it cannot be taken in Semester 5 (Y3S1).\"\n]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4212 requires CS2104 or CS3212 as prerequisites, neither of which is in the student's must-take list or completed courses, making it impossible to satisfy the requirement for Semester 8.",
+   "CS3233 is only offered in Semester 2, but the student is in Y2S2 (Semester 4) and needs to take it; it cannot be taken in Semester 7 (Y3S1).",
+   "CS4222 is only offered in Semester 2, but the student is in Y2S2 (Semester 4) and needs to take it; it cannot be taken in Semester 5 (Y3S1)."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS2105\", \"ST2334\"], \"5\": [\"CS3230\", \"CS3219\", \"CS4222\"], \"6\": [\"CS2109S\"], \"7\": [\"CS3233\"], \"8\": [\"CS4212\"]}, \"reasons\": [\"Prerequisites satisfied for all planned courses.\", \"CS4222 and CS3219 are scheduled together in Sem 5 as requested.\", \"CS4212 is placed in Sem 8 as required.\", \"Total MC is minimized by taking only necessary courses.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "CS2105",
+      "ST2334"
+     ],
+     "5": [
+      "CS3230",
+      "CS3219",
+      "CS4222"
+     ],
+     "6": [
+      "CS2109S"
+     ],
+     "7": [
+      "CS3233"
+     ],
+     "8": [
+      "CS4212"
+     ]
+    },
+    "reasons": [
+     "Prerequisites satisfied for all planned courses.",
+     "CS4222 and CS3219 are scheduled together in Sem 5 as requested.",
+     "CS4212 is placed in Sem 8 as required.",
+     "Total MC is minimized by taking only necessary courses."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10108,
+    "total_tokens": 10253,
+    "completion_tokens": 145,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.51,
+    "attempts": 1
+   },
+   "seconds": 2.51,
+   "violations": [
+    "R1 must-take CS4236 missing",
+    "R3 CS3233 not offered in Sem 1 (semester 7)",
+    "R4 CS4212 in semester 8: prerequisite not met (CS2104 or CS3212)",
+    "R3 CS4222 not offered in Sem 1 (semester 5)",
+    "R8 semester 4 has 8 MC, minimum 12",
+    "R8 semester 6 has 4 MC, minimum 12",
+    "R8 semester 7 has 4 MC, minimum 12",
+    "R8 semester 8 has 4 MC, minimum 12"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS4212 requires CS2104 or CS3212 as prerequisites, neither of which is in the student's must-take list or completed courses, making it impossible to satisfy the requirement for Semester 8.\",\n\"CS3233 is only offered in Semester 2, but the student is in Y2S2 (Semester 4) and needs to take it; it cannot be taken in Semester 7 (Y3S1).\",\n\"CS4222 is only offered in Semester 2, but the student is in Y2S2 (Semester 4) and needs to take it; it cannot be taken in Semester 5 (Y3S1).\"\n]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4212 requires CS2104 or CS3212 as prerequisites, neither of which is in the student's must-take list or completed courses, making it impossible to satisfy the requirement for Semester 8.",
+     "CS3233 is only offered in Semester 2, but the student is in Y2S2 (Semester 4) and needs to take it; it cannot be taken in Semester 7 (Y3S1).",
+     "CS4222 is only offered in Semester 2, but the student is in Y2S2 (Semester 4) and needs to take it; it cannot be taken in Semester 5 (Y3S1)."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10445,
+    "total_tokens": 10616,
+    "completion_tokens": 171,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.7,
+    "attempts": 1
+   },
+   "seconds": 5.7,
+   "violations": null
+  }
+ ]
+}

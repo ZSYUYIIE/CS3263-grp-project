@@ -1,0 +1,56 @@
+{
+ "id": "q1-cl-002-p",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 1.94,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2527,
+  "total_tokens": 2707,
+  "completion_tokens": 180,
+  "prompt_tokens_details": {
+   "cached_tokens": 2432,
+   "created_cache_tokens": 0,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 114
+  },
+  "finish_reason": "stop",
+  "request_seconds": 1.94,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\": \"eligible\", \"target\": \"EE5310\", \"current_sem\": 4, \"completed\": [\"CS1101S\", \"CS1231S\", \"ES1000\", \"ST2334\", \"MA1508E\", \"MA2104\", \"MA1521\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "EE5310",
+  "current_sem": 4,
+  "completed": [
+   "CS1101S",
+   "CS1231S",
+   "ES1000",
+   "ST2334",
+   "MA1508E",
+   "MA2104",
+   "MA1521"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "EE5310",
+  "semester": 4,
+  "reasons": [
+   "unavailable: not offered in any semester in AY2026-2027",
+   "not offered in semester 2 (offered: never)"
+  ],
+  "can_still_become_eligible": false,
+  "never_eligible_because": "EE5310 unavailable (not offered in any semester in AY2026-2027)"
+ }
+}

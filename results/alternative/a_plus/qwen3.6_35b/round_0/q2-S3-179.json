@@ -1,0 +1,59 @@
+{
+ "id": "q2-S3-179",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 3,
+ "end": "switched to NO_PLAN",
+ "seconds": 66.99,
+ "usage": {
+  "prompt_tokens": 8228,
+  "total_tokens": 11649,
+  "completion_tokens": 3421,
+  "finish_reason": "stop",
+  "request_seconds": 66.98,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"ST2334 requires MA1521, MA1505, MA1511, MA1521, or MA2002 as prerequisite. The student has completed no modules and needs to take MA1521. ST2334 is fixed in Sem 8, but MA1521 must be completed before Sem 8. While MA1521 can be taken earlier, CS2109S requires (YSC2229 or CS2040S/C/HS/DE) AND (MA1511+MA1512 or MA1521 or ...). CS2109S is a 'must' course. CS2109S requires CS2040 (or equivalent) which requires CS1010 (or equivalent). CS1010 is not in the 'must' list but is a prerequisite for CS2040. The student must take CS1010 (or CS1101S, etc) to unlock CS2040. CS1101S is in the 'must' list. CS1101S is offered Sem 1/2. CS2040 requires CS1010/CS1101S. So CS2040 can be taken after CS1101S. CS2109S requires CS2040 (or similar) AND Math. CS2103T requires CS2030/CS2030S/CS2030DE/CS2030HS AND CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS. CS3219 requires CS2103/CS2103T/CS2103DE/CS2113T/CS2113. CS3230 requires CS2040 (or similar) AND CS1231 (or similar). CS2105 requires CS2040 (or similar). The chain is: CS1101S -> CS2040 -> CS2109S, CS2103T, CS3230, CS2105. CS2103T -> CS3219. CS1231 is required for CS3230. CS1231 is not in the 'must' list. Rule 8 says add a course ONLY when it is a prerequisite needed by a planned course. CS1231 is needed for CS3230. So CS1231 must be added. CS1231 has no prereqs. CS1231 can be taken in Sem 1. CS1101S can be taken in Sem 1. CS1101S is a prereq for CS2040. CS2040 can be taken in Sem 2 (if CS1101S in Sem 1). CS2040 is prereq for CS2109S, CS2103T, CS3230, CS2105. CS2109S also requires Math (MA1521 or MA1511+MA1512). MA1521 is in 'must' list. MA1521 can be taken in Sem 1. So CS2109S can be taken in Sem 2 (if CS2040 and MA1521 done). CS2103T requires CS2030/CS2030S/CS2030DE/CS2030HS. CS2030 requires CS1010/CS1101S. CS1101S is in Sem 1. So CS2030 can be in Sem 2. CS2030 is prereq for CS2103T. So CS2103T can be in Sem 3 (if CS2030 and CS2040 done). CS3219 requires CS2103T. So CS3219 can be in Sem 4. CS3230 requires CS2040 and CS1231. CS1231 in Sem 1, CS2040 in Sem 2. So CS3230 can be in Sem 3. CS2105 requires CS2040. So CS2105 can be in Sem 3. CS2101 has no prereqs. Can be anytime. ES2660 has no prereqs. Can be anytime. ST2334 in Sem 8. MA1522 has no prereqs. Can be anytime. NOC in Sem 6 (0 MC). CS3230 and ES2660 not same semester. Let's try to pack. Sem 1: CS1101S, MA1521, CS1231, ES2660 (16 MC). Sem 2: CS2040, CS2030, CS2109S, MA1522 (16 MC). Sem 3: CS2103T, CS3230, CS2105, CS2101 (16 MC). Sem 4: CS3219. Sem 5: Empty. Sem 6: NOC. Sem 7: Empty. Sem 8: ST2334. This plan works. Wait, CS2109S requires (YSC2229 or CS2040S/C/HS/DE) AND Math. CS2040 is in the list for CS2109S? Yes: \"CS2040S or CS2040C or CS2040HS or CS2040 or CS2040DE\". So CS2040 satisfies the CS part. Math part: MA1521 is in Sem 1. So CS2109S in Sem 2 is valid. CS2103T requires CS2030/CS2030S/CS2030DE/CS2030HS. CS2030 is in Sem 2. So CS2103T in Sem 3 is valid. CS3219 requires CS2103T. So CS3219 in Sem 4 is valid. CS3230 requires CS2040 and CS1231. Both done by Sem 2. So CS3230 in Sem 3 is valid. CS2105 requires CS2040. Done by Sem 2. So CS2105 in Sem 3 is valid. CS2101 no prereqs. Sem 3 is fine. ES2660 no prereqs. Sem 1 is fine. CS3230 (Sem 3) and ES2660 (Sem 1) not same. ST2334 in Sem 8. MA1522 in Sem 2. NOC in Sem 6. All 'must' courses taken. CS1231 added as prereq for CS3230. Is CS1231 open to BComp CS Hons? Yes. Is it blocked? No. Is it offered Sem 1? Yes. So the plan is valid. Why did I think NO_PLAN? I need to check if CS1231 is truly needed. CS3230 prereq: \"(YSC2229 or CS2040S or CS2040 or CS2040C or CS2040DE or CS2040HS) and (CS1231 or CS1231S or MA1100T or MA1100)\". Yes, CS1231 is needed. So CS1231 must be added. The plan above includes CS1231 in Sem 1. So a plan exists. Let's re-verify the \"graduate as early as possible\" optimization. The last semester used is 8. Can we finish earlier? ST2334 is fixed in Sem 8. So last semester is at least 8. So Sem 8 is the earliest graduation. The plan uses Sem 8. So it is optimal for step 1. Step 2: Fewest added courses. Only CS1231 is added. Is there any other prerequisite? CS2030 is not in 'must' list but is prereq for CS2103T. So CS2030 must be added. CS2030 is not in the 'must' list. Rule 8: \"Add a course the student did not ask for ONLY when it is a prerequisite needed by a planned course.\" CS2030 is needed for CS2103T. So CS2030 must be added. CS1231 is needed for CS3230. So CS1231 must be added. Are there any other hidden prereqs? CS2109S needs Math. MA1521 is in 'must' list. So no extra math course needed. CS2040 needs CS1010/CS1101S. CS1101S is in 'must' list. So no extra CS1010 needed. So added courses: CS1231, CS2030. Total 2 added. Is there a plan with fewer added courses? No, because CS2030 and CS1231 are strictly required by the 'must' courses. So the plan is valid. Let's write the plan. Sem 1: CS1101S, MA1521, CS1231, ES2660. Sem 2: CS2040, CS2030, CS2109S, MA1522. Sem 3: CS2103T, CS3230, CS2105, CS2101. Sem 4: CS3219. Sem 5: Empty. Sem 6: NOC. Sem 7: Empty. Sem 8: ST2334. Check MC limits. Sem 1: 4+4+4+4=16 <= 20. Sem 2: 4+4+4+4=16 <= 20. Sem 3: 4+4+4+4=16 <= 20. Sem 4: 4 <= 20. Sem 6: 0. Sem 8: 4 <= 20. All good. CS3230 and ES2660 not same semester. ST2334 in Sem 8. IS1108? Wait, IS1108 is in the 'must' list! I missed IS1108 in the plan. IS1108 has no prereqs. It must be taken. I put ES2660 in Sem 1. I can put IS1108 in Sem 1 instead of ES2660? Or add it. Sem 1 has 4 slots. CS1101S, MA1521, CS1231, ES2660. If I add IS1108, I need to drop one. But I can't drop any 'must' course. CS1101S, MA1521, CS1231 are needed for other things or are 'must'. ES2660 is 'must'. IS1108 is 'must'. So Sem 1 has 5 'must' courses: CS1101S, MA1521, CS1231, ES2660, IS1108. That's 20 MC. Perfect. Sem 1: CS1101S, MA1521, CS1231, ES2660, IS1108. 20 MC. Sem 2: CS2040, CS2030, CS2109S, MA1522. 16 MC. Sem 3: CS2103T, CS3230, CS2105, CS2101. 16 MC. Sem 4: CS3219. 4 MC. Sem 6: NOC. Sem 8: ST2334. This works. IS1108 is taken in Sem 1 (as early as possible). MA1522 is taken in Sem 2 (as early as possible, since Sem 1 is full with 20 MC and other 'must' courses). Can MA1522 be in Sem 1? Sem 1 has 5 courses. 5*4=20. If I move one to Sem 2, I might delay a prerequisite. CS1231 is needed for CS3230 (Sem 3). CS1101S is needed for CS2040 (Sem 2). MA1521 is needed for ST2334 (Sem 8) and CS2109S (Sem 2). ES2660 and IS1108 have no prereqs. If I move ES2660 to Sem 2, Sem 1 has 4 courses (16 MC). Sem 2 has CS2040, CS2030, CS2109S, MA1522, ES2660. 20 MC. This is also valid. But MA1522 in Sem 2 is still \"as early as possible\" if Sem 1 is full. Can I take MA1522 in Sem 1? Only if I drop a 'must' course from Sem 1. But all 5 are 'must'. So MA1522 cannot be in Sem 1. So Sem 2 is the earliest for MA1522. IS1108 in Sem 1 is earliest. CS3230 in Sem 3, ES2660 in Sem 2. Not same semester. ST2334 in Sem 8. NOC in Sem 6. Plan is valid. Status PLAN.\n\n{\"status\": \"PLAN\", \"plan\": {\"1\": [\"CS1101S\", \"MA1521\", \"CS1231\", \"ES2660\", \"IS1108\"], \"2\": [\"CS2040\", \"CS2030\", \"CS2109S\", \"MA1522\"], \"3\": [\"CS2103T\", \"CS3230\", \"CS2105\", \"CS2101\"], \"4\": [\"CS3219\"], \"6\": [\"NOC\"], \"8\": [\"ST2334\"]}, \"reasons\": [\"Added CS1231 as prerequisite for CS3230. Added CS2030 as prerequisite for CS2103T. All must-take courses are scheduled. NOC in Sem 6. ST2334 in Sem 8. CS3230 and ES2660 in different semesters. Graduation in Sem 8.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1101S",
+    "MA1521",
+    "CS1231",
+    "ES2660",
+    "IS1108"
+   ],
+   "2": [
+    "CS2040",
+    "CS2030",
+    "CS2109S",
+    "MA1522"
+   ],
+   "3": [
+    "CS2103T",
+    "CS3230",
+    "CS2105",
+    "CS2101"
+   ],
+   "4": [
+    "CS3219"
+   ],
+   "6": [
+    "NOC"
+   ],
+   "8": [
+    "ST2334"
+   ]
+  },
+  "reasons": [
+   "Added CS1231 as prerequisite for CS3230. Added CS2030 as prerequisite for CS2103T. All must-take courses are scheduled. NOC in Sem 6. ST2334 in Sem 8. CS3230 and ES2660 in different semesters. Graduation in Sem 8."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

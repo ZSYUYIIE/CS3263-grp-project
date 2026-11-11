@@ -1,0 +1,51 @@
+{
+ "id": "q2-S3-262",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 3,
+ "end": "valid",
+ "seconds": 4.9,
+ "usage": {
+  "prompt_tokens": 8984,
+  "total_tokens": 9239,
+  "completion_tokens": 255,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 4.9,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2102\",\n      \"CS2105\",\n      \"ST2334\"\n    ],\n    \"6\": [\n      \"CS3230\",\n      \"CS3103\",\n      \"CS2109S\"\n    ],\n    \"7\": [\n      \"CS3234\",\n      \"CS4226\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2102 and CS2105 prerequisites are satisfied by completed modules.\",\n    \"CS3230, CS3103, and CS2109S prerequisites are satisfied by modules in Sem 5.\",\n    \"CS3234 and CS4226 prerequisites are satisfied by modules in Sem 6.\",\n    \"Soft wishes met: CS2102 before CS3234, CS3230 before CS3234, ST2334 and CS4226 as late as possible.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS2105",
+    "ST2334"
+   ],
+   "6": [
+    "CS3230",
+    "CS3103",
+    "CS2109S"
+   ],
+   "7": [
+    "CS3234",
+    "CS4226"
+   ]
+  },
+  "reasons": [
+   "CS2102 and CS2105 prerequisites are satisfied by completed modules.",
+   "CS3230, CS3103, and CS2109S prerequisites are satisfied by modules in Sem 5.",
+   "CS3234 and CS4226 prerequisites are satisfied by modules in Sem 6.",
+   "Soft wishes met: CS2102 before CS3234, CS3230 before CS3234, ST2334 and CS4226 as late as possible."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

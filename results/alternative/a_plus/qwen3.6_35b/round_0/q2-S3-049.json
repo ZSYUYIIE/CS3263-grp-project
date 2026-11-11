@@ -1,0 +1,53 @@
+{
+ "id": "q2-S3-049",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 5.71,
+ "usage": {
+  "prompt_tokens": 13009,
+  "total_tokens": 13274,
+  "completion_tokens": 265,
+  "finish_reason": "stop",
+  "request_seconds": 5.71,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"4\": [\n      \"CS2105\",\n      \"CS3231\",\n      \"CS3240\",\n      \"CS3210\"\n    ],\n    \"5\": [\n      \"CS2106\",\n      \"CS3230\",\n      \"CS3219\",\n      \"IS1108\"\n    ],\n    \"6\": [\n      \"CS2102\",\n      \"CS2109S\",\n      \"CS3282\"\n    ],\n    \"7\": [\n      \"CS4246\"\n    ]\n  },\n  \"reasons\": [\n    \"All prerequisites are satisfied by completed modules or earlier planned modules.\",\n    \"Constraints met: CS2106 and CS3231 are separated; CS2106 and CS3282 are separated; CS3210 is before CS2106.\",\n    \"Soft wishes met: CS3240 and CS4246 are scheduled as early as possible given dependencies.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2105",
+    "CS3231",
+    "CS3240",
+    "CS3210"
+   ],
+   "5": [
+    "CS2106",
+    "CS3230",
+    "CS3219",
+    "IS1108"
+   ],
+   "6": [
+    "CS2102",
+    "CS2109S",
+    "CS3282"
+   ],
+   "7": [
+    "CS4246"
+   ]
+  },
+  "reasons": [
+   "All prerequisites are satisfied by completed modules or earlier planned modules.",
+   "Constraints met: CS2106 and CS3231 are separated; CS2106 and CS3282 are separated; CS3210 is before CS2106.",
+   "Soft wishes met: CS3240 and CS4246 are scheduled as early as possible given dependencies."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

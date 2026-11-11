@@ -1,0 +1,57 @@
+{
+ "id": "q2-S3-020",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 27.5,
+ "usage": {
+  "prompt_tokens": 11450,
+  "total_tokens": 13757,
+  "completion_tokens": 2307,
+  "prompt_tokens_details": {
+   "cached_tokens": 11264,
+   "created_cache_tokens": 128
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2153
+  },
+  "finish_reason": "stop",
+  "request_seconds": 27.5,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"4\":[\"CS2109S\"],\"5\":[\"CS3219\"],\"6\":[\"CP3880\"],\"7\":[\"CS2102\",\"CS3264\",\"CS3231\"],\"8\":[\"CS3230\"]},\"reasons\":[\"CS2109S is in semester 4 so CS3264's prerequisite is completed before the semester 7 group.\",\"CS2102, CS3264 and CS3231 are together in semester 7, the latest possible because CS3231 is offered only in Sem 1.\",\"CP3880 is in semester 6 with no other courses; CS3230 is in semester 8 and is not with CS2109S.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2109S"
+   ],
+   "5": [
+    "CS3219"
+   ],
+   "6": [
+    "CP3880"
+   ],
+   "7": [
+    "CS2102",
+    "CS3264",
+    "CS3231"
+   ],
+   "8": [
+    "CS3230"
+   ]
+  },
+  "reasons": [
+   "CS2109S is in semester 4 so CS3264's prerequisite is completed before the semester 7 group.",
+   "CS2102, CS3264 and CS3231 are together in semester 7, the latest possible because CS3231 is offered only in Sem 1.",
+   "CP3880 is in semester 6 with no other courses; CS3230 is in semester 8 and is not with CS2109S."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

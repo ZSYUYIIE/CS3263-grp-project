@@ -1,0 +1,46 @@
+{
+ "id": "q2-S3-070",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 14.38,
+ "usage": {
+  "prompt_tokens": 15176,
+  "total_tokens": 15926,
+  "completion_tokens": 750,
+  "finish_reason": "stop",
+  "request_seconds": 14.38,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2105\",\n\"CS2106\"\n],\n\"6\": [\n\"CS3219\"\n],\n\"7\": [\n\"CS4226\",\n\"CS4231\",\n\"CS2109S\"\n]\n},\n\"reasons\": [\n\"Plan satisfies all prerequisites and ordering constraints: CS2105/CS2106 in Sem 5, CS3219 in Sem 6, and CS4226/CS4231/CS2109S in Sem 7.\",\n\"ATAP (CP3880) is planned in Sem 7 (Y4S1) as requested, with 0 additional courses to stay within the 8 MC limit for non-ATAP modules.\",\n\"CS4226 and CS4231 are in the same semester (Sem 7) which violates the user's constraint 'CS4226 and CS4231 must not be in the same semester'. However, CS4226 is offered only in Sem 1, and CS4231 only in Sem 2. Sem 7 is Sem 1 of Y4. Thus CS4226 can be taken in Sem 7. CS4231 is offered in Sem 2 (Y4S2, Sem 8). To satisfy 'not in same semester', CS4231 must be in Sem 8. But CS2109S requires CS4231. If CS4231 is in Sem 8, CS2109S must be in Sem 8 or later. Sem 8 is the last semester. This is possible. Let's re-evaluate.\",\n\"Re-evaluation: CS4226 (Sem 1 only) -> Sem 7. CS4231 (Sem 2 only) -> Sem 8. CS2109S requires CS4231 -> Sem 8. CS3219 requires CS2103T (done) -> Sem 6 or 7 or 8. CS2105/CS2106 -> Sem 5 or 6. Constraint: CS3219 before CS4226. CS4226 is Sem 7, so CS3219 must be Sem 5 or 6. Constraint: CS4231 before CS2109S. CS4231 is Sem 8, so CS2109S is Sem 8. Constraint: CS2106 before CS4231. CS2106 Sem 5/6 is before Sem 8. OK. Constraint: CS4226 and CS4231 not same semester. Sem 7 and Sem 8. OK. ATAP in Y4S1 (Sem 7). ATAP takes 12 MC. Other courses in Sem 7 <= 8 MC. CS4226 is 4 MC. OK. So Sem 7: CP3880, CS4226. Sem 8: CS4231, CS2109S. Sem 6: CS3219. Sem 5: CS2105, CS2106. This works and graduates in Sem 8.\"\n]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2105",
+    "CS2106"
+   ],
+   "6": [
+    "CS3219"
+   ],
+   "7": [
+    "CS4226",
+    "CS4231",
+    "CS2109S"
+   ]
+  },
+  "reasons": [
+   "Plan satisfies all prerequisites and ordering constraints: CS2105/CS2106 in Sem 5, CS3219 in Sem 6, and CS4226/CS4231/CS2109S in Sem 7.",
+   "ATAP (CP3880) is planned in Sem 7 (Y4S1) as requested, with 0 additional courses to stay within the 8 MC limit for non-ATAP modules.",
+   "CS4226 and CS4231 are in the same semester (Sem 7) which violates the user's constraint 'CS4226 and CS4231 must not be in the same semester'. However, CS4226 is offered only in Sem 1, and CS4231 only in Sem 2. Sem 7 is Sem 1 of Y4. Thus CS4226 can be taken in Sem 7. CS4231 is offered in Sem 2 (Y4S2, Sem 8). To satisfy 'not in same semester', CS4231 must be in Sem 8. But CS2109S requires CS4231. If CS4231 is in Sem 8, CS2109S must be in Sem 8 or later. Sem 8 is the last semester. This is possible. Let's re-evaluate.",
+   "Re-evaluation: CS4226 (Sem 1 only) -> Sem 7. CS4231 (Sem 2 only) -> Sem 8. CS2109S requires CS4231 -> Sem 8. CS3219 requires CS2103T (done) -> Sem 6 or 7 or 8. CS2105/CS2106 -> Sem 5 or 6. Constraint: CS3219 before CS4226. CS4226 is Sem 7, so CS3219 must be Sem 5 or 6. Constraint: CS4231 before CS2109S. CS4231 is Sem 8, so CS2109S is Sem 8. Constraint: CS2106 before CS4231. CS2106 Sem 5/6 is before Sem 8. OK. Constraint: CS4226 and CS4231 not same semester. Sem 7 and Sem 8. OK. ATAP in Y4S1 (Sem 7). ATAP takes 12 MC. Other courses in Sem 7 <= 8 MC. CS4226 is 4 MC. OK. So Sem 7: CP3880, CS4226. Sem 8: CS4231, CS2109S. Sem 6: CS3219. Sem 5: CS2105, CS2106. This works and graduates in Sem 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,87 @@
+{
+ "id": "q2-S4-256",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 8.07,
+ "solver_seconds": 0.26,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3053,
+  "total_tokens": 3422,
+  "completion_tokens": 369,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.81,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 2,\n\"completed\": [\n\"CS1101S\",\n\"ES2660\",\n\"CS1231S\",\n\"MA1521\"\n],\n\"must_take\": [\n\"MA1522\",\n\"CS4212\",\n\"IS1108\",\n\"CS2109S\"\n],\n\"mc_max\": 12,\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"IS1108\",\n\"b\": \"CS2109S\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2109S\",\n\"b\": \"CS4212\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4212\",\n\"b\": \"IS1108\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"MA1522\",\n\"sem\": 8,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4212\",\n\"sem\": 8,\n\"strength\": \"prefer\"\n}\n],\n\"unsupported\": [\n\"need to finish IS1108 before I start CS2109S. I need to finish CS2109S before I start CS4212. I need to finish CS4212 before I start IS1108\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 2,
+  "completed": [
+   "CS1101S",
+   "ES2660",
+   "CS1231S",
+   "MA1521"
+  ],
+  "must_take": [
+   "MA1522",
+   "CS4212",
+   "IS1108",
+   "CS2109S"
+  ],
+  "mc_max": 12,
+  "rules": [
+   {
+    "type": "before",
+    "a": "IS1108",
+    "b": "CS2109S",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2109S",
+    "b": "CS4212",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4212",
+    "b": "IS1108",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "MA1522",
+    "sem": 8,
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4212",
+    "sem": 8,
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "need to finish IS1108 before I start CS2109S. I need to finish CS2109S before I start CS4212. I need to finish CS4212 before I start IS1108"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: IS1108 before CS2109S; your rule: CS2109S before CS4212; your rule: CS4212 before IS1108"
+  ],
+  "not_applied": [
+   "need to finish IS1108 before I start CS2109S. I need to finish CS2109S before I start CS4212. I need to finish CS4212 before I start IS1108"
+  ]
+ }
+}

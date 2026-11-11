@@ -1,0 +1,75 @@
+{
+ "id": "q2-S3-064",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 3,
+ "end": "cap",
+ "seconds": 45.47,
+ "usage": {
+  "prompt_tokens": 43736,
+  "total_tokens": 46196,
+  "completion_tokens": 2460,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 45.47,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"3\": [\n\"CS2100\",\n\"CS2105\",\n\"CS2109S\",\n\"CS2103T\"\n],\n\"4\": [\n\"CS2101\",\n\"CS2102\",\n\"CS3230\"\n],\n\"5\": [\n\"CS2106\",\n\"CS3219\",\n\"CS3241\"\n],\n\"6\": [\n\"CS3247\",\n\"CS4430\",\n\"ST2334\"\n],\n\"7\": [\n\"CP3880\",\n\"CS3231\"\n]\n},\n\"reasons\": [\n\"Sem 3: CS2100, CS2105, CS2109S, CS2103T (16 MC). Meets soft wishes for CS2100 and pairing CS2109S/CS2103T.\",\n\"Sem 4: CS2101, CS2102, CS3230 (12 MC). CS3230 before CS2101 and CS2106 as required.\",\n\"Sem 5: CS2106, CS3219, CS3241 (12 MC). CS2106 after CS3230. CS3241 added for CS3247 prereq.\",\n\"Sem 6: CS3247, CS4430, ST2334 (12 MC). CS3247 after CS3241. CS4430 after CS3231? No, CS4430 prereq is CS3231. CS3231 not taken yet. Need to add CS3231.\",\n\"Correction: CS4430 requires CS3231. CS3231 requires CS1231/MA1100 and CS2040. Student has CS1231S and CS2040S. So CS3231 is eligible. CS3231 must be taken before CS4430. I placed CS3231 in Sem 7, but CS4430 is in Sem 6. This violates R4. I must move CS3231 to Sem 5 or 6 before CS4430.\",\n\"Revised Plan: Sem 5: CS2106, CS3219, CS3241, CS3231 (16 MC). Sem 6: CS3247, CS4430, ST2334 (12 MC). Sem 7: CP3880 (ATAP).\",\n\"Check Sem 5 MC: 4+4+4+4=16. OK. Check Sem 6 MC: 4+4+4=12. OK. Check Sem 7: CP3880 only. ATAP rule: last semester used must have other courses? No, ATAP cannot be in the last semester used. If Sem 7 is the last semester, ATAP cannot be there. I need a semester 8 with courses? Or move ATAP to Sem 6? If ATAP in Sem 6, Sem 7 must have courses. Sem 7 has no remaining courses. So ATAP must be in Sem 5? If ATAP in Sem 5, Sem 6 and 7 have courses. Sem 7 empty? No, Sem 7 must have courses if it's the last semester. If Sem 7 is empty, last semester is 6. ATAP in 5 is fine. But I want to graduate early. If I put ATAP in 5, I finish in 6? No, Sem 6 has courses. So last semester is 6. ATAP in 5 is valid. But Sem 5 has 16 MC + 12 MC ATAP = 28 MC? ATAP 12 MC does not count against limit. Other courses in ATAP semester max 8 MC. Sem 5 has 16 MC other courses. Too many. So ATAP cannot be in Sem 5 with 16 MC other courses.\",\n\"ATAP in Sem 6? Sem 6 has 12 MC other courses. Too many (max 8).\",\n\"ATAP in Sem 4? Sem 4 has 12 MC other courses. Too many.\",\n\"ATAP in Sem 3? Sem 3 has 16 MC other courses. Too many.\",\n\"ATAP in Sem 7? Last semester used is 7. ATAP cannot be in last semester. So I need Sem 8 with courses. But no courses left. So I must extend to Sem 8? Or move ATAP to a semester with <=8 MC other courses.\",\n\"Let's look at Sem 4: 12 MC. Sem 5: 16 MC. Sem 6: 12 MC. Sem 7: 0 MC (if empty).\",\n\"If I move some courses to Sem 7, I can have ATAP in Sem 6 with <=8 MC other courses? Sem 6 has 12 MC. I need to reduce Sem 6 to 8 MC. Move ST2334 to Sem 7? Sem 7 has 4 MC. Then Sem 6 has 8 MC. ATAP in Sem 6. Last semester is 7. Valid.\",\n\"Revised Plan: Sem 3: CS2100, CS2105, CS2109S, CS2103T (16 MC). Sem 4: CS2101, CS2102, CS3230 (12 MC). Sem 5: CS2106, CS3219, CS3241, CS3231 (16 MC). Sem 6: CS3247, CS4430, CP3880 (ATAP). Other courses 8 MC. Sem 7: ST2334 (4 MC).\",\n\"Check prerequisites: CS3231 in Sem 5. CS4430 in Sem 6. OK. CS3241 in Sem 5. CS3247 in Sem 6. OK. CS2106 in Sem 5. OK. CS3219 in Sem 5. OK. CS2101 in Sem 4. OK. CS2102 in Sem 4. OK. CS3230 in Sem 4. OK. CS2100 in Sem 3. OK. CS2105 in Sem 3. OK. CS2109S in Sem 3. OK. CS2103T in Sem 3. OK. ST2334 in Sem 7. OK.\",\n\"Check ATAP: Sem 6. Other courses 8 MC. Limit 8 MC. OK. Last semester 7 has course. OK.\",\n\"Check graduation: Last semester 7. Early as possible? Yes, all courses done by Sem 7.\"\n]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS2105",
+    "CS2109S",
+    "CS2103T"
+   ],
+   "4": [
+    "CS2101",
+    "CS2102",
+    "CS3230"
+   ],
+   "5": [
+    "CS2106",
+    "CS3219",
+    "CS3241"
+   ],
+   "6": [
+    "CS3247",
+    "CS4430",
+    "ST2334"
+   ],
+   "7": [
+    "CP3880",
+    "CS3231"
+   ]
+  },
+  "reasons": [
+   "Sem 3: CS2100, CS2105, CS2109S, CS2103T (16 MC). Meets soft wishes for CS2100 and pairing CS2109S/CS2103T.",
+   "Sem 4: CS2101, CS2102, CS3230 (12 MC). CS3230 before CS2101 and CS2106 as required.",
+   "Sem 5: CS2106, CS3219, CS3241 (12 MC). CS2106 after CS3230. CS3241 added for CS3247 prereq.",
+   "Sem 6: CS3247, CS4430, ST2334 (12 MC). CS3247 after CS3241. CS4430 after CS3231? No, CS4430 prereq is CS3231. CS3231 not taken yet. Need to add CS3231.",
+   "Correction: CS4430 requires CS3231. CS3231 requires CS1231/MA1100 and CS2040. Student has CS1231S and CS2040S. So CS3231 is eligible. CS3231 must be taken before CS4430. I placed CS3231 in Sem 7, but CS4430 is in Sem 6. This violates R4. I must move CS3231 to Sem 5 or 6 before CS4430.",
+   "Revised Plan: Sem 5: CS2106, CS3219, CS3241, CS3231 (16 MC). Sem 6: CS3247, CS4430, ST2334 (12 MC). Sem 7: CP3880 (ATAP).",
+   "Check Sem 5 MC: 4+4+4+4=16. OK. Check Sem 6 MC: 4+4+4=12. OK. Check Sem 7: CP3880 only. ATAP rule: last semester used must have other courses? No, ATAP cannot be in the last semester used. If Sem 7 is the last semester, ATAP cannot be there. I need a semester 8 with courses? Or move ATAP to Sem 6? If ATAP in Sem 6, Sem 7 must have courses. Sem 7 has no remaining courses. So ATAP must be in Sem 5? If ATAP in Sem 5, Sem 6 and 7 have courses. Sem 7 empty? No, Sem 7 must have courses if it's the last semester. If Sem 7 is empty, last semester is 6. ATAP in 5 is fine. But I want to graduate early. If I put ATAP in 5, I finish in 6? No, Sem 6 has courses. So last semester is 6. ATAP in 5 is valid. But Sem 5 has 16 MC + 12 MC ATAP = 28 MC? ATAP 12 MC does not count against limit. Other courses in ATAP semester max 8 MC. Sem 5 has 16 MC other courses. Too many. So ATAP cannot be in Sem 5 with 16 MC other courses.",
+   "ATAP in Sem 6? Sem 6 has 12 MC other courses. Too many (max 8).",
+   "ATAP in Sem 4? Sem 4 has 12 MC other courses. Too many.",
+   "ATAP in Sem 3? Sem 3 has 16 MC other courses. Too many.",
+   "ATAP in Sem 7? Last semester used is 7. ATAP cannot be in last semester. So I need Sem 8 with courses. But no courses left. So I must extend to Sem 8? Or move ATAP to a semester with <=8 MC other courses.",
+   "Let's look at Sem 4: 12 MC. Sem 5: 16 MC. Sem 6: 12 MC. Sem 7: 0 MC (if empty).",
+   "If I move some courses to Sem 7, I can have ATAP in Sem 6 with <=8 MC other courses? Sem 6 has 12 MC. I need to reduce Sem 6 to 8 MC. Move ST2334 to Sem 7? Sem 7 has 4 MC. Then Sem 6 has 8 MC. ATAP in Sem 6. Last semester is 7. Valid.",
+   "Revised Plan: Sem 3: CS2100, CS2105, CS2109S, CS2103T (16 MC). Sem 4: CS2101, CS2102, CS3230 (12 MC). Sem 5: CS2106, CS3219, CS3241, CS3231 (16 MC). Sem 6: CS3247, CS4430, CP3880 (ATAP). Other courses 8 MC. Sem 7: ST2334 (4 MC).",
+   "Check prerequisites: CS3231 in Sem 5. CS4430 in Sem 6. OK. CS3241 in Sem 5. CS3247 in Sem 6. OK. CS2106 in Sem 5. OK. CS3219 in Sem 5. OK. CS2101 in Sem 4. OK. CS2102 in Sem 4. OK. CS3230 in Sem 4. OK. CS2100 in Sem 3. OK. CS2105 in Sem 3. OK. CS2109S in Sem 3. OK. CS2103T in Sem 3. OK. ST2334 in Sem 7. OK.",
+   "Check ATAP: Sem 6. Other courses 8 MC. Limit 8 MC. OK. Last semester 7 has course. OK.",
+   "Check graduation: Last semester 7. Early as possible? Yes, all courses done by Sem 7."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

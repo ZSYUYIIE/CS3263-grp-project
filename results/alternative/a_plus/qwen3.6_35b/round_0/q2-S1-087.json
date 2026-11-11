@@ -1,0 +1,52 @@
+{
+ "id": "q2-S1-087",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "valid",
+ "seconds": 57.44,
+ "usage": {
+  "prompt_tokens": 10103,
+  "total_tokens": 13226,
+  "completion_tokens": 3123,
+  "finish_reason": "stop",
+  "request_seconds": 57.44,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4212 prerequisite is CS2104 or CS3212. Neither is in the required list, nor are they prerequisites for any other required course. CS2104 requires CS2030/CS2113 which are not required. CS3212 is not in the records. Thus CS4212 cannot be taken.\", \"CS4222 requires EE2012A or EE3204 or EE4204 or CS2105. CS2105 is required, so this is satisfiable. However, CS4222 also requires EE2012A or EE2012 or ST2131 or ST2334 or MA2116 or MA2116T or MA2216. The student has completed MA1521/MA1522. MA1521 is a prerequisite for MA2116, ST2131, ST2334, EE2012. The student has NOT completed MA2116, ST2131, ST2334 (planned), EE2012, EE2012A, ST2334 (planned). Wait, ST2334 is required. ST2334 prerequisite is MA1521. So ST2334 can be taken. But CS4222 requires (EE4204 or CS2105) AND (EE2012A or ... or ST2334). If ST2334 is taken in Sem 4, CS4222 can be taken in Sem 5 or later. This part is feasible.\", \"The main blocker is CS4212. It cannot be taken because its prerequisites (CS2104 or CS3212) cannot be satisfied by the required courses or completed courses. CS2104 requires CS2030/CS2113. CS2113 requires CS2040C/S/HS/DE. The student has CS2040S. So CS2113 is eligible. But CS2113 is not in the 'must take' list. Rule 8 says we can only add a course if it is a prerequisite needed by a planned course. CS2104 is a prerequisite for CS4212. So we can add CS2104. CS2104 requires CS2030/CS2030S/CS2030DE/CS2030HS/CS2113/CS2113T. The student has CS2030S. So CS2104 is eligible. So we can add CS2104. Then CS4212 is eligible. So CS4212 CAN be taken if we add CS2104. Is CS2104 offered in Sem 8? Yes, Sem 1. Sem 8 is even. CS2104 is offered Sem 1. Sem 8 is Y4S2. CS2104 is NOT offered in Sem 8. CS4212 is offered Sem 2. Sem 8 is Sem 2. So CS4212 can be taken in Sem 8 IF CS2104 is completed before. CS2104 is offered Sem 1. Sem 7 is Y4S1 (Sem 1). So CS2104 can be taken in Sem 7. Then CS4212 in Sem 8. This works. So why NO_PLAN? Let's re-read CS2104 offering. 'offered: Sem 1'. Sem 7 is Sem 1 of Y4. So CS2104 in Sem 7 is valid. CS4212 in Sem 8 is valid. So CS4212 is possible. What about CS3233? Prereq: CS2030S[>=A-] and CS2040S[>=A-]. Student has CS2030S and CS2040S. Grades are assumed met. CS3233 offered Sem 2. Sem 6, 8 are Sem 2. Student wants CS3233 before CS2105? No, 'Ideally I'd take CS3233 before CS2105'. This is a soft wish. CS2105 is required. CS2105 prereq: CS2040/S/C/DE/HS. Student has CS2040S. CS2105 offered Sem 1, 2. CS2105 can be taken anytime. CS4222 requires CS2105. So CS2105 must be before CS4222. CS4222 offered Sem 2. So CS4222 in Sem 6 or 8. CS2105 must be before. CS2105 can be Sem 4, 5, 6, 7. CS3219 prereq: CS2103/T/DE/113T/113. Student has CS2103T. CS3219 offered Sem 1, 2. CS3219 must be with CS4222. CS4222 is Sem 2. So CS3219 must be Sem 2. So CS3219 and CS4222 in Sem 6 or 8. If Sem 8, then CS4212 is also Sem 8. Rule 1: Each course at most once. Can we take 3 courses in Sem 8? MC limit 20. CS3219 (4) + CS4222 (4) + CS4212 (4) = 12 MC. This is <= 20. So they can be in Sem 8. But CS4212 must be in Sem 8. CS3219 and CS4222 must be together. They can be in Sem 8. So Sem 8: CS4212, CS3219, CS4222. CS2105 must be before CS4222. So CS2105 in Sem 4, 5, 6, 7. ST2334 in Sem 4. CS3230 prereq: CS2040/S/C/DE/HS and CS1231/S/MA1100/T. Student has CS2040S, CS1231S. CS3230 offered Sem 1, 2. CS3233 prereq: CS2030S and CS2040S. CS3233 offered Sem 2. CS2109S prereq: CS2040/S/C/DE/HS and (MA1511/1512 or MA1521 or ...). Student has MA1521. CS2109S offered Sem 1, 2. CS2105, CS3230, CS2109S, CS3233 need to be scheduled in Sem 4-7. Sem 4: ST2334 (4 MC). Remaining required: CS2105, CS3230, CS2109S, CS3233. CS3233 ideally before CS2105. CS3233 is Sem 2. CS2105 is Sem 1, 2. CS3230 is Sem 1, 2. CS2109S is Sem 1, 2. CS2105 is Sem 1, 2. We have Sem 4, 5, 6, 7. Sem 4 is ST2334. Sem 5 (Sem 1): Can take CS2105, CS3230, CS2109S. Sem 6 (Sem 2): Can take CS3233. But CS3233 ideally before CS2105. If CS2105 is Sem 5 and CS3233 is Sem 6, CS3233 is AFTER CS2105. This violates the soft wish. Can we take CS3233 in Sem 4? No, Sem 4 is ST2334. Can we take CS3233 in Sem 5? No, Sem 5 is Sem 1. CS3233 is Sem 2. Can we take CS3233 in Sem 6? Yes. Can we take CS2105 in Sem 7? Yes. Then CS3233 (Sem 6) is before CS2105 (Sem 7). This satisfies the soft wish. So: Sem 4: ST2334. Sem 5: CS3230, CS2109S. Sem 6: CS3233. Sem 7: CS2105. Sem 8: CS4212, CS3219, CS4222. Check prerequisites: CS2105 prereq CS2040S (done). CS3230 prereq CS2040S, CS1231S (done). CS2109S prereq CS2040S, MA1521 (done). CS3233 prereq CS2030S, CS2040S (done). CS4212 prereq CS2104. CS2104 not in plan. We must add CS2104. CS2104 prereq CS2030S (done). CS2104 offered Sem 1. Sem 7 is Sem 1. So CS2104 can be in Sem 7. But Sem 7 has CS2105. Can we take CS2104 and CS2105 in Sem 7? Yes, 8 MC. Then CS4212 in Sem 8. CS3219 and CS4222 in Sem 8. Sem 8: CS4212, CS3219, CS4222. Sem 7: CS2104, CS2105. Sem 6: CS3233. Sem 5: CS3230, CS2109S. Sem 4: ST2334. This plan works. Why did I think NO_PLAN? I missed that CS2104 can be added. So PLAN is possible. Let's check MC limits. Sem 4: 4. Sem 5: 8. Sem 6: 4. Sem 7: 8. Sem 8: 12. All <= 20. Soft wishes: CS3233 (Sem 6) before CS2105 (Sem 7). Yes. CS4212 (Sem 8) before CS3233 (Sem 6)? No, CS4212 is after. Wish: 'I'd rather do CS4212 before CS3233'. This is a soft wish. In this plan, CS4212 is Sem 8, CS3233 is Sem 6. So CS4212 is AFTER CS3233. This violates the soft wish. Can we put CS4212 before CS3233? CS4212 must be Sem 8. CS3233 is Sem 2. So CS3233 must be Sem 6 or 8. If CS3233 is Sem 8, it is with CS4212. But CS4212 is Sem 8. So they are in the same semester. 'Before' usually means strictly earlier. If they are in the same semester, is it 'before'? No. So we cannot satisfy 'CS4212 before CS3233' if CS4212 is fixed in Sem 8 and CS3233 is Sem 2. Unless CS3233 is in Sem 8? If CS3233 is in Sem 8, it is with CS4212. Still not before. If CS3233 is in Sem 6, it is before CS4212. So the wish 'CS4212 before CS3233' is IMPOSSIBLE to satisfy because CS4212 is fixed in Sem 8 (latest possible) and CS3233 is Sem 2 (earliest possible Sem 2 is Sem 4, but Sem 4 is ST2334. Next Sem 2 is Sem 6. So CS3233 is Sem 6 or 8. If Sem 6, it is before Sem 8. If Sem 8, it is same. So CS4212 can never be strictly before CS3233. This is a soft wish. We can ignore it. The other soft wish 'CS3233 before CS2105' is satisfied. So PLAN is valid. Status: PLAN.\n\n{\"status\": \"PLAN\", \"plan\": {\"4\": [\"ST2334\"], \"5\": [\"CS3230\", \"CS2109S\"], \"6\": [\"CS3233\"], \"7\": [\"CS2104\", \"CS2105\"], \"8\": [\"CS4212\", \"CS3219\", \"CS4222\"]}, \"reasons\": [\"Added CS2104 as prerequisite for CS4212.\", \"CS3233 is taken in Sem 6, before CS2105 in Sem 7, satisfying soft wish.\", \"CS4212 is fixed in Sem 8; CS3233 is in Sem 6, so CS4212 cannot be before CS3233 (soft wish not met).\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "ST2334"
+   ],
+   "5": [
+    "CS3230",
+    "CS2109S"
+   ],
+   "6": [
+    "CS3233"
+   ],
+   "7": [
+    "CS2104",
+    "CS2105"
+   ],
+   "8": [
+    "CS4212",
+    "CS3219",
+    "CS4222"
+   ]
+  },
+  "reasons": [
+   "Added CS2104 as prerequisite for CS4212.",
+   "CS3233 is taken in Sem 6, before CS2105 in Sem 7, satisfying soft wish.",
+   "CS4212 is fixed in Sem 8; CS3233 is in Sem 6, so CS4212 cannot be before CS3233 (soft wish not met)."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

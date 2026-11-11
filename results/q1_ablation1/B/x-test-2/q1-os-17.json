@@ -1,0 +1,59 @@
+{
+ "id": "q1-os-17",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 2.76,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2553,
+  "total_tokens": 2864,
+  "completion_tokens": 311,
+  "prompt_tokens_details": {
+   "cached_tokens": 2432,
+   "created_cache_tokens": 0,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 230
+  },
+  "finish_reason": "stop",
+  "request_seconds": 2.76,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\":\"eligible\",\"target\":\"CS4223\",\"current_sem\":10,\"completed\":[\"ST1131\",\"ESP2111\",\"CS1101S\",\"CS2107\",\"MA3252\",\"CS3234\",\"ES2660\",\"CS2100\",\"MA1522\",\"CS2106\",\"CS3237\",\"CS1231S\",\"CS3210\",\"IS1108\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS4223",
+  "current_sem": 10,
+  "completed": [
+   "ST1131",
+   "ESP2111",
+   "CS1101S",
+   "CS2107",
+   "MA3252",
+   "CS3234",
+   "ES2660",
+   "CS2100",
+   "MA1522",
+   "CS2106",
+   "CS3237",
+   "CS1231S",
+   "CS3210",
+   "IS1108"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "OUT_OF_SCOPE",
+  "reasons": [
+   "current_sem is 10, outside the modelled semesters 1 to 8"
+  ],
+  "message": "I can only plan for BComp (CS) Hons single-major students under AY2026/2027 rules, and this request is outside that (current_sem is 10, outside the modelled semesters 1 to 8). Course rules differ by programme and aren't in my data for your case, so please check with your faculty or academic advisor."
+ }
+}

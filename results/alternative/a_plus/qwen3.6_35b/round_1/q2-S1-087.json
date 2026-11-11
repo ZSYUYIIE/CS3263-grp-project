@@ -1,0 +1,54 @@
+{
+ "id": "q2-S1-087",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "valid",
+ "seconds": 81.39,
+ "usage": {
+  "prompt_tokens": 23387,
+  "total_tokens": 27808,
+  "completion_tokens": 4421,
+  "finish_reason": "stop",
+  "request_seconds": 81.39,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4236 prerequisite is (YSC2229 or CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS) and CS2107 and (CS1231 or CS1231S or MA1100T or MA1100). The student has CS2040S and CS1231S, but has not completed CS2107. CS2107 is not in the list of required courses. Rule 8 allows adding a course only if it is a prerequisite needed by a planned course. CS2107 is a prerequisite for CS4236, which is required. So CS2107 can be added. CS2107 prerequisite is YSC1212 or CS1010J or CS1101S or CS1010 or CS1010E or CS1010S or CS1010X or CS1010A or CS1010HS or UTC2851. The student has completed CS1101S. So CS2107 is eligible. CS2107 is offered Sem 1, Sem 2. It can be taken in Sem 4, 5, 6, 7. However, CS4236 is offered Sem 1. Sem 8 is Sem 2. CS4236 is NOT offered in Sem 2. The student requires CS4236. CS4236 is only offered in Sem 1. The remaining semesters are 4, 5, 6, 7, 8. Sem 4 is Y2S2 (Sem 2). Sem 5 is Y3S1 (Sem 1). Sem 6 is Y3S2 (Sem 2). Sem 7 is Y4S1 (Sem 1). Sem 8 is Y4S2 (Sem 2). So CS4236 can be taken in Sem 5 or Sem 7. But CS4236 requires CS2107. CS2107 must be completed before. If CS4236 is in Sem 5, CS2107 must be in Sem 4 or earlier. Sem 4 is the current semester. Can CS2107 be taken in Sem 4? Yes. So Sem 4: ST2334 and CS2107? ST2334 is required in Sem 4. CS2107 is 4 MC. ST2334 is 4 MC. Total 8 MC. This is valid. Then CS4236 in Sem 5. Sem 5: CS4236, CS3230, CS2109S. Sem 6: CS3233. Sem 7: CS2104, CS2105. Sem 8: CS4212, CS3219, CS4222. Check CS3219 and CS4222 together. They are in Sem 8. CS4212 is in Sem 8. This works. So a plan exists. I previously missed CS4236 and CS2107. Let's re-verify. CS4236 offered Sem 1. Sem 5 is Sem 1. CS2107 offered Sem 1, 2. Sem 4 is Sem 2. CS2107 can be taken in Sem 4. Prereq for CS2107 is CS1101S (completed). So CS2107 is eligible in Sem 4. CS4236 prereq CS2107 (completed in Sem 4). So CS4236 is eligible in Sem 5. CS4236 is required. So it must be in the plan. The previous answer missed it. Now I include it. Plan: Sem 4: ST2334, CS2107. Sem 5: CS4236, CS3230, CS2109S. Sem 6: CS3233. Sem 7: CS2104, CS2105. Sem 8: CS4212, CS3219, CS4222. Check MC: Sem 4: 8. Sem 5: 12. Sem 6: 4. Sem 7: 8. Sem 8: 12. All <= 20. Soft wishes: CS3233 (Sem 6) before CS2105 (Sem 7). Yes. CS4212 (Sem 8) before CS3233 (Sem 6). No. This is a soft wish, so it's okay. Status: PLAN.\n\n{\"status\": \"PLAN\", \"plan\": {\"4\": [\"ST2334\", \"CS2107\"], \"5\": [\"CS4236\", \"CS3230\", \"CS2109S\"], \"6\": [\"CS3233\"], \"7\": [\"CS2104\", \"CS2105\"], \"8\": [\"CS4212\", \"CS3219\", \"CS4222\"]}, \"reasons\": [\"Added CS2107 as prerequisite for CS4236.\", \"CS4236 is offered in Sem 1, so it is placed in Sem 5 after CS2107 in Sem 4.\", \"CS3233 is taken in Sem 6, before CS2105 in Sem 7, satisfying soft wish. CS4212 is in Sem 8, after CS3233, so that soft wish is not met.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "ST2334",
+    "CS2107"
+   ],
+   "5": [
+    "CS4236",
+    "CS3230",
+    "CS2109S"
+   ],
+   "6": [
+    "CS3233"
+   ],
+   "7": [
+    "CS2104",
+    "CS2105"
+   ],
+   "8": [
+    "CS4212",
+    "CS3219",
+    "CS4222"
+   ]
+  },
+  "reasons": [
+   "Added CS2107 as prerequisite for CS4236.",
+   "CS4236 is offered in Sem 1, so it is placed in Sem 5 after CS2107 in Sem 4.",
+   "CS3233 is taken in Sem 6, before CS2105 in Sem 7, satisfying soft wish. CS4212 is in Sem 8, after CS3233, so that soft wish is not met."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

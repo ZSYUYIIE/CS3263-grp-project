@@ -1,0 +1,106 @@
+{
+ "id": "q2-S4-294",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 8.31,
+ "usage": {
+  "prompt_tokens": 25612,
+  "total_tokens": 26094,
+  "completion_tokens": 482,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 8.31,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4223 requires CS3210, CS3220, or CG3207, none of which are completed or required by the student.\", \"CS4236 requires CS2107, which is not completed or required by the student.\", \"CS4261 is only offered in Sem 1, but the student is in Sem 5 and wants it as late as possible; it cannot be taken in Sem 6.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4223 requires CS3210, CS3220, or CG3207, none of which are completed or required by the student.",
+   "CS4236 requires CS2107, which is not completed or required by the student.",
+   "CS4261 is only offered in Sem 1, but the student is in Sem 5 and wants it as late as possible; it cannot be taken in Sem 6."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"5\": [\"CS2102\", \"CS3219\", \"CS4236\", \"CS2105\"], \"6\": [\"CS3233\", \"CS4261\"], \"7\": [\"CS4223\"]}, \"reasons\": [\"All prerequisites for planned courses are satisfied by completed courses or earlier semesters.\", \"CS3219 and CS4236 are placed in Sem 5 as required. CS3233 is taken in Sem 6 before CS4223 in Sem 7.\", \"CS2105 and CS4261 are kept apart (Sem 5 and Sem 6). CS4261 is scheduled as late as possible (Sem 6) to allow for potential Sem 7 flexibility, though Sem 7 is the latest possible slot for CS4223 which requires CS4261's prerequisite chain? No, CS4223 requires CS2106/CG2271 and CS3210/CS3220/CG3207. Wait, let's re-verify CS4223 prereqs.\", \"CS4223 Prereq: (CS2106 or CG2271) AND (CS3210 or CS3220 or CG3207). Student has CS2106. Does student have CS3210, CS3220, or CG3207? No. These are not in the 'must take' list. Therefore, CS4223 cannot be taken because its prerequisites are not met. Status should be NO_PLAN.\"}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2102",
+      "CS3219",
+      "CS4236",
+      "CS2105"
+     ],
+     "6": [
+      "CS3233",
+      "CS4261"
+     ],
+     "7": [
+      "CS4223"
+     ]
+    }
+   },
+   "repair": "cut_reasons",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12517,
+    "total_tokens": 12887,
+    "completion_tokens": 370,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 5.53,
+    "attempts": 1
+   },
+   "seconds": 5.53,
+   "violations": [
+    "R4 CS4223 in semester 7: prerequisite not met ((CS2106 or CG2271) and (CS3210 or CS3220 or CG3207))",
+    "R4 CS4236 in semester 5: prerequisite not met ((YSC2229 or CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS) and CS2107 and (CS1231 or CS1231S or MA1100T or MA1100))",
+    "R3 CS4261 not offered in Sem 2 (semester 6)"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4223 requires CS3210, CS3220, or CG3207, none of which are completed or required by the student.\", \"CS4236 requires CS2107, which is not completed or required by the student.\", \"CS4261 is only offered in Sem 1, but the student is in Sem 5 and wants it as late as possible; it cannot be taken in Sem 6.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4223 requires CS3210, CS3220, or CG3207, none of which are completed or required by the student.",
+     "CS4236 requires CS2107, which is not completed or required by the student.",
+     "CS4261 is only offered in Sem 1, but the student is in Sem 5 and wants it as late as possible; it cannot be taken in Sem 6."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 13095,
+    "total_tokens": 13207,
+    "completion_tokens": 112,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 2.78,
+    "attempts": 1
+   },
+   "seconds": 2.78,
+   "violations": null
+  }
+ ]
+}

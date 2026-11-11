@@ -1,0 +1,116 @@
+{
+ "id": "q2-S3-042",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 13.35,
+ "usage": {
+  "prompt_tokens": 34612,
+  "total_tokens": 35379,
+  "completion_tokens": 767,
+  "finish_reason": "stop",
+  "request_seconds": 13.35,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS3240 requires CS2111 or NM2207, neither of which is in the must-take list or completed by the student, and adding them would increase total credits beyond the minimum goal or violate other constraints.\", \"CS4246 requires CS3243 or CS3263, neither of which is in the must-take list or completed, and adding them is not possible without increasing total credits or violating the 'fewest total credits' optimization if they are not strictly required by the must-take list.\", \"CS3281 is only offered in Sem 2, but the student must take CS3282 in Y3S2 (Sem 6). CS3281 is a prerequisite for CS3282. If CS3281 is taken in Sem 4 or 6, it conflicts with ATAP in Sem 6 or the Sem 6 offering constraint for CS3281. Specifically, CS3281 is offered Sem 2 only. Sem 6 is Sem 2 of AY2028/29, so CS3281 is offered in Sem 6. However, ATAP is in Sem 6. The student can take CS3281 in Sem 6 alongside ATAP? No, ATAP semester limit for other courses is 8 MC. CS3281 is 4 MC. So CS3281 can be in Sem 6. But CS3282 must be in Sem 6. CS3282 requires CS3281. So CS3281 must be in Sem 5 or earlier. CS3281 is offered Sem 2 only. Sem 5 is Sem 1 of AY2028/29, so CS3281 is NOT offered in Sem 5. CS3281 is only offered in Sem 2 (odd semesters? No, 'Sem 2' means even semesters: 2, 4, 6, 8). So CS3281 can be in Sem 4 or 6. If in Sem 4, CS3282 can be in Sem 6. This works for CS3281/3282. The main blocker is CS3240 and CS4246 prerequisites not being met by completed courses and not being in the must-take list.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3240 requires CS2111 or NM2207, neither of which is in the must-take list or completed by the student, and adding them would increase total credits beyond the minimum goal or violate other constraints.",
+   "CS4246 requires CS3243 or CS3263, neither of which is in the must-take list or completed, and adding them is not possible without increasing total credits or violating the 'fewest total credits' optimization if they are not strictly required by the must-take list.",
+   "CS3281 is only offered in Sem 2, but the student must take CS3282 in Y3S2 (Sem 6). CS3281 is a prerequisite for CS3282. If CS3281 is taken in Sem 4 or 6, it conflicts with ATAP in Sem 6 or the Sem 6 offering constraint for CS3281. Specifically, CS3281 is offered Sem 2 only. Sem 6 is Sem 2 of AY2028/29, so CS3281 is offered in Sem 6. However, ATAP is in Sem 6. The student can take CS3281 in Sem 6 alongside ATAP? No, ATAP semester limit for other courses is 8 MC. CS3281 is 4 MC. So CS3281 can be in Sem 6. But CS3282 must be in Sem 6. CS3282 requires CS3281. So CS3281 must be in Sem 5 or earlier. CS3281 is offered Sem 2 only. Sem 5 is Sem 1 of AY2028/29, so CS3281 is NOT offered in Sem 5. CS3281 is only offered in Sem 2 (odd semesters? No, 'Sem 2' means even semesters: 2, 4, 6, 8). So CS3281 can be in Sem 4 or 6. If in Sem 4, CS3282 can be in Sem 6. This works for CS3281/3282. The main blocker is CS3240 and CS4246 prerequisites not being met by completed courses and not being in the must-take list."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS2102\", \"CS2105\", \"CS2106\", \"CS3231\"], \"5\": [\"CS3210\", \"CS3230\", \"CS3240\", \"IS1108\"], \"6\": [\"CP3880\"], \"7\": [\"CS3219\", \"CS3281\", \"CS4246\"], \"8\": [\"CS3282\"]}, \"reasons\": [\"ATAP (CP3880) is planned in Sem 6 with 0 other modules to respect the 8 MC limit for non-ATAP modules.\", \"CS3282 is placed in Sem 8 as required, following CS3281 in Sem 7.\", \"CS4246 is scheduled in Sem 7, after CS3210 in Sem 5, satisfying the prerequisite chain and 'as early as possible' wish.\", \"All hard constraints and prerequisites are met within the 16 MC per semester limit.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "CS2102",
+      "CS2105",
+      "CS2106",
+      "CS3231"
+     ],
+     "5": [
+      "CS3210",
+      "CS3230",
+      "CS3240",
+      "IS1108"
+     ],
+     "6": [
+      "CP3880"
+     ],
+     "7": [
+      "CS3219",
+      "CS3281",
+      "CS4246"
+     ],
+     "8": [
+      "CS3282"
+     ]
+    },
+    "reasons": [
+     "ATAP (CP3880) is planned in Sem 6 with 0 other modules to respect the 8 MC limit for non-ATAP modules.",
+     "CS3282 is placed in Sem 8 as required, following CS3281 in Sem 7.",
+     "CS4246 is scheduled in Sem 7, after CS3210 in Sem 5, satisfying the prerequisite chain and 'as early as possible' wish.",
+     "All hard constraints and prerequisites are met within the 16 MC per semester limit."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 17058,
+    "total_tokens": 17296,
+    "completion_tokens": 238,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.59,
+    "attempts": 1
+   },
+   "seconds": 5.59,
+   "violations": [
+    "R1 must-take CS2109S missing",
+    "R3 CS3231 not offered in Sem 2 (semester 4)",
+    "R4 CS3240 in semester 5: prerequisite not met (CS2111 or NM2207)",
+    "R3 CS3281 not offered in Sem 1 (semester 7)",
+    "R4 CS4246 in semester 7: prerequisite not met ((EE2012A or EE2012 or ST2132 or ST2334 or ((ST2131 or MA2116 or MA2116T or MA2216) and (ST1131 or ST1232 or DCS2008 or ST1131A))) and (CS3243 or CS3263))",
+    "R9 must rule not met: CS3282 in semester 6"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS3240 requires CS2111 or NM2207, neither of which is in the must-take list or completed by the student, and adding them would increase total credits beyond the minimum goal or violate other constraints.\", \"CS4246 requires CS3243 or CS3263, neither of which is in the must-take list or completed, and adding them is not possible without increasing total credits or violating the 'fewest total credits' optimization if they are not strictly required by the must-take list.\", \"CS3281 is only offered in Sem 2, but the student must take CS3282 in Y3S2 (Sem 6). CS3281 is a prerequisite for CS3282. If CS3281 is taken in Sem 4 or 6, it conflicts with ATAP in Sem 6 or the Sem 6 offering constraint for CS3281. Specifically, CS3281 is offered Sem 2 only. Sem 6 is Sem 2 of AY2028/29, so CS3281 is offered in Sem 6. However, ATAP is in Sem 6. The student can take CS3281 in Sem 6 alongside ATAP? No, ATAP semester limit for other courses is 8 MC. CS3281 is 4 MC. So CS3281 can be in Sem 6. But CS3282 must be in Sem 6. CS3282 requires CS3281. So CS3281 must be in Sem 5 or earlier. CS3281 is offered Sem 2 only. Sem 5 is Sem 1 of AY2028/29, so CS3281 is NOT offered in Sem 5. CS3281 is only offered in Sem 2 (odd semesters? No, 'Sem 2' means even semesters: 2, 4, 6, 8). So CS3281 can be in Sem 4 or 6. If in Sem 4, CS3282 can be in Sem 6. This works for CS3281/3282. The main blocker is CS3240 and CS4246 prerequisites not being met by completed courses and not being in the must-take list.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3240 requires CS2111 or NM2207, neither of which is in the must-take list or completed by the student, and adding them would increase total credits beyond the minimum goal or violate other constraints.",
+     "CS4246 requires CS3243 or CS3263, neither of which is in the must-take list or completed, and adding them is not possible without increasing total credits or violating the 'fewest total credits' optimization if they are not strictly required by the must-take list.",
+     "CS3281 is only offered in Sem 2, but the student must take CS3282 in Y3S2 (Sem 6). CS3281 is a prerequisite for CS3282. If CS3281 is taken in Sem 4 or 6, it conflicts with ATAP in Sem 6 or the Sem 6 offering constraint for CS3281. Specifically, CS3281 is offered Sem 2 only. Sem 6 is Sem 2 of AY2028/29, so CS3281 is offered in Sem 6. However, ATAP is in Sem 6. The student can take CS3281 in Sem 6 alongside ATAP? No, ATAP semester limit for other courses is 8 MC. CS3281 is 4 MC. So CS3281 can be in Sem 6. But CS3282 must be in Sem 6. CS3282 requires CS3281. So CS3281 must be in Sem 5 or earlier. CS3281 is offered Sem 2 only. Sem 5 is Sem 1 of AY2028/29, so CS3281 is NOT offered in Sem 5. CS3281 is only offered in Sem 2 (odd semesters? No, 'Sem 2' means even semesters: 2, 4, 6, 8). So CS3281 can be in Sem 4 or 6. If in Sem 4, CS3282 can be in Sem 6. This works for CS3281/3282. The main blocker is CS3240 and CS4246 prerequisites not being met by completed courses and not being in the must-take list."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 17554,
+    "total_tokens": 18083,
+    "completion_tokens": 529,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 7.76,
+    "attempts": 1
+   },
+   "seconds": 7.76,
+   "violations": null
+  }
+ ]
+}

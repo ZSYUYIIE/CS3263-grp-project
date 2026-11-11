@@ -1,0 +1,125 @@
+{
+ "id": "q2-S3-177",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 11.45,
+ "usage": {
+  "prompt_tokens": 17186,
+  "total_tokens": 17681,
+  "completion_tokens": 495,
+  "finish_reason": "stop",
+  "request_seconds": 11.45,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"Missing prerequisite CS1231/CS1231S/MA1100/MA1100T for CS2040S, CS3230, CS2109S, ST2334.\",\n    \"Student did not list CS1231/CS1231S/MA1100/MA1100T as required modules, but they are prerequisites for multiple required courses.\",\n    \"Cannot satisfy minimum 12 MC per semester with only the listed courses while respecting prerequisites and exchange.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "Missing prerequisite CS1231/CS1231S/MA1100/MA1100T for CS2040S, CS3230, CS2109S, ST2334.",
+   "Student did not list CS1231/CS1231S/MA1100/MA1100T as required modules, but they are prerequisites for multiple required courses.",
+   "Cannot satisfy minimum 12 MC per semester with only the listed courses while respecting prerequisites and exchange."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"1\": [\n      \"CS1101S\",\n      \"MA1521\",\n      \"MA1522\",\n      \"IS1108\",\n      \"ES2660\"\n    ],\n    \"2\": [\n      \"CS2030S\",\n      \"CS2040S\",\n      \"CS2101\"\n    ],\n    \"3\": [\n      \"CS2103T\",\n      \"CS2105\",\n      \"ST2334\"\n    ],\n    \"5\": [\n      \"CS3230\",\n      \"CS3219\"\n    ],\n    \"7\": [\n      \"CS2109S\"\n    ],\n    \"8\": [\n      \"ST2334\"\n    ]\n  },\n  \"reasons\": [\n    \"CS1101S, MA1521, MA1522, IS1108, ES2660 taken in Sem 1 to satisfy prerequisites and soft wishes.\",\n    \"CS2030S and CS2040S taken in Sem 2 to enable CS2103T and CS2105 in Sem 3.\",\n    \"ST2334 placed in Sem 8 as requested; CS2109S in Sem 7 to keep it apart from ST2334.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "1": [
+      "CS1101S",
+      "MA1521",
+      "MA1522",
+      "IS1108",
+      "ES2660"
+     ],
+     "2": [
+      "CS2030S",
+      "CS2040S",
+      "CS2101"
+     ],
+     "3": [
+      "CS2103T",
+      "CS2105",
+      "ST2334"
+     ],
+     "5": [
+      "CS3230",
+      "CS3219"
+     ],
+     "7": [
+      "CS2109S"
+     ],
+     "8": [
+      "ST2334"
+     ]
+    },
+    "reasons": [
+     "CS1101S, MA1521, MA1522, IS1108, ES2660 taken in Sem 1 to satisfy prerequisites and soft wishes.",
+     "CS2030S and CS2040S taken in Sem 2 to enable CS2103T and CS2105 in Sem 3.",
+     "ST2334 placed in Sem 8 as requested; CS2109S in Sem 7 to keep it apart from ST2334."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 8270,
+    "total_tokens": 8617,
+    "completion_tokens": 347,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 8.15,
+    "attempts": 1
+   },
+   "seconds": 8.15,
+   "violations": [
+    "R1 ST2334 planned twice",
+    "R4 CS2040S in semester 2: prerequisite not met ((CS1010 or CS1010E or CS1010X or CS1101S or CS1010S or CS1010J or CS1010A or CS1010HS or UTC2851) and (CS1231S or CS1231 or MA1100 or MA1100T))",
+    "R4 CS3230 in semester 5: prerequisite not met ((YSC2229 or CS2040S or CS2040 or CS2040C or CS2040DE or CS2040HS) and (CS1231 or CS1231S or MA1100T or MA1100))",
+    "R8 semester 5 has 8 MC, minimum 12",
+    "R8 semester 7 has 4 MC, minimum 12",
+    "R8 semester 8 has 4 MC, minimum 12"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"Missing prerequisite CS1231/CS1231S/MA1100/MA1100T for CS2040S, CS3230, CS2109S, ST2334.\",\n    \"Student did not list CS1231/CS1231S/MA1100/MA1100T as required modules, but they are prerequisites for multiple required courses.\",\n    \"Cannot satisfy minimum 12 MC per semester with only the listed courses while respecting prerequisites and exchange.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "Missing prerequisite CS1231/CS1231S/MA1100/MA1100T for CS2040S, CS3230, CS2109S, ST2334.",
+     "Student did not list CS1231/CS1231S/MA1100/MA1100T as required modules, but they are prerequisites for multiple required courses.",
+     "Cannot satisfy minimum 12 MC per semester with only the listed courses while respecting prerequisites and exchange."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 8916,
+    "total_tokens": 9064,
+    "completion_tokens": 148,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 3.3,
+    "attempts": 1
+   },
+   "seconds": 3.3,
+   "violations": null
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "id": "q1-mp-037-p",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 9.46,
+ "usage": {
+  "prompt_tokens": 5566,
+  "total_tokens": 6025,
+  "completion_tokens": 459,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 9.46,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NOT_ELIGIBLE\",\n  \"reasons\": [\n    \"Prerequisite not satisfied: CS2103DE requires CS2030DE or CS2030 or CS2030S, but the student has only completed CS2030S's mutually exclusive counterpart CS2030S is completed, but the prerequisite specifically lists CS2030DE, CS2030, or CS2030S. Wait, CS2030S is in the prerequisite list for CS2103DE? Let's re-read CS2103DE prereq: '(CS2030DE and CS2030DE) or ((CS2030DE or CS2030 or CS2030S) and (CS2040DE or CS2040 or CS2040C or CS2040S))'. The student has CS2030S. So the first part of the OR is (CS2030DE AND CS2040DE) - False. The second part is ((CS2030DE OR CS2030 OR CS2030S) AND (CS2040DE OR CS2040 OR CS2040C OR CS2040S)). The student has CS2030S, so the first clause is True. The student has NOT completed CS2040DE, CS2040, CS2040C, or CS2040S. The student has CS2030S, CS2102, CS2106, CS2100HS, CS1101S, ST2334, ST1131, MA1521, CS2101, CS1231S, MA2108S, CS5424. None of these are CS2040 variants. Therefore, the second clause is False. Thus, the prerequisite is not met.\"\n  ]\n}",
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "reasons": [
+   "Prerequisite not satisfied: CS2103DE requires CS2030DE or CS2030 or CS2030S, but the student has only completed CS2030S's mutually exclusive counterpart CS2030S is completed, but the prerequisite specifically lists CS2030DE, CS2030, or CS2030S. Wait, CS2030S is in the prerequisite list for CS2103DE? Let's re-read CS2103DE prereq: '(CS2030DE and CS2030DE) or ((CS2030DE or CS2030 or CS2030S) and (CS2040DE or CS2040 or CS2040C or CS2040S))'. The student has CS2030S. So the first part of the OR is (CS2030DE AND CS2040DE) - False. The second part is ((CS2030DE OR CS2030 OR CS2030S) AND (CS2040DE OR CS2040 OR CS2040C OR CS2040S)). The student has CS2030S, so the first clause is True. The student has NOT completed CS2040DE, CS2040, CS2040C, or CS2040S. The student has CS2030S, CS2102, CS2106, CS2100HS, CS1101S, ST2334, ST1131, MA1521, CS2101, CS1231S, MA2108S, CS5424. None of these are CS2040 variants. Therefore, the second clause is False. Thus, the prerequisite is not met."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 4,
+ "ablation": 1
+}

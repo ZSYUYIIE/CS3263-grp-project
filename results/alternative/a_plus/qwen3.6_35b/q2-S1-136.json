@@ -1,0 +1,204 @@
+{
+ "id": "q2-S1-136",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 3,
+ "end": "switched to NO_PLAN",
+ "seconds": 17.23,
+ "usage": {
+  "prompt_tokens": 56811,
+  "total_tokens": 57806,
+  "completion_tokens": 995,
+  "finish_reason": "stop",
+  "request_seconds": 17.23,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS4223 requires CS3210, CS3220, or CG3207, none of which are in the required list or completed.\",\n\"CS4262 requires CS3244, CS3264, or CG3201, none of which are in the required list or completed.\",\n\"Missing prerequisites for required modules cannot be satisfied with available courses.\"\n]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4223 requires CS3210, CS3220, or CG3207, none of which are in the required list or completed.",
+   "CS4262 requires CS3244, CS3264, or CG3201, none of which are in the required list or completed.",
+   "Missing prerequisites for required modules cannot be satisfied with available courses."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS4261\",\n\"CS2105\"\n],\n\"6\": [\n\"CS2102\",\n\"CS3219\"\n],\n\"7\": [\n\"CS4226\",\n\"CS4223\",\n\"CS4262\",\n\"CS4218\"\n]\n},\n\"reasons\": [\n\"CS4261 prerequisites (MA1521, CS2040S, CS1231S, MA1522) are completed.\",\n\"CS2105 prerequisite (CS2040S) is completed.\",\n\"CS2102 prerequisites (CS1231S, CS2030S) are completed.\",\n\"CS3219 prerequisite (CS2103T) is completed.\",\n\"CS4226 prerequisites (CS2105, MA1522) are completed by Sem 6.\",\n\"CS4223 prerequisites (CS2106, CS3219) are completed by Sem 6.\",\n\"CS4262 prerequisites (CS2106, CS2109S) are completed.\",\n\"CS4218 prerequisite (CS3219) is completed by Sem 6.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS4261",
+      "CS2105"
+     ],
+     "6": [
+      "CS2102",
+      "CS3219"
+     ],
+     "7": [
+      "CS4226",
+      "CS4223",
+      "CS4262",
+      "CS4218"
+     ]
+    },
+    "reasons": [
+     "CS4261 prerequisites (MA1521, CS2040S, CS1231S, MA1522) are completed.",
+     "CS2105 prerequisite (CS2040S) is completed.",
+     "CS2102 prerequisites (CS1231S, CS2030S) are completed.",
+     "CS3219 prerequisite (CS2103T) is completed.",
+     "CS4226 prerequisites (CS2105, MA1522) are completed by Sem 6.",
+     "CS4223 prerequisites (CS2106, CS3219) are completed by Sem 6.",
+     "CS4262 prerequisites (CS2106, CS2109S) are completed.",
+     "CS4218 prerequisite (CS3219) is completed by Sem 6."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 13823,
+    "total_tokens": 14139,
+    "completion_tokens": 316,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.08,
+    "attempts": 1
+   },
+   "seconds": 5.08,
+   "violations": [
+    "R1 must-take CS3103 missing",
+    "R4 CS4223 in semester 7: prerequisite not met ((CS2106 or CG2271) and (CS3210 or CS3220 or CG3207))",
+    "R3 CS4262 not offered in Sem 1 (semester 7)",
+    "R4 CS4262 in semester 7: prerequisite not met ((CS2106 or CG2271) and (CS3244 or CS3264 or CG3201))",
+    "R9 must rule not met: before CS4226 CS3219"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS4261\",\n\"CS2105\",\n\"CS3103\"\n],\n\"6\": [\n\"CS2102\",\n\"CS3219\"\n],\n\"7\": [\n\"CS4226\",\n\"CS4223\",\n\"CS4262\",\n\"CS4218\"\n]\n},\n\"reasons\": [\n\"CS3103 prerequisite (CS2105) is completed in Sem 5.\",\n\"CS4223 prerequisites (CS2106, CS3219) are completed by Sem 6.\",\n\"CS4262 is offered in Sem 2 (Sem 7) and prerequisites (CS2106, CS2109S) are completed.\",\n\"CS4218 prerequisite (CS3219) is completed in Sem 6.\",\n\"CS4226 prerequisite (CS2105) is completed in Sem 5.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS4261",
+      "CS2105",
+      "CS3103"
+     ],
+     "6": [
+      "CS2102",
+      "CS3219"
+     ],
+     "7": [
+      "CS4226",
+      "CS4223",
+      "CS4262",
+      "CS4218"
+     ]
+    },
+    "reasons": [
+     "CS3103 prerequisite (CS2105) is completed in Sem 5.",
+     "CS4223 prerequisites (CS2106, CS3219) are completed by Sem 6.",
+     "CS4262 is offered in Sem 2 (Sem 7) and prerequisites (CS2106, CS2109S) are completed.",
+     "CS4218 prerequisite (CS3219) is completed in Sem 6.",
+     "CS4226 prerequisite (CS2105) is completed in Sem 5."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 14337,
+    "total_tokens": 14587,
+    "completion_tokens": 250,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.07,
+    "attempts": 1
+   },
+   "seconds": 4.07,
+   "violations": [
+    "R4 CS3103 in semester 5: prerequisite not met (CS2105 or EE3204 or EE3204E or EE4204)",
+    "R4 CS4223 in semester 7: prerequisite not met ((CS2106 or CG2271) and (CS3210 or CS3220 or CG3207))",
+    "R3 CS4262 not offered in Sem 1 (semester 7)",
+    "R4 CS4262 in semester 7: prerequisite not met ((CS2106 or CG2271) and (CS3244 or CS3264 or CG3201))",
+    "R9 must rule not met: before CS4226 CS3219"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS4261\",\n\"CS2105\",\n\"CS3103\"\n],\n\"6\": [\n\"CS2102\",\n\"CS3219\"\n],\n\"7\": [\n\"CS4226\",\n\"CS4223\",\n\"CS4218\"\n],\n\"8\": [\n\"CS4262\"\n]\n},\n\"reasons\": [\n\"CS3103 prerequisite CS2105 is taken in Sem 5.\",\n\"CS4223 prerequisites CS2106 (completed) and CS3219 (Sem 6) are met.\",\n\"CS4262 is offered in Sem 2 (Sem 8) and prerequisites CS2106 (completed) and CS3244/CS3264/CG3201 are not completed but CS2109S is completed; wait, CS4262 prereq is (CS2106 or CG2271) AND (CS3244 or CS3264 or CG3201). Student has CS2106. Student does NOT have CS3244, CS3264, or CG3201. Thus CS4262 is NOT ELIGIBLE.\"\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS4261",
+      "CS2105",
+      "CS3103"
+     ],
+     "6": [
+      "CS2102",
+      "CS3219"
+     ],
+     "7": [
+      "CS4226",
+      "CS4223",
+      "CS4218"
+     ],
+     "8": [
+      "CS4262"
+     ]
+    }
+   },
+   "repair": "cut_reasons",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 14301,
+    "total_tokens": 14620,
+    "completion_tokens": 319,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.94,
+    "attempts": 1
+   },
+   "seconds": 4.94,
+   "violations": [
+    "R4 CS3103 in semester 5: prerequisite not met (CS2105 or EE3204 or EE3204E or EE4204)",
+    "R4 CS4223 in semester 7: prerequisite not met ((CS2106 or CG2271) and (CS3210 or CS3220 or CG3207))",
+    "R4 CS4262 in semester 8: prerequisite not met ((CS2106 or CG2271) and (CS3244 or CS3264 or CG3201))",
+    "R9 must rule not met: before CS4226 CS3219"
+   ]
+  },
+  {
+   "round": 3,
+   "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS4223 requires CS3210, CS3220, or CG3207, none of which are in the required list or completed.\",\n\"CS4262 requires CS3244, CS3264, or CG3201, none of which are in the required list or completed.\",\n\"Missing prerequisites for required modules cannot be satisfied with available courses.\"\n]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4223 requires CS3210, CS3220, or CG3207, none of which are in the required list or completed.",
+     "CS4262 requires CS3244, CS3264, or CG3201, none of which are in the required list or completed.",
+     "Missing prerequisites for required modules cannot be satisfied with available courses."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 14350,
+    "total_tokens": 14460,
+    "completion_tokens": 110,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.14,
+    "attempts": 1
+   },
+   "seconds": 3.14,
+   "violations": null
+  }
+ ]
+}

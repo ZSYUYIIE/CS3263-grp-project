@@ -1,0 +1,55 @@
+{
+ "id": "q2-S4-132",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 120.03,
+ "usage": {
+  "prompt_tokens": 11439,
+  "total_tokens": 23750,
+  "completion_tokens": 12311,
+  "prompt_tokens_details": {
+   "cached_tokens": 11136,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 12159
+  },
+  "finish_reason": "stop",
+  "request_seconds": 120.03,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS4248\",\"CS2105\",\"CS2107\",\"CS3219\"],\"7\":[\"CS4211\",\"CS3235\",\"CS4218\",\"CS3264\"],\"8\":[\"CS4262\",\"CS2102\",\"CS3263\"]},\"reasons\":[\"Total 44 MC is minimal: all 8 remaining courses plus prerequisite courses CS2105, CS2107 and CS3264.\",\"CS4262 is in semester 8, the latest possible, after CS3264.\",\"CS4248 is in semester 6 as requested; CS4262 cannot precede CS3263 because CS3264 must come first and semester 5 is exchange.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS4248",
+    "CS2105",
+    "CS2107",
+    "CS3219"
+   ],
+   "7": [
+    "CS4211",
+    "CS3235",
+    "CS4218",
+    "CS3264"
+   ],
+   "8": [
+    "CS4262",
+    "CS2102",
+    "CS3263"
+   ]
+  },
+  "reasons": [
+   "Total 44 MC is minimal: all 8 remaining courses plus prerequisite courses CS2105, CS2107 and CS3264.",
+   "CS4262 is in semester 8, the latest possible, after CS3264.",
+   "CS4248 is in semester 6 as requested; CS4262 cannot precede CS3263 because CS3264 must come first and semester 5 is exchange."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

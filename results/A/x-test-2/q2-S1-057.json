@@ -1,0 +1,51 @@
+{
+ "id": "q2-S1-057",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 105.89,
+ "usage": {
+  "prompt_tokens": 6548,
+  "total_tokens": 15497,
+  "completion_tokens": 8949,
+  "prompt_tokens_details": {
+   "cached_tokens": 3712,
+   "created_cache_tokens": 2816,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 8781
+  },
+  "finish_reason": "stop",
+  "request_seconds": 105.89,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CS2220\"],\"4\":[\"ST2334\"],\"5\":[\"CS3230\"],\"6\":[\"CS4220\",\"CS4268\"]},\"reasons\":[\"Plan uses 20 MC: CS3230, CS4220, CS4268 plus added prerequisites CS2220 and ST2334; CS4268 is fixed in semester 6.\",\"CS4268 before CS3230 is impossible because CS4268 requires CS3230; CS3230 is placed in semester 5, the latest possible before CS4268.\",\"CS4268 before CS4220 is impossible because CS4220 is Sem 2 only and Y4S2 is exchange; CS4220 is placed in semester 6, the latest available.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2220"
+   ],
+   "4": [
+    "ST2334"
+   ],
+   "5": [
+    "CS3230"
+   ],
+   "6": [
+    "CS4220",
+    "CS4268"
+   ]
+  },
+  "reasons": [
+   "Plan uses 20 MC: CS3230, CS4220, CS4268 plus added prerequisites CS2220 and ST2334; CS4268 is fixed in semester 6.",
+   "CS4268 before CS3230 is impossible because CS4268 requires CS3230; CS3230 is placed in semester 5, the latest possible before CS4268.",
+   "CS4268 before CS4220 is impossible because CS4220 is Sem 2 only and Y4S2 is exchange; CS4220 is placed in semester 6, the latest available."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

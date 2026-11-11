@@ -1,0 +1,128 @@
+{
+ "id": "q2-S1-051",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 6.62,
+ "solver_seconds": 0.112,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2788,
+  "total_tokens": 3601,
+  "completion_tokens": 813,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 612
+  },
+  "finish_reason": "stop",
+  "request_seconds": 6.51,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"completed\":[\"MA1521\",\"CS1101S\",\"ES2660\",\"CS1231S\"],\"current_sem\":2,\"must_take\":[\"CS2100\",\"CS3281\",\"CS2109S\",\"CS3227\",\"CS3219\",\"CS4261\",\"CS2103T\",\"CS2101\",\"IS1108\",\"CS3230\",\"MA1522\",\"CS2030S\"],\"objective\":\"min_total_mc\",\"early\":[\"IS1108\"],\"rules\":[{\"type\":\"in_sem\",\"course\":\"CS2100\",\"sem\":2,\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS2109S\",\"b\":\"CS3230\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS4261\",\"sem\":5,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS2101\",\"sem\":2,\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "completed": [
+   "MA1521",
+   "CS1101S",
+   "ES2660",
+   "CS1231S"
+  ],
+  "current_sem": 2,
+  "must_take": [
+   "CS2100",
+   "CS3281",
+   "CS2109S",
+   "CS3227",
+   "CS3219",
+   "CS4261",
+   "CS2103T",
+   "CS2101",
+   "IS1108",
+   "CS3230",
+   "MA1522",
+   "CS2030S"
+  ],
+  "objective": "min_total_mc",
+  "early": [
+   "IS1108"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS2100",
+    "sem": 2,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2109S",
+    "b": "CS3230",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4261",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2101",
+    "sem": 2,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 5,
+  "plan": {
+   "2": [
+    "CS2030S",
+    "CS2040S",
+    "CS2100",
+    "CS2101",
+    "IS1108"
+   ],
+   "3": [
+    "CS2103T",
+    "ST2334"
+   ],
+   "4": [
+    "CS2109S",
+    "CS3281",
+    "MA1522"
+   ],
+   "5": [
+    "CS3219",
+    "CS3227",
+    "CS3230",
+    "CS4261"
+   ]
+  },
+  "mc_per_semester": {
+   "2": 20,
+   "3": 8,
+   "4": 12,
+   "5": 16
+  },
+  "preferences_met": [
+   "CS2101 in semester 2",
+   "IS1108 as early as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS2040S",
+   "ST2334"
+  ]
+ }
+}

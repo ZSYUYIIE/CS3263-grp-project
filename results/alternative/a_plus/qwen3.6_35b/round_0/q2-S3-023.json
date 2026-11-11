@@ -1,0 +1,49 @@
+{
+ "id": "q2-S3-023",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 3,
+ "end": "valid",
+ "seconds": 5.08,
+ "usage": {
+  "prompt_tokens": 10269,
+  "total_tokens": 10538,
+  "completion_tokens": 269,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.08,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"4\": [\n      \"CS3231\",\n      \"CS2102\",\n      \"CS3264\"\n    ],\n    \"5\": [\n      \"CS3230\",\n      \"CS2109S\",\n      \"CS3219\"\n    ]\n  },\n  \"reasons\": [\n    \"Completed prerequisites for all planned courses are satisfied.\",\n    \"CS3231 and CS2102 are taken together in Sem 4 as required.\",\n    \"CS3264 is taken with CS3231/CS2102 in Sem 4, satisfying the co-requisite constraint.\",\n    \"CS3230 and CS2109S are separated into Sem 5 and 6 respectively to avoid conflict.\",\n    \"CS3219 is taken in Sem 5 after CS2103T (completed) and CS2103/CS2103T prerequisites are met.\",\n    \"Graduation is achieved by end of Sem 5 (Y2S2), which is the earliest possible.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS3231",
+    "CS2102",
+    "CS3264"
+   ],
+   "5": [
+    "CS3230",
+    "CS2109S",
+    "CS3219"
+   ]
+  },
+  "reasons": [
+   "Completed prerequisites for all planned courses are satisfied.",
+   "CS3231 and CS2102 are taken together in Sem 4 as required.",
+   "CS3264 is taken with CS3231/CS2102 in Sem 4, satisfying the co-requisite constraint.",
+   "CS3230 and CS2109S are separated into Sem 5 and 6 respectively to avoid conflict.",
+   "CS3219 is taken in Sem 5 after CS2103T (completed) and CS2103/CS2103T prerequisites are met.",
+   "Graduation is achieved by end of Sem 5 (Y2S2), which is the earliest possible."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

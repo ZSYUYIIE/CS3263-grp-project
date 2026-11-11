@@ -1,0 +1,108 @@
+{
+ "id": "q2-S1-155",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.25,
+ "solver_seconds": 0.01,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3127,
+  "total_tokens": 3520,
+  "completion_tokens": 393,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 7.24,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 7,\n\"completed\": [\n\"CS3263\",\n\"CS2101\",\n\"CS2100\",\n\"MA1522\",\n\"IS1108\",\n\"CS4230\",\n\"ST2334\",\n\"CS2102\",\n\"CS1101S\",\n\"CS2106\",\n\"MA1521\",\n\"CS3230\",\n\"CS2109S\",\n\"CS4218\",\n\"CS2103T\",\n\"CS1231S\",\n\"CS3219\",\n\"CS2030S\",\n\"CS2040S\"\n],\n\"must_take\": [\n\"ES2660\",\n\"CS4249\",\n\"CS3213\"\n],\n\"mc_max\": 16,\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"same_sem\",\n\"a\": \"ES2660\",\n\"b\": \"CS4249\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3213\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"ES2660\",\n\"b\": \"CS4249\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4249\",\n\"b\": \"ES2660\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "completed": [
+   "CS3263",
+   "CS2101",
+   "CS2100",
+   "MA1522",
+   "IS1108",
+   "CS4230",
+   "ST2334",
+   "CS2102",
+   "CS1101S",
+   "CS2106",
+   "MA1521",
+   "CS3230",
+   "CS2109S",
+   "CS4218",
+   "CS2103T",
+   "CS1231S",
+   "CS3219",
+   "CS2030S",
+   "CS2040S"
+  ],
+  "must_take": [
+   "ES2660",
+   "CS4249",
+   "CS3213"
+  ],
+  "mc_max": 16,
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "ES2660",
+    "b": "CS4249",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3213",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "ES2660",
+    "b": "CS4249",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS4249",
+    "b": "ES2660",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "earliest_graduation",
+  "last_semester": 8,
+  "plan": {
+   "7": [
+    "NM3243"
+   ],
+   "8": [
+    "CS3213",
+    "CS4249",
+    "ES2660"
+   ]
+  },
+  "mc_per_semester": {
+   "7": 4,
+   "8": 12
+  },
+  "preferences_met": [],
+  "preferences_not_met": [
+   "ES2660 before CS4249",
+   "CS4249 before ES2660"
+  ],
+  "added_prerequisites": [
+   "NM3243"
+  ]
+ }
+}

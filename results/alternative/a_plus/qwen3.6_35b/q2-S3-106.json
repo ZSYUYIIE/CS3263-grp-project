@@ -1,0 +1,204 @@
+{
+ "id": "q2-S3-106",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 3,
+ "end": "valid",
+ "seconds": 15.24,
+ "usage": {
+  "prompt_tokens": 37843,
+  "total_tokens": 38619,
+  "completion_tokens": 776,
+  "finish_reason": "stop",
+  "request_seconds": 15.24,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"7\": [\n      \"CS3237\",\n      \"CS3231\"\n    ],\n    \"8\": [\n      \"CS2102\",\n      \"ST2334\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3237 and CS3231 are only offered in Sem 1, so they must be in Sem 7.\",\n    \"CS3237 must precede ST2334, so ST2334 cannot be in Sem 7.\",\n    \"CS2102 and ST2334 are placed in Sem 8 to satisfy the prerequisite order and soft wishes.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "7": [
+    "CS3237",
+    "CS3231"
+   ],
+   "8": [
+    "CS2102",
+    "ST2334"
+   ]
+  },
+  "reasons": [
+   "CS3237 and CS3231 are only offered in Sem 1, so they must be in Sem 7.",
+   "CS3237 must precede ST2334, so ST2334 cannot be in Sem 7.",
+   "CS2102 and ST2334 are placed in Sem 8 to satisfy the prerequisite order and soft wishes."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS3237\",\n      \"CS3231\"\n    ],\n    \"7\": [\n      \"CS2102\",\n      \"ST2334\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3237 and CS3231 prerequisites are satisfied by completed courses.\",\n    \"CS2102 prerequisites (CS1231S, CS2030S) are satisfied.\",\n    \"ST2334 prerequisite (MA1521) is satisfied.\",\n    \"CS3237 is taken in Sem 6 to precede ST2334 in Sem 7.\",\n    \"Soft wishes met: CS3237/CS3231 same semester; ST2334 as late as possible; CS2102/ST2334 different semesters.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS3237",
+      "CS3231"
+     ],
+     "7": [
+      "CS2102",
+      "ST2334"
+     ]
+    },
+    "reasons": [
+     "CS3237 and CS3231 prerequisites are satisfied by completed courses.",
+     "CS2102 prerequisites (CS1231S, CS2030S) are satisfied.",
+     "ST2334 prerequisite (MA1521) is satisfied.",
+     "CS3237 is taken in Sem 6 to precede ST2334 in Sem 7.",
+     "Soft wishes met: CS3237/CS3231 same semester; ST2334 as late as possible; CS2102/ST2334 different semesters."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9253,
+    "total_tokens": 9478,
+    "completion_tokens": 225,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.12,
+    "attempts": 1
+   },
+   "seconds": 5.12,
+   "violations": [
+    "R3 CS3231 not offered in Sem 2 (semester 6)",
+    "R3 CS3237 not offered in Sem 2 (semester 6)"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS3237\"\n    ],\n    \"7\": [\n      \"CS3231\",\n      \"CS2102\",\n      \"ST2334\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3231 and CS3237 are only offered in Sem 1, so they must be in Sem 7 or later.\",\n    \"CS3237 must precede ST2334, so CS3237 is in Sem 6 and ST2334 in Sem 7.\",\n    \"CS3231 is placed in Sem 7 with other remaining courses to minimize semesters.\",\n    \"Soft wishes: CS2102 and ST2334 in same semester (cannot be different if CS3231 is delayed), ST2334 as late as possible.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS3237"
+     ],
+     "7": [
+      "CS3231",
+      "CS2102",
+      "ST2334"
+     ]
+    },
+    "reasons": [
+     "CS3231 and CS3237 are only offered in Sem 1, so they must be in Sem 7 or later.",
+     "CS3237 must precede ST2334, so CS3237 is in Sem 6 and ST2334 in Sem 7.",
+     "CS3231 is placed in Sem 7 with other remaining courses to minimize semesters.",
+     "Soft wishes: CS2102 and ST2334 in same semester (cannot be different if CS3231 is delayed), ST2334 as late as possible."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9563,
+    "total_tokens": 9786,
+    "completion_tokens": 223,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 4.79,
+    "attempts": 1
+   },
+   "seconds": 4.79,
+   "violations": [
+    "R3 CS3237 not offered in Sem 2 (semester 6)",
+    "R8 semester 6 has 4 MC, minimum 8"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"7\": [\n      \"CS3237\",\n      \"CS3231\",\n      \"CS2102\",\n      \"ST2334\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3237 and CS3231 are only offered in Sem 1, so they must be in Sem 7 or later.\",\n    \"CS3237 must precede ST2334, so both are in Sem 7.\",\n    \"All remaining courses fit in Sem 7, satisfying the 8 MC minimum.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "7": [
+      "CS3237",
+      "CS3231",
+      "CS2102",
+      "ST2334"
+     ]
+    },
+    "reasons": [
+     "CS3237 and CS3231 are only offered in Sem 1, so they must be in Sem 7 or later.",
+     "CS3237 must precede ST2334, so both are in Sem 7.",
+     "All remaining courses fit in Sem 7, satisfying the 8 MC minimum."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9556,
+    "total_tokens": 9709,
+    "completion_tokens": 153,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 2.5,
+    "attempts": 1
+   },
+   "seconds": 2.5,
+   "violations": [
+    "R9 must rule not met: before CS3237 ST2334"
+   ]
+  },
+  {
+   "round": 3,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"7\": [\n      \"CS3237\",\n      \"CS3231\"\n    ],\n    \"8\": [\n      \"CS2102\",\n      \"ST2334\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3237 and CS3231 are only offered in Sem 1, so they must be in Sem 7.\",\n    \"CS3237 must precede ST2334, so ST2334 cannot be in Sem 7.\",\n    \"CS2102 and ST2334 are placed in Sem 8 to satisfy the prerequisite order and soft wishes.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "7": [
+      "CS3237",
+      "CS3231"
+     ],
+     "8": [
+      "CS2102",
+      "ST2334"
+     ]
+    },
+    "reasons": [
+     "CS3237 and CS3231 are only offered in Sem 1, so they must be in Sem 7.",
+     "CS3237 must precede ST2334, so ST2334 cannot be in Sem 7.",
+     "CS2102 and ST2334 are placed in Sem 8 to satisfy the prerequisite order and soft wishes."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9471,
+    "total_tokens": 9646,
+    "completion_tokens": 175,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 2.83,
+    "attempts": 1
+   },
+   "seconds": 2.83,
+   "violations": []
+  }
+ ]
+}

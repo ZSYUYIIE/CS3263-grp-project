@@ -1,0 +1,74 @@
+{
+ "id": "q2-S4-157",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 10.87,
+ "solver_seconds": 0.12,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3078,
+  "total_tokens": 3363,
+  "completion_tokens": 285,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 10.75,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 4,\n\"completed\": [\n\"CS2100\",\n\"CS1231S\",\n\"ST2334\",\n\"CS2103T\",\n\"CS2101\",\n\"CS1101S\",\n\"CS2040S\",\n\"MA1522\",\n\"MA1521\",\n\"CS2030S\",\n\"ES2660\"\n],\n\"must_take\": [\n\"CS4240\",\n\"CS3230\",\n\"CS4243\",\n\"CS4249\",\n\"CS3247\"\n],\n\"sem_caps\": {\n\"4\": 0,\n\"8\": 0\n},\n\"rules\": [\n{\n\"type\": \"apart\",\n\"a\": \"CS3247\",\n\"b\": \"CS4243\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4249\",\n\"sem\": 8,\n\"strength\": \"prefer\"\n}\n],\n\"late\": [\n\"CS4243\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "CS2100",
+   "CS1231S",
+   "ST2334",
+   "CS2103T",
+   "CS2101",
+   "CS1101S",
+   "CS2040S",
+   "MA1522",
+   "MA1521",
+   "CS2030S",
+   "ES2660"
+  ],
+  "must_take": [
+   "CS4240",
+   "CS3230",
+   "CS4243",
+   "CS4249",
+   "CS3247"
+  ],
+  "sem_caps": {
+   "4": 0,
+   "8": 0
+  },
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS3247",
+    "b": "CS4243",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4249",
+    "sem": 8,
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "CS4243"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the prerequisites of CS3240; the prerequisites of CS4240; the MC limits (at most 20 MC per semester; semesters 4, 8 blocked); the semesters in which the courses are offered"
+  ]
+ }
+}

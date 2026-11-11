@@ -1,0 +1,57 @@
+{
+ "id": "q2-S1-086",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 74.35,
+ "usage": {
+  "prompt_tokens": 7569,
+  "total_tokens": 13302,
+  "completion_tokens": 5733,
+  "prompt_tokens_details": {
+   "cached_tokens": 7552,
+   "created_cache_tokens": 0,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5571
+  },
+  "finish_reason": "stop",
+  "request_seconds": 74.35,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CS2103\",\"CS2109S\"],\"4\":[\"CS2105\",\"CS2102\"],\"5\":[\"CS3219\",\"CS3230\"],\"7\":[\"ST2334\",\"CS2100\"],\"8\":[\"CS4230\"]},\"reasons\":[\"Added CS2103 as the prerequisite for CS3219.\",\"CS4230 is Sem 2 only and semester 6 is LOA, so it must be in semester 8; this makes CS4230 before CS3219 or CS2109S impossible.\",\"CS3230 is paired with CS3219 in semester 5, the latest possible, and CS2105 is before CS4230 and not with CS3230.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2103",
+    "CS2109S"
+   ],
+   "4": [
+    "CS2105",
+    "CS2102"
+   ],
+   "5": [
+    "CS3219",
+    "CS3230"
+   ],
+   "7": [
+    "ST2334",
+    "CS2100"
+   ],
+   "8": [
+    "CS4230"
+   ]
+  },
+  "reasons": [
+   "Added CS2103 as the prerequisite for CS3219.",
+   "CS4230 is Sem 2 only and semester 6 is LOA, so it must be in semester 8; this makes CS4230 before CS3219 or CS2109S impossible.",
+   "CS3230 is paired with CS3219 in semester 5, the latest possible, and CS2105 is before CS4230 and not with CS3230."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

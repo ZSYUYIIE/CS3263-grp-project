@@ -1,0 +1,105 @@
+{
+ "id": "q2-S3-067",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 10.02,
+ "usage": {
+  "prompt_tokens": 30754,
+  "total_tokens": 31256,
+  "completion_tokens": 502,
+  "finish_reason": "stop",
+  "request_seconds": 10.02,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4226 is only offered in Sem 1, but the student is in Y2S2 (Sem 4) and cannot go back to Sem 1 or 3.\",\n    \"CS4231 is only offered in Sem 2, but the student must take ATAP (CP3880) in Sem 7, which is the last semester used if they graduate then. ATAP cannot be in the last semester used.\",\n    \"Even if ATAP were later, CS4231 requires CS3210 or CS3230. CS3219 (planned) is not a prerequisite for CS4231. CS3210 requires CS2100 (completed) but is not listed as a 'must' by the student, and taking it would not solve the CS4226 timing issue.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4226 is only offered in Sem 1, but the student is in Y2S2 (Sem 4) and cannot go back to Sem 1 or 3.",
+   "CS4231 is only offered in Sem 2, but the student must take ATAP (CP3880) in Sem 7, which is the last semester used if they graduate then. ATAP cannot be in the last semester used.",
+   "Even if ATAP were later, CS4231 requires CS3210 or CS3230. CS3219 (planned) is not a prerequisite for CS4231. CS3210 requires CS2100 (completed) but is not listed as a 'must' by the student, and taking it would not solve the CS4226 timing issue."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS2105\"], \"5\": [\"CS2106\", \"CS3219\"], \"6\": [\"CS2109S\", \"CS4226\"], \"7\": [\"CP3880\", \"CS4231\"]}, \"reasons\": [\"Prerequisites satisfied: CS2105 needs CS2040S (completed); CS2106 needs CS2100 (completed); CS3219 needs CS2103T (completed); CS2109S needs CS2040S and MA1521 (completed); CS4226 needs CS2105 and ST2334 (completed); CS4231 needs CS3219 (planned in sem 5).\", \"ATAP (CP3880) planned in Sem 7 as requested. CS4231 is taken in Sem 7 after CS3219 in Sem 5. CS2109S and CS4226 are taken together in Sem 6.\", \"Graduation in Sem 8 is the earliest possible given the prerequisite chain and ATAP constraint. Soft wishes for late CS2109S and co-taking with CS4226 are met.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "CS2105"
+     ],
+     "5": [
+      "CS2106",
+      "CS3219"
+     ],
+     "6": [
+      "CS2109S",
+      "CS4226"
+     ],
+     "7": [
+      "CP3880",
+      "CS4231"
+     ]
+    },
+    "reasons": [
+     "Prerequisites satisfied: CS2105 needs CS2040S (completed); CS2106 needs CS2100 (completed); CS3219 needs CS2103T (completed); CS2109S needs CS2040S and MA1521 (completed); CS4226 needs CS2105 and ST2334 (completed); CS4231 needs CS3219 (planned in sem 5).",
+     "ATAP (CP3880) planned in Sem 7 as requested. CS4231 is taken in Sem 7 after CS3219 in Sem 5. CS2109S and CS4226 are taken together in Sem 6.",
+     "Graduation in Sem 8 is the earliest possible given the prerequisite chain and ATAP constraint. Soft wishes for late CS2109S and co-taking with CS4226 are met."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 15166,
+    "total_tokens": 15457,
+    "completion_tokens": 291,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 6.47,
+    "attempts": 1
+   },
+   "seconds": 6.47,
+   "violations": [
+    "R3 CS4226 not offered in Sem 2 (semester 6)",
+    "R3 CS4231 not offered in Sem 1 (semester 7)",
+    "R4 CS4231 in semester 7: prerequisite not met (CS3210 or CS3230)",
+    "R11 ATAP in semester 7, the last semester used"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4226 is only offered in Sem 1, but the student is in Y2S2 (Sem 4) and cannot go back to Sem 1 or 3.\",\n    \"CS4231 is only offered in Sem 2, but the student must take ATAP (CP3880) in Sem 7, which is the last semester used if they graduate then. ATAP cannot be in the last semester used.\",\n    \"Even if ATAP were later, CS4231 requires CS3210 or CS3230. CS3219 (planned) is not a prerequisite for CS4231. CS3210 requires CS2100 (completed) but is not listed as a 'must' by the student, and taking it would not solve the CS4226 timing issue.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4226 is only offered in Sem 1, but the student is in Y2S2 (Sem 4) and cannot go back to Sem 1 or 3.",
+     "CS4231 is only offered in Sem 2, but the student must take ATAP (CP3880) in Sem 7, which is the last semester used if they graduate then. ATAP cannot be in the last semester used.",
+     "Even if ATAP were later, CS4231 requires CS3210 or CS3230. CS3219 (planned) is not a prerequisite for CS4231. CS3210 requires CS2100 (completed) but is not listed as a 'must' by the student, and taking it would not solve the CS4226 timing issue."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 15588,
+    "total_tokens": 15799,
+    "completion_tokens": 211,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.55,
+    "attempts": 1
+   },
+   "seconds": 3.55,
+   "violations": null
+  }
+ ]
+}

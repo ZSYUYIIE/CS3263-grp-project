@@ -1,0 +1,100 @@
+{
+ "id": "q2-S3-086",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 43.13,
+ "usage": {
+  "prompt_tokens": 11243,
+  "total_tokens": 16076,
+  "completion_tokens": 4833,
+  "prompt_tokens_details": {
+   "cached_tokens": 11008,
+   "created_cache_tokens": 128
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4719
+  },
+  "finish_reason": "stop",
+  "request_seconds": 43.13,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS3210\",\"CS3219\"],\"6\":[\"CP3880\",\"CS2105\"],\"7\":[\"CS4223\",\"CS2102\"]},\"reasons\":[\"Added CS3210 as the single prerequisite needed for CS4223.\",\"CS2105 is placed in semester 6 as preferred, with CP3880 as the ATAP course.\",\"CS4223 is in semester 7, the earliest possible after its prerequisites; CS3219 precedes CS2102.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS3210",
+    "CS3219"
+   ],
+   "6": [
+    "CP3880",
+    "CS2105"
+   ],
+   "7": [
+    "CS4223",
+    "CS2102"
+   ]
+  },
+  "reasons": [
+   "Added CS3210 as the single prerequisite needed for CS4223.",
+   "CS2105 is placed in semester 6 as preferred, with CP3880 as the ATAP course.",
+   "CS4223 is in semester 7, the earliest possible after its prerequisites; CS3219 precedes CS2102."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS3210\",\"CS3219\"],\"6\":[\"CP3880\",\"CS2105\"],\"7\":[\"CS4223\",\"CS2102\"]},\"reasons\":[\"Added CS3210 as the single prerequisite needed for CS4223.\",\"CS2105 is placed in semester 6 as preferred, with CP3880 as the ATAP course.\",\"CS4223 is in semester 7, the earliest possible after its prerequisites; CS3219 precedes CS2102.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS3210",
+      "CS3219"
+     ],
+     "6": [
+      "CP3880",
+      "CS2105"
+     ],
+     "7": [
+      "CS4223",
+      "CS2102"
+     ]
+    },
+    "reasons": [
+     "Added CS3210 as the single prerequisite needed for CS4223.",
+     "CS2105 is placed in semester 6 as preferred, with CP3880 as the ATAP course.",
+     "CS4223 is in semester 7, the earliest possible after its prerequisites; CS3219 precedes CS2102."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11243,
+    "total_tokens": 16076,
+    "completion_tokens": 4833,
+    "prompt_tokens_details": {
+     "cached_tokens": 11008,
+     "created_cache_tokens": 128,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 4719
+    },
+    "finish_reason": "stop",
+    "request_seconds": 43.13,
+    "attempts": 1
+   },
+   "seconds": 43.13,
+   "violations": []
+  }
+ ]
+}

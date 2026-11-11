@@ -1,0 +1,106 @@
+{
+ "id": "q2-S3-110",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 6.75,
+ "usage": {
+  "prompt_tokens": 19901,
+  "total_tokens": 20264,
+  "completion_tokens": 363,
+  "finish_reason": "stop",
+  "request_seconds": 6.75,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3231 is only offered in Sem 1, but the student is in Sem 6 and cannot take it in Sem 7 or 8.\",\n    \"CS3237 is only offered in Sem 1, but the student is in Sem 6 and cannot take it in Sem 7 or 8.\",\n    \"The remaining required courses (CS3231, CS3237) cannot be scheduled in any future semesters (7 or 8) due to offering constraints.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3231 is only offered in Sem 1, but the student is in Sem 6 and cannot take it in Sem 7 or 8.",
+   "CS3237 is only offered in Sem 1, but the student is in Sem 6 and cannot take it in Sem 7 or 8.",
+   "The remaining required courses (CS3231, CS3237) cannot be scheduled in any future semesters (7 or 8) due to offering constraints."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS3227\",\n      \"CS3231\"\n    ],\n    \"7\": [\n      \"ST2334\",\n      \"CS2102\"\n    ],\n    \"8\": [\n      \"CS3237\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3227 and CS3231 are planned in Sem 6 to satisfy the hard requirement for CS3227 and the soft preference to take it before CS3231.\",\n    \"ST2334 is a prerequisite for CS3237, so ST2334 is taken in Sem 7 before CS3237 in Sem 8.\",\n    \"CS2102 and CS3237 are placed in different semesters (7 and 8) to satisfy the constraint that they must not be in the same semester.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS3227",
+      "CS3231"
+     ],
+     "7": [
+      "ST2334",
+      "CS2102"
+     ],
+     "8": [
+      "CS3237"
+     ]
+    },
+    "reasons": [
+     "CS3227 and CS3231 are planned in Sem 6 to satisfy the hard requirement for CS3227 and the soft preference to take it before CS3231.",
+     "ST2334 is a prerequisite for CS3237, so ST2334 is taken in Sem 7 before CS3237 in Sem 8.",
+     "CS2102 and CS3237 are placed in different semesters (7 and 8) to satisfy the constraint that they must not be in the same semester."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9786,
+    "total_tokens": 10015,
+    "completion_tokens": 229,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.62,
+    "attempts": 1
+   },
+   "seconds": 4.62,
+   "violations": [
+    "R3 CS3231 not offered in Sem 2 (semester 6)",
+    "R3 CS3237 not offered in Sem 2 (semester 8)",
+    "R8 semester 8 has 4 MC, minimum 8"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3231 is only offered in Sem 1, but the student is in Sem 6 and cannot take it in Sem 7 or 8.\",\n    \"CS3237 is only offered in Sem 1, but the student is in Sem 6 and cannot take it in Sem 7 or 8.\",\n    \"The remaining required courses (CS3231, CS3237) cannot be scheduled in any future semesters (7 or 8) due to offering constraints.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3231 is only offered in Sem 1, but the student is in Sem 6 and cannot take it in Sem 7 or 8.",
+     "CS3237 is only offered in Sem 1, but the student is in Sem 6 and cannot take it in Sem 7 or 8.",
+     "The remaining required courses (CS3231, CS3237) cannot be scheduled in any future semesters (7 or 8) due to offering constraints."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10115,
+    "total_tokens": 10249,
+    "completion_tokens": 134,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 2.13,
+    "attempts": 1
+   },
+   "seconds": 2.13,
+   "violations": null
+  }
+ ]
+}

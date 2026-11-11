@@ -1,0 +1,52 @@
+{
+ "id": "q1-mp-019-p",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 3.41,
+ "solver_seconds": 0.001,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2931,
+  "total_tokens": 3085,
+  "completion_tokens": 154,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 3.41,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"eligible\",\n  \"target\": \"CS3233\",\n  \"current_sem\": 7,\n  \"completed\": [\n    \"ST1131\",\n    \"CS1231S\",\n    \"CS3103\",\n    \"CS1101S\",\n    \"MA1301\",\n    \"CS2100DE\",\n    \"CS3243\",\n    \"CS2102\",\n    \"ES2660\",\n    \"IS1108\",\n    \"CS2105\",\n    \"CS2040S\"\n  ]\n}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS3233",
+  "current_sem": 7,
+  "completed": [
+   "ST1131",
+   "CS1231S",
+   "CS3103",
+   "CS1101S",
+   "MA1301",
+   "CS2100DE",
+   "CS3243",
+   "CS2102",
+   "ES2660",
+   "IS1108",
+   "CS2105",
+   "CS2040S"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS3233",
+  "semester": 7,
+  "reasons": [
+   "not offered in semester 1 (offered: [2])",
+   "missing prerequisite: CS2030S[>=A-] or CS2030[>=A-] or CS2030DE[>=A-] or CS2030HS[>=A-]"
+  ],
+  "can_still_become_eligible": true
+ }
+}

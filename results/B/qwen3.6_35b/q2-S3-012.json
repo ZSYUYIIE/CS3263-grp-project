@@ -1,0 +1,100 @@
+{
+ "id": "q2-S3-012",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 14.66,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3203,
+  "total_tokens": 3740,
+  "completion_tokens": 537,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 14.66,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"current_sem\": 6,\n  \"completed\": [\n    \"CS2040S\",\n    \"CS2030S\",\n    \"MA1521\",\n    \"CS2100\",\n    \"CS2103T\",\n    \"ST2334\",\n    \"CS1101S\",\n    \"IS1108\",\n    \"CS2109S\",\n    \"CS2101\",\n    \"CS2105\",\n    \"CS2106\",\n    \"CS3230\",\n    \"MA1522\",\n    \"ES2660\",\n    \"CS3219\",\n    \"CS1231S\",\n    \"CS3263\"\n  ],\n  \"must_take\": [\n    \"CS3210\",\n    \"CS3227\",\n    \"CS3103\",\n    \"CS2102\",\n    \"CS4218\",\n    \"CS3282\"\n  ],\n  \"atap_sems\": [],\n  \"rules\": [\n    {\n      \"type\": \"same_sem\",\n      \"a\": \"CS2102\",\n      \"b\": \"CS4218\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS2102\",\n      \"b\": \"CS3210\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS3227\",\n      \"b\": \"CS3103\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS4218\",\n      \"b\": \"CS3282\",\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS2102\",\n      \"sem\": 7,\n      \"strength\": \"must\"\n    }\n  ],\n  \"late\": [\n    \"CS3210\"\n  ],\n  \"objective\": \"earliest_graduation\"\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 6,
+  "completed": [
+   "CS2040S",
+   "CS2030S",
+   "MA1521",
+   "CS2100",
+   "CS2103T",
+   "ST2334",
+   "CS1101S",
+   "IS1108",
+   "CS2109S",
+   "CS2101",
+   "CS2105",
+   "CS2106",
+   "CS3230",
+   "MA1522",
+   "ES2660",
+   "CS3219",
+   "CS1231S",
+   "CS3263"
+  ],
+  "must_take": [
+   "CS3210",
+   "CS3227",
+   "CS3103",
+   "CS2102",
+   "CS4218",
+   "CS3282"
+  ],
+  "atap_sems": [],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS2102",
+    "b": "CS4218",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS2102",
+    "b": "CS3210",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3227",
+    "b": "CS3103",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4218",
+    "b": "CS3282",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 7,
+    "strength": "must"
+   }
+  ],
+  "late": [
+   "CS3210"
+  ],
+  "objective": "earliest_graduation"
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [
+  "atap_sems must be a non-empty list of semesters, or left out"
+ ],
+ "answer": {
+  "status": "INVALID_SPEC",
+  "errors": [
+   "atap_sems must be a non-empty list of semesters, or left out"
+  ]
+ }
+}

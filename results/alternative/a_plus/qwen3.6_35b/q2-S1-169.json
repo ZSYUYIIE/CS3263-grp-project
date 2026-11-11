@@ -1,0 +1,100 @@
+{
+ "id": "q2-S1-169",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 4.82,
+ "usage": {
+  "prompt_tokens": 19147,
+  "total_tokens": 19398,
+  "completion_tokens": 251,
+  "finish_reason": "stop",
+  "request_seconds": 4.82,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4249 requires CS3240, NM2216, NM2213, or NM3243, none of which are in the student's completed or required list.\", \"CS3236 requires ST2334 (or other math/stats), but ST2334 is also required and must precede CS4249; however, the missing prerequisite for CS4249 makes the plan impossible.\", \"The student's list of remaining required modules is incomplete for the stated requirements.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4249 requires CS3240, NM2216, NM2213, or NM3243, none of which are in the student's completed or required list.",
+   "CS3236 requires ST2334 (or other math/stats), but ST2334 is also required and must precede CS4249; however, the missing prerequisite for CS4249 makes the plan impossible.",
+   "The student's list of remaining required modules is incomplete for the stated requirements."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"7\": [\"CS3103\", \"CS3236\", \"ST2334\"], \"8\": [\"CS4222\", \"CS4249\"]}, \"reasons\": [\"All prerequisites satisfied by completed courses.\", \"CS4249 taken in Y4S2 as required.\", \"ST2334 placed in Y4S1 to satisfy 'ideally' wish and prerequisite for CS4249.\", \"CS3103 and CS3236 separated as requested.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "7": [
+      "CS3103",
+      "CS3236",
+      "ST2334"
+     ],
+     "8": [
+      "CS4222",
+      "CS4249"
+     ]
+    },
+    "reasons": [
+     "All prerequisites satisfied by completed courses.",
+     "CS4249 taken in Y4S2 as required.",
+     "ST2334 placed in Y4S1 to satisfy 'ideally' wish and prerequisite for CS4249.",
+     "CS3103 and CS3236 separated as requested."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9403,
+    "total_tokens": 9527,
+    "completion_tokens": 124,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.18,
+    "attempts": 1
+   },
+   "seconds": 2.18,
+   "violations": [
+    "R3 CS3236 not offered in Sem 1 (semester 7)",
+    "R4 CS3236 in semester 7: prerequisite not met ((MA1100 or MA1100T or CS1231 or CS1231S) and (EE2012 or EE2012A or MA2216 or MA2116 or MA2116T or ST2131 or ST2334))",
+    "R4 CS4249 in semester 8: prerequisite not met (CS3240 or NM2216 or NM2213 or NM3243)",
+    "R9 must rule not met: apart CS3103 CS3236"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4249 requires CS3240, NM2216, NM2213, or NM3243, none of which are in the student's completed or required list.\", \"CS3236 requires ST2334 (or other math/stats), but ST2334 is also required and must precede CS4249; however, the missing prerequisite for CS4249 makes the plan impossible.\", \"The student's list of remaining required modules is incomplete for the stated requirements.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4249 requires CS3240, NM2216, NM2213, or NM3243, none of which are in the student's completed or required list.",
+     "CS3236 requires ST2334 (or other math/stats), but ST2334 is also required and must precede CS4249; however, the missing prerequisite for CS4249 makes the plan impossible.",
+     "The student's list of remaining required modules is incomplete for the stated requirements."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9744,
+    "total_tokens": 9871,
+    "completion_tokens": 127,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.64,
+    "attempts": 1
+   },
+   "seconds": 2.64,
+   "violations": null
+  }
+ ]
+}

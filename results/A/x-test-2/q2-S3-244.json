@@ -1,0 +1,62 @@
+{
+ "id": "q2-S3-244",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 205.19,
+ "usage": {
+  "prompt_tokens": 9344,
+  "total_tokens": 31456,
+  "completion_tokens": 22112,
+  "prompt_tokens_details": {
+   "cached_tokens": 9088,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 21935
+  },
+  "finish_reason": "stop",
+  "request_seconds": 205.19,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"ST1131\",\"CS3230\"],\"4\":[\"CS2100\"],\"5\":[\"CS4243\",\"CS2103T\"],\"6\":[\"CS2102\",\"CS3281\",\"CS3219\"],\"7\":[\"CS3223\",\"CS2105\",\"CS4218\"],\"8\":[\"CS4221\"]},\"reasons\":[\"Added ST1131 for CS4243 and CS3223 for CS4221; both are prerequisites not in your completed list.\",\"CS4221 is placed in semester 8, the latest possible, after CS2102 and CS3223.\",\"CS2103T is in semester 5, the latest possible; CS3281 is in semester 6 because it must precede CS2105, so semester 8 is impossible.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "ST1131",
+    "CS3230"
+   ],
+   "4": [
+    "CS2100"
+   ],
+   "5": [
+    "CS4243",
+    "CS2103T"
+   ],
+   "6": [
+    "CS2102",
+    "CS3281",
+    "CS3219"
+   ],
+   "7": [
+    "CS3223",
+    "CS2105",
+    "CS4218"
+   ],
+   "8": [
+    "CS4221"
+   ]
+  },
+  "reasons": [
+   "Added ST1131 for CS4243 and CS3223 for CS4221; both are prerequisites not in your completed list.",
+   "CS4221 is placed in semester 8, the latest possible, after CS2102 and CS3223.",
+   "CS2103T is in semester 5, the latest possible; CS3281 is in semester 6 because it must precede CS2105, so semester 8 is impossible."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

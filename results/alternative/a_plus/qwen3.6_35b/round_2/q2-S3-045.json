@@ -1,0 +1,26 @@
+{
+ "id": "q2-S3-045",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 123.63,
+ "usage": {
+  "prompt_tokens": 39673,
+  "total_tokens": 46431,
+  "completion_tokens": 6758,
+  "finish_reason": "stop",
+  "request_seconds": 123.63,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS3281 is offered in Sem 1 and Sem 2 only. The student is in Sem 4 (Y2S2). Sem 5 is Sem 1 of Y3, so CS3281 can be taken in Sem 5. However, CS3282 requires CS3281. If CS3281 is in Sem 5, CS3282 can be in Sem 6, 7, or 8. CS2106 and CS3282 must not be in the same semester. CS2106 and CS3231 must not be in the same semester. CS3231 is offered Sem 1 only (Sem 5, 7). CS3240 is offered Sem 1 only (Sem 5, 7). CS2109S and CS3243 are mutually exclusive. The student wants CS2109S as early as possible. CS2109S is offered Sem 1, 2 (Sem 4, 6, 8). CS3243 is offered Sem 2 (Sem 4, 6, 8). If CS2109S is taken in Sem 4, CS3243 cannot be taken in Sem 4. CS4246 requires CS3243 or CS3263. If CS3243 is not taken, CS3263 is needed. CS3263 requires CS2109S, CS2040S, MA1522, ST2334. Student has these. CS3263 is offered Sem 1, 2 (Sem 4, 6, 8). So CS3263 can replace CS3243. Let's try using CS3263 instead of CS3243 to avoid the mutual exclusion with CS2109S if we want CS2109S early. But CS2109S and CS3263 are not mutually exclusive. CS2109S and CS3243 ARE mutually exclusive. So if we take CS2109S in Sem 4, we cannot take CS3243 in Sem 4. We can take CS3263 in Sem 4? CS3263 prereq CS2109S. So CS3263 cannot be in Sem 4 if CS2109S is in Sem 4. So CS3263 must be in Sem 6 or 8. Then CS4246 (requires CS3263) must be in Sem 8. This pushes CS4246 to Sem 8. Let's check if this works. Sem 4: CS2111, CS2109S, CS3210, CS3243? No, CS2109S and CS3243 mutually exclusive. So Sem 4: CS2111, CS2109S, CS3210. (12 MC). Sem 5: CS3231, CS3240, CS3281. (12 MC). Sem 6: ATAP. CS2102, CS3230, CS3263? CS3263 prereq CS2109S (Sem 4). OK. CS3263 4 MC. CS2102 4 MC. CS3230 4 MC. Total 12 MC > 8 MC limit for ATAP semester. So cannot take 3 courses. Must drop one. CS2102 and CS3230 are not constrained by ATAP. CS3263 is needed for CS4246. If we drop CS3263 from Sem 6, we can take it in Sem 8? CS4246 in Sem 8 requires CS3263 in Sem 7 or earlier. Sem 7 is available. Let's try: Sem 6: CS2102, CS3230. (8 MC). Sem 7: CS3263, CS3219, CS2105, IS1108. (16 MC). Sem 8: CS3282, CS4246, CS2106. CS3282 prereq CS3281 (Sem 5). OK. CS4246 prereq CS3263 (Sem 7). OK. CS2106 prereq CS2100. OK. CS2106 and CS3231 not same (CS3231 Sem 5). OK. CS2106 and CS3282 not same. OK. CS3210 before CS2106 (CS3210 Sem 4). OK. This plan works. Status PLAN.\", \"plan\": {\"4\": [\"CS2111\", \"CS2109S\", \"CS3210\"], \"5\": [\"CS3231\", \"CS3240\", \"CS3281\"], \"6\": [\"CP3880\", \"CS2102\", \"CS3230\"], \"7\": [\"CS3263\", \"CS3219\", \"CS2105\", \"IS1108\"], \"8\": [\"CS3282\", \"CS4246\", \"CS2106\"]}, \"reasons\": [\"Added CS2111 for CS3240, CS3281 for CS3282, CS3263 for CS4246. CS2109S and CS3243 mutually exclusive, so CS3263 used instead. CS3231/CS3240 in Sem 5. ATAP in Sem 6. CS2106 and CS3282 separated.\"]}",
+ "answer": {
+  "status": "NO_PLAN"
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

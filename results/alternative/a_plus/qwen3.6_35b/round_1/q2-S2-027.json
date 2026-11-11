@@ -1,0 +1,47 @@
+{
+ "id": "q2-S2-027",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 14.26,
+ "usage": {
+  "prompt_tokens": 19991,
+  "total_tokens": 20487,
+  "completion_tokens": 496,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 14.25,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS2102\",\n      \"ST2334\"\n    ],\n    \"7\": [\n      \"CS3231\",\n      \"CS3237\"\n    ],\n    \"8\": [\n      \"CS3227\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3231 is offered only in Sem 1, so it must be placed in Sem 7 or 8. Sem 8 is reserved for the mandatory CS3227.\",\n    \"CS3237 requires ST2334. ST2334 is placed in Sem 6 to allow CS3237 in Sem 7.\",\n    \"CS2102 is placed in Sem 6 to satisfy the 2-module limit and keep it apart from ST2334 if possible, but ST2334 is needed early for CS3237. CS3231 and CS3237 are grouped in Sem 7 as preferred.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS2102",
+    "ST2334"
+   ],
+   "7": [
+    "CS3231",
+    "CS3237"
+   ],
+   "8": [
+    "CS3227"
+   ]
+  },
+  "reasons": [
+   "CS3231 is offered only in Sem 1, so it must be placed in Sem 7 or 8. Sem 8 is reserved for the mandatory CS3227.",
+   "CS3237 requires ST2334. ST2334 is placed in Sem 6 to allow CS3237 in Sem 7.",
+   "CS2102 is placed in Sem 6 to satisfy the 2-module limit and keep it apart from ST2334 if possible, but ST2334 is needed early for CS3237. CS3231 and CS3237 are grouped in Sem 7 as preferred."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

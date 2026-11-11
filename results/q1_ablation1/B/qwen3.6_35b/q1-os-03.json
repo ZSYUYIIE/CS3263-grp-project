@@ -1,0 +1,52 @@
+{
+ "id": "q1-os-03",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 3.02,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2836,
+  "total_tokens": 3009,
+  "completion_tokens": 173,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 3.02,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\n  \"query\": \"eligible\",\n  \"target\": \"ST2132\",\n  \"current_sem\": 7,\n  \"programme\": \"Computer Engineering\",\n  \"completed\": [\n    \"CS2101\",\n    \"IS1108\",\n    \"CS2040DE\",\n    \"CS1010X\",\n    \"ST2334\",\n    \"MA1522\",\n    \"ST3248\",\n    \"MA1100\",\n    \"MA1521\",\n    \"CS2030S\",\n    \"MA2108S\",\n    \"CS2100HS\",\n    \"MA3252\"\n  ]\n}",
+ "spec": {
+  "query": "eligible",
+  "target": "ST2132",
+  "current_sem": 7,
+  "programme": "Computer Engineering",
+  "completed": [
+   "CS2101",
+   "IS1108",
+   "CS2040DE",
+   "CS1010X",
+   "ST2334",
+   "MA1522",
+   "ST3248",
+   "MA1100",
+   "MA1521",
+   "CS2030S",
+   "MA2108S",
+   "CS2100HS",
+   "MA3252"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "OUT_OF_SCOPE",
+  "reasons": [
+   "programme 'Computer Engineering' is not BComp (CS) Hons"
+  ],
+  "message": "I can only plan for BComp (CS) Hons single-major students under AY2026/2027 rules, and this request is outside that (programme 'Computer Engineering' is not BComp (CS) Hons). Course rules differ by programme and aren't in my data for your case, so please check with your faculty or academic advisor."
+ }
+}

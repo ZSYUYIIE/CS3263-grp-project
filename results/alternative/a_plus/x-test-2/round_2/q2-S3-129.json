@@ -1,0 +1,62 @@
+{
+ "id": "q2-S3-129",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 2,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 70.65,
+ "usage": {
+  "prompt_tokens": 11361,
+  "total_tokens": 18299,
+  "completion_tokens": 6938,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 9728
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 6751
+  },
+  "finish_reason": "stop",
+  "request_seconds": 70.65,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"4\":[\"ST2334\",\"CS3233\",\"CS2107\"],\"5\":[\"CS4236\",\"CS2104\",\"CS2105\",\"CS3230\",\"CS2109S\"],\"6\":[\"CS3219\",\"CS4222\"],\"7\":[\"CP3880\"],\"8\":[\"CS4212\"]},\"reasons\":[\"All must-take courses are scheduled, with ST2334 in Y2S2 and CS3219 plus CS4222 together in Y3S2.\",\"CS2104 and CS2107 are added only as prerequisites for CS4212 and CS4236; total credits are minimal at 56.\",\"CS3233 is before CS2105, but CS4212 cannot precede CS3233 because CS4212 is fixed in Y4S2 and CS3233 is Sem 2 only.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "ST2334",
+    "CS3233",
+    "CS2107"
+   ],
+   "5": [
+    "CS4236",
+    "CS2104",
+    "CS2105",
+    "CS3230",
+    "CS2109S"
+   ],
+   "6": [
+    "CS3219",
+    "CS4222"
+   ],
+   "7": [
+    "CP3880"
+   ],
+   "8": [
+    "CS4212"
+   ]
+  },
+  "reasons": [
+   "All must-take courses are scheduled, with ST2334 in Y2S2 and CS3219 plus CS4222 together in Y3S2.",
+   "CS2104 and CS2107 are added only as prerequisites for CS4212 and CS4236; total credits are minimal at 56.",
+   "CS3233 is before CS2105, but CS4212 cannot precede CS3233 because CS4212 is fixed in Y4S2 and CS3233 is Sem 2 only."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

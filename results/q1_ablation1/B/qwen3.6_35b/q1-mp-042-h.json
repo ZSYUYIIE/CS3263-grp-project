@@ -1,0 +1,47 @@
+{
+ "id": "q1-mp-042-h",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 1.6,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2826,
+  "total_tokens": 2922,
+  "completion_tokens": 96,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 1.6,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\n\"query\": \"eligible\",\n\"target\": \"CS3268\",\n\"current_sem\": 5,\n\"completed\": [\n\"ST2334\",\n\"CS3236\",\n\"CS2101\",\n\"CS1101S\",\n\"CS2040S\",\n\"MA1521\",\n\"CS1231S\"\n]\n}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS3268",
+  "current_sem": 5,
+  "completed": [
+   "ST2334",
+   "CS3236",
+   "CS2101",
+   "CS1101S",
+   "CS2040S",
+   "MA1521",
+   "CS1231S"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS3268",
+  "semester": 5,
+  "reasons": [
+   "missing prerequisite: CS2109S or CS2109HS or CS3243"
+  ],
+  "can_still_become_eligible": true
+ }
+}

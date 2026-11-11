@@ -1,0 +1,110 @@
+{
+ "id": "q2-S3-166",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 8.19,
+ "usage": {
+  "prompt_tokens": 23923,
+  "total_tokens": 24321,
+  "completion_tokens": 398,
+  "finish_reason": "stop",
+  "request_seconds": 8.19,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3268 is only offered in Sem 1, but the student is in Y3S1 (Sem 5) and has not completed it; it cannot be taken in Sem 6 (Sem 2) or later.\",\n    \"CS4246 requires CS3243 or CS3263, which are not in the completed list nor the mandatory list, and their prerequisites (including CS2109S/HS) are not fully satisfied by completed courses alone without taking the missing corequisites first.\",\n    \"CS4278 requires MA2001 which is NOT open to BComp CS Hons students, making the prerequisite impossible to satisfy.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3268 is only offered in Sem 1, but the student is in Y3S1 (Sem 5) and has not completed it; it cannot be taken in Sem 6 (Sem 2) or later.",
+   "CS4246 requires CS3243 or CS3263, which are not in the completed list nor the mandatory list, and their prerequisites (including CS2109S/HS) are not fully satisfied by completed courses alone without taking the missing corequisites first.",
+   "CS4278 requires MA2001 which is NOT open to BComp CS Hons students, making the prerequisite impossible to satisfy."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2102\",\n      \"CS3219\",\n      \"CS2105\"\n    ],\n    \"6\": [\n      \"CS3268\",\n      \"ES2660\"\n    ],\n    \"7\": [\n      \"CS4246\",\n      \"CS3282\"\n    ],\n    \"8\": [\n      \"CS4278\"\n    ]\n  },\n  \"reasons\": [\n    \"All mandatory courses planned respecting prerequisites and mutual exclusions.\",\n    \"CS4246 placed in Y3S2 (Sem 6) as requested; CS3268 before CS3282 and after CS4246.\",\n    \"CS2105 and CS3268 separated into different semesters; ES2660 placed in Sem 6 as preferred.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2102",
+      "CS3219",
+      "CS2105"
+     ],
+     "6": [
+      "CS3268",
+      "ES2660"
+     ],
+     "7": [
+      "CS4246",
+      "CS3282"
+     ],
+     "8": [
+      "CS4278"
+     ]
+    },
+    "reasons": [
+     "All mandatory courses planned respecting prerequisites and mutual exclusions.",
+     "CS4246 placed in Y3S2 (Sem 6) as requested; CS3268 before CS3282 and after CS4246.",
+     "CS2105 and CS3268 separated into different semesters; ES2660 placed in Sem 6 as preferred."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11628,
+    "total_tokens": 11855,
+    "completion_tokens": 227,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.83,
+    "attempts": 1
+   },
+   "seconds": 4.83,
+   "violations": [
+    "R3 CS3268 not offered in Sem 2 (semester 6)",
+    "R3 CS3282 not offered in Sem 1 (semester 7)",
+    "R4 CS3282 in semester 7: prerequisite not met (CS3281)",
+    "R4 CS4246 in semester 7: prerequisite not met ((EE2012A or EE2012 or ST2132 or ST2334 or ((ST2131 or MA2116 or MA2116T or MA2216) and (ST1131 or ST1232 or DCS2008 or ST1131A))) and (CS3243 or CS3263))",
+    "R3 CS4278 not offered in Sem 2 (semester 8)",
+    "R4 CS4278 in semester 8: prerequisite not met ((CS3263 or CS3243) and (MA2001 or MA1522 or MA1101R or MA1311 or MA1508E or MA1513) and (EE2012 or EE2012A or ST2131 or ST2334 or MA2116 or MA2116T or MA2216) and (MA2002 or MA1102R or MA1505 or MA1507 or MA1521 or (MA1512 and MA1511)))",
+    "R9 must rule not met: before CS4246 CS3268",
+    "R9 must rule not met: CS4246 in semester 6"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3268 is only offered in Sem 1, but the student is in Y3S1 (Sem 5) and has not completed it; it cannot be taken in Sem 6 (Sem 2) or later.\",\n    \"CS4246 requires CS3243 or CS3263, which are not in the completed list nor the mandatory list, and their prerequisites (including CS2109S/HS) are not fully satisfied by completed courses alone without taking the missing corequisites first.\",\n    \"CS4278 requires MA2001 which is NOT open to BComp CS Hons students, making the prerequisite impossible to satisfy.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3268 is only offered in Sem 1, but the student is in Y3S1 (Sem 5) and has not completed it; it cannot be taken in Sem 6 (Sem 2) or later.",
+     "CS4246 requires CS3243 or CS3263, which are not in the completed list nor the mandatory list, and their prerequisites (including CS2109S/HS) are not fully satisfied by completed courses alone without taking the missing corequisites first.",
+     "CS4278 requires MA2001 which is NOT open to BComp CS Hons students, making the prerequisite impossible to satisfy."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12295,
+    "total_tokens": 12466,
+    "completion_tokens": 171,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.36,
+    "attempts": 1
+   },
+   "seconds": 3.36,
+   "violations": null
+  }
+ ]
+}

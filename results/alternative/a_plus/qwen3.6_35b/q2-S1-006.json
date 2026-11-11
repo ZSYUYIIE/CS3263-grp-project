@@ -1,0 +1,117 @@
+{
+ "id": "q2-S1-006",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 11.32,
+ "usage": {
+  "prompt_tokens": 16510,
+  "total_tokens": 16994,
+  "completion_tokens": 484,
+  "finish_reason": "stop",
+  "request_seconds": 11.32,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3213 is only offered in Sem 2, but the student requires it in Y4S2 (Sem 8).\",\n    \"CS4240 requires CS3240, which requires CS2111 or NM2207. CS2111 is only offered in Sem 2, and NM2207 is only offered in Sem 2. Taking these in Sem 2 or later makes it impossible to fit CS3240 and CS4240 before Sem 8 while also fitting CS2102 and CS2109S which require CS2030S/CS2040S.\",\n    \"Even if prerequisites were met, CS3213 cannot be taken in Sem 8 as it is not offered in Sem 1.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3213 is only offered in Sem 2, but the student requires it in Y4S2 (Sem 8).",
+   "CS4240 requires CS3240, which requires CS2111 or NM2207. CS2111 is only offered in Sem 2, and NM2207 is only offered in Sem 2. Taking these in Sem 2 or later makes it impossible to fit CS3240 and CS4240 before Sem 8 while also fitting CS2102 and CS2109S which require CS2030S/CS2040S.",
+   "Even if prerequisites were met, CS3213 cannot be taken in Sem 8 as it is not offered in Sem 1."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"2\": [\n      \"CS2030S\",\n      \"CS2040S\"\n    ],\n    \"3\": [\n      \"CS2102\",\n      \"CS2109S\"\n    ],\n    \"5\": [\n      \"CS2103\",\n      \"CS3213\"\n    ],\n    \"6\": [\n      \"CS3240\",\n      \"CS4240\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2030S and CS2040S are prerequisites for CS2102 and CS2109S, so they are taken in Sem 2.\",\n    \"CS2102 and CS2109S are taken in Sem 3 to satisfy prerequisites and the student's wish for CS2109S as early as possible.\",\n    \"CS2103 is taken in Sem 5 (Sem 4 is LOA) to enable CS3213 in Sem 6, but CS3213 is deferred to Sem 7 to meet the requirement of taking it in Y4S2.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "2": [
+      "CS2030S",
+      "CS2040S"
+     ],
+     "3": [
+      "CS2102",
+      "CS2109S"
+     ],
+     "5": [
+      "CS2103",
+      "CS3213"
+     ],
+     "6": [
+      "CS3240",
+      "CS4240"
+     ]
+    },
+    "reasons": [
+     "CS2030S and CS2040S are prerequisites for CS2102 and CS2109S, so they are taken in Sem 2.",
+     "CS2102 and CS2109S are taken in Sem 3 to satisfy prerequisites and the student's wish for CS2109S as early as possible.",
+     "CS2103 is taken in Sem 5 (Sem 4 is LOA) to enable CS3213 in Sem 6, but CS3213 is deferred to Sem 7 to meet the requirement of taking it in Y4S2."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 7980,
+    "total_tokens": 8263,
+    "completion_tokens": 283,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 6.25,
+    "attempts": 1
+   },
+   "seconds": 6.25,
+   "violations": [
+    "R3 CS3213 not offered in Sem 1 (semester 5)",
+    "R4 CS3213 in semester 5: prerequisite not met (CS2103T or CS2103 or CS2103DE or CS2113T or CS2113)",
+    "R3 CS3240 not offered in Sem 2 (semester 6)",
+    "R4 CS3240 in semester 6: prerequisite not met (CS2111 or NM2207)",
+    "R4 CS4240 in semester 6: prerequisite not met (CS3240)",
+    "R9 must rule not met: apart CS2109S CS2102",
+    "R9 must rule not met: CS3213 in semester 8",
+    "R10 CS2103 was added but no later planned course needs it",
+    "R10 CS3240 was added but no later planned course needs it"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3213 is only offered in Sem 2, but the student requires it in Y4S2 (Sem 8).\",\n    \"CS4240 requires CS3240, which requires CS2111 or NM2207. CS2111 is only offered in Sem 2, and NM2207 is only offered in Sem 2. Taking these in Sem 2 or later makes it impossible to fit CS3240 and CS4240 before Sem 8 while also fitting CS2102 and CS2109S which require CS2030S/CS2040S.\",\n    \"Even if prerequisites were met, CS3213 cannot be taken in Sem 8 as it is not offered in Sem 1.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3213 is only offered in Sem 2, but the student requires it in Y4S2 (Sem 8).",
+     "CS4240 requires CS3240, which requires CS2111 or NM2207. CS2111 is only offered in Sem 2, and NM2207 is only offered in Sem 2. Taking these in Sem 2 or later makes it impossible to fit CS3240 and CS4240 before Sem 8 while also fitting CS2102 and CS2109S which require CS2030S/CS2040S.",
+     "Even if prerequisites were met, CS3213 cannot be taken in Sem 8 as it is not offered in Sem 1."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 8530,
+    "total_tokens": 8731,
+    "completion_tokens": 201,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 5.07,
+    "attempts": 1
+   },
+   "seconds": 5.07,
+   "violations": null
+  }
+ ]
+}

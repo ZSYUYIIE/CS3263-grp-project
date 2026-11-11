@@ -1,0 +1,32 @@
+{
+ "id": "q1-el-052-h",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 9.49,
+ "usage": {
+  "prompt_tokens": 9961,
+  "total_tokens": 10666,
+  "completion_tokens": 705,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 9.49,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NOT_ELIGIBLE\", \"reasons\": [\"CS3244 is blocked because BT4240 is listed as a mutually exclusive course and the student has completed BT4240 (despite the correction, the initial statement 'I have completed... BT4240' stands as the primary fact, and the correction 'ignore BT4240' is ambiguous regarding completion status in the context of 'cannot take if completed'. However, looking closer: The student says 'I have completed ... BT4240. Wait, ignore BT4240; I have not done that one.' This implies BT4240 is NOT completed. Let's re-evaluate.\", \"If BT4240 is NOT completed, we check prerequisites for CS3244: 1. (CS2040 or ... or CS2040S). Student has CS2040S. Met. 2. (EE2012A or EE2012 or YSC2243 or ST2131 or ST2334 or MA2116 or MA2116T or MA2216). Student has ST2334. Met. 3. ((MA1511 and MA1512) or ((MA2001 or MA1522 or MA1508E or MA1311 or MA1513 or MA1101R) and (MA2002 or MA1521 or MA1505 or MA1507 or MA1102R))). Student has MA1522. Student has MA1521. Does student have MA2002? No. Does student have MA1505? No. Does student have MA1507? No. Does student have MA1102R? No. The second part of the OR requires (MA2002 or ...) AND (MA2002 or MA1521...). Since MA1521 is present, the second bracket is satisfied IF the first bracket (MA2001 or MA1522...) is satisfied. Student has MA1522. So the second part is Met. 4. Cannot take if completed: CS3264, BT4240, CS2109S, CS2109HS, DMX1401AI, IT3011, CG3201, EE3703, EE4802. Student has NOT completed BT4240 (per correction). Student has not completed others. 5. Mutually exclusive with: BT4240, CG3201, CS2109HS, CS2109S, CS3264, DMX1401AI, EE3703, EE4802, IE4213, IT3011. Student has not completed these. 6. Offered: Sem 1, Sem 2. Y3 Sem 1 is Sem 1. Met. 7. Open to BComp CS Hons? Yes. So CS3244 IS eligible.\"]}",
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "reasons": [
+   "CS3244 is blocked because BT4240 is listed as a mutually exclusive course and the student has completed BT4240 (despite the correction, the initial statement 'I have completed... BT4240' stands as the primary fact, and the correction 'ignore BT4240' is ambiguous regarding completion status in the context of 'cannot take if completed'. However, looking closer: The student says 'I have completed ... BT4240. Wait, ignore BT4240; I have not done that one.' This implies BT4240 is NOT completed. Let's re-evaluate.",
+   "If BT4240 is NOT completed, we check prerequisites for CS3244: 1. (CS2040 or ... or CS2040S). Student has CS2040S. Met. 2. (EE2012A or EE2012 or YSC2243 or ST2131 or ST2334 or MA2116 or MA2116T or MA2216). Student has ST2334. Met. 3. ((MA1511 and MA1512) or ((MA2001 or MA1522 or MA1508E or MA1311 or MA1513 or MA1101R) and (MA2002 or MA1521 or MA1505 or MA1507 or MA1102R))). Student has MA1522. Student has MA1521. Does student have MA2002? No. Does student have MA1505? No. Does student have MA1507? No. Does student have MA1102R? No. The second part of the OR requires (MA2002 or ...) AND (MA2002 or MA1521...). Since MA1521 is present, the second bracket is satisfied IF the first bracket (MA2001 or MA1522...) is satisfied. Student has MA1522. So the second part is Met. 4. Cannot take if completed: CS3264, BT4240, CS2109S, CS2109HS, DMX1401AI, IT3011, CG3201, EE3703, EE4802. Student has NOT completed BT4240 (per correction). Student has not completed others. 5. Mutually exclusive with: BT4240, CG3201, CS2109HS, CS2109S, CS3264, DMX1401AI, EE3703, EE4802, IE4213, IT3011. Student has not completed these. 6. Offered: Sem 1, Sem 2. Y3 Sem 1 is Sem 1. Met. 7. Open to BComp CS Hons? Yes. So CS3244 IS eligible."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 4,
+ "ablation": 1
+}

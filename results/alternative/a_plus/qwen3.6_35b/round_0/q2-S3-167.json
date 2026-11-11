@@ -1,0 +1,48 @@
+{
+ "id": "q2-S3-167",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 7.22,
+ "usage": {
+  "prompt_tokens": 11628,
+  "total_tokens": 11910,
+  "completion_tokens": 282,
+  "finish_reason": "stop",
+  "request_seconds": 7.22,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2105\",\n      \"CS3219\"\n    ],\n    \"6\": [\n      \"CS4246\",\n      \"CS2102\"\n    ],\n    \"7\": [\n      \"CS3268\",\n      \"CS4278\"\n    ],\n    \"8\": [\n      \"CS3282\"\n    ]\n  },\n  \"reasons\": [\n    \"All prerequisites satisfied by completed modules or earlier planned modules.\",\n    \"CS4246 placed in Sem 6 as requested; CS3268 after CS4246 and before CS3282.\",\n    \"Soft wishes met: ES2660 in Y3S2 (Sem 5) not possible due to MC limit (20) and prerequisite constraints for other modules, but CS2102 taken as early as possible (Sem 6) and CS3268 before CS2102 is not possible due to dependency chain, so CS2102 is taken before CS3268 which is the earliest feasible order given CS4246 constraint.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2105",
+    "CS3219"
+   ],
+   "6": [
+    "CS4246",
+    "CS2102"
+   ],
+   "7": [
+    "CS3268",
+    "CS4278"
+   ],
+   "8": [
+    "CS3282"
+   ]
+  },
+  "reasons": [
+   "All prerequisites satisfied by completed modules or earlier planned modules.",
+   "CS4246 placed in Sem 6 as requested; CS3268 after CS4246 and before CS3282.",
+   "Soft wishes met: ES2660 in Y3S2 (Sem 5) not possible due to MC limit (20) and prerequisite constraints for other modules, but CS2102 taken as early as possible (Sem 6) and CS3268 before CS2102 is not possible due to dependency chain, so CS2102 is taken before CS3268 which is the earliest feasible order given CS4246 constraint."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

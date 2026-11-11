@@ -1,0 +1,162 @@
+{
+ "id": "q2-S1-052",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 20.11,
+ "solver_seconds": 0.766,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3146,
+  "total_tokens": 3690,
+  "completion_tokens": 544,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 19.34,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"current_sem\": 1,\n  \"completed\": [],\n  \"must_take\": [\n    \"CS3219\",\n    \"CS2103T\",\n    \"MA1522\",\n    \"CS2100\",\n    \"CS2106\",\n    \"CS2102\",\n    \"CS4211\",\n    \"CS3247\",\n    \"CS4220\",\n    \"CS3234\",\n    \"CS2101\",\n    \"CS4353\"\n  ],\n  \"mc_max\": 16,\n  \"unsupported\": [\n    \"chance I fail one module this semester and have to retake it\",\n    \"friend and I want to take our modules together where possible\"\n  ],\n  \"rules\": [\n    {\n      \"type\": \"before\",\n      \"a\": \"CS2102\",\n      \"b\": \"CS3234\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS4211\",\n      \"sem\": 5,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS2100\",\n      \"b\": \"MA1522\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS2102\",\n      \"b\": \"CS2101\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"same_sem\",\n      \"a\": \"CS2101\",\n      \"b\": \"CS2106\",\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS2103T\",\n      \"b\": \"CS4353\",\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"MA1522\",\n      \"sem\": 6,\n      \"strength\": \"prefer\"\n    }\n  ],\n  \"early\": [\n    \"CS2100\"\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "completed": [],
+  "must_take": [
+   "CS3219",
+   "CS2103T",
+   "MA1522",
+   "CS2100",
+   "CS2106",
+   "CS2102",
+   "CS4211",
+   "CS3247",
+   "CS4220",
+   "CS3234",
+   "CS2101",
+   "CS4353"
+  ],
+  "mc_max": 16,
+  "unsupported": [
+   "chance I fail one module this semester and have to retake it",
+   "friend and I want to take our modules together where possible"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2102",
+    "b": "CS3234",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4211",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2100",
+    "b": "MA1522",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS2102",
+    "b": "CS2101",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2101",
+    "b": "CS2106",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS2103T",
+    "b": "CS4353",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "MA1522",
+    "sem": 6,
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS2100"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 6,
+  "plan": {
+   "1": [
+    "MA1100T",
+    "UTC2851"
+   ],
+   "2": [
+    "CS2030",
+    "CS2040S",
+    "CS2100",
+    "NM2207"
+   ],
+   "3": [
+    "CS2101",
+    "CS2106",
+    "CS3240",
+    "CS3241"
+   ],
+   "4": [
+    "CS2102",
+    "CS2103T",
+    "CS3247"
+   ],
+   "5": [
+    "CS2220",
+    "CS4211",
+    "CS4353"
+   ],
+   "6": [
+    "CS3219",
+    "CS3234",
+    "CS4220",
+    "MA1522"
+   ]
+  },
+  "mc_per_semester": {
+   "1": 8,
+   "2": 16,
+   "3": 16,
+   "4": 12,
+   "5": 12,
+   "6": 16
+  },
+  "preferences_met": [
+   "CS2101 and CS2106 in the same semester",
+   "CS2103T before CS4353",
+   "MA1522 in semester 6",
+   "CS2100 as early as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS2030",
+   "CS2040S",
+   "CS2220",
+   "CS3240",
+   "CS3241",
+   "MA1100T",
+   "NM2207",
+   "UTC2851"
+  ],
+  "not_applied": [
+   "chance I fail one module this semester and have to retake it",
+   "friend and I want to take our modules together where possible"
+  ]
+ }
+}

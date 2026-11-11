@@ -1,0 +1,109 @@
+{
+ "id": "q2-S6-042",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 27.91,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3224,
+  "total_tokens": 3766,
+  "completion_tokens": 542,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 27.91,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 6,\n\"programme\": \"BComp CS Hons with second major in Mathematics\",\n\"completed\": [\n\"CS2105\",\n\"CS1231S\",\n\"ST2334\",\n\"CS2040S\",\n\"CS2030S\",\n\"CS3230\",\n\"ES2660\",\n\"MA1522\",\n\"CS2100\",\n\"CS2109S\",\n\"CS1101S\",\n\"IS1108\",\n\"MA1521\",\n\"CS2103T\",\n\"CS2106\",\n\"CS3219\",\n\"CS4248\",\n\"CS3231\",\n\"CS4223\",\n\"CS4268\"\n],\n\"must_take\": [\n\"CS3211\",\n\"CS4278\",\n\"CS2102\",\n\"CS2101\",\n\"CS4218\"\n],\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"apart\",\n\"a\": \"CS4223\",\n\"b\": \"CS2102\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2101\",\n\"b\": \"CS3211\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4218\",\n\"b\": \"CS3211\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3211\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4218\",\n\"b\": \"CS4223\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS3231\",\n\"b\": \"CS3211\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS2102\",\n\"b\": \"CS2101\",\n\"strength\": \"must\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 6,
+  "programme": "BComp CS Hons with second major in Mathematics",
+  "completed": [
+   "CS2105",
+   "CS1231S",
+   "ST2334",
+   "CS2040S",
+   "CS2030S",
+   "CS3230",
+   "ES2660",
+   "MA1522",
+   "CS2100",
+   "CS2109S",
+   "CS1101S",
+   "IS1108",
+   "MA1521",
+   "CS2103T",
+   "CS2106",
+   "CS3219",
+   "CS4248",
+   "CS3231",
+   "CS4223",
+   "CS4268"
+  ],
+  "must_take": [
+   "CS3211",
+   "CS4278",
+   "CS2102",
+   "CS2101",
+   "CS4218"
+  ],
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS4223",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2101",
+    "b": "CS3211",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS4218",
+    "b": "CS3211",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3211",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4218",
+    "b": "CS4223",
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS3231",
+    "b": "CS3211",
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS2102",
+    "b": "CS2101",
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "OUT_OF_SCOPE",
+  "reasons": [
+   "programme 'BComp CS Hons with second major in Mathematics' is not BComp (CS) Hons"
+  ],
+  "message": "I can only plan for BComp (CS) Hons single-major students under AY2026/2027 rules, and this request is outside that (programme 'BComp CS Hons with second major in Mathematics' is not BComp (CS) Hons). Course rules differ by programme and aren't in my data for your case, so please check with your faculty or academic advisor."
+ }
+}

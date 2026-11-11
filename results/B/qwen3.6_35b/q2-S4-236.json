@@ -1,0 +1,106 @@
+{
+ "id": "q2-S4-236",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 8.58,
+ "solver_seconds": 0.001,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3186,
+  "total_tokens": 3671,
+  "completion_tokens": 485,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 8.22,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"programme\": \"BComp CS Hons\",\n\"current_sem\": 7,\n\"completed\": [\n\"CS4225\",\n\"CS2100\",\n\"CS3210\",\n\"CS1231S\",\n\"CS1101S\",\n\"CS2103T\",\n\"MA1521\",\n\"CS3230\",\n\"CS2101\",\n\"CS2030S\",\n\"ES2660\",\n\"CS2109S\",\n\"CS2102\",\n\"CS2105\",\n\"CS3219\",\n\"CS2106\",\n\"IS1108\",\n\"CS2040S\",\n\"MA1522\"\n],\n\"must_take\": [\n\"CS3235\",\n\"CS4243\",\n\"CS3281\",\n\"ST2334\"\n],\n\"mc_max\": 16,\n\"objective\": \"min_total_mc\",\n\"unsupported\": [\n\"don't want one semester much heavier than another\"\n],\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4243\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS3235\",\n\"b\": \"ST2334\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3235\",\n\"sem\": 7,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS3281\",\n\"b\": \"CS3235\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"late\",\n\"course\": \"CS3281\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"late\",\n\"course\": \"CS3235\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "programme": "BComp CS Hons",
+  "current_sem": 7,
+  "completed": [
+   "CS4225",
+   "CS2100",
+   "CS3210",
+   "CS1231S",
+   "CS1101S",
+   "CS2103T",
+   "MA1521",
+   "CS3230",
+   "CS2101",
+   "CS2030S",
+   "ES2660",
+   "CS2109S",
+   "CS2102",
+   "CS2105",
+   "CS3219",
+   "CS2106",
+   "IS1108",
+   "CS2040S",
+   "MA1522"
+  ],
+  "must_take": [
+   "CS3235",
+   "CS4243",
+   "CS3281",
+   "ST2334"
+  ],
+  "mc_max": 16,
+  "objective": "min_total_mc",
+  "unsupported": [
+   "don't want one semester much heavier than another"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS4243",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3235",
+    "b": "ST2334",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3235",
+    "sem": 7,
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS3281",
+    "b": "CS3235",
+    "strength": "prefer"
+   },
+   {
+    "type": "late",
+    "course": "CS3281",
+    "strength": "prefer"
+   },
+   {
+    "type": "late",
+    "course": "CS3235",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [
+  "rules[4].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'",
+  "rules[5].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'"
+ ],
+ "answer": {
+  "status": "INVALID_SPEC",
+  "errors": [
+   "rules[4].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'",
+   "rules[5].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'"
+  ]
+ }
+}

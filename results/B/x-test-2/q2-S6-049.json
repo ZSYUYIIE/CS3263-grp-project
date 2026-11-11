@@ -1,0 +1,91 @@
+{
+ "id": "q2-S6-049",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 8.13,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2795,
+  "total_tokens": 3506,
+  "completion_tokens": 711,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 507
+  },
+  "finish_reason": "stop",
+  "request_seconds": 8.12,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"programme\":\"BComp CS Hons\",\"current_sem\":4,\"completed\":[\"ST2334\",\"CS1231S\",\"ES2660\",\"IS1108\",\"CS2030S\",\"CS2101\",\"CS2103T\",\"MA1521\",\"MA1522\",\"CS1101S\",\"CS2100\",\"CS2040S\"],\"must_take\":[\"CS3241\",\"CS5331\",\"CS3103\",\"CS4268\"],\"late\":[\"CS3241\"],\"rules\":[{\"type\":\"apart\",\"a\":\"CS3241\",\"b\":\"CS3103\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS4268\",\"sem\":8,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3241\",\"sem\":7,\"strength\":\"prefer\"},{\"type\":\"before\",\"a\":\"CS3103\",\"b\":\"CS4268\",\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "programme": "BComp CS Hons",
+  "current_sem": 4,
+  "completed": [
+   "ST2334",
+   "CS1231S",
+   "ES2660",
+   "IS1108",
+   "CS2030S",
+   "CS2101",
+   "CS2103T",
+   "MA1521",
+   "MA1522",
+   "CS1101S",
+   "CS2100",
+   "CS2040S"
+  ],
+  "must_take": [
+   "CS3241",
+   "CS5331",
+   "CS3103",
+   "CS4268"
+  ],
+  "late": [
+   "CS3241"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS3241",
+    "b": "CS3103",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4268",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3241",
+    "sem": 7,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS3103",
+    "b": "CS4268",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "OUT_OF_SCOPE",
+  "reasons": [
+   "course CS5331 (in must_take) is not in the catalogue"
+  ],
+  "message": "I can only plan for BComp (CS) Hons single-major students under AY2026/2027 rules, and this request is outside that (course CS5331 (in must_take) is not in the catalogue). Course rules differ by programme and aren't in my data for your case, so please check with your faculty or academic advisor."
+ }
+}

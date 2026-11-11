@@ -1,0 +1,121 @@
+{
+ "id": "q2-S3-048",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 12.73,
+ "usage": {
+  "prompt_tokens": 26661,
+  "total_tokens": 27248,
+  "completion_tokens": 587,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 12.72,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4246 requires CS3243 or CS3263, which in turn require CS2109S or CS2109HS. The student has not completed these prerequisites, nor are they listed as mandatory remaining courses. Without CS2109S/CS2109HS, CS4246 cannot be taken.\",\n    \"CS3240 requires CS2111 or NM2207. The student has not completed these, nor are they listed as mandatory remaining courses. Without CS2111/NM2207, CS3240 cannot be taken.\",\n    \"The student's mandatory list omits prerequisites for CS4246 and CS3240, making it impossible to complete the requested courses under the given constraints.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4246 requires CS3243 or CS3263, which in turn require CS2109S or CS2109HS. The student has not completed these prerequisites, nor are they listed as mandatory remaining courses. Without CS2109S/CS2109HS, CS4246 cannot be taken.",
+   "CS3240 requires CS2111 or NM2207. The student has not completed these, nor are they listed as mandatory remaining courses. Without CS2111/NM2207, CS3240 cannot be taken.",
+   "The student's mandatory list omits prerequisites for CS4246 and CS3240, making it impossible to complete the requested courses under the given constraints."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"4\": [\n      \"CS2102\",\n      \"CS2105\",\n      \"CS2106\",\n      \"CS3210\",\n      \"CS3231\",\n      \"IS1108\"\n    ],\n    \"5\": [\n      \"CS2109S\",\n      \"CS3219\",\n      \"CS3230\",\n      \"CS3240\"\n    ],\n    \"6\": [\n      \"CS3281\",\n      \"CS4246\"\n    ],\n    \"7\": [\n      \"CS3282\"\n    ]\n  },\n  \"reasons\": [\n    \"Y2S2 (Sem 4) takes CS2102, CS2105, CS2106, CS3210, CS3231, IS1108 (20 MC). CS3210 is taken before CS2106 as required.\",\n    \"Y3S1 (Sem 5) takes CS2109S, CS3219, CS3230, CS3240 (16 MC). CS3240 is scheduled as early as possible.\",\n    \"Y3S2 (Sem 6) takes CS3281, CS4246 (8 MC). CS4246 is scheduled as early as possible after prerequisites met.\",\n    \"Y4S1 (Sem 7) takes CS3282 (4 MC). CS3281 is a prerequisite for CS3282.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "CS2102",
+      "CS2105",
+      "CS2106",
+      "CS3210",
+      "CS3231",
+      "IS1108"
+     ],
+     "5": [
+      "CS2109S",
+      "CS3219",
+      "CS3230",
+      "CS3240"
+     ],
+     "6": [
+      "CS3281",
+      "CS4246"
+     ],
+     "7": [
+      "CS3282"
+     ]
+    },
+    "reasons": [
+     "Y2S2 (Sem 4) takes CS2102, CS2105, CS2106, CS3210, CS3231, IS1108 (20 MC). CS3210 is taken before CS2106 as required.",
+     "Y3S1 (Sem 5) takes CS2109S, CS3219, CS3230, CS3240 (16 MC). CS3240 is scheduled as early as possible.",
+     "Y3S2 (Sem 6) takes CS3281, CS4246 (8 MC). CS4246 is scheduled as early as possible after prerequisites met.",
+     "Y4S1 (Sem 7) takes CS3282 (4 MC). CS3281 is a prerequisite for CS3282."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12995,
+    "total_tokens": 13383,
+    "completion_tokens": 388,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 7.52,
+    "attempts": 1
+   },
+   "seconds": 7.53,
+   "violations": [
+    "R3 CS3231 not offered in Sem 2 (semester 4)",
+    "R4 CS3240 in semester 5: prerequisite not met (CS2111 or NM2207)",
+    "R3 CS3282 not offered in Sem 1 (semester 7)",
+    "R4 CS4246 in semester 6: prerequisite not met ((EE2012A or EE2012 or ST2132 or ST2334 or ((ST2131 or MA2116 or MA2116T or MA2216) and (ST1131 or ST1232 or DCS2008 or ST1131A))) and (CS3243 or CS3263))",
+    "R7 semester 4 has 24 MC, limit 16",
+    "R9 must rule not met: apart CS2106 CS3231",
+    "R9 must rule not met: before CS3210 CS2106"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4246 requires CS3243 or CS3263, which in turn require CS2109S or CS2109HS. The student has not completed these prerequisites, nor are they listed as mandatory remaining courses. Without CS2109S/CS2109HS, CS4246 cannot be taken.\",\n    \"CS3240 requires CS2111 or NM2207. The student has not completed these, nor are they listed as mandatory remaining courses. Without CS2111/NM2207, CS3240 cannot be taken.\",\n    \"The student's mandatory list omits prerequisites for CS4246 and CS3240, making it impossible to complete the requested courses under the given constraints.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4246 requires CS3243 or CS3263, which in turn require CS2109S or CS2109HS. The student has not completed these prerequisites, nor are they listed as mandatory remaining courses. Without CS2109S/CS2109HS, CS4246 cannot be taken.",
+     "CS3240 requires CS2111 or NM2207. The student has not completed these, nor are they listed as mandatory remaining courses. Without CS2111/NM2207, CS3240 cannot be taken.",
+     "The student's mandatory list omits prerequisites for CS4246 and CS3240, making it impossible to complete the requested courses under the given constraints."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 13666,
+    "total_tokens": 13865,
+    "completion_tokens": 199,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.2,
+    "attempts": 1
+   },
+   "seconds": 5.2,
+   "violations": null
+  }
+ ]
+}

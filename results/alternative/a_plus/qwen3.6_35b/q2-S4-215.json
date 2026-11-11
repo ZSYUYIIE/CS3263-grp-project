@@ -1,0 +1,222 @@
+{
+ "id": "q2-S4-215",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 3,
+ "end": "cap",
+ "seconds": 53.67,
+ "usage": {
+  "prompt_tokens": 55243,
+  "total_tokens": 57809,
+  "completion_tokens": 2566,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 53.67,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2102\"\n],\n\"6\": [\n\"CS2105\"\n],\n\"7\": [\n\"CS3223\"\n],\n\"8\": [\n\"CS3213\",\n\"CS3219\",\n\"CS4231\"\n]\n},\n\"reasons\": [\n\"CS2102 is taken in Sem 5 to enable CS3223.\",\n\"CS2105 is taken in Sem 6 to satisfy the hard rule that it must be completed before CS3223.\",\n\"CS3223 is taken in Sem 7. CS3213, CS3219, and CS4231 are taken in Sem 8, satisfying all prerequisites and ordering constraints.\"\n]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102"
+   ],
+   "6": [
+    "CS2105"
+   ],
+   "7": [
+    "CS3223"
+   ],
+   "8": [
+    "CS3213",
+    "CS3219",
+    "CS4231"
+   ]
+  },
+  "reasons": [
+   "CS2102 is taken in Sem 5 to enable CS3223.",
+   "CS2105 is taken in Sem 6 to satisfy the hard rule that it must be completed before CS3223.",
+   "CS3223 is taken in Sem 7. CS3213, CS3219, and CS4231 are taken in Sem 8, satisfying all prerequisites and ordering constraints."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"5\": [\"CS2105\", \"CS3223\"], \"6\": [\"CS2102\", \"CS3213\"], \"7\": [\"CS3219\"]}, \"reasons\": [\"CS2105 and CS3223 are planned in Y3S1 to meet the user's ideal timing and prerequisite chain (CS2105 before CS3223). CS2102 is taken in Y3S2 after CS2105, satisfying the preference. CS3213 is taken in Y3S2 after CS3223, satisfying the preference. CS3219 is taken in Y4S1 after CS3223, satisfying the prerequisite. All prerequisites are met by completed or earlier planned courses. Total MC is minimized by taking only required modules in the earliest possible semesters without exceeding 20 MC per semester.\"]",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2105",
+      "CS3223"
+     ],
+     "6": [
+      "CS2102",
+      "CS3213"
+     ],
+     "7": [
+      "CS3219"
+     ]
+    }
+   },
+   "repair": "cut_reasons",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 13119,
+    "total_tokens": 13324,
+    "completion_tokens": 205,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 4.86,
+    "attempts": 1
+   },
+   "seconds": 4.86,
+   "violations": [
+    "R1 must-take CS4231 missing",
+    "R4 CS3223 in semester 5: prerequisite not met ((CS2040S or CS2040 or CS2040C or CS2040DE or CS2040HS) and (CS2102 or IT2002))",
+    "R9 must rule not met: before CS3219 CS2105",
+    "R9 must rule not met: before CS2105 CS3223"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2105\"\n],\n\"6\": [\n\"CS2102\",\n\"CS3223\",\n\"CS3213\"\n],\n\"7\": [\n\"CS3219\",\n\"CS4231\"\n]\n},\n\"reasons\": [\n\"CS2105 is taken in Y3S1 (Sem 5) as requested. Prerequisite CS2040S is completed.\",\n\"CS2102 and CS3223 are taken in Y3S2 (Sem 6). CS2102 requires CS1231S (completed) and CS2030S/CS2040S (completed). CS3223 requires CS2040S (completed) and CS2102 (planned in same semester, allowed as corequisite or earlier; here CS2102 is taken in same semester, which satisfies 'CS2102 or IT2002' if CS2102 is a corequisite or completed. Wait, CS3223 prereq is (CS2040S...) AND (CS2102 or IT2002). CS2102 is taken in Sem 6. CS3223 is taken in Sem 6. Prerequisites must be completed or planned in a STRICTLY earlier semester. So CS2102 must be before CS3223. I will put CS2102 in Sem 5? No, CS2105 is in Sem 5. Can I take both? 4+4=8 MC. Yes. But user said 'CS2105 ideally in Y3S1'. And 'CS2102 before CS2105'. So CS2102 must be before CS2105. CS2105 is Sem 5. So CS2102 must be Sem 4 or earlier. But user is in Sem 5. So CS2102 must be in Sem 5? No, strictly earlier. So CS2102 must be in Sem 4? But user is in Sem 5. This is a conflict. Let's re-read. 'This semester is year 3 semester 1'. So current is Sem 5. 'CS2102 before CS2105'. If CS2105 is Sem 5, CS2102 must be Sem 4. But Sem 4 is past. So CS2105 cannot be in Sem 5 if CS2102 is required before it and not completed. User said 'CS2105 ideally in Y3S1'. If CS2102 is not done, CS2105 cannot be in Y3S1. So CS2105 must be later. Or CS2102 is done? No, user listed 'Modules I still need: CS3219, CS2102, CS2105 and CS4262' (then scratched 4262). So CS2102 is NOT done. So CS2102 must be taken before CS2105. Since current is Sem 5, CS2102 must be in Sem 5? No, strictly earlier. So CS2102 must be in Sem 4. But Sem 4 is past. So the user's wish 'CS2105 ideally in Y3S1' is impossible if CS2102 is needed before it. I must prioritize hard rules. CS2102 must be before CS2105. So CS2102 in Sem 5, CS2105 in Sem 6. Then CS3223 needs CS2102. So CS3223 in Sem 7. CS3219 needs CS3223. So CS3219 in Sem 8. CS4231 needs CS3230 (completed). So CS4231 can be Sem 6+. CS3213 needs CS2103T (completed). So CS3213 can be Sem 6+. User wants CS3223 before CS3213. So CS3213 after Sem 7. Let's plan: Sem 5: CS2102. Sem 6: CS2105, CS3213. Sem 7: CS3223. Sem 8: CS3219, CS4231. Check MC: Sem 5: 4. Sem 6: 4+4=8. Sem 7: 4. Sem 8: 4+4=8. All <= 20. Prereqs: CS2102 (Sem 5) prereq CS1231S (done), CS2030S/CS2040S (done). OK. CS2105 (Sem 6) prereq CS2040S (done). OK. CS3213 (Sem 6) prereq CS2103T (done). OK. CS3223 (Sem 7) prereq CS2040S (done), CS2102 (Sem 5, done). OK. CS3219 (Sem 8) prereq CS2103T (done). OK. CS4231 (Sem 8) prereq CS3230 (done). OK. Order: CS2102 before CS2105? Yes (5 before 6). CS3223 before CS3219? Yes (7 before 8). CS2105 before CS3223? Yes (6 before 7). CS3223 before CS3213? No, CS3213 is Sem 6, CS3223 is Sem 7. User said 'Ideally I'd take CS3223 before CS3213'. This is a soft wish. Can I swap? If CS3223 is Sem 6, CS2102 must be Sem 5. CS2105 must be after CS2102. If CS2105 is Sem 7, CS3213 can be Sem 8. But user wanted CS2105 ideally in Y3S1. That's impossible. So I will satisfy the hard constraints and the 'CS2102 before CS2105' hard constraint. The 'CS3223 before CS3213' is soft. I will try to satisfy it if possible. If CS3223 is Sem 6, CS2102 is Sem 5. CS2105 is Sem 7. CS3213 is Sem 8. This works. Sem 5: CS2102. Sem 6: CS3223. Sem 7: CS2105. Sem 8: CS3213, CS3219, CS4231. Check prereqs: CS3223 needs CS2102 (Sem 5). OK. CS2105 needs CS2040S. OK. CS3213 needs CS2103T. OK. CS3219 needs CS2103T. OK. CS4231 needs CS3230. OK. Order: CS2102 before CS2105? Yes (5 before 7). CS3223 before CS3219? Yes (6 before 8). CS2105 before CS3223? No, CS2105 is Sem 7, CS3223 is Sem 6. User said 'I need to finish CS2105 before I start CS3223'. This is a HARD rule. So CS2105 MUST be before CS3223. So CS2105 Sem 6, CS3223 Sem 7. Then CS3213 must be after CS3223 (soft wish). So CS3213 Sem 8. CS3219 Sem 8. CS4231 Sem 8. Sem 5: CS2102. Sem 6: CS2105. Sem 7: CS3223. Sem 8: CS3213, CS3219, CS4231. MC: 4, 4, 4, 12. All good. This satisfies all hard rules and the soft wish CS3223 before CS3213.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2105"
+     ],
+     "6": [
+      "CS2102",
+      "CS3223",
+      "CS3213"
+     ],
+     "7": [
+      "CS3219",
+      "CS4231"
+     ]
+    },
+    "reasons": [
+     "CS2105 is taken in Y3S1 (Sem 5) as requested. Prerequisite CS2040S is completed.",
+     "CS2102 and CS3223 are taken in Y3S2 (Sem 6). CS2102 requires CS1231S (completed) and CS2030S/CS2040S (completed). CS3223 requires CS2040S (completed) and CS2102 (planned in same semester, allowed as corequisite or earlier; here CS2102 is taken in same semester, which satisfies 'CS2102 or IT2002' if CS2102 is a corequisite or completed. Wait, CS3223 prereq is (CS2040S...) AND (CS2102 or IT2002). CS2102 is taken in Sem 6. CS3223 is taken in Sem 6. Prerequisites must be completed or planned in a STRICTLY earlier semester. So CS2102 must be before CS3223. I will put CS2102 in Sem 5? No, CS2105 is in Sem 5. Can I take both? 4+4=8 MC. Yes. But user said 'CS2105 ideally in Y3S1'. And 'CS2102 before CS2105'. So CS2102 must be before CS2105. CS2105 is Sem 5. So CS2102 must be Sem 4 or earlier. But user is in Sem 5. So CS2102 must be in Sem 5? No, strictly earlier. So CS2102 must be in Sem 4? But user is in Sem 5. This is a conflict. Let's re-read. 'This semester is year 3 semester 1'. So current is Sem 5. 'CS2102 before CS2105'. If CS2105 is Sem 5, CS2102 must be Sem 4. But Sem 4 is past. So CS2105 cannot be in Sem 5 if CS2102 is required before it and not completed. User said 'CS2105 ideally in Y3S1'. If CS2102 is not done, CS2105 cannot be in Y3S1. So CS2105 must be later. Or CS2102 is done? No, user listed 'Modules I still need: CS3219, CS2102, CS2105 and CS4262' (then scratched 4262). So CS2102 is NOT done. So CS2102 must be taken before CS2105. Since current is Sem 5, CS2102 must be in Sem 5? No, strictly earlier. So CS2102 must be in Sem 4. But Sem 4 is past. So the user's wish 'CS2105 ideally in Y3S1' is impossible if CS2102 is needed before it. I must prioritize hard rules. CS2102 must be before CS2105. So CS2102 in Sem 5, CS2105 in Sem 6. Then CS3223 needs CS2102. So CS3223 in Sem 7. CS3219 needs CS3223. So CS3219 in Sem 8. CS4231 needs CS3230 (completed). So CS4231 can be Sem 6+. CS3213 needs CS2103T (completed). So CS3213 can be Sem 6+. User wants CS3223 before CS3213. So CS3213 after Sem 7. Let's plan: Sem 5: CS2102. Sem 6: CS2105, CS3213. Sem 7: CS3223. Sem 8: CS3219, CS4231. Check MC: Sem 5: 4. Sem 6: 4+4=8. Sem 7: 4. Sem 8: 4+4=8. All <= 20. Prereqs: CS2102 (Sem 5) prereq CS1231S (done), CS2030S/CS2040S (done). OK. CS2105 (Sem 6) prereq CS2040S (done). OK. CS3213 (Sem 6) prereq CS2103T (done). OK. CS3223 (Sem 7) prereq CS2040S (done), CS2102 (Sem 5, done). OK. CS3219 (Sem 8) prereq CS2103T (done). OK. CS4231 (Sem 8) prereq CS3230 (done). OK. Order: CS2102 before CS2105? Yes (5 before 6). CS3223 before CS3219? Yes (7 before 8). CS2105 before CS3223? Yes (6 before 7). CS3223 before CS3213? No, CS3213 is Sem 6, CS3223 is Sem 7. User said 'Ideally I'd take CS3223 before CS3213'. This is a soft wish. Can I swap? If CS3223 is Sem 6, CS2102 must be Sem 5. CS2105 must be after CS2102. If CS2105 is Sem 7, CS3213 can be Sem 8. But user wanted CS2105 ideally in Y3S1. That's impossible. So I will satisfy the hard constraints and the 'CS2102 before CS2105' hard constraint. The 'CS3223 before CS3213' is soft. I will try to satisfy it if possible. If CS3223 is Sem 6, CS2102 is Sem 5. CS2105 is Sem 7. CS3213 is Sem 8. This works. Sem 5: CS2102. Sem 6: CS3223. Sem 7: CS2105. Sem 8: CS3213, CS3219, CS4231. Check prereqs: CS3223 needs CS2102 (Sem 5). OK. CS2105 needs CS2040S. OK. CS3213 needs CS2103T. OK. CS3219 needs CS2103T. OK. CS4231 needs CS3230. OK. Order: CS2102 before CS2105? Yes (5 before 7). CS3223 before CS3219? Yes (6 before 8). CS2105 before CS3223? No, CS2105 is Sem 7, CS3223 is Sem 6. User said 'I need to finish CS2105 before I start CS3223'. This is a HARD rule. So CS2105 MUST be before CS3223. So CS2105 Sem 6, CS3223 Sem 7. Then CS3213 must be after CS3223 (soft wish). So CS3213 Sem 8. CS3219 Sem 8. CS4231 Sem 8. Sem 5: CS2102. Sem 6: CS2105. Sem 7: CS3223. Sem 8: CS3213, CS3219, CS4231. MC: 4, 4, 4, 12. All good. This satisfies all hard rules and the soft wish CS3223 before CS3213."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 13488,
+    "total_tokens": 15423,
+    "completion_tokens": 1935,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 41.05,
+    "attempts": 1
+   },
+   "seconds": 41.05,
+   "violations": [
+    "R4 CS3223 in semester 6: prerequisite not met ((CS2040S or CS2040 or CS2040C or CS2040DE or CS2040HS) and (CS2102 or IT2002))",
+    "R3 CS4231 not offered in Sem 1 (semester 7)",
+    "R9 must rule not met: before CS3219 CS2105"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2102\"\n],\n\"6\": [\n\"CS2105\"\n],\n\"7\": [\n\"CS3223\",\n\"CS3213\"\n],\n\"8\": [\n\"CS3219\",\n\"CS4231\"\n]\n},\n\"reasons\": [\n\"CS2102 is taken in Sem 5 to satisfy the hard prerequisite for CS3223 and the ordering constraint with CS2105.\",\n\"CS2105 is taken in Sem 6, after CS2102, satisfying the hard rule that CS2105 must be finished before CS3223.\",\n\"CS3223 is taken in Sem 7 after CS2105. CS3213 is also in Sem 7. CS3219 and CS4231 are in Sem 8.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2102"
+     ],
+     "6": [
+      "CS2105"
+     ],
+     "7": [
+      "CS3223",
+      "CS3213"
+     ],
+     "8": [
+      "CS3219",
+      "CS4231"
+     ]
+    },
+    "reasons": [
+     "CS2102 is taken in Sem 5 to satisfy the hard prerequisite for CS3223 and the ordering constraint with CS2105.",
+     "CS2105 is taken in Sem 6, after CS2102, satisfying the hard rule that CS2105 must be finished before CS3223.",
+     "CS3223 is taken in Sem 7 after CS2105. CS3213 is also in Sem 7. CS3219 and CS4231 are in Sem 8."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 15205,
+    "total_tokens": 15432,
+    "completion_tokens": 227,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.14,
+    "attempts": 1
+   },
+   "seconds": 4.14,
+   "violations": [
+    "R3 CS3213 not offered in Sem 1 (semester 7)",
+    "R9 must rule not met: before CS3219 CS2105"
+   ]
+  },
+  {
+   "round": 3,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2102\"\n],\n\"6\": [\n\"CS2105\"\n],\n\"7\": [\n\"CS3223\"\n],\n\"8\": [\n\"CS3213\",\n\"CS3219\",\n\"CS4231\"\n]\n},\n\"reasons\": [\n\"CS2102 is taken in Sem 5 to enable CS3223.\",\n\"CS2105 is taken in Sem 6 to satisfy the hard rule that it must be completed before CS3223.\",\n\"CS3223 is taken in Sem 7. CS3213, CS3219, and CS4231 are taken in Sem 8, satisfying all prerequisites and ordering constraints.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2102"
+     ],
+     "6": [
+      "CS2105"
+     ],
+     "7": [
+      "CS3223"
+     ],
+     "8": [
+      "CS3213",
+      "CS3219",
+      "CS4231"
+     ]
+    },
+    "reasons": [
+     "CS2102 is taken in Sem 5 to enable CS3223.",
+     "CS2105 is taken in Sem 6 to satisfy the hard rule that it must be completed before CS3223.",
+     "CS3223 is taken in Sem 7. CS3213, CS3219, and CS4231 are taken in Sem 8, satisfying all prerequisites and ordering constraints."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 13431,
+    "total_tokens": 13630,
+    "completion_tokens": 199,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.62,
+    "attempts": 1
+   },
+   "seconds": 3.62,
+   "violations": [
+    "R9 must rule not met: before CS3219 CS2105"
+   ]
+  }
+ ]
+}

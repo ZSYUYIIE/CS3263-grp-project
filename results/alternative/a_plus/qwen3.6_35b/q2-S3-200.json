@@ -1,0 +1,115 @@
+{
+ "id": "q2-S3-200",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "valid",
+ "seconds": 5.41,
+ "usage": {
+  "prompt_tokens": 18278,
+  "total_tokens": 18541,
+  "completion_tokens": 263,
+  "finish_reason": "stop",
+  "request_seconds": 5.41,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"7\": [\n      \"CS3103\",\n      \"CS2102\"\n    ],\n    \"8\": [\n      \"CS3234\",\n      \"CS4225\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3234 is only offered in Sem 2, so it must be taken in Sem 8.\",\n    \"CS3103 is fixed in Sem 7 as requested.\",\n    \"CS2102 and CS4225 are scheduled in Sem 8 to satisfy prerequisites and minimize total credits.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "7": [
+    "CS3103",
+    "CS2102"
+   ],
+   "8": [
+    "CS3234",
+    "CS4225"
+   ]
+  },
+  "reasons": [
+   "CS3234 is only offered in Sem 2, so it must be taken in Sem 8.",
+   "CS3103 is fixed in Sem 7 as requested.",
+   "CS2102 and CS4225 are scheduled in Sem 8 to satisfy prerequisites and minimize total credits."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"7\": [\"CS3103\", \"CS2102\", \"CS3234\"], \"8\": [\"CS4225\"]}, \"reasons\": [\"All required courses scheduled respecting prerequisites and semester offerings.\", \"CS3103 placed in Sem 7 as requested; CS4225 follows in Sem 8 after CS2102 is completed.\", \"Plan minimizes total credits by taking only mandatory remaining courses.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "7": [
+      "CS3103",
+      "CS2102",
+      "CS3234"
+     ],
+     "8": [
+      "CS4225"
+     ]
+    },
+    "reasons": [
+     "All required courses scheduled respecting prerequisites and semester offerings.",
+     "CS3103 placed in Sem 7 as requested; CS4225 follows in Sem 8 after CS2102 is completed.",
+     "Plan minimizes total credits by taking only mandatory remaining courses."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9053,
+    "total_tokens": 9160,
+    "completion_tokens": 107,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.7,
+    "attempts": 1
+   },
+   "seconds": 2.7,
+   "violations": [
+    "R3 CS3234 not offered in Sem 1 (semester 7)"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"7\": [\n      \"CS3103\",\n      \"CS2102\"\n    ],\n    \"8\": [\n      \"CS3234\",\n      \"CS4225\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3234 is only offered in Sem 2, so it must be taken in Sem 8.\",\n    \"CS3103 is fixed in Sem 7 as requested.\",\n    \"CS2102 and CS4225 are scheduled in Sem 8 to satisfy prerequisites and minimize total credits.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "7": [
+      "CS3103",
+      "CS2102"
+     ],
+     "8": [
+      "CS3234",
+      "CS4225"
+     ]
+    },
+    "reasons": [
+     "CS3234 is only offered in Sem 2, so it must be taken in Sem 8.",
+     "CS3103 is fixed in Sem 7 as requested.",
+     "CS2102 and CS4225 are scheduled in Sem 8 to satisfy prerequisites and minimize total credits."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9225,
+    "total_tokens": 9381,
+    "completion_tokens": 156,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.71,
+    "attempts": 1
+   },
+   "seconds": 2.71,
+   "violations": []
+  }
+ ]
+}

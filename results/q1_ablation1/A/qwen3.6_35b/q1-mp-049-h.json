@@ -1,0 +1,32 @@
+{
+ "id": "q1-mp-049-h",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 8.25,
+ "usage": {
+  "prompt_tokens": 8055,
+  "total_tokens": 8668,
+  "completion_tokens": 613,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 8.25,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"ELIGIBLE\", \"reasons\": [\"CS3264 is open to BComp CS Hons and offered in Sem 2.\", \"Prerequisites are satisfied by completed courses: CS2109S is not required (CS2105/CS2040S covers the algo part, but wait, let's re-read carefully).\", \"Let's re-verify prerequisites for CS3264: 1. CS2109S. Student has NOT completed CS2109S. The record says 'prerequisite: CS2109S and ...'. The student has completed CS2105, CS2040S, etc., but NOT CS2109S. Therefore, the student is NOT eligible.\"]}\n\nWait, I must check the prerequisite list again.\nCS3264 prerequisite: `CS2109S and (CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS) and (MA1101R or MA1311 or MA1513 or MA1508E or MA2001 or MA1522) and (EE2012A or EE2012 or ST2131 or MA2116 or MA2116T or ST2334 or MA2216)`\n\nStudent completed:\n- CS1101S\n- ST2132\n- CS3210\n- CS2100HS\n- MA1521\n- IS1108\n- ST2334\n- CS5477\n- CS2102\n- MA1522\n- CS1231S\n- CS2040S\n- CS2105\n\nMissing from CS3264 prerequisites:\n1. **CS2109S**: The student has NOT completed CS2109S.\n2. The other parts are satisfied:\n   - `(CS2040 or ... CS2040S ...)`: Yes, CS2040S is completed.\n   - `(MA1101R or ... MA1522)`: Yes, MA1522 is completed.\n   - `(EE2012A or ... ST2334 ...)`: Yes, ST2334 is completed.\n\nSince CS2109S is a strict prerequisite and is not completed, the student is not eligible.\n\n{\"status\": \"NOT_ELIGIBLE\", \"reasons\": [\"CS3264 requires CS2109S as a prerequisite.\", \"The student has not completed CS2109S.\"]}",
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "reasons": [
+   "CS3264 requires CS2109S as a prerequisite.",
+   "The student has not completed CS2109S."
+  ]
+ },
+ "fenced": true,
+ "repair": "last_of_several",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 4,
+ "ablation": 1
+}

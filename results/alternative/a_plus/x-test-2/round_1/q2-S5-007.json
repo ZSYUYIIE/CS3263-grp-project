@@ -1,0 +1,56 @@
+{
+ "id": "q2-S5-007",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 50.03,
+ "usage": {
+  "prompt_tokens": 7791,
+  "total_tokens": 12965,
+  "completion_tokens": 5174,
+  "prompt_tokens_details": {
+   "cached_tokens": 4224,
+   "created_cache_tokens": 3456
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5020
+  },
+  "finish_reason": "stop",
+  "request_seconds": 50.03,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CS2220\",\"CS2105\",\"CG2271\",\"CS2107\"],\"4\":[\"CS3230\",\"CS4330\"],\"5\":[\"CS3241\"],\"8\":[\"CS3235\"]},\"reasons\":[\"The plan uses 32 MC, the minimum for the required courses and their prerequisites.\",\"CS3230 and CS4330 are both in semester 4, so CS2220 is added in semester 3 as CS4330's prerequisite.\",\"CG2271, CS2105 and CS2107 are added in semester 3 for CS3235; CS3241 is fixed in semester 5, so it cannot precede CS3230.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2220",
+    "CS2105",
+    "CG2271",
+    "CS2107"
+   ],
+   "4": [
+    "CS3230",
+    "CS4330"
+   ],
+   "5": [
+    "CS3241"
+   ],
+   "8": [
+    "CS3235"
+   ]
+  },
+  "reasons": [
+   "The plan uses 32 MC, the minimum for the required courses and their prerequisites.",
+   "CS3230 and CS4330 are both in semester 4, so CS2220 is added in semester 3 as CS4330's prerequisite.",
+   "CG2271, CS2105 and CS2107 are added in semester 3 for CS3235; CS3241 is fixed in semester 5, so it cannot precede CS3230."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

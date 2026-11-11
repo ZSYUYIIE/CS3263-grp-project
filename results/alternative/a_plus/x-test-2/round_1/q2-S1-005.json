@@ -1,0 +1,59 @@
+{
+ "id": "q2-S1-005",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 125.29,
+ "usage": {
+  "prompt_tokens": 6391,
+  "total_tokens": 17225,
+  "completion_tokens": 10834,
+  "prompt_tokens_details": {
+   "cached_tokens": 3840,
+   "created_cache_tokens": 2432
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 10669
+  },
+  "finish_reason": "stop",
+  "request_seconds": 125.29,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"1\":[\"CS1010\",\"MA1521\",\"CS1231\"],\"2\":[\"CS2040\"],\"3\":[\"CS2030S\",\"CS2109S\",\"CS2113\"],\"6\":[\"CS3213\"],\"7\":[\"CS3230\"]},\"reasons\":[\"Last semester is 7, the earliest possible because CS3230 is fixed in semester 7.\",\"CS2109S is before CS3213, and CS2030S is kept apart from CS3213 and CS3230.\",\"CS2030S in semester 6 would force CS2109S into semester 6 too, losing the CS2109S-before-CS3213 and apart preferences; only needed prerequisites were added.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1010",
+    "MA1521",
+    "CS1231"
+   ],
+   "2": [
+    "CS2040"
+   ],
+   "3": [
+    "CS2030S",
+    "CS2109S",
+    "CS2113"
+   ],
+   "6": [
+    "CS3213"
+   ],
+   "7": [
+    "CS3230"
+   ]
+  },
+  "reasons": [
+   "Last semester is 7, the earliest possible because CS3230 is fixed in semester 7.",
+   "CS2109S is before CS3213, and CS2030S is kept apart from CS3213 and CS3230.",
+   "CS2030S in semester 6 would force CS2109S into semester 6 too, losing the CS2109S-before-CS3213 and apart preferences; only needed prerequisites were added."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

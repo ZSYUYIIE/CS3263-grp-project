@@ -1,0 +1,112 @@
+{
+ "id": "q2-S1-143",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 6.49,
+ "usage": {
+  "prompt_tokens": 27863,
+  "total_tokens": 28149,
+  "completion_tokens": 286,
+  "finish_reason": "stop",
+  "request_seconds": 6.49,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS3103 is only offered in Sem 1, but the student is in Sem 6 and must take it in Sem 6 or later; it cannot be taken in Sem 6, 7, or 8.\", \"CS4246 requires CS3243 or CS3263, which are not in the completed list and are not mandatory, so the prerequisite cannot be met.\", \"CS4249 requires CS3240 or similar, which are not completed or mandatory, so the prerequisite cannot be met.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3103 is only offered in Sem 1, but the student is in Sem 6 and must take it in Sem 6 or later; it cannot be taken in Sem 6, 7, or 8.",
+   "CS4246 requires CS3243 or CS3263, which are not in the completed list and are not mandatory, so the prerequisite cannot be met.",
+   "CS4249 requires CS3240 or similar, which are not completed or mandatory, so the prerequisite cannot be met."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"6\": [\"CS2102\", \"CS3103\", \"CS3241\"], \"7\": [\"CS4211\", \"CS4246\", \"CS4247\", \"CS4248\"], \"8\": [\"CS4249\"]}, \"reasons\": [\"All mandatory courses are scheduled respecting prerequisites and semester offerings.\", \"CS4246 and CS4211 are placed in Sem 7 as required; CS4249 in Sem 8.\", \"CS4248 is placed as late as possible (Sem 7) given it must precede no other required course and fits in Sem 7.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS2102",
+      "CS3103",
+      "CS3241"
+     ],
+     "7": [
+      "CS4211",
+      "CS4246",
+      "CS4247",
+      "CS4248"
+     ],
+     "8": [
+      "CS4249"
+     ]
+    },
+    "reasons": [
+     "All mandatory courses are scheduled respecting prerequisites and semester offerings.",
+     "CS4246 and CS4211 are placed in Sem 7 as required; CS4249 in Sem 8.",
+     "CS4248 is placed as late as possible (Sem 7) given it must precede no other required course and fits in Sem 7."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 13715,
+    "total_tokens": 13872,
+    "completion_tokens": 157,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.94,
+    "attempts": 1
+   },
+   "seconds": 3.94,
+   "violations": [
+    "R3 CS3103 not offered in Sem 2 (semester 6)",
+    "R3 CS3241 not offered in Sem 2 (semester 6)",
+    "R4 CS4246 in semester 7: prerequisite not met ((EE2012A or EE2012 or ST2132 or ST2334 or ((ST2131 or MA2116 or MA2116T or MA2216) and (ST1131 or ST1232 or DCS2008 or ST1131A))) and (CS3243 or CS3263))",
+    "R3 CS4247 not offered in Sem 1 (semester 7)",
+    "R4 CS4249 in semester 8: prerequisite not met (CS3240 or NM2216 or NM2213 or NM3243)",
+    "R9 must rule not met: CS3241 in semester 7"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS3103 is only offered in Sem 1, but the student is in Sem 6 and must take it in Sem 6 or later; it cannot be taken in Sem 6, 7, or 8.\", \"CS4246 requires CS3243 or CS3263, which are not in the completed list and are not mandatory, so the prerequisite cannot be met.\", \"CS4249 requires CS3240 or similar, which are not completed or mandatory, so the prerequisite cannot be met.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3103 is only offered in Sem 1, but the student is in Sem 6 and must take it in Sem 6 or later; it cannot be taken in Sem 6, 7, or 8.",
+     "CS4246 requires CS3243 or CS3263, which are not in the completed list and are not mandatory, so the prerequisite cannot be met.",
+     "CS4249 requires CS3240 or similar, which are not completed or mandatory, so the prerequisite cannot be met."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 14148,
+    "total_tokens": 14277,
+    "completion_tokens": 129,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 2.55,
+    "attempts": 1
+   },
+   "seconds": 2.55,
+   "violations": null
+  }
+ ]
+}

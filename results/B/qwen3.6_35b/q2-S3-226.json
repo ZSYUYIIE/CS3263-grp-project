@@ -1,0 +1,96 @@
+{
+ "id": "q2-S3-226",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 4.74,
+ "solver_seconds": 0.025,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3073,
+  "total_tokens": 3313,
+  "completion_tokens": 240,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 4.72,
+  "attempts": 1
+ },
+ "raw": "{\"query\": \"plan\", \"current_sem\": 5, \"completed\": [\"MA1521\", \"CS3281\", \"CS2109S\", \"CS2030S\", \"MA1522\", \"CS1101S\", \"CS1231S\", \"ES2660\", \"CS2040S\", \"CS2103T\", \"CS2106\", \"CS2101\", \"CS3230\", \"CS2100\"], \"must_take\": [\"CS4212\", \"CS2105\", \"CS3237\", \"ST2334\", \"IS1108\", \"CS3219\"], \"objective\": \"min_total_mc\", \"rules\": [{\"type\": \"in_sem\", \"course\": \"IS1108\", \"sem\": 6, \"strength\": \"must\"}, {\"type\": \"before\", \"a\": \"CS3237\", \"b\": \"CS4212\", \"strength\": \"must\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "completed": [
+   "MA1521",
+   "CS3281",
+   "CS2109S",
+   "CS2030S",
+   "MA1522",
+   "CS1101S",
+   "CS1231S",
+   "ES2660",
+   "CS2040S",
+   "CS2103T",
+   "CS2106",
+   "CS2101",
+   "CS3230",
+   "CS2100"
+  ],
+  "must_take": [
+   "CS4212",
+   "CS2105",
+   "CS3237",
+   "ST2334",
+   "IS1108",
+   "CS3219"
+  ],
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "IS1108",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3237",
+    "b": "CS4212",
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 6,
+  "plan": {
+   "5": [
+    "CS2104",
+    "CS2105",
+    "CS3219",
+    "CS3237",
+    "ST2334"
+   ],
+   "6": [
+    "CS4212",
+    "IS1108"
+   ]
+  },
+  "mc_per_semester": {
+   "5": 20,
+   "6": 8
+  },
+  "preferences_met": [],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS2104"
+  ]
+ }
+}

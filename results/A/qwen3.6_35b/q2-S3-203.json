@@ -1,0 +1,39 @@
+{
+ "id": "q2-S3-203",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 29.9,
+ "usage": {
+  "prompt_tokens": 9099,
+  "total_tokens": 10672,
+  "completion_tokens": 1573,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 29.9,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS3103 prerequisite is CS2105 or EE3204 or EE3204E or EE4204. The student has completed CS2105, so this is satisfied. However, CS4225 prerequisite is CS2102 or IT2002. The student must take CS2102. CS2102 prerequisites are (CS1231 or MA1100 or MA1100T or CS1231S) AND (CS2030S or CS2030 or CS2030DE or CS2030HS or YSC2229 or CS2040 or CS2040C or CS2040S or CS2040DE or CS2040HS). The student has completed CS1231S and CS2030S and CS2040S, so CS2102 is eligible. CS3234 prerequisite is CS1231 or CS1231S or MA1100T or MA1100. Student has CS1231S, so eligible. CS3103 prerequisite is CS2105 (completed). CS4225 prerequisite is CS2102 (planned). The constraint 'CS3103 must come before CS4225' is satisfied if CS3103 is in Sem 7 and CS4225 is in Sem 8. The constraint 'CS2102 before CS4225' is satisfied if CS2102 is in Sem 7 or 8 (but before CS4225). If CS4225 is Sem 8, CS2102 can be Sem 7 or 8? No, 'before' usually means strictly earlier semester. If CS2102 is Sem 8, it cannot be before CS4225 in Sem 8. So CS2102 must be Sem 7. But CS3103 is also Sem 7. Max 3 modules per semester. Sem 7 would have CS3103, CS2102. That's 2 modules. Sem 8 would have CS4225, CS3234. That's 2 modules. This fits the limit. Wait, CS3234 is offered Sem 2. Sem 8 is Sem 2 of AY2029/30. So CS3234 is offered. CS4225 is offered Sem 1, Sem 2. CS2102 is offered Sem 1, Sem 2. CS3103 is offered Sem 1. Sem 7 is Sem 1 of AY2029/30. So CS3103 is offered. CS2102 is offered Sem 1, Sem 2. So CS2102 can be in Sem 7. CS4225 can be in Sem 8. CS3234 can be in Sem 8. This plan seems valid. Let's re-read carefully. 'CS3103 must come before CS4225'. Sem 7 before Sem 8. OK. 'CS2102 before CS4225'. Sem 7 before Sem 8. OK. 'CS3234 before CS3103'. CS3234 must be before Sem 7. So CS3234 must be in Sem 5 or 6. Sem 5 is Sem 1, Sem 6 is Sem 2. CS3234 is offered Sem 2. So CS3234 must be in Sem 6. Sem 6 has CS3234. Sem 7 has CS3103, CS2102. Sem 8 has CS4225. Total 4 modules. Limit 3 per semester. Sem 7 has 2. Sem 6 has 1. Sem 8 has 1. This is valid. Why NO_PLAN? Ah, check prerequisites for CS2102 again. (CS1231 or ... or CS1231S) AND (CS2030S or ... or CS2040S). Student has CS1231S and CS2030S and CS2040S. Yes. Check CS3103 prereq: CS2105. Student has CS2105. Yes. Check CS4225 prereq: CS2102. Student plans CS2102 in Sem 7. CS4225 in Sem 8. Yes. Check CS3234 prereq: CS1231S. Student has CS1231S. Yes. Is there any other constraint? 'I'd like to avoid modules with heavy group projects.' This is a soft wish, not a blocker. 'I'd rather do CS2102 before CS4225.' Satisfied. 'I'd rather do CS3234 before CS3103.' Satisfied (Sem 6 before Sem 7). 'Put CS2102 as late as possible.' CS2102 is in Sem 7. Can it be in Sem 8? No, because it must be before CS4225 (Sem 8). So Sem 7 is the latest. This plan works. Status should be PLAN. Let's construct the plan. Sem 5: Empty. Sem 6: CS3234. Sem 7: CS3103, CS2102. Sem 8: CS4225. Total MC: 4+4+4+4 = 16. Is there any reason to put CS3234 in Sem 5? It's offered Sem 2. Sem 5 is Sem 1. So CS3234 CANNOT be in Sem 5. It MUST be in Sem 6 (or later, but must be before CS3103 in Sem 7). So Sem 6 is the only option for CS3234. So the plan is fixed. Sem 6: CS3234. Sem 7: CS3103, CS2102. Sem 8: CS4225. This satisfies all hard constraints. The student asked to keep total MC low. This is the minimum number of modules (4). So this is the optimal plan.}\n\n{\"status\": \"PLAN\", \"plan\": {\"6\": [\"CS3234\"], \"7\": [\"CS3103\", \"CS2102\"], \"8\": [\"CS4225\"]}, \"reasons\": [\"CS3234 is offered only in Sem 2, so it must be taken in Sem 6 to precede CS3103 in Sem 7. CS2102 is placed in Sem 7 to precede CS4225 in Sem 8 and as late as possible. CS3103 is fixed in Sem 7. All prerequisites are met by completed courses or earlier planned courses.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS3234"
+   ],
+   "7": [
+    "CS3103",
+    "CS2102"
+   ],
+   "8": [
+    "CS4225"
+   ]
+  },
+  "reasons": [
+   "CS3234 is offered only in Sem 2, so it must be taken in Sem 6 to precede CS3103 in Sem 7. CS2102 is placed in Sem 7 to precede CS4225 in Sem 8 and as late as possible. CS3103 is fixed in Sem 7. All prerequisites are met by completed courses or earlier planned courses."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

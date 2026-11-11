@@ -1,0 +1,52 @@
+{
+ "id": "q2-S3-267",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 36.78,
+ "usage": {
+  "prompt_tokens": 7241,
+  "total_tokens": 10555,
+  "completion_tokens": 3314,
+  "prompt_tokens_details": {
+   "cached_tokens": 7040,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3156
+  },
+  "finish_reason": "stop",
+  "request_seconds": 36.78,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"4\":[\"CS2105\",\"ST2334\",\"CS3230\",\"CS2102\"],\"5\":[\"CS2109S\",\"CS3103\",\"CS4226\"],\"6\":[\"CS3234\"]},\"reasons\":[\"Earliest graduation is semester 6 because CS3234 is offered only in Sem 2 and cannot be taken in semester 5.\",\"CS2105 and ST2334 are placed in semester 4 so CS3103 and CS4226 can be taken in semester 5.\",\"CS2109S is in semester 5 before CS3234 in semester 6; CS4226 and CS3234 are as late as possible under the earliest-graduation plan.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2105",
+    "ST2334",
+    "CS3230",
+    "CS2102"
+   ],
+   "5": [
+    "CS2109S",
+    "CS3103",
+    "CS4226"
+   ],
+   "6": [
+    "CS3234"
+   ]
+  },
+  "reasons": [
+   "Earliest graduation is semester 6 because CS3234 is offered only in Sem 2 and cannot be taken in semester 5.",
+   "CS2105 and ST2334 are placed in semester 4 so CS3103 and CS4226 can be taken in semester 5.",
+   "CS2109S is in semester 5 before CS3234 in semester 6; CS4226 and CS3234 are as late as possible under the earliest-graduation plan."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

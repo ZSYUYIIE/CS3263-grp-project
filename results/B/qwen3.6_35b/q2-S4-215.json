@@ -1,0 +1,104 @@
+{
+ "id": "q2-S4-215",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 9.69,
+ "solver_seconds": 0.062,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3191,
+  "total_tokens": 3748,
+  "completion_tokens": 557,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 9.63,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"current_sem\": 5,\n  \"programme\": \"BComp CS Hons\",\n  \"completed\": [\n    \"CS2100\",\n    \"IS1108\",\n    \"CS2030S\",\n    \"CS2106\",\n    \"CS1101S\",\n    \"CS2103T\",\n    \"MA1522\",\n    \"ES2660\",\n    \"MA1521\",\n    \"CS2109S\",\n    \"CS1231S\",\n    \"CS3230\",\n    \"ST2334\",\n    \"CS2040S\",\n    \"CS4268\"\n  ],\n  \"must_take\": [\n    \"CS3219\",\n    \"CS2102\",\n    \"CS2105\",\n    \"CS3223\",\n    \"CS4231\",\n    \"CS3213\"\n  ],\n  \"objective\": \"min_total_mc\",\n  \"early\": [\n    \"CS3223\"\n  ],\n  \"rules\": [\n    {\n      \"type\": \"before\",\n      \"a\": \"CS2105\",\n      \"b\": \"CS3223\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS2105\",\n      \"sem\": 5,\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS3219\",\n      \"b\": \"CS2105\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS3223\",\n      \"b\": \"CS3219\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS3223\",\n      \"b\": \"CS3213\",\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS2102\",\n      \"b\": \"CS2105\",\n      \"strength\": \"prefer\"\n    }\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "CS2100",
+   "IS1108",
+   "CS2030S",
+   "CS2106",
+   "CS1101S",
+   "CS2103T",
+   "MA1522",
+   "ES2660",
+   "MA1521",
+   "CS2109S",
+   "CS1231S",
+   "CS3230",
+   "ST2334",
+   "CS2040S",
+   "CS4268"
+  ],
+  "must_take": [
+   "CS3219",
+   "CS2102",
+   "CS2105",
+   "CS3223",
+   "CS4231",
+   "CS3213"
+  ],
+  "objective": "min_total_mc",
+  "early": [
+   "CS3223"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2105",
+    "b": "CS3223",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2105",
+    "sem": 5,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS3219",
+    "b": "CS2105",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3223",
+    "b": "CS3219",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3223",
+    "b": "CS3213",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS2102",
+    "b": "CS2105",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS2105 before CS3223; your rule: CS3219 before CS2105; your rule: CS3223 before CS3219"
+  ]
+ }
+}

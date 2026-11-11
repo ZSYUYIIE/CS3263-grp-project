@@ -1,0 +1,150 @@
+{
+ "id": "q2-S1-107",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 19.66,
+ "solver_seconds": 0.106,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3187,
+  "total_tokens": 3698,
+  "completion_tokens": 511,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 19.56,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 4,\n\"completed\": [\n\"CS2101\",\n\"ES2660\",\n\"CS2030S\",\n\"MA1521\",\n\"MA1522\",\n\"CS2040S\",\n\"CS2103T\",\n\"IS1108\",\n\"ST2334\",\n\"CS2100\",\n\"CS1231S\",\n\"CS1101S\"\n],\n\"must_take\": [\n\"CS3219\",\n\"CS2105\",\n\"CS4224\",\n\"CS2106\",\n\"CS3103\",\n\"CS3230\",\n\"CS3264\",\n\"CS3240\",\n\"CS3210\",\n\"CS2102\",\n\"CS2109S\",\n\"CS4248\"\n],\n\"mc_max\": 12,\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS2105\",\n\"b\": \"CS3264\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2102\",\n\"b\": \"CS4248\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3264\",\n\"sem\": 6,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3103\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3210\",\n\"b\": \"CS3230\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2109S\",\n\"sem\": 5,\n\"strength\": \"prefer\"\n}\n],\n\"unsupported\": [\n\"I may S/U one of my modules\",\n\"I'd like modules taught by my favourite lecturer when possible\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "CS2101",
+   "ES2660",
+   "CS2030S",
+   "MA1521",
+   "MA1522",
+   "CS2040S",
+   "CS2103T",
+   "IS1108",
+   "ST2334",
+   "CS2100",
+   "CS1231S",
+   "CS1101S"
+  ],
+  "must_take": [
+   "CS3219",
+   "CS2105",
+   "CS4224",
+   "CS2106",
+   "CS3103",
+   "CS3230",
+   "CS3264",
+   "CS3240",
+   "CS3210",
+   "CS2102",
+   "CS2109S",
+   "CS4248"
+  ],
+  "mc_max": 12,
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2105",
+    "b": "CS3264",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2102",
+    "b": "CS4248",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3264",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3103",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3210",
+    "b": "CS3230",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2109S",
+    "sem": 5,
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "I may S/U one of my modules",
+   "I'd like modules taught by my favourite lecturer when possible"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "earliest_graduation",
+  "last_semester": 8,
+  "plan": {
+   "4": [
+    "CS2105",
+    "CS2106",
+    "CS3210"
+   ],
+   "5": [
+    "CS2102",
+    "CS2109S",
+    "CS3103"
+   ],
+   "6": [
+    "CS2111",
+    "CS3223",
+    "CS3264"
+   ],
+   "7": [
+    "CS3240",
+    "CS4224",
+    "CS4248"
+   ],
+   "8": [
+    "CS3219",
+    "CS3230"
+   ]
+  },
+  "mc_per_semester": {
+   "4": 12,
+   "5": 12,
+   "6": 12,
+   "7": 12,
+   "8": 8
+  },
+  "preferences_met": [
+   "CS3210 before CS3230",
+   "CS2109S in semester 5"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS2111",
+   "CS3223"
+  ],
+  "not_applied": [
+   "I may S/U one of my modules",
+   "I'd like modules taught by my favourite lecturer when possible"
+  ]
+ }
+}

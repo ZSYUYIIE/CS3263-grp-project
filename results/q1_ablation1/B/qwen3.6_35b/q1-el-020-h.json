@@ -1,0 +1,50 @@
+{
+ "id": "q1-el-020-h",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 1.85,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2870,
+  "total_tokens": 2987,
+  "completion_tokens": 117,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 1.85,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\": \"eligible\", \"target\": \"CS3243\", \"current_sem\": 15, \"completed\": [\"CS1231S\", \"CS2030S\", \"MA2116\", \"MA1521\", \"CS4226\", \"ES2660\", \"CS1101S\", \"CS2111\", \"MA1508E\", \"MA1512\", \"CS2105\", \"CS2040S\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS3243",
+  "current_sem": 15,
+  "completed": [
+   "CS1231S",
+   "CS2030S",
+   "MA2116",
+   "MA1521",
+   "CS4226",
+   "ES2660",
+   "CS1101S",
+   "CS2111",
+   "MA1508E",
+   "MA1512",
+   "CS2105",
+   "CS2040S"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "OUT_OF_SCOPE",
+  "reasons": [
+   "current_sem is 15, outside the modelled semesters 1 to 8"
+  ],
+  "message": "I can only plan for BComp (CS) Hons single-major students under AY2026/2027 rules, and this request is outside that (current_sem is 15, outside the modelled semesters 1 to 8). Course rules differ by programme and aren't in my data for your case, so please check with your faculty or academic advisor."
+ }
+}

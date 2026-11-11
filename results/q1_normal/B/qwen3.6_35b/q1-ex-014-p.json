@@ -1,0 +1,55 @@
+{
+ "id": "q1-ex-014-p",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 3.07,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2921,
+  "total_tokens": 3034,
+  "completion_tokens": 113,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 3.07,
+  "attempts": 1
+ },
+ "raw": "{\"query\": \"eligible\", \"target\": \"CS2251\", \"current_sem\": 5, \"completed\": [\"MA1521\", \"MA2311\", \"ST2334\", \"DSA3102\", \"CS3237\", \"IS2101\", \"CS2100\", \"MA1522\", \"CS1231S\", \"IS1108\", \"MA3252\", \"CS1101S\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS2251",
+  "current_sem": 5,
+  "completed": [
+   "MA1521",
+   "MA2311",
+   "ST2334",
+   "DSA3102",
+   "CS3237",
+   "IS2101",
+   "CS2100",
+   "MA1522",
+   "CS1231S",
+   "IS1108",
+   "MA3252",
+   "CS1101S"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS2251",
+  "semester": 5,
+  "reasons": [
+   "precluded: already completed DSA3102"
+  ],
+  "can_still_become_eligible": false,
+  "never_eligible_because": "CS2251 is ruled out by completed DSA3102"
+ }
+}

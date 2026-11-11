@@ -1,0 +1,87 @@
+{
+ "id": "q2-S4-211",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.24,
+ "solver_seconds": 0.806,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3072,
+  "total_tokens": 3416,
+  "completion_tokens": 344,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.44,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 2,\n\"completed\": [\n\"MA1521\",\n\"ES2660\",\n\"CS1101S\",\n\"CS1231S\"\n],\n\"must_take\": [\n\"CS2103T\",\n\"CS2030S\",\n\"CS4248\",\n\"CS4239\",\n\"ST2334\",\n\"CS3230\",\n\"IS1108\"\n],\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4239\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2103T\",\n\"sem\": 4,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"ST2334\",\n\"sem\": 3,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2103T\",\n\"b\": \"ST2334\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2030S\",\n\"sem\": 4,\n\"strength\": \"prefer\"\n}\n],\n\"late\": [\n\"CS4248\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 2,
+  "completed": [
+   "MA1521",
+   "ES2660",
+   "CS1101S",
+   "CS1231S"
+  ],
+  "must_take": [
+   "CS2103T",
+   "CS2030S",
+   "CS4248",
+   "CS4239",
+   "ST2334",
+   "CS3230",
+   "IS1108"
+  ],
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS4239",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2103T",
+    "sem": 4,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "ST2334",
+    "sem": 3,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2103T",
+    "b": "ST2334",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2030S",
+    "sem": 4,
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "CS4248"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS2103T in semester 4; your rule: ST2334 in semester 3; your rule: CS2103T and ST2334 in the same semester"
+  ]
+ }
+}

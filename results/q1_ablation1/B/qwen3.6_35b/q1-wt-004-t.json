@@ -1,0 +1,59 @@
+{
+ "id": "q1-wt-004-t",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 3.08,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2847,
+  "total_tokens": 2991,
+  "completion_tokens": 144,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 3.08,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\": \"eligible\", \"target\": \"CS2104\", \"current_sem\": 8, \"completed\": [\"CS1101S\", \"ESP2111\", \"CS5424\", \"IS2108\", \"CS2105\", \"CS2100\", \"CS3237\", \"ESP1111\", \"ES1000\", \"IS1108\", \"MA1301X\", \"CS2030S\", \"CS2106\", \"CS2101\", \"CS2040C\", \"CS2103T\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS2104",
+  "current_sem": 8,
+  "completed": [
+   "CS1101S",
+   "ESP2111",
+   "CS5424",
+   "IS2108",
+   "CS2105",
+   "CS2100",
+   "CS3237",
+   "ESP1111",
+   "ES1000",
+   "IS1108",
+   "MA1301X",
+   "CS2030S",
+   "CS2106",
+   "CS2101",
+   "CS2040C",
+   "CS2103T"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS2104",
+  "semester": 8,
+  "reasons": [
+   "not offered in semester 2 (offered: [1])"
+  ],
+  "can_still_become_eligible": true
+ }
+}

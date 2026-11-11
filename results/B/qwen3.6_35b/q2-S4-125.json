@@ -1,0 +1,102 @@
+{
+ "id": "q2-S4-125",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 8.38,
+ "solver_seconds": 0.002,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3136,
+  "total_tokens": 3599,
+  "completion_tokens": 463,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 8.38,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 8,\n\"completed\": [\n\"CS4277\",\n\"CS1231S\",\n\"CS1101S\",\n\"CS2103T\",\n\"ES2660\",\n\"CS3219\",\n\"CS2030S\",\n\"CS2109S\",\n\"MA1522\",\n\"MA1521\",\n\"CS2101\",\n\"CS2100\",\n\"ST2334\",\n\"CS3230\",\n\"CS2102\",\n\"CS2040S\",\n\"IS1108\",\n\"CS2106\"\n],\n\"must_take\": [\n\"CS2105\",\n\"CS3268\",\n\"CS4218\",\n\"CS3223\",\n\"CS3227\"\n],\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2105\",\n\"b\": \"CS4218\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3223\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2105\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3227\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4218\",\n\"b\": \"CS3223\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3227\",\n\"b\": \"CS3223\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 8,
+  "completed": [
+   "CS4277",
+   "CS1231S",
+   "CS1101S",
+   "CS2103T",
+   "ES2660",
+   "CS3219",
+   "CS2030S",
+   "CS2109S",
+   "MA1522",
+   "MA1521",
+   "CS2101",
+   "CS2100",
+   "ST2334",
+   "CS3230",
+   "CS2102",
+   "CS2040S",
+   "IS1108",
+   "CS2106"
+  ],
+  "must_take": [
+   "CS2105",
+   "CS3268",
+   "CS4218",
+   "CS3223",
+   "CS3227"
+  ],
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS2105",
+    "b": "CS4218",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3223",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2105",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3227",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4218",
+    "b": "CS3223",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS3227",
+    "b": "CS3223",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3268 cannot be placed in any remaining semester (offered in terms [1]; semesters left [8])"
+  ]
+ }
+}

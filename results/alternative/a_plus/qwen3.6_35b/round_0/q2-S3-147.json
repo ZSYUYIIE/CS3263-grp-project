@@ -1,0 +1,49 @@
+{
+ "id": "q2-S3-147",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 5.39,
+ "usage": {
+  "prompt_tokens": 12267,
+  "total_tokens": 12522,
+  "completion_tokens": 255,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.39,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2105\",\n      \"ST2334\"\n    ],\n    \"6\": [\n      \"CS2102\",\n      \"CS3219\"\n    ],\n    \"7\": [\n      \"CS3249\",\n      \"CS3247\",\n      \"CS4248\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2105 and ST2334 are taken in Y3S1 (Sem 5) as early as possible.\",\n    \"CS2102 and CS3219 are taken in Y3S2 (Sem 6), satisfying the requirement to take CS3219 in Y3S2.\",\n    \"CS3249, CS3247, and CS4248 are taken in Y4S1 (Sem 7), satisfying the constraint that CS3249 is in Sem 7 and CS3219 precedes CS4248.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2105",
+    "ST2334"
+   ],
+   "6": [
+    "CS2102",
+    "CS3219"
+   ],
+   "7": [
+    "CS3249",
+    "CS3247",
+    "CS4248"
+   ]
+  },
+  "reasons": [
+   "CS2105 and ST2334 are taken in Y3S1 (Sem 5) as early as possible.",
+   "CS2102 and CS3219 are taken in Y3S2 (Sem 6), satisfying the requirement to take CS3219 in Y3S2.",
+   "CS3249, CS3247, and CS4248 are taken in Y4S1 (Sem 7), satisfying the constraint that CS3249 is in Sem 7 and CS3219 precedes CS4248."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,62 @@
+{
+ "id": "q1-el-034-x",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 3.02,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2550,
+  "total_tokens": 2775,
+  "completion_tokens": 225,
+  "prompt_tokens_details": {
+   "cached_tokens": 2432,
+   "created_cache_tokens": 0,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 141
+  },
+  "finish_reason": "stop",
+  "request_seconds": 3.02,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\":\"eligible\",\"target\":\"ST4248\",\"current_sem\":8,\"completed\":[\"CS2040S\",\"CS1231S\",\"CS2102\",\"CS2104\",\"ST3131\",\"ES2660\",\"CS2030S\",\"CS1010E\",\"ST2334\",\"CS2101\",\"ST3248\",\"EC2303\",\"CS2109S\",\"MA1521\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "ST4248",
+  "current_sem": 8,
+  "completed": [
+   "CS2040S",
+   "CS1231S",
+   "CS2102",
+   "CS2104",
+   "ST3131",
+   "ES2660",
+   "CS2030S",
+   "CS1010E",
+   "ST2334",
+   "CS2101",
+   "ST3248",
+   "EC2303",
+   "CS2109S",
+   "MA1521"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "ST4248",
+  "semester": 8,
+  "reasons": [
+   "mutually exclusive with completed EC2303 (listed on their page)"
+  ],
+  "can_still_become_eligible": false,
+  "never_eligible_because": "ST4248 is ruled out by completed EC2303"
+ }
+}

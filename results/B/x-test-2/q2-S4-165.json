@@ -1,0 +1,115 @@
+{
+ "id": "q2-S4-165",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 10.62,
+ "solver_seconds": 0.079,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2865,
+  "total_tokens": 4115,
+  "completion_tokens": 1250,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 951
+  },
+  "finish_reason": "stop",
+  "request_seconds": 10.54,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"programme\":\"BComp CS Hons\",\"completed\":[\"MA1522\",\"CS3230\",\"CS1101S\",\"ES2660\",\"MA1521\",\"CS2109S\",\"CS2100\",\"CS1231S\",\"CS2040S\",\"CS2103T\",\"CS4277\",\"CS2106\",\"CS2101\",\"CS2030S\"],\"current_sem\":5,\"must_take\":[\"CS3242\",\"CS4240\",\"CS4231\",\"CS4223\",\"CS4224\",\"CS2102\",\"CS4430\"],\"mc_max\":16,\"sem_caps\":{\"5\":0},\"objective\":\"min_total_mc\",\"rules\":[{\"type\":\"before\",\"a\":\"CS2102\",\"b\":\"CS4240\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS4430\",\"sem\":8,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3242\",\"sem\":8,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS2102\",\"sem\":7,\"strength\":\"prefer\"},{\"type\":\"same_sem\",\"a\":\"CS4240\",\"b\":\"CS4231\",\"strength\":\"prefer\"},{\"type\":\"before\",\"a\":\"CS4231\",\"b\":\"CS2102\",\"strength\":\"prefer\"}],\"unsupported\":[\"at most two modules with final exams in a semester\"]}",
+ "spec": {
+  "query": "plan",
+  "programme": "BComp CS Hons",
+  "completed": [
+   "MA1522",
+   "CS3230",
+   "CS1101S",
+   "ES2660",
+   "MA1521",
+   "CS2109S",
+   "CS2100",
+   "CS1231S",
+   "CS2040S",
+   "CS2103T",
+   "CS4277",
+   "CS2106",
+   "CS2101",
+   "CS2030S"
+  ],
+  "current_sem": 5,
+  "must_take": [
+   "CS3242",
+   "CS4240",
+   "CS4231",
+   "CS4223",
+   "CS4224",
+   "CS2102",
+   "CS4430"
+  ],
+  "mc_max": 16,
+  "sem_caps": {
+   "5": 0
+  },
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2102",
+    "b": "CS4240",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4430",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3242",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 7,
+    "strength": "prefer"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4240",
+    "b": "CS4231",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS4231",
+    "b": "CS2102",
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "at most two modules with final exams in a semester"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the prerequisites of CS3223; the prerequisites of CS4224; the MC limits (at most 16 MC per semester; semesters 5 blocked); the semesters in which the courses are offered"
+  ],
+  "not_applied": [
+   "at most two modules with final exams in a semester"
+  ]
+ }
+}

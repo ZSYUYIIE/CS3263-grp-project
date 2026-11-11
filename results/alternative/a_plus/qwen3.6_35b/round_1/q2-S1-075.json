@@ -1,0 +1,53 @@
+{
+ "id": "q2-S1-075",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 3,
+ "end": "cap",
+ "seconds": 117.02,
+ "usage": {
+  "prompt_tokens": 26010,
+  "total_tokens": 32829,
+  "completion_tokens": 6819,
+  "finish_reason": "stop",
+  "request_seconds": 117.02,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS3233 is only offered in Sem 2 (even semesters). The student is in Sem 3 (Y2S1). Sem 6 is NOC. The available Sem 2 semesters are 4 and 8. If CS3233 is in Sem 4, it conflicts with the prerequisite chain for CS4239 which requires CS3235, which requires CS2105/CS2106/CS2107. CS2100 is required for CS2106. CS2100/CS2103T/CS2107 in Sem 3 (12MC). CS2105/CS2106 in Sem 4 (8MC). CS3235 in Sem 5. CS4239 in Sem 7. CS3281/CS3282/CS2109S in Sem 8. CS3233 in Sem 4 is possible. However, CS3282 requires CS3281. If CS3281 is in Sem 8, CS3282 can be in Sem 8. But CS2109S must be with CS3282. So Sem 8: CS3281, CS3282, CS2109S. This works. Wait, previous error was saying CS3233 in Sem 5. Sem 5 is Sem 1. CS3233 is Sem 2 only. So CS3233 cannot be in Sem 5. It must be Sem 4 or 8. If Sem 8, it conflicts with CS3281/CS3282/CS2109S (12MC limit, 3 courses = 12MC, adding CS3233 makes 16MC). So CS3233 must be Sem 4. Sem 4: CS2105, CS2106, CS3233. 12MC. This works. Let's re-verify. Sem 3: CS2100, CS2103T, CS2107 (12MC). Sem 4: CS2105, CS2106, CS3233 (12MC). Sem 5: CS3235 (4MC). Sem 6: NOC. Sem 7: CS4239 (4MC). Sem 8: CS3281, CS3282, CS2109S (12MC). Prereqs: CS2100 (Sem 3) -> CS2106 (Sem 4). OK. CS2105 (Sem 4) + CS2106 (Sem 4) + CS2107 (Sem 3) -> CS3235 (Sem 5). OK. CS3235 (Sem 5) + CS2103T (Sem 3) -> CS4239 (Sem 7). OK. CS2103T (Sem 3) -> CS3281 (Sem 8). OK. CS3281 (Sem 8) -> CS3282 (Sem 8). OK. CS2109S prereqs: CS2040S, MA1521. Met. CS3233 prereqs: CS2030S, CS2040S. Met. All hard constraints satisfied. Soft wishes: CS3281 in Sem 8 (Yes). CS2103T before CS3282 (Yes). CS2103T and CS3233 same semester? No (Sem 3 vs Sem 4). CS3281 as early as possible? Sem 8 is late, but constrained by CS4239 in Sem 7 and CS3282/CS2109S together. If CS3281 was Sem 6 (NOC), impossible. Sem 5? CS3235 is Sem 5. CS3281 needs CS2103T. CS2103T Sem 3. CS3281 Sem 5? Then CS3282/CS2109S Sem 5? 12MC. CS3235 also Sem 5? 16MC. No. So CS3281 cannot be Sem 5. Sem 7? CS4239 is Sem 7. CS3281/CS3282/CS2109S Sem 7? 12MC. CS4239 needs to be after CS3235 (Sem 5). So CS4239 Sem 7. If CS3281 group is Sem 7, CS4239 has no slot. So CS3281 group must be Sem 8. So CS3281 in Sem 8 is optimal given constraints. The previous plan failed because it put CS3233 in Sem 5. This revised plan puts CS3233 in Sem 4. This is valid.\n\n{\"status\": \"PLAN\", \"plan\": {\"3\": [\"CS2100\", \"CS2103T\", \"CS2107\"], \"4\": [\"CS2105\", \"CS2106\", \"CS3233\"], \"5\": [\"CS3235\"], \"6\": [], \"7\": [\"CS4239\"], \"8\": [\"CS3281\", \"CS3282\", \"CS2109S\"]}, \"reasons\": [\"Plan satisfies all hard constraints. CS3233 is placed in Sem 4 (offered Sem 2) to avoid MC conflicts in Sem 5 with CS3235. CS2109S and CS3282 are together in Sem 8. CS3281 is in Sem 8 as requested. CS2103T is before CS3281. CS4239 is in Sem 7. NOC in Sem 6. MC limits respected. Soft wish for CS2103T and CS3233 together cannot be met due to semester offering constraints and MC limits.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS2103T",
+    "CS2107"
+   ],
+   "4": [
+    "CS2105",
+    "CS2106",
+    "CS3233"
+   ],
+   "5": [
+    "CS3235"
+   ],
+   "6": [],
+   "7": [
+    "CS4239"
+   ],
+   "8": [
+    "CS3281",
+    "CS3282",
+    "CS2109S"
+   ]
+  },
+  "reasons": [
+   "Plan satisfies all hard constraints. CS3233 is placed in Sem 4 (offered Sem 2) to avoid MC conflicts in Sem 5 with CS3235. CS2109S and CS3282 are together in Sem 8. CS3281 is in Sem 8 as requested. CS2103T is before CS3281. CS4239 is in Sem 7. NOC in Sem 6. MC limits respected. Soft wish for CS2103T and CS3233 together cannot be met due to semester offering constraints and MC limits."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

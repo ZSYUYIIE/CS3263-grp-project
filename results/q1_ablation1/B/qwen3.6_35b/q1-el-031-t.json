@@ -1,0 +1,48 @@
+{
+ "id": "q1-el-031-t",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 1.34,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2804,
+  "total_tokens": 2890,
+  "completion_tokens": 86,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 1.34,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\": \"eligible\", \"target\": \"CS4263\", \"current_sem\": 6, \"completed\": [\"CS2108\", \"CS1101S\", \"CS2040S\", \"IS2101\", \"MA1522\", \"CS3234\", \"CS1231S\", \"CS2030\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS4263",
+  "current_sem": 6,
+  "completed": [
+   "CS2108",
+   "CS1101S",
+   "CS2040S",
+   "IS2101",
+   "MA1522",
+   "CS3234",
+   "CS1231S",
+   "CS2030"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS4263",
+  "semester": 6,
+  "reasons": [
+   "not offered in semester 2 (offered: [1])"
+  ],
+  "can_still_become_eligible": true
+ }
+}

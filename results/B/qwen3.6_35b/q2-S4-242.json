@@ -1,0 +1,97 @@
+{
+ "id": "q2-S4-242",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 9.15,
+ "solver_seconds": 0.11,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3119,
+  "total_tokens": 3610,
+  "completion_tokens": 491,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 9.04,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"current_sem\": 5,\n  \"completed\": [\n    \"CS3281\",\n    \"CS2040S\",\n    \"MA1522\",\n    \"CS3230\",\n    \"IS1108\",\n    \"CS1231S\",\n    \"CS2030S\",\n    \"CS2101\",\n    \"CS2103T\",\n    \"ES2660\",\n    \"CS1101S\",\n    \"CS2100\",\n    \"CS2109S\",\n    \"CS2106\",\n    \"MA1521\"\n  ],\n  \"must_take\": [\n    \"CS4243\",\n    \"CS3282\",\n    \"ST2334\",\n    \"CS2105\"\n  ],\n  \"rules\": [\n    {\n      \"type\": \"same_sem\",\n      \"a\": \"CS4243\",\n      \"b\": \"CS3282\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"ST2334\",\n      \"b\": \"CS4243\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"ST2334\",\n      \"sem\": 7,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS4243\",\n      \"sem\": 7,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS2105\",\n      \"sem\": 7,\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS3282\",\n      \"sem\": 6,\n      \"strength\": \"prefer\"\n    }\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "completed": [
+   "CS3281",
+   "CS2040S",
+   "MA1522",
+   "CS3230",
+   "IS1108",
+   "CS1231S",
+   "CS2030S",
+   "CS2101",
+   "CS2103T",
+   "ES2660",
+   "CS1101S",
+   "CS2100",
+   "CS2109S",
+   "CS2106",
+   "MA1521"
+  ],
+  "must_take": [
+   "CS4243",
+   "CS3282",
+   "ST2334",
+   "CS2105"
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS4243",
+    "b": "CS3282",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "ST2334",
+    "b": "CS4243",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "ST2334",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4243",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2105",
+    "sem": 7,
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3282",
+    "sem": 6,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: ST2334 before CS4243; your rule: ST2334 in semester 7; your rule: CS4243 in semester 7"
+  ]
+ }
+}

@@ -1,0 +1,100 @@
+{
+ "id": "q2-S4-023",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 5.69,
+ "usage": {
+  "prompt_tokens": 22430,
+  "total_tokens": 22718,
+  "completion_tokens": 288,
+  "finish_reason": "stop",
+  "request_seconds": 5.69,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS3281 is only offered in Sem 2, but the student is in Sem 7 (Sem 1) and cannot take it in Sem 7.\",\n\"CS4261 is only offered in Sem 1, but the student is in Sem 7 (Sem 1) and has no Sem 1 left after the current one to take it, as Sem 8 is Sem 2.\"\n]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3281 is only offered in Sem 2, but the student is in Sem 7 (Sem 1) and cannot take it in Sem 7.",
+   "CS4261 is only offered in Sem 1, but the student is in Sem 7 (Sem 1) and has no Sem 1 left after the current one to take it, as Sem 8 is Sem 2."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"7\": [\n\"CS4234\",\n\"CS3281\"\n],\n\"8\": [\n\"CS4277\",\n\"CS4261\"\n]\n},\n\"reasons\": [\n\"CS4234 is taken in Sem 7 as required.\",\n\"CS3281 is taken in Sem 7 to satisfy the wish for it to be with CS4234 and before CS4261.\",\n\"CS4277 and CS4261 are taken in Sem 8, satisfying the preference to take them before CS4261 (CS4277 is before CS4261 in sequence, CS4261 is last).\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "7": [
+      "CS4234",
+      "CS3281"
+     ],
+     "8": [
+      "CS4277",
+      "CS4261"
+     ]
+    },
+    "reasons": [
+     "CS4234 is taken in Sem 7 as required.",
+     "CS3281 is taken in Sem 7 to satisfy the wish for it to be with CS4234 and before CS4261.",
+     "CS4277 and CS4261 are taken in Sem 8, satisfying the preference to take them before CS4261 (CS4277 is before CS4261 in sequence, CS4261 is last)."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11083,
+    "total_tokens": 11262,
+    "completion_tokens": 179,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.95,
+    "attempts": 1
+   },
+   "seconds": 2.95,
+   "violations": [
+    "R3 CS3281 not offered in Sem 1 (semester 7)",
+    "R3 CS4261 not offered in Sem 2 (semester 8)"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS3281 is only offered in Sem 2, but the student is in Sem 7 (Sem 1) and cannot take it in Sem 7.\",\n\"CS4261 is only offered in Sem 1, but the student is in Sem 7 (Sem 1) and has no Sem 1 left after the current one to take it, as Sem 8 is Sem 2.\"\n]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3281 is only offered in Sem 2, but the student is in Sem 7 (Sem 1) and cannot take it in Sem 7.",
+     "CS4261 is only offered in Sem 1, but the student is in Sem 7 (Sem 1) and has no Sem 1 left after the current one to take it, as Sem 8 is Sem 2."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11347,
+    "total_tokens": 11456,
+    "completion_tokens": 109,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 2.74,
+    "attempts": 1
+   },
+   "seconds": 2.74,
+   "violations": null
+  }
+ ]
+}

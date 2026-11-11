@@ -1,0 +1,111 @@
+{
+ "id": "q2-S1-056",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.47,
+ "solver_seconds": 0.01,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3088,
+  "total_tokens": 3444,
+  "completion_tokens": 356,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 6.46,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"programme\": \"BComp CS Hons\",\n\"current_sem\": 4,\n\"completed\": [\n\"CS2101\",\n\"CS2030S\",\n\"MA1522\",\n\"MA1521\",\n\"CS1231S\",\n\"CS1101S\",\n\"CS2040S\",\n\"CS2103T\",\n\"IS1108\",\n\"CS2100\",\n\"ST2334\"\n],\n\"must_take\": [\n\"CS4236\",\n\"CS3219\",\n\"CS4211\"\n],\n\"sem_caps\": {\n\"7\": 0\n},\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS3219\",\n\"b\": \"CS4236\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4211\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4236\",\n\"b\": \"CS4211\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3219\",\n\"sem\": 4,\n\"strength\": \"prefer\"\n}\n],\n\"early\": [\n\"CS4236\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "programme": "BComp CS Hons",
+  "current_sem": 4,
+  "completed": [
+   "CS2101",
+   "CS2030S",
+   "MA1522",
+   "MA1521",
+   "CS1231S",
+   "CS1101S",
+   "CS2040S",
+   "CS2103T",
+   "IS1108",
+   "CS2100",
+   "ST2334"
+  ],
+  "must_take": [
+   "CS4236",
+   "CS3219",
+   "CS4211"
+  ],
+  "sem_caps": {
+   "7": 0
+  },
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3219",
+    "b": "CS4236",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4211",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4236",
+    "b": "CS4211",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3219",
+    "sem": 4,
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS4236"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "earliest_graduation",
+  "last_semester": 5,
+  "plan": {
+   "4": [
+    "CS2107",
+    "CS3219"
+   ],
+   "5": [
+    "CS4211",
+    "CS4236"
+   ]
+  },
+  "mc_per_semester": {
+   "4": 8,
+   "5": 8
+  },
+  "preferences_met": [
+   "CS3219 in semester 4",
+   "CS4236 as early as possible"
+  ],
+  "preferences_not_met": [
+   "CS4236 before CS4211"
+  ],
+  "added_prerequisites": [
+   "CS2107"
+  ]
+ }
+}

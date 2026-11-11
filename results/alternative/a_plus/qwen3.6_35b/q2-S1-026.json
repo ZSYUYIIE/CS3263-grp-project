@@ -1,0 +1,103 @@
+{
+ "id": "q2-S1-026",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 7.79,
+ "usage": {
+  "prompt_tokens": 15015,
+  "total_tokens": 15366,
+  "completion_tokens": 351,
+  "finish_reason": "stop",
+  "request_seconds": 7.79,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS2102 requires CS2030/CS2040 which are not in the required list and are prerequisites for CS2102.\",\n    \"CS4212 requires CS2104 which is not in the required list and is a prerequisite for CS4212.\",\n    \"CS2101 is required in Sem 7, but CS4212 (offered Sem 2) cannot be taken in Sem 7 or later if Sem 8 is exchange, and prerequisites for CS4212 are missing.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS2102 requires CS2030/CS2040 which are not in the required list and are prerequisites for CS2102.",
+   "CS4212 requires CS2104 which is not in the required list and is a prerequisite for CS4212.",
+   "CS2101 is required in Sem 7, but CS4212 (offered Sem 2) cannot be taken in Sem 7 or later if Sem 8 is exchange, and prerequisites for CS4212 are missing."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"2\": [\n      \"MA1522\"\n    ],\n    \"3\": [\n      \"CS2100\",\n      \"CS2102\",\n      \"ST2334\"\n    ],\n    \"5\": [\n      \"CS2101\",\n      \"CS4212\"\n    ]\n  },\n  \"reasons\": [\n    \"MA1522 is taken in Sem 2 to satisfy prerequisites for CS2102 and ST2334.\",\n    \"CS2102 and ST2334 are taken in Sem 3 after MA1522 is completed.\",\n    \"CS2101 and CS4212 are taken in Sem 5 (Y3S1) as Sem 6 is exchange.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "2": [
+      "MA1522"
+     ],
+     "3": [
+      "CS2100",
+      "CS2102",
+      "ST2334"
+     ],
+     "5": [
+      "CS2101",
+      "CS4212"
+     ]
+    },
+    "reasons": [
+     "MA1522 is taken in Sem 2 to satisfy prerequisites for CS2102 and ST2334.",
+     "CS2102 and ST2334 are taken in Sem 3 after MA1522 is completed.",
+     "CS2101 and CS4212 are taken in Sem 5 (Y3S1) as Sem 6 is exchange."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 7282,
+    "total_tokens": 7486,
+    "completion_tokens": 204,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.04,
+    "attempts": 1
+   },
+   "seconds": 5.04,
+   "violations": [
+    "R4 CS2102 in semester 3: prerequisite not met ((CS1231 or MA1100 or MA1100T or CS1231S) and (CS2030S or CS2030 or CS2030DE or CS2030HS or YSC2229 or CS2040 or CS2040C or CS2040S or CS2040DE or CS2040HS))",
+    "R3 CS4212 not offered in Sem 1 (semester 5)",
+    "R4 CS4212 in semester 5: prerequisite not met (CS2104 or CS3212)",
+    "R9 must rule not met: before CS2102 ST2334",
+    "R9 must rule not met: CS2101 in semester 7"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS2102 requires CS2030/CS2040 which are not in the required list and are prerequisites for CS2102.\",\n    \"CS4212 requires CS2104 which is not in the required list and is a prerequisite for CS4212.\",\n    \"CS2101 is required in Sem 7, but CS4212 (offered Sem 2) cannot be taken in Sem 7 or later if Sem 8 is exchange, and prerequisites for CS4212 are missing.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS2102 requires CS2030/CS2040 which are not in the required list and are prerequisites for CS2102.",
+     "CS4212 requires CS2104 which is not in the required list and is a prerequisite for CS4212.",
+     "CS2101 is required in Sem 7, but CS4212 (offered Sem 2) cannot be taken in Sem 7 or later if Sem 8 is exchange, and prerequisites for CS4212 are missing."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 7733,
+    "total_tokens": 7880,
+    "completion_tokens": 147,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.75,
+    "attempts": 1
+   },
+   "seconds": 2.75,
+   "violations": null
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "id": "q2-S2-003",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 22.23,
+ "usage": {
+  "prompt_tokens": 9048,
+  "total_tokens": 10906,
+  "completion_tokens": 1858,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 7424
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1707
+  },
+  "finish_reason": "stop",
+  "request_seconds": 22.22,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS3281\",\"CS3210\",\"CS3227\"],\"7\":[\"CS2102\",\"CS4218\",\"CS3103\"],\"8\":[\"CS3282\"]},\"reasons\":[\"CS3281 is added as the required prerequisite for CS3282; CS3282 is placed in semester 8, the only later even term.\",\"CS2102 and CS4218 are together in semester 7 as required; CS3103 is in semester 7 after CS3227 in semester 6.\",\"CS3210 is as late as possible: semester 7 cannot pair it with CS2102, and semester 8 is limited to one module.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS3281",
+    "CS3210",
+    "CS3227"
+   ],
+   "7": [
+    "CS2102",
+    "CS4218",
+    "CS3103"
+   ],
+   "8": [
+    "CS3282"
+   ]
+  },
+  "reasons": [
+   "CS3281 is added as the required prerequisite for CS3282; CS3282 is placed in semester 8, the only later even term.",
+   "CS2102 and CS4218 are together in semester 7 as required; CS3103 is in semester 7 after CS3227 in semester 6.",
+   "CS3210 is as late as possible: semester 7 cannot pair it with CS2102, and semester 8 is limited to one module."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,117 @@
+{
+ "id": "q2-S5-020",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 9.85,
+ "solver_seconds": 0.017,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3188,
+  "total_tokens": 3605,
+  "completion_tokens": 417,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 9.83,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 7,\n\"completed\": [\n\"CS2105\",\n\"CS2103T\",\n\"CS1231S\",\n\"MA1521\",\n\"IS1108\",\n\"MA1522\",\n\"ST2334\",\n\"CS2030S\",\n\"CS3236\",\n\"CS3219\",\n\"ES2660\",\n\"CS3230\",\n\"CS2106\",\n\"CS2100\",\n\"CS2040S\",\n\"CS1101S\",\n\"CS2109S\",\n\"CS3210\",\n\"CS2101\"\n],\n\"mc_max\": 12,\n\"programme\": \"BComp CS Hons\",\n\"must_take\": [\n\"CS4243\",\n\"CS3213\",\n\"CS4430\",\n\"CS2102\"\n],\n\"rules\": [\n{\n\"type\": \"apart\",\n\"a\": \"CS2102\",\n\"b\": \"CS3213\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4243\",\n\"b\": \"CS3213\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2102\",\n\"sem\": 7,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2102\",\n\"b\": \"CS4430\",\n\"strength\": \"must\"\n}\n],\n\"late\": [\n\"CS2102\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "completed": [
+   "CS2105",
+   "CS2103T",
+   "CS1231S",
+   "MA1521",
+   "IS1108",
+   "MA1522",
+   "ST2334",
+   "CS2030S",
+   "CS3236",
+   "CS3219",
+   "ES2660",
+   "CS3230",
+   "CS2106",
+   "CS2100",
+   "CS2040S",
+   "CS1101S",
+   "CS2109S",
+   "CS3210",
+   "CS2101"
+  ],
+  "mc_max": 12,
+  "programme": "BComp CS Hons",
+  "must_take": [
+   "CS4243",
+   "CS3213",
+   "CS4430",
+   "CS2102"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS2102",
+    "b": "CS3213",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4243",
+    "b": "CS3213",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 7,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS2102",
+    "b": "CS4430",
+    "strength": "must"
+   }
+  ],
+  "late": [
+   "CS2102"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 8,
+  "plan": {
+   "7": [
+    "CS2102",
+    "CS3231",
+    "CS4243"
+   ],
+   "8": [
+    "CS3213",
+    "CS4430"
+   ]
+  },
+  "mc_per_semester": {
+   "7": 12,
+   "8": 8
+  },
+  "preferences_met": [
+   "CS4243 before CS3213",
+   "CS2102 in semester 7",
+   "CS2102 as late as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS3231"
+  ]
+ }
+}

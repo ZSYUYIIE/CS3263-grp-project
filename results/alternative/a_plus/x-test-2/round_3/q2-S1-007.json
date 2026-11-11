@@ -1,0 +1,64 @@
+{
+ "id": "q2-S1-007",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 91.49,
+ "usage": {
+  "prompt_tokens": 7145,
+  "total_tokens": 15234,
+  "completion_tokens": 8089,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 4480
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 7906
+  },
+  "finish_reason": "stop",
+  "request_seconds": 91.49,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"1\":[\"CS1010\",\"MA1521\"],\"2\":[\"CS2040\",\"ST2334\"],\"3\":[\"CS2113\",\"CS2105\"],\"4\":[\"CS3213\"],\"5\":[\"CS4226\"],\"6\":[\"CS4222\"],\"8\":[\"CS3227\"]},\"reasons\":[\"Fixed placements met: CS4226 in sem5, CS4222 in sem6, CS3227 in sem8, and CS3213 in sem4 before CS4226.\",\"CS3213 is as late as possible at sem4 because it must precede CS4226 in sem5; CS3227 before CS3213 is impossible since CS3227 is fixed in sem8.\",\"All prerequisites are in strictly earlier semesters and every semester is within the 16 MC limit.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1010",
+    "MA1521"
+   ],
+   "2": [
+    "CS2040",
+    "ST2334"
+   ],
+   "3": [
+    "CS2113",
+    "CS2105"
+   ],
+   "4": [
+    "CS3213"
+   ],
+   "5": [
+    "CS4226"
+   ],
+   "6": [
+    "CS4222"
+   ],
+   "8": [
+    "CS3227"
+   ]
+  },
+  "reasons": [
+   "Fixed placements met: CS4226 in sem5, CS4222 in sem6, CS3227 in sem8, and CS3213 in sem4 before CS4226.",
+   "CS3213 is as late as possible at sem4 because it must precede CS4226 in sem5; CS3227 before CS3213 is impossible since CS3227 is fixed in sem8.",
+   "All prerequisites are in strictly earlier semesters and every semester is within the 16 MC limit."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

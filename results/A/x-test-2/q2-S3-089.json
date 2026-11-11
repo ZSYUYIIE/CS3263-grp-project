@@ -1,0 +1,49 @@
+{
+ "id": "q2-S3-089",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 23.13,
+ "usage": {
+  "prompt_tokens": 8016,
+  "total_tokens": 10646,
+  "completion_tokens": 2630,
+  "prompt_tokens_details": {
+   "cached_tokens": 7808,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2485
+  },
+  "finish_reason": "stop",
+  "request_seconds": 23.13,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS3219\",\"CS3210\"],\"6\":[\"CS2102\",\"CS2105\"],\"7\":[\"CS4223\"]},\"reasons\":[\"CS4223 is offered only in Sem 1, so it is placed in semester 7; CS3210 is added as its required prerequisite in semester 5.\",\"CS3219 is in semester 5 and CS2102 in semester 6, satisfying CS3219 before CS2102 and making CS2102 as early as possible.\",\"CS2105 is in semester 6, the latest semester before CS4223, and all prerequisites are completed or planned earlier.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS3219",
+    "CS3210"
+   ],
+   "6": [
+    "CS2102",
+    "CS2105"
+   ],
+   "7": [
+    "CS4223"
+   ]
+  },
+  "reasons": [
+   "CS4223 is offered only in Sem 1, so it is placed in semester 7; CS3210 is added as its required prerequisite in semester 5.",
+   "CS3219 is in semester 5 and CS2102 in semester 6, satisfying CS3219 before CS2102 and making CS2102 as early as possible.",
+   "CS2105 is in semester 6, the latest semester before CS4223, and all prerequisites are completed or planned earlier."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

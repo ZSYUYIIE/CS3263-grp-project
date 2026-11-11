@@ -1,0 +1,28 @@
+{
+ "id": "q1-el-051-h",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 21.0,
+ "usage": {
+  "prompt_tokens": 10942,
+  "total_tokens": 12447,
+  "completion_tokens": 1505,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 21.0,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NOT_ELIGIBLE\", \"reasons\": [\"Prerequisite CS3263 or CS3243 is not satisfied: CS3243 is not completed (student stated 'I have not completed CS5478' but listed CS3243 in completed courses, however CS4278 requires CS3263 or CS3243. Let's re-read carefully. Student says: 'I have completed ... CS3243 ...'. Then says 'Sorry, I have not completed CS5478'. So CS3243 IS completed. Wait. Let's check the other prerequisites.\", \"Prerequisite (MA2001 or MA1522 or MA1101R or MA1311 or MA1508E) is not satisfied: Student has completed MA1522. This is satisfied.\", \"Prerequisite (EE2012 or EE2012A or ST2131 or ST2334 or MA2116 or MA2116T or MA2216) is not satisfied: Student has completed ST2334. This is satisfied.\", \"Prerequisite (MA2002 or MA1102R or MA1505 or MA1507 or MA1521 or (MA1512 and MA1511)) is not satisfied: Student has completed MA1521. This is satisfied.\", \"Wait, let's re-evaluate CS3243. Student listed CS3243 as completed. CS4278 requires CS3263 OR CS3243. So that part is met. Let's look closer at the 'cannot take if completed' clause. CS4278 cannot be taken if CS5478 is completed. Student explicitly stated 'I have not completed CS5478'. So that is fine.\", \"Let's re-read the prerequisites for CS4278: (CS3263 or CS3243) AND (MA2001 or MA1522 or MA1101R or MA1311 or MA1508E) AND (EE2012 or EE2012A or ST2131 or ST2334 or MA2116 or MA2116T or MA2216) AND (MA2002 or MA1102R or MA1505 or MA1507 or MA1521 or (MA1512 and MA1511)).\", \"Student completed: CS3243 (satisfies first part). MA1522 (satisfies second part). ST2334 (satisfies third part). MA1521 (satisfies fourth part).\", \"Is CS4278 offered in Sem 1? Yes. Is it open to BComp CS Hons? Yes. Is it blocked by completed courses? No (CS5478 not completed).\", \"So why would it be not eligible? Let's check CS3243 prerequisites. CS3243 requires (CS2040 or CS2040C or CS2040S or CS2040DE or CS2040HS or YSC2229) AND (CS1231S or CS1231 or MA1100T or MA1100). Student has CS2040S and CS1231S. So CS3243 is validly completed.\", \"Let's check if there is a mutual exclusivity issue. CS4278 is mutually exclusive with CS5478. Student has not completed CS5478. So no issue.\", \"Is there any other blocker? 'Cannot take if completed: CS5478'. Student said 'I have not completed CS5478'.\", \"Let's re-read the student's list of completed courses: 'CS2107, CS1101S, IS2101, CS3244, ST3131, ES2660, CS2040S, ST2334, MA1521, CS3243, MA1522, CS5478, ESP1111, CS1231S, MA1512, CS2030DE and IS1108.' THEN 'Sorry, I have not completed CS5478.'\", \"So the final state is: CS5478 is NOT completed. CS3243 IS completed.\", \"All prerequisites seem met. Is CS4278 offered in Sem 1? Yes.\", \"Is there a hidden prerequisite? No.\", \"Let's check CS3244. Student completed CS3244. CS3244 is mutually exclusive with CS3264, BT4240, CG3201, CS2109HS, CS2109S, DMX1401AI, EE3703, EE4802, IE4213, IT3011. CS4278 is not in this list.\", \"Let's check CS2040S. Prerequisite: CS1010... and CS1231S or CS1231 or MA1100 or MA1100T. Student has CS1231S. Did student complete CS1010? No. But CS2040S is already completed. We don't need to check its validity for future courses, only if it blocks anything. It doesn't block CS4278.\", \"Wait, look at CS4278 prerequisites again. (CS3263 or CS3243). Student has CS3243. (MA2001 or MA1522...). Student has MA1522. (EE2012...). Student has ST2334. (MA2002...). Student has MA1521.\", \"It seems ELIGIBLE.\", \"Let me double check 'Cannot take if completed'. CS4278 cannot be taken if CS5478 is completed. Student said 'I have not completed CS5478'.\", \"Is CS4278 open to BComp CS Hons? Yes.\", \"Is it offered in Sem 1? Yes.\", \"So the answer should be ELIGIBLE.\", \"Let me check if I missed a 'mutually exclusive' constraint. CS4278 is mutually exclusive with CS5478. Student has not completed CS5478. So no conflict.\", \"Is there any other course that blocks CS4278? No.\", \"Therefore, the student is eligible.\"}",
+ "answer": {
+  "status": "NOT_ELIGIBLE"
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 4,
+ "ablation": 1
+}

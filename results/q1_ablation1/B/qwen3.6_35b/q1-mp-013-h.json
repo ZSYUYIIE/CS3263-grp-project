@@ -1,0 +1,50 @@
+{
+ "id": "q1-mp-013-h",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 2.25,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2802,
+  "total_tokens": 2881,
+  "completion_tokens": 79,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 2.25,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\": \"eligible\", \"target\": \"CS2040DE\", \"current_sem\": 4, \"completed\": [\"MA1100T\", \"ST1131\", \"MA1521\", \"ES1000\", \"MA1508E\", \"ST2131\", \"CS2101\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS2040DE",
+  "current_sem": 4,
+  "completed": [
+   "MA1100T",
+   "ST1131",
+   "MA1521",
+   "ES1000",
+   "MA1508E",
+   "ST2131",
+   "CS2101"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS2040DE",
+  "semester": 4,
+  "reasons": [
+   "missing prerequisite: CS1010 or CS1010E or CS1010X or CS1101S or CS1010S or CS1010J or CS1010A"
+  ],
+  "can_still_become_eligible": true
+ }
+}

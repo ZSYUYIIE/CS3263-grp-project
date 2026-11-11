@@ -1,0 +1,127 @@
+{
+ "id": "q2-S1-003",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 4.69,
+ "solver_seconds": 0.317,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2749,
+  "total_tokens": 3242,
+  "completion_tokens": 493,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 324
+  },
+  "finish_reason": "stop",
+  "request_seconds": 4.37,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":1,\"completed\":[],\"must_take\":[\"CS2100\",\"CS4215\",\"CS4262\"],\"objective\":\"min_total_mc\",\"early\":[\"CS2100\"],\"rules\":[{\"type\":\"before\",\"a\":\"CS4215\",\"b\":\"CS2100\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS4262\",\"sem\":6,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS2100\",\"sem\":6,\"strength\":\"prefer\"},{\"type\":\"before\",\"a\":\"CS4215\",\"b\":\"CS4262\",\"strength\":\"prefer\"},{\"type\":\"same_sem\",\"a\":\"CS4262\",\"b\":\"CS2100\",\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "completed": [],
+  "must_take": [
+   "CS2100",
+   "CS4215",
+   "CS4262"
+  ],
+  "objective": "min_total_mc",
+  "early": [
+   "CS2100"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS4215",
+    "b": "CS2100",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4262",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2100",
+    "sem": 6,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS4215",
+    "b": "CS4262",
+    "strength": "prefer"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4262",
+    "b": "CS2100",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 6,
+  "plan": {
+   "1": [
+    "CS1010S"
+   ],
+   "2": [
+    "CS2030S",
+    "CS2040",
+    "EE2213"
+   ],
+   "3": [],
+   "4": [
+    "CG3201",
+    "CS4215"
+   ],
+   "5": [
+    "CG2271"
+   ],
+   "6": [
+    "CS2100",
+    "CS4262"
+   ]
+  },
+  "mc_per_semester": {
+   "1": 4,
+   "2": 12,
+   "3": 0,
+   "4": 8,
+   "5": 4,
+   "6": 8
+  },
+  "preferences_met": [
+   "CS2100 in semester 6",
+   "CS4215 before CS4262",
+   "CS4262 and CS2100 in the same semester"
+  ],
+  "preferences_not_met": [
+   "CS2100 as early as possible"
+  ],
+  "added_prerequisites": [
+   "CG2271",
+   "CG3201",
+   "CS1010S",
+   "CS2030S",
+   "CS2040",
+   "EE2213"
+  ]
+ }
+}

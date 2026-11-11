@@ -1,0 +1,99 @@
+{
+ "id": "q2-S4-121",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 8.37,
+ "usage": {
+  "prompt_tokens": 21172,
+  "total_tokens": 21482,
+  "completion_tokens": 310,
+  "finish_reason": "stop",
+  "request_seconds": 8.37,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS3233 is only offered in Sem 2, but the student is on NOC in Sem 6 and exchange in Sem 8, leaving no Sem 2 slot for it.\",\n\"CS3281 is only offered in Sem 2, which is also unavailable due to NOC/Exchange constraints.\",\n\"CS3235 requires CS2105, CS2106, and CS2107. The student has completed CS2106 but not CS2105 or CS2107, and these prerequisites cannot be met in the available Sem 1 slots.\"\n]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3233 is only offered in Sem 2, but the student is on NOC in Sem 6 and exchange in Sem 8, leaving no Sem 2 slot for it.",
+   "CS3281 is only offered in Sem 2, which is also unavailable due to NOC/Exchange constraints.",
+   "CS3235 requires CS2105, CS2106, and CS2107. The student has completed CS2106 but not CS2105 or CS2107, and these prerequisites cannot be met in the available Sem 1 slots."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"5\": [\"CS3231\", \"CS3233\"], \"7\": [\"CS2102\", \"CS3235\", \"CS3281\"]}, \"reasons\": [\"NOC in Sem 6 and exchange in Sem 8 leave Sem 5 and 7 for remaining modules.\", \"Prerequisites for CS3231, CS3233, CS2102, CS3235, CS3281 are satisfied by completed courses.\", \"Soft wishes met: CS3281 taken before CS3231 and CS3235; CS2102 and CS3235 separated.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS3231",
+      "CS3233"
+     ],
+     "7": [
+      "CS2102",
+      "CS3235",
+      "CS3281"
+     ]
+    },
+    "reasons": [
+     "NOC in Sem 6 and exchange in Sem 8 leave Sem 5 and 7 for remaining modules.",
+     "Prerequisites for CS3231, CS3233, CS2102, CS3235, CS3281 are satisfied by completed courses.",
+     "Soft wishes met: CS3281 taken before CS3231 and CS3235; CS2102 and CS3235 separated."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10423,
+    "total_tokens": 10580,
+    "completion_tokens": 157,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.55,
+    "attempts": 1
+   },
+   "seconds": 4.55,
+   "violations": [
+    "R3 CS3233 not offered in Sem 1 (semester 5)",
+    "R4 CS3235 in semester 7: prerequisite not met ((CS2105 or EE3204 or EE4204) and (CS2106 or YSC3217 or CG2271) and CS2107)",
+    "R3 CS3281 not offered in Sem 1 (semester 7)",
+    "R9 must rule not met: apart CS2102 CS3235"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS3233 is only offered in Sem 2, but the student is on NOC in Sem 6 and exchange in Sem 8, leaving no Sem 2 slot for it.\",\n\"CS3281 is only offered in Sem 2, which is also unavailable due to NOC/Exchange constraints.\",\n\"CS3235 requires CS2105, CS2106, and CS2107. The student has completed CS2106 but not CS2105 or CS2107, and these prerequisites cannot be met in the available Sem 1 slots.\"\n]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3233 is only offered in Sem 2, but the student is on NOC in Sem 6 and exchange in Sem 8, leaving no Sem 2 slot for it.",
+     "CS3281 is only offered in Sem 2, which is also unavailable due to NOC/Exchange constraints.",
+     "CS3235 requires CS2105, CS2106, and CS2107. The student has completed CS2106 but not CS2105 or CS2107, and these prerequisites cannot be met in the available Sem 1 slots."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10749,
+    "total_tokens": 10902,
+    "completion_tokens": 153,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.82,
+    "attempts": 1
+   },
+   "seconds": 3.82,
+   "violations": null
+  }
+ ]
+}

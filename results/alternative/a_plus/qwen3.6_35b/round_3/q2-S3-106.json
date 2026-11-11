@@ -1,0 +1,44 @@
+{
+ "id": "q2-S3-106",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 3,
+ "end": "valid",
+ "seconds": 15.24,
+ "usage": {
+  "prompt_tokens": 37843,
+  "total_tokens": 38619,
+  "completion_tokens": 776,
+  "finish_reason": "stop",
+  "request_seconds": 15.24,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"7\": [\n      \"CS3237\",\n      \"CS3231\"\n    ],\n    \"8\": [\n      \"CS2102\",\n      \"ST2334\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3237 and CS3231 are only offered in Sem 1, so they must be in Sem 7.\",\n    \"CS3237 must precede ST2334, so ST2334 cannot be in Sem 7.\",\n    \"CS2102 and ST2334 are placed in Sem 8 to satisfy the prerequisite order and soft wishes.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "7": [
+    "CS3237",
+    "CS3231"
+   ],
+   "8": [
+    "CS2102",
+    "ST2334"
+   ]
+  },
+  "reasons": [
+   "CS3237 and CS3231 are only offered in Sem 1, so they must be in Sem 7.",
+   "CS3237 must precede ST2334, so ST2334 cannot be in Sem 7.",
+   "CS2102 and ST2334 are placed in Sem 8 to satisfy the prerequisite order and soft wishes."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

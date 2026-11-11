@@ -1,0 +1,156 @@
+{
+ "id": "q2-S4-196",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 65.93,
+ "usage": {
+  "prompt_tokens": 42037,
+  "total_tokens": 46666,
+  "completion_tokens": 4629,
+  "finish_reason": "stop",
+  "request_seconds": 65.93,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4350 requires CS3247. CS3247 requires CS3241. CS3241 requires CS2030S/CS2030/CS2030DE/CS2030HS/CS2113/CS2113T AND CS2040/YSC2229/CS2040S/CS2040C/CS2040DE/CS2040HS. The student has CS2030S and CS2040S, so CS3241 is eligible. However, CS3241 is offered only in Sem 1. CS3247 is offered only in Sem 2. CS4350 is offered only in Sem 1. To take CS4350 in Sem 1, CS3247 must be taken in a previous Sem 2. The previous Sem 2 is Sem 2 (Y1S2). The student is currently in Sem 4 (Y2S2). Sem 2 is in the past and cannot be planned. Therefore, CS3247 cannot be completed before CS4350 in any future semester. CS4350 cannot be taken in Sem 7 (Exchange) or Sem 8 (Sem 2). Thus, CS4350 cannot be completed.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4350 requires CS3247. CS3247 requires CS3241. CS3241 requires CS2030S/CS2030/CS2030DE/CS2030HS/CS2113/CS2113T AND CS2040/YSC2229/CS2040S/CS2040C/CS2040DE/CS2040HS. The student has CS2030S and CS2040S, so CS3241 is eligible. However, CS3241 is offered only in Sem 1. CS3247 is offered only in Sem 2. CS4350 is offered only in Sem 1. To take CS4350 in Sem 1, CS3247 must be taken in a previous Sem 2. The previous Sem 2 is Sem 2 (Y1S2). The student is currently in Sem 4 (Y2S2). Sem 2 is in the past and cannot be planned. Therefore, CS3247 cannot be completed before CS4350 in any future semester. CS4350 cannot be taken in Sem 7 (Exchange) or Sem 8 (Sem 2). Thus, CS4350 cannot be completed."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS2105\", \"CS2106\"], \"5\": [\"CS3230\"], \"6\": [\"CS2102\", \"CS3219\"], \"7\": [], \"8\": [\"CS4220\", \"CS4350\"]}, \"reasons\": [\"All prerequisites satisfied. CS2102 and CS3219 taken together in Sem 6 as required. CS2105 taken before CS3230. Exchange in Sem 7 (Y4S1) has 0 MC. CS2102 and CS4220 are apart. CS2106 and CS3230 are apart. Graduation in Sem 8.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "CS2105",
+      "CS2106"
+     ],
+     "5": [
+      "CS3230"
+     ],
+     "6": [
+      "CS2102",
+      "CS3219"
+     ],
+     "7": [],
+     "8": [
+      "CS4220",
+      "CS4350"
+     ]
+    },
+    "reasons": [
+     "All prerequisites satisfied. CS2102 and CS3219 taken together in Sem 6 as required. CS2105 taken before CS3230. Exchange in Sem 7 (Y4S1) has 0 MC. CS2102 and CS4220 are apart. CS2106 and CS3230 are apart. Graduation in Sem 8."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12490,
+    "total_tokens": 12660,
+    "completion_tokens": 170,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.87,
+    "attempts": 1
+   },
+   "seconds": 3.87,
+   "violations": [
+    "R4 CS4220 in semester 8: prerequisite not met (CS2220 or LSM2104 or LSM2241 or ZB2101)",
+    "R3 CS4350 not offered in Sem 2 (semester 8)",
+    "R4 CS4350 in semester 8: prerequisite not met (CS3247 or NM3216 or NM4260 or NM4260HM)"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4220 requires CS2220, LSM2104, LSM2241, or ZB2101. None are completed or planned, and CS2220 requires CS2040S (completed) but is not listed as a required module by the student. However, the student listed 'Modules I still need' which did not include CS2220. Without CS2220 (or others), CS4220 cannot be taken. CS4350 requires CS3247, which requires CS2030S/CS2030/etc and CS2040/YSC2229. CS3247 is not in the 'must take' list. If CS4350 is required, CS3247 is a prerequisite. The student said 'Modules I still need: ... CS4350'. This implies CS3247 is also needed but not listed. Even if we assume CS3247 is needed, CS4350 is only offered in Sem 1. Sem 8 is Sem 2. Thus CS4350 cannot be taken in Sem 8. Since the student wants to finish as soon as possible, and CS4350 is required, it must be taken in a Sem 1. The last available Sem 1 is Sem 7 (Y4S1), but the student is on exchange in Y4S1 (Sem 7). Sem 5 is Y3S1. Sem 3 is Y2S1 (current). So CS4350 could be taken in Sem 5. But CS3247 is a prerequisite. CS3247 is offered Sem 1. So CS3247 in Sem 3 or 5. If CS3247 in Sem 3, CS4350 in Sem 5. But CS2102/CS3219 must be together. CS2102 requires CS2030S (done) and CS2040S (done) and Discrete (CS1231S done). So CS2102 can be taken early. CS3219 requires YSC3232 (not offered) or CS2103/CS2103T/CS2103DE/CS2113T/CS2113. Student has CS2103T (done). So CS3219 can be taken anytime. CS2105 requires YSC2229 (not offered) or CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS. Student has CS2040S. So CS2105 can be taken anytime. CS2106 requires CS2100 (done). So CS2106 can be taken anytime. CS3230 requires YSC2229 (not offered) or CS2040S/CS2040/CS2040C/CS2040DE/CS2040HS AND CS1231/CS1231S/MA1100T/MA1100. Student has CS2040S and CS1231S. So CS3230 can be taken anytime. The constraint 'CS2102 and CS3219 in same semester' is key. CS4220 needs CS2220. CS2220 needs CS2040S (done). So CS2220 is available. CS2220 is offered Sem 1. So CS2220 must be in Sem 3, 5, or 7. Sem 7 is exchange. So Sem 3 or 5. If CS2220 in Sem 3, CS4220 in Sem 5 (Sem 2) or later. CS4220 is offered Sem 2. So CS4220 can be in Sem 4, 6, 8. CS4350 needs CS3247. CS3247 needs CS2030S/CS2030/CS2030DE/CS2030HS/CS2113/CS2113T AND CS2040/YSC2229/CS2040S/CS2040C/CS2040DE/CS2040HS. Student has CS2030S and CS2040S. So CS3247 is available. CS3247 is offered Sem 1. So CS3247 in Sem 3, 5, 7. Sem 7 exchange. So Sem 3 or 5. CS4350 needs CS3247. CS4350 is offered Sem 1. So CS4350 must be in a Sem 1 after CS3247. If CS3247 in Sem 3, CS4350 in Sem 5. If CS3247 in Sem 5, CS4350 in Sem 7 (Exchange, no modules). So CS3247 must be in Sem 3, CS4350 in Sem 5. Now, CS2102 and CS3219 must be in the same semester. They are both available from Sem 3. CS2105 must be before CS3230. CS2105 is available from Sem 3. CS2106 is available from Sem 3. We need to fit CS2220 (Sem 1), CS3247 (Sem 1), CS4350 (Sem 1), CS2102/CS3219 (any), CS2105 (any), CS3230 (any), CS4220 (Sem 2). Sem 3: CS2220, CS3247. (8 MC). Sem 4: CS4220 (4 MC). Sem 5: CS4350 (4 MC). Sem 6: CS2102, CS3219 (8 MC). Sem 7: Exchange. Sem 8: CS2105, CS3230, CS2106 (12 MC). This works. Wait, CS2105 must be before CS3230. In this plan, CS2105 and CS3230 are in Sem 8. Prerequisite says 'before', usually meaning strictly earlier semester. If 'before' means strictly earlier, they cannot be in the same semester. The prompt says 'I need to finish CS2105 before I start CS3230'. This implies CS2105 in an earlier semester than CS3230. So CS2105 in Sem 6, CS3230 in Sem 8? Or CS2105 in Sem 4, CS3230 in Sem 6? Let's re-evaluate. CS2105 is offered Sem 1,2. CS3230 is offered Sem 1,2. If CS2105 in Sem 6, CS3230 in Sem 8. CS2102/CS3219 in Sem 4? CS2102/CS3219 in Sem 4. CS2220 in Sem 3. CS3247 in Sem 3. CS4350 in Sem 5. CS4220 in Sem 2? No, Sem 2 is before Sem 3. CS2220 in Sem 3, so CS4220 in Sem 4 or later. If CS2102/CS3219 in Sem 4, CS4220 in Sem 6. CS2105 in Sem 6? No, CS2105 must be before CS3230. If CS3230 in Sem 8, CS2105 in Sem 6. CS2106 in Sem 8? CS2106 has no prereqs other than CS2100 (done). So CS2106 in Sem 8. Plan: Sem 3: CS2220, CS3247. Sem 4: CS2102, CS3219, CS4220? CS4220 needs CS2220 (done in Sem 3). So CS4220 in Sem 4 is ok. Sem 5: CS4350. Sem 6: CS2105. Sem 7: Exchange. Sem 8: CS3230, CS2106. Check MC: Sem 3: 8. Sem 4: 12. Sem 5: 4. Sem 6: 4. Sem 8: 8. All <= 16. CS2102/CS3219 together? Yes, Sem 4. CS2105 before CS3230? Yes, Sem 6 vs Sem 8. CS2106 and CS3230 apart? Yes, Sem 8 vs Sem 8? No, they are in the same semester. The student said 'I definitely can't have CS2106 and CS3230 together'. So they must be in different semesters. If CS3230 in Sem 8, CS2106 must be in Sem 6 or earlier. If CS2106 in Sem 6, then Sem 6 has CS2105 and CS2106. Sem 8 has CS3230. This works. Plan: Sem 3: CS2220, CS3247. Sem 4: CS2102, CS3219, CS4220. Sem 5: CS4350. Sem 6: CS2105, CS2106. Sem 7: Exchange. Sem 8: CS3230. Check prerequisites: CS4220 needs CS2220 (Sem 3). OK. CS4350 needs CS3247 (Sem 3). OK. CS2102 needs CS1231S/MA1100/MA1100T/CS1231 (Sem 1/2 done) and CS2030S/CS2030/CS2030DE/CS2030HS/YSC2229/CS2040/CS2040C/CS2040S/CS2040DE/CS2040HS. Student has CS2030S and CS2040S. OK. CS3219 needs CS2103T (done). OK. CS2105 needs CS2040S (done). OK. CS2106 needs CS2100 (done). OK. CS3230 needs CS2040S (done) and CS1231S (done). OK. CS2220 needs CS2040S (done). OK. CS3247 needs CS2030S (done) and CS2040S (done). OK. All constraints satisfied. Graduation Sem 8. Is it possible to graduate earlier? Sem 7 is exchange. So last semester is 8. Can we finish in Sem 6? No, Sem 7 is exchange, but we have modules left. If we finish all modules in Sem 6, we are done. But Sem 7 is exchange, so we don't take modules. If we finish in Sem 6, we are done. But we have CS4350 (Sem 1), CS2220 (Sem 1), CS3247 (Sem 1). CS4350 needs CS3247. So CS3247 in Sem 3, CS4350 in Sem 5. CS2220 in Sem 3. CS4220 in Sem 4. CS2102/CS3219 in Sem 4. CS2105 in Sem 6. CS2106 in Sem 6. CS3230 in Sem 6? No, CS2105 must be before CS3230. So CS3230 in Sem 8. So we cannot finish in Sem 6. Sem 8 is the earliest. So the plan is valid.\n\nWait, I missed that CS4220 is offered Sem 2. CS2220 is offered Sem 1. So CS2220 in Sem 3, CS4220 in Sem 4 is valid.\n\nOne detail: CS2102 and CS3219 must be in the same semester. In my plan, they are in Sem 4.\n\nCS2105 as late as possible? The student said 'I would like CS2105 as late as possible'. In my plan, it is in Sem 6. Can it be in Sem 8? No, because CS3230 must be after CS2105, and CS3230 must be in Sem 8 (latest possible? No, student wants to finish as soon as possible). If CS2105 is in Sem 8, CS3230 must be in Sem 9 (doesn't exist). So CS2105 cannot be in Sem 8. Can it be in Sem 7? No, exchange. So Sem 6 is the latest possible for CS2105 if CS3230 is in Sem 8.\n\nCS3219 as late as possible? In my plan, it is in Sem 4. Can it be later? It must be with CS2102. CS2102 has no other constraints. CS2102 can be in Sem 6? If CS2102/CS3219 in Sem 6, then CS2105 must be before CS3230. If CS2105 in Sem 4, CS3230 in Sem 8. CS4220 in Sem 2? No, CS2220 in Sem 3. So CS4220 in Sem 4. CS4350 in Sem 5. CS2106 in Sem 8? No, CS2106 and CS3230 cannot be together. If CS3230 in Sem 8, CS2106 in Sem 6? No, CS2102/CS3219 in Sem 6. So CS2106 in Sem 4? Sem 4 has CS4220. 4+4+4=12. OK. Plan: Sem 3: CS2220, CS3247. Sem 4: CS4220, CS2106. Sem 5: CS4350. Sem 6: CS2102, CS3219, CS2105. Sem 7: Exchange. Sem 8: CS3230. Check MC: Sem 6 has 12 MC. OK. CS2105 in Sem 6. CS3230 in Sem 8. CS2105 before CS3230. OK. CS2106 and CS3230 apart. OK. CS2102/CS3219 together. OK. CS3219 is in Sem 6, which is later than Sem 4. So this plan is better for 'CS3219 as late as possible'.\n\nIs CS2105 as late as possible? It is in Sem 6. Can it be in Sem 8? No. So Sem 6 is latest.\n\nSo the revised plan is:\nSem 3: CS2220, CS3247\nSem 4: CS4220, CS2106\nSem 5: CS4350\nSem 6: CS2102, CS3219, CS2105\nSem 7: Exchange\nSem 8: CS3230\n\nCheck prerequisites again:\nCS2220: CS2040S (done). OK.\nCS3247: CS2030S (done), CS2040S (done). OK.\nCS4220: CS2220 (Sem 3). OK.\nCS2106: CS2100 (done). OK.\nCS4350: CS3247 (Sem 3). OK.\nCS2102: CS1231S (done), CS2030S/CS2040S (done). OK.\nCS3219: CS2103T (done). OK.\nCS2105: CS2040S (done). OK.\nCS3230: CS2040S (done), CS1231S (done). OK.\n\nConstraints:\nCS2102/CS3219 same semester? Yes, Sem 6.\nCS3219 as late as possible? Yes, Sem 6.\nCS2105 as late as possible? Yes, Sem 6.\nCS2105 before CS3230? Yes, Sem 6 vs Sem 8.\nCS2106 and CS3230 apart? Yes, Sem 4 vs Sem 8.\nExchange in Y4S1 (Sem 7)? Yes.\nFinish as soon as possible? Yes, Sem 8.\n\nThis plan is valid.\n\n{\"status\": \"PLAN\", \"plan\": {\"3\": [\"CS2220\", \"CS3247\"], \"4\": [\"CS4220\", \"CS2106\"], \"5\": [\"CS4350\"], \"6\": [\"CS2102\", \"CS3219\", \"CS2105\"], \"8\": [\"CS3230\"]}, \"reasons\": [\"Prerequisites met. CS2102/CS3219 together in Sem 6. CS2105 before CS3230. CS2106/CS3230 apart. Exchange in Sem 7. Graduation in Sem 8.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2220",
+      "CS3247"
+     ],
+     "4": [
+      "CS4220",
+      "CS2106"
+     ],
+     "5": [
+      "CS4350"
+     ],
+     "6": [
+      "CS2102",
+      "CS3219",
+      "CS2105"
+     ],
+     "8": [
+      "CS3230"
+     ]
+    },
+    "reasons": [
+     "Prerequisites met. CS2102/CS3219 together in Sem 6. CS2105 before CS3230. CS2106/CS3230 apart. Exchange in Sem 7. Graduation in Sem 8."
+    ]
+   },
+   "repair": "extra_text",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12811,
+    "total_tokens": 16955,
+    "completion_tokens": 4144,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 56.93,
+    "attempts": 1
+   },
+   "seconds": 56.93,
+   "violations": [
+    "R1 semester 3 is outside 4..8",
+    "R3 CS3247 not offered in Sem 1 (semester 3)",
+    "R4 CS3247 in semester 3: prerequisite not met (CS3241)"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4350 requires CS3247. CS3247 requires CS3241. CS3241 requires CS2030S/CS2030/CS2030DE/CS2030HS/CS2113/CS2113T AND CS2040/YSC2229/CS2040S/CS2040C/CS2040DE/CS2040HS. The student has CS2030S and CS2040S, so CS3241 is eligible. However, CS3241 is offered only in Sem 1. CS3247 is offered only in Sem 2. CS4350 is offered only in Sem 1. To take CS4350 in Sem 1, CS3247 must be taken in a previous Sem 2. The previous Sem 2 is Sem 2 (Y1S2). The student is currently in Sem 4 (Y2S2). Sem 2 is in the past and cannot be planned. Therefore, CS3247 cannot be completed before CS4350 in any future semester. CS4350 cannot be taken in Sem 7 (Exchange) or Sem 8 (Sem 2). Thus, CS4350 cannot be completed.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4350 requires CS3247. CS3247 requires CS3241. CS3241 requires CS2030S/CS2030/CS2030DE/CS2030HS/CS2113/CS2113T AND CS2040/YSC2229/CS2040S/CS2040C/CS2040DE/CS2040HS. The student has CS2030S and CS2040S, so CS3241 is eligible. However, CS3241 is offered only in Sem 1. CS3247 is offered only in Sem 2. CS4350 is offered only in Sem 1. To take CS4350 in Sem 1, CS3247 must be taken in a previous Sem 2. The previous Sem 2 is Sem 2 (Y1S2). The student is currently in Sem 4 (Y2S2). Sem 2 is in the past and cannot be planned. Therefore, CS3247 cannot be completed before CS4350 in any future semester. CS4350 cannot be taken in Sem 7 (Exchange) or Sem 8 (Sem 2). Thus, CS4350 cannot be completed."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 16736,
+    "total_tokens": 17051,
+    "completion_tokens": 315,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 5.13,
+    "attempts": 1
+   },
+   "seconds": 5.13,
+   "violations": null
+  }
+ ]
+}

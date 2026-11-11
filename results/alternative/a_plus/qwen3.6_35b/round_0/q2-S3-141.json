@@ -1,0 +1,46 @@
+{
+ "id": "q2-S3-141",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 4.28,
+ "usage": {
+  "prompt_tokens": 11290,
+  "total_tokens": 11570,
+  "completion_tokens": 280,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 4.28,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS2101\",\n      \"CS3237\",\n      \"CS2102\",\n      \"ES2660\"\n    ],\n    \"7\": [\n      \"CS4222\",\n      \"CS4223\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2101 is planned in Y3S2 as early as possible.\",\n    \"CS2102 is placed in Y3S2 to allow CS4222 in Y4S1, satisfying the 'late as possible' wish for CS2102 while keeping total credits minimal.\",\n    \"CS3237 is in Y3S2 instead of Y4S1 because CS2102 must be taken before CS4222, and CS4222 is required in Y4S2. Placing CS2102 in Y3S2 allows CS4222 in Y4S1. CS3237 prerequisites are met. CS4223 is in Y4S2 as it requires CS2101 and CS4222.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS2101",
+    "CS3237",
+    "CS2102",
+    "ES2660"
+   ],
+   "7": [
+    "CS4222",
+    "CS4223"
+   ]
+  },
+  "reasons": [
+   "CS2101 is planned in Y3S2 as early as possible.",
+   "CS2102 is placed in Y3S2 to allow CS4222 in Y4S1, satisfying the 'late as possible' wish for CS2102 while keeping total credits minimal.",
+   "CS3237 is in Y3S2 instead of Y4S1 because CS2102 must be taken before CS4222, and CS4222 is required in Y4S2. Placing CS2102 in Y3S2 allows CS4222 in Y4S1. CS3237 prerequisites are met. CS4223 is in Y4S2 as it requires CS2101 and CS4222."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

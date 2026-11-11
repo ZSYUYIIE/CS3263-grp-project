@@ -1,0 +1,51 @@
+{
+ "id": "q2-S3-231",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 2,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 32.86,
+ "usage": {
+  "prompt_tokens": 7988,
+  "total_tokens": 11200,
+  "completion_tokens": 3212,
+  "prompt_tokens_details": {
+   "cached_tokens": 7680,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3064
+  },
+  "finish_reason": "stop",
+  "request_seconds": 32.86,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"5\": [\"CS3237\", \"CS2104\", \"ST2334\", \"CS2105\"], \"6\": [\"CS4212\", \"IS1108\", \"CS3219\"]}, \"reasons\": [\"Finishes in semester 6, the earliest possible because CS4212 is offered only in Sem 2 and needs CS2104 first.\", \"CS2104 is added as the required prerequisite for CS4212.\", \"CS3219 and CS2105 are in different semesters and ST2334 is in semester 5; IS1108-before-CS3219 and latest CS4212 would require going past semester 6.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS3237",
+    "CS2104",
+    "ST2334",
+    "CS2105"
+   ],
+   "6": [
+    "CS4212",
+    "IS1108",
+    "CS3219"
+   ]
+  },
+  "reasons": [
+   "Finishes in semester 6, the earliest possible because CS4212 is offered only in Sem 2 and needs CS2104 first.",
+   "CS2104 is added as the required prerequisite for CS4212.",
+   "CS3219 and CS2105 are in different semesters and ST2334 is in semester 5; IS1108-before-CS3219 and latest CS4212 would require going past semester 6."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

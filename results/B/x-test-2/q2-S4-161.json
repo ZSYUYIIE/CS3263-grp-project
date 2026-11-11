@@ -1,0 +1,103 @@
+{
+ "id": "q2-S4-161",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 7.94,
+ "solver_seconds": 0.096,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2857,
+  "total_tokens": 3804,
+  "completion_tokens": 947,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 696
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.84,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":4,\"completed\":[\"CS1231S\",\"CS2030S\",\"ES2660\",\"MA1521\",\"CS2100\",\"IS1108\",\"CS2101\",\"MA1522\",\"ST2334\",\"CS2103T\",\"CS2040S\",\"CS1101S\"],\"must_take\":[\"CS4223\",\"CS2106\",\"CS3242\",\"CS4240\",\"CS4268\",\"CS3230\"],\"mc_max\":16,\"sem_caps\":{\"4\":0,\"6\":0},\"objective\":\"earliest_graduation\",\"late\":[\"CS2106\"],\"rules\":[{\"type\":\"before\",\"a\":\"CS3230\",\"b\":\"CS3242\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3242\",\"sem\":8,\"strength\":\"must\"},{\"type\":\"apart\",\"a\":\"CS2106\",\"b\":\"CS3230\",\"strength\":\"must\"},{\"type\":\"apart\",\"a\":\"CS3242\",\"b\":\"CS2106\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS2106\",\"sem\":7,\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "CS1231S",
+   "CS2030S",
+   "ES2660",
+   "MA1521",
+   "CS2100",
+   "IS1108",
+   "CS2101",
+   "MA1522",
+   "ST2334",
+   "CS2103T",
+   "CS2040S",
+   "CS1101S"
+  ],
+  "must_take": [
+   "CS4223",
+   "CS2106",
+   "CS3242",
+   "CS4240",
+   "CS4268",
+   "CS3230"
+  ],
+  "mc_max": 16,
+  "sem_caps": {
+   "4": 0,
+   "6": 0
+  },
+  "objective": "earliest_graduation",
+  "late": [
+   "CS2106"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3230",
+    "b": "CS3242",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3242",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS2106",
+    "b": "CS3230",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3242",
+    "b": "CS2106",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2106",
+    "sem": 7,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the prerequisites of CS3240; the prerequisites of CS4240; the MC limits (at most 16 MC per semester; semesters 4, 6 blocked); the semesters in which the courses are offered"
+  ]
+ }
+}

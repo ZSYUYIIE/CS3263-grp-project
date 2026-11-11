@@ -1,0 +1,47 @@
+{
+ "id": "q1-os-08",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 2.27,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2896,
+  "total_tokens": 2975,
+  "completion_tokens": 79,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 2.27,
+  "attempts": 1
+ },
+ "raw": "{\"query\": \"eligible\", \"target\": \"CS6101\", \"current_sem\": 4, \"completed\": [\"CS2100\", \"CS2030S\", \"MA1513\", \"CS1101S\", \"CS2101\", \"CS2040\", \"CS1231S\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS6101",
+  "current_sem": 4,
+  "completed": [
+   "CS2100",
+   "CS2030S",
+   "MA1513",
+   "CS1101S",
+   "CS2101",
+   "CS2040",
+   "CS1231S"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "OUT_OF_SCOPE",
+  "reasons": [
+   "course CS6101 (in target) is not in the catalogue"
+  ],
+  "message": "I can only plan for BComp (CS) Hons single-major students under AY2026/2027 rules, and this request is outside that (course CS6101 (in target) is not in the catalogue). Course rules differ by programme and aren't in my data for your case, so please check with your faculty or academic advisor."
+ }
+}

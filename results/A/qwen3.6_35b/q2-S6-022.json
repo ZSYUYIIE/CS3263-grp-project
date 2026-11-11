@@ -1,0 +1,45 @@
+{
+ "id": "q2-S6-022",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 66.27,
+ "usage": {
+  "prompt_tokens": 13600,
+  "total_tokens": 17118,
+  "completion_tokens": 3518,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 66.27,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS2106\", \"CS2102\"], \"5\": [\"CS3230\", \"CS3268\"], \"6\": [\"CS4221\", \"CS4218\"], \"7\": [\"CS4330\", \"CS4262\"]}, \"reasons\": [\"All required courses are scheduled respecting prerequisites and semester offerings.\", \"CS4221 is placed in Sem 6 before CS2106 in Sem 4? No, CS2106 is in Sem 4. The constraint 'CS4221 must come before CS2106' is violated by this plan. Let's re-evaluate.\", \"Wait, CS2106 is in Sem 4. CS4221 is in Sem 6. This violates 'CS4221 must come before CS2106'. I need to move CS2106 to after Sem 6. CS2106 is offered Sem 1 and 2. So it can be in Sem 7 or 8. But CS4218 must be in Sem 7. CS2106 can be in Sem 8. Let's try: Sem 4: CS2102. Sem 5: CS3230, CS3268. Sem 6: CS4221. Sem 7: CS4218, CS4330. Sem 8: CS2106, CS4262. Check prerequisites: CS4262 needs CS2106 and (CS3244/CS3264/CG3201). I haven't planned CS3244/CS3264/CG3201. The student didn't list them as 'must take', but CS4262 requires them. If they are not taken, CS4262 cannot be taken. The student said 'I still have to take... CS4262'. This implies they MUST take it. Therefore they MUST take its prerequisites. I must add CS3244 or CS3264 or CG3201. CG3201 needs EE2211/EE2213. CS3244 needs complex math/stats. CS3264 needs CS2109S. These are heavy. Let's look at CS4262 prereq: (CS2106 or CG2271) AND (CS3244 or CS3264 or CG3201). If I assume the student has already taken the math/stats/AI prereqs for CS3244/CS3264/CG3201 but just didn't list them? No, 'I still have to take' usually lists all remaining core/required. If CS3244 is not listed, maybe they don't need it? But CS4262 is listed. This is a contradiction unless they have taken the prereqs. I will assume they have taken the necessary background courses (like CS2109S, EE2211, etc.) which are not in the 'must take' list, or that the 'must take' list is incomplete. However, as an academic planner, I cannot assume completed courses. If CS3244 is not in the 'must take' list, I cannot add it unless it's a prerequisite for a 'must take' course. CS4262 is a 'must take'. CS3244 is a prereq for CS4262. So I MUST add CS3244 (or CS3264/CG3201). CS3244 has heavy prereqs. CS3264 needs CS2109S. CG3201 needs EE2211. Let's pick the easiest path. If I add CS3244, I need to check if its prereqs are met. The student hasn't stated completed courses. This is a 'MISSING_INFO' situation? No, the student said 'I still have to take [list]'. This implies everything else is done. So I assume prereqs for the listed courses are satisfied EXCEPT for the courses themselves. But CS3244 is not in the list. If I add it, I must ensure ITS prereqs are satisfied. The student didn't say they have taken CS2109S, EE2211, etc. This is risky. However, often 'must take' lists are for the final year electives/core. Let's look at CS4262 again. Prereq: CS2106 OR CG2271. And CS3244 OR CS3264 OR CG3201. If I assume the student has taken the AI/Math prereqs, I just need to schedule CS3244. CS3244 is offered Sem 1 and 2. It needs CS2040/CS2040S/etc and EE2012/ST2131/MA2116 and Math. If the student is Y2S2, they likely have CS2040. Do they have EE2012? Not listed. Do they have MA2116? Not listed. This suggests the student might NOT have taken them. If they haven't, they can't take CS3244. Can they take CS3264? Needs CS2109S. Not listed. Can they take CG3201? Needs EE2211/EE2213. Not listed. This implies the student CANNOT take CS4262 unless they have taken these hidden courses. Since the student explicitly listed 'CS4262' as a course they 'still have to take', it implies they are eligible to take it or will be. I will assume the prerequisites for CS3244/CS3264/CG3201 are satisfied by completed courses not listed, as is common in these prompts where 'must take' refers to the specific remaining modules for graduation. I will add CS3244 as a prerequisite for CS4262. CS3244 is 4 MC. It must be taken before CS4262. CS4262 is Sem 2. CS3244 can be Sem 1 or 2. Let's put CS3244 in Sem 5 or 6. CS2106 is Sem 1 or 2. CS4221 must be before CS2106. CS4218 in Sem 7. CS3268 in Sem 5. CS4330 needs CS2220. CS2220 is not in the 'must take' list. But CS4330 is. So I must add CS2220. CS2220 needs CS2040/CS2040S/etc. Assume satisfied. CS2220 is Sem 1. CS4330 is Sem 2. So CS2220 must be before CS4330. CS4330 is in Sem 7 (Sem 2). So CS2220 can be Sem 5, 6, or 7 (Sem 1). Let's put CS2220 in Sem 5. CS3230 needs CS2040 and CS1231. Assume satisfied. CS3230 is Sem 1 or 2. CS2102 needs CS2030/CS2040 and CS1231. Assume satisfied. CS2102 is Sem 1 or 2. CS4218 needs CS3213 or CS3219. Neither is in the 'must take' list. But CS4218 is. So I must add CS3213 or CS3219. CS3213 needs CS2103T/CS2103/CS2103DE/CS2113T/CS2113. None in list. CS3219 needs YSC3232 or CS2103/CS2103T/CS2103DE/CS2113T/CS2113. None in list. This is getting complex. The student likely has taken CS2103 or similar. I will assume CS3213 or CS3219 prereqs are met. I need to add one. CS3213 is Sem 2. CS3219 is Sem 1 or 2. CS4218 is Sem 1 or 2. CS4218 is in Sem 7. So CS3213/CS3219 must be before Sem 7. Let's add CS3213 in Sem 6. CS4221 needs CS3223. CS3223 is not in the list. CS4221 is. So I must add CS3223. CS3223 needs CS2040 and CS2102. CS2102 is in the list. So CS3223 must be after CS2102. CS3223 is Sem 1 or 2. CS4221 is Sem 2. So CS3223 can be Sem 1 or 2 before CS4221. Let's put CS3223 in Sem 5 (Sem 1) or Sem 6 (Sem 2). If CS2102 is in Sem 4 (Sem 2), CS3223 can be Sem 5 (Sem 1). CS4221 in Sem 6 (Sem 2). This works. So added courses: CS3244 (for CS4262), CS2220 (for CS4330), CS3213 (for CS4218), CS3223 (for CS4221). Let's schedule. Sem 4 (Y2S2): CS2102 (Sem 1/2). CS2106 (Sem 1/2). Constraint: CS4221 before CS2106. If CS2106 is Sem 4, CS4221 must be before Sem 4. But CS4221 needs CS3223 which needs CS2102. If CS2102 is Sem 4, CS3223 is Sem 5+, CS4221 is Sem 6+. So CS2106 must be after Sem 6. CS2106 is Sem 1 or 2. So CS2106 can be Sem 7 (Sem 1) or Sem 8 (Sem 1/2). Let's put CS2106 in Sem 8. Sem 4: CS2102. Sem 5: CS3230, CS3268, CS2220, CS3223. 4 courses = 16 MC. OK. Sem 6: CS4221, CS3213, CS3244. 3 courses = 12 MC. OK. Sem 7: CS4218, CS4330. 2 courses = 8 MC. OK. Sem 8: CS2106, CS4262. 2 courses = 8 MC. OK. Check constraints: CS4221 (Sem 6) before CS2106 (Sem 8). Yes. CS4218 in Sem 7. Yes. CS3268 in Sem 5 (Y3S1). Yes. Ideally CS4221 before CS3230? CS4221 is Sem 6, CS3230 is Sem 5. No. Ideally CS3230 before CS2102? CS3230 is Sem 5, CS2102 is Sem 4. No. Can I swap CS2102 and CS3230? CS3230 needs CS2040/CS1231. CS2102 needs CS2030/CS2040/CS1231. Both can be Sem 4. If CS3230 is Sem 4 and CS2102 is Sem 5? CS2102 is Sem 1/2. Sem 5 is Sem 1. OK. CS3223 needs CS2102. If CS2102 is Sem 5, CS3223 is Sem 6+. CS4221 needs CS3223. So CS4221 is Sem 7+. But CS4218 is Sem 7. CS4221 can be Sem 8? CS2106 must be after CS4221. If CS4221 is Sem 8, CS2106 must be after Sem 8. Impossible. So CS4221 must be before CS2106. If CS2106 is Sem 7, CS4221 must be Sem 6 or earlier. If CS4221 is Sem 6, CS3223 must be Sem 5 or earlier. CS3223 needs CS2102. So CS2102 must be Sem 4 or earlier. So CS2102 must be Sem 4. So CS3230 cannot be before CS2102 if CS2102 is Sem 4. CS3230 is Sem 5. So 'CS3230 before CS2102' is impossible. 'CS4221 before CS3230'? CS4221 is Sem 6, CS3230 is Sem 5. Impossible. So soft wishes are not met. CS2102 as early as possible? Sem 4 is earliest possible given CS4221 constraint. CS2106 as late as possible? Sem 8 is latest. This plan works. Added courses: CS2220, CS3223, CS3213, CS3244. Total 4 added. Is there a way to avoid adding CS3213? CS4218 needs CS3213 or CS3219. If I add CS3219, it needs CS2103/CS2103T/CS2103DE/CS2113T/CS2113 or YSC3232. If student has CS2103, CS3219 is easier? Same MC. I'll stick with CS3213. Is there a way to avoid CS3244? CS4262 needs CS3244/CS3264/CG3201. CS3264 needs CS2109S. CG3201 needs EE2211. If student has CS2109S, I can add CS3264 instead. CS3264 needs CS2040 and EE2012/ST2131/MA2116. If student has CS2109S, they likely have the math. CS3264 is 4 MC. Same. I'll use CS3244. Final Plan: Sem 4: CS2102. Sem 5: CS3230, CS3268, CS2220, CS3223. Sem 6: CS4221, CS3213, CS3244. Sem 7: CS4218, CS4330. Sem 8: CS2106, CS4262.\"}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2106",
+    "CS2102"
+   ],
+   "5": [
+    "CS3230",
+    "CS3268"
+   ],
+   "6": [
+    "CS4221",
+    "CS4218"
+   ],
+   "7": [
+    "CS4330",
+    "CS4262"
+   ]
+  }
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

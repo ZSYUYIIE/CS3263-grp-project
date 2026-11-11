@@ -1,0 +1,44 @@
+{
+ "id": "q2-S1-121",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 43.2,
+ "usage": {
+  "prompt_tokens": 9806,
+  "total_tokens": 12925,
+  "completion_tokens": 3119,
+  "finish_reason": "stop",
+  "request_seconds": 43.2,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS3227\"\n    ],\n    \"7\": [\n      \"CS3231\",\n      \"CS3237\",\n      \"CS2102\",\n      \"ST2334\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3227 is planned in Sem 7 as required by the student.\",\n    \"CS3231 and CS3237 are taken together in Sem 7 to satisfy the student's wish.\",\n    \"CS2102 and ST2334 are taken in Sem 7, satisfying the constraint that they cannot be together with CS3237 (which is also in Sem 7, but the constraint was 'CS3237 and CS2102 together' is forbidden, so they must be separated from CS3237. Since CS3237 is in Sem 7, CS2102 must be in Sem 7 or later. ST2334 is in Sem 7. The constraint 'CS3237 and CS2102 together' is violated if both are in Sem 7. Wait, the student said 'I definitely can't have CS3237 and CS2102 together'. So they cannot be in the same semester. My plan has them both in Sem 7. This is invalid.\"\n  ]\n}\n\nLet's re-evaluate.\nConstraints:\n1. Must take: CS3231, CS3237, CS2102, ST2334, CS3227.\n2. CS3227 in Sem 6.\n3. ST2334 before CS3237.\n4. CS3237 and CS2102 NOT together.\n5. Wish: CS3237 and CS3231 together.\n6. Wish: CS2102 and ST2334 different semesters.\n7. Wish: ST2334 as late as possible.\n\nCurrent Completed: CS2040S, CS3219, MA1521, MA1522, CS1231S, CS2101, CS2106, ES2660, CS2105, CS2100, CS3233, IS1108, CS1101S, CS2030S, CS2103T, CS3230, CS2109S.\nCurrent Semester: Y3S2 (Sem 6).\n\nPrerequisites Check:\n- CS3231: Needs (CS1231/CS1231S/MA1100T/MA1100) AND (CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS).\n  - Student has CS1231S and CS2040S. Prereq met.\n- CS3237: Needs (EE2028/EE2024/CG2028/CS2100/CS2100DE/CS2100HS) AND (CS1010/CS1101S/...).\n  - Student has CS2100 and CS1101S. Prereq met.\n- CS2102: Needs (CS1231/MA1100/MA1100T/CS1231S) AND (CS2030S/CS2030/CS2030DE/CS2030HS/YSC2229/CS2040/CS2040C/CS2040S/CS2040DE/CS2040HS).\n  - Student has CS1231S and CS2030S and CS2040S. Prereq met.\n- ST2334: Needs MA1312/MA1505/MA1511/MA1521/MA2002.\n  - Student has MA1521. Prereq met.\n- CS3227: Needs CS2103/CS2103T/CS2113/CS2103DE.\n  - Student has CS2103T. Prereq met.\n\nSemester 6 (Y3S2):\n- Must take CS3227.\n- Can we take others?\n  - CS3231: Offered Sem 1. Sem 6 is Sem 2. **CS3231 is NOT offered in Sem 6.**\n  - CS3237: Offered Sem 1. Sem 6 is Sem 2. **CS3237 is NOT offered in Sem 6.**\n  - CS2102: Offered Sem 1, Sem 2. Can take.\n  - ST2334: Offered Sem 1, Sem 2. Can take.\n\nSo in Sem 6, we can only take CS2102 and/or ST2334 (and CS3227).\nCS3231 and CS3237 MUST be in Sem 7 or later (Sem 7 is Y4S1, Sem 1).\n\nConstraint: ST2334 before CS3237.\nSince CS3237 is in Sem 7 (earliest possible), ST2334 must be in Sem 6 or earlier.\nStudent is in Sem 6. So ST2334 can be in Sem 6.\n\nConstraint: CS3237 and CS2102 NOT together.\nCS3237 is in Sem 7. So CS2102 cannot be in Sem 7.\nCS2102 can be in Sem 6.\n\nWish: CS3237 and CS3231 together.\nBoth are offered in Sem 1. So both can be in Sem 7.\n\nWish: CS2102 and ST2334 different semesters.\nIf ST2334 is in Sem 6, CS2102 cannot be in Sem 6.\nSo CS2102 must be in Sem 7? No, CS2102 cannot be in Sem 7 because CS3237 is in Sem 7 and they can't be together.\nSo CS2102 must be in Sem 6?\nIf CS2102 is in Sem 6, then ST2334 cannot be in Sem 6 (different semesters wish).\nIf ST2334 is not in Sem 6, it must be before CS3237 (Sem 7). So ST2334 must be in Sem 5 or earlier.\nBut the student is currently in Sem 6. We are planning from Sem 6 onwards.\nCan we take ST2334 in Sem 6?\nIf ST2334 is in Sem 6, then CS2102 cannot be in Sem 6 (wish).\nThen CS2102 must be in Sem 7? No, CS2102 cannot be in Sem 7 (conflict with CS3237).\nSo CS2102 has nowhere to go if ST2334 is in Sem 6 and CS3237 is in Sem 7.\n\nLet's check if CS3237 can be in Sem 8?\nSem 8 is Y4S2 (Sem 2).\nCS3237 is offered Sem 1. **CS3237 is NOT offered in Sem 8.**\nSo CS3237 MUST be in Sem 7.\n\nSo CS3237 is fixed in Sem 7.\nCS3231 is wished to be with CS3237, so CS3231 in Sem 7.\nCS2102 cannot be in Sem 7 (conflict with CS3237).\nSo CS2102 must be in Sem 6 (since Sem 5 is past).\nIf CS2102 is in Sem 6, then ST2334 cannot be in Sem 6 (wish: different semesters).\nST2334 must be before CS3237 (Sem 7). So ST2334 must be in Sem 6 or earlier.\nIf ST2334 is not in Sem 6, it must be in Sem 5 or earlier.\nBut we are planning from Sem 6. We cannot go back to Sem 5.\nSo ST2334 MUST be in Sem 6 to be before CS3237 (Sem 7) and be in the future/present.\nBut if ST2334 is in Sem 6, and CS2102 is in Sem 6, they are together.\nThis violates the wish \"CS2102 and ST2334 in different semesters\".\n\nIs there any other option?\nCan CS2102 be taken in a later semester? No, Sem 8 doesn't offer CS3237, but CS2102 is offered Sem 1 and 2. So CS2102 can be in Sem 8.\nBut CS3237 is in Sem 7.\nConstraint: CS3237 and CS2102 NOT together.\nIf CS2102 is in Sem 8, and CS3237 is in Sem 7, they are NOT together. This is allowed.\nSo CS2102 can be in Sem 8.\n\nNow, ST2334.\nST2334 must be before CS3237 (Sem 7).\nSo ST2334 must be in Sem 6 or earlier.\nStudent is in Sem 6.\nSo ST2334 can be in Sem 6.\nWish: CS2102 and ST2334 different semesters.\nIf ST2334 is in Sem 6, and CS2102 is in Sem 8, they are different. This satisfies the wish.\nWish: ST2334 as late as possible.\nSem 6 is the latest possible for ST2334 (since it must be before Sem 7).\n\nSo the plan:\nSem 6: CS3227, ST2334.\nSem 7: CS3231, CS3237.\nSem 8: CS2102.\n\nCheck prerequisites for Sem 8 CS2102:\nPrereqs met in completed courses.\nCheck if CS2102 is offered in Sem 8 (Sem 2). Yes.\nCheck if CS2102 is blocked by completed courses. No.\nCheck if CS2102 is mutually exclusive with completed courses.\nMutually exclusive with: CS2102S, IT2002.\nStudent has not completed these.\n\nCheck MC limits.\nSem 6: CS3227 (4 MC) + ST2334 (4 MC) = 8 MC. Limit 20. OK.\nSem 7: CS3231 (4 MC) + CS3237 (4 MC) = 8 MC. Limit 20. OK.\nSem 8: CS2102 (4 MC). Limit 20. OK.\n\nCheck \"CS3237 and CS3231 together\".\nBoth in Sem 7. OK.\n\nCheck \"ST2334 before CS3237\".\nST2334 in Sem 6, CS3237 in Sem 7. OK.\n\nCheck \"CS3237 and CS2102 not together\".\nCS3237 in Sem 7, CS2102 in Sem 8. OK.\n\nCheck \"CS2102 and ST2334 different semesters\".\nCS2102 in Sem 8, ST2334 in Sem 6. OK.\n\nCheck \"ST2334 as late as possible\".\nSem 6 is the latest possible before Sem 7. OK.\n\nCheck \"CS3227 in Sem 6\".\nYes.\n\nAre there any other courses needed?\nNo other \"must\" courses.\n\nFinal Plan:\nSem 6: CS3227, ST2334\nSem 7: CS3231, CS3237\nSem 8: CS2102\n\nOne detail: CS3231 is offered Sem 1. Sem 7 is Sem 1. OK.\nCS3237 is offered Sem 1. Sem 7 is Sem 1. OK.\nCS2102 is offered Sem 1, Sem 2. Sem 8 is Sem 2. OK.\nST2334 is offered Sem 1, Sem 2. Sem 6 is Sem 2. OK.\nCS3227 is offered Sem 1, Sem 2. Sem 6 is Sem 2. OK.\n\nAll good.\n\n{\"status\": \"PLAN\", \"plan\": {\"6\": [\"CS3227\", \"ST2334\"], \"7\": [\"CS3231\", \"CS3237\"], \"8\": [\"CS2102\"]}, \"reasons\": [\"CS3227 is taken in Sem 6 as required.\", \"CS3231 and CS3237 are taken together in Sem 7 to satisfy the wish.\", \"CS2102 is taken in Sem 8 to avoid conflict with CS3237 and to keep it separate from ST2334 in Sem 6.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS3227",
+    "ST2334"
+   ],
+   "7": [
+    "CS3231",
+    "CS3237"
+   ],
+   "8": [
+    "CS2102"
+   ]
+  },
+  "reasons": [
+   "CS3227 is taken in Sem 6 as required.",
+   "CS3231 and CS3237 are taken together in Sem 7 to satisfy the wish.",
+   "CS2102 is taken in Sem 8 to avoid conflict with CS3237 and to keep it separate from ST2334 in Sem 6."
+  ]
+ },
+ "fenced": true,
+ "repair": "last_of_several",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,208 @@
+{
+ "id": "q2-S1-092",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 2,
+ "end": "valid",
+ "seconds": 65.84,
+ "usage": {
+  "prompt_tokens": 35923,
+  "total_tokens": 40691,
+  "completion_tokens": 4768,
+  "finish_reason": "stop",
+  "request_seconds": 65.84,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS2111 is a prerequisite for CS3240 and CS3249, which are required for CS4240. CS2111 is only offered in Sem 2. To take CS4240 (offered Sem 2) in the earliest possible semester (Sem 8), CS3240 must be taken in Sem 7 (Sem 1) or earlier. However, CS3240 requires CS2111. If CS2111 is taken in Sem 6 (Sem 2), CS3240 can be taken in Sem 7 (Sem 1). But CS3249 also requires CS2111 and must be taken before CS4240. CS3249 is offered Sem 1. So CS3249 must be taken in Sem 7 or earlier. If CS2111 is taken in Sem 6, CS3249 can be taken in Sem 7. This seems possible. Let's re-verify CS2111 offering. Record: 'offered: Sem 2'. Sem 6 is Sem 2. So CS2111 in Sem 6 is valid. CS3240 offered Sem 1, Sem 2. Sem 7 is Sem 1. So CS3240 in Sem 7 is valid. CS3249 offered Sem 1. Sem 7 is Sem 1. So CS3249 in Sem 7 is valid. CS4240 offered Sem 2. Sem 8 is Sem 2. So CS4240 in Sem 8 is valid. Prerequisites: CS2111 (Sem 6) -> CS3240 (Sem 7) -> CS4240 (Sem 8). CS2111 (Sem 6) -> CS3249 (Sem 7) -> CS4240 (Sem 8). This chain works. Why did the previous answer fail? It put CS2111 in Sem 5. Sem 5 is Sem 1. CS2111 is not offered in Sem 1. So CS2111 must be in Sem 6 or later. If CS2111 is in Sem 6, then CS3240 and CS3249 can be in Sem 7. CS4239 requires CS3235. CS3235 requires CS2105, CS2106, CS2107. CS2106 is required for CS3211 in Sem 6. So CS2106 must be in Sem 5. CS2105 and CS2107 can be in Sem 5. Then CS3235 can be in Sem 6. CS4239 requires CS3235 and CS2103T. CS4239 is offered Sem 1. So CS4239 can be in Sem 7. Sem 7 has CS3240, CS3249, CS4239. Plus CS2102 and CS3219? CS2102 prereq: CS1231S and CS2030S. Student has both. CS2102 offered Sem 1, Sem 2. CS3219 prereq: CS2103T. Student has it. CS3219 offered Sem 1, Sem 2. So Sem 7 can have CS3240, CS3249, CS4239, CS2102, CS3219. 5 courses = 20 MC. Fits. Sem 6 has CS3211, CS3235, CS2111, CS2109S? CS2109S prereq: CS2040S and Math. Student has both. CS2109S offered Sem 1, Sem 2. Sem 6 is Sem 2. So CS2109S in Sem 6 is valid. Sem 6: CS3211, CS3235, CS2111, CS2109S. 4 courses = 16 MC. Fits. Sem 5: CS2106, CS2105, CS2107, CS3230? CS3230 prereq: CS2040S and CS1231S. Student has both. CS3230 offered Sem 1, Sem 2. Sem 5 is Sem 1. So CS3230 in Sem 5 is valid. Sem 5: CS2106, CS2105, CS2107, CS3230. 4 courses = 16 MC. Fits. Sem 8: CS4240. 1 course = 4 MC. Fits. This plan works. CS2111 in Sem 6 (Sem 2) is valid. CS3240 in Sem 7 (Sem 1) is valid. CS3249 in Sem 7 (Sem 1) is valid. CS4240 in Sem 8 (Sem 2) is valid. CS4239 in Sem 7 (Sem 1) is valid. CS3211 in Sem 6 is valid. CS3235 in Sem 6 is valid. CS2106 in Sem 5 is valid. CS2105 in Sem 5 is valid. CS2107 in Sem 5 is valid. CS3230 in Sem 5 is valid. CS2109S in Sem 6 is valid. CS2102 in Sem 7 is valid. CS3219 in Sem 7 is valid. All prerequisites met. All offerings match. MC limits met. CS3211 in Sem 6 met. CS3249 before CS4240 met. CS2109S late (Sem 6 vs Sem 5/7/8? Sem 8 is later. Can CS2109S be in Sem 8? Sem 8 has CS4240. Can we swap? CS4240 is Sem 2. CS2109S is Sem 1, Sem 2. If CS2109S in Sem 8, CS4240 must be in Sem 8? No, CS4240 is the last course. If CS2109S is in Sem 8, CS4240 must be in Sem 8? No, CS4240 is in Sem 8. We can't have two courses in Sem 8 if we want to minimize last semester? No, we can have multiple courses in Sem 8. But CS4240 is the last course. If we put CS2109S in Sem 8, it is later than Sem 6. So CS2109S in Sem 8 is better for the soft wish. Sem 8: CS4240, CS2109S. 8 MC. Fits. Sem 7: CS3240, CS3249, CS4239, CS2102, CS3219. 20 MC. Fits. Sem 6: CS3211, CS3235, CS2111. 12 MC. Fits. Sem 5: CS2106, CS2105, CS2107, CS3230. 16 MC. Fits. This plan is valid and meets soft wishes better. CS2109S in Sem 8. CS3230 in Sem 5. CS2106 in Sem 5 (earliest possible before Sem 6).\n\n{\"status\": \"PLAN\", \"plan\": {\"5\": [\"CS2106\", \"CS2105\", \"CS2107\", \"CS3230\"], \"6\": [\"CS3211\", \"CS3235\", \"CS2111\"], \"7\": [\"CS3240\", \"CS3249\", \"CS4239\", \"CS2102\", \"CS3219\"], \"8\": [\"CS4240\", \"CS2109S\"]}, \"reasons\": [\"Added CS2107, CS3235, CS2111, CS3240 as prerequisites. CS2111 placed in Sem 6 (Sem 2) as it is only offered in Sem 2. CS3240 and CS3249 placed in Sem 7 (Sem 1). CS4240 placed in Sem 8 (Sem 2). CS4239 placed in Sem 7 (Sem 1). CS3211 in Sem 6 as required. CS2109S placed in Sem 8 to satisfy 'late as possible' wish.\"]}}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2106",
+    "CS2105",
+    "CS2107",
+    "CS3230"
+   ],
+   "6": [
+    "CS3211",
+    "CS3235",
+    "CS2111"
+   ],
+   "7": [
+    "CS3240",
+    "CS3249",
+    "CS4239",
+    "CS2102",
+    "CS3219"
+   ],
+   "8": [
+    "CS4240",
+    "CS2109S"
+   ]
+  },
+  "reasons": [
+   "Added CS2107, CS3235, CS2111, CS3240 as prerequisites. CS2111 placed in Sem 6 (Sem 2) as it is only offered in Sem 2. CS3240 and CS3249 placed in Sem 7 (Sem 1). CS4240 placed in Sem 8 (Sem 2). CS4239 placed in Sem 7 (Sem 1). CS3211 in Sem 6 as required. CS2109S placed in Sem 8 to satisfy 'late as possible' wish."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"5\": [\"CS2106\", \"CS2105\", \"CS3230\"], \"6\": [\"CS3211\", \"CS2109S\"], \"7\": [\"CS3219\", \"CS2102\", \"CS3249\"], \"8\": [\"CS4240\", \"CS4239\"]}, \"reasons\": [\"All prerequisites are satisfied by completed or earlier planned courses. CS3211 is placed in Sem 6 as required. CS3249 is taken before CS4240. Soft wishes for late placement of CS2109S, CS3230, and CS2106 are met where possible without delaying graduation. Graduation is achieved in Sem 8, the earliest possible given the dependency chain and Sem 6 constraint.\"]}}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2106",
+      "CS2105",
+      "CS3230"
+     ],
+     "6": [
+      "CS3211",
+      "CS2109S"
+     ],
+     "7": [
+      "CS3219",
+      "CS2102",
+      "CS3249"
+     ],
+     "8": [
+      "CS4240",
+      "CS4239"
+     ]
+    },
+    "reasons": [
+     "All prerequisites are satisfied by completed or earlier planned courses. CS3211 is placed in Sem 6 as required. CS3249 is taken before CS4240. Soft wishes for late placement of CS2109S, CS3230, and CS2106 are met where possible without delaying graduation. Graduation is achieved in Sem 8, the earliest possible given the dependency chain and Sem 6 constraint."
+    ]
+   },
+   "repair": "extra_text",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10975,
+    "total_tokens": 11169,
+    "completion_tokens": 194,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.39,
+    "attempts": 1
+   },
+   "seconds": 4.39,
+   "violations": [
+    "R4 CS3249 in semester 7: prerequisite not met (CS2111)",
+    "R3 CS4239 not offered in Sem 2 (semester 8)",
+    "R4 CS4239 in semester 8: prerequisite not met (CS3235 and (CS2103T or CS2103 or CS2103DE or CS2113 or CS2113T))",
+    "R4 CS4240 in semester 8: prerequisite not met (CS3240)"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4240 requires CS3240, which requires CS2111. CS2111 is not in the list of required courses and has no prerequisites listed in the provided records that are satisfied by completed courses (CS2111 prerequisite is none, but it is not listed as a 'must take' course by the student, and adding it is only allowed if it is a prerequisite for a planned course. However, CS2111 is a prerequisite for CS3240, which is a prerequisite for CS4240. The student did not list CS2111 or CS3240 as must-take courses. Rule 8 says 'Add a course... ONLY when it is a prerequisite needed by a planned course.' Since CS4240 is a planned course, its prerequisites (CS3240) are needed. CS3240's prerequisite (CS2111) is needed. So CS2111 and CS3240 should be added. Let's re-evaluate. CS2111 is open to BComp CS Hons. Prereq: none. So CS2111 can be taken. CS3240 prereq: CS2111. CS4240 prereq: CS3240. So we can add CS2111, CS3240, CS3249, CS4240. But wait, CS3249 prereq is CS2111. CS4240 prereq is CS3240. CS3240 prereq is CS2111. So the chain is CS2111 -> CS3240 -> CS4240. And CS2111 -> CS3249. The student wants CS3249 before CS4240. This is consistent. Now check CS4239. Prereq: CS3235 and (CS2103T or ...). Student has CS2103T. So need CS3235. CS3235 prereq: (CS2105 or ...) and (CS2106 or ...) and CS2107. Student has CS2105 and CS2106 (planned). Need CS2107. CS2107 prereq: YSC1212 or CS1010... Student has CS1101S which satisfies CS2107 prereq? CS2107 prereq: YSC1212 or CS1010J or CS1101S or CS1010... Yes, CS1101S is in the list. So CS2107 can be taken. So we need to add CS2107, CS3235, CS2111, CS3240. Let's check if this fits. Sem 4 is current. Sem 5, 6, 7, 8 remaining. Must take CS3211 in Sem 6. CS3211 prereq: CS2106 or CG2271. Student has CS2106 planned. So CS2106 must be before Sem 6. CS2106 prereq: CS2100. Student has CS2100. So CS2106 can be Sem 5. CS3211 Sem 6. CS3230 prereq: CS2040S and CS1231S. Student has both. CS3230 can be Sem 5, 7, 8. CS2109S prereq: CS2040S and Math. Student has CS2040S, MA1521, MA1522. CS2109S can be Sem 5+. CS2102 prereq: CS1231S and (CS2030S or ...). Student has CS1231S and CS2030S. CS2102 can be Sem 5+. CS2105 prereq: CS2040S. Student has CS2040S. CS2105 can be Sem 5+. CS2107 prereq: CS1101S. Student has CS1101S. CS2107 can be Sem 5+. CS3235 prereq: CS2105, CS2106, CS2107. So CS3235 needs CS2105, CS2106, CS2107. CS2106 is Sem 6? No, CS2106 must be before CS3211 (Sem 6). So CS2106 is Sem 5. CS2105 and CS2107 can be Sem 5. Then CS3235 can be Sem 6 or later. CS4239 prereq: CS3235 and CS2103T. CS2103T is completed. So CS4239 needs CS3235. CS3235 needs CS2105, CS2106, CS2107. CS2111 prereq: none. CS3240 prereq: CS2111. CS4240 prereq: CS3240. CS3249 prereq: CS2111. CS3219 prereq: CS2103T. Student has CS2103T. CS3219 can be Sem 5+. So we have many courses. Let's list all must-takes and added ones: Must: CS3219, CS2106, CS3249, CS4240, CS2109S, CS3211, CS3230, CS2105, CS2102, CS4239. Added: CS2107 (for CS3235), CS3235 (for CS4239), CS2111 (for CS3240/CS3249), CS3240 (for CS4240). Total 14 courses. Sem 5, 6, 7, 8. 4 semesters. 20 MC each. 80 MC total. 14 * 4 = 56 MC. Fits. Constraints: CS3211 in Sem 6. CS3249 before CS4240. CS2106 before CS3211 (Sem 6), so CS2106 in Sem 5. CS2105, CS2107 before CS3235. CS3235 before CS4239. CS2111 before CS3240 and CS3249. CS3240 before CS4240. CS3249 before CS4240. Soft: CS2109S late, CS3230 late, CS2106 late (already Sem 5, earliest possible before Sem 6). Let's plan. Sem 5: CS2106 (prereq met), CS2105 (prereq met), CS2107 (prereq met), CS2111 (prereq met). 16 MC. Sem 6: CS3211 (prereq CS2106 met), CS3235 (prereq CS2105, CS2106, CS2107 met), CS3230 (prereq met), CS2109S (prereq met). 16 MC. Sem 7: CS3240 (prereq CS2111 met), CS3249 (prereq CS2111 met), CS2102 (prereq met), CS3219 (prereq met). 16 MC. Sem 8: CS4240 (prereq CS3240 met, CS3249 met), CS4239 (prereq CS3235 met). 8 MC. This works. CS4239 is offered Sem 1? Record says \"offered: Sem 1\". Sem 8 is Sem 2. So CS4239 cannot be taken in Sem 8. This is the hard rule break. CS4239 is only offered in Sem 1. Sem 8 is Sem 2. So CS4239 cannot be taken in Sem 8. Can it be taken in Sem 7? Sem 7 is Sem 1 of AY2028/29? No. Sem 7 is Y4S1. Sem 1 of the year. So Sem 7 is \"Sem 1\". CS4239 is offered in Sem 1. So CS4239 can be taken in Sem 7. Let's check prerequisites for CS4239 in Sem 7. Needs CS3235. CS3235 needs CS2105, CS2106, CS2107. If CS2105, CS2106, CS2107 are in Sem 5, CS3235 can be Sem 6. Then CS4239 can be Sem 7. So move CS4239 to Sem 7. Sem 7: CS3240, CS3249, CS2102, CS3219, CS4239? 5 courses = 20 MC. Fits. Sem 8: CS4240. 4 MC. Fits. CS4240 is offered Sem 2. Sem 8 is Sem 2. OK. CS3249 before CS4240. CS3249 in Sem 7, CS4240 in Sem 8. OK. CS2109S late. Can be Sem 6 or 8. Sem 6 is full? Sem 6 has CS3211, CS3235, CS3230, CS2109S. 16 MC. OK. CS3230 late. Sem 6 is OK. CS2106 late. Sem 5 is the only option before Sem 6. So this plan works. Status PLAN.\n\n{\"status\": \"PLAN\", \"plan\": {\"5\": [\"CS2106\", \"CS2105\", \"CS2107\", \"CS2111\"], \"6\": [\"CS3211\", \"CS3235\", \"CS3230\", \"CS2109S\"], \"7\": [\"CS3240\", \"CS3249\", \"CS2102\", \"CS3219\", \"CS4239\"], \"8\": [\"CS4240\"]}, \"reasons\": [\"Added CS2107, CS3235, CS2111, CS3240 as prerequisites. CS4239 placed in Sem 7 (Sem 1) as it is only offered in Sem 1. CS4240 placed in Sem 8 (Sem 2). CS3211 in Sem 6 as required. CS3249 before CS4240. Soft wishes met.\"]}}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2106",
+      "CS2105",
+      "CS2107",
+      "CS2111"
+     ],
+     "6": [
+      "CS3211",
+      "CS3235",
+      "CS3230",
+      "CS2109S"
+     ],
+     "7": [
+      "CS3240",
+      "CS3249",
+      "CS2102",
+      "CS3219",
+      "CS4239"
+     ],
+     "8": [
+      "CS4240"
+     ]
+    },
+    "reasons": [
+     "Added CS2107, CS3235, CS2111, CS3240 as prerequisites. CS4239 placed in Sem 7 (Sem 1) as it is only offered in Sem 1. CS4240 placed in Sem 8 (Sem 2). CS3211 in Sem 6 as required. CS3249 before CS4240. Soft wishes met."
+    ]
+   },
+   "repair": "extra_text",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11340,
+    "total_tokens": 13908,
+    "completion_tokens": 2568,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 35.31,
+    "attempts": 1
+   },
+   "seconds": 35.31,
+   "violations": [
+    "R3 CS2111 not offered in Sem 1 (semester 5)"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS2111 is a prerequisite for CS3240 and CS3249, which are required for CS4240. CS2111 is only offered in Sem 2. To take CS4240 (offered Sem 2) in the earliest possible semester (Sem 8), CS3240 must be taken in Sem 7 (Sem 1) or earlier. However, CS3240 requires CS2111. If CS2111 is taken in Sem 6 (Sem 2), CS3240 can be taken in Sem 7 (Sem 1). But CS3249 also requires CS2111 and must be taken before CS4240. CS3249 is offered Sem 1. So CS3249 must be taken in Sem 7 or earlier. If CS2111 is taken in Sem 6, CS3249 can be taken in Sem 7. This seems possible. Let's re-verify CS2111 offering. Record: 'offered: Sem 2'. Sem 6 is Sem 2. So CS2111 in Sem 6 is valid. CS3240 offered Sem 1, Sem 2. Sem 7 is Sem 1. So CS3240 in Sem 7 is valid. CS3249 offered Sem 1. Sem 7 is Sem 1. So CS3249 in Sem 7 is valid. CS4240 offered Sem 2. Sem 8 is Sem 2. So CS4240 in Sem 8 is valid. Prerequisites: CS2111 (Sem 6) -> CS3240 (Sem 7) -> CS4240 (Sem 8). CS2111 (Sem 6) -> CS3249 (Sem 7) -> CS4240 (Sem 8). This chain works. Why did the previous answer fail? It put CS2111 in Sem 5. Sem 5 is Sem 1. CS2111 is not offered in Sem 1. So CS2111 must be in Sem 6 or later. If CS2111 is in Sem 6, then CS3240 and CS3249 can be in Sem 7. CS4239 requires CS3235. CS3235 requires CS2105, CS2106, CS2107. CS2106 is required for CS3211 in Sem 6. So CS2106 must be in Sem 5. CS2105 and CS2107 can be in Sem 5. Then CS3235 can be in Sem 6. CS4239 requires CS3235 and CS2103T. CS4239 is offered Sem 1. So CS4239 can be in Sem 7. Sem 7 has CS3240, CS3249, CS4239. Plus CS2102 and CS3219? CS2102 prereq: CS1231S and CS2030S. Student has both. CS2102 offered Sem 1, Sem 2. CS3219 prereq: CS2103T. Student has it. CS3219 offered Sem 1, Sem 2. So Sem 7 can have CS3240, CS3249, CS4239, CS2102, CS3219. 5 courses = 20 MC. Fits. Sem 6 has CS3211, CS3235, CS2111, CS2109S? CS2109S prereq: CS2040S and Math. Student has both. CS2109S offered Sem 1, Sem 2. Sem 6 is Sem 2. So CS2109S in Sem 6 is valid. Sem 6: CS3211, CS3235, CS2111, CS2109S. 4 courses = 16 MC. Fits. Sem 5: CS2106, CS2105, CS2107, CS3230? CS3230 prereq: CS2040S and CS1231S. Student has both. CS3230 offered Sem 1, Sem 2. Sem 5 is Sem 1. So CS3230 in Sem 5 is valid. Sem 5: CS2106, CS2105, CS2107, CS3230. 4 courses = 16 MC. Fits. Sem 8: CS4240. 1 course = 4 MC. Fits. This plan works. CS2111 in Sem 6 (Sem 2) is valid. CS3240 in Sem 7 (Sem 1) is valid. CS3249 in Sem 7 (Sem 1) is valid. CS4240 in Sem 8 (Sem 2) is valid. CS4239 in Sem 7 (Sem 1) is valid. CS3211 in Sem 6 is valid. CS3235 in Sem 6 is valid. CS2106 in Sem 5 is valid. CS2105 in Sem 5 is valid. CS2107 in Sem 5 is valid. CS3230 in Sem 5 is valid. CS2109S in Sem 6 is valid. CS2102 in Sem 7 is valid. CS3219 in Sem 7 is valid. All prerequisites met. All offerings match. MC limits met. CS3211 in Sem 6 met. CS3249 before CS4240 met. CS2109S late (Sem 6 vs Sem 5/7/8? Sem 8 is later. Can CS2109S be in Sem 8? Sem 8 has CS4240. Can we swap? CS4240 is Sem 2. CS2109S is Sem 1, Sem 2. If CS2109S in Sem 8, CS4240 must be in Sem 8? No, CS4240 is the last course. If CS2109S is in Sem 8, CS4240 must be in Sem 8? No, CS4240 is in Sem 8. We can't have two courses in Sem 8 if we want to minimize last semester? No, we can have multiple courses in Sem 8. But CS4240 is the last course. If we put CS2109S in Sem 8, it is later than Sem 6. So CS2109S in Sem 8 is better for the soft wish. Sem 8: CS4240, CS2109S. 8 MC. Fits. Sem 7: CS3240, CS3249, CS4239, CS2102, CS3219. 20 MC. Fits. Sem 6: CS3211, CS3235, CS2111. 12 MC. Fits. Sem 5: CS2106, CS2105, CS2107, CS3230. 16 MC. Fits. This plan is valid and meets soft wishes better. CS2109S in Sem 8. CS3230 in Sem 5. CS2106 in Sem 5 (earliest possible before Sem 6).\n\n{\"status\": \"PLAN\", \"plan\": {\"5\": [\"CS2106\", \"CS2105\", \"CS2107\", \"CS3230\"], \"6\": [\"CS3211\", \"CS3235\", \"CS2111\"], \"7\": [\"CS3240\", \"CS3249\", \"CS4239\", \"CS2102\", \"CS3219\"], \"8\": [\"CS4240\", \"CS2109S\"]}, \"reasons\": [\"Added CS2107, CS3235, CS2111, CS3240 as prerequisites. CS2111 placed in Sem 6 (Sem 2) as it is only offered in Sem 2. CS3240 and CS3249 placed in Sem 7 (Sem 1). CS4240 placed in Sem 8 (Sem 2). CS4239 placed in Sem 7 (Sem 1). CS3211 in Sem 6 as required. CS2109S placed in Sem 8 to satisfy 'late as possible' wish.\"]}}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2106",
+      "CS2105",
+      "CS2107",
+      "CS3230"
+     ],
+     "6": [
+      "CS3211",
+      "CS3235",
+      "CS2111"
+     ],
+     "7": [
+      "CS3240",
+      "CS3249",
+      "CS4239",
+      "CS2102",
+      "CS3219"
+     ],
+     "8": [
+      "CS4240",
+      "CS2109S"
+     ]
+    },
+    "reasons": [
+     "Added CS2107, CS3235, CS2111, CS3240 as prerequisites. CS2111 placed in Sem 6 (Sem 2) as it is only offered in Sem 2. CS3240 and CS3249 placed in Sem 7 (Sem 1). CS4240 placed in Sem 8 (Sem 2). CS4239 placed in Sem 7 (Sem 1). CS3211 in Sem 6 as required. CS2109S placed in Sem 8 to satisfy 'late as possible' wish."
+    ]
+   },
+   "repair": "extra_text",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 13608,
+    "total_tokens": 15614,
+    "completion_tokens": 2006,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 26.14,
+    "attempts": 1
+   },
+   "seconds": 26.14,
+   "violations": []
+  }
+ ]
+}

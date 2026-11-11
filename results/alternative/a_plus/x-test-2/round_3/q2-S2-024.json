@@ -1,0 +1,62 @@
+{
+ "id": "q2-S2-024",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 54.2,
+ "usage": {
+  "prompt_tokens": 10064,
+  "total_tokens": 16051,
+  "completion_tokens": 5987,
+  "prompt_tokens_details": {
+   "cached_tokens": 9728,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5813
+  },
+  "finish_reason": "stop",
+  "request_seconds": 54.2,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"4\":[\"CS2105\",\"CS2106\",\"CS3210\"],\"5\":[\"CS3103\",\"CS4223\",\"CS2109S\"],\"6\":[\"ST2334\",\"CS3219\",\"CS3230\"],\"7\":[\"CS2102\"],\"8\":[\"CS3263\",\"ES2660\"]},\"reasons\":[\"CS2105 is earliest in semester 4; CS3103 follows in semester 5 and precedes CS2102 in semester 7.\",\"CS2106 and added prerequisite CS3210 are in semester 4 before CS4223 in semester 5.\",\"CS3263 is in semester 8 with ES2660 as late as possible; all semesters respect the 12 MC limit and semester 7 has only CS2102.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2105",
+    "CS2106",
+    "CS3210"
+   ],
+   "5": [
+    "CS3103",
+    "CS4223",
+    "CS2109S"
+   ],
+   "6": [
+    "ST2334",
+    "CS3219",
+    "CS3230"
+   ],
+   "7": [
+    "CS2102"
+   ],
+   "8": [
+    "CS3263",
+    "ES2660"
+   ]
+  },
+  "reasons": [
+   "CS2105 is earliest in semester 4; CS3103 follows in semester 5 and precedes CS2102 in semester 7.",
+   "CS2106 and added prerequisite CS3210 are in semester 4 before CS4223 in semester 5.",
+   "CS3263 is in semester 8 with ES2660 as late as possible; all semesters respect the 12 MC limit and semester 7 has only CS2102."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

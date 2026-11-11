@@ -1,0 +1,47 @@
+{
+ "id": "q2-S4-158",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 12.64,
+ "usage": {
+  "prompt_tokens": 11024,
+  "total_tokens": 11649,
+  "completion_tokens": 625,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 12.64,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS3230\"], \"5\": [\"CS3240\"], \"6\": [\"CS4240\"], \"7\": [\"CS4249\", \"CS3241\"], \"8\": [\"CS4243\"]}, \"reasons\": [\"Prerequisites satisfied: CS3230 needs CS2040S/CS1231S (done); CS3240 needs CS2111 or NM2207 (neither done, but CS3240 is offered Sem 1 and has no prereq listed in record? Wait, CS3240 prereq is CS2111 or NM2207. Student has neither. CS3240 cannot be taken. CS3241 needs CS2030S/CS2113 and CS2040. Student has CS2030S and CS2040S. So CS3241 is eligible in Sem 1 or 2. CS3247 needs CS3241. CS4240 needs CS3240. CS4243 needs many math/stats prereqs. Student has MA1521, MA1522, ST2334. CS4243 prereqs: (YSC2232 or MA2001...) and (ST1131...) and (CS2030...) and (CS2040...) and (MA1102R...). Student lacks ST1131, MA2001, etc. CS4243 is NOT eligible. CS4249 needs CS3240. CS3240 needs CS2111 or NM2207. Student has neither. CS3240 is NOT eligible. Therefore, CS4240 and CS4249 cannot be taken. CS3230 needs CS2040S and CS1231S. Both done. CS3230 is eligible. CS3241 needs CS2030S and CS2040S. Both done. CS3241 is eligible. CS3247 needs CS3241. CS3247 is eligible after CS3241. CS4243 and CS4240/4249 are blocked by missing prereqs. The student's required courses CS4240, CS4243, CS4249 cannot be taken due to missing prerequisites (CS2111/NM2207 for CS3240, ST1131/MA2001 for CS4243). Thus, a valid plan for ALL required courses is impossible.\", \"status\": \"NO_PLAN\"}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS3230"
+   ],
+   "5": [
+    "CS3240"
+   ],
+   "6": [
+    "CS4240"
+   ],
+   "7": [
+    "CS4249",
+    "CS3241"
+   ],
+   "8": [
+    "CS4243"
+   ]
+  }
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

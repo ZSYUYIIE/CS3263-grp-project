@@ -1,0 +1,128 @@
+{
+ "id": "q2-S4-062",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 9.84,
+ "solver_seconds": 0.018,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3153,
+  "total_tokens": 3688,
+  "completion_tokens": 535,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 9.57,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"current_sem\": 7,\n  \"completed\": [\n    \"MA1521\",\n    \"CS2100\",\n    \"IS1108\",\n    \"CS2109S\",\n    \"MA1522\",\n    \"CS2101\",\n    \"CS2102\",\n    \"CS3230\",\n    \"CS1101S\",\n    \"CS2030S\",\n    \"CS2040S\",\n    \"CS2103T\",\n    \"CS2106\",\n    \"ES2660\",\n    \"CS1231S\",\n    \"CS3219\",\n    \"ST2334\"\n  ],\n  \"must_take\": [\n    \"CS3263\",\n    \"CS3210\",\n    \"CS4212\",\n    \"CS3264\"\n  ],\n  \"mc_max\": 16,\n  \"objective\": \"min_total_mc\",\n  \"rules\": [\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS3210\",\n      \"b\": \"CS4212\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS3264\",\n      \"sem\": 8,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS3210\",\n      \"sem\": 7,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS3264\",\n      \"b\": \"CS4212\",\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"same_sem\",\n      \"a\": \"CS3210\",\n      \"b\": \"CS3264\",\n      \"strength\": \"prefer\"\n    }\n  ],\n  \"late\": [\n    \"CS4212\"\n  ],\n  \"unsupported\": [\n    \"chance I fail one module this semester and have to retake it\"\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "completed": [
+   "MA1521",
+   "CS2100",
+   "IS1108",
+   "CS2109S",
+   "MA1522",
+   "CS2101",
+   "CS2102",
+   "CS3230",
+   "CS1101S",
+   "CS2030S",
+   "CS2040S",
+   "CS2103T",
+   "CS2106",
+   "ES2660",
+   "CS1231S",
+   "CS3219",
+   "ST2334"
+  ],
+  "must_take": [
+   "CS3263",
+   "CS3210",
+   "CS4212",
+   "CS3264"
+  ],
+  "mc_max": 16,
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS3210",
+    "b": "CS4212",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3264",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3210",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3264",
+    "b": "CS4212",
+    "strength": "prefer"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3210",
+    "b": "CS3264",
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "CS4212"
+  ],
+  "unsupported": [
+   "chance I fail one module this semester and have to retake it"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 8,
+  "plan": {
+   "7": [
+    "CS2104",
+    "CS3210",
+    "CS3263"
+   ],
+   "8": [
+    "CS3264",
+    "CS4212"
+   ]
+  },
+  "mc_per_semester": {
+   "7": 12,
+   "8": 8
+  },
+  "preferences_met": [
+   "CS4212 as late as possible"
+  ],
+  "preferences_not_met": [
+   "CS3264 before CS4212",
+   "CS3210 and CS3264 in the same semester"
+  ],
+  "added_prerequisites": [
+   "CS2104"
+  ],
+  "not_applied": [
+   "chance I fail one module this semester and have to retake it"
+  ]
+ }
+}

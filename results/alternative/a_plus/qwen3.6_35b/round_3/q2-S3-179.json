@@ -1,0 +1,29 @@
+{
+ "id": "q2-S3-179",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 3,
+ "end": "switched to NO_PLAN",
+ "seconds": 160.33,
+ "usage": {
+  "prompt_tokens": 39408,
+  "total_tokens": 46155,
+  "completion_tokens": 6747,
+  "finish_reason": "stop",
+  "request_seconds": 160.31,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS2105 requires CS2040 (or equivalent). CS2040 requires CS1101S. CS1101S is taken in Sem 1. Thus CS2040 can be taken in Sem 2. However, CS2109S also requires CS2040. If CS2040 is taken in Sem 2, CS2109S cannot be taken in Sem 2 (prereq not strictly earlier). CS2109S must be in Sem 3 or later. CS2103T requires CS2030 and CS2040. CS2030 requires CS1101S. So CS2030 and CS2040 in Sem 2 allows CS2103T in Sem 3. CS3219 requires CS2103T, so Sem 4. CS3230 requires CS2040 and CS1231. CS1231 in Sem 1. CS3230 in Sem 2 or later. ST2334 in Sem 8. The main constraint is MC load. Sem 1: CS1101S, CS1231, MA1521, MA1522, ES2660, IS1108 (24 MC > 20). Need to drop some. CS2101, CS2105, CS2109S, CS2103T, CS3219, CS3230, ST2334 are required. CS1101S, CS1231, MA1521, MA1522 are required. ES2660, IS1108 are required. Total 12 courses. 48 MC. 8 semesters. 6 MC per semester average. But NOC in Sem 6 (0 MC). So 7 semesters for 48 MC. ~6.8 MC/sem. Feasible. Let's try: Sem 1: CS1101S, CS1231, MA1521, MA1522 (16 MC). Sem 2: CS2040, CS2030, CS3230, ES2660 (16 MC). Sem 3: CS2109S, CS2103T, CS2105, CS2101 (16 MC). Sem 4: CS3219 (4 MC). Sem 6: NOC. Sem 8: ST2334. This works. Why did the previous answer fail? The previous answer put CS2105 in Sem 2 with CS2040 in Sem 2. CS2040 is a prereq for CS2105. So CS2040 must be strictly earlier. So CS2105 cannot be in Sem 2. My revised plan puts CS2105 in Sem 3. This is valid. I will output this plan.\"]}}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS2105 requires CS2040 (or equivalent). CS2040 requires CS1101S. CS1101S is taken in Sem 1. Thus CS2040 can be taken in Sem 2. However, CS2109S also requires CS2040. If CS2040 is taken in Sem 2, CS2109S cannot be taken in Sem 2 (prereq not strictly earlier). CS2109S must be in Sem 3 or later. CS2103T requires CS2030 and CS2040. CS2030 requires CS1101S. So CS2030 and CS2040 in Sem 2 allows CS2103T in Sem 3. CS3219 requires CS2103T, so Sem 4. CS3230 requires CS2040 and CS1231. CS1231 in Sem 1. CS3230 in Sem 2 or later. ST2334 in Sem 8. The main constraint is MC load. Sem 1: CS1101S, CS1231, MA1521, MA1522, ES2660, IS1108 (24 MC > 20). Need to drop some. CS2101, CS2105, CS2109S, CS2103T, CS3219, CS3230, ST2334 are required. CS1101S, CS1231, MA1521, MA1522 are required. ES2660, IS1108 are required. Total 12 courses. 48 MC. 8 semesters. 6 MC per semester average. But NOC in Sem 6 (0 MC). So 7 semesters for 48 MC. ~6.8 MC/sem. Feasible. Let's try: Sem 1: CS1101S, CS1231, MA1521, MA1522 (16 MC). Sem 2: CS2040, CS2030, CS3230, ES2660 (16 MC). Sem 3: CS2109S, CS2103T, CS2105, CS2101 (16 MC). Sem 4: CS3219 (4 MC). Sem 6: NOC. Sem 8: ST2334. This works. Why did the previous answer fail? The previous answer put CS2105 in Sem 2 with CS2040 in Sem 2. CS2040 is a prereq for CS2105. So CS2040 must be strictly earlier. So CS2105 cannot be in Sem 2. My revised plan puts CS2105 in Sem 3. This is valid. I will output this plan."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

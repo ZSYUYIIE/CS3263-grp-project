@@ -1,0 +1,144 @@
+{
+ "id": "q2-S1-040",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 18.5,
+ "solver_seconds": 0.174,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2800,
+  "total_tokens": 3360,
+  "completion_tokens": 560,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 332
+  },
+  "finish_reason": "stop",
+  "request_seconds": 4.25,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":2,\"completed\":[\"ES2660\",\"CS1101S\",\"CS1231S\",\"MA1521\"],\"must_take\":[\"CS3230\",\"CS2102\",\"CS2105\",\"CS3237\",\"CS3219\",\"MA1522\",\"CS3236\",\"CS2106\",\"CS2109S\",\"CS2101\"],\"mc_max\":16,\"rules\":[{\"type\":\"before\",\"a\":\"CS2101\",\"b\":\"CS2102\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS2101\",\"sem\":5,\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"MA1522\",\"b\":\"CS3237\",\"strength\":\"must\"},{\"type\":\"same_sem\",\"a\":\"CS3230\",\"b\":\"MA1522\",\"strength\":\"prefer\"},{\"type\":\"in_sem\",\"course\":\"CS3236\",\"sem\":8,\"strength\":\"prefer\"},{\"type\":\"before\",\"a\":\"CS3236\",\"b\":\"CS2105\",\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 2,
+  "completed": [
+   "ES2660",
+   "CS1101S",
+   "CS1231S",
+   "MA1521"
+  ],
+  "must_take": [
+   "CS3230",
+   "CS2102",
+   "CS2105",
+   "CS3237",
+   "CS3219",
+   "MA1522",
+   "CS3236",
+   "CS2106",
+   "CS2109S",
+   "CS2101"
+  ],
+  "mc_max": 16,
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2101",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2101",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "MA1522",
+    "b": "CS3237",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3230",
+    "b": "MA1522",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3236",
+    "sem": 8,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS3236",
+    "b": "CS2105",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 6,
+  "plan": {
+   "2": [
+    "CS2030S",
+    "ST2334"
+   ],
+   "3": [
+    "CS2040S",
+    "CS2100HS"
+   ],
+   "4": [
+    "CS2109S",
+    "CS3230",
+    "CS3236",
+    "MA1522"
+   ],
+   "5": [
+    "CS2101",
+    "CS2103T",
+    "CS2106",
+    "CS3237"
+   ],
+   "6": [
+    "CS2102",
+    "CS2105",
+    "CS3219"
+   ]
+  },
+  "mc_per_semester": {
+   "2": 8,
+   "3": 8,
+   "4": 16,
+   "5": 16,
+   "6": 12
+  },
+  "preferences_met": [
+   "CS3230 and MA1522 in the same semester",
+   "CS3236 before CS2105"
+  ],
+  "preferences_not_met": [
+   "CS3236 in semester 8"
+  ],
+  "added_prerequisites": [
+   "CS2030S",
+   "CS2040S",
+   "CS2100HS",
+   "CS2103T",
+   "ST2334"
+  ]
+ }
+}

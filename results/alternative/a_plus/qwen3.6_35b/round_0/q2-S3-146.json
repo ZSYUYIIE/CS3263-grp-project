@@ -1,0 +1,48 @@
+{
+ "id": "q2-S3-146",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 2,
+ "end": "valid",
+ "seconds": 20.16,
+ "usage": {
+  "prompt_tokens": 12250,
+  "total_tokens": 13669,
+  "completion_tokens": 1419,
+  "finish_reason": "stop",
+  "request_seconds": 20.16,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2105\",\n      \"CS2102\",\n      \"ST2334\"\n    ],\n    \"6\": [\n      \"CS3219\",\n      \"CS3247\"\n    ],\n    \"7\": [\n      \"CS3249\",\n      \"CS4248\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2105 prerequisites (CS2040S) met; taken in Sem 5 as requested.\",\n    \"CS2102 prerequisites (CS1231S, CS2030S) met; taken in Sem 5.\",\n    \"ST2334 prerequisites (MA1521) met; taken in Sem 5.\",\n    \"CS3219 prerequisite (CS2103T) met; taken in Sem 6 before CS4248.\",\n    \"CS3247 prerequisite (CS3241) is NOT met. CS3241 requires CS2030S/CS2030/CS2030DE/CS2030HS/CS2113/CS2113T AND CS2040/YSC2229/CS2040S/CS2040C/CS2040DE/CS2040HS. Student has CS2030S and CS2040S. Thus CS3241 is eligible. CS3247 prerequisite is CS3241. So CS3241 must be taken before CS3247. CS3241 is offered Sem 1. Sem 6 is Sem 1 of Y3S2? No, Sem 6 is Y3S2. CS3241 is offered Sem 1 only. Wait. CS3241 is offered Sem 1. Sem 6 is even (Sem 2). CS3241 cannot be taken in Sem 6. CS3241 is offered Sem 1. Sem 5 is odd (Sem 1). Can CS3241 be taken in Sem 5? Prerequisites: CS2030S (met) and CS2040S (met). Yes. So CS3241 must be in Sem 5 or earlier. Sem 5 is current. So CS3241 must be in Sem 5. Then CS3247 (prereq CS3241) can be in Sem 6 or later. Sem 6 is Sem 2. CS3247 is offered Sem 2. So CS3247 in Sem 6 is valid. CS3219 prereq YSC3232 or CS2103/CS2103T/CS2103DE/CS2113T/CS2113. Student has CS2103T. So CS3219 eligible in Sem 5 or later. CS3219 offered Sem 1, Sem 2. Sem 6 is Sem 2. So CS3219 in Sem 6 is valid. CS4248 prereq CS2109S (met) and EE2012A/EE2012/ST2131/MA2216/MA2116/MA2116T/ST2334/YSC2243 and MA1505/MA1507/MA1521/MA1102R/YSC1216/MA2002/(MA1511 and MA1512). Student has CS2109S, ST2334 (planned Sem 5), MA1521. So CS4248 eligible after ST2334. CS4248 offered Sem 1, Sem 2. Sem 7 is Sem 1. So CS4248 in Sem 7 is valid. CS3249 prereq CS2111. Student has NOT completed CS2111. CS2111 prerequisite: CS1010A/E/X/1101S/1010S/UTC2851/1010HS/1010J/1010/NM2207. Student has CS1101S. So CS2111 is eligible. CS2111 offered Sem 2. Sem 7 is Sem 1. CS2111 cannot be taken in Sem 7. CS2111 must be taken in Sem 6 or earlier. Sem 6 is Sem 2. So CS2111 can be in Sem 6. Then CS3249 (prereq CS2111) can be in Sem 7 or later. Sem 7 is Sem 1. CS3249 offered Sem 1. So CS3249 in Sem 7 is valid. So CS2111 must be added to Sem 6. CS3219 and CS3247 and CS2111 in Sem 6? MC: 4+4+4=12. Limit 20. OK. CS3247 before CS4248? Yes (Sem 6 vs Sem 7). CS3219 before CS4248? Yes (Sem 6 vs Sem 7). CS2105 early? Yes (Sem 5). CS2102, ST2334 in Sem 5. CS3241 in Sem 5? MC: 4+4+4+4=16. OK. So Sem 5: CS2105, CS2102, ST2334, CS3241. Sem 6: CS3219, CS3247, CS2111. Sem 7: CS3249, CS4248. Sem 8: Exchange (0 MC). Min MC 8 per semester with modules. Sem 5: 16 >= 8. Sem 6: 12 >= 8. Sem 7: 8 >= 8. All good.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2105",
+    "CS2102",
+    "ST2334"
+   ],
+   "6": [
+    "CS3219",
+    "CS3247"
+   ],
+   "7": [
+    "CS3249",
+    "CS4248"
+   ]
+  },
+  "reasons": [
+   "CS2105 prerequisites (CS2040S) met; taken in Sem 5 as requested.",
+   "CS2102 prerequisites (CS1231S, CS2030S) met; taken in Sem 5.",
+   "ST2334 prerequisites (MA1521) met; taken in Sem 5.",
+   "CS3219 prerequisite (CS2103T) met; taken in Sem 6 before CS4248.",
+   "CS3247 prerequisite (CS3241) is NOT met. CS3241 requires CS2030S/CS2030/CS2030DE/CS2030HS/CS2113/CS2113T AND CS2040/YSC2229/CS2040S/CS2040C/CS2040DE/CS2040HS. Student has CS2030S and CS2040S. Thus CS3241 is eligible. CS3247 prerequisite is CS3241. So CS3241 must be taken before CS3247. CS3241 is offered Sem 1. Sem 6 is Sem 1 of Y3S2? No, Sem 6 is Y3S2. CS3241 is offered Sem 1 only. Wait. CS3241 is offered Sem 1. Sem 6 is even (Sem 2). CS3241 cannot be taken in Sem 6. CS3241 is offered Sem 1. Sem 5 is odd (Sem 1). Can CS3241 be taken in Sem 5? Prerequisites: CS2030S (met) and CS2040S (met). Yes. So CS3241 must be in Sem 5 or earlier. Sem 5 is current. So CS3241 must be in Sem 5. Then CS3247 (prereq CS3241) can be in Sem 6 or later. Sem 6 is Sem 2. CS3247 is offered Sem 2. So CS3247 in Sem 6 is valid. CS3219 prereq YSC3232 or CS2103/CS2103T/CS2103DE/CS2113T/CS2113. Student has CS2103T. So CS3219 eligible in Sem 5 or later. CS3219 offered Sem 1, Sem 2. Sem 6 is Sem 2. So CS3219 in Sem 6 is valid. CS4248 prereq CS2109S (met) and EE2012A/EE2012/ST2131/MA2216/MA2116/MA2116T/ST2334/YSC2243 and MA1505/MA1507/MA1521/MA1102R/YSC1216/MA2002/(MA1511 and MA1512). Student has CS2109S, ST2334 (planned Sem 5), MA1521. So CS4248 eligible after ST2334. CS4248 offered Sem 1, Sem 2. Sem 7 is Sem 1. So CS4248 in Sem 7 is valid. CS3249 prereq CS2111. Student has NOT completed CS2111. CS2111 prerequisite: CS1010A/E/X/1101S/1010S/UTC2851/1010HS/1010J/1010/NM2207. Student has CS1101S. So CS2111 is eligible. CS2111 offered Sem 2. Sem 7 is Sem 1. CS2111 cannot be taken in Sem 7. CS2111 must be taken in Sem 6 or earlier. Sem 6 is Sem 2. So CS2111 can be in Sem 6. Then CS3249 (prereq CS2111) can be in Sem 7 or later. Sem 7 is Sem 1. CS3249 offered Sem 1. So CS3249 in Sem 7 is valid. So CS2111 must be added to Sem 6. CS3219 and CS3247 and CS2111 in Sem 6? MC: 4+4+4=12. Limit 20. OK. CS3247 before CS4248? Yes (Sem 6 vs Sem 7). CS3219 before CS4248? Yes (Sem 6 vs Sem 7). CS2105 early? Yes (Sem 5). CS2102, ST2334 in Sem 5. CS3241 in Sem 5? MC: 4+4+4+4=16. OK. So Sem 5: CS2105, CS2102, ST2334, CS3241. Sem 6: CS3219, CS3247, CS2111. Sem 7: CS3249, CS4248. Sem 8: Exchange (0 MC). Min MC 8 per semester with modules. Sem 5: 16 >= 8. Sem 6: 12 >= 8. Sem 7: 8 >= 8. All good."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

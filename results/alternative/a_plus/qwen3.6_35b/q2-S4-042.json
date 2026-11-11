@@ -1,0 +1,58 @@
+{
+ "id": "q2-S4-042",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "not a plan",
+ "seconds": 6.92,
+ "usage": {
+  "prompt_tokens": 12991,
+  "total_tokens": 13343,
+  "completion_tokens": 352,
+  "finish_reason": "stop",
+  "request_seconds": 6.92,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"The student's per-semester limit is 4 MC, but the required courses (CS4230, CS3235, CS3211, CS3247, CS3219, CS2106, CS4330) total 28 MC. With a 4 MC limit, at least 7 semesters are needed. The student is in Y2S2 (Sem 2), leaving only Sem 3 to Sem 8 (6 semesters). It is impossible to fit 28 MC into 6 semesters with a 4 MC cap.\", \"CS4278 is required in Sem 7, but its prerequisites (CS3263 or CS3243) are not completed and are not in the mandatory list. CS3263 requires CS2109S/HS and other math courses not completed. CS3243 requires CS2040S (completed) and CS1231S (completed), so CS3243 is eligible. However, CS3243 is 4 MC. If CS3243 is taken in Sem 6 (to allow CS4278 in Sem 7), Sem 6 already has CS3219 (4 MC). Adding CS3243 would exceed the 4 MC limit in Sem 6.\", \"Even if prerequisites were met, the total credit volume exceeds the capacity defined by the student's 4 MC per semester limit across the remaining 6 semesters (max 24 MC vs 28 MC required).\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "The student's per-semester limit is 4 MC, but the required courses (CS4230, CS3235, CS3211, CS3247, CS3219, CS2106, CS4330) total 28 MC. With a 4 MC limit, at least 7 semesters are needed. The student is in Y2S2 (Sem 2), leaving only Sem 3 to Sem 8 (6 semesters). It is impossible to fit 28 MC into 6 semesters with a 4 MC cap.",
+   "CS4278 is required in Sem 7, but its prerequisites (CS3263 or CS3243) are not completed and are not in the mandatory list. CS3263 requires CS2109S/HS and other math courses not completed. CS3243 requires CS2040S (completed) and CS1231S (completed), so CS3243 is eligible. However, CS3243 is 4 MC. If CS3243 is taken in Sem 6 (to allow CS4278 in Sem 7), Sem 6 already has CS3219 (4 MC). Adding CS3243 would exceed the 4 MC limit in Sem 6.",
+   "Even if prerequisites were met, the total credit volume exceeds the capacity defined by the student's 4 MC per semester limit across the remaining 6 semesters (max 24 MC vs 28 MC required)."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"The student's per-semester limit is 4 MC, but the required courses (CS4230, CS3235, CS3211, CS3247, CS3219, CS2106, CS4330) total 28 MC. With a 4 MC limit, at least 7 semesters are needed. The student is in Y2S2 (Sem 2), leaving only Sem 3 to Sem 8 (6 semesters). It is impossible to fit 28 MC into 6 semesters with a 4 MC cap.\", \"CS4278 is required in Sem 7, but its prerequisites (CS3263 or CS3243) are not completed and are not in the mandatory list. CS3263 requires CS2109S/HS and other math courses not completed. CS3243 requires CS2040S (completed) and CS1231S (completed), so CS3243 is eligible. However, CS3243 is 4 MC. If CS3243 is taken in Sem 6 (to allow CS4278 in Sem 7), Sem 6 already has CS3219 (4 MC). Adding CS3243 would exceed the 4 MC limit in Sem 6.\", \"Even if prerequisites were met, the total credit volume exceeds the capacity defined by the student's 4 MC per semester limit across the remaining 6 semesters (max 24 MC vs 28 MC required).\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "The student's per-semester limit is 4 MC, but the required courses (CS4230, CS3235, CS3211, CS3247, CS3219, CS2106, CS4330) total 28 MC. With a 4 MC limit, at least 7 semesters are needed. The student is in Y2S2 (Sem 2), leaving only Sem 3 to Sem 8 (6 semesters). It is impossible to fit 28 MC into 6 semesters with a 4 MC cap.",
+     "CS4278 is required in Sem 7, but its prerequisites (CS3263 or CS3243) are not completed and are not in the mandatory list. CS3263 requires CS2109S/HS and other math courses not completed. CS3243 requires CS2040S (completed) and CS1231S (completed), so CS3243 is eligible. However, CS3243 is 4 MC. If CS3243 is taken in Sem 6 (to allow CS4278 in Sem 7), Sem 6 already has CS3219 (4 MC). Adding CS3243 would exceed the 4 MC limit in Sem 6.",
+     "Even if prerequisites were met, the total credit volume exceeds the capacity defined by the student's 4 MC per semester limit across the remaining 6 semesters (max 24 MC vs 28 MC required)."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12991,
+    "total_tokens": 13343,
+    "completion_tokens": 352,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 6.92,
+    "attempts": 1
+   },
+   "seconds": 6.92,
+   "violations": null
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "id": "q2-S3-230",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 13.66,
+ "usage": {
+  "prompt_tokens": 9917,
+  "total_tokens": 10583,
+  "completion_tokens": 666,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 13.65,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2105\",\n      \"ST2334\"\n    ],\n    \"6\": [\n      \"IS1108\",\n      \"CS3219\"\n    ],\n    \"7\": [\n      \"CS3237\",\n      \"CS4212\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2105 and ST2334 taken in Sem 5 to satisfy 'ST2334 as early as possible' and 'CS3219/CS2105 different semesters'.\",\n    \"IS1108 fixed in Sem 6 per request. CS3219 placed in Sem 6 as it is eligible and meets the 'IS1108 before CS3219' ideal wish.\",\n    \"CS3237 and CS4212 placed in Sem 7. CS3237 is a prerequisite for CS4212 (implied by 'finish CS3237 before CS4212' and lack of other prereqs for CS4212 besides CS2104/CS3212 which are not required/planned, but CS3237 is listed as remaining required. Wait, CS4212 prereq is CS2104 or CS3212. Neither is in the 'remaining required' list nor completed. However, the student says 'My remaining required modules are...'. This implies these are the ONLY ones left. If CS4212 is required, its prereq must be satisfied. CS2104 is not in the list. CS3212 is not in the list. This is a contradiction. Let's re-read carefully. 'My remaining required modules are CS2105, CS3237, ST2334, CS3219, IS1108 and CS4212.' If CS4212 is required, I must plan it. But I cannot plan it without its prereq. Unless one of the completed courses satisfies it? CS2104 prereq: CS2030... CS2103... CS2113... Completed: CS2030S, CS2103T, CS2113 is NOT completed. CS2103T is completed. CS2103T prereq for CS2104? No, CS2104 prereq is CS2030/CS2030S/CS2030DE/CS2030HS/CS2113/CS2113T. CS2103T is NOT a prereq for CS2104. So CS2104 is not eligible. CS3212 is not in the records. So CS4212 cannot be taken. Status should be NO_PLAN.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2105",
+    "ST2334"
+   ],
+   "6": [
+    "IS1108",
+    "CS3219"
+   ],
+   "7": [
+    "CS3237",
+    "CS4212"
+   ]
+  },
+  "reasons": [
+   "CS2105 and ST2334 taken in Sem 5 to satisfy 'ST2334 as early as possible' and 'CS3219/CS2105 different semesters'.",
+   "IS1108 fixed in Sem 6 per request. CS3219 placed in Sem 6 as it is eligible and meets the 'IS1108 before CS3219' ideal wish.",
+   "CS3237 and CS4212 placed in Sem 7. CS3237 is a prerequisite for CS4212 (implied by 'finish CS3237 before CS4212' and lack of other prereqs for CS4212 besides CS2104/CS3212 which are not required/planned, but CS3237 is listed as remaining required. Wait, CS4212 prereq is CS2104 or CS3212. Neither is in the 'remaining required' list nor completed. However, the student says 'My remaining required modules are...'. This implies these are the ONLY ones left. If CS4212 is required, its prereq must be satisfied. CS2104 is not in the list. CS3212 is not in the list. This is a contradiction. Let's re-read carefully. 'My remaining required modules are CS2105, CS3237, ST2334, CS3219, IS1108 and CS4212.' If CS4212 is required, I must plan it. But I cannot plan it without its prereq. Unless one of the completed courses satisfies it? CS2104 prereq: CS2030... CS2103... CS2113... Completed: CS2030S, CS2103T, CS2113 is NOT completed. CS2103T is completed. CS2103T prereq for CS2104? No, CS2104 prereq is CS2030/CS2030S/CS2030DE/CS2030HS/CS2113/CS2113T. CS2103T is NOT a prereq for CS2104. So CS2104 is not eligible. CS3212 is not in the records. So CS4212 cannot be taken. Status should be NO_PLAN."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

@@ -1,0 +1,51 @@
+{
+ "id": "q2-S3-011",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 20.25,
+ "usage": {
+  "prompt_tokens": 8764,
+  "total_tokens": 10723,
+  "completion_tokens": 1959,
+  "prompt_tokens_details": {
+   "cached_tokens": 8448,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1812
+  },
+  "finish_reason": "stop",
+  "request_seconds": 20.25,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS3227\",\"CS3281\"],\"7\":[\"CS2102\",\"CS4218\",\"CS3103\"],\"8\":[\"CS3210\",\"CS3282\"]},\"reasons\":[\"CS2102 and CS4218 are together in semester 7; CS3103 is also there because it is Sem 1 only and must follow CS3227.\",\"CS3227 is in semester 6 before CS3103, and CS3210 is placed as late as possible in semester 8.\",\"CS3281 is added in semester 6 as the prerequisite for CS3282, which can only be taken in semester 8.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS3227",
+    "CS3281"
+   ],
+   "7": [
+    "CS2102",
+    "CS4218",
+    "CS3103"
+   ],
+   "8": [
+    "CS3210",
+    "CS3282"
+   ]
+  },
+  "reasons": [
+   "CS2102 and CS4218 are together in semester 7; CS3103 is also there because it is Sem 1 only and must follow CS3227.",
+   "CS3227 is in semester 6 before CS3103, and CS3210 is placed as late as possible in semester 8.",
+   "CS3281 is added in semester 6 as the prerequisite for CS3282, which can only be taken in semester 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

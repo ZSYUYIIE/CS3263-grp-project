@@ -1,0 +1,67 @@
+{
+ "id": "q2-S3-059",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 51.51,
+ "usage": {
+  "prompt_tokens": 11292,
+  "total_tokens": 16652,
+  "completion_tokens": 5360,
+  "prompt_tokens_details": {
+   "cached_tokens": 11008,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5174
+  },
+  "finish_reason": "stop",
+  "request_seconds": 51.51,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CS3231\",\"CS3241\",\"CS2109S\",\"CS2103T\"],\"4\":[\"CS4430\",\"CS3230\",\"CS2100\",\"ST2334\"],\"5\":[\"CS2101\",\"CS2106\",\"CS3219\",\"CS2105\"],\"6\":[\"CS3247\"],\"7\":[\"CP3880\"],\"8\":[\"CS2102\"]},\"reasons\":[\"Plan uses semesters 3-8; ATAP is in semester 7 and CS2102 is later in semester 8.\",\"Added CS3231 and CS3241 as prerequisites for CS4430 and CS3247.\",\"CS4430 is earliest in semester 4; CS2109S and CS2103T are together in semester 3; CS2102 is latest in semester 8.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS3231",
+    "CS3241",
+    "CS2109S",
+    "CS2103T"
+   ],
+   "4": [
+    "CS4430",
+    "CS3230",
+    "CS2100",
+    "ST2334"
+   ],
+   "5": [
+    "CS2101",
+    "CS2106",
+    "CS3219",
+    "CS2105"
+   ],
+   "6": [
+    "CS3247"
+   ],
+   "7": [
+    "CP3880"
+   ],
+   "8": [
+    "CS2102"
+   ]
+  },
+  "reasons": [
+   "Plan uses semesters 3-8; ATAP is in semester 7 and CS2102 is later in semester 8.",
+   "Added CS3231 and CS3241 as prerequisites for CS4430 and CS3247.",
+   "CS4430 is earliest in semester 4; CS2109S and CS2103T are together in semester 3; CS2102 is latest in semester 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

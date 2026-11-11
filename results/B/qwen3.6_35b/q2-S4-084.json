@@ -1,0 +1,123 @@
+{
+ "id": "q2-S4-084",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 8.1,
+ "solver_seconds": 0.006,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3152,
+  "total_tokens": 3642,
+  "completion_tokens": 490,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 8.1,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 8,\n\"completed\": [\n\"CS2109S\",\n\"CS1101S\",\n\"ST2334\",\n\"CS2106\",\n\"CS1231S\",\n\"CS2103T\",\n\"CS2040S\",\n\"CS2101\",\n\"CS3230\",\n\"CS3219\",\n\"MA1521\",\n\"CS4243\",\n\"CS2105\",\n\"CS2100\",\n\"MA1522\",\n\"IS1108\",\n\"CS2030S\"\n],\n\"must_take\": [\n\"CS2102\",\n\"CS3264\",\n\"ES2660\",\n\"CS3213\"\n],\n\"rules\": [\n{\n\"type\": \"same_sem\",\n\"a\": \"ES2660\",\n\"b\": \"CS2102\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3213\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3264\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2102\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2102\",\n\"b\": \"CS3264\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"ES2660\",\n\"sem\": 8,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS2102\",\n\"b\": \"CS3213\",\n\"strength\": \"prefer\"\n}\n],\n\"early\": [\n\"ES2660\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 8,
+  "completed": [
+   "CS2109S",
+   "CS1101S",
+   "ST2334",
+   "CS2106",
+   "CS1231S",
+   "CS2103T",
+   "CS2040S",
+   "CS2101",
+   "CS3230",
+   "CS3219",
+   "MA1521",
+   "CS4243",
+   "CS2105",
+   "CS2100",
+   "MA1522",
+   "IS1108",
+   "CS2030S"
+  ],
+  "must_take": [
+   "CS2102",
+   "CS3264",
+   "ES2660",
+   "CS3213"
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "ES2660",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3213",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3264",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2102",
+    "b": "CS3264",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "ES2660",
+    "sem": 8,
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS2102",
+    "b": "CS3213",
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "ES2660"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 8,
+  "plan": {
+   "8": [
+    "CS2102",
+    "CS3213",
+    "CS3264",
+    "ES2660"
+   ]
+  },
+  "mc_per_semester": {
+   "8": 16
+  },
+  "preferences_met": [
+   "ES2660 in semester 8",
+   "ES2660 as early as possible"
+  ],
+  "preferences_not_met": [
+   "CS2102 before CS3264",
+   "CS2102 and CS3213 in different semesters"
+  ]
+ }
+}

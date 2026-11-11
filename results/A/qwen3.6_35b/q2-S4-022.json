@@ -1,0 +1,29 @@
+{
+ "id": "q2-S4-022",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 9.73,
+ "usage": {
+  "prompt_tokens": 11080,
+  "total_tokens": 11577,
+  "completion_tokens": 497,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 9.73,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"Constraint conflict: The student requires CS4234 in semester 7, but also wants CS3281 and CS4234 together in one semester. This forces CS3281 into semester 7.\",\n    \"Prerequisite violation: CS3281 requires CS2103, CS2103T, CS2103DE, or CS2113. The student has completed CS2103T, so CS3281 is eligible. However, the 'at most 1 module per semester' constraint prevents taking CS3281 and CS4234 together in semester 7.\",\n    \"No valid schedule exists: With CS4234 fixed in Sem 7 and the 1-module limit, CS3281 cannot be in Sem 7. If CS3281 is in Sem 6, it must be before CS4261 (Sem 8) and CS4277 (Sem 8). CS4277 requires CS2040S (completed) and math prerequisites (MA1522 completed). CS4261 requires EE2012A/EE2012/ST2131/MA2216/ST2334/MA2116/MA2116T AND CS2040S AND MA1100/MA1100T/CS1231S/CS1231 AND MA2001/MA1101R/MA1311/MA1508E/MA1513/MA1522. The student has ST2334, CS1231S, and MA1522. They lack EE2012A, EE2012, ST2131, MA2216, MA2116, MA2116T, MA2001, MA1101R, MA1311, MA1508E, MA1513. Thus, CS4261 is not eligible due to missing prerequisites.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "Constraint conflict: The student requires CS4234 in semester 7, but also wants CS3281 and CS4234 together in one semester. This forces CS3281 into semester 7.",
+   "Prerequisite violation: CS3281 requires CS2103, CS2103T, CS2103DE, or CS2113. The student has completed CS2103T, so CS3281 is eligible. However, the 'at most 1 module per semester' constraint prevents taking CS3281 and CS4234 together in semester 7.",
+   "No valid schedule exists: With CS4234 fixed in Sem 7 and the 1-module limit, CS3281 cannot be in Sem 7. If CS3281 is in Sem 6, it must be before CS4261 (Sem 8) and CS4277 (Sem 8). CS4277 requires CS2040S (completed) and math prerequisites (MA1522 completed). CS4261 requires EE2012A/EE2012/ST2131/MA2216/ST2334/MA2116/MA2116T AND CS2040S AND MA1100/MA1100T/CS1231S/CS1231 AND MA2001/MA1101R/MA1311/MA1508E/MA1513/MA1522. The student has ST2334, CS1231S, and MA1522. They lack EE2012A, EE2012, ST2131, MA2216, MA2116, MA2116T, MA2001, MA1101R, MA1311, MA1508E, MA1513. Thus, CS4261 is not eligible due to missing prerequisites."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

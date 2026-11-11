@@ -1,0 +1,59 @@
+{
+ "id": "q1-ex-002-h",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 3.32,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 3001,
+  "total_tokens": 3170,
+  "completion_tokens": 169,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 3.32,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"eligible\",\n\"target\": \"EE4204\",\n\"current_sem\": 6,\n\"completed\": [\n\"CS2100\",\n\"CS1010\",\n\"MA1508E\",\n\"IS1108\",\n\"CS3268\",\n\"CS2040S\",\n\"ES2660\",\n\"CS1231S\",\n\"ST2334\",\n\"CS2105\",\n\"ST3248\",\n\"MA1521\",\n\"CS2101\",\n\"CS2106\",\n\"CS2109S\",\n\"CS3230\"\n]\n}",
+ "spec": {
+  "query": "eligible",
+  "target": "EE4204",
+  "current_sem": 6,
+  "completed": [
+   "CS2100",
+   "CS1010",
+   "MA1508E",
+   "IS1108",
+   "CS3268",
+   "CS2040S",
+   "ES2660",
+   "CS1231S",
+   "ST2334",
+   "CS2105",
+   "ST3248",
+   "MA1521",
+   "CS2101",
+   "CS2106",
+   "CS2109S",
+   "CS3230"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "EE4204",
+  "semester": 6,
+  "reasons": [
+   "precluded: already completed CS2105"
+  ],
+  "can_still_become_eligible": false,
+  "never_eligible_because": "EE4204 is ruled out by completed CS2105"
+ }
+}

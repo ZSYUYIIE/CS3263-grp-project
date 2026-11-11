@@ -1,0 +1,164 @@
+{
+ "id": "q2-S3-061",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 12.39,
+ "usage": {
+  "prompt_tokens": 30971,
+  "total_tokens": 31603,
+  "completion_tokens": 632,
+  "finish_reason": "stop",
+  "request_seconds": 12.39,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4430 is only offered in Sem 2 (even semesters), so it cannot be taken in Sem 7.\",\n    \"CS4430 requires CS3231, which is only offered in Sem 1 (odd semesters).\",\n    \"CS3231 and CS4430 cannot both be completed by the end of Sem 8 due to semester term constraints.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4430 is only offered in Sem 2 (even semesters), so it cannot be taken in Sem 7.",
+   "CS4430 requires CS3231, which is only offered in Sem 1 (odd semesters).",
+   "CS3231 and CS4430 cannot both be completed by the end of Sem 8 due to semester term constraints."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2100\",\n      \"CS2109S\",\n      \"CS2103T\",\n      \"CS2105\"\n    ],\n    \"6\": [\n      \"CS3230\",\n      \"CS2101\",\n      \"CS2102\",\n      \"CS2106\"\n    ],\n    \"7\": [\n      \"CS3219\",\n      \"CS4430\",\n      \"CS3247\"\n    ]\n  },\n  \"reasons\": [\n    \"All prerequisites satisfied by completed courses or earlier planned semesters.\",\n    \"Soft wishes met: CS2100 in Sem 5, CS2109S/CS2103T together, CS2105/CS2106 as early as possible.\",\n    \"MC limits respected (16 MC/sem max). No ATAP requested.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2100",
+      "CS2109S",
+      "CS2103T",
+      "CS2105"
+     ],
+     "6": [
+      "CS3230",
+      "CS2101",
+      "CS2102",
+      "CS2106"
+     ],
+     "7": [
+      "CS3219",
+      "CS4430",
+      "CS3247"
+     ]
+    },
+    "reasons": [
+     "All prerequisites satisfied by completed courses or earlier planned semesters.",
+     "Soft wishes met: CS2100 in Sem 5, CS2109S/CS2103T together, CS2105/CS2106 as early as possible.",
+     "MC limits respected (16 MC/sem max). No ATAP requested."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10040,
+    "total_tokens": 10281,
+    "completion_tokens": 241,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.05,
+    "attempts": 1
+   },
+   "seconds": 5.05,
+   "violations": [
+    "R1 must-take ST2334 missing",
+    "R3 CS3247 not offered in Sem 1 (semester 7)",
+    "R4 CS3247 in semester 7: prerequisite not met (CS3241)",
+    "R3 CS4430 not offered in Sem 1 (semester 7)",
+    "R4 CS4430 in semester 7: prerequisite not met (CS3231)",
+    "R9 must rule not met: before CS3230 CS2106",
+    "R9 must rule not met: before CS3230 CS2101"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2100\",\n      \"CS2109S\",\n      \"CS2103T\",\n      \"CS2105\",\n      \"ST2334\"\n    ],\n    \"6\": [\n      \"CS3230\",\n      \"CS2101\",\n      \"CS2102\",\n      \"CS2106\"\n    ],\n    \"7\": [\n      \"CS3219\",\n      \"CS3241\",\n      \"CS4430\"\n    ],\n    \"8\": [\n      \"CS3247\"\n    ]\n  },\n  \"reasons\": [\n    \"ST2334 added to Sem 5 to satisfy must-take rule.\",\n    \"CS3241 added to Sem 7 to satisfy CS3247 prerequisite; CS3247 moved to Sem 8.\",\n    \"CS3231 added to Sem 7 to satisfy CS4430 prerequisite; CS4430 moved to Sem 7 (offered Sem 2).\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2100",
+      "CS2109S",
+      "CS2103T",
+      "CS2105",
+      "ST2334"
+     ],
+     "6": [
+      "CS3230",
+      "CS2101",
+      "CS2102",
+      "CS2106"
+     ],
+     "7": [
+      "CS3219",
+      "CS3241",
+      "CS4430"
+     ],
+     "8": [
+      "CS3247"
+     ]
+    },
+    "reasons": [
+     "ST2334 added to Sem 5 to satisfy must-take rule.",
+     "CS3241 added to Sem 7 to satisfy CS3247 prerequisite; CS3247 moved to Sem 8.",
+     "CS3231 added to Sem 7 to satisfy CS4430 prerequisite; CS4430 moved to Sem 7 (offered Sem 2)."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10467,
+    "total_tokens": 10745,
+    "completion_tokens": 278,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.0,
+    "attempts": 1
+   },
+   "seconds": 5.0,
+   "violations": [
+    "R3 CS4430 not offered in Sem 1 (semester 7)",
+    "R4 CS4430 in semester 7: prerequisite not met (CS3231)",
+    "R7 semester 5 has 20 MC, limit 16",
+    "R9 must rule not met: before CS3230 CS2106",
+    "R9 must rule not met: before CS3230 CS2101"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4430 is only offered in Sem 2 (even semesters), so it cannot be taken in Sem 7.\",\n    \"CS4430 requires CS3231, which is only offered in Sem 1 (odd semesters).\",\n    \"CS3231 and CS4430 cannot both be completed by the end of Sem 8 due to semester term constraints.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4430 is only offered in Sem 2 (even semesters), so it cannot be taken in Sem 7.",
+     "CS4430 requires CS3231, which is only offered in Sem 1 (odd semesters).",
+     "CS3231 and CS4430 cannot both be completed by the end of Sem 8 due to semester term constraints."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10464,
+    "total_tokens": 10577,
+    "completion_tokens": 113,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.34,
+    "attempts": 1
+   },
+   "seconds": 2.34,
+   "violations": null
+  }
+ ]
+}

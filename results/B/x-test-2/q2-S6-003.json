@@ -1,0 +1,90 @@
+{
+ "id": "q2-S6-003",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 10.97,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2789,
+  "total_tokens": 3790,
+  "completion_tokens": 1001,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 803
+  },
+  "finish_reason": "stop",
+  "request_seconds": 10.97,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"completed\":[],\"must_take\":[\"ST2334\",\"CS2106\",\"CS2100\",\"CS3230\",\"MA1522\",\"CS3249\"],\"mc_max\":16,\"objective\":\"min_total_mc\",\"early\":[\"CS3230\"],\"rules\":[{\"type\":\"before\",\"a\":\"CS2100\",\"b\":\"CS3249\",\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"MA1522\",\"b\":\"CS3230\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"ST2334\",\"sem\":4,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS2100\",\"sem\":3,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3249\",\"sem\":5,\"strength\":\"prefer\"}],\"unsupported\":[\"at most two modules with final exams in a semester\",\"avoid modules with heavy group projects\"]}",
+ "spec": {
+  "query": "plan",
+  "completed": [],
+  "must_take": [
+   "ST2334",
+   "CS2106",
+   "CS2100",
+   "CS3230",
+   "MA1522",
+   "CS3249"
+  ],
+  "mc_max": 16,
+  "objective": "min_total_mc",
+  "early": [
+   "CS3230"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2100",
+    "b": "CS3249",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "MA1522",
+    "b": "CS3230",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "ST2334",
+    "sem": 4,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2100",
+    "sem": 3,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3249",
+    "sem": 5,
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "at most two modules with final exams in a semester",
+   "avoid modules with heavy group projects"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "MISSING_INFO",
+  "missing": [
+   "current_sem"
+  ],
+  "message": "This cannot be answered yet. Please give: the semester you are in now (1 to 8)."
+ }
+}

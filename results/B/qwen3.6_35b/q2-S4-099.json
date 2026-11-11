@@ -1,0 +1,105 @@
+{
+ "id": "q2-S4-099",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 14.94,
+ "solver_seconds": 0.001,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3175,
+  "total_tokens": 3675,
+  "completion_tokens": 500,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 14.93,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"programme\": \"BComp CS Hons\",\n\"current_sem\": 4,\n\"completed\": [\n\"ES2660\",\n\"CS1101S\",\n\"IS1108\",\n\"CS2030S\",\n\"MA1521\",\n\"CS2040S\",\n\"CS3243\",\n\"CS2101\",\n\"CS2100\",\n\"CS1231S\",\n\"ST2334\",\n\"MA1522\",\n\"CS2103T\"\n],\n\"must_take\": [\n\"CS3244\",\n\"CS4212\",\n\"CS3263\",\n\"CS3219\",\n\"CS3213\"\n],\n\"mc_max\": 16,\n\"objective\": \"earliest_graduation\",\n\"early\": [\n\"CS3244\"\n],\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS3219\",\n\"b\": \"CS3213\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3244\",\n\"b\": \"CS3213\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3219\",\n\"b\": \"CS4212\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3244\",\n\"b\": \"CS4212\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS3244\",\n\"b\": \"CS3219\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3213\",\n\"b\": \"CS4212\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3213\",\n\"sem\": 6,\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "programme": "BComp CS Hons",
+  "current_sem": 4,
+  "completed": [
+   "ES2660",
+   "CS1101S",
+   "IS1108",
+   "CS2030S",
+   "MA1521",
+   "CS2040S",
+   "CS3243",
+   "CS2101",
+   "CS2100",
+   "CS1231S",
+   "ST2334",
+   "MA1522",
+   "CS2103T"
+  ],
+  "must_take": [
+   "CS3244",
+   "CS4212",
+   "CS3263",
+   "CS3219",
+   "CS3213"
+  ],
+  "mc_max": 16,
+  "objective": "earliest_graduation",
+  "early": [
+   "CS3244"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3219",
+    "b": "CS3213",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3244",
+    "b": "CS3213",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3219",
+    "b": "CS4212",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3244",
+    "b": "CS4212",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3244",
+    "b": "CS3219",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS3213",
+    "b": "CS4212",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3213",
+    "sem": 6,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3263 is ruled out by completed CS3243"
+  ]
+ }
+}

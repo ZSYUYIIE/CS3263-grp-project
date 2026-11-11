@@ -1,0 +1,58 @@
+{
+ "id": "q2-S4-249",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 50.62,
+ "usage": {
+  "prompt_tokens": 7750,
+  "total_tokens": 12991,
+  "completion_tokens": 5241,
+  "prompt_tokens_details": {
+   "cached_tokens": 7552,
+   "created_cache_tokens": 128
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5065
+  },
+  "finish_reason": "stop",
+  "request_seconds": 50.62,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CG2028\",\"CS3230\",\"ST2334\"],\"4\":[\"NM3243\"],\"5\":[\"CS2102\",\"CS3237\",\"CS2105\"],\"6\":[\"CS4230\",\"CS4249\",\"CS2101\"]},\"reasons\":[\"Earliest graduation is semester 6; CS4230 and CS4249 are Sem 2 only, so their prerequisites must be completed by semester 4.\",\"CS3237 is Sem 1 only and needs CG2028 first, so CS2105 is paired with it in semester 5, the earliest possible.\",\"CS2101 is placed in semester 6, as late as possible; added courses are only prerequisites: CG2028, CS3230, ST2334, NM3243.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CG2028",
+    "CS3230",
+    "ST2334"
+   ],
+   "4": [
+    "NM3243"
+   ],
+   "5": [
+    "CS2102",
+    "CS3237",
+    "CS2105"
+   ],
+   "6": [
+    "CS4230",
+    "CS4249",
+    "CS2101"
+   ]
+  },
+  "reasons": [
+   "Earliest graduation is semester 6; CS4230 and CS4249 are Sem 2 only, so their prerequisites must be completed by semester 4.",
+   "CS3237 is Sem 1 only and needs CG2028 first, so CS2105 is paired with it in semester 5, the earliest possible.",
+   "CS2101 is placed in semester 6, as late as possible; added courses are only prerequisites: CG2028, CS3230, ST2334, NM3243."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

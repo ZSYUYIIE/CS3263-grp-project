@@ -1,0 +1,141 @@
+{
+ "id": "q2-S3-103",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 14.84,
+ "solver_seconds": 0.041,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2839,
+  "total_tokens": 4119,
+  "completion_tokens": 1280,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1039
+  },
+  "finish_reason": "stop",
+  "request_seconds": 14.79,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"completed\":[\"CS2030S\",\"CS2100\",\"CS1231S\",\"CS1101S\",\"CS2103T\",\"MA1522\",\"MA1521\",\"CS2101\",\"CS2040S\",\"IS1108\"],\"current_sem\":4,\"must_take\":[\"CS3103\",\"CS2102\",\"CS2109S\",\"CS2106\",\"ES2660\",\"CS2105\",\"CS4223\",\"ST2334\",\"CS3230\",\"CS3219\",\"CS3263\"],\"mc_max\":16,\"atap_sems\":[7],\"objective\":\"earliest_graduation\",\"early\":[\"CS2105\"],\"late\":[\"ES2660\"],\"rules\":[{\"type\":\"before\",\"a\":\"CS3103\",\"b\":\"CS2102\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS2102\",\"sem\":7,\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS2106\",\"b\":\"CS4223\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3263\",\"sem\":8,\"strength\":\"must\"}]}",
+ "spec": {
+  "query": "plan",
+  "completed": [
+   "CS2030S",
+   "CS2100",
+   "CS1231S",
+   "CS1101S",
+   "CS2103T",
+   "MA1522",
+   "MA1521",
+   "CS2101",
+   "CS2040S",
+   "IS1108"
+  ],
+  "current_sem": 4,
+  "must_take": [
+   "CS3103",
+   "CS2102",
+   "CS2109S",
+   "CS2106",
+   "ES2660",
+   "CS2105",
+   "CS4223",
+   "ST2334",
+   "CS3230",
+   "CS3219",
+   "CS3263"
+  ],
+  "mc_max": 16,
+  "atap_sems": [
+   7
+  ],
+  "objective": "earliest_graduation",
+  "early": [
+   "CS2105"
+  ],
+  "late": [
+   "ES2660"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3103",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2106",
+    "b": "CS4223",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3263",
+    "sem": 8,
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "earliest_graduation",
+  "last_semester": 8,
+  "plan": {
+   "4": [
+    "CS2105",
+    "CS2106",
+    "CS3210"
+   ],
+   "5": [
+    "CS3103"
+   ],
+   "6": [
+    "CS2109S",
+    "ST2334"
+   ],
+   "7": [
+    "CP3880",
+    "CS2102",
+    "CS4223"
+   ],
+   "8": [
+    "CS3219",
+    "CS3230",
+    "CS3263",
+    "ES2660"
+   ]
+  },
+  "mc_per_semester": {
+   "4": 12,
+   "5": 4,
+   "6": 8,
+   "7": 20,
+   "8": 16
+  },
+  "preferences_met": [
+   "CS2105 as early as possible",
+   "ES2660 as late as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS3210"
+  ]
+ }
+}

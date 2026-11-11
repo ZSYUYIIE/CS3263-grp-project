@@ -1,0 +1,143 @@
+{
+ "id": "q2-S4-010",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 5.75,
+ "solver_seconds": 0.086,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2837,
+  "total_tokens": 3333,
+  "completion_tokens": 496,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 255
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.66,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"programme\":\"BComp CS Hons\",\"current_sem\":3,\"completed\":[\"IS1108\",\"ES2660\",\"CS1231S\",\"CS2030S\",\"MA1522\",\"CS1101S\",\"MA1521\",\"CS2040S\"],\"must_take\":[\"CS3210\",\"CS2109S\",\"CS4268\",\"CS3281\",\"CS3230\",\"CS4223\",\"CS2102\",\"CS3219\",\"CS3237\"],\"mc_max\":12,\"objective\":\"min_total_mc\",\"early\":[\"CS3219\"],\"rules\":[{\"type\":\"before\",\"a\":\"CS3230\",\"b\":\"CS3210\",\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS4268\",\"b\":\"CS3210\",\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS3219\",\"b\":\"CS3210\",\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS4268\",\"b\":\"CS3219\",\"strength\":\"prefer\"},{\"type\":\"in_sem\",\"course\":\"CS4268\",\"sem\":6,\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "programme": "BComp CS Hons",
+  "current_sem": 3,
+  "completed": [
+   "IS1108",
+   "ES2660",
+   "CS1231S",
+   "CS2030S",
+   "MA1522",
+   "CS1101S",
+   "MA1521",
+   "CS2040S"
+  ],
+  "must_take": [
+   "CS3210",
+   "CS2109S",
+   "CS4268",
+   "CS3281",
+   "CS3230",
+   "CS4223",
+   "CS2102",
+   "CS3219",
+   "CS3237"
+  ],
+  "mc_max": 12,
+  "objective": "min_total_mc",
+  "early": [
+   "CS3219"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3230",
+    "b": "CS3210",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4268",
+    "b": "CS3210",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3219",
+    "b": "CS3210",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4268",
+    "b": "CS3219",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4268",
+    "sem": 6,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 7,
+  "plan": {
+   "3": [
+    "CG2271",
+    "CS3230",
+    "ST2334"
+   ],
+   "4": [
+    "CG2028",
+    "CS2113",
+    "CS4268"
+   ],
+   "5": [
+    "CS2102",
+    "CS2109S",
+    "CS3219"
+   ],
+   "6": [
+    "CS3210",
+    "CS3281"
+   ],
+   "7": [
+    "CS3237",
+    "CS4223"
+   ]
+  },
+  "mc_per_semester": {
+   "3": 12,
+   "4": 10,
+   "5": 12,
+   "6": 8,
+   "7": 8
+  },
+  "preferences_met": [
+   "CS4268 before CS3219"
+  ],
+  "preferences_not_met": [
+   "CS4268 in semester 6",
+   "CS3219 as early as possible"
+  ],
+  "added_prerequisites": [
+   "CG2028",
+   "CG2271",
+   "CS2113",
+   "ST2334"
+  ]
+ }
+}

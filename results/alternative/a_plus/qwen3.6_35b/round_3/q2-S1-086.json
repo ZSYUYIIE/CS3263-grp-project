@@ -1,0 +1,29 @@
+{
+ "id": "q2-S1-086",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "not a plan",
+ "seconds": 38.8,
+ "usage": {
+  "prompt_tokens": 9389,
+  "total_tokens": 11720,
+  "completion_tokens": 2331,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 38.8,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS3219 prerequisite is CS2103 (or variants), but CS2103 requires CS2030S and CS2040S. The student has completed CS2030S and CS2040S, so CS2103 is eligible. However, CS3219 also requires CS2103 to be completed. CS3230 requires CS2040S and CS1231S, which are completed. The constraint 'CS3230 and CS3219 must be in the same semester' is impossible because CS3219 requires CS2103, while CS3230 does not. More critically, CS3219 requires CS2103. CS2103 requires CS2030S and CS2040S. The student has these. So CS2103 can be taken. Then CS3219 can be taken. But CS3230 and CS3219 must be in the same semester. CS3230 requires CS2040S and CS1231S. CS3219 requires CS2103. If we take CS2103 in Sem 5, we can take CS3219 and CS3230 in Sem 7? No, Sem 6 is LOA. Sem 7 is Y4S1. Sem 8 is Y4S2. Let's trace: Current Sem 5 (Y3S1). Completed: CS2030S, CS1231S, CS2040S, MA1521, CS1101S, IS1108, ES2660, MA1522. Must take: CS3219, ST2334, CS4230, CS2105, CS2109S, CS2102, CS2100, CS3230. Constraints: CS3230 & CS3219 same sem. CS3219 before ST2334. CS2105 before CS4230. CS2105 != CS3230. CS4230 before CS3219 (soft). CS3230 late (soft). LOA Sem 6. Max 16 MC. CS3219 prereq: CS2103. CS2103 prereq: CS2030S, CS2040S. Student has both. So CS2103 is available in Sem 5. If CS2103 in Sem 5, CS3219 available Sem 7 (since Sem 6 LOA). CS3230 available Sem 5 (prereqs met). But CS3230 and CS3219 must be same sem. So CS3230 must be in Sem 7. CS4230 prereq: CS1231S, CS3230, ST2334. So CS4230 must be after CS3230 and ST2334. If CS3230 in Sem 7, CS4230 in Sem 8. ST2334 prereq: MA1521 (completed). ST2334 can be Sem 5, 7, 8. CS3219 before ST2334. If CS3219 in Sem 7, ST2334 in Sem 8. Then CS4230 in Sem 8? No, CS4230 needs CS3230 (Sem 7) and ST2334 (Sem 8). So CS4230 cannot be in Sem 8 if ST2334 is in Sem 8. CS4230 needs ST2334 completed. So ST2334 must be before CS4230. If CS3230/CS3219 in Sem 7, ST2334 must be in Sem 7 or earlier. But CS3219 before ST2334. So ST2334 must be after Sem 7. Contradiction. ST2334 cannot be after Sem 7 if CS3219 is in Sem 7. So CS3219 cannot be in Sem 7 if ST2334 is after it. If CS3219 in Sem 5? CS3230 must be in Sem 5. CS2103 in Sem 5? Yes. But CS2103, CS3219, CS3230 in Sem 5? 4+4+4=12 MC. Plus others? CS2100, CS2102, CS2105, CS2109S, ST2334, CS4230. CS4230 needs CS3230 and ST2334. If CS3230 in Sem 5, ST2334 in Sem 5? CS3219 before ST2334. So ST2334 cannot be in Sem 5 if CS3219 is in Sem 5. ST2334 must be after CS3219. So ST2334 in Sem 7 or 8. If ST2334 in Sem 7, CS4230 in Sem 8. CS2105 before CS4230. CS2105 in Sem 5, 7. CS2105 != CS3230. CS3230 in Sem 5. So CS2105 not in Sem 5. CS2105 in Sem 7. Sem 7: CS2105, ST2334. 8 MC. Sem 8: CS4230. 4 MC. Sem 5: CS2103, CS3219, CS3230. 12 MC. Remaining: CS2100, CS2102, CS2109S. CS2100 prereq: CS1010 (not completed? Student did CS1101S. CS1101S is a prereq for CS2100? Yes. CS1101S is completed. So CS2100 eligible Sem 5. CS2102 prereq: CS1231S, CS2030S/CS2040S. Both completed. Eligible Sem 5. CS2109S prereq: CS2040S, MA1521. Both completed. Eligible Sem 5. Sem 5 load: CS2103, CS3219, CS3230, CS2100, CS2102, CS2109S. 6 courses * 4 MC = 24 MC. Exceeds 16 MC limit. Cannot fit. Try moving some to Sem 7? Sem 7 is after LOA. Sem 5 is current. If CS3219/CS3230 in Sem 7, we proved contradiction with ST2334. So CS3219/CS3230 must be in Sem 5. This forces high load in Sem 5. Cannot reduce below 12 MC for those 3. Remaining 4 MC for one more course. CS2100, CS2102, CS2109S, CS2105, ST2334, CS4230. CS4230 needs CS3230 (Sem 5) and ST2334. ST2334 needs to be after CS3219 (Sem 5). So ST2334 in Sem 7. CS4230 in Sem 8. CS2105 before CS4230. CS2105 in Sem 7 (since Sem 5 full). CS2105 != CS3230 (Sem 5). OK. Sem 7: CS2105, ST2334. 8 MC. Sem 8: CS4230. 4 MC. Sem 5: CS2103, CS3219, CS3230. 12 MC. Need to fit CS2100, CS2102, CS2109S. Sem 5 has 4 MC left. Can take one 4 MC course. Say CS2100. Sem 7 has 8 MC left. Can take CS2102 (4 MC) and CS2109S (4 MC). Sem 7 total 8+4+4=16 MC. OK. Sem 5: CS2103, CS3219, CS3230, CS2100. 16 MC. Sem 6: LOA. Sem 7: CS2105, ST2334, CS2102, CS2109S. 16 MC. Sem 8: CS4230. 4 MC. Check constraints: CS3230/CS3219 same sem (Sem 5). OK. CS3219 before ST2334 (Sem 5 < Sem 7). OK. CS2105 before CS4230 (Sem 7 < Sem 8). OK. CS2105 != CS3230 (Sem 7 != Sem 5). OK. CS4230 before CS3219? Soft. CS3219 Sem 5, CS4230 Sem 8. No. CS3230 late? Sem 5 is early. Soft. CS4230 before CS2109S? Soft. CS2109S Sem 7, CS4230 Sem 8. Yes. This plan works. Why did I think NO_PLAN? I missed that CS2103 is eligible in Sem 5. The student completed CS2030S and CS2040S. CS2103 prereq is CS2030S or ... and CS2040S or ... . Yes. So CS2103 is available. The plan is valid.\"]",
+ "answer": {
+  "status": "NO_PLAN"
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

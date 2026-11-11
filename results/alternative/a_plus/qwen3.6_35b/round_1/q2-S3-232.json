@@ -1,0 +1,53 @@
+{
+ "id": "q2-S3-232",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 21.75,
+ "usage": {
+  "prompt_tokens": 20072,
+  "total_tokens": 21703,
+  "completion_tokens": 1631,
+  "finish_reason": "stop",
+  "request_seconds": 21.75,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4212 requires CS2104 or CS3212 as a prerequisite. Neither is in the completed list nor the remaining list.\",\n    \"CS2104 requires CS2030/CS2030S/CS2030DE/CS2030HS/CS2113/CS2113T. CS2030S is completed, so CS2104 is eligible.\",\n    \"However, CS2104 is only offered in Sem 1. The student is in Sem 5 (Y3S1). CS2104 can be taken in Sem 5, 7, etc.\",\n    \"If CS2104 is taken in Sem 5, CS4212 (Sem 2) can be taken in Sem 6 or 8. But Sem 6 has IS1108 fixed. Sem 8 is available.\",\n    \"Let's re-evaluate: CS2104 (Sem 1) in Sem 5. CS4212 (Sem 2) in Sem 6? No, Sem 6 has IS1108. Can we add CS4212 to Sem 6? Sem 6 limit 20 MC. IS1108 (4) + CS4212 (4) = 8 MC. OK.\",\n    \"Wait, CS4212 is offered Sem 2. Sem 6 is Sem 2 of AY2028/29. So CS4212 can be in Sem 6.\",\n    \"Prerequisite for CS4212: CS2104 or CS3212. If CS2104 is in Sem 5, it is completed before Sem 6. So CS4212 is eligible in Sem 6.\",\n    \"So plan: Sem 5: CS3237, ST2334, CS2104. Sem 6: IS1108, CS4212, CS2105. Sem 7: CS3219.\",\n    \"Check constraints: IS1108 in Sem 6 (Yes). CS3237 before CS4212 (Sem 5 before Sem 6, Yes). CS3219 and CS2105 different semesters (Sem 7 vs Sem 6, Yes). IS1108 before CS3219 (Sem 6 before Sem 7, Yes). ST2334 as early as possible (Sem 5, Yes). CS4212 as late as possible (Sem 6 is earliest possible if CS2104 in Sem 5? Can CS4212 be in Sem 8? Yes. But 'as late as possible' is a soft wish. The hard constraint is just feasibility. The previous error was missing CS2104 entirely.\",\n    \"Let's check if CS4212 can be in Sem 8. Sem 8 is Sem 2. CS2104 in Sem 5. CS4212 in Sem 8. Sem 7 has CS3219. Sem 6 has IS1108, CS2105. Sem 5 has CS3237, ST2334, CS2104. This works and puts CS4212 later.\",\n    \"However, the student wants 'fewest total credits'. Adding CS2104 adds 4 MC. The previous plan missed it. The new plan must include CS2104.\",\n    \"Is there a way to avoid CS2104? No, CS4212 needs it or CS3212. CS3212 is not in the list. So CS2104 is mandatory.\",\n    \"So the plan MUST include CS2104.\",\n    \"Revised Plan: Sem 5: CS3237, ST2334, CS2104. Sem 6: IS1108, CS2105. Sem 7: CS3219. Sem 8: CS4212.\",\n    \"Check CS4212 in Sem 8: Offered Sem 2. Sem 8 is Sem 2. Prereq CS2104 completed in Sem 5. OK.\",\n    \"Check CS3219 in Sem 7: Prereq YSC3232 or CS2103/CS2103T/CS2103DE/CS2113T/CS2113. Student has CS2103T completed. OK.\",\n    \"Check CS2105 in Sem 6: Prereq YSC2229 or CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS. Student has CS2040S completed. OK.\",\n    \"Check CS3237 in Sem 5: Prereq (EE2028/EE2024/CG2028/CS2100/CS2100DE/CS2100HS) and (CS1010/CS1101S...). Student has CS2100 completed. Student has CS1101S completed. OK.\",\n    \"Check ST2334 in Sem 5: Prereq MA1312/MA1505/MA1511/MA1521/MA2002. Student has MA1521 completed. OK.\",\n    \"Check CS2104 in Sem 5: Prereq CS2030/CS2030S/CS2030DE/CS2030HS/CS2113/CS2113T. Student has CS2030S completed. OK.\",\n    \"Soft wishes: IS1108 in Sem 6 (Yes). CS3237 before CS4212 (Sem 5 before Sem 8, Yes). CS3219 and CS2105 different semesters (Sem 7 vs Sem 6, Yes). IS1108 before CS3219 (Sem 6 before Sem 7, Yes). ST2334 as early as possible (Sem 5, Yes). CS4212 as late as possible (Sem 8, Yes).\",\n    \"Total MC: 4+4+4+4+4+4+4+4+4 = 36 MC. Previous plan had 28 MC but was invalid. This is the minimal valid set.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4212 requires CS2104 or CS3212 as a prerequisite. Neither is in the completed list nor the remaining list.",
+   "CS2104 requires CS2030/CS2030S/CS2030DE/CS2030HS/CS2113/CS2113T. CS2030S is completed, so CS2104 is eligible.",
+   "However, CS2104 is only offered in Sem 1. The student is in Sem 5 (Y3S1). CS2104 can be taken in Sem 5, 7, etc.",
+   "If CS2104 is taken in Sem 5, CS4212 (Sem 2) can be taken in Sem 6 or 8. But Sem 6 has IS1108 fixed. Sem 8 is available.",
+   "Let's re-evaluate: CS2104 (Sem 1) in Sem 5. CS4212 (Sem 2) in Sem 6? No, Sem 6 has IS1108. Can we add CS4212 to Sem 6? Sem 6 limit 20 MC. IS1108 (4) + CS4212 (4) = 8 MC. OK.",
+   "Wait, CS4212 is offered Sem 2. Sem 6 is Sem 2 of AY2028/29. So CS4212 can be in Sem 6.",
+   "Prerequisite for CS4212: CS2104 or CS3212. If CS2104 is in Sem 5, it is completed before Sem 6. So CS4212 is eligible in Sem 6.",
+   "So plan: Sem 5: CS3237, ST2334, CS2104. Sem 6: IS1108, CS4212, CS2105. Sem 7: CS3219.",
+   "Check constraints: IS1108 in Sem 6 (Yes). CS3237 before CS4212 (Sem 5 before Sem 6, Yes). CS3219 and CS2105 different semesters (Sem 7 vs Sem 6, Yes). IS1108 before CS3219 (Sem 6 before Sem 7, Yes). ST2334 as early as possible (Sem 5, Yes). CS4212 as late as possible (Sem 6 is earliest possible if CS2104 in Sem 5? Can CS4212 be in Sem 8? Yes. But 'as late as possible' is a soft wish. The hard constraint is just feasibility. The previous error was missing CS2104 entirely.",
+   "Let's check if CS4212 can be in Sem 8. Sem 8 is Sem 2. CS2104 in Sem 5. CS4212 in Sem 8. Sem 7 has CS3219. Sem 6 has IS1108, CS2105. Sem 5 has CS3237, ST2334, CS2104. This works and puts CS4212 later.",
+   "However, the student wants 'fewest total credits'. Adding CS2104 adds 4 MC. The previous plan missed it. The new plan must include CS2104.",
+   "Is there a way to avoid CS2104? No, CS4212 needs it or CS3212. CS3212 is not in the list. So CS2104 is mandatory.",
+   "So the plan MUST include CS2104.",
+   "Revised Plan: Sem 5: CS3237, ST2334, CS2104. Sem 6: IS1108, CS2105. Sem 7: CS3219. Sem 8: CS4212.",
+   "Check CS4212 in Sem 8: Offered Sem 2. Sem 8 is Sem 2. Prereq CS2104 completed in Sem 5. OK.",
+   "Check CS3219 in Sem 7: Prereq YSC3232 or CS2103/CS2103T/CS2103DE/CS2113T/CS2113. Student has CS2103T completed. OK.",
+   "Check CS2105 in Sem 6: Prereq YSC2229 or CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS. Student has CS2040S completed. OK.",
+   "Check CS3237 in Sem 5: Prereq (EE2028/EE2024/CG2028/CS2100/CS2100DE/CS2100HS) and (CS1010/CS1101S...). Student has CS2100 completed. Student has CS1101S completed. OK.",
+   "Check ST2334 in Sem 5: Prereq MA1312/MA1505/MA1511/MA1521/MA2002. Student has MA1521 completed. OK.",
+   "Check CS2104 in Sem 5: Prereq CS2030/CS2030S/CS2030DE/CS2030HS/CS2113/CS2113T. Student has CS2030S completed. OK.",
+   "Soft wishes: IS1108 in Sem 6 (Yes). CS3237 before CS4212 (Sem 5 before Sem 8, Yes). CS3219 and CS2105 different semesters (Sem 7 vs Sem 6, Yes). IS1108 before CS3219 (Sem 6 before Sem 7, Yes). ST2334 as early as possible (Sem 5, Yes). CS4212 as late as possible (Sem 8, Yes).",
+   "Total MC: 4+4+4+4+4+4+4+4+4 = 36 MC. Previous plan had 28 MC but was invalid. This is the minimal valid set."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

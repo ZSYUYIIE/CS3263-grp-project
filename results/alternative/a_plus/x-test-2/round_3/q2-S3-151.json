@@ -1,0 +1,53 @@
+{
+ "id": "q2-S3-151",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 27.53,
+ "usage": {
+  "prompt_tokens": 9544,
+  "total_tokens": 12310,
+  "completion_tokens": 2766,
+  "prompt_tokens_details": {
+   "cached_tokens": 9216,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2631
+  },
+  "finish_reason": "stop",
+  "request_seconds": 27.53,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS3241\",\"CS2105\"],\"6\":[\"CS3219\",\"CS3247\",\"ST2334\"],\"7\":[\"CS2102\",\"CS4248\"]},\"reasons\":[\"Added CS3241 in semester 5 because it is the prerequisite for CS3247.\",\"CS3219 is in semester 6; CS2105 precedes ST2334; CS3247 precedes CS4248 and is in semester 6.\",\"ST2334 is as late as possible in semester 6, since CS4248 must follow it before the semester 8 LOA.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS3241",
+    "CS2105"
+   ],
+   "6": [
+    "CS3219",
+    "CS3247",
+    "ST2334"
+   ],
+   "7": [
+    "CS2102",
+    "CS4248"
+   ]
+  },
+  "reasons": [
+   "Added CS3241 in semester 5 because it is the prerequisite for CS3247.",
+   "CS3219 is in semester 6; CS2105 precedes ST2334; CS3247 precedes CS4248 and is in semester 6.",
+   "ST2334 is as late as possible in semester 6, since CS4248 must follow it before the semester 8 LOA."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

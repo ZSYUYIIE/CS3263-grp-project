@@ -1,0 +1,34 @@
+{
+ "id": "q2-S2-002",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 0,
+ "end": "not a plan",
+ "seconds": 10.09,
+ "usage": {
+  "prompt_tokens": 11257,
+  "total_tokens": 11775,
+  "completion_tokens": 518,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 10.09,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3210 prerequisite (CS2100/CS2100DE/CS2100HS/CG2007/EE2028/CG2028/EE2024) is not satisfied. Completed CS2100 is blocked by mutual exclusivity with CG2028/EE2028 and cannot take if completed CS2100DE/CS2100HS. No other valid prerequisite course is completed.\",\n    \"CS3103 prerequisite (CS2105/EE3204/EE3204E/EE4204) is not satisfied. Completed CS2105 is mutually exclusive with EE4204/EE4204E/TEE4204 and cannot take if completed EE3204/EE3204E (implied by typical NUS structure, but strictly, CS2105 is a valid prerequisite for CS3103). However, CS3103 requires CS2105. The student has completed CS2105. So CS3103 is eligible.\",\n    \"Re-evaluating CS3210: Prerequisites are CS2100, CS2100DE, CS2100HS, CG2007, EE2028, CG2028, EE2024. Student completed CS2100. CS2100 is mutually exclusive with CG2028, CS2100DE, CS2100HS. It does not block CS2100 itself. The 'cannot take if completed' for CS2100 is CS2100DE/CS2100HS. The 'mutually exclusive' list for CS2100 is CG2028, CS2100DE, CS2100HS. This means if you take CS2100, you cannot take CG2028, CS2100DE, CS2100HS. It does NOT mean CS2100 is invalid. CS2100 is a valid prerequisite for CS3210. So CS3210 is eligible.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3210 prerequisite (CS2100/CS2100DE/CS2100HS/CG2007/EE2028/CG2028/EE2024) is not satisfied. Completed CS2100 is blocked by mutual exclusivity with CG2028/EE2028 and cannot take if completed CS2100DE/CS2100HS. No other valid prerequisite course is completed.",
+   "CS3103 prerequisite (CS2105/EE3204/EE3204E/EE4204) is not satisfied. Completed CS2105 is mutually exclusive with EE4204/EE4204E/TEE4204 and cannot take if completed EE3204/EE3204E (implied by typical NUS structure, but strictly, CS2105 is a valid prerequisite for CS3103). However, CS3103 requires CS2105. The student has completed CS2105. So CS3103 is eligible.",
+   "Re-evaluating CS3210: Prerequisites are CS2100, CS2100DE, CS2100HS, CG2007, EE2028, CG2028, EE2024. Student completed CS2100. CS2100 is mutually exclusive with CG2028, CS2100DE, CS2100HS. It does not block CS2100 itself. The 'cannot take if completed' for CS2100 is CS2100DE/CS2100HS. The 'mutually exclusive' list for CS2100 is CG2028, CS2100DE, CS2100HS. This means if you take CS2100, you cannot take CG2028, CS2100DE, CS2100HS. It does NOT mean CS2100 is invalid. CS2100 is a valid prerequisite for CS3210. So CS3210 is eligible."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

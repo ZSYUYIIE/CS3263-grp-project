@@ -1,0 +1,57 @@
+{
+ "id": "q1-ex-015-h",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 2.36,
+ "solver_seconds": 0.005,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2884,
+  "total_tokens": 3026,
+  "completion_tokens": 142,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 2.35,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\": \"eligible\", \"target\": \"CS4278\", \"current_sem\": 7, \"completed\": [\"CS2040S\", \"CS1231S\", \"CS4246\", \"IS2101\", \"ST3248\", \"CS3243\", \"IS1108\", \"CS3230\", \"MA1521\", \"CS5478\", \"ST2334\", \"ST1131\", \"CS1101S\", \"CS2102\", \"MA1522\", \"CS1231\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS4278",
+  "current_sem": 7,
+  "completed": [
+   "CS2040S",
+   "CS1231S",
+   "CS4246",
+   "IS2101",
+   "ST3248",
+   "CS3243",
+   "IS1108",
+   "CS3230",
+   "MA1521",
+   "CS5478",
+   "ST2334",
+   "ST1131",
+   "CS1101S",
+   "CS2102",
+   "MA1522",
+   "CS1231"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS4278",
+  "semester": 7,
+  "reasons": [
+   "precluded: already completed CS5478"
+  ],
+  "can_still_become_eligible": false,
+  "never_eligible_because": "CS4278 is ruled out by completed CS5478"
+ }
+}

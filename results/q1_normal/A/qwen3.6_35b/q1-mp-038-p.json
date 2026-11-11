@@ -1,0 +1,24 @@
+{
+ "id": "q1-mp-038-p",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 11.24,
+ "usage": {
+  "prompt_tokens": 6099,
+  "total_tokens": 6564,
+  "completion_tokens": 465,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 11.24,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"ELIGIBLE\", \"reasons\": [\"Prerequisites satisfied: CS1231S (Discrete Structures) is completed. CS2040 (Data Structures and Algorithms) is completed. CS2101 is completed but not required; however, the prerequisite allows (CS2030/CS2030S/CS2030DE/CS2030HS AND CS2040/CS2040S/CS2040HS/CS2040C/CS2040DE) OR CS2113. Since CS2040 is completed, we need to check if the first part of the OR is satisfied or if CS2113 is completed. The prerequisite is: (CS1231 or CS1231S or MA1100 or MA1100T) AND (((CS2030 or CS2030S or CS2030DE or CS2030HS) AND (CS2040 or CS2040S or CS2040HS or CS2040C or CS2040DE)) OR CS2113). CS1231S satisfies the first part. For the second part, CS2113 is NOT completed. So we need (CS2030/CS2030S/CS2030DE/CS2030HS) AND (CS2040/CS2040S/CS2040HS/CS2040C/CS2040DE). CS2040 is completed, satisfying the second component of the AND. However, CS2030, CS2030S, CS2030DE, and CS2030HS are NOT completed. Therefore, the condition ((CS2030...) AND (CS2040...)) is FALSE because the first operand is false. And CS2113 is false. So the entire second part of the AND is FALSE. Thus, the prerequisite is NOT satisfied.\"}",
+ "answer": {
+  "status": "ELIGIBLE"
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 4
+}

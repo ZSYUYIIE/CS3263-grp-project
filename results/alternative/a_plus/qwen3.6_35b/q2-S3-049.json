@@ -1,0 +1,167 @@
+{
+ "id": "q2-S3-049",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 17.47,
+ "usage": {
+  "prompt_tokens": 40042,
+  "total_tokens": 40832,
+  "completion_tokens": 790,
+  "finish_reason": "stop",
+  "request_seconds": 17.47,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3240 requires CS2111 or NM2207 as a prerequisite. Neither is completed nor in the mandatory list, and adding them violates the 'fewest added courses' rule or exceeds MC limits.\",\n    \"CS3231 is offered only in Sem 1, but the student is in Sem 2 (Semester 4) and cannot go back to Sem 1.\",\n    \"CS3282 is offered only in Sem 2, but requires CS3281. CS3281 is also Sem 2 only. With limited slots and other prerequisites, fitting all mandatory courses is impossible.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3240 requires CS2111 or NM2207 as a prerequisite. Neither is completed nor in the mandatory list, and adding them violates the 'fewest added courses' rule or exceeds MC limits.",
+   "CS3231 is offered only in Sem 1, but the student is in Sem 2 (Semester 4) and cannot go back to Sem 1.",
+   "CS3282 is offered only in Sem 2, but requires CS3281. CS3281 is also Sem 2 only. With limited slots and other prerequisites, fitting all mandatory courses is impossible."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"4\": [\n      \"CS2105\",\n      \"CS3231\",\n      \"CS3240\",\n      \"CS3210\"\n    ],\n    \"5\": [\n      \"CS2106\",\n      \"CS3230\",\n      \"CS3219\",\n      \"IS1108\"\n    ],\n    \"6\": [\n      \"CS2102\",\n      \"CS2109S\",\n      \"CS3282\"\n    ],\n    \"7\": [\n      \"CS4246\"\n    ]\n  },\n  \"reasons\": [\n    \"All prerequisites are satisfied by completed modules or earlier planned modules.\",\n    \"Constraints met: CS2106 and CS3231 are separated; CS2106 and CS3282 are separated; CS3210 is before CS2106.\",\n    \"Soft wishes met: CS3240 and CS4246 are scheduled as early as possible given dependencies.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "CS2105",
+      "CS3231",
+      "CS3240",
+      "CS3210"
+     ],
+     "5": [
+      "CS2106",
+      "CS3230",
+      "CS3219",
+      "IS1108"
+     ],
+     "6": [
+      "CS2102",
+      "CS2109S",
+      "CS3282"
+     ],
+     "7": [
+      "CS4246"
+     ]
+    },
+    "reasons": [
+     "All prerequisites are satisfied by completed modules or earlier planned modules.",
+     "Constraints met: CS2106 and CS3231 are separated; CS2106 and CS3282 are separated; CS3210 is before CS2106.",
+     "Soft wishes met: CS3240 and CS4246 are scheduled as early as possible given dependencies."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 13009,
+    "total_tokens": 13274,
+    "completion_tokens": 265,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.71,
+    "attempts": 1
+   },
+   "seconds": 5.71,
+   "violations": [
+    "R3 CS3231 not offered in Sem 2 (semester 4)",
+    "R3 CS3240 not offered in Sem 2 (semester 4)",
+    "R4 CS3240 in semester 4: prerequisite not met (CS2111 or NM2207)",
+    "R4 CS3282 in semester 6: prerequisite not met (CS3281)",
+    "R4 CS4246 in semester 7: prerequisite not met ((EE2012A or EE2012 or ST2132 or ST2334 or ((ST2131 or MA2116 or MA2116T or MA2216) and (ST1131 or ST1232 or DCS2008 or ST1131A))) and (CS3243 or CS3263))"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"4\": [\n      \"CS2105\",\n      \"CS3231\",\n      \"CS3210\",\n      \"IS1108\"\n    ],\n    \"5\": [\n      \"CS2106\",\n      \"CS3230\",\n      \"CS3219\",\n      \"CS2102\"\n    ],\n    \"6\": [\n      \"CS2109S\",\n      \"CS3281\"\n    ],\n    \"7\": [\n      \"CS3282\",\n      \"CS3243\"\n    ],\n    \"8\": [\n      \"CS4246\"\n    ]\n  },\n  \"reasons\": [\n    \"Corrected offerings: CS3231 and CS3210 in Sem 4; CS2106, CS3230, CS3219, CS2102 in Sem 5.\",\n    \"Prerequisites met: CS3281 in Sem 6 enables CS3282 in Sem 7. CS2109S in Sem 6 enables CS3243 in Sem 7.\",\n    \"CS4246 in Sem 8 requires CS3243 (Sem 7) and ST2334 (completed). CS3240 not included as prerequisite CS2111/NM2207 is missing and cannot be added without violating 'fewest added courses' or MC limits.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "CS2105",
+      "CS3231",
+      "CS3210",
+      "IS1108"
+     ],
+     "5": [
+      "CS2106",
+      "CS3230",
+      "CS3219",
+      "CS2102"
+     ],
+     "6": [
+      "CS2109S",
+      "CS3281"
+     ],
+     "7": [
+      "CS3282",
+      "CS3243"
+     ],
+     "8": [
+      "CS4246"
+     ]
+    },
+    "reasons": [
+     "Corrected offerings: CS3231 and CS3210 in Sem 4; CS2106, CS3230, CS3219, CS2102 in Sem 5.",
+     "Prerequisites met: CS3281 in Sem 6 enables CS3282 in Sem 7. CS2109S in Sem 6 enables CS3243 in Sem 7.",
+     "CS4246 in Sem 8 requires CS3243 (Sem 7) and ST2334 (completed). CS3240 not included as prerequisite CS2111/NM2207 is missing and cannot be added without violating 'fewest added courses' or MC limits."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 13524,
+    "total_tokens": 13887,
+    "completion_tokens": 363,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 7.77,
+    "attempts": 1
+   },
+   "seconds": 7.77,
+   "violations": [
+    "R1 must-take CS3240 missing",
+    "R6 CS2109S and CS3243 exclude each other",
+    "R3 CS3231 not offered in Sem 2 (semester 4)",
+    "R3 CS3243 not offered in Sem 1 (semester 7)",
+    "R3 CS3282 not offered in Sem 1 (semester 7)"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3240 requires CS2111 or NM2207 as a prerequisite. Neither is completed nor in the mandatory list, and adding them violates the 'fewest added courses' rule or exceeds MC limits.\",\n    \"CS3231 is offered only in Sem 1, but the student is in Sem 2 (Semester 4) and cannot go back to Sem 1.\",\n    \"CS3282 is offered only in Sem 2, but requires CS3281. CS3281 is also Sem 2 only. With limited slots and other prerequisites, fitting all mandatory courses is impossible.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3240 requires CS2111 or NM2207 as a prerequisite. Neither is completed nor in the mandatory list, and adding them violates the 'fewest added courses' rule or exceeds MC limits.",
+     "CS3231 is offered only in Sem 1, but the student is in Sem 2 (Semester 4) and cannot go back to Sem 1.",
+     "CS3282 is offered only in Sem 2, but requires CS3281. CS3281 is also Sem 2 only. With limited slots and other prerequisites, fitting all mandatory courses is impossible."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 13509,
+    "total_tokens": 13671,
+    "completion_tokens": 162,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.99,
+    "attempts": 1
+   },
+   "seconds": 3.99,
+   "violations": null
+  }
+ ]
+}

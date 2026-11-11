@@ -1,0 +1,60 @@
+{
+ "id": "q2-S3-104",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 126.2,
+ "usage": {
+  "prompt_tokens": 10074,
+  "total_tokens": 19585,
+  "completion_tokens": 9511,
+  "prompt_tokens_details": {
+   "cached_tokens": 9856,
+   "created_cache_tokens": 128
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 9316
+  },
+  "finish_reason": "stop",
+  "request_seconds": 126.2,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS2105\", \"CS2106\", \"CS3210\"], \"5\": [\"CS3103\", \"CS4223\", \"CS2109S\"], \"7\": [\"CS2102\", \"ST2334\", \"CS3219\"], \"8\": [\"CS3263\", \"ES2660\", \"CS3230\"]}, \"reasons\": [\"Plan uses semesters 4,5,7,8; semester 6 is empty so every used semester has 12 MC, within the 16 MC limit.\", \"CS3210 is added only because CS4223 requires CS2106 plus one of CS3210/CS3220/CG3207.\", \"CS2105 is earliest in semester 4, ES2660 latest in semester 8, CS2102 is in semester 7, and CS3263 is in semester 8.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2105",
+    "CS2106",
+    "CS3210"
+   ],
+   "5": [
+    "CS3103",
+    "CS4223",
+    "CS2109S"
+   ],
+   "7": [
+    "CS2102",
+    "ST2334",
+    "CS3219"
+   ],
+   "8": [
+    "CS3263",
+    "ES2660",
+    "CS3230"
+   ]
+  },
+  "reasons": [
+   "Plan uses semesters 4,5,7,8; semester 6 is empty so every used semester has 12 MC, within the 16 MC limit.",
+   "CS3210 is added only because CS4223 requires CS2106 plus one of CS3210/CS3220/CG3207.",
+   "CS2105 is earliest in semester 4, ES2660 latest in semester 8, CS2102 is in semester 7, and CS3263 is in semester 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

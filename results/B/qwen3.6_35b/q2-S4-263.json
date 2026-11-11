@@ -1,0 +1,74 @@
+{
+ "id": "q2-S4-263",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 5.44,
+ "solver_seconds": 0.147,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3058,
+  "total_tokens": 3338,
+  "completion_tokens": 280,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 5.29,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"programme\": \"BComp CS Hons\",\n\"current_sem\": 2,\n\"completed\": [\n\"CS1231S\",\n\"ES2660\",\n\"MA1521\",\n\"CS1101S\"\n],\n\"must_take\": [\n\"IS1108\",\n\"CS2103T\",\n\"CS4212\"\n],\n\"mc_max\": 12,\n\"sem_caps\": {\n\"6\": 0\n},\n\"objective\": \"earliest_graduation\",\n\"early\": [\n\"CS2103T\",\n\"IS1108\"\n],\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4212\",\n\"sem\": 4,\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"IS1108\",\n\"b\": \"CS4212\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2103T\",\n\"sem\": 2,\n\"strength\": \"must\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "programme": "BComp CS Hons",
+  "current_sem": 2,
+  "completed": [
+   "CS1231S",
+   "ES2660",
+   "MA1521",
+   "CS1101S"
+  ],
+  "must_take": [
+   "IS1108",
+   "CS2103T",
+   "CS4212"
+  ],
+  "mc_max": 12,
+  "sem_caps": {
+   "6": 0
+  },
+  "objective": "earliest_graduation",
+  "early": [
+   "CS2103T",
+   "IS1108"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS4212",
+    "sem": 4,
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "IS1108",
+    "b": "CS4212",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2103T",
+    "sem": 2,
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS2103T in semester 2; the prerequisites of CS2103T"
+  ]
+ }
+}

@@ -1,0 +1,102 @@
+{
+ "id": "q2-S4-254",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 9.42,
+ "solver_seconds": 0.02,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3152,
+  "total_tokens": 3592,
+  "completion_tokens": 440,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 9.4,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 7,\n\"programme\": \"BComp CS Hons\",\n\"completed\": [\n\"CS2103T\",\n\"CS2105\",\n\"CS2100\",\n\"CS2030S\",\n\"ES2660\",\n\"MA1522\",\n\"CS1101S\",\n\"CS3230\",\n\"CS2106\",\n\"CS2102\",\n\"MA1521\",\n\"CS2109S\",\n\"CS3219\",\n\"ST2334\",\n\"CS2040S\",\n\"CS1231S\"\n],\n\"must_take\": [\n\"CS2101\",\n\"IS1108\",\n\"CS4234\",\n\"CS3231\"\n],\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"IS1108\",\n\"b\": \"CS2101\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2101\",\n\"b\": \"IS1108\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2101\",\n\"b\": \"IS1108\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2101\",\n\"b\": \"CS3231\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"IS1108\",\n\"b\": \"CS3231\",\n\"strength\": \"prefer\"\n}\n],\n\"early\": [\n\"CS2101\"\n],\n\"unsupported\": [\n\"modules taught by my favourite lecturer\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "CS2103T",
+   "CS2105",
+   "CS2100",
+   "CS2030S",
+   "ES2660",
+   "MA1522",
+   "CS1101S",
+   "CS3230",
+   "CS2106",
+   "CS2102",
+   "MA1521",
+   "CS2109S",
+   "CS3219",
+   "ST2334",
+   "CS2040S",
+   "CS1231S"
+  ],
+  "must_take": [
+   "CS2101",
+   "IS1108",
+   "CS4234",
+   "CS3231"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "IS1108",
+    "b": "CS2101",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2101",
+    "b": "IS1108",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2101",
+    "b": "IS1108",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS2101",
+    "b": "CS3231",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "IS1108",
+    "b": "CS3231",
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS2101"
+  ],
+  "unsupported": [
+   "modules taught by my favourite lecturer"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: IS1108 before CS2101; your rule: CS2101 before IS1108"
+  ],
+  "not_applied": [
+   "modules taught by my favourite lecturer"
+  ]
+ }
+}

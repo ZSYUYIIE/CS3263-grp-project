@@ -1,0 +1,86 @@
+{
+ "id": "q2-S4-164",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 15.87,
+ "solver_seconds": 0.047,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2868,
+  "total_tokens": 4792,
+  "completion_tokens": 1924,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1738
+  },
+  "finish_reason": "stop",
+  "request_seconds": 15.82,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":4,\"completed\":[\"CS2100\",\"CS2101\",\"CS1101S\",\"CS2030S\",\"MA1521\",\"CS2040S\",\"IS1108\",\"CS2103T\",\"MA1522\",\"CS1231S\",\"ST2334\",\"ES2660\"],\"programme\":\"BComp CS Hons\",\"must_take\":[\"CS3230\",\"CS2105\",\"CS2102\",\"CS4238\",\"CS3219\"],\"sem_caps\":{\"5\":0,\"6\":0,\"7\":0},\"early\":[\"CS3230\",\"CS2105\",\"CS3219\"],\"rules\":[{\"type\":\"in_sem\",\"course\":\"CS2102\",\"sem\":4,\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS3219\",\"b\":\"CS3230\",\"strength\":\"must\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "CS2100",
+   "CS2101",
+   "CS1101S",
+   "CS2030S",
+   "MA1521",
+   "CS2040S",
+   "IS1108",
+   "CS2103T",
+   "MA1522",
+   "CS1231S",
+   "ST2334",
+   "ES2660"
+  ],
+  "programme": "BComp CS Hons",
+  "must_take": [
+   "CS3230",
+   "CS2105",
+   "CS2102",
+   "CS4238",
+   "CS3219"
+  ],
+  "sem_caps": {
+   "5": 0,
+   "6": 0,
+   "7": 0
+  },
+  "early": [
+   "CS3230",
+   "CS2105",
+   "CS3219"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 4,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3219",
+    "b": "CS3230",
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the prerequisites of CS3235; the prerequisites of CS4238; the MC limits (at most 20 MC per semester; semesters 5, 6, 7 blocked)"
+  ]
+ }
+}

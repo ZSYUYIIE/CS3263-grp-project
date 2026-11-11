@@ -1,0 +1,64 @@
+{
+ "id": "q2-S1-009",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "valid",
+ "seconds": 112.7,
+ "usage": {
+  "prompt_tokens": 13402,
+  "total_tokens": 22356,
+  "completion_tokens": 8954,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 11776
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 8651
+  },
+  "finish_reason": "stop",
+  "request_seconds": 112.7,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"1\":[\"CS1010\",\"CS1231\",\"MA1511\"],\"2\":[\"CS2040\",\"MA1522\",\"ST2131\"],\"3\":[\"CS3230\",\"CS2030S\"],\"4\":[\"CS4268\",\"CS4277\"],\"5\":[\"CS2220\"],\"6\":[\"CS4220\"]},\"reasons\":[\"Total 46 MC is minimal: only required courses and their prerequisites are included.\",\"All prerequisites are completed in strictly earlier semesters and every load is at most 12 MC.\",\"CS4268 and CS4277 are together in semester 4, CS2030S is earlier, and CS4220 is in semester 6.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1010",
+    "CS1231",
+    "MA1511"
+   ],
+   "2": [
+    "CS2040",
+    "MA1522",
+    "ST2131"
+   ],
+   "3": [
+    "CS3230",
+    "CS2030S"
+   ],
+   "4": [
+    "CS4268",
+    "CS4277"
+   ],
+   "5": [
+    "CS2220"
+   ],
+   "6": [
+    "CS4220"
+   ]
+  },
+  "reasons": [
+   "Total 46 MC is minimal: only required courses and their prerequisites are included.",
+   "All prerequisites are completed in strictly earlier semesters and every load is at most 12 MC.",
+   "CS4268 and CS4277 are together in semester 4, CS2030S is earlier, and CS4220 is in semester 6."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

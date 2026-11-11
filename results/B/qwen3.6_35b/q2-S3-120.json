@@ -1,0 +1,128 @@
+{
+ "id": "q2-S3-120",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.21,
+ "solver_seconds": 0.05,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3122,
+  "total_tokens": 3511,
+  "completion_tokens": 389,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.16,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 4,\n\"completed\": [\n\"MA1521\",\n\"CS1231S\",\n\"CS2030S\",\n\"CS1101S\",\n\"ES2660\",\n\"MA1522\",\n\"IS1108\",\n\"CS2103T\",\n\"CS2040S\",\n\"CS2101\",\n\"CS2100\"\n],\n\"must_take\": [\n\"ST2334\",\n\"CS4222\",\n\"CS3233\",\n\"CS3230\",\n\"CS2109S\",\n\"CS3219\",\n\"CS2105\",\n\"CS4236\"\n],\n\"mc_min\": 9,\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"apart\",\n\"a\": \"CS2105\",\n\"b\": \"ST2334\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3264\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3233\",\n\"b\": \"CS2105\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4212\",\n\"b\": \"CS3233\",\n\"strength\": \"prefer\"\n}\n],\n\"unsupported\": [\n\"CS3264 has to be in semester 7\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "MA1521",
+   "CS1231S",
+   "CS2030S",
+   "CS1101S",
+   "ES2660",
+   "MA1522",
+   "IS1108",
+   "CS2103T",
+   "CS2040S",
+   "CS2101",
+   "CS2100"
+  ],
+  "must_take": [
+   "ST2334",
+   "CS4222",
+   "CS3233",
+   "CS3230",
+   "CS2109S",
+   "CS3219",
+   "CS2105",
+   "CS4236"
+  ],
+  "mc_min": 9,
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS2105",
+    "b": "ST2334",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3264",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3233",
+    "b": "CS2105",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS4212",
+    "b": "CS3233",
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "CS3264 has to be in semester 7"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 8,
+  "plan": {
+   "4": [],
+   "5": [],
+   "6": [
+    "CS2107",
+    "CS2109S",
+    "CS3233",
+    "ST2334"
+   ],
+   "7": [
+    "CS2105",
+    "CS3264",
+    "CS4236"
+   ],
+   "8": [
+    "CS3219",
+    "CS3230",
+    "CS4222"
+   ]
+  },
+  "mc_per_semester": {
+   "4": 0,
+   "5": 0,
+   "6": 16,
+   "7": 12,
+   "8": 12
+  },
+  "preferences_met": [
+   "CS3233 before CS2105"
+  ],
+  "preferences_not_met": [
+   "CS4212 before CS3233"
+  ],
+  "added_prerequisites": [
+   "CS2107"
+  ],
+  "not_applied": [
+   "CS3264 has to be in semester 7"
+  ]
+ }
+}

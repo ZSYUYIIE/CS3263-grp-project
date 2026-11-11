@@ -1,0 +1,51 @@
+{
+ "id": "q2-S3-153",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 70.71,
+ "usage": {
+  "prompt_tokens": 9529,
+  "total_tokens": 17181,
+  "completion_tokens": 7652,
+  "prompt_tokens_details": {
+   "cached_tokens": 9216,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 7507
+  },
+  "finish_reason": "stop",
+  "request_seconds": 70.7,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS2105\",\"CS3241\",\"CS2102\"],\"6\":[\"CS3219\",\"CS3247\",\"ST2334\"],\"7\":[\"CS4248\"]},\"reasons\":[\"CS2105 is in semester 5, the earliest possible, so ST2334 can follow in semester 6.\",\"CS3241 is added as the prerequisite for CS3247; CS3247 is in semester 6 and CS4248 in semester 7, satisfying the preference.\",\"CS3219 is fixed in semester 6; semester 8 is left empty for the exchange, and all requirements finish by semester 7.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2105",
+    "CS3241",
+    "CS2102"
+   ],
+   "6": [
+    "CS3219",
+    "CS3247",
+    "ST2334"
+   ],
+   "7": [
+    "CS4248"
+   ]
+  },
+  "reasons": [
+   "CS2105 is in semester 5, the earliest possible, so ST2334 can follow in semester 6.",
+   "CS3241 is added as the prerequisite for CS3247; CS3247 is in semester 6 and CS4248 in semester 7, satisfying the preference.",
+   "CS3219 is fixed in semester 6; semester 8 is left empty for the exchange, and all requirements finish by semester 7."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

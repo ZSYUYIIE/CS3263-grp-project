@@ -1,0 +1,59 @@
+{
+ "id": "q2-S1-048",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 273.69,
+ "usage": {
+  "prompt_tokens": 9475,
+  "total_tokens": 14589,
+  "completion_tokens": 5114,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 91.56,
+  "attempts": 2
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4231 requires CS3210 or CS3230 as a prerequisite. CS3210 requires CS2100/CS2100DE/CS2100HS/CG2007/EE2028/CG2028/EE2024. CS3230 requires CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS and CS1231/CS1231S/MA1100/MA1100T. To take CS4231 in Sem 6, one of its prerequisites must be completed by Sem 5. However, CS2103T requires CS2030/CS2030S/CS2030DE/CS2030HS AND CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS. CS2106 requires CS2100/CS2100DE/CS2100HS/EE2007/EE2024/EE2028. The student must take CS2103T, CS2106, CS4231, CS2105, CS3219, CS2030S, MA1522, CS3230, CS4249, CS3210. CS4249 requires CS3240 or NM2216/NM2213/NM3243. CS3240 requires CS2111 or NM2207. CS2111 requires CS1010A/E/X/1101S/1010S/UTC2851/1010HS/1010J/1010/NM2207. This creates a long chain. More critically, CS4231 in Sem 6 requires a prereq done by Sem 5. CS3210 requires CS2100/... which requires CS1010... CS3230 requires CS2040... and CS1231/MA1100. CS2040 requires CS1010. So Sem 1-2 must cover CS1010 and CS1231/MA1100. Sem 3-4 can cover CS2030S, CS2040S, CS2100, CS3230, CS3210. If CS3210 is taken in Sem 4, CS4231 can be Sem 5 or 6. But CS2103T requires CS2030S and CS2040S. If CS2030S/CS2040S are taken in Sem 3, CS2103T can be Sem 4. CS2106 requires CS2100. If CS2100 is Sem 3, CS2106 is Sem 4. CS2105 requires CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS. If CS2040S is Sem 3, CS2105 is Sem 4. CS3219 requires CS2103/CS2103T/CS2103DE/CS2113T/CS2113. If CS2103T is Sem 4, CS3219 is Sem 5. CS4249 requires CS3240. CS3240 requires CS2111. CS2111 requires CS1010 variant. CS1010 is Sem 1/2. CS2111 Sem 2/3. CS3240 Sem 3/4. CS4249 Sem 4/5. The constraint 'CS4231 in Sem 6' is feasible. However, 'CS2105 and MA1522 together' is a soft wish? No, 'I have to take CS2105 and MA1522 together'. This is a hard constraint. MA1522 has no prereq. CS2105 requires CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS. So CS2040 variant must be done before or in the same semester as CS2105. If CS2105 and MA1522 are in Sem N, CS2040 variant must be done by Sem N-1 (or same sem if coreq, but CS2105 prereq is strict 'prerequisite', not coreq). Wait, CS2105 prereq is 'YSC2229 or CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS'. These are prerequisites. So CS2040 variant must be completed in a strictly earlier semester. So if CS2105 is in Sem N, CS2040 variant is in Sem <= N-1. MA1522 is in Sem N. CS2103T requires CS2030S and CS2040 variant. So CS2030S and CS2040 variant must be in Sem <= N-1. CS2106 requires CS2100 variant. CS2100 variant requires CS1010 variant. CS3210 requires CS2100 variant. CS3230 requires CS2040 variant and CS1231/MA1100. CS4231 requires CS3210 or CS3230. CS4231 is Sem 6. So CS3210 or CS3230 must be in Sem <= 5. CS3219 requires CS2103T. So CS2103T must be in Sem <= 5. CS4249 requires CS3240. CS3240 requires CS2111. CS2111 requires CS1010 variant. CS1010 variant is Sem 1/2. CS2111 Sem 2/3. CS3240 Sem 3/4. CS4249 Sem 4/5. The student wants CS4249 as early as possible. Let's try to fit everything. Sem 1: CS1010S, CS1231S, MA1522? No, CS2105 and MA1522 together. If MA1522 is Sem 1, CS2105 must be Sem 1. But CS2105 requires CS2040 variant. CS2040 variant requires CS1010. CS1010 is Sem 1. Prerequisite is strict. So CS2040 variant cannot be Sem 1 if CS1010 is Sem 1. So CS2105 cannot be Sem 1. Thus MA1522 cannot be Sem 1 if it must be with CS2105. So MA1522/CS2105 pair is Sem >= 3 (if CS2040 variant is Sem 2). Sem 1: CS1010S, CS1231S. Sem 2: CS2030S, CS2040S, CS2100, CS2111, MA1522? No, MA1522 must be with CS2105. So Sem 2: CS2030S, CS2040S, CS2100, CS2111. Sem 3: CS2105, MA1522, CS3230, CS3210, CS2103T, CS2106, CS3219, CS3240, CS4249, CS4231? Too many. Sem 3 MC limit 20. CS2105 (4) + MA1522 (4) + CS3230 (4) + CS3210 (4) = 16. CS2103T (4) -> 20. CS2106 (4) -> 24 (too high). CS2106 requires CS2100 (Sem 2). So CS2106 can be Sem 3. But MC limit. CS2103T requires CS2030S (Sem 2) and CS2040S (Sem 2). So CS2103T can be Sem 3. CS3219 requires CS2103T. So CS3219 must be Sem 4. CS4231 requires CS3210 or CS3230. If CS3210 is Sem 3, CS4231 can be Sem 4 or 5. But CS4231 must be Sem 6. So CS3210 or CS3230 must be Sem 5? No, 'CS4231 has to be in semester 6'. Prereq must be completed by Sem 5. So CS3210 or CS3230 must be in Sem <= 5. CS3210 requires CS2100 (Sem 2). So CS3210 can be Sem 3. CS3230 requires CS2040S (Sem 2) and CS1231S (Sem 1). So CS3230 can be Sem 3. If CS3210 is Sem 3, CS4231 can be Sem 4, 5, 6. But it MUST be Sem 6. So we can delay CS4231 to Sem 6. CS3219 requires CS2103T. If CS2103T is Sem 3, CS3219 is Sem 4. CS4249 requires CS3240. CS3240 requires CS2111. CS2111 is Sem 2. CS3240 can be Sem 3. CS4249 can be Sem 4. Student wants CS4249 as early as possible. Sem 4 is early. CS2106 as late as possible. CS2106 requires CS2100 (Sem 2). Can be Sem 3, 4, 5, 6, 7, 8. But MC limits. Sem 3: CS2105, MA1522, CS3230, CS3210, CS2103T. That's 20 MC. No room for CS2106. So CS2106 must be Sem 4 or later. Sem 4: CS3219, CS4249, CS2106? 4+4+4=12. Plus others? CS4231 is Sem 6. CS2103T is Sem 3. CS3219 is Sem 4. CS4249 is Sem 4. CS2106 is Sem 4. Total 12 MC. Sem 5: Empty? Or CS4231? No, CS4231 is Sem 6. Sem 6: CS4231. Sem 7: Empty. Sem 8: Empty. This plan works? Sem 1: CS1010S, CS1231S. Sem 2: CS2030S, CS2040S, CS2100, CS2111. Sem 3: CS2105, MA1522, CS3230, CS3210, CS2103T. Sem 4: CS3219, CS4249, CS2106. Sem 6: CS4231. Check prerequisites: CS2105 (Sem 3) requires CS2040S (Sem 2). OK. MA1522 (Sem 3) no prereq. OK. CS3230 (Sem 3) requires CS2040S (Sem 2) and CS1231S (Sem 1). OK. CS3210 (Sem 3) requires CS2100 (Sem 2). OK. CS2103T (Sem 3) requires CS2030S (Sem 2) and CS2040S (Sem 2). OK. CS3219 (Sem 4) requires CS2103T (Sem 3). OK. CS4249 (Sem 4) requires CS3240? Wait, CS3240 is not in the plan. The student said 'CS4249 too'. CS4249 requires CS3240 or NM2216/NM2213/NM3243. CS3240 requires CS2111 or NM2207. CS2111 is Sem 2. So CS3240 can be Sem 3. If CS3240 is Sem 3, it conflicts with MC limit in Sem 3 (already 20 MC). So CS3240 must be Sem 4? But Sem 4 has CS3219, CS4249, CS2106. If CS3240 is Sem 4, MC becomes 16. CS4249 requires CS3240. So CS4249 must be Sem 5. But student wants CS4249 as early as possible. Sem 5 is later. Can we move CS2106 to Sem 5? Sem 4: CS3219, CS3240, CS4249. MC 12. Sem 5: CS2106. MC 4. Sem 6: CS4231. MC 4. This works. CS2106 as late as possible? Sem 5 is later than Sem 4. Can it be Sem 6? Sem 6 has CS4231. MC 4+4=8. OK. But CS2106 is 'as late as possible'. Sem 8 is later. But no reason to delay. Sem 5 is fine. Wait, 'CS2106 as late as possible' is a soft wish. 'CS4249 as early as possible' is a soft wish. CS4249 in Sem 5 is earlier than Sem 6. Can CS4249 be Sem 4? Only if CS3240 is Sem 3. But Sem 3 is full. Can we reduce Sem 3? CS2105, MA1522, CS3230, CS3210, CS2103T. All are 'must' or 'have to take'. CS2105 and MA1522 together is a hard constraint. CS2103T is 'need to take'. CS3210 is 'have to take'. CS3230 is 'have to take'. So Sem 3 is full. CS3240 must be Sem 4 or later. If CS3240 is Sem 4, CS4249 is Sem 5. If CS3240 is Sem 5, CS4249 is Sem 6. But CS4231 is Sem 6. So CS4249 cannot be Sem 6 if CS4231 is there? Yes, it can, if MC allows. But CS4249 as early as possible is Sem 5. CS2106 as late as possible. If CS2106 is Sem 5, it conflicts with CS4249? No, Sem 5 can have CS2106 and CS4249? MC 8. OK. But CS4249 requires CS3240. If CS3240 is Sem 4, CS4249 is Sem 5. CS2106 is Sem 5. Sem 5: CS4249, CS2106. Sem 6: CS4231. Sem 4: CS3219, CS3240. Sem 3: CS2105, MA1522, CS3230, CS3210, CS2103T. Sem 2: CS2030S, CS2040S, CS2100, CS2111. Sem 1: CS1010S, CS1231S. This plan satisfies all hard constraints. CS4231 in Sem 6. CS2105 and MA1522 together in Sem 3. CS2103T, CS2106, CS4215 (scratched), CS4231, CS2105, CS3219, CS2030S, MA1522, CS3230, CS4249, CS3210. All taken. CS4249 in Sem 5 (early). CS2106 in Sem 5 (late? Sem 8 is later. But no reason to delay. 'As late as possible' is a soft wish. We can delay CS2106 to Sem 8. Sem 5: CS4249. Sem 6: CS4231. Sem 7: Empty. Sem 8: CS2106. This satisfies 'CS2106 as late as possible'. Does it satisfy 'CS4249 as early as possible'? Yes, Sem 5. Can CS4249 be Sem 4? No, CS3240 is Sem 4. CS3240 requires CS2111 (Sem 2). CS3240 can be Sem 3? No, Sem 3 is full. So CS3240 is Sem 4. CS4249 is Sem 5. This is the earliest. So the plan is valid. Why NO_PLAN? I might have missed a mutual exclusion or prerequisite. CS2103T mutually exclusive with CS2101, CS2101X, CS2103, CS2103DE, CS2113, CS2113T, EG1413, ES1601, ES2002, ES2007D, ES2007S, IS2101. None of these are in the plan. CS2106 mutually exclusive with CG2271, EE4214. None in plan. CS4231 no mutual exclusions. CS2105 mutually exclusive with EE4204, EE4204E, TEE4204. None in plan. CS3210 no mutual exclusions. CS3230 no mutual exclusions. CS2030S mutually exclusive with CS2030, CS2030DE, CS2030HS. None in plan. CS2040S mutually exclusive with CS1020, CS1020E, CS2010, CS2020, CS2040, CS2040C, CS2040DE, CS2040HS. None in plan. CS2100 mutually exclusive with CG2028, CS2100DE, CS2100HS. None in plan. CS2111 no mutual exclusions. CS1010S mutually exclusive with CS1010, CS1010A, CS1010E, CS1010HS, CS1010J, CS1010X, CS1101S, NM2207, UTC2851. None in plan. CS1231S mutually exclusive with CS1231, MA1100, MA1100T. None in plan. MA1522 mutually exclusive with MA1301, MA1301X, MA1311, MA1508E, MA1513, MA2001, YSC2232. None in plan. CS3219 no mutual exclusions. CS4249 no mutual exclusions. CS3240 no mutual exclusions. MA1522 and CS2105 together. OK. CS4231 in Sem 6. OK. CS2106 in Sem 8. OK. CS4249 in Sem 5. OK. CS2103T in Sem 3. OK. CS3210 in Sem 3. OK. CS3230 in Sem 3. OK. CS2030S in Sem 2. OK. CS2040S in Sem 2. OK. CS2100 in Sem 2. OK. CS2111 in Sem 2. OK. CS1010S in Sem 1. OK. CS1231S in Sem 1. OK. This plan seems valid. I will output PLAN.\n\n{\"status\": \"PLAN\", \"plan\": {\"1\": [\"CS1010S\", \"CS1231S\"], \"2\": [\"CS2030S\", \"CS2040S\", \"CS2100\", \"CS2111\"], \"3\": [\"CS2105\", \"MA1522\", \"CS3230\", \"CS3210\", \"CS2103T\"], \"4\": [\"CS3219\", \"CS3240\"], \"5\": [\"CS4249\"], \"6\": [\"CS4231\"], \"8\": [\"CS2106\"]}, \"reasons\": [\"All hard constraints satisfied: CS4231 in Sem 6, CS2105+MA1522 in Sem 3, all required courses included. Prerequisites met. MC limits respected. CS2106 delayed to Sem 8 to satisfy 'as late as possible' wish. CS4249 in Sem 5 is earliest possible given CS3240 in Sem 4.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1010S",
+    "CS1231S"
+   ],
+   "2": [
+    "CS2030S",
+    "CS2040S",
+    "CS2100",
+    "CS2111"
+   ],
+   "3": [
+    "CS2105",
+    "MA1522",
+    "CS3230",
+    "CS3210",
+    "CS2103T"
+   ],
+   "4": [
+    "CS3219",
+    "CS3240"
+   ],
+   "5": [
+    "CS4249"
+   ],
+   "6": [
+    "CS4231"
+   ],
+   "8": [
+    "CS2106"
+   ]
+  },
+  "reasons": [
+   "All hard constraints satisfied: CS4231 in Sem 6, CS2105+MA1522 in Sem 3, all required courses included. Prerequisites met. MC limits respected. CS2106 delayed to Sem 8 to satisfy 'as late as possible' wish. CS4249 in Sem 5 is earliest possible given CS3240 in Sem 4."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

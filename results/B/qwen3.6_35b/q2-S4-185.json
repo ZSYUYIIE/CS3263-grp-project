@@ -1,0 +1,98 @@
+{
+ "id": "q2-S4-185",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 9.09,
+ "solver_seconds": 0.208,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3181,
+  "total_tokens": 3636,
+  "completion_tokens": 455,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 8.88,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 5,\n\"programme\": \"BComp CS Hons\",\n\"completed\": [\n\"ST2334\",\n\"CS2040S\",\n\"CS2030S\",\n\"CS1231S\",\n\"MA1522\",\n\"CS3230\",\n\"CS2109S\",\n\"CS2103T\",\n\"CS4215\",\n\"MA1521\",\n\"CS2100\",\n\"CS2101\",\n\"CS1101S\",\n\"CS2106\",\n\"IS1108\"\n],\n\"must_take\": [\n\"ES2660\",\n\"CS2105\",\n\"CS3223\",\n\"CS3219\",\n\"CS4223\",\n\"CS4236\",\n\"CS3213\",\n\"CS2102\"\n],\n\"mc_max\": 12,\n\"sem_caps\": {\n\"8\": 0\n},\n\"objective\": \"earliest_graduation\",\n\"early\": [\n\"CS3213\"\n],\n\"late\": [\n\"CS2102\"\n],\n\"rules\": [\n{\n\"type\": \"apart\",\n\"a\": \"CS3219\",\n\"b\": \"CS2105\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4236\",\n\"b\": \"CS2105\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"ES2660\",\n\"sem\": 5,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2105\",\n\"sem\": 6,\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "ST2334",
+   "CS2040S",
+   "CS2030S",
+   "CS1231S",
+   "MA1522",
+   "CS3230",
+   "CS2109S",
+   "CS2103T",
+   "CS4215",
+   "MA1521",
+   "CS2100",
+   "CS2101",
+   "CS1101S",
+   "CS2106",
+   "IS1108"
+  ],
+  "must_take": [
+   "ES2660",
+   "CS2105",
+   "CS3223",
+   "CS3219",
+   "CS4223",
+   "CS4236",
+   "CS3213",
+   "CS2102"
+  ],
+  "mc_max": 12,
+  "sem_caps": {
+   "8": 0
+  },
+  "objective": "earliest_graduation",
+  "early": [
+   "CS3213"
+  ],
+  "late": [
+   "CS2102"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS3219",
+    "b": "CS2105",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4236",
+    "b": "CS2105",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "ES2660",
+    "sem": 5,
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2105",
+    "sem": 6,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the prerequisites of CS4223; the prerequisites of CS4236; the MC limits (at most 12 MC per semester; semesters 8 blocked)"
+  ]
+ }
+}

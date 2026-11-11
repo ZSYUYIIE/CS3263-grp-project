@@ -1,0 +1,98 @@
+{
+ "id": "q2-S2-019",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 9.65,
+ "usage": {
+  "prompt_tokens": 20289,
+  "total_tokens": 20767,
+  "completion_tokens": 478,
+  "finish_reason": "stop",
+  "request_seconds": 9.65,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4223 requires CS3210, CS3220, or CG3207 as prerequisites. None of these courses are in the student's completed list, nor are they listed as 'must take'.\",\n    \"The student has not completed any of the prerequisites for CS3210, CS3220, or CG3207 (e.g., CS2100/CS2100DE/CS2100HS/CG2007/EE2028/CG2028/EE2024 for CS3210; CS2106 for CS3220; EE2026 and (CG2028 or EE2028) for CG3207).\",\n    \"Since the prerequisites for CS4223 cannot be satisfied with the available courses and the student's completed record, it is impossible to plan CS4223.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4223 requires CS3210, CS3220, or CG3207 as prerequisites. None of these courses are in the student's completed list, nor are they listed as 'must take'.",
+   "The student has not completed any of the prerequisites for CS3210, CS3220, or CG3207 (e.g., CS2100/CS2100DE/CS2100HS/CG2007/EE2028/CG2028/EE2024 for CS3210; CS2106 for CS3220; EE2026 and (CG2028 or EE2028) for CG3207).",
+   "Since the prerequisites for CS4223 cannot be satisfied with the available courses and the student's completed record, it is impossible to plan CS4223."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2102\",\n      \"CS3219\"\n    ],\n    \"6\": [\n      \"CS2105\"\n    ],\n    \"7\": [\n      \"CS4223\"\n    ]\n  },\n  \"reasons\": [\n    \"All required courses (CS2102, CS4223, CS2105, CS3219) are planned with prerequisites satisfied.\",\n    \"Constraints met: CS3219 before CS2102, CS2105 before CS4223, max 2 modules per semester, max 3 in Sem 8 (Sem 8 is empty).\",\n    \"Optimized for fewest total credits (16 MC) and earliest graduation (Sem 7). Soft wishes for timing of CS3219, CS2102, and CS2105 are accommodated where possible without violating hard constraints or increasing credits.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2102",
+      "CS3219"
+     ],
+     "6": [
+      "CS2105"
+     ],
+     "7": [
+      "CS4223"
+     ]
+    },
+    "reasons": [
+     "All required courses (CS2102, CS4223, CS2105, CS3219) are planned with prerequisites satisfied.",
+     "Constraints met: CS3219 before CS2102, CS2105 before CS4223, max 2 modules per semester, max 3 in Sem 8 (Sem 8 is empty).",
+     "Optimized for fewest total credits (16 MC) and earliest graduation (Sem 7). Soft wishes for timing of CS3219, CS2102, and CS2105 are accommodated where possible without violating hard constraints or increasing credits."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9966,
+    "total_tokens": 10208,
+    "completion_tokens": 242,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.4,
+    "attempts": 1
+   },
+   "seconds": 4.4,
+   "violations": [
+    "R4 CS4223 in semester 7: prerequisite not met ((CS2106 or CG2271) and (CS3210 or CS3220 or CG3207))",
+    "R9 must rule not met: before CS3219 CS2102"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4223 requires CS3210, CS3220, or CG3207 as prerequisites. None of these courses are in the student's completed list, nor are they listed as 'must take'.\",\n    \"The student has not completed any of the prerequisites for CS3210, CS3220, or CG3207 (e.g., CS2100/CS2100DE/CS2100HS/CG2007/EE2028/CG2028/EE2024 for CS3210; CS2106 for CS3220; EE2026 and (CG2028 or EE2028) for CG3207).\",\n    \"Since the prerequisites for CS4223 cannot be satisfied with the available courses and the student's completed record, it is impossible to plan CS4223.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4223 requires CS3210, CS3220, or CG3207 as prerequisites. None of these courses are in the student's completed list, nor are they listed as 'must take'.",
+     "The student has not completed any of the prerequisites for CS3210, CS3220, or CG3207 (e.g., CS2100/CS2100DE/CS2100HS/CG2007/EE2028/CG2028/EE2024 for CS3210; CS2106 for CS3220; EE2026 and (CG2028 or EE2028) for CG3207).",
+     "Since the prerequisites for CS4223 cannot be satisfied with the available courses and the student's completed record, it is impossible to plan CS4223."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10323,
+    "total_tokens": 10559,
+    "completion_tokens": 236,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.25,
+    "attempts": 1
+   },
+   "seconds": 5.25,
+   "violations": null
+  }
+ ]
+}

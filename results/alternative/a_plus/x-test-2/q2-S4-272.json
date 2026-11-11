@@ -1,0 +1,128 @@
+{
+ "id": "q2-S4-272",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 154.59,
+ "usage": {
+  "prompt_tokens": 13970,
+  "total_tokens": 30776,
+  "completion_tokens": 16806,
+  "prompt_tokens_details": {
+   "cached_tokens": 3072,
+   "created_cache_tokens": 10752
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 16582
+  },
+  "finish_reason": "stop",
+  "request_seconds": 154.59,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"NO_PLAN\",\"reasons\":[\"CS2105 must be in semester 2, but its prerequisite CS2040/CS2040S is not completed and cannot be planned in an earlier semester.\",\"No valid plan can satisfy the hard requirement that CS2105 be taken in semester 2.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS2105 must be in semester 2, but its prerequisite CS2040/CS2040S is not completed and cannot be planned in an earlier semester.",
+   "No valid plan can satisfy the hard requirement that CS2105 be taken in semester 2."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"2\":[\"CS2040\",\"CS2107\"],\"3\":[\"CG2271\",\"CS2220\"],\"4\":[\"CS2105\",\"CS4330\",\"CS4220\"],\"5\":[\"CS3235\"],\"6\":[\"CS4238\"],\"7\":[\"IS1108\"]},\"reasons\":[\"Plan finishes in semester 7, the earliest possible given the CS2105 to CS3235 to CS4238 to IS1108 chain.\",\"CS2105 is placed in semester 4, a Semester 2 term, matching the preference.\",\"Only necessary prerequisites were added: CS2040, CS2220, CG2271, CS2107, CS3235.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "2": [
+      "CS2040",
+      "CS2107"
+     ],
+     "3": [
+      "CG2271",
+      "CS2220"
+     ],
+     "4": [
+      "CS2105",
+      "CS4330",
+      "CS4220"
+     ],
+     "5": [
+      "CS3235"
+     ],
+     "6": [
+      "CS4238"
+     ],
+     "7": [
+      "IS1108"
+     ]
+    },
+    "reasons": [
+     "Plan finishes in semester 7, the earliest possible given the CS2105 to CS3235 to CS4238 to IS1108 chain.",
+     "CS2105 is placed in semester 4, a Semester 2 term, matching the preference.",
+     "Only necessary prerequisites were added: CS2040, CS2220, CG2271, CS2107, CS3235."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 6880,
+    "total_tokens": 22781,
+    "completion_tokens": 15901,
+    "prompt_tokens_details": {
+     "cached_tokens": 1536,
+     "created_cache_tokens": 5248,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 15744
+    },
+    "finish_reason": "stop",
+    "request_seconds": 139.85,
+    "attempts": 1
+   },
+   "seconds": 139.85,
+   "violations": [
+    "R9 must rule not met: CS2105 in semester 2"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\":\"NO_PLAN\",\"reasons\":[\"CS2105 must be in semester 2, but its prerequisite CS2040/CS2040S is not completed and cannot be planned in an earlier semester.\",\"No valid plan can satisfy the hard requirement that CS2105 be taken in semester 2.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS2105 must be in semester 2, but its prerequisite CS2040/CS2040S is not completed and cannot be planned in an earlier semester.",
+     "No valid plan can satisfy the hard requirement that CS2105 be taken in semester 2."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 7090,
+    "total_tokens": 7995,
+    "completion_tokens": 905,
+    "prompt_tokens_details": {
+     "cached_tokens": 1536,
+     "created_cache_tokens": 5504,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 838
+    },
+    "finish_reason": "stop",
+    "request_seconds": 14.74,
+    "attempts": 1
+   },
+   "seconds": 14.74,
+   "violations": null
+  }
+ ]
+}

@@ -1,0 +1,90 @@
+{
+ "id": "q2-S4-060",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 3.39,
+ "solver_seconds": 0.002,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2805,
+  "total_tokens": 3202,
+  "completion_tokens": 397,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 195
+  },
+  "finish_reason": "stop",
+  "request_seconds": 3.39,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":6,\"completed\":[\"IS1108\",\"MA1522\",\"CS2100\",\"CS3230\",\"CS2040S\",\"MA1521\",\"CS3219\",\"CS1231S\",\"CS3227\",\"CS2030S\",\"CS2106\",\"CS2109S\",\"CS2103T\",\"CS1101S\",\"ES2660\",\"CS2105\"],\"must_take\":[\"CS4330\",\"CS3264\",\"CS3244\",\"CS4277\",\"CS2102\",\"CS4226\"],\"early\":[\"CS4330\",\"CS4226\"],\"rules\":[{\"type\":\"in_sem\",\"course\":\"CS2102\",\"sem\":6,\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS4277\",\"b\":\"CS4226\",\"strength\":\"must\"},{\"type\":\"same_sem\",\"a\":\"CS2102\",\"b\":\"CS4330\",\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 6,
+  "completed": [
+   "IS1108",
+   "MA1522",
+   "CS2100",
+   "CS3230",
+   "CS2040S",
+   "MA1521",
+   "CS3219",
+   "CS1231S",
+   "CS3227",
+   "CS2030S",
+   "CS2106",
+   "CS2109S",
+   "CS2103T",
+   "CS1101S",
+   "ES2660",
+   "CS2105"
+  ],
+  "must_take": [
+   "CS4330",
+   "CS3264",
+   "CS3244",
+   "CS4277",
+   "CS2102",
+   "CS4226"
+  ],
+  "early": [
+   "CS4330",
+   "CS4226"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4277",
+    "b": "CS4226",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2102",
+    "b": "CS4330",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3244 is ruled out by completed CS2109S"
+  ]
+ }
+}

@@ -1,0 +1,201 @@
+{
+ "id": "q2-S1-030",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "valid",
+ "seconds": 289.2,
+ "usage": {
+  "prompt_tokens": 19417,
+  "total_tokens": 43367,
+  "completion_tokens": 23950,
+  "prompt_tokens_details": {
+   "cached_tokens": 3200,
+   "created_cache_tokens": 16000
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 23576
+  },
+  "finish_reason": "stop",
+  "request_seconds": 289.2,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"1\":[\"MA1511\",\"MA1512\",\"MA1513\"],\"2\":[\"CS1101S\",\"ST2334\"],\"3\":[\"CS2040\",\"CG2028\",\"MA3270\"],\"4\":[\"CS4248\",\"CS1231S\",\"CS3210\"],\"5\":[\"CS3244\",\"CS4261\",\"CS2102\"],\"6\":[\"CS3243\"],\"7\":[\"CS4278\"]},\"reasons\":[\"Total 56 MC, the minimum for all required courses and necessary prerequisites.\",\"CS1101S is in semester 2; CS1231S and CS4248 are together in semester 4, with CS4248 before CS3244 in semester 5.\",\"CS3210 is as early as possible in semester 4 after CG2028; CS4261 follows CS1101S.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "MA1511",
+    "MA1512",
+    "MA1513"
+   ],
+   "2": [
+    "CS1101S",
+    "ST2334"
+   ],
+   "3": [
+    "CS2040",
+    "CG2028",
+    "MA3270"
+   ],
+   "4": [
+    "CS4248",
+    "CS1231S",
+    "CS3210"
+   ],
+   "5": [
+    "CS3244",
+    "CS4261",
+    "CS2102"
+   ],
+   "6": [
+    "CS3243"
+   ],
+   "7": [
+    "CS4278"
+   ]
+  },
+  "reasons": [
+   "Total 56 MC, the minimum for all required courses and necessary prerequisites.",
+   "CS1101S is in semester 2; CS1231S and CS4248 are together in semester 4, with CS4248 before CS3244 in semester 5.",
+   "CS3210 is as early as possible in semester 4 after CG2028; CS4261 follows CS1101S."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"1\":[\"MA1521\",\"MA1513\"],\"2\":[\"CS1101S\",\"ST2334\"],\"3\":[\"MA3270\",\"CS2040\",\"CG2028\"],\"4\":[\"CS4248\",\"CS1231S\",\"CS3210\"],\"5\":[\"CS3244\",\"CS2102\",\"CS4261\"],\"6\":[\"CS3243\"],\"7\":[\"CS4278\"]},\"reasons\":[\"Total 56 MC, the minimum for the required courses and necessary prerequisites.\",\"CS1101S is in semester 2; CS4248 and CS1231S are together in semester 4, before CS3244 in semester 5.\",\"CS3210 is as early as possible in semester 4 after CG2028; CS4261 follows CS1101S.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "1": [
+      "MA1521",
+      "MA1513"
+     ],
+     "2": [
+      "CS1101S",
+      "ST2334"
+     ],
+     "3": [
+      "MA3270",
+      "CS2040",
+      "CG2028"
+     ],
+     "4": [
+      "CS4248",
+      "CS1231S",
+      "CS3210"
+     ],
+     "5": [
+      "CS3244",
+      "CS2102",
+      "CS4261"
+     ],
+     "6": [
+      "CS3243"
+     ],
+     "7": [
+      "CS4278"
+     ]
+    },
+    "reasons": [
+     "Total 56 MC, the minimum for the required courses and necessary prerequisites.",
+     "CS1101S is in semester 2; CS4248 and CS1231S are together in semester 4, before CS3244 in semester 5.",
+     "CS3210 is as early as possible in semester 4 after CG2028; CS4261 follows CS1101S."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9564,
+    "total_tokens": 21071,
+    "completion_tokens": 11507,
+    "prompt_tokens_details": {
+     "cached_tokens": 1664,
+     "created_cache_tokens": 7808,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 11324
+    },
+    "finish_reason": "stop",
+    "request_seconds": 130.92,
+    "attempts": 1
+   },
+   "seconds": 130.92,
+   "violations": [
+    "R4 MA3270 in semester 3: prerequisite not met ((MA1508E or MA1513 or MA1522 or MA2001) and (MA1505 or MA1511 or MA2104 or MA2311) and (MA2116 or MA2116T or ST2131 or ST2334))"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"1\":[\"MA1511\",\"MA1512\",\"MA1513\"],\"2\":[\"CS1101S\",\"ST2334\"],\"3\":[\"CS2040\",\"CG2028\",\"MA3270\"],\"4\":[\"CS4248\",\"CS1231S\",\"CS3210\"],\"5\":[\"CS3244\",\"CS4261\",\"CS2102\"],\"6\":[\"CS3243\"],\"7\":[\"CS4278\"]},\"reasons\":[\"Total 56 MC, the minimum for all required courses and necessary prerequisites.\",\"CS1101S is in semester 2; CS1231S and CS4248 are together in semester 4, with CS4248 before CS3244 in semester 5.\",\"CS3210 is as early as possible in semester 4 after CG2028; CS4261 follows CS1101S.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "1": [
+      "MA1511",
+      "MA1512",
+      "MA1513"
+     ],
+     "2": [
+      "CS1101S",
+      "ST2334"
+     ],
+     "3": [
+      "CS2040",
+      "CG2028",
+      "MA3270"
+     ],
+     "4": [
+      "CS4248",
+      "CS1231S",
+      "CS3210"
+     ],
+     "5": [
+      "CS3244",
+      "CS4261",
+      "CS2102"
+     ],
+     "6": [
+      "CS3243"
+     ],
+     "7": [
+      "CS4278"
+     ]
+    },
+    "reasons": [
+     "Total 56 MC, the minimum for all required courses and necessary prerequisites.",
+     "CS1101S is in semester 2; CS1231S and CS4248 are together in semester 4, with CS4248 before CS3244 in semester 5.",
+     "CS3210 is as early as possible in semester 4 after CG2028; CS4261 follows CS1101S."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9853,
+    "total_tokens": 22296,
+    "completion_tokens": 12443,
+    "prompt_tokens_details": {
+     "cached_tokens": 1536,
+     "created_cache_tokens": 8192,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 12252
+    },
+    "finish_reason": "stop",
+    "request_seconds": 158.28,
+    "attempts": 1
+   },
+   "seconds": 158.28,
+   "violations": []
+  }
+ ]
+}

@@ -1,0 +1,109 @@
+{
+ "id": "q2-S4-061",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 15.65,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2853,
+  "total_tokens": 4695,
+  "completion_tokens": 1842,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1569
+  },
+  "finish_reason": "stop",
+  "request_seconds": 15.65,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"completed\":[\"ES2660\",\"CS2101\",\"CS2100\",\"CS1231S\",\"CS3230\",\"CS2106\",\"ST2334\",\"CS1101S\",\"CS2109S\",\"MA1521\",\"CS2040S\",\"CS2103T\",\"MA1522\",\"CS2102\",\"IS1108\",\"CS2030S\",\"CS3219\"],\"current_sem\":7,\"must_take\":[\"CS3243\",\"CS4212\",\"CS3210\",\"CS3263\",\"CS3264\"],\"mc_max\":16,\"objective\":\"min_total_mc\",\"late\":[\"CS4212\"],\"rules\":[{\"type\":\"apart\",\"a\":\"CS3210\",\"b\":\"CS4212\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3264\",\"sem\":8,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3210\",\"sem\":7,\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS3264\",\"b\":\"CS4212\",\"strength\":\"prefer\"},{\"type\":\"same_sem\",\"a\":\"CS3210\",\"b\":\"CS3264\",\"strength\":\"prefer\"}],\"unsupported\":[\"might fail one module this semester and have to retake it\"]}",
+ "spec": {
+  "query": "plan",
+  "completed": [
+   "ES2660",
+   "CS2101",
+   "CS2100",
+   "CS1231S",
+   "CS3230",
+   "CS2106",
+   "ST2334",
+   "CS1101S",
+   "CS2109S",
+   "MA1521",
+   "CS2040S",
+   "CS2103T",
+   "MA1522",
+   "CS2102",
+   "IS1108",
+   "CS2030S",
+   "CS3219"
+  ],
+  "current_sem": 7,
+  "must_take": [
+   "CS3243",
+   "CS4212",
+   "CS3210",
+   "CS3263",
+   "CS3264"
+  ],
+  "mc_max": 16,
+  "objective": "min_total_mc",
+  "late": [
+   "CS4212"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS3210",
+    "b": "CS4212",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3264",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3210",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3264",
+    "b": "CS4212",
+    "strength": "prefer"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3210",
+    "b": "CS3264",
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "might fail one module this semester and have to retake it"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3243 is ruled out by completed CS2109S"
+  ],
+  "not_applied": [
+   "might fail one module this semester and have to retake it"
+  ]
+ }
+}

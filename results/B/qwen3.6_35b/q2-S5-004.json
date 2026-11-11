@@ -1,0 +1,135 @@
+{
+ "id": "q2-S5-004",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 9.69,
+ "solver_seconds": 0.338,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3131,
+  "total_tokens": 3571,
+  "completion_tokens": 440,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 9.35,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"programme\": \"BComp CS Hons\",\n  \"current_sem\": 2,\n  \"completed\": [\n    \"CS1101S\",\n    \"CS1231S\",\n    \"ES2660\",\n    \"MA1521\"\n  ],\n  \"must_take\": [\n    \"CS2106\",\n    \"CS4246\",\n    \"CS3230\",\n    \"ST2334\",\n    \"CS2105\",\n    \"CS2101\",\n    \"MA1522\",\n    \"CS3219\"\n  ],\n  \"mc_max\": 16,\n  \"sem_caps\": {\n    \"5\": 0\n  },\n  \"objective\": \"earliest_graduation\",\n  \"early\": [\n    \"CS4246\",\n    \"CS2101\"\n  ],\n  \"late\": [\n    \"CS2105\"\n  ],\n  \"rules\": [\n    {\n      \"type\": \"before\",\n      \"a\": \"ST2334\",\n      \"b\": \"CS3230\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS3230\",\n      \"b\": \"CS2101\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"same_sem\",\n      \"a\": \"ST2334\",\n      \"b\": \"MA1522\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS3230\",\n      \"b\": \"CS4246\",\n      \"strength\": \"prefer\"\n    }\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "programme": "BComp CS Hons",
+  "current_sem": 2,
+  "completed": [
+   "CS1101S",
+   "CS1231S",
+   "ES2660",
+   "MA1521"
+  ],
+  "must_take": [
+   "CS2106",
+   "CS4246",
+   "CS3230",
+   "ST2334",
+   "CS2105",
+   "CS2101",
+   "MA1522",
+   "CS3219"
+  ],
+  "mc_max": 16,
+  "sem_caps": {
+   "5": 0
+  },
+  "objective": "earliest_graduation",
+  "early": [
+   "CS4246",
+   "CS2101"
+  ],
+  "late": [
+   "CS2105"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "ST2334",
+    "b": "CS3230",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3230",
+    "b": "CS2101",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "ST2334",
+    "b": "MA1522",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3230",
+    "b": "CS4246",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "earliest_graduation",
+  "last_semester": 6,
+  "plan": {
+   "2": [
+    "CS2040S",
+    "MA1522",
+    "ST2334"
+   ],
+   "3": [
+    "CS2030DE",
+    "CS2100HS",
+    "CS3230"
+   ],
+   "4": [
+    "CS2101",
+    "CS2103T",
+    "CS2106",
+    "CS3243"
+   ],
+   "5": [],
+   "6": [
+    "CS2105",
+    "CS3219",
+    "CS4246"
+   ]
+  },
+  "mc_per_semester": {
+   "2": 12,
+   "3": 12,
+   "4": 16,
+   "5": 0,
+   "6": 12
+  },
+  "preferences_met": [
+   "CS3230 and CS4246 in different semesters",
+   "CS4246 as early as possible",
+   "CS2101 as early as possible",
+   "CS2105 as late as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS2030DE",
+   "CS2040S",
+   "CS2100HS",
+   "CS2103T",
+   "CS3243"
+  ]
+ }
+}

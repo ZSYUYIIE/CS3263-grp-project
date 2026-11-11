@@ -1,0 +1,42 @@
+{
+ "id": "q2-S3-106",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 3,
+ "end": "valid",
+ "seconds": 12.41,
+ "usage": {
+  "prompt_tokens": 28372,
+  "total_tokens": 28973,
+  "completion_tokens": 601,
+  "finish_reason": "stop",
+  "request_seconds": 12.41,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"7\": [\n      \"CS3237\",\n      \"CS3231\",\n      \"CS2102\",\n      \"ST2334\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3237 and CS3231 are only offered in Sem 1, so they must be in Sem 7 or later.\",\n    \"CS3237 must precede ST2334, so both are in Sem 7.\",\n    \"All remaining courses fit in Sem 7, satisfying the 8 MC minimum.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "7": [
+    "CS3237",
+    "CS3231",
+    "CS2102",
+    "ST2334"
+   ]
+  },
+  "reasons": [
+   "CS3237 and CS3231 are only offered in Sem 1, so they must be in Sem 7 or later.",
+   "CS3237 must precede ST2334, so both are in Sem 7.",
+   "All remaining courses fit in Sem 7, satisfying the 8 MC minimum."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

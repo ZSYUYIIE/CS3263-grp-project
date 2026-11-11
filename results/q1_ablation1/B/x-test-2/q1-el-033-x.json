@@ -1,0 +1,60 @@
+{
+ "id": "q1-el-033-x",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 2.56,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2542,
+  "total_tokens": 2775,
+  "completion_tokens": 233,
+  "prompt_tokens_details": {
+   "cached_tokens": 2432,
+   "created_cache_tokens": 0,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 156
+  },
+  "finish_reason": "stop",
+  "request_seconds": 2.56,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\":\"eligible\",\"target\":\"EE2028\",\"current_sem\":4,\"completed\":[\"ES2660\",\"CS2100HS\",\"EE2111A\",\"MA2116\",\"MA1508E\",\"MA1521\",\"CS1101S\",\"IS2101\",\"CS1010R\",\"MA1512\",\"CS1231\",\"MA2108S\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "EE2028",
+  "current_sem": 4,
+  "completed": [
+   "ES2660",
+   "CS2100HS",
+   "EE2111A",
+   "MA2116",
+   "MA1508E",
+   "MA1521",
+   "CS1101S",
+   "IS2101",
+   "CS1010R",
+   "MA1512",
+   "CS1231",
+   "MA2108S"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "EE2028",
+  "semester": 4,
+  "reasons": [
+   "mutually exclusive with completed CS2100HS (listed on their page)"
+  ],
+  "can_still_become_eligible": false,
+  "never_eligible_because": "EE2028 is ruled out by completed CS2100HS"
+ }
+}

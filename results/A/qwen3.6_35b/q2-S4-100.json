@@ -1,0 +1,46 @@
+{
+ "id": "q2-S4-100",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 76.22,
+ "usage": {
+  "prompt_tokens": 10801,
+  "total_tokens": 14317,
+  "completion_tokens": 3516,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 76.22,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2102\",\n      \"CS3223\"\n    ],\n    \"6\": [\n      \"CS3244\",\n      \"CS3264\"\n    ],\n    \"7\": [\n      \"CS4222\",\n      \"CS4330\"\n    ],\n    \"8\": [\n      \"CS2101\"\n    ]\n  },\n  \"reasons\": [\n    \"All prerequisites for planned courses are satisfied by completed courses or earlier semesters.\",\n    \"CS2102 and CS4222 are taken in the same semester (Sem 5 and Sem 7 respectively? No, CS2102 is Sem 5, CS4222 is Sem 7. Wait, let me re-check the plan logic).\",\n    \"CS2102 is in Sem 5. CS4222 is in Sem 7. They are NOT in the same semester. Let's re-evaluate.\"\n  ]\n}\n\nWait, I need to check the constraints again.\nCS2102 prereq: (CS1231 or ...) and (CS2030S or ...).\nCompleted: CS1231S, CS2030S. So CS2102 is eligible in Sem 5.\nCS3223 prereq: (CS2040S or ...) and (CS2102 or ...).\nSo CS3223 needs CS2102. If CS2102 is in Sem 5, CS3223 can be in Sem 6.\nCS3244 prereq: (CS2040 or ...) and (EE2012A or ...) and (MA...).\nCompleted: CS2040S, ST2334 (counts for EE2012A/ST2334?), MA1521, MA1522.\nST2334 is completed. So CS3244 is eligible in Sem 5?\nLet's check CS3244 prereqs:\n1. (CS2040 or CS2040C or CS2040S or CS2040DE or CS2040HS or YSC2229). Completed: CS2040S. OK.\n2. (EE2012A or EE2012 or ST2131 or ST2334 or MA2116 or MA2116T or MA2216). Completed: ST2334. OK.\n3. ((MA1511 and MA1512) or ((MA2001 or MA1522 or MA1508E or MA1311 or MA1513 or MA1101R) and (MA2002 or MA1521 or MA1505 or MA1507 or MA1102R))).\n   Completed: MA1522, MA1521.\n   MA1522 is in the first part of the second clause? No, MA1522 is in the first part of the second clause: (MA2001 or MA1522 ...). Yes.\n   And MA1521 is in the second part: (MA2002 or MA1521 ...). Yes.\n   So CS3244 is eligible in Sem 5.\n\nCS3264 prereq: CS2109S and (CS2040 or ...) and (MA1101R or ...) and (EE2012A or ...).\nCompleted: CS2109S, CS2040S, ST2334.\nMA1101R? Not completed.\nMA1311? Not completed.\nMA1513? Not completed.\nMA1508E? Not completed.\nMA2001? Not completed.\nMA1522? Completed.\nSo CS3264 is eligible in Sem 5.\n\nCS4222 prereq: (EE3204 or EE3204E or EE4204 or CS2105) and (EE2012A or ...).\nCompleted: ST2334.\nCS2105? Not completed.\nEE4204? Not completed.\nSo CS4222 is NOT eligible in Sem 5. It needs CS2105 or EE4204.\nCS2105 prereq: YSC2229 or CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS.\nCompleted: CS2040S. So CS2105 is eligible in Sem 5.\nIf I take CS2105 in Sem 5, can I take CS4222 in Sem 5? No, CS4222 needs CS2105. So CS4222 would be Sem 6.\n\nCS4330 prereq: (CS2040C or CS2040 or CS2040S or CS2040DE or CS2040HS) and (CS2220 or LSM2104 or LSM2241 or ZB2101).\nCompleted: CS2040S.\nCS2220? Not completed.\nLSM2104? Not completed.\nLSM2241? Not completed.\nZB2101? Not completed.\nSo CS4330 is NOT eligible in Sem 5. It needs CS2220 or LSM2104 or LSM2241 or ZB2101.\nCS2220 prereq: CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS.\nCompleted: CS2040S. So CS2220 is eligible in Sem 5.\nIf I take CS2220 in Sem 5, CS4330 can be in Sem 6.\n\nCS2101 prereq: none.\nMust take in Y4S2 (Sem 8).\n\nSoft wishes:\n1. CS2102 and CS4222 in same semester.\n2. CS4330 before CS2101.\n\nLet's try to satisfy CS2102 and CS4222 in the same semester.\nCS2102 is eligible Sem 5.\nCS4222 needs CS2105.\nCS2105 is eligible Sem 5.\nIf I take CS2105 and CS2102 in Sem 5, CS4222 is eligible Sem 6.\nCan I take CS4222 in Sem 5? No, needs CS2105.\nCan I take CS2102 in Sem 6? Yes.\nIf I take CS2105 in Sem 5, CS4222 in Sem 6.\nIf I take CS2102 in Sem 6, then CS2102 and CS4222 are in Sem 6.\nBut CS3223 needs CS2102. So CS3223 would be Sem 7.\nCS3244 and CS3264 are eligible Sem 5.\nCS4330 needs CS2220. CS2220 is eligible Sem 5.\nIf I take CS2220 in Sem 5, CS4330 is eligible Sem 6.\n\nLet's look at MC limits. Max 12 MC per semester.\nCS courses are 4 MC each.\nSem 5:\nOptions: CS2102 (4), CS3223 (4, needs CS2102), CS3244 (4), CS3264 (4), CS2105 (4), CS2220 (4), CS4330 (4, needs CS2220).\nIf I want CS2102 and CS4222 together, I need CS2102 in Sem N and CS4222 in Sem N.\nCS4222 needs CS2105. So CS2105 must be in Sem N-1 or earlier.\nIf CS2102 and CS4222 are in Sem 6:\nSem 5 must have CS2105.\nSem 6 has CS2102 and CS4222.\nSem 7 has CS3223 (needs CS2102).\nSem 8 has CS2101.\nRemaining: CS3244, CS3264, CS4330.\nCS3244 and CS3264 are eligible Sem 5.\nCS4330 needs CS2220. CS2220 is eligible Sem 5.\nIf I take CS2220 in Sem 5, CS4330 is eligible Sem 6? No, CS4330 needs CS2220. If CS2220 is Sem 5, CS4330 can be Sem 6.\nBut Sem 6 already has CS2102 and CS4222 (8 MC). Adding CS4330 (4 MC) makes 12 MC.\nSo Sem 6: CS2102, CS4222, CS4330.\nSem 5: CS2105, CS2220, CS3244, CS3264?\nCS3244 and CS3264 are 4 MC each. CS2105 and CS2220 are 4 MC each. Total 16 MC. Too many.\nMax 12 MC.\nSo Sem 5 can take at most 3 courses.\nCS2105, CS2220, and one of CS3244/CS3264.\nSay Sem 5: CS2105, CS2220, CS3244.\nSem 6: CS2102, CS4222, CS4330, CS3264?\nCS3264 needs CS2109S (done), CS2040S (done), MA1522 (done), ST2334 (done). Eligible.\nSem 6 MC: 4+4+4+4 = 16. Too many.\n\nLet's try to push CS3244/CS3264 to later.\nSem 5: CS2105, CS2220, CS3244. (12 MC)\nSem 6: CS2102, CS4222, CS4330. (12 MC)\nSem 7: CS3223 (needs CS2102, done in Sem 6), CS3264. (8 MC)\nSem 8: CS2101. (4 MC)\nThis works.\nCheck prerequisites:\nSem 5:\nCS2105: Prereq CS2040S (done). OK.\nCS2220: Prereq CS2040S (done). OK.\nCS3244: Prereqs done. OK.\nSem 6:\nCS2102: Prereqs done. OK.\nCS4222: Prereq CS2105 (done in Sem 5). OK.\nCS4330: Prereq CS2220 (done in Sem 5). OK.\nSem 7:\nCS3223: Prereq CS2102 (done in Sem 6). OK.\nCS3264: Prereqs done. OK.\nSem 8:\nCS2101: Prereq none. OK.\n\nSoft wishes:\n1. CS2102 and CS4222 in same semester? Yes, Sem 6.\n2. CS4330 before CS2101? Yes, Sem 6 vs Sem 8.\n\nThis plan satisfies all hard constraints and both soft wishes.\n\nPlan:\n5: CS2105, CS2220, CS3244\n6: CS2102, CS4222, CS4330\n7: CS3223, CS3264\n8: CS2101\n\nCheck MC:\nSem 5: 4+4+4=12. OK.\nSem 6: 4+4+4=12. OK.\nSem 7: 4+4=8. OK.\nSem 8: 4. OK.\n\nAre there any other constraints?\nCS3223 prereq: (CS2040S or ...) and (CS2102 or ...).\nCS2102 is in Sem 6. So CS3223 in Sem 7 is OK.\n\nCS4330 prereq: (CS2040S or ...) and (CS2220 or ...).\nCS2220 is in Sem 5. So CS4330 in Sem 6 is OK.\n\nCS4222 prereq: (CS2105 or ...) and (ST2334 or ...).\nCS2105 is in Sem 5. ST2334 is completed. So CS4222 in Sem 6 is OK.\n\nCS2102 prereq: (CS1231S or ...) and (CS2030S or ...).\nCompleted. So CS2102 in Sem 6 is OK.\n\nCS3244 prereq: (CS2040S or ...) and (ST2334 or ...) and (MA1522 and MA1521).\nCompleted. So CS3244 in Sem 5 is OK.\n\nCS3264 prereq: CS2109S and (CS2040S or ...) and (MA1522 or ...) and (ST2334 or ...).\nCompleted. So CS3264 in Sem 7 is OK.\n\nCS2105 prereq: CS2040S.\nCompleted. So CS2105 in Sem 5 is OK.\n\nCS2220 prereq: CS2040S.\nCompleted. So CS2220 in Sem 5 is OK.\n\nCS2101 in Sem 8. OK.\n\nThis plan is valid.\n\n{\"status\": \"PLAN\", \"plan\": {\"5\": [\"CS2105\", \"CS2220\", \"CS3244\"], \"6\": [\"CS2102\", \"CS4222\", \"CS4330\"], \"7\": [\"CS3223\", \"CS3264\"], \"8\": [\"CS2101\"]}, \"reasons\": [\"All prerequisites are satisfied. CS2102 and CS4222 are taken in the same semester. CS4330 is taken before CS2101. MC limits are respected.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2105",
+    "CS2220",
+    "CS3244"
+   ],
+   "6": [
+    "CS2102",
+    "CS4222",
+    "CS4330"
+   ],
+   "7": [
+    "CS3223",
+    "CS3264"
+   ],
+   "8": [
+    "CS2101"
+   ]
+  },
+  "reasons": [
+   "All prerequisites are satisfied. CS2102 and CS4222 are taken in the same semester. CS4330 is taken before CS2101. MC limits are respected."
+  ]
+ },
+ "fenced": true,
+ "repair": "last_of_several",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

@@ -1,0 +1,97 @@
+{
+ "id": "q2-S3-090",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 9.11,
+ "usage": {
+  "prompt_tokens": 28487,
+  "total_tokens": 28796,
+  "completion_tokens": 309,
+  "finish_reason": "stop",
+  "request_seconds": 9.11,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS4223 requires CS3210, CS3220, or CG3207, none of which are in the student's completed or required list.\",\n\"ATAP (CP3880) cannot be in the last semester used (Y4S1) because another course (CS4223) must be taken in a later semester, but the student has no remaining courses to take after Y4S1.\"\n]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4223 requires CS3210, CS3220, or CG3207, none of which are in the student's completed or required list.",
+   "ATAP (CP3880) cannot be in the last semester used (Y4S1) because another course (CS4223) must be taken in a later semester, but the student has no remaining courses to take after Y4S1."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS3219\"\n],\n\"6\": [\n\"CS2102\",\n\"CS2105\"\n],\n\"7\": [\n\"CP3880\",\n\"CS4223\"\n]\n},\n\"reasons\": [\n\"Planned CS3219 in Y3S1 to meet the soft wish for Year 3.\",\n\"Planned CS2102 and CS2105 in Y3S2 to satisfy prerequisites for CS4223 and the user's preference for CS2102 early.\",\n\"Planned ATAP (CP3880) and CS4223 in Y4S1 as requested, keeping total MC low by minimizing courses in earlier semesters.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS3219"
+     ],
+     "6": [
+      "CS2102",
+      "CS2105"
+     ],
+     "7": [
+      "CP3880",
+      "CS4223"
+     ]
+    },
+    "reasons": [
+     "Planned CS3219 in Y3S1 to meet the soft wish for Year 3.",
+     "Planned CS2102 and CS2105 in Y3S2 to satisfy prerequisites for CS4223 and the user's preference for CS2102 early.",
+     "Planned ATAP (CP3880) and CS4223 in Y4S1 as requested, keeping total MC low by minimizing courses in earlier semesters."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 14092,
+    "total_tokens": 14284,
+    "completion_tokens": 192,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.23,
+    "attempts": 1
+   },
+   "seconds": 4.23,
+   "violations": [
+    "R4 CS4223 in semester 7: prerequisite not met ((CS2106 or CG2271) and (CS3210 or CS3220 or CG3207))",
+    "R11 ATAP in semester 7, the last semester used"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS4223 requires CS3210, CS3220, or CG3207, none of which are in the student's completed or required list.\",\n\"ATAP (CP3880) cannot be in the last semester used (Y4S1) because another course (CS4223) must be taken in a later semester, but the student has no remaining courses to take after Y4S1.\"\n]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4223 requires CS3210, CS3220, or CG3207, none of which are in the student's completed or required list.",
+     "ATAP (CP3880) cannot be in the last semester used (Y4S1) because another course (CS4223) must be taken in a later semester, but the student has no remaining courses to take after Y4S1."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 14395,
+    "total_tokens": 14512,
+    "completion_tokens": 117,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.88,
+    "attempts": 1
+   },
+   "seconds": 4.88,
+   "violations": null
+  }
+ ]
+}

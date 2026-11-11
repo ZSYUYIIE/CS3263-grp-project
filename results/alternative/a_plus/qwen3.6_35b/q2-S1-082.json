@@ -1,0 +1,256 @@
+{
+ "id": "q2-S1-082",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 3,
+ "end": "cap",
+ "seconds": 91.18,
+ "usage": {
+  "prompt_tokens": 44099,
+  "total_tokens": 49708,
+  "completion_tokens": 5609,
+  "finish_reason": "stop",
+  "request_seconds": 91.18,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS3230\",\n      \"CS3231\",\n      \"CS2107\"\n    ],\n    \"4\": [\n      \"CS3241\",\n      \"CS2106\",\n      \"CS4247\"\n    ],\n    \"5\": [\n      \"CS3243\",\n      \"CS4236\",\n      \"CS2105\"\n    ],\n    \"7\": [\n      \"CS4234\",\n      \"CS4430\"\n    ]\n  },\n  \"reasons\": [\n    \"Prerequisites are satisfied by completed or earlier planned courses.\",\n    \"CS2106 and CS4247 are in Sem 4 together.\",\n    \"CS4234 (Sem 1) and CS3243 (Sem 2) are in different semesters.\",\n    \"CS4247 (Sem 2) is taken before CS2100 (Sem 1) is false, but CS2100 is in Sem 3 and CS4247 in Sem 4, so CS4247 is after CS2100. The wish 'rather do CS4247 before CS2100' cannot be met because CS2100 is a prerequisite for CS2106 which is linked to CS4247, and CS2100 is needed for CS2106. Wait, CS2100 is not a prerequisite for CS4247. CS4247 requires CS3241. CS3241 requires CS2030/CS2113 and CS2040. CS2100 is not required for CS4247. However, CS2106 requires CS2100. CS2106 and CS4247 must be in the same semester. So CS2100 must be in that semester or earlier. If CS4247 is before CS2100, then CS2106 (with CS4247) is before CS2100. But CS2106 requires CS2100. Contradiction. So CS2100 must be before or in the same semester as CS2106/CS4247. Thus CS4247 cannot be strictly before CS2100 if they are in the same semester as CS2106. The wish is soft, so it is not met.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS3230",
+    "CS3231",
+    "CS2107"
+   ],
+   "4": [
+    "CS3241",
+    "CS2106",
+    "CS4247"
+   ],
+   "5": [
+    "CS3243",
+    "CS4236",
+    "CS2105"
+   ],
+   "7": [
+    "CS4234",
+    "CS4430"
+   ]
+  },
+  "reasons": [
+   "Prerequisites are satisfied by completed or earlier planned courses.",
+   "CS2106 and CS4247 are in Sem 4 together.",
+   "CS4234 (Sem 1) and CS3243 (Sem 2) are in different semesters.",
+   "CS4247 (Sem 2) is taken before CS2100 (Sem 1) is false, but CS2100 is in Sem 3 and CS4247 in Sem 4, so CS4247 is after CS2100. The wish 'rather do CS4247 before CS2100' cannot be met because CS2100 is a prerequisite for CS2106 which is linked to CS4247, and CS2100 is needed for CS2106. Wait, CS2100 is not a prerequisite for CS4247. CS4247 requires CS3241. CS3241 requires CS2030/CS2113 and CS2040. CS2100 is not required for CS4247. However, CS2106 requires CS2100. CS2106 and CS4247 must be in the same semester. So CS2100 must be in that semester or earlier. If CS4247 is before CS2100, then CS2106 (with CS4247) is before CS2100. But CS2106 requires CS2100. Contradiction. So CS2100 must be before or in the same semester as CS2106/CS4247. Thus CS4247 cannot be strictly before CS2100 if they are in the same semester as CS2106. The wish is soft, so it is not met."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"3\": [\"CS2100\"], \"4\": [\"CS2106\", \"CS4247\"], \"5\": [\"CS4236\", \"CS4430\"], \"6\": [\"CS4234\", \"CS3243\", \"CS2105\"]}, \"reasons\": [\"All prerequisites satisfied by completed courses or earlier planned courses.\", \"CS2106 and CS4247 are scheduled in the same semester (Sem 4) as required.\", \"CS4234 and CS3243 are in different semesters (6 and 6? No, 6 and 6 is same. Wait. CS4234 in 6, CS3243 in 6. They are in the same semester. Constraint violated.\", \"Let's re-check. CS4234 prereq: MA1522 (done) and (YSC3203 or CS3230). CS3230 prereq: CS2040S (done) and CS1231S (done). So CS3230 can be taken in Sem 3? No, CS3230 is offered Sem 1, Sem 2. Sem 3 is Y2S1. Sem 4 is Y2S2. Sem 5 is Y3S1. Sem 6 is Y3S2.\", \"CS3230 is offered Sem 1, Sem 2. So it can be taken in Sem 3 or 4? No, Sem 3 is Y2S1 (Sem 1 of AY2027/28). Sem 4 is Y2S2 (Sem 2 of AY2027/28).\", \"CS3230 is offered Sem 1, Sem 2. This means it is offered in odd and even semesters? 'Sem 1, Sem 2' usually means Sem 1 of the academic year and Sem 2 of the academic year. So it is offered in Sem 3 and Sem 4? Yes.\", \"So CS3230 can be taken in Sem 3 or 4.\", \"CS4234 requires CS3230. So CS4234 can be taken in Sem 5 or 6.\", \"CS3243 requires CS2040S (done) and CS1231S (done). CS3243 is offered Sem 2. So it can be taken in Sem 4, 6, 8.\", \"Constraint: CS4234 and CS3243 must NOT be in the same semester.\", \"Constraint: CS2106 and CS4247 must be in the same semester.\", \"CS2106 prereq: CS2100. CS4247 prereq: CS3241.\", \"CS3241 prereq: CS2030S (done) and CS2040S (done). CS3241 is offered Sem 1. So it can be taken in Sem 3, 5, 7.\", \"So CS4247 can be taken in Sem 5, 7 (after CS3241).\", \"CS2106 can be taken in Sem 3, 5, 7 (after CS2100).\", \"So CS2106 and CS4247 must be in the same semester. Possible pairs: (5,5) or (7,7).\", \"If (5,5): CS2100 must be in 3 or 4. CS3241 must be in 3 or 4 (to allow CS4247 in 5).\", \"CS3241 is offered Sem 1. So it can be in 3 or 4. Yes.\", \"CS2100 is offered Sem 1, Sem 2. So it can be in 3 or 4. Yes.\", \"So we can put CS2100 and CS3241 in Sem 3 or 4.\", \"Let's try Sem 3 for CS2100 and CS3241.\", \"Then Sem 4 is free? Or can we take more?\", \"CS4236 prereq: CS2040S (done), CS2107, CS1231S (done). CS2107 prereq: CS1101S (done). CS2107 is offered Sem 1, Sem 2. So CS2107 can be in 3, 4, 5, 6, 7, 8.\", \"CS4236 is offered Sem 1. So it can be in 3, 5, 7.\", \"CS4430 prereq: CS3231. CS3231 prereq: CS1231S (done) and CS2040S (done). CS3231 is offered Sem 1. So CS3231 can be in 3, 5, 7.\", \"CS4430 is offered Sem 2. So it can be in 4, 6, 8.\", \"So CS4430 requires CS3231 in an earlier semester.\", \"If CS3231 is in 3, CS4430 can be in 4, 6, 8.\", \"CS4234 requires CS3230. CS3230 is offered Sem 1, Sem 2. So CS3230 can be in 3, 4, 5, 6, 7, 8.\", \"CS4234 is offered Sem 1. So it can be in 3, 5, 7.\", \"So CS4234 requires CS3230 in an earlier semester.\", \"Let's plan:\", \"Sem 3: CS2100, CS3241, CS3230, CS3231?\", \"MC: 4+4+4+4 = 16. OK.\", \"Sem 4: CS2106, CS4247? No, CS4247 needs CS3241 (done in 3). CS2106 needs CS2100 (done in 3). So Sem 4 can have CS2106 and CS4247.\", \"MC: 4+4=8. OK.\", \"Sem 5: CS4236, CS4430? CS4430 needs CS3231 (done in 3). CS4236 needs CS2107. CS2107 not done yet.\", \"So CS2107 must be done before CS4236.\", \"CS2107 is offered Sem 1, Sem 2. Can be in 3, 4, 5, 6, 7, 8.\", \"If we put CS2107 in Sem 4, then CS4236 can be in Sem 5.\", \"Sem 4: CS2106, CS4247, CS2107. MC: 4+4+4=12. OK.\", \"Sem 5: CS4236, CS4430. MC: 4+4=8. OK.\", \"Sem 6: CS4234, CS3243, CS2105?\", \"CS4234 needs CS3230 (done in 3). CS3243 needs CS2040S, CS1231S (done). CS2105 needs CS2040S (done).\", \"CS4234 and CS3243 must NOT be in the same semester. So we cannot put both in Sem 6.\", \"We need to separate them.\", \"CS4234 is offered Sem 1. Can be in 3, 5, 7.\", \"CS3243 is offered Sem 2. Can be in 4, 6, 8.\", \"We already used Sem 3, 4, 5, 6 for other things?\", \"Let's re-evaluate.\", \"Sem 3: CS2100, CS3241, CS3230, CS3231, CS2107?\", \"MC: 4+4+4+4+4=20. OK.\", \"Sem 4: CS2106, CS4247. MC: 8. OK.\", \"Sem 5: CS4236, CS4430. MC: 8. OK.\", \"Sem 6: CS4234, CS3243? No, same semester. Violation.\", \"So we must move one.\", \"CS4234 can be in Sem 7.\", \"CS3243 can be in Sem 6.\", \"Sem 6: CS3243, CS2105. MC: 8. OK.\", \"Sem 7: CS4234. MC: 4. OK.\", \"Check constraints:\", \"CS2106 and CS4247 same semester? Yes (Sem 4).\", \"CS4234 and CS3243 different? Yes (7 and 6).\", \"CS4247 before CS2100? No, CS4247 in 4, CS2100 in 3. CS4247 is AFTER CS2100. The wish is \"I'd rather do CS4247 before CS2100\". This is a soft wish. We failed it.\", \"Can we do CS4247 before CS2100?\", \"CS4247 needs CS3241. CS3241 needs CS2030S, CS2040S (done).\", \"CS2100 needs CS1010S (done).\", \"So CS3241 and CS2100 can be in Sem 3.\", \"If CS3241 is in Sem 3, CS4247 can be in Sem 4 (Sem 2 of AY2027/28? No, Sem 4 is Y2S2. CS4247 is offered Sem 2. So yes, Sem 4 is valid for CS4247).\", \"If CS2100 is in Sem 3, CS2106 can be in Sem 4.\", \"So CS2106 and CS4247 in Sem 4. CS2100 in Sem 3.\", \"CS4247 (Sem 4) is AFTER CS2100 (Sem 3). So CS4247 is NOT before CS2100.\", \"To have CS4247 before CS2100, CS4247 must be in an earlier semester than CS2100.\", \"CS4247 needs CS3241. CS3241 is offered Sem 1. So CS3241 can be in Sem 3.\", \"If CS3241 is in Sem 3, CS4247 can be in Sem 4.\", \"CS2100 is offered Sem 1, Sem 2. So CS2100 can be in Sem 3 or 4.\", \"If CS2100 is in Sem 4, and CS4247 is in Sem 3? No, CS4247 needs CS3241. If CS3241 is in Sem 3, CS4247 can be in Sem 4 (same semester) or later. It cannot be in Sem 3 if CS3241 is in Sem 3 (prereq must be completed or corequisite? Prereq is strict earlier or same? \"Prerequisites must be completed or planned in a STRICTLY earlier semester. Corequisites in the same or an earlier semester.\" CS3241 is a prerequisite for CS4247. So CS3241 must be in a STRICTLY earlier semester than CS4247.\", \"So if CS3241 is in Sem 3, CS4247 can be in Sem 4, 5, 6, 7, 8.\", \"If CS2100 is in Sem 4, then CS4247 (Sem 4) is NOT strictly before CS2100 (Sem 4). They are in the same semester.\", \"If CS2100 is in Sem 5, CS4247 in Sem 4 is before CS2100.\", \"But CS2106 needs CS2100. So CS2106 must be after CS2100.\", \"CS2106 and CS4247 must be in the SAME semester.\", \"So CS2106 and CS4247 are in Sem N.\", \"CS2100 must be in Sem N-1 or earlier.\", \"CS4247 is before CS2100? No, CS4247 is in Sem N, CS2100 is in Sem < N. So CS2100 is BEFORE CS4247.\", \"The wish is \"CS4247 before CS2100\". This means CS4247 semester < CS2100 semester.\", \"But CS2106 and CS4247 are in the same semester N.\", \"So CS2106 is in N.\", \"CS2106 needs CS2100. So CS2100 must be in < N.\", \"So CS2100 is before CS4247.\", \"This contradicts the wish \"CS4247 before CS2100\".\", \"Is it possible to satisfy the wish?\", \"Only if CS2106 and CS4247 are NOT in the same semester? But the constraint says they MUST be.\", \"So the wish is impossible to satisfy given the hard constraint.\", \"Therefore, we ignore the wish for the plan validity, but note it as unmet.\", \"So the plan above is valid.\", \"Sem 3: CS2100, CS3241, CS3230, CS3231, CS2107\", \"Sem 4: CS2106, CS4247\", \"Sem 5: CS4236, CS4430\", \"Sem 6: CS3243, CS2105\", \"Sem 7: CS4234\", \"Check CS4234 and CS3243 different? Yes (7 and 6).\", \"Check CS4430 and CS4234 different? Yes (5 and 7).\", \"Check CS4236 prereq: CS2107 (done in 3). OK.\", \"Check CS4430 prereq: CS3231 (done in 3). OK.\", \"Check CS3243 prereq: CS2040S, CS1231S (done). OK.\", \"Check CS2105 prereq: CS2040S (done). OK.\", \"Check CS4234 prereq: CS3230 (done in 3). OK.\", \"All good.\", \"MC per semester:\", \"3: 20\", \"4: 8\", \"5: 8\", \"6: 8\", \"7: 4\", \"All <= 20.\", \"Graduation: Sem 7.\", \"Can we do it in Sem 6?\", \"Sem 6 is the last semester used.\", \"CS4234 is in 7. Can we move CS4234 to 6?\", \"If CS4234 is in 6, CS3243 must not be in 6.\", \"CS3243 can be in 4, 6, 8.\", \"If CS3243 is in 4, then Sem 4 has CS2106, CS4247, CS3243. MC 12. OK.\", \"Sem 6 has CS4234, CS2105, CS4430? CS4430 needs CS3231 (done in 3). OK.\", \"Sem 6: CS4234, CS2105, CS4430. MC 12. OK.\", \"Sem 5: CS4236. MC 4. OK.\", \"Sem 3: CS2100, CS3241, CS3230, CS3231, CS2107. MC 20. OK.\", \"Sem 4: CS2106, CS4247, CS3243. MC 12. OK.\", \"Sem 6: CS4234, CS2105, CS4430. MC 12. OK.\", \"Graduation: Sem 6.\", \"This is earlier than Sem 7.\", \"So Sem 6 is better.\", \"Check constraints:\", \"CS2106 and CS4247 same? Yes (4).\", \"CS4234 and CS3243 different? Yes (6 and 4).\", \"CS4430 and CS4234 different? Yes (6 and 6? No, CS4430 in 6, CS4234 in 6. They are in the same semester.\", \"The student said \"I'd prefer CS4430 and CS4234 in different semesters\". This is a soft wish.\", \"So we can put them in the same semester if it helps graduation.\", \"But wait, \"I'd prefer\" is a soft wish. We can violate it for better graduation.\", \"So Sem 6 plan is valid and better.\", \"Final Plan:\", \"3: CS2100, CS3241, CS3230, CS3231, CS2107\", \"4: CS2106, CS4247, CS3243\", \"5: CS4236\", \"6: CS4234, CS2105, CS4430\", \"Check MC:\", \"3: 20\", \"4: 12\", \"5: 4\", \"6: 12\", \"All <= 20.\", \"Check prerequisites:\", \"CS2100: CS1101S (done). OK.\", \"CS3241: CS2030S, CS2040S (done). OK.\", \"CS3230: CS2040S, CS1231S (done). OK.\", \"CS3231: CS2040S, CS1231S (done). OK.\", \"CS2107: CS1101S (done). OK.\", \"CS2106: CS2100 (done in 3). OK.\", \"CS4247: CS3241 (done in 3). OK.\", \"CS3243: CS2040S, CS1231S (done). OK.\", \"CS4236: CS2040S, CS2107 (done in 3), CS1231S (done). OK.\", \"CS4234: CS3230 (done in 3). OK.\", \"CS2105: CS2040S (done). OK.\", \"CS4430: CS3231 (done in 3). OK.\", \"All good.\", \"Graduation Sem 6.\", \"Reasons: Plan satisfies all hard constraints. CS4247 before CS2100 is impossible due to CS2106/CS4247 co-location and CS2106 prereq on CS2100. CS4430 and CS4234 are in the same semester (Sem 6), violating the soft preference.\", \"Status: PLAN\"}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100"
+     ],
+     "4": [
+      "CS2106",
+      "CS4247"
+     ],
+     "5": [
+      "CS4236",
+      "CS4430"
+     ],
+     "6": [
+      "CS4234",
+      "CS3243",
+      "CS2105"
+     ]
+    }
+   },
+   "repair": "cut_reasons",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9653,
+    "total_tokens": 14128,
+    "completion_tokens": 4475,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 72.89,
+    "attempts": 1
+   },
+   "seconds": 72.89,
+   "violations": [
+    "R3 CS4234 not offered in Sem 2 (semester 6)",
+    "R4 CS4234 in semester 6: prerequisite not met ((MA2001 or MA1101R or YSC2232 or MA1311 or MA1508E or MA1522 or MA1513) and (YSC3203 or CS3230))",
+    "R4 CS4236 in semester 5: prerequisite not met ((YSC2229 or CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS) and CS2107 and (CS1231 or CS1231S or MA1100T or MA1100))",
+    "R4 CS4247 in semester 4: prerequisite not met (CS3241)",
+    "R3 CS4430 not offered in Sem 1 (semester 5)",
+    "R4 CS4430 in semester 5: prerequisite not met (CS3231)",
+    "R9 must rule not met: apart CS4234 CS3243"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"3\": [\"CS2100\", \"CS3241\", \"CS3230\", \"CS3231\", \"CS2107\"], \"4\": [\"CS2106\", \"CS4247\", \"CS3243\"], \"5\": [\"CS4236\"], \"6\": [\"CS4234\", \"CS2105\", \"CS4430\"]}, \"reasons\": [\"All prerequisites are met by completed courses or strictly earlier planned courses.\", \"CS2106 and CS4247 are in the same semester (Sem 4) as required.\", \"CS4234 and CS3243 are in different semesters (6 and 4) as required.\", \"CS4234 is offered in Sem 1, so it cannot be taken in Sem 6. This plan is invalid.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS3241",
+      "CS3230",
+      "CS3231",
+      "CS2107"
+     ],
+     "4": [
+      "CS2106",
+      "CS4247",
+      "CS3243"
+     ],
+     "5": [
+      "CS4236"
+     ],
+     "6": [
+      "CS4234",
+      "CS2105",
+      "CS4430"
+     ]
+    },
+    "reasons": [
+     "All prerequisites are met by completed courses or strictly earlier planned courses.",
+     "CS2106 and CS4247 are in the same semester (Sem 4) as required.",
+     "CS4234 and CS3243 are in different semesters (6 and 4) as required.",
+     "CS4234 is offered in Sem 1, so it cannot be taken in Sem 6. This plan is invalid."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 14452,
+    "total_tokens": 14657,
+    "completion_tokens": 205,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.21,
+    "attempts": 1
+   },
+   "seconds": 4.21,
+   "violations": [
+    "R3 CS4234 not offered in Sem 2 (semester 6)"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS3230\",\n      \"CS3231\",\n      \"CS2107\"\n    ],\n    \"4\": [\n      \"CS2106\",\n      \"CS4247\",\n      \"CS3243\"\n    ],\n    \"5\": [\n      \"CS4236\",\n      \"CS2105\"\n    ],\n    \"7\": [\n      \"CS4234\",\n      \"CS4430\"\n    ]\n  },\n  \"reasons\": [\n    \"Prerequisites are satisfied by completed courses or earlier planned courses.\",\n    \"CS2106 and CS4247 are taken in Sem 4 together.\",\n    \"CS4234 (Sem 1) and CS3243 (Sem 2) are in different semesters.\",\n    \"CS4247 (Sem 2) is taken before CS2100 (Sem 1) is false, but CS4247 is taken in Sem 4 and CS2100 in Sem 3, so CS2100 is before CS4247. The wish was 'rather do CS4247 before CS2100'. This wish is not met. Let's re-evaluate.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS3230",
+      "CS3231",
+      "CS2107"
+     ],
+     "4": [
+      "CS2106",
+      "CS4247",
+      "CS3243"
+     ],
+     "5": [
+      "CS4236",
+      "CS2105"
+     ],
+     "7": [
+      "CS4234",
+      "CS4430"
+     ]
+    },
+    "reasons": [
+     "Prerequisites are satisfied by completed courses or earlier planned courses.",
+     "CS2106 and CS4247 are taken in Sem 4 together.",
+     "CS4234 (Sem 1) and CS3243 (Sem 2) are in different semesters.",
+     "CS4247 (Sem 2) is taken before CS2100 (Sem 1) is false, but CS4247 is taken in Sem 4 and CS2100 in Sem 3, so CS2100 is before CS4247. The wish was 'rather do CS4247 before CS2100'. This wish is not met. Let's re-evaluate."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9923,
+    "total_tokens": 10252,
+    "completion_tokens": 329,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.12,
+    "attempts": 1
+   },
+   "seconds": 5.12,
+   "violations": [
+    "R4 CS4247 in semester 4: prerequisite not met (CS3241)",
+    "R3 CS4430 not offered in Sem 1 (semester 7)"
+   ]
+  },
+  {
+   "round": 3,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS3230\",\n      \"CS3231\",\n      \"CS2107\"\n    ],\n    \"4\": [\n      \"CS3241\",\n      \"CS2106\",\n      \"CS4247\"\n    ],\n    \"5\": [\n      \"CS3243\",\n      \"CS4236\",\n      \"CS2105\"\n    ],\n    \"7\": [\n      \"CS4234\",\n      \"CS4430\"\n    ]\n  },\n  \"reasons\": [\n    \"Prerequisites are satisfied by completed or earlier planned courses.\",\n    \"CS2106 and CS4247 are in Sem 4 together.\",\n    \"CS4234 (Sem 1) and CS3243 (Sem 2) are in different semesters.\",\n    \"CS4247 (Sem 2) is taken before CS2100 (Sem 1) is false, but CS2100 is in Sem 3 and CS4247 in Sem 4, so CS4247 is after CS2100. The wish 'rather do CS4247 before CS2100' cannot be met because CS2100 is a prerequisite for CS2106 which is linked to CS4247, and CS2100 is needed for CS2106. Wait, CS2100 is not a prerequisite for CS4247. CS4247 requires CS3241. CS3241 requires CS2030/CS2113 and CS2040. CS2100 is not required for CS4247. However, CS2106 requires CS2100. CS2106 and CS4247 must be in the same semester. So CS2100 must be in that semester or earlier. If CS4247 is before CS2100, then CS2106 (with CS4247) is before CS2100. But CS2106 requires CS2100. Contradiction. So CS2100 must be before or in the same semester as CS2106/CS4247. Thus CS4247 cannot be strictly before CS2100 if they are in the same semester as CS2106. The wish is soft, so it is not met.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS3230",
+      "CS3231",
+      "CS2107"
+     ],
+     "4": [
+      "CS3241",
+      "CS2106",
+      "CS4247"
+     ],
+     "5": [
+      "CS3243",
+      "CS4236",
+      "CS2105"
+     ],
+     "7": [
+      "CS4234",
+      "CS4430"
+     ]
+    },
+    "reasons": [
+     "Prerequisites are satisfied by completed or earlier planned courses.",
+     "CS2106 and CS4247 are in Sem 4 together.",
+     "CS4234 (Sem 1) and CS3243 (Sem 2) are in different semesters.",
+     "CS4247 (Sem 2) is taken before CS2100 (Sem 1) is false, but CS2100 is in Sem 3 and CS4247 in Sem 4, so CS4247 is after CS2100. The wish 'rather do CS4247 before CS2100' cannot be met because CS2100 is a prerequisite for CS2106 which is linked to CS4247, and CS2100 is needed for CS2106. Wait, CS2100 is not a prerequisite for CS4247. CS4247 requires CS3241. CS3241 requires CS2030/CS2113 and CS2040. CS2100 is not required for CS4247. However, CS2106 requires CS2100. CS2106 and CS4247 must be in the same semester. So CS2100 must be in that semester or earlier. If CS4247 is before CS2100, then CS2106 (with CS4247) is before CS2100. But CS2106 requires CS2100. Contradiction. So CS2100 must be before or in the same semester as CS2106/CS4247. Thus CS4247 cannot be strictly before CS2100 if they are in the same semester as CS2106. The wish is soft, so it is not met."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10071,
+    "total_tokens": 10671,
+    "completion_tokens": 600,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 8.96,
+    "attempts": 1
+   },
+   "seconds": 8.96,
+   "violations": [
+    "R3 CS3241 not offered in Sem 2 (semester 4)",
+    "R3 CS3243 not offered in Sem 1 (semester 5)",
+    "R4 CS4247 in semester 4: prerequisite not met (CS3241)",
+    "R3 CS4430 not offered in Sem 1 (semester 7)",
+    "R10 CS3241 was added but no later planned course needs it"
+   ]
+  }
+ ]
+}

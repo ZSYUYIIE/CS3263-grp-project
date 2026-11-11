@@ -1,0 +1,43 @@
+{
+ "id": "q1-mp-053-p",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 9.93,
+ "usage": {
+  "prompt_tokens": 9158,
+  "total_tokens": 9805,
+  "completion_tokens": 647,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 9.93,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"ELIGIBLE\",\n\"reasons\": [\n\"CS4248 is open to BComp CS Hons and offered in Sem 2.\",\n\"Prerequisites are satisfied by completed courses: CS2107 (satisfies CS2109S/CS2109HS/CS3244/MA3270/ST4248 condition via CS2107 being a prerequisite for CS3244? No, CS2107 is not a direct prerequisite for CS4248. Let's re-read carefully.\",\n\"CS4248 Prereq: (CS2109S or CS2109HS or CS3244 or MA3270 or ST4248) AND (EE2012A or EE2012 or ST2131 or MA2216 or MA2116 or MA2116T or ST2334 or YSC2243) AND (MA1505 or MA1507 or MA1521 or MA1102R or YSC1216 or MA2002 or (MA1511 and MA1512)).\",\n\"Student has completed: CS2100HS, CS2101, ES2660, CS2040S, MA1513, CS2107, IS1108, MA1512, CS1101S, CS1231S.\",\n\"Check Part 1: (CS2109S or ...). Student has NOT completed CS2109S, CS2109HS, CS3244, MA3270, or ST4248. CS2107 is NOT in this list. CS2040S is NOT in this list.\",\n\"Wait, CS2107 is 'Introduction to Information Security'. It is not a prerequisite for CS4248.\",\n\"CS2040S is 'Data Structures'. It is not a prerequisite for CS4248.\",\n\"Does the student have any of the first part prerequisites? No.\",\n\"Let's check if I missed a course. CS2107 is completed. Is CS2107 a prerequisite for CS2109S? Yes. But the student hasn't taken CS2109S.\",\n\"Is CS2040S a prerequisite for CS2109S? Yes. But the student hasn't taken CS2109S.\",\n\"The student needs to have completed one of: CS2109S, CS2109HS, CS3244, MA3270, ST4248.\",\n\"The student has NOT completed any of these.\",\n\"Therefore, the student is NOT eligible.\"\n]\n}",
+ "answer": {
+  "status": "ELIGIBLE",
+  "reasons": [
+   "CS4248 is open to BComp CS Hons and offered in Sem 2.",
+   "Prerequisites are satisfied by completed courses: CS2107 (satisfies CS2109S/CS2109HS/CS3244/MA3270/ST4248 condition via CS2107 being a prerequisite for CS3244? No, CS2107 is not a direct prerequisite for CS4248. Let's re-read carefully.",
+   "CS4248 Prereq: (CS2109S or CS2109HS or CS3244 or MA3270 or ST4248) AND (EE2012A or EE2012 or ST2131 or MA2216 or MA2116 or MA2116T or ST2334 or YSC2243) AND (MA1505 or MA1507 or MA1521 or MA1102R or YSC1216 or MA2002 or (MA1511 and MA1512)).",
+   "Student has completed: CS2100HS, CS2101, ES2660, CS2040S, MA1513, CS2107, IS1108, MA1512, CS1101S, CS1231S.",
+   "Check Part 1: (CS2109S or ...). Student has NOT completed CS2109S, CS2109HS, CS3244, MA3270, or ST4248. CS2107 is NOT in this list. CS2040S is NOT in this list.",
+   "Wait, CS2107 is 'Introduction to Information Security'. It is not a prerequisite for CS4248.",
+   "CS2040S is 'Data Structures'. It is not a prerequisite for CS4248.",
+   "Does the student have any of the first part prerequisites? No.",
+   "Let's check if I missed a course. CS2107 is completed. Is CS2107 a prerequisite for CS2109S? Yes. But the student hasn't taken CS2109S.",
+   "Is CS2040S a prerequisite for CS2109S? Yes. But the student hasn't taken CS2109S.",
+   "The student needs to have completed one of: CS2109S, CS2109HS, CS3244, MA3270, ST4248.",
+   "The student has NOT completed any of these.",
+   "Therefore, the student is NOT eligible."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 4,
+ "ablation": 1
+}

@@ -1,0 +1,88 @@
+{
+ "id": "q2-S4-191",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 8.68,
+ "solver_seconds": 0.197,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3148,
+  "total_tokens": 3606,
+  "completion_tokens": 458,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 8.48,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"current_sem\": 5,\n  \"completed\": [\n    \"CS1231S\",\n    \"CS2103T\",\n    \"CS2106\",\n    \"CS1101S\",\n    \"CS3230\",\n    \"MA1521\",\n    \"CS2030S\",\n    \"CS2101\",\n    \"IS1108\",\n    \"CS2100\",\n    \"MA1522\",\n    \"CS2109S\",\n    \"CS2040S\",\n    \"ES2660\"\n  ],\n  \"must_take\": [\n    \"CS2102\",\n    \"ST2334\",\n    \"CS2105\",\n    \"CS3268\",\n    \"CS4222\",\n    \"CS3281\",\n    \"CS3219\",\n    \"CS3247\"\n  ],\n  \"mc_max\": 12,\n  \"sem_caps\": {\n    \"8\": 0\n  },\n  \"objective\": \"earliest_graduation\",\n  \"early\": [\n    \"CS2105\",\n    \"CS3268\"\n  ],\n  \"rules\": [\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS2102\",\n      \"b\": \"CS3268\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS2105\",\n      \"b\": \"CS3268\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS3281\",\n      \"b\": \"CS3268\",\n      \"strength\": \"must\"\n    }\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "completed": [
+   "CS1231S",
+   "CS2103T",
+   "CS2106",
+   "CS1101S",
+   "CS3230",
+   "MA1521",
+   "CS2030S",
+   "CS2101",
+   "IS1108",
+   "CS2100",
+   "MA1522",
+   "CS2109S",
+   "CS2040S",
+   "ES2660"
+  ],
+  "must_take": [
+   "CS2102",
+   "ST2334",
+   "CS2105",
+   "CS3268",
+   "CS4222",
+   "CS3281",
+   "CS3219",
+   "CS3247"
+  ],
+  "mc_max": 12,
+  "sem_caps": {
+   "8": 0
+  },
+  "objective": "earliest_graduation",
+  "early": [
+   "CS2105",
+   "CS3268"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS2102",
+    "b": "CS3268",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS2105",
+    "b": "CS3268",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3281",
+    "b": "CS3268",
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS2102 and CS3268 in different semesters; the prerequisites of CS3247; the prerequisites of CS4222; the MC limits (at most 12 MC per semester; semesters 8 blocked); the semesters in which the courses are offered"
+  ]
+ }
+}

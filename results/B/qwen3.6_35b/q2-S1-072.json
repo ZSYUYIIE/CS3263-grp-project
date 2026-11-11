@@ -1,0 +1,128 @@
+{
+ "id": "q2-S1-072",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 9.34,
+ "solver_seconds": 0.041,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3130,
+  "total_tokens": 3660,
+  "completion_tokens": 530,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 9.29,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"current_sem\": 3,\n  \"completed\": [\n    \"MA1521\",\n    \"MA1522\",\n    \"CS1231S\",\n    \"CS2030S\",\n    \"CS2040S\",\n    \"IS1108\",\n    \"ES2660\",\n    \"CS1101S\"\n  ],\n  \"must_take\": [\n    \"CS4261\",\n    \"CS2102\",\n    \"ST2334\",\n    \"CS2109S\"\n  ],\n  \"objective\": \"min_total_mc\",\n  \"rules\": [\n    {\n      \"type\": \"before\",\n      \"a\": \"CS2102\",\n      \"b\": \"ST2334\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS2109S\",\n      \"b\": \"CS4261\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS2109S\",\n      \"b\": \"ST2334\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS2102\",\n      \"b\": \"CS4261\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS4261\",\n      \"sem\": 5,\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS4261\",\n      \"b\": \"ST2334\",\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS2102\",\n      \"b\": \"CS2109S\",\n      \"strength\": \"prefer\"\n    }\n  ],\n  \"unsupported\": [\n    \"keep my workload roughly the same every semester\",\n    \"at most two modules with final exams in a semester\"\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "completed": [
+   "MA1521",
+   "MA1522",
+   "CS1231S",
+   "CS2030S",
+   "CS2040S",
+   "IS1108",
+   "ES2660",
+   "CS1101S"
+  ],
+  "must_take": [
+   "CS4261",
+   "CS2102",
+   "ST2334",
+   "CS2109S"
+  ],
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2102",
+    "b": "ST2334",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2109S",
+    "b": "CS4261",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2109S",
+    "b": "ST2334",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2102",
+    "b": "CS4261",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4261",
+    "sem": 5,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS4261",
+    "b": "ST2334",
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS2102",
+    "b": "CS2109S",
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "keep my workload roughly the same every semester",
+   "at most two modules with final exams in a semester"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 5,
+  "plan": {
+   "3": [
+    "CS2102",
+    "CS2109S"
+   ],
+   "4": [
+    "ST2334"
+   ],
+   "5": [
+    "CS4261"
+   ]
+  },
+  "mc_per_semester": {
+   "3": 8,
+   "4": 4,
+   "5": 4
+  },
+  "preferences_met": [
+   "CS4261 in semester 5"
+  ],
+  "preferences_not_met": [
+   "CS4261 before ST2334",
+   "CS2102 and CS2109S in different semesters"
+  ],
+  "not_applied": [
+   "keep my workload roughly the same every semester",
+   "at most two modules with final exams in a semester"
+  ]
+ }
+}

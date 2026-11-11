@@ -1,0 +1,52 @@
+{
+ "id": "q2-S1-075",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 3,
+ "end": "cap",
+ "seconds": 148.97,
+ "usage": {
+  "prompt_tokens": 49020,
+  "total_tokens": 58180,
+  "completion_tokens": 9160,
+  "finish_reason": "stop",
+  "request_seconds": 148.97,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS3281 is offered only in Sem 2 (even semesters: 2, 4, 6, 8). The student is in Sem 3 (Y2S1). Sem 6 is NOC. CS3282 requires CS3281. CS3282 is offered only in Sem 2. Thus CS3281 and CS3282 must be in the same Sem 2 semester or CS3281 in an earlier Sem 2 semester. Available Sem 2 semesters are 4 and 8 (Sem 2 is Y1S2, already passed; Sem 4 is Y2S2; Sem 6 is NOC; Sem 8 is Y4S2). If CS3281 is in Sem 4, CS3282 can be in Sem 4 or 8. CS4239 requires CS3235. CS3235 requires CS2105, CS2106, CS2107. CS2106 requires CS2100. CS2100, CS2103T, CS2107 must be taken before CS3235. CS2103T is required for CS4239. CS2109S is required. CS3233 is required (Sem 2 only). If CS3281 is in Sem 4, Sem 4 has CS3281 (4MC). CS3233 (4MC) can also be in Sem 4. Total 8MC. CS2100, CS2103T, CS2107 in Sem 3 (12MC). CS2105, CS2106 in Sem 4? No, Sem 4 is full with CS3281, CS3233. CS2105/CS2106 need to be before CS3235 (Sem 5). So CS2105/CS2106 must be in Sem 3 or 4. Sem 3 is full (12MC). Sem 4 has 8MC used, can take 4MC more. CS2105+CS2106=8MC. Too much. So CS3281 in Sem 4 doesn't work. If CS3281 is in Sem 8, CS3282 is in Sem 8. Sem 8 has CS3281+CS3282=8MC. CS2109S (4MC) can be in Sem 8. Total 12MC. CS4239 needs to be before or after? CS4239 requires CS3235. CS3235 requires CS2105, CS2106, CS2107. CS2106 requires CS2100. CS2103T is required for CS4239. CS3233 is required. CS2100, CS2103T, CS2107 in Sem 3 (12MC). CS2105, CS2106 in Sem 4 (8MC). CS3235 in Sem 5 (4MC). CS4239 in Sem 7 (4MC). CS3233 in Sem 4? Sem 4 has CS2105, CS2106 (8MC). Can add CS3233 (4MC) = 12MC. This works. So: Sem 3: CS2100, CS2103T, CS2107. Sem 4: CS2105, CS2106, CS3233. Sem 5: CS3235. Sem 6: NOC. Sem 7: CS4239. Sem 8: CS3281, CS3282, CS2109S. Check MC: Sem 8 has 4+4+4=12MC. Limit is 12. OK. Check prereqs: CS3281 needs CS2103T (Sem 3). OK. CS3282 needs CS3281 (Sem 8). OK. CS2109S needs CS2040S, MA1521. OK. CS4239 needs CS3235 (Sem 5) and CS2103T (Sem 3). OK. CS3235 needs CS2105 (Sem 4), CS2106 (Sem 4), CS2107 (Sem 3). OK. CS2105/CS2106 need CS2100 (Sem 3). OK. All hard constraints met. Soft wishes: CS3281 in Sem 8 (met). CS2103T before CS3282 (met). CS2103T and CS3233 same semester? No, Sem 3 vs Sem 4. CS2109S and CS3282 together (met). Total MC: 12+12+4+0+4+12=44. This is a valid plan.\n\n{\"status\": \"PLAN\", \"plan\": {\"3\": [\"CS2100\", \"CS2103T\", \"CS2107\"], \"4\": [\"CS2105\", \"CS2106\", \"CS3233\"], \"5\": [\"CS3235\"], \"7\": [\"CS4239\"], \"8\": [\"CS3281\", \"CS3282\", \"CS2109S\"]}, \"reasons\": [\"Plan satisfies all hard constraints. CS3281 and CS3282 are in Sem 8. CS2109S is in Sem 8. CS4239 is in Sem 7. CS3233 is in Sem 4. MC limits respected. Soft wish for CS3281 in Sem 8 is met. CS2103T is before CS3282.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS2103T",
+    "CS2107"
+   ],
+   "4": [
+    "CS2105",
+    "CS2106",
+    "CS3233"
+   ],
+   "5": [
+    "CS3235"
+   ],
+   "7": [
+    "CS4239"
+   ],
+   "8": [
+    "CS3281",
+    "CS3282",
+    "CS2109S"
+   ]
+  },
+  "reasons": [
+   "Plan satisfies all hard constraints. CS3281 and CS3282 are in Sem 8. CS2109S is in Sem 8. CS4239 is in Sem 7. CS3233 is in Sem 4. MC limits respected. Soft wish for CS3281 in Sem 8 is met. CS2103T is before CS3282."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

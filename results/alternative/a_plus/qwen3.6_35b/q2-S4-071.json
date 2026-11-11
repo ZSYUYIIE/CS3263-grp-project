@@ -1,0 +1,173 @@
+{
+ "id": "q2-S4-071",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 2,
+ "end": "valid",
+ "seconds": 44.09,
+ "usage": {
+  "prompt_tokens": 34798,
+  "total_tokens": 37055,
+  "completion_tokens": 2257,
+  "finish_reason": "stop",
+  "request_seconds": 44.09,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS2101\",\n      \"CS2102\",\n      \"CS3230\"\n    ],\n    \"7\": [\n      \"CS3241\",\n      \"CS3263\"\n    ],\n    \"8\": [\n      \"CS4246\",\n      \"CS4247\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3241 is offered in Sem 1, so it is planned in Sem 7.\",\n    \"CS4247 requires CS3241, which is completed in Sem 7, allowing it in Sem 8.\",\n    \"CS4246 requires CS3263, which is completed in Sem 7, allowing it in Sem 8.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS2101",
+    "CS2102",
+    "CS3230"
+   ],
+   "7": [
+    "CS3241",
+    "CS3263"
+   ],
+   "8": [
+    "CS4246",
+    "CS4247"
+   ]
+  },
+  "reasons": [
+   "CS3241 is offered in Sem 1, so it is planned in Sem 7.",
+   "CS4247 requires CS3241, which is completed in Sem 7, allowing it in Sem 8.",
+   "CS4246 requires CS3263, which is completed in Sem 7, allowing it in Sem 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"6\": [\"CS2101\", \"CS2102\", \"CS3230\"], \"7\": [\"CS3263\", \"CS4247\"], \"8\": [\"CS4246\"]}, \"reasons\": [\"Prerequisites for CS3263 (CS2109S, CS2040S) and CS4247 (CS3241) are satisfied or planned. CS3241 is not required for CS4247 in this plan as CS4247 only requires CS3241 which is not listed in the must-take list but is a prerequisite for CS4247. Wait, CS4247 prerequisite is CS3241. CS3241 is not in the 'must take' list. I must add CS3241. CS3241 requires CS2030S/CS2030/CS2030DE/CS2030HS/CS2113/CS2113T AND CS2040/YSC2229/CS2040S/CS2040C/CS2040DE/CS2040HS. Student has CS2030S and CS2040S. So CS3241 is eligible in Sem 6. CS3241 is 4 MC. CS4247 is 4 MC. CS3263 is 4 MC. CS4246 is 4 MC. CS2101 is 4 MC. CS2102 is 4 MC. CS3230 is 4 MC. Total 28 MC. Sem 6: CS2101, CS2102, CS3230, CS3241 (16 MC). Sem 7: CS3263, CS4247 (8 MC). Sem 8: CS4246 (4 MC). CS3263 prereq: CS2109S (done), CS2040S (done), MA2001/MA1522/MA1513/MA1508E/MA1101R (Student has MA1522), EE2012A/EE2012/ST2131/MA2116/MA2116T/ST2334/MA2216 (Student has ST2334). So CS3263 is eligible in Sem 7. CS4247 prereq: CS3241 (planned in Sem 6). So CS4247 eligible in Sem 7. CS4246 prereq: EE2012A/EE2012/ST2132/ST2334/((ST2131/MA2116/MA2116T/MA2216) and (ST1131/ST1232/DCS2008/ST1131A)) AND (CS3243/CS3263). Student has ST2334. Does student have the complex EE/ST part? ST2334 is one option. The other is (ST2131/MA2116/MA2116T/MA2216) AND (ST1131/ST1232/DCS2008/ST1131A). Student has ST2334. So the first part of the AND is satisfied by ST2334. The second part is CS3243 or CS3263. CS3263 is planned in Sem 7. So CS4246 is eligible in Sem 8. CS2102 prereq: (CS1231/MA1100/MA1100T/CS1231S) AND (CS2030S/CS2030/CS2030DE/CS2030HS/YSC2229/CS2040/CS2040C/CS2040S/CS2040DE/CS2040HS). Student has CS1231S and CS2030S and CS2040S. So CS2102 is eligible in Sem 6. CS3230 prereq: (YSC2229/CS2040S/CS2040/CS2040C/CS2040DE/CS2040HS) AND (CS1231/CS1231S/MA1100T/MA1100). Student has CS2040S and CS1231S. So CS3230 is eligible in Sem 6. CS2101 prereq: none. Eligible in Sem 6. CS3241 prereq: (CS2030S/CS2030/CS2030DE/CS2030HS/CS2113/CS2113T) AND (CS2040/YSC2229/CS2040S/CS2040C/CS2040DE/CS2040HS). Student has CS2030S and CS2040S. So CS3241 is eligible in Sem 6. Sem 6 load: 16 MC. Sem 7 load: 8 MC. Sem 8 load: 4 MC. All constraints met. CS2102 in Sem 6 (as early as possible). CS2101 in Sem 6 (late as possible? It could be Sem 7 or 8. But Sem 7 has CS3263 and CS4247. Sem 8 has CS4246. If I move CS2101 to Sem 7, load is 12 MC. If I move to Sem 8, load is 8 MC. 'As late as possible' means Sem 8. But CS4246 is in Sem 8. Can I put CS2101 in Sem 8? Yes. 4+4=8 MC. Is there any reason to keep it in Sem 6? No. So Sem 8: CS4246, CS2101. Sem 7: CS3263, CS4247. Sem 6: CS2102, CS3230, CS3241. Wait, CS3241 is needed for CS4247. CS4247 is in Sem 7. So CS3241 must be in Sem 6 or earlier. Sem 6 is the first available. So CS3241 in Sem 6. CS2102 in Sem 6. CS3230 in Sem 6. CS2101 in Sem 8. CS3263 in Sem 7. CS4247 in Sem 7. CS4246 in Sem 8. This satisfies 'CS2102 as early as possible' (Sem 6 is the earliest it can be taken given prerequisites are done in Y2). 'CS2101 as late as possible' (Sem 8). 'CS4246 in Sem 8'. 'Finish CS2102 before CS4247' (CS2102 in Sem 6, CS4247 in Sem 7). Fewest total credits: 4+4+4+4+4+4+4 = 28 MC. No other courses needed.]\", \"reasons\": [\"All prerequisites for planned courses are satisfied by completed or earlier-planned courses.\", \"CS2102 is scheduled in Sem 6 (earliest possible), CS2101 in Sem 8 (latest possible), CS4246 in Sem 8.\", \"CS4247 requires CS3241, which is planned in Sem 6. CS3263 requires CS2109S and CS2040S, both completed.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS2101",
+      "CS2102",
+      "CS3230"
+     ],
+     "7": [
+      "CS3263",
+      "CS4247"
+     ],
+     "8": [
+      "CS4246"
+     ]
+    }
+   },
+   "repair": "cut_reasons",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10864,
+    "total_tokens": 12713,
+    "completion_tokens": 1849,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 36.53,
+    "attempts": 1
+   },
+   "seconds": 36.53,
+   "violations": [
+    "R3 CS4247 not offered in Sem 1 (semester 7)",
+    "R4 CS4247 in semester 7: prerequisite not met (CS3241)"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"6\": [\"CS2101\", \"CS2102\", \"CS3230\", \"CS3241\"], \"7\": [\"CS3263\"], \"8\": [\"CS4246\", \"CS4247\"]}, \"reasons\": [\"CS4247 requires CS3241, which is planned in Sem 6. CS4247 is offered in Sem 2 (Sem 8).\", \"CS3263 prerequisites (CS2109S, CS2040S, MA1522, ST2334) are all completed.\", \"CS2102 and CS3230 prerequisites are completed. CS2101 has no prerequisites. CS4246 requires CS3263 (planned in Sem 7) and ST2334 (completed).\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS2101",
+      "CS2102",
+      "CS3230",
+      "CS3241"
+     ],
+     "7": [
+      "CS3263"
+     ],
+     "8": [
+      "CS4246",
+      "CS4247"
+     ]
+    },
+    "reasons": [
+     "CS4247 requires CS3241, which is planned in Sem 6. CS4247 is offered in Sem 2 (Sem 8).",
+     "CS3263 prerequisites (CS2109S, CS2040S, MA1522, ST2334) are all completed.",
+     "CS2102 and CS3230 prerequisites are completed. CS2101 has no prerequisites. CS4246 requires CS3263 (planned in Sem 7) and ST2334 (completed)."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12802,
+    "total_tokens": 13005,
+    "completion_tokens": 203,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.18,
+    "attempts": 1
+   },
+   "seconds": 4.18,
+   "violations": [
+    "R3 CS3241 not offered in Sem 2 (semester 6)"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS2101\",\n      \"CS2102\",\n      \"CS3230\"\n    ],\n    \"7\": [\n      \"CS3241\",\n      \"CS3263\"\n    ],\n    \"8\": [\n      \"CS4246\",\n      \"CS4247\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3241 is offered in Sem 1, so it is planned in Sem 7.\",\n    \"CS4247 requires CS3241, which is completed in Sem 7, allowing it in Sem 8.\",\n    \"CS4246 requires CS3263, which is completed in Sem 7, allowing it in Sem 8.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS2101",
+      "CS2102",
+      "CS3230"
+     ],
+     "7": [
+      "CS3241",
+      "CS3263"
+     ],
+     "8": [
+      "CS4246",
+      "CS4247"
+     ]
+    },
+    "reasons": [
+     "CS3241 is offered in Sem 1, so it is planned in Sem 7.",
+     "CS4247 requires CS3241, which is completed in Sem 7, allowing it in Sem 8.",
+     "CS4246 requires CS3263, which is completed in Sem 7, allowing it in Sem 8."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11132,
+    "total_tokens": 11337,
+    "completion_tokens": 205,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 3.38,
+    "attempts": 1
+   },
+   "seconds": 3.38,
+   "violations": []
+  }
+ ]
+}

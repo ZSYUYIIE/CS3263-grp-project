@@ -1,0 +1,48 @@
+{
+ "id": "q2-S2-046",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 14.15,
+ "usage": {
+  "prompt_tokens": 7376,
+  "total_tokens": 8727,
+  "completion_tokens": 1351,
+  "prompt_tokens_details": {
+   "cached_tokens": 7040,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1211
+  },
+  "finish_reason": "stop",
+  "request_seconds": 14.15,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"7\":[\"CS3103\",\"CS2102\"],\"8\":[\"CS4225\",\"CS3234\"]},\"reasons\":[\"CS3103 is Sem 1 only and must be in semester 7; CS4225 needs CS2102 and CS3103 first, so CS2102 must be semester 7 and CS4225 semester 8.\",\"CS3234 is Sem 2 only, so it fits semester 8; the conflicting soft wishes cannot be met under the prerequisites and offerings.\",\"Total is 16 MC with no added courses; semester 7 uses 2 of the allowed 3 modules.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "7": [
+    "CS3103",
+    "CS2102"
+   ],
+   "8": [
+    "CS4225",
+    "CS3234"
+   ]
+  },
+  "reasons": [
+   "CS3103 is Sem 1 only and must be in semester 7; CS4225 needs CS2102 and CS3103 first, so CS2102 must be semester 7 and CS4225 semester 8.",
+   "CS3234 is Sem 2 only, so it fits semester 8; the conflicting soft wishes cannot be met under the prerequisites and offerings.",
+   "Total is 16 MC with no added courses; semester 7 uses 2 of the allowed 3 modules."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

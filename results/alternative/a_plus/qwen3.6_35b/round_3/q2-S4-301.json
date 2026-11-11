@@ -1,0 +1,51 @@
+{
+ "id": "q2-S4-301",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 1,
+ "end": "valid",
+ "seconds": 13.89,
+ "usage": {
+  "prompt_tokens": 20295,
+  "total_tokens": 20980,
+  "completion_tokens": 685,
+  "finish_reason": "stop",
+  "request_seconds": 13.89,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2103T\",\n      \"CS3230\"\n    ],\n    \"4\": [\n      \"CS2105\",\n      \"CS2101\"\n    ],\n    \"5\": [\n      \"CS3103\",\n      \"CS3219\"\n    ],\n    \"6\": [\n      \"CS4231\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3103 is offered only in Sem 1, so it must be in an odd semester (5). CS2105 is a prerequisite for CS3103, so CS2105 must be in Sem 3 or 4. Placing CS2105 in Sem 4 allows CS3103 in Sem 5.\",\n    \"CS4231 is offered only in Sem 2, so it must be in an even semester (6). Its prerequisite is CS3210 or CS3230. CS3230 is planned in Sem 3, satisfying this.\",\n    \"CS3219 requires CS2103T. CS2103T is planned in Sem 3. CS3219 is offered in both semesters, so it can be in Sem 5. CS2101 has no prerequisites and is offered in both semesters, placed in Sem 4.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2103T",
+    "CS3230"
+   ],
+   "4": [
+    "CS2105",
+    "CS2101"
+   ],
+   "5": [
+    "CS3103",
+    "CS3219"
+   ],
+   "6": [
+    "CS4231"
+   ]
+  },
+  "reasons": [
+   "CS3103 is offered only in Sem 1, so it must be in an odd semester (5). CS2105 is a prerequisite for CS3103, so CS2105 must be in Sem 3 or 4. Placing CS2105 in Sem 4 allows CS3103 in Sem 5.",
+   "CS4231 is offered only in Sem 2, so it must be in an even semester (6). Its prerequisite is CS3210 or CS3230. CS3230 is planned in Sem 3, satisfying this.",
+   "CS3219 requires CS2103T. CS2103T is planned in Sem 3. CS3219 is offered in both semesters, so it can be in Sem 5. CS2101 has no prerequisites and is offered in both semesters, placed in Sem 4."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

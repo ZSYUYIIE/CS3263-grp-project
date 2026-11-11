@@ -1,0 +1,83 @@
+{
+ "id": "q2-S4-298",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 7.16,
+ "solver_seconds": 0.905,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2774,
+  "total_tokens": 3143,
+  "completion_tokens": 369,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 193
+  },
+  "finish_reason": "stop",
+  "request_seconds": 6.25,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":1,\"completed\":[],\"must_take\":[\"CS3240\",\"ES2660\",\"CS4230\",\"CS4238\",\"CS2103T\",\"IS1108\"],\"mc_max\":16,\"sem_caps\":{\"2\":0},\"objective\":\"earliest_graduation\",\"late\":[\"IS1108\"],\"rules\":[{\"type\":\"in_sem\",\"course\":\"CS2103T\",\"sem\":5,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS4230\",\"sem\":4,\"strength\":\"must\"},{\"type\":\"same_sem\",\"a\":\"CS3240\",\"b\":\"CS2103T\",\"strength\":\"prefer\"},{\"type\":\"in_sem\",\"course\":\"ES2660\",\"sem\":8,\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "completed": [],
+  "must_take": [
+   "CS3240",
+   "ES2660",
+   "CS4230",
+   "CS4238",
+   "CS2103T",
+   "IS1108"
+  ],
+  "mc_max": 16,
+  "sem_caps": {
+   "2": 0
+  },
+  "objective": "earliest_graduation",
+  "late": [
+   "IS1108"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS2103T",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4230",
+    "sem": 4,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3240",
+    "b": "CS2103T",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "ES2660",
+    "sem": 8,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS4230 in semester 4; the prerequisites of CS2040; the prerequisites of CS2040C; the prerequisites of CS2040DE; the prerequisites of CS2040S; the prerequisites of CS3230; the prerequisites of CS4230; the MC limits (at most 16 MC per semester; semesters 2 blocked)"
+  ]
+ }
+}

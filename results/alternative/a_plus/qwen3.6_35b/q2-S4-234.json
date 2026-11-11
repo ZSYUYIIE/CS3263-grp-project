@@ -1,0 +1,101 @@
+{
+ "id": "q2-S4-234",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 4.82,
+ "usage": {
+  "prompt_tokens": 20785,
+  "total_tokens": 20999,
+  "completion_tokens": 214,
+  "finish_reason": "stop",
+  "request_seconds": 4.82,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3247 requires CS3241, which is not completed and cannot be taken in Sem 7 or 8 as it is only offered in Sem 1.\",\n    \"CS4268 must precede CS2105, but both are required in Sem 6, violating the prerequisite order.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3247 requires CS3241, which is not completed and cannot be taken in Sem 7 or 8 as it is only offered in Sem 1.",
+   "CS4268 must precede CS2105, but both are required in Sem 6, violating the prerequisite order."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"6\": [\"CS4268\", \"CS2105\"], \"7\": [\"CS2102\", \"CS4261\"], \"8\": [\"CS3247\"]}, \"reasons\": [\"All prerequisites satisfied by completed courses. CS4268 in Sem 6 enables CS2105 in Sem 6. CS2102 and CS4261 in Sem 7 keeps them apart. CS3247 in Sem 8 meets ideal placement.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS4268",
+      "CS2105"
+     ],
+     "7": [
+      "CS2102",
+      "CS4261"
+     ],
+     "8": [
+      "CS3247"
+     ]
+    },
+    "reasons": [
+     "All prerequisites satisfied by completed courses. CS4268 in Sem 6 enables CS2105 in Sem 6. CS2102 and CS4261 in Sem 7 keeps them apart. CS3247 in Sem 8 meets ideal placement."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10288,
+    "total_tokens": 10408,
+    "completion_tokens": 120,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.94,
+    "attempts": 1
+   },
+   "seconds": 2.94,
+   "violations": [
+    "R4 CS3247 in semester 8: prerequisite not met (CS3241)",
+    "R9 must rule not met: before CS4268 CS2105"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3247 requires CS3241, which is not completed and cannot be taken in Sem 7 or 8 as it is only offered in Sem 1.\",\n    \"CS4268 must precede CS2105, but both are required in Sem 6, violating the prerequisite order.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3247 requires CS3241, which is not completed and cannot be taken in Sem 7 or 8 as it is only offered in Sem 1.",
+     "CS4268 must precede CS2105, but both are required in Sem 6, violating the prerequisite order."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10497,
+    "total_tokens": 10591,
+    "completion_tokens": 94,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 1.88,
+    "attempts": 1
+   },
+   "seconds": 1.88,
+   "violations": null
+  }
+ ]
+}

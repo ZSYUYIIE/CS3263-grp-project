@@ -1,0 +1,48 @@
+{
+ "id": "q2-S4-149",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 9.26,
+ "usage": {
+  "prompt_tokens": 21111,
+  "total_tokens": 21590,
+  "completion_tokens": 479,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 9.26,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"ST2334\",\n      \"CS2102\"\n    ],\n    \"7\": [\n      \"CS3237\",\n      \"CS3249\"\n    ],\n    \"8\": [\n      \"CS3247\",\n      \"CS4277\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3249 and CS2102 are taken together in Y3S2 to satisfy the hard constraint that they must be in the same semester.\",\n    \"CS3247 and CS3249 are kept apart by scheduling CS3249 in Y4S1 and CS3247 in Y4S2.\",\n    \"CS3247 and CS4277 are scheduled in Y4S2 as they are only offered in Sem 2, satisfying the wish to take CS3247 as early as possible given the constraints.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "ST2334",
+    "CS2102"
+   ],
+   "7": [
+    "CS3237",
+    "CS3249"
+   ],
+   "8": [
+    "CS3247",
+    "CS4277"
+   ]
+  },
+  "reasons": [
+   "CS3249 and CS2102 are taken together in Y3S2 to satisfy the hard constraint that they must be in the same semester.",
+   "CS3247 and CS3249 are kept apart by scheduling CS3249 in Y4S1 and CS3247 in Y4S2.",
+   "CS3247 and CS4277 are scheduled in Y4S2 as they are only offered in Sem 2, satisfying the wish to take CS3247 as early as possible given the constraints."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

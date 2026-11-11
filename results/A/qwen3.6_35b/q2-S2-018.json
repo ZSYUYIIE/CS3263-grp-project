@@ -1,0 +1,27 @@
+{
+ "id": "q2-S2-018",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 10.43,
+ "usage": {
+  "prompt_tokens": 11099,
+  "total_tokens": 11628,
+  "completion_tokens": 529,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 10.43,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"The student's constraint 'At most 1 module per semester' conflicts with the requirement to take 6 distinct courses (CS2105, CS3219, CS4226, CS2106, CS4231, CS2109S) within the remaining 5 semesters (5-8) while respecting prerequisites and the 'finish CS3219 before CS4226' and 'finish CS2106 before CS4231' chains. Specifically, CS4226 requires CS2105 and CS4231 requires CS2106. CS2109S requires CS4231. This creates a chain: CS2106 -> CS4231 -> CS2109S (3 modules). CS3219 -> CS4226 (2 modules). CS2105 is a prerequisite for CS4226. So CS2105 -> CS3219 -> CS4226 is another chain? No, CS4226 prereq is (CS2105...) AND (EE2012A...). CS2105 prereq is CS2040S (completed). So CS2105 can be taken early. CS3219 prereq is CS2103T (completed). So CS3219 can be taken early. CS4226 prereq is CS2105 and EE2012A (not completed). The student has not completed EE2012A. EE2012A is not offered in AY2026/27. Thus CS4226 cannot be taken. Even if we ignore EE2012A, the 1-module limit makes fitting 6 courses into 5 semesters impossible if any semester is empty or if prerequisites force sequential ordering that exceeds available slots. Let's trace: Sem 4: 1 course. Sem 5: 3 courses (limit). Sem 6: 1 course. Sem 7: 1 course. Sem 8: 1 course. Total capacity 7 courses. 6 courses fit. However, CS4226 requires EE2012A which is not offered. Therefore CS4226 is impossible to take. Status NO_PLAN due to missing prerequisite course being unavailable.\"]}}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "The student's constraint 'At most 1 module per semester' conflicts with the requirement to take 6 distinct courses (CS2105, CS3219, CS4226, CS2106, CS4231, CS2109S) within the remaining 5 semesters (5-8) while respecting prerequisites and the 'finish CS3219 before CS4226' and 'finish CS2106 before CS4231' chains. Specifically, CS4226 requires CS2105 and CS4231 requires CS2106. CS2109S requires CS4231. This creates a chain: CS2106 -> CS4231 -> CS2109S (3 modules). CS3219 -> CS4226 (2 modules). CS2105 is a prerequisite for CS4226. So CS2105 -> CS3219 -> CS4226 is another chain? No, CS4226 prereq is (CS2105...) AND (EE2012A...). CS2105 prereq is CS2040S (completed). So CS2105 can be taken early. CS3219 prereq is CS2103T (completed). So CS3219 can be taken early. CS4226 prereq is CS2105 and EE2012A (not completed). The student has not completed EE2012A. EE2012A is not offered in AY2026/27. Thus CS4226 cannot be taken. Even if we ignore EE2012A, the 1-module limit makes fitting 6 courses into 5 semesters impossible if any semester is empty or if prerequisites force sequential ordering that exceeds available slots. Let's trace: Sem 4: 1 course. Sem 5: 3 courses (limit). Sem 6: 1 course. Sem 7: 1 course. Sem 8: 1 course. Total capacity 7 courses. 6 courses fit. However, CS4226 requires EE2012A which is not offered. Therefore CS4226 is impossible to take. Status NO_PLAN due to missing prerequisite course being unavailable."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

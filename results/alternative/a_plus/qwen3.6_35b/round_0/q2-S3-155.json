@@ -1,0 +1,46 @@
+{
+ "id": "q2-S3-155",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 5.98,
+ "usage": {
+  "prompt_tokens": 16051,
+  "total_tokens": 16298,
+  "completion_tokens": 247,
+  "finish_reason": "stop",
+  "request_seconds": 5.98,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CP3880\",\n\"ST2334\"\n],\n\"6\": [\n\"CS3219\",\n\"CS2105\",\n\"CS2102\"\n],\n\"7\": [\n\"CS3247\",\n\"CS4248\"\n]\n},\n\"reasons\": [\n\"ATAP (CP3880) planned in Sem 5 with ST2334 (4MC) to satisfy the ATAP rule (other courses <= 8MC).\",\n\"CS3219 is fixed in Sem 6 as requested. CS2105 and CS2102 are placed in Sem 6 to satisfy prerequisites and the 'CS2105 before ST2334' constraint (ST2334 in Sem 5).\",\n\"CS3247 and CS4248 are planned in Sem 7, respecting the preference for CS3247 before CS4248 and their prerequisites.\"\n]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CP3880",
+    "ST2334"
+   ],
+   "6": [
+    "CS3219",
+    "CS2105",
+    "CS2102"
+   ],
+   "7": [
+    "CS3247",
+    "CS4248"
+   ]
+  },
+  "reasons": [
+   "ATAP (CP3880) planned in Sem 5 with ST2334 (4MC) to satisfy the ATAP rule (other courses <= 8MC).",
+   "CS3219 is fixed in Sem 6 as requested. CS2105 and CS2102 are placed in Sem 6 to satisfy prerequisites and the 'CS2105 before ST2334' constraint (ST2334 in Sem 5).",
+   "CS3247 and CS4248 are planned in Sem 7, respecting the preference for CS3247 before CS4248 and their prerequisites."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

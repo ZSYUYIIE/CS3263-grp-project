@@ -1,0 +1,55 @@
+{
+ "id": "q1-el-005-h",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 2.45,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2830,
+  "total_tokens": 2947,
+  "completion_tokens": 117,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 2.45,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\": \"eligible\", \"target\": \"CS3211\", \"current_sem\": 5, \"completed\": [\"CS2040C\", \"ES2660\", \"CS1231S\", \"CS2100\", \"CS2030S\", \"CS3237\", \"CS1101S\", \"MA1301X\", \"CS2103T\", \"CS2105\", \"CS2309\", \"CS2106\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS3211",
+  "current_sem": 5,
+  "completed": [
+   "CS2040C",
+   "ES2660",
+   "CS1231S",
+   "CS2100",
+   "CS2030S",
+   "CS3237",
+   "CS1101S",
+   "MA1301X",
+   "CS2103T",
+   "CS2105",
+   "CS2309",
+   "CS2106"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS3211",
+  "semester": 5,
+  "reasons": [
+   "not offered in semester 1 (offered: [2])"
+  ],
+  "can_still_become_eligible": true
+ }
+}

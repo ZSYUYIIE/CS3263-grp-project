@@ -1,0 +1,131 @@
+{
+ "id": "q2-S6-003",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 5.5,
+ "solver_seconds": 0.265,
+ "max_tokens": 49152,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 3069,
+  "total_tokens": 3461,
+  "completion_tokens": 392,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.23,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"current_sem\": 1,\n  \"completed\": [],\n  \"must_take\": [\n    \"ST2334\",\n    \"CS2106\",\n    \"CS2100\",\n    \"CS3230\",\n    \"MA1522\",\n    \"CS3249\"\n  ],\n  \"mc_max\": 16,\n  \"objective\": \"min_total_mc\",\n  \"early\": [\n    \"CS3230\"\n  ],\n  \"rules\": [\n    {\n      \"type\": \"before\",\n      \"a\": \"CS2100\",\n      \"b\": \"CS3249\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"MA1522\",\n      \"b\": \"CS3230\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"ST2334\",\n      \"sem\": 4,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS2100\",\n      \"sem\": 3,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS3249\",\n      \"sem\": 5,\n      \"strength\": \"prefer\"\n    }\n  ],\n  \"unsupported\": [\n    \"at most two modules with final exams in a semester\",\n    \"avoid modules with heavy group projects\"\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "completed": [],
+  "must_take": [
+   "ST2334",
+   "CS2106",
+   "CS2100",
+   "CS3230",
+   "MA1522",
+   "CS3249"
+  ],
+  "mc_max": 16,
+  "objective": "min_total_mc",
+  "early": [
+   "CS3230"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2100",
+    "b": "CS3249",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "MA1522",
+    "b": "CS3230",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "ST2334",
+    "sem": 4,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2100",
+    "sem": 3,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3249",
+    "sem": 5,
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "at most two modules with final exams in a semester",
+   "avoid modules with heavy group projects"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 5,
+  "plan": {
+   "1": [
+    "MA1100T",
+    "UTC2851"
+   ],
+   "2": [
+    "CS2040",
+    "MA1522"
+   ],
+   "3": [
+    "CS2100",
+    "CS3230",
+    "MA1511"
+   ],
+   "4": [
+    "CS2111",
+    "ST2334"
+   ],
+   "5": [
+    "CS2106",
+    "CS3249"
+   ]
+  },
+  "mc_per_semester": {
+   "1": 8,
+   "2": 8,
+   "3": 10,
+   "4": 8,
+   "5": 8
+  },
+  "preferences_met": [
+   "CS3249 in semester 5",
+   "CS3230 as early as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS2040",
+   "CS2111",
+   "MA1100T",
+   "MA1511",
+   "UTC2851"
+  ],
+  "not_applied": [
+   "at most two modules with final exams in a semester",
+   "avoid modules with heavy group projects"
+  ]
+ }
+}

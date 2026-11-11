@@ -1,0 +1,98 @@
+{
+ "id": "q2-S4-245",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 10.56,
+ "solver_seconds": 0.024,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3149,
+  "total_tokens": 3656,
+  "completion_tokens": 507,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 10.53,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"current_sem\": 7,\n  \"completed\": [\n    \"CS2109S\",\n    \"CS2106\",\n    \"CS2103T\",\n    \"MA1521\",\n    \"ST2334\",\n    \"CS3227\",\n    \"CS3210\",\n    \"ES2660\",\n    \"CS3219\",\n    \"IS1108\",\n    \"CS2030S\",\n    \"CS2101\",\n    \"CS1231S\",\n    \"CS2102\",\n    \"CS1101S\",\n    \"MA1522\",\n    \"CS2100\",\n    \"CS2040S\",\n    \"CS2105\"\n  ],\n  \"must_take\": [\n    \"CS3103\",\n    \"CS4215\",\n    \"CS3242\",\n    \"CS3230\"\n  ],\n  \"rules\": [\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS3103\",\n      \"sem\": 7,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS3242\",\n      \"sem\": 8,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"same_sem\",\n      \"a\": \"CS3103\",\n      \"b\": \"CS3242\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS3103\",\n      \"b\": \"CS3242\",\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS3230\",\n      \"b\": \"CS4215\",\n      \"strength\": \"must\"\n    }\n  ],\n  \"early\": [\n    \"CS3230\"\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "completed": [
+   "CS2109S",
+   "CS2106",
+   "CS2103T",
+   "MA1521",
+   "ST2334",
+   "CS3227",
+   "CS3210",
+   "ES2660",
+   "CS3219",
+   "IS1108",
+   "CS2030S",
+   "CS2101",
+   "CS1231S",
+   "CS2102",
+   "CS1101S",
+   "MA1522",
+   "CS2100",
+   "CS2040S",
+   "CS2105"
+  ],
+  "must_take": [
+   "CS3103",
+   "CS4215",
+   "CS3242",
+   "CS3230"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3103",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3242",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3103",
+    "b": "CS3242",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3103",
+    "b": "CS3242",
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS3230",
+    "b": "CS4215",
+    "strength": "must"
+   }
+  ],
+  "early": [
+   "CS3230"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS3103 and CS3242 in the same semester; the semesters in which the courses are offered"
+  ]
+ }
+}

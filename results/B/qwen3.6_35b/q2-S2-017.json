@@ -1,0 +1,105 @@
+{
+ "id": "q2-S2-017",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 8.8,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3170,
+  "total_tokens": 3640,
+  "completion_tokens": 470,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 8.8,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 4,\n\"completed\": [\n\"IS1108\",\n\"CS1101S\",\n\"CS2103T\",\n\"MA1522\",\n\"CS2100\",\n\"ES2660\",\n\"CS2040S\",\n\"ST2334\",\n\"MA1521\",\n\"CS1231S\",\n\"CS2030S\",\n\"CS2101\"\n],\n\"must_take\": [\n\"CS4231\",\n\"CS2106\",\n\"CS3219\",\n\"CS2105\",\n\"CS4226\",\n\"CS2109S\"\n],\n\"mc_max\": 8,\n\"sem_caps\": {\n\"4\": 4\n},\n\"objective\": \"earliest_graduation\",\n\"unsupported\": [\n\"chance I fail one module this semester and have to retake it\"\n],\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS3219\",\n\"b\": \"CS4226\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4231\",\n\"b\": \"CS2109S\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS4226\",\n\"b\": \"CS4231\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2106\",\n\"b\": \"CS4231\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4226\",\n\"b\": \"CS2109S\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"late\",\n\"course\": \"CS2109S\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "IS1108",
+   "CS1101S",
+   "CS2103T",
+   "MA1522",
+   "CS2100",
+   "ES2660",
+   "CS2040S",
+   "ST2334",
+   "MA1521",
+   "CS1231S",
+   "CS2030S",
+   "CS2101"
+  ],
+  "must_take": [
+   "CS4231",
+   "CS2106",
+   "CS3219",
+   "CS2105",
+   "CS4226",
+   "CS2109S"
+  ],
+  "mc_max": 8,
+  "sem_caps": {
+   "4": 4
+  },
+  "objective": "earliest_graduation",
+  "unsupported": [
+   "chance I fail one module this semester and have to retake it"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3219",
+    "b": "CS4226",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4231",
+    "b": "CS2109S",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS4226",
+    "b": "CS4231",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2106",
+    "b": "CS4231",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4226",
+    "b": "CS2109S",
+    "strength": "prefer"
+   },
+   {
+    "type": "late",
+    "course": "CS2109S",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [
+  "rules[5].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'"
+ ],
+ "answer": {
+  "status": "INVALID_SPEC",
+  "errors": [
+   "rules[5].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'"
+  ]
+ }
+}

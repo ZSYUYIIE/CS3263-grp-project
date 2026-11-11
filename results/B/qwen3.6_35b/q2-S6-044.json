@@ -1,0 +1,95 @@
+{
+ "id": "q2-S6-044",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 25.6,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3139,
+  "total_tokens": 3573,
+  "completion_tokens": 434,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 25.6,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 7,\n\"programme\": \"BComp CS Hons with minor in Philosophy\",\n\"completed\": [\n\"CS2040S\",\n\"CS2106\",\n\"CS3230\",\n\"CS1101S\",\n\"MA1522\",\n\"ST2334\",\n\"CS3281\",\n\"CS2100\",\n\"CS2103T\",\n\"CS3219\",\n\"CS4218\",\n\"CS2109S\",\n\"CS2101\",\n\"CS2105\",\n\"CS1231S\",\n\"MA1521\",\n\"CS2102\",\n\"CS2030S\"\n],\n\"must_take\": [\n\"ES2660\",\n\"CS3263\",\n\"CS3235\",\n\"IS1108\"\n],\n\"mc_max\": 16,\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3235\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"IS1108\",\n\"b\": \"ES2660\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"IS1108\",\n\"sem\": 7,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"IS1108\",\n\"b\": \"CS3263\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"late\",\n\"a\": \"ES2660\",\n\"b\": \"ES2660\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "programme": "BComp CS Hons with minor in Philosophy",
+  "completed": [
+   "CS2040S",
+   "CS2106",
+   "CS3230",
+   "CS1101S",
+   "MA1522",
+   "ST2334",
+   "CS3281",
+   "CS2100",
+   "CS2103T",
+   "CS3219",
+   "CS4218",
+   "CS2109S",
+   "CS2101",
+   "CS2105",
+   "CS1231S",
+   "MA1521",
+   "CS2102",
+   "CS2030S"
+  ],
+  "must_take": [
+   "ES2660",
+   "CS3263",
+   "CS3235",
+   "IS1108"
+  ],
+  "mc_max": 16,
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3235",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "IS1108",
+    "b": "ES2660",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "IS1108",
+    "sem": 7,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "IS1108",
+    "b": "CS3263",
+    "strength": "prefer"
+   },
+   {
+    "type": "late",
+    "a": "ES2660",
+    "b": "ES2660",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [
+  "rules[4].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'"
+ ],
+ "answer": {
+  "status": "INVALID_SPEC",
+  "errors": [
+   "rules[4].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'"
+  ]
+ }
+}

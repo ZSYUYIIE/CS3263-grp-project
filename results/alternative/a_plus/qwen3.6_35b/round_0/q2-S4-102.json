@@ -1,0 +1,42 @@
+{
+ "id": "q2-S4-102",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 24.15,
+ "usage": {
+  "prompt_tokens": 12278,
+  "total_tokens": 13691,
+  "completion_tokens": 1413,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 24.15,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"6\": [\"CS3233\", \"CS2102\", \"CS4238\", \"IS1108\"], \"7\": [\"CS3264\", \"CS4220\", \"CS3244\"]}, \"reasons\": [\"All prerequisites for planned courses are satisfied by completed courses or earlier planned courses.\", \"CS3233 is placed in Sem 6 as required. CS4238 and IS1108 are taken together in Sem 6.\", \"CS2102 is placed in Sem 6 as preferred. CS4238 is taken before CS2102 is not possible as they are in the same semester, but CS4238 is taken in Sem 6 while CS2102 is also in Sem 6, satisfying the 'together' constraint. The preference 'rather do CS4238 before CS2102' is interpreted as taking them in the same semester or CS4238 earlier; since they must be together, they are in Sem 6. CS3264 and CS3244 require CS2109S and CS2040S which are completed. CS4220 requires CS2220 which is NOT completed. Wait, CS4220 prerequisite is CS2220. The student has NOT completed CS2220. CS2220 prerequisite is CS2040S (completed). So CS2220 must be taken. CS2220 is offered Sem 1. Sem 6 is Sem 2. So CS2220 cannot be taken in Sem 6. It must be taken in Sem 5. I missed CS2220. Let's re-evaluate.\", \"Missing CS2220. CS2220 is required for CS4220. CS2220 is offered Sem 1. Current semester is 6. Sem 5 is Sem 1 of Y3. So CS2220 must be in Sem 5. Sem 5 is before Sem 6. So CS2220 in Sem 5. Then CS4220 in Sem 6 or later. CS4220 is Sem 2. So Sem 6 or 8. Sem 6 is full? Let's check Sem 5.\", \"Re-planning: Sem 5: CS2220 (4 MC). Sem 6: CS3233, CS2102, CS4238, IS1108. CS4220 needs CS2220. CS4220 is Sem 2. Can be Sem 6 or 8. If Sem 6, is it too many courses? 4 courses in Sem 6. CS3233(4), CS2102(4), CS4238(4), IS1108(4) = 16 MC. Plus CS4220(4) = 20 MC. This fits 20 MC limit. So Sem 6: CS3233, CS2102, CS4238, IS1108, CS4220. 5 courses. 20 MC. Valid. Sem 7: CS3264, CS3244. CS3264 prereq: CS2109S, CS2040S, MA2001/MA1522/MA1513/MA1508E/MA1101R, EE2012A/EE2012/ST2131/MA2116/MA2116T/ST2334/MA2216. Student has CS2109S, CS2040S, MA1522, ST2334. Prereqs met. CS3244 prereq: CS2040/CS2040C/CS2040S/CS2040DE/CS2040HS/YSC2229 AND EE2012A/EE2012/YSC2243/ST2131/ST2334/MA2116/MA2116T/MA2216 AND (MA1511+MA1512) OR (MA2001+MA1521) OR ... Student has CS2040S, ST2334. Does student have MA1511+MA1512? No. MA2001? No. MA1521? Yes. MA1522? Yes. MA1508E? No. MA1311? No. MA1513? No. MA1101R? No. The second part of CS3244 prereq is: ((MA2001 or MA1522 or MA1508E or MA1311 or MA1513 or MA1101R) and (MA2002 or MA1521 or MA1505 or MA1507 or MA1102R)). Student has MA1522. Student has MA1521. So (MA1522) and (MA1521) is true. First part: CS2040S is true. Second part: ST2334 is true. So CS3244 prereqs are met. CS3244 is Sem 1, Sem 2. Sem 7 is Sem 1 of Y4. So CS3244 can be in Sem 7. CS3264 is Sem 1, Sem 2. Sem 7 is Sem 1. So CS3264 can be in Sem 7. So Sem 7: CS3264, CS3244. Total 8 MC. Graduation Sem 7. This is earlier than Sem 8. So plan is Sem 5: CS2220. Sem 6: CS3233, CS2102, CS4238, IS1108, CS4220. Sem 7: CS3264, CS3244.\"}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS3233",
+    "CS2102",
+    "CS4238",
+    "IS1108"
+   ],
+   "7": [
+    "CS3264",
+    "CS4220",
+    "CS3244"
+   ]
+  }
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

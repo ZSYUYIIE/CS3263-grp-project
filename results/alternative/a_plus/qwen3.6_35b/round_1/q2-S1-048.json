@@ -1,0 +1,29 @@
+{
+ "id": "q2-S1-048",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 301.87,
+ "usage": {
+  "prompt_tokens": 24188,
+  "total_tokens": 31167,
+  "completion_tokens": 6979,
+  "finish_reason": "stop",
+  "request_seconds": 119.74,
+  "attempts": 2
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS3240 is offered only in Sem 1, but its prerequisite CS2111 requires CS1010 variants which are typically taken in Sem 1/2. Even if CS2111 is taken in Sem 1, CS3240 must be in Sem 1. However, Sem 1 is full with CS1010S and CS1231S (prerequisites for later courses). CS4249 requires CS3240, so CS4249 must be in Sem 2 or later. CS4249 is offered in Sem 2. So CS4249 can be Sem 2. But CS2111 is offered in Sem 2. So CS2111 must be Sem 1. If CS2111 is Sem 1, CS1010 variant must be Sem 1 (prereq). So Sem 1: CS1010S, CS1231S, CS2111. MC 12. CS3240 Sem 1? MC 16. OK. CS4249 Sem 2. Sem 2: CS4249, CS2030S, CS2040S, CS2100, CS3219? CS3219 requires CS2103T. CS2103T requires CS2030S and CS2040S. So CS2030S/CS2040S must be before CS2103T. If CS2030S/CS2040S are Sem 2, CS2103T is Sem 3. CS3219 is Sem 4. CS4249 is Sem 2. CS2105+MA1522 together. CS2105 requires CS2040S. So CS2040S must be before CS2105. If CS2040S is Sem 2, CS2105 is Sem 3+. CS2105+MA1522 in Sem 3. Sem 3: CS2105, MA1522, CS2103T, CS3230, CS3210. MC 20. OK. CS2106 late. CS2106 requires CS2100 (Sem 2). Can be Sem 8. CS4231 in Sem 6. Requires CS3210 or CS3230. Both Sem 3. OK. CS2101 and CS4330 and ES2660 must be taken. CS2101 no prereq. CS4330 requires CS2040C/S/DE/HS and CS2220/LSM2104/LSM2241/ZB2101. CS2220 requires CS2040/S/C/DE/HS. ZB2101 requires LSM1301. LSM1301 no prereq. So chain: LSM1301 -> ZB2101 -> CS4330. CS4330 also requires CS2040 variant. CS2040 variant is Sem 2. So CS4330 can be Sem 3+. ES2660 no prereq. CS2101 no prereq. We need to fit CS2101, CS4330, ES2660. Sem 1: CS1010S, CS1231S, CS2111, CS3240. MC 16. Sem 2: CS4249, CS2030S, CS2040S, CS2100, LSM1301, CS2101, ES2660? MC 4+4+4+4+4+4+4=28. Too high. Sem 2 limit 20. CS4249 (4), CS2030S (4), CS2040S (4), CS2100 (4) = 16. Room for 4 MC. CS2101 (4) or ES2660 (4) or LSM1301 (4). Can only take one. CS2101, ES2660, LSM1301 must be taken. LSM1301 is prereq for CS4330. CS4330 is required. So LSM1301 must be taken. If LSM1301 is Sem 2, CS4330 is Sem 3+. Sem 3: CS2105, MA1522, CS2103T, CS3230, CS3210. Full. CS4330 cannot be Sem 3. Sem 4: CS3219, CS2101, ES2660, CS4330? CS4330 requires CS2040 variant (Sem 2) and ZB2101 (Sem 2). So CS4330 can be Sem 3+. But Sem 3 is full. Sem 4: CS3219 (4), CS2101 (4), ES2660 (4), CS4330 (4). MC 16. OK. Sem 5: Empty. Sem 6: CS4231. Sem 8: CS2106. This plan works? Sem 1: CS1010S, CS1231S, CS2111, CS3240. Sem 2: CS4249, CS2030S, CS2040S, CS2100, LSM1301. Sem 3: CS2105, MA1522, CS2103T, CS3230, CS3210. Sem 4: CS3219, CS2101, ES2660, CS4330. Sem 6: CS4231. Sem 8: CS2106. Check prerequisites: CS3240 (Sem 1) requires CS2111 (Sem 1). Corequisite? No, prereq. CS2111 is Sem 1. CS3240 is Sem 1. Prerequisite must be completed or planned in strictly earlier semester? Rule 4: 'Prerequisites must be completed or planned in a STRICTLY earlier semester.' So CS2111 must be before CS3240. If both are Sem 1, CS2111 is not strictly earlier. So CS3240 cannot be Sem 1 if CS2111 is Sem 1. CS2111 is offered Sem 2. So CS2111 must be Sem 2. Then CS3240 must be Sem 2? No, CS3240 offered Sem 1. So CS3240 cannot be taken if CS2111 is Sem 2. CS2111 is offered Sem 2. CS3240 is offered Sem 1. So CS3240 cannot be taken after CS2111. CS2111 is prereq for CS3240. So CS2111 must be before CS3240. But CS3240 is Sem 1. CS2111 is Sem 2. Impossible. So CS3240 cannot be taken. But CS4249 requires CS3240. So CS4249 cannot be taken. But student must take CS4249. So NO_PLAN.\n\n{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4249 requires CS3240. CS3240 requires CS2111. CS3240 is offered only in Sem 1. CS2111 is offered only in Sem 2. Prerequisites must be completed in a strictly earlier semester. Thus CS2111 cannot be completed before CS3240. Therefore CS3240 cannot be taken, making CS4249 impossible to take.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4249 requires CS3240. CS3240 requires CS2111. CS3240 is offered only in Sem 1. CS2111 is offered only in Sem 2. Prerequisites must be completed in a strictly earlier semester. Thus CS2111 cannot be completed before CS3240. Therefore CS3240 cannot be taken, making CS4249 impossible to take."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

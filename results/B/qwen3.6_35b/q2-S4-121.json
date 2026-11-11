@@ -1,0 +1,85 @@
+{
+ "id": "q2-S4-121",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 5.48,
+ "solver_seconds": 0.001,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3134,
+  "total_tokens": 3565,
+  "completion_tokens": 431,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 5.48,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"completed\": [\n    \"CS2100\",\n    \"CS2030S\",\n    \"CS3236\",\n    \"CS3230\",\n    \"ES2660\",\n    \"ST2334\",\n    \"CS2109S\",\n    \"CS1231S\",\n    \"CS2101\",\n    \"CS2106\",\n    \"CS1101S\",\n    \"CS2040S\",\n    \"MA1522\",\n    \"CS2103T\",\n    \"IS1108\",\n    \"MA1521\"\n  ],\n  \"current_sem\": 5,\n  \"programme\": \"BComp CS Hons\",\n  \"must_take\": [\n    \"CS3281\",\n    \"CS2102\",\n    \"CS3235\",\n    \"CS3231\",\n    \"CS3233\"\n  ],\n  \"sem_caps\": {\n    \"6\": 0,\n    \"8\": 0\n  },\n  \"objective\": \"earliest_graduation\",\n  \"rules\": [\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS2102\",\n      \"b\": \"CS3235\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS3281\",\n      \"b\": \"CS3231\",\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS3281\",\n      \"b\": \"CS3235\",\n      \"strength\": \"prefer\"\n    }\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "completed": [
+   "CS2100",
+   "CS2030S",
+   "CS3236",
+   "CS3230",
+   "ES2660",
+   "ST2334",
+   "CS2109S",
+   "CS1231S",
+   "CS2101",
+   "CS2106",
+   "CS1101S",
+   "CS2040S",
+   "MA1522",
+   "CS2103T",
+   "IS1108",
+   "MA1521"
+  ],
+  "current_sem": 5,
+  "programme": "BComp CS Hons",
+  "must_take": [
+   "CS3281",
+   "CS2102",
+   "CS3235",
+   "CS3231",
+   "CS3233"
+  ],
+  "sem_caps": {
+   "6": 0,
+   "8": 0
+  },
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS2102",
+    "b": "CS3235",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3281",
+    "b": "CS3231",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS3281",
+    "b": "CS3235",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3281 cannot be placed in any remaining semester (offered in terms [2]; semesters left [5, 7])",
+   "CS3233 cannot be placed in any remaining semester (offered in terms [2]; semesters left [5, 7])"
+  ]
+ }
+}

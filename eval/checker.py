@@ -108,8 +108,23 @@ def check_plan(spec: dict, plan) -> list[str]:
         if not rule_holds(r, sem_of, done):
             v.append(f"R9 must rule not met: {describe(r)}")
     required = must | must_rule_courses(spec)
+    atap_sems = spec.get("atap_sems")
+    if ATAP in sem_of or atap_sems:
+        s = sem_of.get(ATAP)
+        if s is None:
+            if atap_sems:
+                v.append("R11 ATAP asked for but not planned")
+        else:
+            if not (atap_sems and s in atap_sems) and ATAP not in required:
+                v.append(f"R11 ATAP in semester {s}, not an allowed ATAP semester")
+            used = [t for t, codes in plan.items() if codes]
+            if used and s == max(used):
+                v.append(f"R11 ATAP in semester {s}, the last semester used")
+            beside = sum(C[c]["mc"] or 0 for c in plan[s] if c in C and c != ATAP)
+            if beside > min(8, caps.get(s, cap)):
+                v.append(f"R11 {beside} MC beside ATAP in semester {s}")
     for c, s in sem_of.items():
-        if c in required or c not in C:
+        if c in required or c not in C or c == ATAP:
             continue
         needed = any(c in (C[d]["prereq"].get("courses") or []) and t > s
                      or c in (C[d]["coreq"].get("courses") or []) and t >= s
@@ -146,7 +161,7 @@ def measures(spec, plan) -> dict:
     required = set(spec.get("must_take") or []) | must_rule_courses(spec) | set(spec.get("completed") or [])
     return {"last_semester": max(used) if used else None,
             "total_mc": sum((C[c]["mc"] or 0) for c in codes if c in C),
-            "added": sorted(c for c in codes if c not in required)}
+            "added": sorted(c for c in codes if c not in required and c != ATAP)}
 
 
 def preferences_met(spec, plan, gold_plan) -> int:

@@ -1,0 +1,45 @@
+{
+ "id": "q2-S4-157",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 38.51,
+ "usage": {
+  "prompt_tokens": 11029,
+  "total_tokens": 12937,
+  "completion_tokens": 1908,
+  "finish_reason": "stop",
+  "request_seconds": 38.51,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS3230\"], \"5\": [\"CS3240\"], \"6\": [\"CS4240\", \"CS4243\"], \"7\": [\"CS3247\", \"CS4249\"]}, \"reasons\": [\"Prerequisites for CS3230 (CS2040S, CS1231S) are completed. CS3240 requires CS2111, which requires CS1101S (completed). CS4240 requires CS2111. CS4243 requires CS2030S and CS2040S (completed) and math prerequisites (MA1521, MA1522 completed). CS3247 requires CS3241, but CS3241 is not in the must-take list and has prerequisites (CS2030S, CS2040S) that are met. However, CS3241 is not listed as a 'must' course by the student. Wait, CS3247 prerequisite is CS3241. CS3241 is not in the 'must' list. Does the student need to take CS3241? The prompt says 'I must take CS4240, CS3230, CS4243, CS4249 and CS3247'. It does not say 'only these'. But rule 8 says 'Add a course... ONLY when it is a prerequisite needed by a planned course'. So I must add CS3241 to enable CS3247. CS3241 is offered Sem 1. CS3247 is offered Sem 2. So CS3241 must be in Sem 5 or earlier. CS3240 is in Sem 5. CS3241 can be in Sem 5. CS3247 in Sem 6 or 7. CS4240 requires CS2111. CS2111 requires CS1101S (completed). CS2111 is offered Sem 2. So CS2111 must be taken in Sem 4 (LOA) or earlier? No, Sem 4 is LOA. So CS2111 must be taken in Sem 3? But Sem 3 is Y2S1. The student is starting Y2S2 (Sem 4). Wait. 'I'm starting year 2 semester 2'. Y2S2 is Semester 4. So Sem 3 is past. Did the student take CS2111? It is not in the completed list. CS2103T requires CS2030S and CS2040S. It does not require CS2111. CS2103T is completed. CS4240 requires CS2111. CS2111 is offered Sem 2. So CS2111 must be taken in an even semester. Sem 4 is LOA. So CS2111 must be taken in Sem 6 or later? But CS4240 is a must. CS4240 is offered Sem 2. So CS4240 must be in Sem 6, 8? Or Sem 4? No, LOA. So CS4240 in Sem 6 or 8. CS2111 in Sem 6 or 8. If CS2111 in Sem 6, CS4240 in Sem 6 (coreq) or Sem 8. CS3241 (prereq for CS3247) is offered Sem 1. So CS3241 must be in Sem 5, 7? No, Sem 1 only. So CS3241 must be in Sem 5? But Sem 5 is Y3S1. The student is in Sem 4. So Sem 5 is available. CS3241 in Sem 5. CS3247 in Sem 6 or 7. CS4249 requires CS3240. CS3240 in Sem 5. So CS4249 in Sem 6 or 8. Student wants CS4249 in Sem 8. CS4243 in Sem 6 or 7. Student wants CS4243 as late as possible. CS3247 and CS4243 cannot be together. So if CS4243 in Sem 7, CS3247 in Sem 6 or 8. CS3247 in Sem 7? No, if CS4243 in Sem 7, CS3247 not in Sem 7. CS3247 in Sem 6? CS3241 in Sem 5. CS3247 in Sem 6. CS4243 in Sem 7. CS4249 in Sem 8. CS4240 in Sem 6 or 8. CS2111 in Sem 6. Let's check MC. Sem 5: CS3241 (4), CS3240 (4) = 8 MC. Sem 6: CS2111 (4), CS4240 (4), CS3247 (4) = 12 MC. Sem 7: CS4243 (4). Sem 8: CS4249 (4). This works. CS3241 is offered Sem 1. Sem 5 is Sem 1 of Y3. OK. CS3240 offered Sem 2. Sem 5 is Sem 1. ERROR. CS3240 is offered Sem 1, Sem 2. So Sem 5 is OK. CS2111 offered Sem 2. Sem 6 is Sem 2. OK. CS4240 offered Sem 2. Sem 6 is Sem 2. OK. CS3247 offered Sem 2. Sem 6 is Sem 2. OK. CS4243 offered Sem 1, Sem 2. Sem 7 is Sem 1. OK. CS4249 offered Sem 2. Sem 8 is Sem 2. OK. CS2111 prerequisite: CS1010A... CS1101S is completed. OK. CS4240 prerequisite: CS2111. CS2111 in Sem 6, CS4240 in Sem 6. Coreq allowed. OK. CS3247 prerequisite: CS3241. CS3241 in Sem 5, CS3247 in Sem 6. OK. CS4249 prerequisite: CS3240. CS3240 in Sem 5, CS4249 in Sem 8. OK. CS4243 prerequisite: Math and CS2030S/CS2040S. Math: MA1521, MA1522 completed. CS2030S, CS2040S completed. OK. CS3230 prerequisite: CS2040S, CS1231S. Completed. CS3230 in Sem 4? Sem 4 is LOA. So CS3230 must be in Sem 5, 6, 7, 8. CS3230 offered Sem 1, Sem 2. Sem 5 is Sem 1. OK. So CS3230 in Sem 5. Sem 5: CS3230 (4), CS3241 (4), CS3240 (4) = 12 MC. OK. Sem 6: CS2111 (4), CS4240 (4), CS3247 (4) = 12 MC. OK. Sem 7: CS4243 (4). OK. Sem 8: CS4249 (4). OK. CS3247 and CS4243 not together. OK. CS4249 in Sem 8. OK. CS4243 as late as possible (Sem 7). OK. CS3230 in Sem 5. OK. CS2111 in Sem 6. OK. CS4240 in Sem 6. OK. CS3241 in Sem 5. OK. CS3240 in Sem 5. OK. CS3247 in Sem 6. OK. CS4243 in Sem 7. OK. CS4249 in Sem 8. OK. All constraints satisfied.\"]}}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS3230"
+   ],
+   "5": [
+    "CS3240"
+   ],
+   "6": [
+    "CS4240",
+    "CS4243"
+   ],
+   "7": [
+    "CS3247",
+    "CS4249"
+   ]
+  },
+  "reasons": [
+   "Prerequisites for CS3230 (CS2040S, CS1231S) are completed. CS3240 requires CS2111, which requires CS1101S (completed). CS4240 requires CS2111. CS4243 requires CS2030S and CS2040S (completed) and math prerequisites (MA1521, MA1522 completed). CS3247 requires CS3241, but CS3241 is not in the must-take list and has prerequisites (CS2030S, CS2040S) that are met. However, CS3241 is not listed as a 'must' course by the student. Wait, CS3247 prerequisite is CS3241. CS3241 is not in the 'must' list. Does the student need to take CS3241? The prompt says 'I must take CS4240, CS3230, CS4243, CS4249 and CS3247'. It does not say 'only these'. But rule 8 says 'Add a course... ONLY when it is a prerequisite needed by a planned course'. So I must add CS3241 to enable CS3247. CS3241 is offered Sem 1. CS3247 is offered Sem 2. So CS3241 must be in Sem 5 or earlier. CS3240 is in Sem 5. CS3241 can be in Sem 5. CS3247 in Sem 6 or 7. CS4240 requires CS2111. CS2111 requires CS1101S (completed). CS2111 is offered Sem 2. So CS2111 must be taken in Sem 4 (LOA) or earlier? No, Sem 4 is LOA. So CS2111 must be taken in Sem 3? But Sem 3 is Y2S1. The student is starting Y2S2 (Sem 4). Wait. 'I'm starting year 2 semester 2'. Y2S2 is Semester 4. So Sem 3 is past. Did the student take CS2111? It is not in the completed list. CS2103T requires CS2030S and CS2040S. It does not require CS2111. CS2103T is completed. CS4240 requires CS2111. CS2111 is offered Sem 2. So CS2111 must be taken in an even semester. Sem 4 is LOA. So CS2111 must be taken in Sem 6 or later? But CS4240 is a must. CS4240 is offered Sem 2. So CS4240 must be in Sem 6, 8? Or Sem 4? No, LOA. So CS4240 in Sem 6 or 8. CS2111 in Sem 6 or 8. If CS2111 in Sem 6, CS4240 in Sem 6 (coreq) or Sem 8. CS3241 (prereq for CS3247) is offered Sem 1. So CS3241 must be in Sem 5, 7? No, Sem 1 only. So CS3241 must be in Sem 5? But Sem 5 is Y3S1. The student is in Sem 4. So Sem 5 is available. CS3241 in Sem 5. CS3247 in Sem 6 or 7. CS4249 requires CS3240. CS3240 in Sem 5. So CS4249 in Sem 6 or 8. Student wants CS4249 in Sem 8. CS4243 in Sem 6 or 7. Student wants CS4243 as late as possible. CS3247 and CS4243 cannot be together. So if CS4243 in Sem 7, CS3247 in Sem 6 or 8. CS3247 in Sem 7? No, if CS4243 in Sem 7, CS3247 not in Sem 7. CS3247 in Sem 6? CS3241 in Sem 5. CS3247 in Sem 6. CS4243 in Sem 7. CS4249 in Sem 8. CS4240 in Sem 6 or 8. CS2111 in Sem 6. Let's check MC. Sem 5: CS3241 (4), CS3240 (4) = 8 MC. Sem 6: CS2111 (4), CS4240 (4), CS3247 (4) = 12 MC. Sem 7: CS4243 (4). Sem 8: CS4249 (4). This works. CS3241 is offered Sem 1. Sem 5 is Sem 1 of Y3. OK. CS3240 offered Sem 2. Sem 5 is Sem 1. ERROR. CS3240 is offered Sem 1, Sem 2. So Sem 5 is OK. CS2111 offered Sem 2. Sem 6 is Sem 2. OK. CS4240 offered Sem 2. Sem 6 is Sem 2. OK. CS3247 offered Sem 2. Sem 6 is Sem 2. OK. CS4243 offered Sem 1, Sem 2. Sem 7 is Sem 1. OK. CS4249 offered Sem 2. Sem 8 is Sem 2. OK. CS2111 prerequisite: CS1010A... CS1101S is completed. OK. CS4240 prerequisite: CS2111. CS2111 in Sem 6, CS4240 in Sem 6. Coreq allowed. OK. CS3247 prerequisite: CS3241. CS3241 in Sem 5, CS3247 in Sem 6. OK. CS4249 prerequisite: CS3240. CS3240 in Sem 5, CS4249 in Sem 8. OK. CS4243 prerequisite: Math and CS2030S/CS2040S. Math: MA1521, MA1522 completed. CS2030S, CS2040S completed. OK. CS3230 prerequisite: CS2040S, CS1231S. Completed. CS3230 in Sem 4? Sem 4 is LOA. So CS3230 must be in Sem 5, 6, 7, 8. CS3230 offered Sem 1, Sem 2. Sem 5 is Sem 1. OK. So CS3230 in Sem 5. Sem 5: CS3230 (4), CS3241 (4), CS3240 (4) = 12 MC. OK. Sem 6: CS2111 (4), CS4240 (4), CS3247 (4) = 12 MC. OK. Sem 7: CS4243 (4). OK. Sem 8: CS4249 (4). OK. CS3247 and CS4243 not together. OK. CS4249 in Sem 8. OK. CS4243 as late as possible (Sem 7). OK. CS3230 in Sem 5. OK. CS2111 in Sem 6. OK. CS4240 in Sem 6. OK. CS3241 in Sem 5. OK. CS3240 in Sem 5. OK. CS3247 in Sem 6. OK. CS4243 in Sem 7. OK. CS4249 in Sem 8. OK. All constraints satisfied."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

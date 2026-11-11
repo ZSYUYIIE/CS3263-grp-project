@@ -1,0 +1,109 @@
+{
+ "id": "q2-S4-082",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 8.83,
+ "solver_seconds": 0.001,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3199,
+  "total_tokens": 3687,
+  "completion_tokens": 488,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 8.83,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 7,\n\"completed\": [\n\"CS1101S\",\n\"CS2102\",\n\"MA1522\",\n\"ES2660\",\n\"CS2109S\",\n\"CS2106\",\n\"CS2040S\",\n\"IS1108\",\n\"ST2334\",\n\"CS4222\",\n\"CS2103T\",\n\"MA1521\",\n\"CS2105\",\n\"CS2100\",\n\"CS3234\",\n\"CS4218\",\n\"CS2030S\",\n\"CS1231S\",\n\"CS3219\"\n],\n\"must_take\": [\n\"CS2101\",\n\"CS3227\",\n\"CS3244\",\n\"CS3235\",\n\"CS3264\",\n\"CS3230\",\n\"CS4248\"\n],\n\"mc_max\": 16,\n\"objective\": \"min_total_mc\",\n\"unsupported\": [\n\"not have classes on Fridays\",\n\"friend and I want to take our modules together where possible\"\n],\n\"early\": [\n\"CS3227\"\n],\n\"late\": [\n\"CS3235\",\n\"CS2101\"\n],\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS3227\",\n\"b\": \"CS3235\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3230\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4248\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3230\",\n\"b\": \"CS2101\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "completed": [
+   "CS1101S",
+   "CS2102",
+   "MA1522",
+   "ES2660",
+   "CS2109S",
+   "CS2106",
+   "CS2040S",
+   "IS1108",
+   "ST2334",
+   "CS4222",
+   "CS2103T",
+   "MA1521",
+   "CS2105",
+   "CS2100",
+   "CS3234",
+   "CS4218",
+   "CS2030S",
+   "CS1231S",
+   "CS3219"
+  ],
+  "must_take": [
+   "CS2101",
+   "CS3227",
+   "CS3244",
+   "CS3235",
+   "CS3264",
+   "CS3230",
+   "CS4248"
+  ],
+  "mc_max": 16,
+  "objective": "min_total_mc",
+  "unsupported": [
+   "not have classes on Fridays",
+   "friend and I want to take our modules together where possible"
+  ],
+  "early": [
+   "CS3227"
+  ],
+  "late": [
+   "CS3235",
+   "CS2101"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3227",
+    "b": "CS3235",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3230",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4248",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3230",
+    "b": "CS2101",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3244 is ruled out by completed CS2109S"
+  ],
+  "not_applied": [
+   "not have classes on Fridays",
+   "friend and I want to take our modules together where possible"
+  ]
+ }
+}

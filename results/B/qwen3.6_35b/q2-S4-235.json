@@ -1,0 +1,108 @@
+{
+ "id": "q2-S4-235",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 8.97,
+ "solver_seconds": 0.046,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3198,
+  "total_tokens": 3689,
+  "completion_tokens": 491,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 8.88,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"programme\": \"BComp CS Hons\",\n\"current_sem\": 7,\n\"completed\": [\n\"CS2040S\",\n\"CS3230\",\n\"CS2030S\",\n\"CS2109S\",\n\"MA1522\",\n\"CS4225\",\n\"CS2101\",\n\"CS3210\",\n\"CS2103T\",\n\"CS1101S\",\n\"CS2102\",\n\"CS3219\",\n\"IS1108\",\n\"MA1521\",\n\"ES2660\",\n\"CS2105\",\n\"CS1231S\",\n\"CS2106\",\n\"CS2100\"\n],\n\"must_take\": [\n\"CS4243\",\n\"CS3235\",\n\"CS3281\",\n\"ST2334\"\n],\n\"mc_max\": 16,\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4243\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS3235\",\n\"b\": \"ST2334\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS3235\",\n\"b\": \"ST2334\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3235\",\n\"sem\": 7,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS3281\",\n\"b\": \"CS3235\",\n\"strength\": \"prefer\"\n}\n],\n\"late\": [\n\"CS3281\",\n\"CS3235\"\n],\n\"unsupported\": [\n\"I don't want one semester much heavier than another\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "programme": "BComp CS Hons",
+  "current_sem": 7,
+  "completed": [
+   "CS2040S",
+   "CS3230",
+   "CS2030S",
+   "CS2109S",
+   "MA1522",
+   "CS4225",
+   "CS2101",
+   "CS3210",
+   "CS2103T",
+   "CS1101S",
+   "CS2102",
+   "CS3219",
+   "IS1108",
+   "MA1521",
+   "ES2660",
+   "CS2105",
+   "CS1231S",
+   "CS2106",
+   "CS2100"
+  ],
+  "must_take": [
+   "CS4243",
+   "CS3235",
+   "CS3281",
+   "ST2334"
+  ],
+  "mc_max": 16,
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS4243",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3235",
+    "b": "ST2334",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3235",
+    "b": "ST2334",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3235",
+    "sem": 7,
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS3281",
+    "b": "CS3235",
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "CS3281",
+   "CS3235"
+  ],
+  "unsupported": [
+   "I don't want one semester much heavier than another"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS3235 and ST2334 in the same semester; your rule: CS3235 and ST2334 in different semesters"
+  ],
+  "not_applied": [
+   "I don't want one semester much heavier than another"
+  ]
+ }
+}

@@ -1,0 +1,142 @@
+{
+ "id": "q2-S1-124",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 10.63,
+ "solver_seconds": 0.017,
+ "max_tokens": 49152,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 3160,
+  "total_tokens": 3655,
+  "completion_tokens": 495,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 10.61,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 5,\n\"completed\": [\n\"CS2100\",\n\"CS2103T\",\n\"ES2660\",\n\"IS1108\",\n\"CS2106\",\n\"CS2109S\",\n\"CS1101S\",\n\"ST2334\",\n\"CS2040S\",\n\"MA1521\",\n\"CS1231S\",\n\"CS2101\",\n\"MA1522\",\n\"CS2030S\"\n],\n\"must_take\": [\n\"CS2102\",\n\"CS4212\",\n\"CS3230\",\n\"CS3247\"\n],\n\"mc_max\": 16,\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS3247\",\n\"b\": \"CS3230\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3247\",\n\"sem\": 6,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3230\",\n\"b\": \"CS2102\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4212\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3247\",\n\"b\": \"CS2102\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3230\",\n\"sem\": 6,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4212\",\n\"b\": \"CS3230\",\n\"strength\": \"prefer\"\n}\n],\n\"early\": [\n\"CS3230\"\n],\n\"unsupported\": [\n\"at most two modules with final exams in a semester\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "completed": [
+   "CS2100",
+   "CS2103T",
+   "ES2660",
+   "IS1108",
+   "CS2106",
+   "CS2109S",
+   "CS1101S",
+   "ST2334",
+   "CS2040S",
+   "MA1521",
+   "CS1231S",
+   "CS2101",
+   "MA1522",
+   "CS2030S"
+  ],
+  "must_take": [
+   "CS2102",
+   "CS4212",
+   "CS3230",
+   "CS3247"
+  ],
+  "mc_max": 16,
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3247",
+    "b": "CS3230",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3247",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3230",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4212",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3247",
+    "b": "CS2102",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3230",
+    "sem": 6,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS4212",
+    "b": "CS3230",
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS3230"
+  ],
+  "unsupported": [
+   "at most two modules with final exams in a semester"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 8,
+  "plan": {
+   "5": [
+    "CS2104",
+    "CS3241"
+   ],
+   "6": [
+    "CS3247"
+   ],
+   "7": [
+    "CS3230"
+   ],
+   "8": [
+    "CS2102",
+    "CS4212"
+   ]
+  },
+  "mc_per_semester": {
+   "5": 8,
+   "6": 4,
+   "7": 4,
+   "8": 8
+  },
+  "preferences_met": [
+   "CS3247 before CS2102",
+   "CS3230 as early as possible"
+  ],
+  "preferences_not_met": [
+   "CS3230 in semester 6",
+   "CS4212 before CS3230"
+  ],
+  "added_prerequisites": [
+   "CS2104",
+   "CS3241"
+  ],
+  "not_applied": [
+   "at most two modules with final exams in a semester"
+  ]
+ }
+}

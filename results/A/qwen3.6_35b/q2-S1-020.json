@@ -1,0 +1,49 @@
+{
+ "id": "q2-S1-020",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 5.76,
+ "usage": {
+  "prompt_tokens": 9428,
+  "total_tokens": 9716,
+  "completion_tokens": 288,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 5.76,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"2\": [\n      \"CS2030S\",\n      \"CS2040S\",\n      \"CS2100\",\n      \"CS2105\"\n    ],\n    \"3\": [\n      \"CS2103T\",\n      \"CS3230\"\n    ],\n    \"4\": [\n      \"CS3227\",\n      \"CS3235\",\n      \"CS3281\"\n    ],\n    \"7\": [\n      \"CS2103T\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2105 is taken in Sem 2 to satisfy the prerequisite for CS3230 in Sem 3.\",\n    \"CS3230 is taken in Sem 3 to allow CS3235 (prereq: CS3230) in Sem 4, satisfying the Y4S1 requirement.\",\n    \"CS2103T is planned in Sem 2 and Sem 7 to meet the soft wish for Sem 7, while CS3281 is taken in Sem 4 before CS2103T in Sem 7.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "2": [
+    "CS2030S",
+    "CS2040S",
+    "CS2100",
+    "CS2105"
+   ],
+   "3": [
+    "CS2103T",
+    "CS3230"
+   ],
+   "4": [
+    "CS3227",
+    "CS3235",
+    "CS3281"
+   ],
+   "7": [
+    "CS2103T"
+   ]
+  },
+  "reasons": [
+   "CS2105 is taken in Sem 2 to satisfy the prerequisite for CS3230 in Sem 3.",
+   "CS3230 is taken in Sem 3 to allow CS3235 (prereq: CS3230) in Sem 4, satisfying the Y4S1 requirement.",
+   "CS2103T is planned in Sem 2 and Sem 7 to meet the soft wish for Sem 7, while CS3281 is taken in Sem 4 before CS2103T in Sem 7."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 49152,
+ "workers": 4
+}

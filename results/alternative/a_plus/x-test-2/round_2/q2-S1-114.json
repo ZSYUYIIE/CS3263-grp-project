@@ -1,0 +1,51 @@
+{
+ "id": "q2-S1-114",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 2,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 60.76,
+ "usage": {
+  "prompt_tokens": 7841,
+  "total_tokens": 13416,
+  "completion_tokens": 5575,
+  "prompt_tokens_details": {
+   "cached_tokens": 4352,
+   "created_cache_tokens": 3456
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5436
+  },
+  "finish_reason": "stop",
+  "request_seconds": 60.76,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS2102\",\"CS4215\",\"CS2105\"],\"7\":[\"CS4225\"],\"8\":[\"CS4222\"]},\"reasons\":[\"CS2102 is in semester 6 so it precedes CS4225 in semester 7 and CS4222; CS4215 is also in semester 6 as required.\",\"CS2105 is added as the prerequisite for CS4222; CS4222 is only offered in Sem 2, so its earliest slot after CS2102 is semester 8.\",\"Total MC is 20, the minimum for the required courses plus the one prerequisite.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS2102",
+    "CS4215",
+    "CS2105"
+   ],
+   "7": [
+    "CS4225"
+   ],
+   "8": [
+    "CS4222"
+   ]
+  },
+  "reasons": [
+   "CS2102 is in semester 6 so it precedes CS4225 in semester 7 and CS4222; CS4215 is also in semester 6 as required.",
+   "CS2105 is added as the prerequisite for CS4222; CS4222 is only offered in Sem 2, so its earliest slot after CS2102 is semester 8.",
+   "Total MC is 20, the minimum for the required courses plus the one prerequisite."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

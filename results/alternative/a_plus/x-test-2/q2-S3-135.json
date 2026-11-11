@@ -1,0 +1,102 @@
+{
+ "id": "q2-S3-135",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 42.91,
+ "usage": {
+  "prompt_tokens": 8997,
+  "total_tokens": 13429,
+  "completion_tokens": 4432,
+  "prompt_tokens_details": {
+   "cached_tokens": 8704,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4281
+  },
+  "finish_reason": "stop",
+  "request_seconds": 42.91,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS2101\",\"CS3210\",\"CS2102\"],\"7\":[\"CS3237\",\"CS4223\"],\"8\":[\"ES2660\",\"CS4222\"]},\"reasons\":[\"CS3210 is added because CS4223 needs CS3210/CS3220/CG3207 and only CS3210 is feasible from the completed courses.\",\"CS2101 and CS3210 are placed in semester 6 so they are strictly before CS4223 in semester 7.\",\"ES2660 is in semester 8, CS2102 is not with it, and every used semester is 8-12 MC within the 16 MC limit.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS2101",
+    "CS3210",
+    "CS2102"
+   ],
+   "7": [
+    "CS3237",
+    "CS4223"
+   ],
+   "8": [
+    "ES2660",
+    "CS4222"
+   ]
+  },
+  "reasons": [
+   "CS3210 is added because CS4223 needs CS3210/CS3220/CG3207 and only CS3210 is feasible from the completed courses.",
+   "CS2101 and CS3210 are placed in semester 6 so they are strictly before CS4223 in semester 7.",
+   "ES2660 is in semester 8, CS2102 is not with it, and every used semester is 8-12 MC within the 16 MC limit."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS2101\",\"CS3210\",\"CS2102\"],\"7\":[\"CS3237\",\"CS4223\"],\"8\":[\"ES2660\",\"CS4222\"]},\"reasons\":[\"CS3210 is added because CS4223 needs CS3210/CS3220/CG3207 and only CS3210 is feasible from the completed courses.\",\"CS2101 and CS3210 are placed in semester 6 so they are strictly before CS4223 in semester 7.\",\"ES2660 is in semester 8, CS2102 is not with it, and every used semester is 8-12 MC within the 16 MC limit.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS2101",
+      "CS3210",
+      "CS2102"
+     ],
+     "7": [
+      "CS3237",
+      "CS4223"
+     ],
+     "8": [
+      "ES2660",
+      "CS4222"
+     ]
+    },
+    "reasons": [
+     "CS3210 is added because CS4223 needs CS3210/CS3220/CG3207 and only CS3210 is feasible from the completed courses.",
+     "CS2101 and CS3210 are placed in semester 6 so they are strictly before CS4223 in semester 7.",
+     "ES2660 is in semester 8, CS2102 is not with it, and every used semester is 8-12 MC within the 16 MC limit."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 8997,
+    "total_tokens": 13429,
+    "completion_tokens": 4432,
+    "prompt_tokens_details": {
+     "cached_tokens": 8704,
+     "created_cache_tokens": 256,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 4281
+    },
+    "finish_reason": "stop",
+    "request_seconds": 42.91,
+    "attempts": 1
+   },
+   "seconds": 42.91,
+   "violations": []
+  }
+ ]
+}

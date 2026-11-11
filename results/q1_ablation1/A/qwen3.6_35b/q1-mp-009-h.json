@@ -1,0 +1,29 @@
+{
+ "id": "q1-mp-009-h",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 6.82,
+ "usage": {
+  "prompt_tokens": 3399,
+  "total_tokens": 3799,
+  "completion_tokens": 400,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 6.82,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"ELIGIBLE\", \"reasons\": [\"MA3236 is open to BComp CS Hons and offered in Sem 1.\", \"Prerequisites for MA3236 are MA1505, MA1511, MA2104, or MA2311. None of these are completed, but the student has completed MA1513 (Linear Algebra with Differential Equations) and MA1512 (Differential Equations for Engineering). However, strictly speaking, MA1513 and MA1512 are NOT listed as prerequisites for MA3236. The prerequisites are MA1505, MA1511, MA2104, MA2311. The student has NOT completed any of these. Therefore, the student is NOT eligible.\"]}\n\nWait, let me re-read the prerequisite for MA3236.\nPrerequisite: MA1505 or MA1511 or MA2104 or MA2311.\nCompleted courses: CS2111, MA1512, CS2100HS, CS1010HS, ES2660, MA1513, CS1231S, IS1108, CS2106, ESP2111, ESP1111.\nNone of the completed courses are MA1505, MA1511, MA2104, or MA2311.\nTherefore, the prerequisite is NOT satisfied.\n\nCorrection:\n{\"status\": \"NOT_ELIGIBLE\", \"reasons\": [\"MA3236 requires MA1505, MA1511, MA2104, or MA2311.\", \"The student has not completed any of these prerequisite courses.\"]}",
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "reasons": [
+   "MA3236 requires MA1505, MA1511, MA2104, or MA2311.",
+   "The student has not completed any of these prerequisite courses."
+  ]
+ },
+ "fenced": true,
+ "repair": "last_of_several",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 4,
+ "ablation": 1
+}

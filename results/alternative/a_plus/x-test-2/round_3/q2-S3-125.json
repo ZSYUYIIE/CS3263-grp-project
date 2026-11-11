@@ -1,0 +1,57 @@
+{
+ "id": "q2-S3-125",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 102.19,
+ "usage": {
+  "prompt_tokens": 8159,
+  "total_tokens": 18285,
+  "completion_tokens": 10126,
+  "prompt_tokens_details": {
+   "cached_tokens": 7936,
+   "created_cache_tokens": 128
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 9965
+  },
+  "finish_reason": "stop",
+  "request_seconds": 102.19,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"4\":[\"ST2334\",\"CS2107\",\"CS3230\",\"CS3233\"],\"5\":[\"CS2104\",\"CS4236\",\"CS2105\",\"CS2109S\"],\"8\":[\"CS4212\",\"CS4222\",\"CS3219\"]},\"reasons\":[\"Total is 44 MC, the minimum: all requested courses plus CS2104 and CS2107 as required prerequisites.\",\"CS3230 is placed in semester 4, and CS2109S is in a different semester.\",\"CS3219 cannot be in Y4S1 because it must share a semester with CS4222, which is offered only in Sem 2; both are in semester 8 with CS4212.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "ST2334",
+    "CS2107",
+    "CS3230",
+    "CS3233"
+   ],
+   "5": [
+    "CS2104",
+    "CS4236",
+    "CS2105",
+    "CS2109S"
+   ],
+   "8": [
+    "CS4212",
+    "CS4222",
+    "CS3219"
+   ]
+  },
+  "reasons": [
+   "Total is 44 MC, the minimum: all requested courses plus CS2104 and CS2107 as required prerequisites.",
+   "CS3230 is placed in semester 4, and CS2109S is in a different semester.",
+   "CS3219 cannot be in Y4S1 because it must share a semester with CS4222, which is offered only in Sem 2; both are in semester 8 with CS4212."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

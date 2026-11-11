@@ -1,0 +1,90 @@
+{
+ "id": "q2-S2-012",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 8.39,
+ "solver_seconds": 0.189,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3168,
+  "total_tokens": 3646,
+  "completion_tokens": 478,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 8.2,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"current_sem\": 4,\n  \"programme\": \"BComp CS Hons\",\n  \"completed\": [\n    \"CS2040S\",\n    \"ES2660\",\n    \"CS2030S\",\n    \"CS2100\",\n    \"CS2103T\",\n    \"ST2334\",\n    \"MA1522\",\n    \"CS2101\",\n    \"CS1101S\",\n    \"CS1231S\",\n    \"MA1521\"\n  ],\n  \"must_take\": [\n    \"CS2106\",\n    \"CS3231\",\n    \"CS3219\",\n    \"CS3230\",\n    \"CS3282\",\n    \"CS3240\",\n    \"CS2102\",\n    \"CS4246\",\n    \"CS2105\",\n    \"CS3210\",\n    \"IS1108\",\n    \"CS2109S\"\n  ],\n  \"mc_max\": 12,\n  \"sem_caps\": {\n    \"8\": 3\n  },\n  \"objective\": \"min_total_mc\",\n  \"early\": [\n    \"CS3240\",\n    \"CS4246\"\n  ],\n  \"rules\": [\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS2106\",\n      \"b\": \"CS3231\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS2106\",\n      \"b\": \"CS3282\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS3210\",\n      \"b\": \"CS2106\",\n      \"strength\": \"must\"\n    }\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "CS2040S",
+   "ES2660",
+   "CS2030S",
+   "CS2100",
+   "CS2103T",
+   "ST2334",
+   "MA1522",
+   "CS2101",
+   "CS1101S",
+   "CS1231S",
+   "MA1521"
+  ],
+  "must_take": [
+   "CS2106",
+   "CS3231",
+   "CS3219",
+   "CS3230",
+   "CS3282",
+   "CS3240",
+   "CS2102",
+   "CS4246",
+   "CS2105",
+   "CS3210",
+   "IS1108",
+   "CS2109S"
+  ],
+  "mc_max": 12,
+  "sem_caps": {
+   "8": 3
+  },
+  "objective": "min_total_mc",
+  "early": [
+   "CS3240",
+   "CS4246"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS2106",
+    "b": "CS3231",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS2106",
+    "b": "CS3282",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3210",
+    "b": "CS2106",
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the prerequisites of CS3282; the MC limits (at most 12 MC per semester; semester 8 at most 3 MC)"
+  ]
+ }
+}

@@ -1,0 +1,63 @@
+{
+ "id": "q2-S3-050",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 80.16,
+ "usage": {
+  "prompt_tokens": 10351,
+  "total_tokens": 18295,
+  "completion_tokens": 7944,
+  "prompt_tokens_details": {
+   "cached_tokens": 10112,
+   "created_cache_tokens": 128
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 7745
+  },
+  "finish_reason": "stop",
+  "request_seconds": 80.16,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"4\":[\"CS2111\",\"CS2109S\",\"CS3281\",\"CS3210\"],\"5\":[\"CS3240\",\"CS3263\",\"CS3231\",\"CS2105\"],\"6\":[\"CS4246\",\"CS3282\",\"CS2102\",\"IS1108\"],\"7\":[\"CS2106\",\"CS3219\",\"CS3230\"]},\"reasons\":[\"Added CS2111, CS3263 and CS3281 as the necessary prerequisites for CS3240, CS4246 and CS3282.\",\"CS3240 is in semester 5, its earliest possible term after CS2111; CS4246 is in semester 6, its earliest possible term after CS2109S and CS3263.\",\"CS3210 precedes CS2106; CS2106 is not in the same semester as CS3231 or CS3282; each semester is within 16 MC.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2111",
+    "CS2109S",
+    "CS3281",
+    "CS3210"
+   ],
+   "5": [
+    "CS3240",
+    "CS3263",
+    "CS3231",
+    "CS2105"
+   ],
+   "6": [
+    "CS4246",
+    "CS3282",
+    "CS2102",
+    "IS1108"
+   ],
+   "7": [
+    "CS2106",
+    "CS3219",
+    "CS3230"
+   ]
+  },
+  "reasons": [
+   "Added CS2111, CS3263 and CS3281 as the necessary prerequisites for CS3240, CS4246 and CS3282.",
+   "CS3240 is in semester 5, its earliest possible term after CS2111; CS4246 is in semester 6, its earliest possible term after CS2109S and CS3263.",
+   "CS3210 precedes CS2106; CS2106 is not in the same semester as CS3231 or CS3282; each semester is within 16 MC."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,51 @@
+{
+ "id": "q2-S1-010",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 7.1,
+ "usage": {
+  "prompt_tokens": 7558,
+  "total_tokens": 7876,
+  "completion_tokens": 318,
+  "finish_reason": "stop",
+  "request_seconds": 7.1,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"1\": [\n      \"CS1010\",\n      \"CS1231\"\n    ],\n    \"2\": [\n      \"CS2030\",\n      \"CS2040\"\n    ],\n    \"3\": [\n      \"CS2105\",\n      \"CS2109S\",\n      \"CS3240\"\n    ],\n    \"4\": [\n      \"CS3281\",\n      \"CS3282\"\n    ]\n  },\n  \"reasons\": [\n    \"CS1010 and CS1231 are taken in Y1S1 to satisfy prerequisites for later courses.\",\n    \"CS2030 and CS2040 are taken in Y1S2 to satisfy prerequisites for CS2105, CS2109S, and CS3240.\",\n    \"CS2105, CS2109S, and CS3240 are taken in Y2S1, satisfying the constraint that CS3240 is in Y2S1 and CS2105 is before CS3282.\",\n    \"CS3281 and CS3282 are taken in Y2S2, satisfying the prerequisite chain and the requirement that they are in the same semester.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1010",
+    "CS1231"
+   ],
+   "2": [
+    "CS2030",
+    "CS2040"
+   ],
+   "3": [
+    "CS2105",
+    "CS2109S",
+    "CS3240"
+   ],
+   "4": [
+    "CS3281",
+    "CS3282"
+   ]
+  },
+  "reasons": [
+   "CS1010 and CS1231 are taken in Y1S1 to satisfy prerequisites for later courses.",
+   "CS2030 and CS2040 are taken in Y1S2 to satisfy prerequisites for CS2105, CS2109S, and CS3240.",
+   "CS2105, CS2109S, and CS3240 are taken in Y2S1, satisfying the constraint that CS3240 is in Y2S1 and CS2105 is before CS3282.",
+   "CS3281 and CS3282 are taken in Y2S2, satisfying the prerequisite chain and the requirement that they are in the same semester."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

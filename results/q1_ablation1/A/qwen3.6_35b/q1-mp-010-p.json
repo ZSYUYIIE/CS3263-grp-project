@@ -1,0 +1,30 @@
+{
+ "id": "q1-mp-010-p",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 6.69,
+ "usage": {
+  "prompt_tokens": 6420,
+  "total_tokens": 6779,
+  "completion_tokens": 359,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 6.69,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"ELIGIBLE\",\n\"reasons\": [\n\"CS3103 is open to BComp CS Hons and offered in Sem 1.\",\n\"Prerequisite CS2105 is satisfied because CS2105 is mutually exclusive with EE4204, and the student has completed CS2040S which is a prerequisite for CS2105. Since CS2105 is mutually exclusive with EE4204 (which requires EE2012/EE2012A), and the student has not completed EE2012 or EE2012A, they are eligible for CS2105. More directly, CS3103's prerequisite is CS2105. The student has completed CS2040S. CS2105 requires CS2040S. Thus, the student has met the prerequisite for CS2105. However, CS3103 requires CS2105 to be completed. The student has NOT completed CS2105. Wait. Let's re-read carefully.\",\n\"CS3103 prerequisite: CS2105 or EE3204 or EE3204E or EE4204. The student has completed CS2040S. CS2040S is a prerequisite for CS2105, but CS2040S is NOT CS2105. The student has NOT completed CS2105, EE3204, EE3204E, or EE4204. Therefore, the prerequisite is NOT satisfied.\"\n]\n}",
+ "answer": {
+  "status": "ELIGIBLE",
+  "reasons": [
+   "CS3103 is open to BComp CS Hons and offered in Sem 1.",
+   "Prerequisite CS2105 is satisfied because CS2105 is mutually exclusive with EE4204, and the student has completed CS2040S which is a prerequisite for CS2105. Since CS2105 is mutually exclusive with EE4204 (which requires EE2012/EE2012A), and the student has not completed EE2012 or EE2012A, they are eligible for CS2105. More directly, CS3103's prerequisite is CS2105. The student has completed CS2040S. CS2105 requires CS2040S. Thus, the student has met the prerequisite for CS2105. However, CS3103 requires CS2105 to be completed. The student has NOT completed CS2105. Wait. Let's re-read carefully.",
+   "CS3103 prerequisite: CS2105 or EE3204 or EE3204E or EE4204. The student has completed CS2040S. CS2040S is a prerequisite for CS2105, but CS2040S is NOT CS2105. The student has NOT completed CS2105, EE3204, EE3204E, or EE4204. Therefore, the prerequisite is NOT satisfied."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 4,
+ "ablation": 1
+}

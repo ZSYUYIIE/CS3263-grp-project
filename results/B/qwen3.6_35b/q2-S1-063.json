@@ -1,0 +1,96 @@
+{
+ "id": "q2-S1-063",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.51,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3083,
+  "total_tokens": 3494,
+  "completion_tokens": 411,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 7.51,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 3,\n\"completed\": [\n\"MA1522\",\n\"CS2040S\",\n\"ES2660\",\n\"CS1231S\",\n\"CS1101S\",\n\"MA1521\",\n\"CS2030S\"\n],\n\"must_take\": [\n\"CS2102\",\n\"CS4278\",\n\"CS4218\",\n\"CS4234\"\n],\n\"mc_max\": 12,\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS2102\",\n\"b\": \"CS4278\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2102\",\n\"sem\": 6,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4218\",\n\"sem\": 6,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4234\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4218\",\n\"b\": \"CS4234\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2102\",\n\"b\": \"CS4234\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"after\",\n\"a\": \"CS4278\",\n\"b\": \"CS4234\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "completed": [
+   "MA1522",
+   "CS2040S",
+   "ES2660",
+   "CS1231S",
+   "CS1101S",
+   "MA1521",
+   "CS2030S"
+  ],
+  "must_take": [
+   "CS2102",
+   "CS4278",
+   "CS4218",
+   "CS4234"
+  ],
+  "mc_max": 12,
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2102",
+    "b": "CS4278",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4218",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4234",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4218",
+    "b": "CS4234",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS2102",
+    "b": "CS4234",
+    "strength": "prefer"
+   },
+   {
+    "type": "after",
+    "a": "CS4278",
+    "b": "CS4234",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [
+  "rules[6].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'after'"
+ ],
+ "answer": {
+  "status": "INVALID_SPEC",
+  "errors": [
+   "rules[6].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'after'"
+  ]
+ }
+}

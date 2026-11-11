@@ -1,0 +1,84 @@
+{
+ "id": "q2-S6-026",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.01,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3052,
+  "total_tokens": 3372,
+  "completion_tokens": 320,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.01,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 6,\n\"must_take\": [\n\"CS3103\",\n\"CS4246\",\n\"CS4238\",\n\"IS1108\",\n\"CS2102\",\n\"CS3235\",\n\"CS3240\",\n\"CS3234\",\n\"CS4240\"\n],\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4240\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS2102\",\n\"b\": \"CS3234\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3240\",\n\"b\": \"CS4238\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3235\",\n\"b\": \"CS2102\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS3103\",\n\"b\": \"CS4240\",\n\"strength\": \"prefer\"\n}\n],\n\"early\": [\n\"CS3240\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 6,
+  "must_take": [
+   "CS3103",
+   "CS4246",
+   "CS4238",
+   "IS1108",
+   "CS2102",
+   "CS3235",
+   "CS3240",
+   "CS3234",
+   "CS4240"
+  ],
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS4240",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS2102",
+    "b": "CS3234",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3240",
+    "b": "CS4238",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3235",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3103",
+    "b": "CS4240",
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS3240"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "MISSING_INFO",
+  "missing": [
+   "completed"
+  ],
+  "message": "This cannot be answered yet. Please give: the courses you have already completed (say so if there are none)."
+ }
+}

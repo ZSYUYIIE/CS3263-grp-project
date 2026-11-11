@@ -1,0 +1,44 @@
+{
+ "id": "q2-S3-221",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 4.1,
+ "usage": {
+  "prompt_tokens": 8423,
+  "total_tokens": 8608,
+  "completion_tokens": 185,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 4.1,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2102\",\n\"CS3219\"\n],\n\"7\": [\n\"CS2105\",\n\"CS4236\"\n]\n},\n\"reasons\": [\n\"Completed prerequisites for all planned courses are satisfied.\",\n\"CS2102 and CS3219 are taken in Sem 5 to satisfy prerequisites for later courses.\",\n\"CS2105, CS4236, and CS3219 are grouped in Sem 7 to meet the constraint that CS2105 and CS4236 are in the same semester, and CS3219 and CS4236 are in the same semester, while minimizing total credits by avoiding unnecessary early takes.\"\n]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS3219"
+   ],
+   "7": [
+    "CS2105",
+    "CS4236"
+   ]
+  },
+  "reasons": [
+   "Completed prerequisites for all planned courses are satisfied.",
+   "CS2102 and CS3219 are taken in Sem 5 to satisfy prerequisites for later courses.",
+   "CS2105, CS4236, and CS3219 are grouped in Sem 7 to meet the constraint that CS2105 and CS4236 are in the same semester, and CS3219 and CS4236 are in the same semester, while minimizing total credits by avoiding unnecessary early takes."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

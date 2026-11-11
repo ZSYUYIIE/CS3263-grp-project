@@ -1,0 +1,86 @@
+{
+ "id": "q2-S3-248",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 5.28,
+ "solver_seconds": 0.032,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3044,
+  "total_tokens": 3280,
+  "completion_tokens": 236,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 5.25,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 3,\n\"completed\": [\n\"ES2660\",\n\"CS1101S\",\n\"MA1521\",\n\"CS1231S\",\n\"MA1522\",\n\"CS2040S\",\n\"IS1108\",\n\"CS2030S\"\n],\n\"must_take\": [\n\"CS2109S\",\n\"CS2105\",\n\"CS3230\",\n\"CS2101\",\n\"ST2334\",\n\"CS2100\"\n],\n\"mc_max\": 16,\n\"sem_caps\": {\n\"5\": 0\n},\n\"early\": [\n\"CS2101\"\n],\n\"rules\": [\n{\n\"type\": \"apart\",\n\"a\": \"ST2334\",\n\"b\": \"CS2109S\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "completed": [
+   "ES2660",
+   "CS1101S",
+   "MA1521",
+   "CS1231S",
+   "MA1522",
+   "CS2040S",
+   "IS1108",
+   "CS2030S"
+  ],
+  "must_take": [
+   "CS2109S",
+   "CS2105",
+   "CS3230",
+   "CS2101",
+   "ST2334",
+   "CS2100"
+  ],
+  "mc_max": 16,
+  "sem_caps": {
+   "5": 0
+  },
+  "early": [
+   "CS2101"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "ST2334",
+    "b": "CS2109S",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 4,
+  "plan": {
+   "3": [
+    "CS2101",
+    "ST2334"
+   ],
+   "4": [
+    "CS2100",
+    "CS2105",
+    "CS2109S",
+    "CS3230"
+   ]
+  },
+  "mc_per_semester": {
+   "3": 8,
+   "4": 16
+  },
+  "preferences_met": [
+   "ST2334 and CS2109S in different semesters",
+   "CS2101 as early as possible"
+  ],
+  "preferences_not_met": []
+ }
+}

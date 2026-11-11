@@ -1,0 +1,123 @@
+{
+ "id": "q2-S6-020",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "valid",
+ "seconds": 9.89,
+ "usage": {
+  "prompt_tokens": 7180,
+  "total_tokens": 7560,
+  "completion_tokens": 380,
+  "finish_reason": "stop",
+  "request_seconds": 9.89,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {},\n  \"reasons\": [\n    \"All courses listed in the records are either already completed by the student or have prerequisites that are not met by any remaining uncompleted courses (none exist).\",\n    \"The student has completed all core modules provided in the course records (CS1101S, CS1231S, CS2030S, CS2040S, CS2100, CS2101, CS2103T, ES2660, IS1108, MA1521, MA1522, ST2334).\",\n    \"No further courses are required or available to plan under the given constraints and records.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {},
+  "reasons": [
+   "All courses listed in the records are either already completed by the student or have prerequisites that are not met by any remaining uncompleted courses (none exist).",
+   "The student has completed all core modules provided in the course records (CS1101S, CS1231S, CS2030S, CS2040S, CS2100, CS2101, CS2103T, ES2660, IS1108, MA1521, MA1522, ST2334).",
+   "No further courses are required or available to plan under the given constraints and records."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"6\": [\"CS2030S\", \"CS2040S\", \"CS2100\", \"CS2101\", \"MA1521\", \"MA1522\", \"IS1108\", \"CS1231S\", \"ES2660\", \"ST2334\"], \"7\": [\"CS2103T\"], \"8\": []}, \"reasons\": [\"All completed courses are excluded from the plan. Prerequisites for CS2103T (CS2030S, CS2040S) are planned in Sem 6. MC per semester respects the 12 MC limit (Sem 6 has 0 new MC as all are completed, Sem 7 has 4 MC). No other courses are required or available in the records for a single major BComp CS Hons student beyond these core modules.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS2030S",
+      "CS2040S",
+      "CS2100",
+      "CS2101",
+      "MA1521",
+      "MA1522",
+      "IS1108",
+      "CS1231S",
+      "ES2660",
+      "ST2334"
+     ],
+     "7": [
+      "CS2103T"
+     ],
+     "8": []
+    },
+    "reasons": [
+     "All completed courses are excluded from the plan. Prerequisites for CS2103T (CS2030S, CS2040S) are planned in Sem 6. MC per semester respects the 12 MC limit (Sem 6 has 0 new MC as all are completed, Sem 7 has 4 MC). No other courses are required or available in the records for a single major BComp CS Hons student beyond these core modules."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 3302,
+    "total_tokens": 3507,
+    "completion_tokens": 205,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.77,
+    "attempts": 1
+   },
+   "seconds": 4.77,
+   "violations": [
+    "R1 CS1231S is already completed",
+    "R1 CS2030S is already completed",
+    "R1 CS2040S is already completed",
+    "R1 CS2100 is already completed",
+    "R1 CS2101 is already completed",
+    "R1 CS2103T is already completed",
+    "R1 ES2660 is already completed",
+    "R1 IS1108 is already completed",
+    "R1 MA1521 is already completed",
+    "R1 MA1522 is already completed",
+    "R1 ST2334 is already completed",
+    "R7 semester 6 has 40 MC, limit 12",
+    "R10 CS2100 was added but no later planned course needs it",
+    "R10 CS2101 was added but no later planned course needs it",
+    "R10 MA1521 was added but no later planned course needs it",
+    "R10 MA1522 was added but no later planned course needs it",
+    "R10 IS1108 was added but no later planned course needs it",
+    "R10 CS1231S was added but no later planned course needs it",
+    "R10 ES2660 was added but no later planned course needs it",
+    "R10 ST2334 was added but no later planned course needs it",
+    "R10 CS2103T was added but no later planned course needs it"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {},\n  \"reasons\": [\n    \"All courses listed in the records are either already completed by the student or have prerequisites that are not met by any remaining uncompleted courses (none exist).\",\n    \"The student has completed all core modules provided in the course records (CS1101S, CS1231S, CS2030S, CS2040S, CS2100, CS2101, CS2103T, ES2660, IS1108, MA1521, MA1522, ST2334).\",\n    \"No further courses are required or available to plan under the given constraints and records.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {},
+    "reasons": [
+     "All courses listed in the records are either already completed by the student or have prerequisites that are not met by any remaining uncompleted courses (none exist).",
+     "The student has completed all core modules provided in the course records (CS1101S, CS1231S, CS2030S, CS2040S, CS2100, CS2101, CS2103T, ES2660, IS1108, MA1521, MA1522, ST2334).",
+     "No further courses are required or available to plan under the given constraints and records."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 3878,
+    "total_tokens": 4053,
+    "completion_tokens": 175,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.12,
+    "attempts": 1
+   },
+   "seconds": 5.12,
+   "violations": []
+  }
+ ]
+}

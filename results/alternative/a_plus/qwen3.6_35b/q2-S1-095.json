@@ -1,0 +1,166 @@
+{
+ "id": "q2-S1-095",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 14.96,
+ "usage": {
+  "prompt_tokens": 39382,
+  "total_tokens": 40029,
+  "completion_tokens": 647,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 14.96,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS3247 requires CS3241 which is not in the required list and not completed.\",\n\"CS4262 requires (CS2106 or CG2271) and (CS3244 or CS3264 or CG3201), none of which are in the required list or completed.\",\n\"CS4277 requires MA2001 or MA1522 etc. MA1522 is completed. CS2040S is completed. Prerequisites met.\"\n]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3247 requires CS3241 which is not in the required list and not completed.",
+   "CS4262 requires (CS2106 or CG2271) and (CS3244 or CS3264 or CG3201), none of which are in the required list or completed.",
+   "CS4277 requires MA2001 or MA1522 etc. MA1522 is completed. CS2040S is completed. Prerequisites met."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"3\": [\"CS2103T\", \"CS2105\"], \"4\": [\"CS2102\", \"CS3230\", \"ST2334\"], \"5\": [\"CS2101\", \"CS3219\"], \"6\": [\"CS3247\", \"CS4262\", \"CS4277\"]}, \"reasons\": [\"All prerequisites satisfied. CS2103T and CS2105 taken in Sem 3 as required. CS2101 and ST2334 separated. CS3219 before CS2101. CS4277 and CS4262 in different semesters. CS4277 as late as possible (Sem 6). ST2334 as late as possible (Sem 4, constrained by prerequisites and separation from CS2101). Exchange in Sem 8 means no courses then. Graduation in Sem 6.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2103T",
+      "CS2105"
+     ],
+     "4": [
+      "CS2102",
+      "CS3230",
+      "ST2334"
+     ],
+     "5": [
+      "CS2101",
+      "CS3219"
+     ],
+     "6": [
+      "CS3247",
+      "CS4262",
+      "CS4277"
+     ]
+    },
+    "reasons": [
+     "All prerequisites satisfied. CS2103T and CS2105 taken in Sem 3 as required. CS2101 and ST2334 separated. CS3219 before CS2101. CS4277 and CS4262 in different semesters. CS4277 as late as possible (Sem 6). ST2334 as late as possible (Sem 4, constrained by prerequisites and separation from CS2101). Exchange in Sem 8 means no courses then. Graduation in Sem 6."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12847,
+    "total_tokens": 13069,
+    "completion_tokens": 222,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 5.01,
+    "attempts": 1
+   },
+   "seconds": 5.01,
+   "violations": [
+    "R4 CS3247 in semester 6: prerequisite not met (CS3241)",
+    "R4 CS4262 in semester 6: prerequisite not met ((CS2106 or CG2271) and (CS3244 or CS3264 or CG3201))",
+    "R9 must rule not met: CS2103T in semester 5",
+    "R9 must rule not met: CS2105 in semester 5"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"3\": [\n\"CS2103T\",\n\"CS2105\"\n],\n\"4\": [\n\"CS2102\",\n\"CS3230\",\n\"ST2334\"\n],\n\"5\": [\n\"CS2101\",\n\"CS3219\"\n],\n\"6\": [\n\"CS4262\",\n\"CS4277\"\n],\n\"7\": [\n\"CS3247\"\n]\n},\n\"reasons\": [\n\"CS2103T and CS2105 taken in Sem 3 as required.\",\n\"CS3247 requires CS3241 which is not in the required list; cannot be planned.\",\n\"CS4262 requires CS2106/CG2271 and CS3244/CS3264/CG3201 which are not in the required list; cannot be planned.\",\n\"CS4277 requires MA2001/MA1522 etc and CS2040 etc. MA1522 is completed. CS2040S is completed. Prerequisites met.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2103T",
+      "CS2105"
+     ],
+     "4": [
+      "CS2102",
+      "CS3230",
+      "ST2334"
+     ],
+     "5": [
+      "CS2101",
+      "CS3219"
+     ],
+     "6": [
+      "CS4262",
+      "CS4277"
+     ],
+     "7": [
+      "CS3247"
+     ]
+    },
+    "reasons": [
+     "CS2103T and CS2105 taken in Sem 3 as required.",
+     "CS3247 requires CS3241 which is not in the required list; cannot be planned.",
+     "CS4262 requires CS2106/CG2271 and CS3244/CS3264/CG3201 which are not in the required list; cannot be planned.",
+     "CS4277 requires MA2001/MA1522 etc and CS2040 etc. MA1522 is completed. CS2040S is completed. Prerequisites met."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 13225,
+    "total_tokens": 13512,
+    "completion_tokens": 287,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 6.25,
+    "attempts": 1
+   },
+   "seconds": 6.25,
+   "violations": [
+    "R3 CS3247 not offered in Sem 1 (semester 7)",
+    "R4 CS3247 in semester 7: prerequisite not met (CS3241)",
+    "R4 CS4262 in semester 6: prerequisite not met ((CS2106 or CG2271) and (CS3244 or CS3264 or CG3201))",
+    "R9 must rule not met: CS2103T in semester 5",
+    "R9 must rule not met: CS2105 in semester 5"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS3247 requires CS3241 which is not in the required list and not completed.\",\n\"CS4262 requires (CS2106 or CG2271) and (CS3244 or CS3264 or CG3201), none of which are in the required list or completed.\",\n\"CS4277 requires MA2001 or MA1522 etc. MA1522 is completed. CS2040S is completed. Prerequisites met.\"\n]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3247 requires CS3241 which is not in the required list and not completed.",
+     "CS4262 requires (CS2106 or CG2271) and (CS3244 or CS3264 or CG3201), none of which are in the required list or completed.",
+     "CS4277 requires MA2001 or MA1522 etc. MA1522 is completed. CS2040S is completed. Prerequisites met."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 13310,
+    "total_tokens": 13448,
+    "completion_tokens": 138,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.7,
+    "attempts": 1
+   },
+   "seconds": 3.7,
+   "violations": null
+  }
+ ]
+}

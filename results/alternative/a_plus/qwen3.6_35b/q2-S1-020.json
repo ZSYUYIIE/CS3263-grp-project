@@ -1,0 +1,117 @@
+{
+ "id": "q2-S1-020",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 10.93,
+ "usage": {
+  "prompt_tokens": 19449,
+  "total_tokens": 19988,
+  "completion_tokens": 539,
+  "finish_reason": "stop",
+  "request_seconds": 10.93,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS2105 requires CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS or YSC2229. The student has not completed any of these, and they are not in the list of courses the student must take. Therefore, CS2105 cannot be taken.\",\n    \"CS3230 requires CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS or YSC2229. Since the student cannot take CS2105 (which depends on these), and the student has not completed them, CS3230 cannot be taken either.\",\n    \"CS3235 requires CS2105, CS2106/CG2271/YSC3217, and CS2107. Since CS2105 is impossible to take, CS3235 cannot be taken.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS2105 requires CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS or YSC2229. The student has not completed any of these, and they are not in the list of courses the student must take. Therefore, CS2105 cannot be taken.",
+   "CS3230 requires CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS or YSC2229. Since the student cannot take CS2105 (which depends on these), and the student has not completed them, CS3230 cannot be taken either.",
+   "CS3235 requires CS2105, CS2106/CG2271/YSC3217, and CS2107. Since CS2105 is impossible to take, CS3235 cannot be taken."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"2\": [\n      \"CS2030S\",\n      \"CS2040S\",\n      \"CS2100\",\n      \"CS2105\"\n    ],\n    \"3\": [\n      \"CS2103T\",\n      \"CS3230\"\n    ],\n    \"4\": [\n      \"CS3227\",\n      \"CS3235\",\n      \"CS3281\"\n    ],\n    \"7\": [\n      \"CS2103T\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2105 is taken in Sem 2 to satisfy the prerequisite for CS3230 in Sem 3.\",\n    \"CS3230 is taken in Sem 3 to allow CS3235 (prereq: CS3230) in Sem 4, satisfying the Y4S1 requirement.\",\n    \"CS2103T is planned in Sem 2 and Sem 7 to meet the soft wish for Sem 7, while CS3281 is taken in Sem 4 before CS2103T in Sem 7.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "2": [
+      "CS2030S",
+      "CS2040S",
+      "CS2100",
+      "CS2105"
+     ],
+     "3": [
+      "CS2103T",
+      "CS3230"
+     ],
+     "4": [
+      "CS3227",
+      "CS3235",
+      "CS3281"
+     ],
+     "7": [
+      "CS2103T"
+     ]
+    },
+    "reasons": [
+     "CS2105 is taken in Sem 2 to satisfy the prerequisite for CS3230 in Sem 3.",
+     "CS3230 is taken in Sem 3 to allow CS3235 (prereq: CS3230) in Sem 4, satisfying the Y4S1 requirement.",
+     "CS2103T is planned in Sem 2 and Sem 7 to meet the soft wish for Sem 7, while CS3281 is taken in Sem 4 before CS2103T in Sem 7."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9428,
+    "total_tokens": 9716,
+    "completion_tokens": 288,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.76,
+    "attempts": 1
+   },
+   "seconds": 5.76,
+   "violations": [
+    "R1 CS2103T planned twice",
+    "R4 CS2105 in semester 2: prerequisite not met (YSC2229 or CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS)",
+    "R4 CS3227 in semester 4: prerequisite not met (CS2103 or CS2103T or CS2113 or CS2103DE)",
+    "R4 CS3235 in semester 4: prerequisite not met ((CS2105 or EE3204 or EE4204) and (CS2106 or YSC3217 or CG2271) and CS2107)",
+    "R4 CS3281 in semester 4: prerequisite not met (CS2103 or CS2103T or CS2103DE or CS2113)",
+    "R9 must rule not met: CS3235 in semester 7",
+    "R10 CS2100 was added but no later planned course needs it"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS2105 requires CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS or YSC2229. The student has not completed any of these, and they are not in the list of courses the student must take. Therefore, CS2105 cannot be taken.\",\n    \"CS3230 requires CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS or YSC2229. Since the student cannot take CS2105 (which depends on these), and the student has not completed them, CS3230 cannot be taken either.\",\n    \"CS3235 requires CS2105, CS2106/CG2271/YSC3217, and CS2107. Since CS2105 is impossible to take, CS3235 cannot be taken.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS2105 requires CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS or YSC2229. The student has not completed any of these, and they are not in the list of courses the student must take. Therefore, CS2105 cannot be taken.",
+     "CS3230 requires CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS or YSC2229. Since the student cannot take CS2105 (which depends on these), and the student has not completed them, CS3230 cannot be taken either.",
+     "CS3235 requires CS2105, CS2106/CG2271/YSC3217, and CS2107. Since CS2105 is impossible to take, CS3235 cannot be taken."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10021,
+    "total_tokens": 10272,
+    "completion_tokens": 251,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 5.17,
+    "attempts": 1
+   },
+   "seconds": 5.17,
+   "violations": null
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "id": "q2-S3-029",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 19.62,
+ "usage": {
+  "prompt_tokens": 28421,
+  "total_tokens": 29689,
+  "completion_tokens": 1268,
+  "finish_reason": "stop",
+  "request_seconds": 19.62,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"4\": [\n      \"CS2102\",\n      \"CS2105\",\n      \"CS2106\",\n      \"CS3210\"\n    ],\n    \"5\": [\n      \"CP3880\"\n    ],\n    \"6\": [\n      \"CS2109S\",\n      \"CS3230\"\n    ],\n    \"7\": [\n      \"CS3219\",\n      \"ST2334\"\n    ]\n  },\n  \"reasons\": [\n    \"ATAP planned as CP3880 in Sem 5 (Y3S1) as requested. Prerequisites for all courses met by completed courses. CS3219 placed in Sem 7 to be before ST2334 in Sem 7? No, must be strictly before. ST2334 in Sem 7, CS3219 in Sem 7 is same semester. Rule: 'CS3219 must come before ST2334'. This implies Sem index of CS3219 < Sem index of ST2334. So CS3219 in 6, ST2334 in 7? But CS3230 and CS2109S are in 6. CS3219 prereq is CS2103T (done). ST2334 prereq is MA1521 (done). CS3219 and ST2334 can be in Sem 6? No, CS3219 must be before. So CS3219 in Sem 6, ST2334 in Sem 7. But Sem 6 has CS2109S and CS3230. Can we fit CS3219 in Sem 6? Yes, 4 courses in Sem 6 is 16 MC. Limit 20. So Sem 6: CS2109S, CS3230, CS3219. Sem 7: ST2334. This satisfies 'CS3219 before ST2334'. Also 'CS2109S and ST2334 not same semester'. CS2102 before CS2106: CS2102 in Sem 4, CS2106 in Sem 4. Same semester. Rule: 'Ideally I'd take CS2102 before CS2106'. This is a soft wish. 'Before' usually means strictly earlier semester. If so, CS2102 in Sem 4, CS2106 in Sem 5? But Sem 5 is ATAP (0 MC other courses). So CS2106 must be Sem 6 or later. If CS2106 in Sem 6, CS2102 in Sem 4 is before. This works. Let's re-verify Sem 4: CS2102, CS2105, CS2106, CS3210. All prereqs met. Sem 5: CP3880. Sem 6: CS2109S, CS3230, CS3219. Sem 7: ST2334. CS3219 (Sem 6) before ST2334 (Sem 7). CS2109S (Sem 6) not with ST2334 (Sem 7). CS2102 (Sem 4) before CS2106 (Sem 4)? No, same semester. If 'before' means strictly earlier, this fails the soft wish. Can we move CS2106 to Sem 6? Sem 6 has 3 courses (12 MC). Add CS2106 (4 MC) = 16 MC. OK. Then Sem 4: CS2102, CS2105, CS3210. Sem 6: CS2109S, CS3230, CS3219, CS2106. This satisfies soft wish. Is there a hard rule violation? No. So this plan is better for soft wishes. But wait, 'CS3219 as early as possible'. In previous plan it was Sem 7. Here it is Sem 6. So this is better for step 3 and step 1 (same last semester 7). So I will use this plan.\",\n    \"Soft wishes met: CS2102 before CS2106 (Sem 4 vs Sem 6). CS3219 as early as possible (Sem 6).\",\n    \"ATAP is CP3880, 12 MC, in Sem 5. Other courses in Sem 5: 0 MC. Total 12 MC. Limit 20. OK.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2102",
+    "CS2105",
+    "CS2106",
+    "CS3210"
+   ],
+   "5": [
+    "CP3880"
+   ],
+   "6": [
+    "CS2109S",
+    "CS3230"
+   ],
+   "7": [
+    "CS3219",
+    "ST2334"
+   ]
+  },
+  "reasons": [
+   "ATAP planned as CP3880 in Sem 5 (Y3S1) as requested. Prerequisites for all courses met by completed courses. CS3219 placed in Sem 7 to be before ST2334 in Sem 7? No, must be strictly before. ST2334 in Sem 7, CS3219 in Sem 7 is same semester. Rule: 'CS3219 must come before ST2334'. This implies Sem index of CS3219 < Sem index of ST2334. So CS3219 in 6, ST2334 in 7? But CS3230 and CS2109S are in 6. CS3219 prereq is CS2103T (done). ST2334 prereq is MA1521 (done). CS3219 and ST2334 can be in Sem 6? No, CS3219 must be before. So CS3219 in Sem 6, ST2334 in Sem 7. But Sem 6 has CS2109S and CS3230. Can we fit CS3219 in Sem 6? Yes, 4 courses in Sem 6 is 16 MC. Limit 20. So Sem 6: CS2109S, CS3230, CS3219. Sem 7: ST2334. This satisfies 'CS3219 before ST2334'. Also 'CS2109S and ST2334 not same semester'. CS2102 before CS2106: CS2102 in Sem 4, CS2106 in Sem 4. Same semester. Rule: 'Ideally I'd take CS2102 before CS2106'. This is a soft wish. 'Before' usually means strictly earlier semester. If so, CS2102 in Sem 4, CS2106 in Sem 5? But Sem 5 is ATAP (0 MC other courses). So CS2106 must be Sem 6 or later. If CS2106 in Sem 6, CS2102 in Sem 4 is before. This works. Let's re-verify Sem 4: CS2102, CS2105, CS2106, CS3210. All prereqs met. Sem 5: CP3880. Sem 6: CS2109S, CS3230, CS3219. Sem 7: ST2334. CS3219 (Sem 6) before ST2334 (Sem 7). CS2109S (Sem 6) not with ST2334 (Sem 7). CS2102 (Sem 4) before CS2106 (Sem 4)? No, same semester. If 'before' means strictly earlier, this fails the soft wish. Can we move CS2106 to Sem 6? Sem 6 has 3 courses (12 MC). Add CS2106 (4 MC) = 16 MC. OK. Then Sem 4: CS2102, CS2105, CS3210. Sem 6: CS2109S, CS3230, CS3219, CS2106. This satisfies soft wish. Is there a hard rule violation? No. So this plan is better for soft wishes. But wait, 'CS3219 as early as possible'. In previous plan it was Sem 7. Here it is Sem 6. So this is better for step 3 and step 1 (same last semester 7). So I will use this plan.",
+   "Soft wishes met: CS2102 before CS2106 (Sem 4 vs Sem 6). CS3219 as early as possible (Sem 6).",
+   "ATAP is CP3880, 12 MC, in Sem 5. Other courses in Sem 5: 0 MC. Total 12 MC. Limit 20. OK."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

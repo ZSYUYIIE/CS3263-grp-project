@@ -1,0 +1,42 @@
+{
+ "id": "q2-S1-073",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 5.5,
+ "usage": {
+  "prompt_tokens": 6768,
+  "total_tokens": 7037,
+  "completion_tokens": 269,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 5.5,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2101\",\n      \"CS2100\",\n      \"CS2105\",\n      \"CS3230\"\n    ],\n    \"4\": [\n      \"CS2109S\",\n      \"ST2334\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2101, CS2100, CS2105, CS3230, CS2109S, ST2334 are all eligible and prerequisites are met.\",\n    \"CS2105 and CS3230 are placed together in Sem 4 as required, but moved to Sem 3 to allow CS2101 as early as possible.\",\n    \"CS2101 is placed in Sem 3 (earliest). CS2109S is in Sem 4, keeping it apart from CS2101 and CS2105/CS3230.\",\n    \"Sem 5 is left empty for leave of absence. Max 4 modules per semester constraint is respected.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2101",
+    "CS2100",
+    "CS2105",
+    "CS3230"
+   ],
+   "4": [
+    "CS2109S",
+    "ST2334"
+   ]
+  },
+  "reasons": [
+   "CS2101, CS2100, CS2105, CS3230, CS2109S, ST2334 are all eligible and prerequisites are met.",
+   "CS2105 and CS3230 are placed together in Sem 4 as required, but moved to Sem 3 to allow CS2101 as early as possible.",
+   "CS2101 is placed in Sem 3 (earliest). CS2109S is in Sem 4, keeping it apart from CS2101 and CS2105/CS3230.",
+   "Sem 5 is left empty for leave of absence. Max 4 modules per semester constraint is respected."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

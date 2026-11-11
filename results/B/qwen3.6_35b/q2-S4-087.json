@@ -1,0 +1,86 @@
+{
+ "id": "q2-S4-087",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 4.75,
+ "solver_seconds": 0.0,
+ "max_tokens": 49152,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 3073,
+  "total_tokens": 3411,
+  "completion_tokens": 338,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 4.75,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 3,\n\"completed\": [\n\"IS1108\",\n\"MA1521\",\n\"MA1522\",\n\"ES2660\",\n\"CS3243\",\n\"CS1101S\",\n\"CS2030S\",\n\"CS1231S\",\n\"CS2040S\"\n],\n\"must_take\": [\n\"CS2103T\",\n\"CS4262\",\n\"CS3211\",\n\"CS2109S\",\n\"CS3237\"\n],\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3237\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4262\",\n\"b\": \"CS2103T\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3211\",\n\"sem\": 6,\n\"strength\": \"must\"\n},\n{\n\"type\": \"late\",\n\"course\": \"CS4262\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"late\",\n\"course\": \"CS2103T\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "completed": [
+   "IS1108",
+   "MA1521",
+   "MA1522",
+   "ES2660",
+   "CS3243",
+   "CS1101S",
+   "CS2030S",
+   "CS1231S",
+   "CS2040S"
+  ],
+  "must_take": [
+   "CS2103T",
+   "CS4262",
+   "CS3211",
+   "CS2109S",
+   "CS3237"
+  ],
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3237",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4262",
+    "b": "CS2103T",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3211",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "late",
+    "course": "CS4262",
+    "strength": "prefer"
+   },
+   {
+    "type": "late",
+    "course": "CS2103T",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [
+  "rules[3].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'",
+  "rules[4].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'"
+ ],
+ "answer": {
+  "status": "INVALID_SPEC",
+  "errors": [
+   "rules[3].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'",
+   "rules[4].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'"
+  ]
+ }
+}

@@ -1,0 +1,56 @@
+{
+ "id": "q1-mp-034-h",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 2.36,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2828,
+  "total_tokens": 2944,
+  "completion_tokens": 116,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 2.36,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\": \"eligible\", \"target\": \"ST4248\", \"current_sem\": 7, \"completed\": [\"CS2109S\", \"CS2040S\", \"MA1521\", \"CS2101\", \"CS1010E\", \"CS2104\", \"ES2660\", \"ST2334\", \"ST3131\", \"CS2102\", \"CS2030S\", \"CS1231S\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "ST4248",
+  "current_sem": 7,
+  "completed": [
+   "CS2109S",
+   "CS2040S",
+   "MA1521",
+   "CS2101",
+   "CS1010E",
+   "CS2104",
+   "ES2660",
+   "ST2334",
+   "ST3131",
+   "CS2102",
+   "CS2030S",
+   "CS1231S"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "ST4248",
+  "semester": 7,
+  "reasons": [
+   "not offered in semester 1 (offered: [2])",
+   "missing prerequisite: ST3248"
+  ],
+  "can_still_become_eligible": true
+ }
+}

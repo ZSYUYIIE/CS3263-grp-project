@@ -1,0 +1,70 @@
+{
+ "id": "q2-S6-046",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 13.14,
+ "solver_seconds": 0.001,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3041,
+  "total_tokens": 3283,
+  "completion_tokens": 242,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 13.13,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 1,\n\"programme\": \"BComp CS Hons\",\n\"completed\": [],\n\"must_take\": [\n\"IS1108\",\n\"MA1521\",\n\"CS5340\",\n\"CS4215\",\n\"CS3219\"\n],\n\"mc_max\": 16,\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"IS1108\",\n\"b\": \"MA1521\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"MA1521\",\n\"b\": \"CS3219\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3219\",\n\"sem\": 4,\n\"strength\": \"prefer\"\n}\n],\n\"early\": [\n\"MA1521\"\n],\n\"late\": [\n\"CS4215\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "programme": "BComp CS Hons",
+  "completed": [],
+  "must_take": [
+   "IS1108",
+   "MA1521",
+   "CS5340",
+   "CS4215",
+   "CS3219"
+  ],
+  "mc_max": 16,
+  "rules": [
+   {
+    "type": "before",
+    "a": "IS1108",
+    "b": "MA1521",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "MA1521",
+    "b": "CS3219",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3219",
+    "sem": 4,
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "MA1521"
+  ],
+  "late": [
+   "CS4215"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "OUT_OF_SCOPE",
+  "reasons": [
+   "course CS5340 (in must_take) is not in the catalogue"
+  ],
+  "message": "I can only plan for BComp (CS) Hons single-major students under AY2026/2027 rules, and this request is outside that (course CS5340 (in must_take) is not in the catalogue). Course rules differ by programme and aren't in my data for your case, so please check with your faculty or academic advisor."
+ }
+}

@@ -1,0 +1,56 @@
+{
+ "id": "q2-S4-244",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 41.16,
+ "usage": {
+  "prompt_tokens": 10219,
+  "total_tokens": 14723,
+  "completion_tokens": 4504,
+  "prompt_tokens_details": {
+   "cached_tokens": 9984,
+   "created_cache_tokens": 128
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4337
+  },
+  "finish_reason": "stop",
+  "request_seconds": 41.16,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS2111\",\"CS3211\",\"CS2102\"],\"7\":[\"CS3240\",\"CS3241\",\"CS3263\",\"IS1108\"],\"8\":[\"CS4240\",\"CS4231\",\"CS4246\"]},\"reasons\":[\"Earliest finish is semester 8 because CS4240 needs CS3240 (Sem 1 only), which needs CS2111 (Sem 2 only).\",\"Added only prerequisite courses CS2111, CS3240 and CS3263; all other listed courses are your must-takes.\",\"CS4231 and CS4240 are together in semester 8, CS4246 joins them, and IS1108 is in semester 7 so it is not with CS4231.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS2111",
+    "CS3211",
+    "CS2102"
+   ],
+   "7": [
+    "CS3240",
+    "CS3241",
+    "CS3263",
+    "IS1108"
+   ],
+   "8": [
+    "CS4240",
+    "CS4231",
+    "CS4246"
+   ]
+  },
+  "reasons": [
+   "Earliest finish is semester 8 because CS4240 needs CS3240 (Sem 1 only), which needs CS2111 (Sem 2 only).",
+   "Added only prerequisite courses CS2111, CS3240 and CS3263; all other listed courses are your must-takes.",
+   "CS4231 and CS4240 are together in semester 8, CS4246 joins them, and IS1108 is in semester 7 so it is not with CS4231."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

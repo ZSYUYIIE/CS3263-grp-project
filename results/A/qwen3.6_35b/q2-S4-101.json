@@ -1,0 +1,47 @@
+{
+ "id": "q2-S4-101",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 7.17,
+ "usage": {
+  "prompt_tokens": 10220,
+  "total_tokens": 10596,
+  "completion_tokens": 376,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.17,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2102\",\n      \"CS4222\"\n    ],\n    \"6\": [\n      \"CS4330\"\n    ],\n    \"7\": [\n      \"CS3264\"\n    ],\n    \"8\": [\n      \"CS2101\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2102 and CS4222 are planned in Sem 5 as they are mutually exclusive with no other constraints preventing this, satisfying the wish to take them together.\",\n    \"CS4330 is planned in Sem 6 after CS2220 is not required but CS2040S is completed; CS2220 is a prerequisite for CS4330. Wait, CS2220 is NOT completed. Let's re-check CS4330 prereq.\",\n    \"CS4330 prerequisite: (CS2040C or CS2040 or CS2040S or CS2040DE or CS2040HS) and (CS2220 or LSM2104 or LSM2241 or ZB2101). The student has completed CS2040S. The student has NOT completed CS2220, LSM2104, LSM2241, or ZB2101. Therefore, CS4330 cannot be taken until one of those bioinformatics modules is completed. The student did not list CS2220 as completed. This is a missing prerequisite.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS4222"
+   ],
+   "6": [
+    "CS4330"
+   ],
+   "7": [
+    "CS3264"
+   ],
+   "8": [
+    "CS2101"
+   ]
+  },
+  "reasons": [
+   "CS2102 and CS4222 are planned in Sem 5 as they are mutually exclusive with no other constraints preventing this, satisfying the wish to take them together.",
+   "CS4330 is planned in Sem 6 after CS2220 is not required but CS2040S is completed; CS2220 is a prerequisite for CS4330. Wait, CS2220 is NOT completed. Let's re-check CS4330 prereq.",
+   "CS4330 prerequisite: (CS2040C or CS2040 or CS2040S or CS2040DE or CS2040HS) and (CS2220 or LSM2104 or LSM2241 or ZB2101). The student has completed CS2040S. The student has NOT completed CS2220, LSM2104, LSM2241, or ZB2101. Therefore, CS4330 cannot be taken until one of those bioinformatics modules is completed. The student did not list CS2220 as completed. This is a missing prerequisite."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

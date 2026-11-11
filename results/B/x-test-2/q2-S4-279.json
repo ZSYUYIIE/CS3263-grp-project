@@ -1,0 +1,118 @@
+{
+ "id": "q2-S4-279",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 10.39,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2828,
+  "total_tokens": 4106,
+  "completion_tokens": 1278,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1051
+  },
+  "finish_reason": "stop",
+  "request_seconds": 10.39,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"completed\":[\"CS3219\",\"MA1522\",\"CS2109S\",\"ES2660\",\"MA1521\",\"CS3210\",\"ST2334\",\"CS1101S\",\"CS2103T\",\"CS2030S\",\"CS1231S\",\"CS2040S\",\"CS2106\",\"CS3230\",\"CS2102\",\"CS2105\",\"CS2100\"],\"current_sem\":7,\"must_take\":[\"CS2101\",\"CS4246\",\"IS1108\",\"CS3231\"],\"mc_max\":16,\"objective\":\"min_total_mc\",\"late\":[\"CS2101\"],\"rules\":[{\"type\":\"before\",\"a\":\"CS3231\",\"b\":\"CS2101\",\"strength\":\"must\"},{\"type\":\"apart\",\"a\":\"IS1108\",\"b\":\"CS3231\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS4246\",\"sem\":8,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS2101\",\"sem\":8,\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "completed": [
+   "CS3219",
+   "MA1522",
+   "CS2109S",
+   "ES2660",
+   "MA1521",
+   "CS3210",
+   "ST2334",
+   "CS1101S",
+   "CS2103T",
+   "CS2030S",
+   "CS1231S",
+   "CS2040S",
+   "CS2106",
+   "CS3230",
+   "CS2102",
+   "CS2105",
+   "CS2100"
+  ],
+  "current_sem": 7,
+  "must_take": [
+   "CS2101",
+   "CS4246",
+   "IS1108",
+   "CS3231"
+  ],
+  "mc_max": 16,
+  "objective": "min_total_mc",
+  "late": [
+   "CS2101"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3231",
+    "b": "CS2101",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "IS1108",
+    "b": "CS3231",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4246",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2101",
+    "sem": 8,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 8,
+  "plan": {
+   "7": [
+    "CS3231",
+    "CS3263"
+   ],
+   "8": [
+    "CS2101",
+    "CS4246",
+    "IS1108"
+   ]
+  },
+  "mc_per_semester": {
+   "7": 8,
+   "8": 12
+  },
+  "preferences_met": [
+   "CS2101 in semester 8",
+   "CS2101 as late as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS3263"
+  ]
+ }
+}

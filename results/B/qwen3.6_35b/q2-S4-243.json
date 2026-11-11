@@ -1,0 +1,92 @@
+{
+ "id": "q2-S4-243",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 16.64,
+ "solver_seconds": 0.076,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3164,
+  "total_tokens": 3592,
+  "completion_tokens": 428,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 16.56,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 6,\n\"completed\": [\n\"CS1231S\",\n\"CS2103T\",\n\"CS2030S\",\n\"CS3219\",\n\"ES2660\",\n\"ST2334\",\n\"CS3230\",\n\"MA1521\",\n\"CS2106\",\n\"CS2105\",\n\"MA1522\",\n\"CS1101S\",\n\"CS4226\",\n\"CS2100\",\n\"CS2109S\",\n\"CS2040S\",\n\"CS4277\",\n\"CS2101\"\n],\n\"must_take\": [\n\"CS3241\",\n\"IS1108\",\n\"CS4246\",\n\"CS2102\",\n\"CS4240\",\n\"CS4231\",\n\"CS3211\"\n],\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"apart\",\n\"a\": \"IS1108\",\n\"b\": \"CS4231\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4231\",\n\"b\": \"CS4240\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS4231\",\n\"b\": \"CS4240\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4246\",\n\"b\": \"CS4240\",\n\"strength\": \"prefer\"\n}\n],\n\"late\": [\n\"IS1108\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 6,
+  "completed": [
+   "CS1231S",
+   "CS2103T",
+   "CS2030S",
+   "CS3219",
+   "ES2660",
+   "ST2334",
+   "CS3230",
+   "MA1521",
+   "CS2106",
+   "CS2105",
+   "MA1522",
+   "CS1101S",
+   "CS4226",
+   "CS2100",
+   "CS2109S",
+   "CS2040S",
+   "CS4277",
+   "CS2101"
+  ],
+  "must_take": [
+   "CS3241",
+   "IS1108",
+   "CS4246",
+   "CS2102",
+   "CS4240",
+   "CS4231",
+   "CS3211"
+  ],
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "apart",
+    "a": "IS1108",
+    "b": "CS4231",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4231",
+    "b": "CS4240",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS4231",
+    "b": "CS4240",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4246",
+    "b": "CS4240",
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "IS1108"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS4231 and CS4240 in the same semester; your rule: CS4231 and CS4240 in different semesters"
+  ]
+ }
+}

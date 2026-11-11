@@ -1,0 +1,122 @@
+{
+ "id": "q2-S4-093",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 8.44,
+ "solver_seconds": 0.01,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3178,
+  "total_tokens": 3753,
+  "completion_tokens": 575,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 8.43,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"completed\": [\n    \"IS1108\",\n    \"CS2106\",\n    \"MA1522\",\n    \"CS2030S\",\n    \"CS4226\",\n    \"CS2100\",\n    \"CS2105\",\n    \"CS2102\",\n    \"CS2109S\",\n    \"CS4225\",\n    \"MA1521\",\n    \"CS2103T\",\n    \"ES2660\",\n    \"CS2040S\",\n    \"CS1101S\",\n    \"CS1231S\",\n    \"CS2101\",\n    \"CS3219\",\n    \"ST2334\"\n  ],\n  \"current_sem\": 7,\n  \"programme\": \"BComp CS Hons\",\n  \"must_take\": [\n    \"CS3247\",\n    \"CS3241\",\n    \"CS3264\",\n    \"CS3230\",\n    \"CS3263\"\n  ],\n  \"mc_max\": 16,\n  \"objective\": \"earliest_graduation\",\n  \"rules\": [\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS3263\",\n      \"sem\": 7,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS3230\",\n      \"b\": \"CS3247\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS3241\",\n      \"b\": \"CS3247\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS3230\",\n      \"sem\": 8,\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS3230\",\n      \"b\": \"CS3241\",\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS3263\",\n      \"b\": \"CS3241\",\n      \"strength\": \"prefer\"\n    }\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "completed": [
+   "IS1108",
+   "CS2106",
+   "MA1522",
+   "CS2030S",
+   "CS4226",
+   "CS2100",
+   "CS2105",
+   "CS2102",
+   "CS2109S",
+   "CS4225",
+   "MA1521",
+   "CS2103T",
+   "ES2660",
+   "CS2040S",
+   "CS1101S",
+   "CS1231S",
+   "CS2101",
+   "CS3219",
+   "ST2334"
+  ],
+  "current_sem": 7,
+  "programme": "BComp CS Hons",
+  "must_take": [
+   "CS3247",
+   "CS3241",
+   "CS3264",
+   "CS3230",
+   "CS3263"
+  ],
+  "mc_max": 16,
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3263",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3230",
+    "b": "CS3247",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3241",
+    "b": "CS3247",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3230",
+    "sem": 8,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS3230",
+    "b": "CS3241",
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS3263",
+    "b": "CS3241",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "earliest_graduation",
+  "last_semester": 8,
+  "plan": {
+   "7": [
+    "CS3230",
+    "CS3241",
+    "CS3263",
+    "CS3264"
+   ],
+   "8": [
+    "CS3247"
+   ]
+  },
+  "mc_per_semester": {
+   "7": 16,
+   "8": 4
+  },
+  "preferences_met": [],
+  "preferences_not_met": [
+   "CS3230 in semester 8",
+   "CS3230 before CS3241",
+   "CS3263 and CS3241 in different semesters"
+  ]
+ }
+}

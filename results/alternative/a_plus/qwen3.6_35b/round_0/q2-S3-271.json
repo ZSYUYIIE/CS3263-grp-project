@@ -1,0 +1,52 @@
+{
+ "id": "q2-S3-271",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "valid",
+ "seconds": 4.84,
+ "usage": {
+  "prompt_tokens": 8998,
+  "total_tokens": 9236,
+  "completion_tokens": 238,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 4.84,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"4\": [\n      \"CS2105\",\n      \"CS2102\",\n      \"ST2334\"\n    ],\n    \"5\": [\n      \"CS2109S\",\n      \"CS3230\"\n    ],\n    \"6\": [\n      \"CS3234\",\n      \"CS3103\"\n    ],\n    \"7\": [\n      \"CS4226\"\n    ]\n  },\n  \"reasons\": [\n    \"All mandatory courses are scheduled respecting prerequisites and mutual exclusions.\",\n    \"CS2109S is taken in Sem 5 as required. CS3230 is before CS3234 as preferred.\",\n    \"ST2334 and CS4226 are placed as late as possible (Sem 4 and Sem 7 respectively) to minimize early load, while CS4226's late placement is constrained by its prerequisites.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2105",
+    "CS2102",
+    "ST2334"
+   ],
+   "5": [
+    "CS2109S",
+    "CS3230"
+   ],
+   "6": [
+    "CS3234",
+    "CS3103"
+   ],
+   "7": [
+    "CS4226"
+   ]
+  },
+  "reasons": [
+   "All mandatory courses are scheduled respecting prerequisites and mutual exclusions.",
+   "CS2109S is taken in Sem 5 as required. CS3230 is before CS3234 as preferred.",
+   "ST2334 and CS4226 are placed as late as possible (Sem 4 and Sem 7 respectively) to minimize early load, while CS4226's late placement is constrained by its prerequisites."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

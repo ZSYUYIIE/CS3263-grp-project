@@ -1,0 +1,59 @@
+{
+ "id": "q2-S3-193",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 7.09,
+ "usage": {
+  "prompt_tokens": 10078,
+  "total_tokens": 10455,
+  "completion_tokens": 377,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.09,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"2\": [\n      \"CS2100\",\n      \"CS2030S\",\n      \"CS2040S\",\n      \"MA1522\"\n    ],\n    \"3\": [\n      \"CS2103T\",\n      \"CS2101\",\n      \"CS1231\",\n      \"MA1100\"\n    ],\n    \"4\": [\n      \"CS3219\",\n      \"CS3227\",\n      \"CS3230\",\n      \"IS1108\"\n    ],\n    \"5\": [\n      \"CS4261\",\n      \"CS2109S\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2100, CS2030S, MA1522, and CS2040S are prerequisites for later courses and fit in Sem 2.\",\n    \"CS2103T requires CS2030S and CS2040S; CS2101, CS1231, MA1100 have no prereqs or are met.\",\n    \"CS3219, CS3227, CS3230 require Sem 3 courses; CS2109S requires CS2040S and MA1521 (completed).\",\n    \"CS4261 is placed in Sem 5 (Y3S1) as requested; IS1108 is placed in Sem 4 as early as possible given dependencies.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "2": [
+    "CS2100",
+    "CS2030S",
+    "CS2040S",
+    "MA1522"
+   ],
+   "3": [
+    "CS2103T",
+    "CS2101",
+    "CS1231",
+    "MA1100"
+   ],
+   "4": [
+    "CS3219",
+    "CS3227",
+    "CS3230",
+    "IS1108"
+   ],
+   "5": [
+    "CS4261",
+    "CS2109S"
+   ]
+  },
+  "reasons": [
+   "CS2100, CS2030S, MA1522, and CS2040S are prerequisites for later courses and fit in Sem 2.",
+   "CS2103T requires CS2030S and CS2040S; CS2101, CS1231, MA1100 have no prereqs or are met.",
+   "CS3219, CS3227, CS3230 require Sem 3 courses; CS2109S requires CS2040S and MA1521 (completed).",
+   "CS4261 is placed in Sem 5 (Y3S1) as requested; IS1108 is placed in Sem 4 as early as possible given dependencies."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

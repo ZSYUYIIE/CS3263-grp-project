@@ -1,0 +1,119 @@
+{
+ "id": "q2-S1-004",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 14.43,
+ "solver_seconds": 0.093,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3044,
+  "total_tokens": 3337,
+  "completion_tokens": 293,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 14.21,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"programme\": \"BComp CS Hons\",\n\"current_sem\": 2,\n\"completed\": [\n\"CS1231S\",\n\"MA1521\",\n\"CS1101S\"\n],\n\"must_take\": [\n\"CS2030S\",\n\"CS4234\",\n\"CS3244\",\n\"CS4236\"\n],\n\"early\": [\n\"CS2030S\"\n],\n\"late\": [\n\"CS4234\"\n],\n\"rules\": [\n{\n\"type\": \"apart\",\n\"a\": \"CS2030S\",\n\"b\": \"CS4234\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3244\",\n\"sem\": 4,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4236\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS3244\",\n\"b\": \"CS4234\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "programme": "BComp CS Hons",
+  "current_sem": 2,
+  "completed": [
+   "CS1231S",
+   "MA1521",
+   "CS1101S"
+  ],
+  "must_take": [
+   "CS2030S",
+   "CS4234",
+   "CS3244",
+   "CS4236"
+  ],
+  "early": [
+   "CS2030S"
+  ],
+  "late": [
+   "CS4234"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS2030S",
+    "b": "CS4234",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3244",
+    "sem": 4,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4236",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3244",
+    "b": "CS4234",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 7,
+  "plan": {
+   "2": [
+    "CS2030S"
+   ],
+   "3": [
+    "CS2040S",
+    "MA1513",
+    "ST2334"
+   ],
+   "4": [
+    "CS3230",
+    "CS3244"
+   ],
+   "5": [],
+   "6": [
+    "CS2107"
+   ],
+   "7": [
+    "CS4234",
+    "CS4236"
+   ]
+  },
+  "mc_per_semester": {
+   "2": 4,
+   "3": 10,
+   "4": 8,
+   "5": 0,
+   "6": 4,
+   "7": 8
+  },
+  "preferences_met": [
+   "CS3244 and CS4234 in different semesters",
+   "CS2030S as early as possible",
+   "CS4234 as late as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS2040S",
+   "CS2107",
+   "CS3230",
+   "MA1513",
+   "ST2334"
+  ]
+ }
+}

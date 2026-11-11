@@ -1,0 +1,108 @@
+{
+ "id": "q2-S4-054",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 3.91,
+ "solver_seconds": 0.15,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3040,
+  "total_tokens": 3246,
+  "completion_tokens": 206,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 3.76,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 1,\n\"completed\": [],\n\"must_take\": [\n\"CS1101S\",\n\"CS2030S\",\n\"CS1231S\",\n\"CS2102\",\n\"CS2040S\",\n\"CS3230\",\n\"CS4223\",\n\"CS4263\"\n],\n\"sem_caps\": {\n\"3\": 0\n},\n\"late\": [\n\"CS2040S\",\n\"CS1101S\",\n\"CS3230\",\n\"CS4223\",\n\"CS4263\"\n],\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3230\",\n\"sem\": 5,\n\"strength\": \"must\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "completed": [],
+  "must_take": [
+   "CS1101S",
+   "CS2030S",
+   "CS1231S",
+   "CS2102",
+   "CS2040S",
+   "CS3230",
+   "CS4223",
+   "CS4263"
+  ],
+  "sem_caps": {
+   "3": 0
+  },
+  "late": [
+   "CS2040S",
+   "CS1101S",
+   "CS3230",
+   "CS4223",
+   "CS4263"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3230",
+    "sem": 5,
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 7,
+  "plan": {
+   "1": [],
+   "2": [
+    "CS1101S",
+    "CS1231S"
+   ],
+   "3": [],
+   "4": [
+    "CS2040S",
+    "CS2100DE"
+   ],
+   "5": [
+    "CS3210",
+    "CS3230"
+   ],
+   "6": [
+    "CG2271"
+   ],
+   "7": [
+    "CS2030S",
+    "CS2102",
+    "CS4223",
+    "CS4263"
+   ]
+  },
+  "mc_per_semester": {
+   "1": 0,
+   "2": 8,
+   "3": 0,
+   "4": 8,
+   "5": 8,
+   "6": 4,
+   "7": 16
+  },
+  "preferences_met": [
+   "CS2040S as late as possible",
+   "CS1101S as late as possible",
+   "CS3230 as late as possible",
+   "CS4223 as late as possible",
+   "CS4263 as late as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CG2271",
+   "CS2100DE",
+   "CS3210"
+  ]
+ }
+}

@@ -1,0 +1,125 @@
+{
+ "id": "q2-S4-210",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 10.45,
+ "usage": {
+  "prompt_tokens": 19203,
+  "total_tokens": 19744,
+  "completion_tokens": 541,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 10.45,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3242 requires CS3241, which is not in the list of modules the student must take.\",\n    \"CS3242 requires Physics modules (PC1201/PC1221/PC1221X) and Linear Algebra (MA1522/MA1508E/MA1513/MA1311/MA2001/MA1101R), which are not in the list of modules the student must take.\",\n    \"CS4222 requires EE2012A/EE2012/EE4204/CS2105 and EE2012A/EE2012/ST2131/ST2334/MA2116/MA2116T/MA2216. The student must take ST2334, but the other prerequisites (EE/MA modules) are not in the 'must take' list. Without these prerequisites, CS4222 cannot be taken.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3242 requires CS3241, which is not in the list of modules the student must take.",
+   "CS3242 requires Physics modules (PC1201/PC1221/PC1221X) and Linear Algebra (MA1522/MA1508E/MA1513/MA1311/MA2001/MA1101R), which are not in the list of modules the student must take.",
+   "CS4222 requires EE2012A/EE2012/EE4204/CS2105 and EE2012A/EE2012/ST2131/ST2334/MA2116/MA2116T/MA2216. The student must take ST2334, but the other prerequisites (EE/MA modules) are not in the 'must take' list. Without these prerequisites, CS4222 cannot be taken."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"1\": [\n      \"CS1010\",\n      \"CS1231\",\n      \"MA1521\",\n      \"MA1522\"\n    ],\n    \"2\": [\n      \"CS2030\",\n      \"CS2040\",\n      \"ST2334\"\n    ],\n    \"3\": [\n      \"CS2113\",\n      \"CS3230\"\n    ],\n    \"4\": [\n      \"CS2105\",\n      \"CS4268\"\n    ],\n    \"5\": [\n      \"CS4222\"\n    ],\n    \"6\": [\n      \"CS3243\"\n    ],\n    \"7\": [\n      \"CS3242\"\n    ]\n  },\n  \"reasons\": [\n    \"Prerequisites satisfied in strict earlier semesters.\",\n    \"CS3243 taken in Sem 6 as required.\",\n    \"CS3242 taken in Sem 7 after CS4268 (Sem 4) and CS3243 (Sem 6).\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "1": [
+      "CS1010",
+      "CS1231",
+      "MA1521",
+      "MA1522"
+     ],
+     "2": [
+      "CS2030",
+      "CS2040",
+      "ST2334"
+     ],
+     "3": [
+      "CS2113",
+      "CS3230"
+     ],
+     "4": [
+      "CS2105",
+      "CS4268"
+     ],
+     "5": [
+      "CS4222"
+     ],
+     "6": [
+      "CS3243"
+     ],
+     "7": [
+      "CS3242"
+     ]
+    },
+    "reasons": [
+     "Prerequisites satisfied in strict earlier semesters.",
+     "CS3243 taken in Sem 6 as required.",
+     "CS3242 taken in Sem 7 after CS4268 (Sem 4) and CS3243 (Sem 6)."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9334,
+    "total_tokens": 9617,
+    "completion_tokens": 283,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 6.52,
+    "attempts": 1
+   },
+   "seconds": 6.52,
+   "violations": [
+    "R3 CS3242 not offered in Sem 1 (semester 7)",
+    "R4 CS3242 in semester 7: prerequisite not met ((PC1201 or PC1221 or PC1221X) and CS3241 and (MA1522 or MA1508E or MA1513 or MA1311 or MA2001 or MA1101R) and (MA1521 or MA2002 or MA1505 or MA1507 or MA1102R or (MA1511 and MA1512)))",
+    "R3 CS4222 not offered in Sem 1 (semester 5)",
+    "R10 CS2030 was added but no later planned course needs it",
+    "R10 CS2113 was added but no later planned course needs it"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3242 requires CS3241, which is not in the list of modules the student must take.\",\n    \"CS3242 requires Physics modules (PC1201/PC1221/PC1221X) and Linear Algebra (MA1522/MA1508E/MA1513/MA1311/MA2001/MA1101R), which are not in the list of modules the student must take.\",\n    \"CS4222 requires EE2012A/EE2012/EE4204/CS2105 and EE2012A/EE2012/ST2131/ST2334/MA2116/MA2116T/MA2216. The student must take ST2334, but the other prerequisites (EE/MA modules) are not in the 'must take' list. Without these prerequisites, CS4222 cannot be taken.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3242 requires CS3241, which is not in the list of modules the student must take.",
+     "CS3242 requires Physics modules (PC1201/PC1221/PC1221X) and Linear Algebra (MA1522/MA1508E/MA1513/MA1311/MA2001/MA1101R), which are not in the list of modules the student must take.",
+     "CS4222 requires EE2012A/EE2012/EE4204/CS2105 and EE2012A/EE2012/ST2131/ST2334/MA2116/MA2116T/MA2216. The student must take ST2334, but the other prerequisites (EE/MA modules) are not in the 'must take' list. Without these prerequisites, CS4222 cannot be taken."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9869,
+    "total_tokens": 10127,
+    "completion_tokens": 258,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.93,
+    "attempts": 1
+   },
+   "seconds": 3.93,
+   "violations": null
+  }
+ ]
+}

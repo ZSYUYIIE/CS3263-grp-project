@@ -1,0 +1,109 @@
+{
+ "id": "q2-S4-158",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 25.94,
+ "usage": {
+  "prompt_tokens": 22835,
+  "total_tokens": 24454,
+  "completion_tokens": 1619,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 25.94,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4240 requires CS3240, which requires CS2111 or NM2207. The student has not completed CS2111 or NM2207, nor are they planned. Thus CS4240 and CS4249 cannot be taken.\", \"CS4243 requires ST1131 (or equivalent) and MA2001 (or equivalent). The student has not completed ST1131, ST1232, ST2131, ST2334 (completed but mutually exclusive with some prereqs? No, ST2334 is completed. Prereq is ST1131 or ST1131A or ST1232 or ST2131 or MA2116 or MA2116T or MA2216 or EE2012A or EE2012 or ST2334 or YSC2243. Student has ST2334. So ST prereq is met. Next prereq: (YSC2232 or MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522). Student has MA1522. So Math prereq 1 is met. Next: (CS2030 or CS2030S or CS2030DE or CS2030HS or CS2113 or CS2113T). Student has CS2030S. Met. Next: (YSC2229 or CS2040 or CS2040S or CS2040DE or CS2040C or CS2040HS). Student has CS2040S. Met. Next: (MA1102R or MA2002 or YSC1216 or MA1505 or MA1521 or MA1507 or (MA1512 and MA1511)). Student has MA1521. But the prereq is MA1102R OR MA2002 OR YSC1216 OR MA1505 OR MA1521 OR MA1507 OR (MA1512 AND MA1511). Student has MA1521. So this is met. Wait, let's re-read CS4243 prereqs carefully. (YSC2232 or MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522) AND (ST1131 or ST1131A or ST1232 or ST2131 or MA2116 or MA2116T or MA2216 or EE2012A or EE2012 or ST2334 or YSC2243) AND (CS2030 or CS2030S or CS2030DE or CS2030HS or CS2113 or CS2113T) AND (YSC2229 or CS2040 or CS2040S or CS2040DE or CS2040C or CS2040HS) AND (MA1102R or MA2002 or YSC1216 or MA1505 or MA1521 or MA1507 or (MA1512 and MA1511)). Student has MA1522 (1st group), ST2334 (2nd group), CS2030S (3rd group), CS2040S (4th group), MA1521 (5th group). All prereqs for CS4243 are met. So CS4243 is eligible.\", \"CS4240 requires CS3240. CS3240 requires CS2111 or NM2207. Student has neither. CS3240 is not eligible. CS4240 is not eligible. CS4249 requires CS3240. CS4249 is not eligible. Since CS4240 and CS4249 are required by the student but cannot be taken, no plan exists.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4240 requires CS3240, which requires CS2111 or NM2207. The student has not completed CS2111 or NM2207, nor are they planned. Thus CS4240 and CS4249 cannot be taken.",
+   "CS4243 requires ST1131 (or equivalent) and MA2001 (or equivalent). The student has not completed ST1131, ST1232, ST2131, ST2334 (completed but mutually exclusive with some prereqs? No, ST2334 is completed. Prereq is ST1131 or ST1131A or ST1232 or ST2131 or MA2116 or MA2116T or MA2216 or EE2012A or EE2012 or ST2334 or YSC2243. Student has ST2334. So ST prereq is met. Next prereq: (YSC2232 or MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522). Student has MA1522. So Math prereq 1 is met. Next: (CS2030 or CS2030S or CS2030DE or CS2030HS or CS2113 or CS2113T). Student has CS2030S. Met. Next: (YSC2229 or CS2040 or CS2040S or CS2040DE or CS2040C or CS2040HS). Student has CS2040S. Met. Next: (MA1102R or MA2002 or YSC1216 or MA1505 or MA1521 or MA1507 or (MA1512 and MA1511)). Student has MA1521. But the prereq is MA1102R OR MA2002 OR YSC1216 OR MA1505 OR MA1521 OR MA1507 OR (MA1512 AND MA1511). Student has MA1521. So this is met. Wait, let's re-read CS4243 prereqs carefully. (YSC2232 or MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522) AND (ST1131 or ST1131A or ST1232 or ST2131 or MA2116 or MA2116T or MA2216 or EE2012A or EE2012 or ST2334 or YSC2243) AND (CS2030 or CS2030S or CS2030DE or CS2030HS or CS2113 or CS2113T) AND (YSC2229 or CS2040 or CS2040S or CS2040DE or CS2040C or CS2040HS) AND (MA1102R or MA2002 or YSC1216 or MA1505 or MA1521 or MA1507 or (MA1512 and MA1511)). Student has MA1522 (1st group), ST2334 (2nd group), CS2030S (3rd group), CS2040S (4th group), MA1521 (5th group). All prereqs for CS4243 are met. So CS4243 is eligible.",
+   "CS4240 requires CS3240. CS3240 requires CS2111 or NM2207. Student has neither. CS3240 is not eligible. CS4240 is not eligible. CS4249 requires CS3240. CS4249 is not eligible. Since CS4240 and CS4249 are required by the student but cannot be taken, no plan exists."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS3230\"], \"5\": [\"CS3240\"], \"6\": [\"CS4240\"], \"7\": [\"CS4249\", \"CS3241\"], \"8\": [\"CS4243\"]}, \"reasons\": [\"Prerequisites satisfied: CS3230 needs CS2040S/CS1231S (done); CS3240 needs CS2111 or NM2207 (neither done, but CS3240 is offered Sem 1 and has no prereq listed in record? Wait, CS3240 prereq is CS2111 or NM2207. Student has neither. CS3240 cannot be taken. CS3241 needs CS2030S/CS2113 and CS2040. Student has CS2030S and CS2040S. So CS3241 is eligible in Sem 1 or 2. CS3247 needs CS3241. CS4240 needs CS3240. CS4243 needs many math/stats prereqs. Student has MA1521, MA1522, ST2334. CS4243 prereqs: (YSC2232 or MA2001...) and (ST1131...) and (CS2030...) and (CS2040...) and (MA1102R...). Student lacks ST1131, MA2001, etc. CS4243 is NOT eligible. CS4249 needs CS3240. CS3240 needs CS2111 or NM2207. Student has neither. CS3240 is NOT eligible. Therefore, CS4240 and CS4249 cannot be taken. CS3230 needs CS2040S and CS1231S. Both done. CS3230 is eligible. CS3241 needs CS2030S and CS2040S. Both done. CS3241 is eligible. CS3247 needs CS3241. CS3247 is eligible after CS3241. CS4243 and CS4240/4249 are blocked by missing prereqs. The student's required courses CS4240, CS4243, CS4249 cannot be taken due to missing prerequisites (CS2111/NM2207 for CS3240, ST1131/MA2001 for CS4243). Thus, a valid plan for ALL required courses is impossible.\", \"status\": \"NO_PLAN\"}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "CS3230"
+     ],
+     "5": [
+      "CS3240"
+     ],
+     "6": [
+      "CS4240"
+     ],
+     "7": [
+      "CS4249",
+      "CS3241"
+     ],
+     "8": [
+      "CS4243"
+     ]
+    }
+   },
+   "repair": "cut_reasons",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11024,
+    "total_tokens": 11649,
+    "completion_tokens": 625,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 12.64,
+    "attempts": 1
+   },
+   "seconds": 12.64,
+   "violations": [
+    "R1 must-take CS3247 missing",
+    "R4 CS3240 in semester 5: prerequisite not met (CS2111 or NM2207)",
+    "R3 CS4249 not offered in Sem 1 (semester 7)",
+    "R7 semester 4 has 4 MC, limit 0",
+    "R9 must rule not met: apart CS3247 CS4243",
+    "R10 CS3241 was added but no later planned course needs it"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4240 requires CS3240, which requires CS2111 or NM2207. The student has not completed CS2111 or NM2207, nor are they planned. Thus CS4240 and CS4249 cannot be taken.\", \"CS4243 requires ST1131 (or equivalent) and MA2001 (or equivalent). The student has not completed ST1131, ST1232, ST2131, ST2334 (completed but mutually exclusive with some prereqs? No, ST2334 is completed. Prereq is ST1131 or ST1131A or ST1232 or ST2131 or MA2116 or MA2116T or MA2216 or EE2012A or EE2012 or ST2334 or YSC2243. Student has ST2334. So ST prereq is met. Next prereq: (YSC2232 or MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522). Student has MA1522. So Math prereq 1 is met. Next: (CS2030 or CS2030S or CS2030DE or CS2030HS or CS2113 or CS2113T). Student has CS2030S. Met. Next: (YSC2229 or CS2040 or CS2040S or CS2040DE or CS2040C or CS2040HS). Student has CS2040S. Met. Next: (MA1102R or MA2002 or YSC1216 or MA1505 or MA1521 or MA1507 or (MA1512 and MA1511)). Student has MA1521. But the prereq is MA1102R OR MA2002 OR YSC1216 OR MA1505 OR MA1521 OR MA1507 OR (MA1512 AND MA1511). Student has MA1521. So this is met. Wait, let's re-read CS4243 prereqs carefully. (YSC2232 or MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522) AND (ST1131 or ST1131A or ST1232 or ST2131 or MA2116 or MA2116T or MA2216 or EE2012A or EE2012 or ST2334 or YSC2243) AND (CS2030 or CS2030S or CS2030DE or CS2030HS or CS2113 or CS2113T) AND (YSC2229 or CS2040 or CS2040S or CS2040DE or CS2040C or CS2040HS) AND (MA1102R or MA2002 or YSC1216 or MA1505 or MA1521 or MA1507 or (MA1512 and MA1511)). Student has MA1522 (1st group), ST2334 (2nd group), CS2030S (3rd group), CS2040S (4th group), MA1521 (5th group). All prereqs for CS4243 are met. So CS4243 is eligible.\", \"CS4240 requires CS3240. CS3240 requires CS2111 or NM2207. Student has neither. CS3240 is not eligible. CS4240 is not eligible. CS4249 requires CS3240. CS4249 is not eligible. Since CS4240 and CS4249 are required by the student but cannot be taken, no plan exists.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4240 requires CS3240, which requires CS2111 or NM2207. The student has not completed CS2111 or NM2207, nor are they planned. Thus CS4240 and CS4249 cannot be taken.",
+     "CS4243 requires ST1131 (or equivalent) and MA2001 (or equivalent). The student has not completed ST1131, ST1232, ST2131, ST2334 (completed but mutually exclusive with some prereqs? No, ST2334 is completed. Prereq is ST1131 or ST1131A or ST1232 or ST2131 or MA2116 or MA2116T or MA2216 or EE2012A or EE2012 or ST2334 or YSC2243. Student has ST2334. So ST prereq is met. Next prereq: (YSC2232 or MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522). Student has MA1522. So Math prereq 1 is met. Next: (CS2030 or CS2030S or CS2030DE or CS2030HS or CS2113 or CS2113T). Student has CS2030S. Met. Next: (YSC2229 or CS2040 or CS2040S or CS2040DE or CS2040C or CS2040HS). Student has CS2040S. Met. Next: (MA1102R or MA2002 or YSC1216 or MA1505 or MA1521 or MA1507 or (MA1512 and MA1511)). Student has MA1521. But the prereq is MA1102R OR MA2002 OR YSC1216 OR MA1505 OR MA1521 OR MA1507 OR (MA1512 AND MA1511). Student has MA1521. So this is met. Wait, let's re-read CS4243 prereqs carefully. (YSC2232 or MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522) AND (ST1131 or ST1131A or ST1232 or ST2131 or MA2116 or MA2116T or MA2216 or EE2012A or EE2012 or ST2334 or YSC2243) AND (CS2030 or CS2030S or CS2030DE or CS2030HS or CS2113 or CS2113T) AND (YSC2229 or CS2040 or CS2040S or CS2040DE or CS2040C or CS2040HS) AND (MA1102R or MA2002 or YSC1216 or MA1505 or MA1521 or MA1507 or (MA1512 and MA1511)). Student has MA1522 (1st group), ST2334 (2nd group), CS2030S (3rd group), CS2040S (4th group), MA1521 (5th group). All prereqs for CS4243 are met. So CS4243 is eligible.",
+     "CS4240 requires CS3240. CS3240 requires CS2111 or NM2207. Student has neither. CS3240 is not eligible. CS4240 is not eligible. CS4249 requires CS3240. CS4249 is not eligible. Since CS4240 and CS4249 are required by the student but cannot be taken, no plan exists."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11811,
+    "total_tokens": 12805,
+    "completion_tokens": 994,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 13.3,
+    "attempts": 1
+   },
+   "seconds": 13.3,
+   "violations": null
+  }
+ ]
+}

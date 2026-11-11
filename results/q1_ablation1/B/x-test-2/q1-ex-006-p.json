@@ -1,0 +1,61 @@
+{
+ "id": "q1-ex-006-p",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 3.09,
+ "solver_seconds": 0.003,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2546,
+  "total_tokens": 2773,
+  "completion_tokens": 227,
+  "prompt_tokens_details": {
+   "cached_tokens": 2432,
+   "created_cache_tokens": 0,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 148
+  },
+  "finish_reason": "stop",
+  "request_seconds": 3.09,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\":\"eligible\",\"target\":\"DSA3102\",\"current_sem\":5,\"completed\":[\"MA3236\",\"CS2100\",\"MA2311\",\"CS2040DE\",\"MA3252\",\"CS1231S\",\"MA1521\",\"MA1522\",\"CS1101S\",\"ES2660\",\"ESP2107\",\"CS2111\",\"CS2220\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "DSA3102",
+  "current_sem": 5,
+  "completed": [
+   "MA3236",
+   "CS2100",
+   "MA2311",
+   "CS2040DE",
+   "MA3252",
+   "CS1231S",
+   "MA1521",
+   "MA1522",
+   "CS1101S",
+   "ES2660",
+   "ESP2107",
+   "CS2111",
+   "CS2220"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "DSA3102",
+  "semester": 5,
+  "reasons": [
+   "precluded: already completed MA3236"
+  ],
+  "can_still_become_eligible": false,
+  "never_eligible_because": "DSA3102 is ruled out by completed MA3236"
+ }
+}

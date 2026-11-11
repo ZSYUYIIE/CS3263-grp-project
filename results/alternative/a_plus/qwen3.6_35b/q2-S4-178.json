@@ -1,0 +1,97 @@
+{
+ "id": "q2-S4-178",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 188.4,
+ "usage": {
+  "prompt_tokens": 21046,
+  "total_tokens": 21348,
+  "completion_tokens": 302,
+  "finish_reason": "stop",
+  "request_seconds": 6.31,
+  "attempts": 2
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4239 is a must-take course but its prerequisite CS3235 is not in the student's completed or required list.\",\n    \"CS3235 requires CS2105, CS2106 (completed), and CS2107. CS2107 is not completed or required.\",\n    \"CS3282 requires CS3281, which is not completed or required, creating a chain of missing prerequisites.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4239 is a must-take course but its prerequisite CS3235 is not in the student's completed or required list.",
+   "CS3235 requires CS2105, CS2106 (completed), and CS2107. CS2107 is not completed or required.",
+   "CS3282 requires CS3281, which is not completed or required, creating a chain of missing prerequisites."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2105\",\n      \"CS3219\"\n    ],\n    \"6\": [\n      \"CS3282\"\n    ],\n    \"7\": [],\n    \"8\": []\n  },\n  \"reasons\": [\n    \"CS3219 is taken in Y3S1 as required.\",\n    \"CS3282 is taken in Y3S2 as early as possible after Y3S1.\",\n    \"CS2105 is taken in Y3S1 to allow it to be as late as possible relative to remaining options, satisfying the 'late as possible' wish while keeping workload balanced and prerequisites met.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2105",
+      "CS3219"
+     ],
+     "6": [
+      "CS3282"
+     ],
+     "7": [],
+     "8": []
+    },
+    "reasons": [
+     "CS3219 is taken in Y3S1 as required.",
+     "CS3282 is taken in Y3S2 as early as possible after Y3S1.",
+     "CS2105 is taken in Y3S1 to allow it to be as late as possible relative to remaining options, satisfying the 'late as possible' wish while keeping workload balanced and prerequisites met."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10394,
+    "total_tokens": 10570,
+    "completion_tokens": 176,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.98,
+    "attempts": 2
+   },
+   "seconds": 186.07,
+   "violations": [
+    "R1 must-take CS4239 missing",
+    "R4 CS3282 in semester 6: prerequisite not met (CS3281)"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4239 is a must-take course but its prerequisite CS3235 is not in the student's completed or required list.\",\n    \"CS3235 requires CS2105, CS2106 (completed), and CS2107. CS2107 is not completed or required.\",\n    \"CS3282 requires CS3281, which is not completed or required, creating a chain of missing prerequisites.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4239 is a must-take course but its prerequisite CS3235 is not in the student's completed or required list.",
+     "CS3235 requires CS2105, CS2106 (completed), and CS2107. CS2107 is not completed or required.",
+     "CS3282 requires CS3281, which is not completed or required, creating a chain of missing prerequisites."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10652,
+    "total_tokens": 10778,
+    "completion_tokens": 126,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.33,
+    "attempts": 1
+   },
+   "seconds": 2.33,
+   "violations": null
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "id": "q2-S3-076",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 64.14,
+ "usage": {
+  "prompt_tokens": 25288,
+  "total_tokens": 28592,
+  "completion_tokens": 3304,
+  "finish_reason": "stop",
+  "request_seconds": 64.14,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"4\": [\n      \"CS2106\",\n      \"CS2105\"\n    ],\n    \"5\": [\n      \"CS3219\"\n    ],\n    \"6\": [\n      \"CS4231\"\n    ],\n    \"7\": [\n      \"CS4226\",\n      \"CS2109S\"\n    ]\n  },\n  \"reasons\": [\n    \"CS4226 is only offered in Sem 1 (odd semesters), so it must be in Sem 7.\",\n    \"CS4231 is only offered in Sem 2 (even semesters), so it must be in Sem 6.\",\n    \"CS2109S requires CS4231 (Sem 6) and CS2105 (Sem 4), so it can be in Sem 7.\",\n    \"CS3219 is placed in Sem 5 to satisfy the 'before CS4226' constraint (Sem 5 < Sem 7).\",\n    \"CS2106 and CS2105 are taken in Sem 4 to satisfy prerequisites for later courses.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2106",
+    "CS2105"
+   ],
+   "5": [
+    "CS3219"
+   ],
+   "6": [
+    "CS4231"
+   ],
+   "7": [
+    "CS4226",
+    "CS2109S"
+   ]
+  },
+  "reasons": [
+   "CS4226 is only offered in Sem 1 (odd semesters), so it must be in Sem 7.",
+   "CS4231 is only offered in Sem 2 (even semesters), so it must be in Sem 6.",
+   "CS2109S requires CS4231 (Sem 6) and CS2105 (Sem 4), so it can be in Sem 7.",
+   "CS3219 is placed in Sem 5 to satisfy the 'before CS4226' constraint (Sem 5 < Sem 7).",
+   "CS2106 and CS2105 are taken in Sem 4 to satisfy prerequisites for later courses."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

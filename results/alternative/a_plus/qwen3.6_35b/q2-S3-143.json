@@ -1,0 +1,107 @@
+{
+ "id": "q2-S3-143",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 7.87,
+ "usage": {
+  "prompt_tokens": 23021,
+  "total_tokens": 23486,
+  "completion_tokens": 465,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.87,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4223 requires CS3210, CS3220, or CG3207 as a prerequisite, none of which are completed or planned in the available semesters.\",\n    \"CS4222 is only offered in Sem 2 (even semesters), but the student is in Y3S2 (Sem 6) and needs to graduate by Sem 8; placing it in Sem 8 leaves no room for other required courses or violates the minimum module count if ES2660 is also there.\",\n    \"The combination of prerequisites for CS4223 and offering constraints for CS4222 makes it impossible to complete all required courses within the remaining semesters while respecting the 16 MC limit and ES2660 placement.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4223 requires CS3210, CS3220, or CG3207 as a prerequisite, none of which are completed or planned in the available semesters.",
+   "CS4222 is only offered in Sem 2 (even semesters), but the student is in Y3S2 (Sem 6) and needs to graduate by Sem 8; placing it in Sem 8 leaves no room for other required courses or violates the minimum module count if ES2660 is also there.",
+   "The combination of prerequisites for CS4223 and offering constraints for CS4222 makes it impossible to complete all required courses within the remaining semesters while respecting the 16 MC limit and ES2660 placement."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS2101\",\n      \"CS2102\"\n    ],\n    \"7\": [\n      \"CS3237\",\n      \"CS4222\",\n      \"CS4223\"\n    ],\n    \"8\": [\n      \"ES2660\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2101 and CS2102 are planned in Y3S2 (Sem 6) to satisfy prerequisites for later courses and meet the 'CS2101 as early as possible' wish.\",\n    \"CS2102 is placed in Sem 6 to allow CS3237, CS4222, and CS4223 to be taken in Sem 7, satisfying the 'CS2102 as late as possible' wish while respecting prerequisites.\",\n    \"ES2660 is placed in Y4S2 (Sem 8) as requested. CS2101 is in Sem 6, before CS4223 in Sem 7. All MC limits (16) are respected.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS2101",
+      "CS2102"
+     ],
+     "7": [
+      "CS3237",
+      "CS4222",
+      "CS4223"
+     ],
+     "8": [
+      "ES2660"
+     ]
+    },
+    "reasons": [
+     "CS2101 and CS2102 are planned in Y3S2 (Sem 6) to satisfy prerequisites for later courses and meet the 'CS2101 as early as possible' wish.",
+     "CS2102 is placed in Sem 6 to allow CS3237, CS4222, and CS4223 to be taken in Sem 7, satisfying the 'CS2102 as late as possible' wish while respecting prerequisites.",
+     "ES2660 is placed in Y4S2 (Sem 8) as requested. CS2101 is in Sem 6, before CS4223 in Sem 7. All MC limits (16) are respected."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11308,
+    "total_tokens": 11583,
+    "completion_tokens": 275,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 4.78,
+    "attempts": 1
+   },
+   "seconds": 4.78,
+   "violations": [
+    "R3 CS4222 not offered in Sem 1 (semester 7)",
+    "R4 CS4223 in semester 7: prerequisite not met ((CS2106 or CG2271) and (CS3210 or CS3220 or CG3207))",
+    "R8 semester 8 has 4 MC, minimum 8"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4223 requires CS3210, CS3220, or CG3207 as a prerequisite, none of which are completed or planned in the available semesters.\",\n    \"CS4222 is only offered in Sem 2 (even semesters), but the student is in Y3S2 (Sem 6) and needs to graduate by Sem 8; placing it in Sem 8 leaves no room for other required courses or violates the minimum module count if ES2660 is also there.\",\n    \"The combination of prerequisites for CS4223 and offering constraints for CS4222 makes it impossible to complete all required courses within the remaining semesters while respecting the 16 MC limit and ES2660 placement.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4223 requires CS3210, CS3220, or CG3207 as a prerequisite, none of which are completed or planned in the available semesters.",
+     "CS4222 is only offered in Sem 2 (even semesters), but the student is in Y3S2 (Sem 6) and needs to graduate by Sem 8; placing it in Sem 8 leaves no room for other required courses or violates the minimum module count if ES2660 is also there.",
+     "The combination of prerequisites for CS4223 and offering constraints for CS4222 makes it impossible to complete all required courses within the remaining semesters while respecting the 16 MC limit and ES2660 placement."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11713,
+    "total_tokens": 11903,
+    "completion_tokens": 190,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.09,
+    "attempts": 1
+   },
+   "seconds": 3.09,
+   "violations": null
+  }
+ ]
+}

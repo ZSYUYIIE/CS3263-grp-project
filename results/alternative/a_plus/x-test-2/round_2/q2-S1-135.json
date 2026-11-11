@@ -1,0 +1,57 @@
+{
+ "id": "q2-S1-135",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 2,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 53.21,
+ "usage": {
+  "prompt_tokens": 8706,
+  "total_tokens": 13434,
+  "completion_tokens": 4728,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 7168
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4576
+  },
+  "finish_reason": "stop",
+  "request_seconds": 53.21,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS2102\",\"CS3241\"],\"6\":[\"CS3247\"],\"7\":[\"CS2105\",\"CS3223\",\"ST2334\"],\"8\":[\"CS3219\",\"CS4221\",\"CS4268\"]},\"reasons\":[\"Added prerequisites CS2102, CS3223 and CS3241; total 36 MC.\",\"CS3241 must precede CS3247, so CS3241 in 5 and CS3247 in 6; then ST2334 in 7 and CS4221 in 8.\",\"CS4268 cannot precede CS2105 because it needs ST2334, which can only be after CS3247.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS3241"
+   ],
+   "6": [
+    "CS3247"
+   ],
+   "7": [
+    "CS2105",
+    "CS3223",
+    "ST2334"
+   ],
+   "8": [
+    "CS3219",
+    "CS4221",
+    "CS4268"
+   ]
+  },
+  "reasons": [
+   "Added prerequisites CS2102, CS3223 and CS3241; total 36 MC.",
+   "CS3241 must precede CS3247, so CS3241 in 5 and CS3247 in 6; then ST2334 in 7 and CS4221 in 8.",
+   "CS4268 cannot precede CS2105 because it needs ST2334, which can only be after CS3247."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,51 @@
+{
+ "id": "q2-S3-263",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 1,
+ "end": "valid",
+ "seconds": 7.69,
+ "usage": {
+  "prompt_tokens": 18273,
+  "total_tokens": 18705,
+  "completion_tokens": 432,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.69,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"4\": [\n      \"CS2102\",\n      \"CS2105\",\n      \"ST2334\"\n    ],\n    \"5\": [\n      \"CS3230\",\n      \"CS3103\",\n      \"CS4226\"\n    ],\n    \"6\": [\n      \"CS3234\",\n      \"CS2109S\"\n    ]\n  },\n  \"reasons\": [\n    \"Student is in Y2S2 (Semester 4).\",\n    \"CS2102 and CS2105 prerequisites satisfied by completed courses.\",\n    \"CS3230, CS3103, CS4226 prerequisites satisfied by courses in Sem 4.\",\n    \"CS3234 and CS2109S prerequisites satisfied by courses in Sem 4 or 5.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2102",
+    "CS2105",
+    "ST2334"
+   ],
+   "5": [
+    "CS3230",
+    "CS3103",
+    "CS4226"
+   ],
+   "6": [
+    "CS3234",
+    "CS2109S"
+   ]
+  },
+  "reasons": [
+   "Student is in Y2S2 (Semester 4).",
+   "CS2102 and CS2105 prerequisites satisfied by completed courses.",
+   "CS3230, CS3103, CS4226 prerequisites satisfied by courses in Sem 4.",
+   "CS3234 and CS2109S prerequisites satisfied by courses in Sem 4 or 5."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

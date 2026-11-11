@@ -1,0 +1,92 @@
+{
+ "id": "q2-S4-121",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 5.96,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2829,
+  "total_tokens": 3522,
+  "completion_tokens": 693,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 477
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.96,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":5,\"programme\":\"BComp CS Hons\",\"completed\":[\"CS2100\",\"CS2030S\",\"CS3236\",\"CS3230\",\"ES2660\",\"ST2334\",\"CS2109S\",\"CS1231S\",\"CS2101\",\"CS2106\",\"CS1101S\",\"CS2040S\",\"MA1522\",\"CS2103T\",\"IS1108\",\"MA1521\"],\"must_take\":[\"CS3281\",\"CS2102\",\"CS3235\",\"CS3231\",\"CS3233\"],\"sem_caps\":{\"6\":0,\"8\":0},\"objective\":\"earliest_graduation\",\"rules\":[{\"type\":\"apart\",\"a\":\"CS2102\",\"b\":\"CS3235\",\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS3281\",\"b\":\"CS3231\",\"strength\":\"prefer\"},{\"type\":\"before\",\"a\":\"CS3281\",\"b\":\"CS3235\",\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "CS2100",
+   "CS2030S",
+   "CS3236",
+   "CS3230",
+   "ES2660",
+   "ST2334",
+   "CS2109S",
+   "CS1231S",
+   "CS2101",
+   "CS2106",
+   "CS1101S",
+   "CS2040S",
+   "MA1522",
+   "CS2103T",
+   "IS1108",
+   "MA1521"
+  ],
+  "must_take": [
+   "CS3281",
+   "CS2102",
+   "CS3235",
+   "CS3231",
+   "CS3233"
+  ],
+  "sem_caps": {
+   "6": 0,
+   "8": 0
+  },
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS2102",
+    "b": "CS3235",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3281",
+    "b": "CS3231",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS3281",
+    "b": "CS3235",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3281 cannot be placed in any remaining semester (offered in terms [2]; semesters left [5, 7])",
+   "CS3233 cannot be placed in any remaining semester (offered in terms [2]; semesters left [5, 7])"
+  ]
+ }
+}

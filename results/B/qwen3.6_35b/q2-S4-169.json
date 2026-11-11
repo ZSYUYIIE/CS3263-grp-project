@@ -1,0 +1,93 @@
+{
+ "id": "q2-S4-169",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 12.45,
+ "solver_seconds": 0.011,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3130,
+  "total_tokens": 3528,
+  "completion_tokens": 398,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 12.44,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 8,\n\"completed\": [\n\"CS2100\",\n\"ES2660\",\n\"CS2103T\",\n\"CS2102\",\n\"CS2030S\",\n\"CS2040S\",\n\"CS3230\",\n\"MA1521\",\n\"CS2109S\",\n\"CS2105\",\n\"CS1101S\",\n\"CS3241\",\n\"IS1108\",\n\"MA1522\",\n\"CS3219\",\n\"CS2106\",\n\"CS1231S\"\n],\n\"must_take\": [\n\"CS3242\",\n\"CS2101\",\n\"ST2334\",\n\"CS4231\"\n],\n\"early\": [\n\"CS2101\"\n],\n\"late\": [\n\"CS4231\"\n],\n\"rules\": [\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2101\",\n\"b\": \"CS4231\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"ST2334\",\n\"b\": \"CS4231\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"ST2334\",\n\"b\": \"CS2101\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2101\",\n\"sem\": 8,\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 8,
+  "completed": [
+   "CS2100",
+   "ES2660",
+   "CS2103T",
+   "CS2102",
+   "CS2030S",
+   "CS2040S",
+   "CS3230",
+   "MA1521",
+   "CS2109S",
+   "CS2105",
+   "CS1101S",
+   "CS3241",
+   "IS1108",
+   "MA1522",
+   "CS3219",
+   "CS2106",
+   "CS1231S"
+  ],
+  "must_take": [
+   "CS3242",
+   "CS2101",
+   "ST2334",
+   "CS4231"
+  ],
+  "early": [
+   "CS2101"
+  ],
+  "late": [
+   "CS4231"
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS2101",
+    "b": "CS4231",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "ST2334",
+    "b": "CS4231",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "ST2334",
+    "b": "CS2101",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2101",
+    "sem": 8,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the prerequisites of CS3242"
+  ]
+ }
+}

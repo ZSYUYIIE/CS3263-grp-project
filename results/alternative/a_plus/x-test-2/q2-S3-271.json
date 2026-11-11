@@ -1,0 +1,108 @@
+{
+ "id": "q2-S3-271",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 122.42,
+ "usage": {
+  "prompt_tokens": 7261,
+  "total_tokens": 18547,
+  "completion_tokens": 11286,
+  "prompt_tokens_details": {
+   "cached_tokens": 7040,
+   "created_cache_tokens": 128
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 11151
+  },
+  "finish_reason": "stop",
+  "request_seconds": 122.42,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"4\":[\"CS2102\",\"CS3230\",\"CS2105\"],\"5\":[\"CS2109S\",\"CS3103\"],\"6\":[\"ST2334\",\"CS3234\"],\"7\":[\"CS4226\"]},\"reasons\":[\"All eight required courses are planned once, with no extra courses added.\",\"CS2109S is in semester 5 and precedes CS3234; CS3230 also precedes CS3234.\",\"ST2334 is in semester 6, the latest before CS4226 in semester 7; CS4226 is in its last offered semester.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2102",
+    "CS3230",
+    "CS2105"
+   ],
+   "5": [
+    "CS2109S",
+    "CS3103"
+   ],
+   "6": [
+    "ST2334",
+    "CS3234"
+   ],
+   "7": [
+    "CS4226"
+   ]
+  },
+  "reasons": [
+   "All eight required courses are planned once, with no extra courses added.",
+   "CS2109S is in semester 5 and precedes CS3234; CS3230 also precedes CS3234.",
+   "ST2334 is in semester 6, the latest before CS4226 in semester 7; CS4226 is in its last offered semester."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"4\":[\"CS2102\",\"CS3230\",\"CS2105\"],\"5\":[\"CS2109S\",\"CS3103\"],\"6\":[\"ST2334\",\"CS3234\"],\"7\":[\"CS4226\"]},\"reasons\":[\"All eight required courses are planned once, with no extra courses added.\",\"CS2109S is in semester 5 and precedes CS3234; CS3230 also precedes CS3234.\",\"ST2334 is in semester 6, the latest before CS4226 in semester 7; CS4226 is in its last offered semester.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "CS2102",
+      "CS3230",
+      "CS2105"
+     ],
+     "5": [
+      "CS2109S",
+      "CS3103"
+     ],
+     "6": [
+      "ST2334",
+      "CS3234"
+     ],
+     "7": [
+      "CS4226"
+     ]
+    },
+    "reasons": [
+     "All eight required courses are planned once, with no extra courses added.",
+     "CS2109S is in semester 5 and precedes CS3234; CS3230 also precedes CS3234.",
+     "ST2334 is in semester 6, the latest before CS4226 in semester 7; CS4226 is in its last offered semester."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 7261,
+    "total_tokens": 18547,
+    "completion_tokens": 11286,
+    "prompt_tokens_details": {
+     "cached_tokens": 7040,
+     "created_cache_tokens": 128,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 11151
+    },
+    "finish_reason": "stop",
+    "request_seconds": 122.42,
+    "attempts": 1
+   },
+   "seconds": 122.42,
+   "violations": []
+  }
+ ]
+}

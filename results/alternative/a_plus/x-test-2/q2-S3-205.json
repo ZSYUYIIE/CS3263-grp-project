@@ -1,0 +1,92 @@
+{
+ "id": "q2-S3-205",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 13.71,
+ "usage": {
+  "prompt_tokens": 7379,
+  "total_tokens": 8687,
+  "completion_tokens": 1308,
+  "prompt_tokens_details": {
+   "cached_tokens": 7040,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1188
+  },
+  "finish_reason": "stop",
+  "request_seconds": 13.71,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"7\":[\"CS2102\",\"CS3103\"],\"8\":[\"CS3234\",\"CS4225\"]},\"reasons\":[\"CS3103 is fixed in semester 7 and must precede CS4225, so CS4225 is placed in semester 8.\",\"CS4225 requires CS2102 earlier, so CS2102 is placed in semester 7.\",\"CS3234 is offered only in Semester 2, so it is placed in semester 8; both semesters stay within the 12 MC limit.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "7": [
+    "CS2102",
+    "CS3103"
+   ],
+   "8": [
+    "CS3234",
+    "CS4225"
+   ]
+  },
+  "reasons": [
+   "CS3103 is fixed in semester 7 and must precede CS4225, so CS4225 is placed in semester 8.",
+   "CS4225 requires CS2102 earlier, so CS2102 is placed in semester 7.",
+   "CS3234 is offered only in Semester 2, so it is placed in semester 8; both semesters stay within the 12 MC limit."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"7\":[\"CS2102\",\"CS3103\"],\"8\":[\"CS3234\",\"CS4225\"]},\"reasons\":[\"CS3103 is fixed in semester 7 and must precede CS4225, so CS4225 is placed in semester 8.\",\"CS4225 requires CS2102 earlier, so CS2102 is placed in semester 7.\",\"CS3234 is offered only in Semester 2, so it is placed in semester 8; both semesters stay within the 12 MC limit.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "7": [
+      "CS2102",
+      "CS3103"
+     ],
+     "8": [
+      "CS3234",
+      "CS4225"
+     ]
+    },
+    "reasons": [
+     "CS3103 is fixed in semester 7 and must precede CS4225, so CS4225 is placed in semester 8.",
+     "CS4225 requires CS2102 earlier, so CS2102 is placed in semester 7.",
+     "CS3234 is offered only in Semester 2, so it is placed in semester 8; both semesters stay within the 12 MC limit."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 7379,
+    "total_tokens": 8687,
+    "completion_tokens": 1308,
+    "prompt_tokens_details": {
+     "cached_tokens": 7040,
+     "created_cache_tokens": 256,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 1188
+    },
+    "finish_reason": "stop",
+    "request_seconds": 13.71,
+    "attempts": 1
+   },
+   "seconds": 13.71,
+   "violations": []
+  }
+ ]
+}

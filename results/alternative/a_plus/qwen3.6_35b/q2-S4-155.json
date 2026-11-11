@@ -1,0 +1,106 @@
+{
+ "id": "q2-S4-155",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 6.98,
+ "usage": {
+  "prompt_tokens": 22482,
+  "total_tokens": 22812,
+  "completion_tokens": 330,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 6.98,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4220 prerequisite (CS2220/LSM2104/LSM2241/ZB2101) is not met by completed courses.\",\n    \"CS4220 and CS4277 are only offered in Sem 2 (even semesters), but the student has a leave of absence in Sem 8.\",\n    \"CS3213 is offered in Sem 2, but the student cannot take it in Sem 8 due to leave of absence, and taking it in Sem 6 is impossible as Y4S1 is the start.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4220 prerequisite (CS2220/LSM2104/LSM2241/ZB2101) is not met by completed courses.",
+   "CS4220 and CS4277 are only offered in Sem 2 (even semesters), but the student has a leave of absence in Sem 8.",
+   "CS3213 is offered in Sem 2, but the student cannot take it in Sem 8 due to leave of absence, and taking it in Sem 6 is impossible as Y4S1 is the start."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"7\": [\n      \"CS3241\",\n      \"CS4220\",\n      \"CS4277\"\n    ],\n    \"8\": [\n      \"CS3213\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3241 is taken in Y4S1 as required.\",\n    \"CS4220 and CS4277 are taken in Y4S1 to minimize total MC and satisfy prerequisites.\",\n    \"CS3213 is taken in Y4S2 (leave of absence semester) to avoid conflict with CS3241 and meet the 'before' preference for CS4220.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "7": [
+      "CS3241",
+      "CS4220",
+      "CS4277"
+     ],
+     "8": [
+      "CS3213"
+     ]
+    },
+    "reasons": [
+     "CS3241 is taken in Y4S1 as required.",
+     "CS4220 and CS4277 are taken in Y4S1 to minimize total MC and satisfy prerequisites.",
+     "CS3213 is taken in Y4S2 (leave of absence semester) to avoid conflict with CS3241 and meet the 'before' preference for CS4220."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11065,
+    "total_tokens": 11241,
+    "completion_tokens": 176,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 4.13,
+    "attempts": 1
+   },
+   "seconds": 4.13,
+   "violations": [
+    "R1 must-take CS4222 missing",
+    "R3 CS4220 not offered in Sem 1 (semester 7)",
+    "R4 CS4220 in semester 7: prerequisite not met (CS2220 or LSM2104 or LSM2241 or ZB2101)",
+    "R3 CS4277 not offered in Sem 1 (semester 7)",
+    "R7 semester 8 has 4 MC, limit 0",
+    "R9 must rule not met: before CS3241 CS4220"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4220 prerequisite (CS2220/LSM2104/LSM2241/ZB2101) is not met by completed courses.\",\n    \"CS4220 and CS4277 are only offered in Sem 2 (even semesters), but the student has a leave of absence in Sem 8.\",\n    \"CS3213 is offered in Sem 2, but the student cannot take it in Sem 8 due to leave of absence, and taking it in Sem 6 is impossible as Y4S1 is the start.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4220 prerequisite (CS2220/LSM2104/LSM2241/ZB2101) is not met by completed courses.",
+     "CS4220 and CS4277 are only offered in Sem 2 (even semesters), but the student has a leave of absence in Sem 8.",
+     "CS3213 is offered in Sem 2, but the student cannot take it in Sem 8 due to leave of absence, and taking it in Sem 6 is impossible as Y4S1 is the start."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11417,
+    "total_tokens": 11571,
+    "completion_tokens": 154,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.85,
+    "attempts": 1
+   },
+   "seconds": 2.85,
+   "violations": null
+  }
+ ]
+}

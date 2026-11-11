@@ -1,0 +1,99 @@
+{
+ "id": "q2-S3-253",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 5.08,
+ "solver_seconds": 0.029,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3067,
+  "total_tokens": 3342,
+  "completion_tokens": 275,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 5.05,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 3,\n\"completed\": [\n\"MA1522\",\n\"CS1231S\",\n\"ES2660\",\n\"CS2030S\",\n\"CS1101S\",\n\"MA1521\",\n\"IS1108\",\n\"CS2040S\"\n],\n\"must_take\": [\n\"CS2105\",\n\"ST2334\",\n\"CS2101\",\n\"CS2100\",\n\"CS2109S\",\n\"CS3230\"\n],\n\"mc_max\": 16,\n\"sem_caps\": {\n\"5\": 0\n},\n\"late\": [\n\"CS2105\"\n],\n\"rules\": [\n{\n\"type\": \"apart\",\n\"a\": \"CS2109S\",\n\"b\": \"CS2101\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2105\",\n\"b\": \"CS3230\",\n\"strength\": \"must\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "completed": [
+   "MA1522",
+   "CS1231S",
+   "ES2660",
+   "CS2030S",
+   "CS1101S",
+   "MA1521",
+   "IS1108",
+   "CS2040S"
+  ],
+  "must_take": [
+   "CS2105",
+   "ST2334",
+   "CS2101",
+   "CS2100",
+   "CS2109S",
+   "CS3230"
+  ],
+  "mc_max": 16,
+  "sem_caps": {
+   "5": 0
+  },
+  "late": [
+   "CS2105"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS2109S",
+    "b": "CS2101",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2105",
+    "b": "CS3230",
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 8,
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS2109S",
+    "ST2334"
+   ],
+   "4": [],
+   "5": [],
+   "6": [],
+   "7": [],
+   "8": [
+    "CS2101",
+    "CS2105",
+    "CS3230"
+   ]
+  },
+  "mc_per_semester": {
+   "3": 12,
+   "4": 0,
+   "5": 0,
+   "6": 0,
+   "7": 0,
+   "8": 12
+  },
+  "preferences_met": [
+   "CS2105 as late as possible"
+  ],
+  "preferences_not_met": []
+ }
+}

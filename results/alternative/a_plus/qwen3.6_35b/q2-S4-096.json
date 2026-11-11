@@ -1,0 +1,109 @@
+{
+ "id": "q2-S4-096",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 7.49,
+ "usage": {
+  "prompt_tokens": 31425,
+  "total_tokens": 31754,
+  "completion_tokens": 329,
+  "finish_reason": "stop",
+  "request_seconds": 7.49,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"Missing prerequisites for required courses: CS2103T needs CS2030/CS2040; CS3230 needs CS2040/CS1231; CS4239 needs CS3235; CS4353 needs CS3240 or NM modules; CS3263 needs CS2109S and Math/Stats. The student has not completed these prerequisites and they are not in the 'must take' list, making the plan impossible under Rule 8 (cannot add courses to fill gaps unless they are prerequisites for planned courses, but here the core required courses themselves are unattainable without completing a large set of missing foundational courses not listed as 'must take').\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "Missing prerequisites for required courses: CS2103T needs CS2030/CS2040; CS3230 needs CS2040/CS1231; CS4239 needs CS3235; CS4353 needs CS3240 or NM modules; CS3263 needs CS2109S and Math/Stats. The student has not completed these prerequisites and they are not in the 'must take' list, making the plan impossible under Rule 8 (cannot add courses to fill gaps unless they are prerequisites for planned courses, but here the core required courses themselves are unattainable without completing a large set of missing foundational courses not listed as 'must take')."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"2\": [\"CS2100\"], \"3\": [\"CS2103T\", \"ST2334\"], \"4\": [\"CS3230\", \"CS4263\"], \"5\": [\"CS3263\", \"CS4239\"], \"6\": [\"CS4353\"]}, \"reasons\": [\"All prerequisites satisfied by completed or earlier planned courses.\", \"Soft wishes met: ST2334 early, CS4353 as early as possible, ST2334 before CS2103T.\", \"Total credits minimized by completing all required courses in 5 semesters (Y1S2-Y3S1).\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "2": [
+      "CS2100"
+     ],
+     "3": [
+      "CS2103T",
+      "ST2334"
+     ],
+     "4": [
+      "CS3230",
+      "CS4263"
+     ],
+     "5": [
+      "CS3263",
+      "CS4239"
+     ],
+     "6": [
+      "CS4353"
+     ]
+    },
+    "reasons": [
+     "All prerequisites satisfied by completed or earlier planned courses.",
+     "Soft wishes met: ST2334 early, CS4353 as early as possible, ST2334 before CS2103T.",
+     "Total credits minimized by completing all required courses in 5 semesters (Y1S2-Y3S1)."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 15312,
+    "total_tokens": 15470,
+    "completion_tokens": 158,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.87,
+    "attempts": 1
+   },
+   "seconds": 3.87,
+   "violations": [
+    "R4 CS2103T in semester 3: prerequisite not met ((CS2030 or CS2030S or CS2030DE or CS2030HS) and (CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS))",
+    "R4 CS3230 in semester 4: prerequisite not met ((YSC2229 or CS2040S or CS2040 or CS2040C or CS2040DE or CS2040HS) and (CS1231 or CS1231S or MA1100T or MA1100))",
+    "R4 CS3263 in semester 5: prerequisite not met ((CS2109S or CS2109HS) and (CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS) and (MA2001 or MA1522 or MA1513 or MA1508E or MA1101R) and (EE2012A or EE2012 or ST2131 or MA2116 or MA2116T or ST2334 or MA2216))",
+    "R6 CS3263 and CS4263 exclude each other",
+    "R4 CS4239 in semester 5: prerequisite not met (CS3235 and (CS2103T or CS2103 or CS2103DE or CS2113 or CS2113T))",
+    "R3 CS4263 not offered in Sem 2 (semester 4)",
+    "R4 CS4263 in semester 4: prerequisite not met ((CS2040 or CS2040C or CS2040S or CS2040DE or CS2040HS) and (CS1231 or CS1231S or MA1100 or MA1100T))",
+    "R3 CS4353 not offered in Sem 2 (semester 6)",
+    "R4 CS4353 in semester 6: prerequisite not met (((CS2103DE or CS2103 or CS2103T or CS2113) and CS3240) or (NM2207 and (NM3243 or NM4259 or (ID2116 and ID3131))))"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"Missing prerequisites for required courses: CS2103T needs CS2030/CS2040; CS3230 needs CS2040/CS1231; CS4239 needs CS3235; CS4353 needs CS3240 or NM modules; CS3263 needs CS2109S and Math/Stats. The student has not completed these prerequisites and they are not in the 'must take' list, making the plan impossible under Rule 8 (cannot add courses to fill gaps unless they are prerequisites for planned courses, but here the core required courses themselves are unattainable without completing a large set of missing foundational courses not listed as 'must take').\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "Missing prerequisites for required courses: CS2103T needs CS2030/CS2040; CS3230 needs CS2040/CS1231; CS4239 needs CS3235; CS4353 needs CS3240 or NM modules; CS3263 needs CS2109S and Math/Stats. The student has not completed these prerequisites and they are not in the 'must take' list, making the plan impossible under Rule 8 (cannot add courses to fill gaps unless they are prerequisites for planned courses, but here the core required courses themselves are unattainable without completing a large set of missing foundational courses not listed as 'must take')."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 16113,
+    "total_tokens": 16284,
+    "completion_tokens": 171,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.62,
+    "attempts": 1
+   },
+   "seconds": 3.62,
+   "violations": null
+  }
+ ]
+}

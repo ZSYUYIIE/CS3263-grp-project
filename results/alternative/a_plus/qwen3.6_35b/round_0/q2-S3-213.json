@@ -1,0 +1,44 @@
+{
+ "id": "q2-S3-213",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 3.97,
+ "usage": {
+  "prompt_tokens": 8357,
+  "total_tokens": 8551,
+  "completion_tokens": 194,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 3.97,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2105\",\n      \"CS3219\"\n    ],\n    \"7\": [\n      \"CS4236\",\n      \"CS2102\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2105 and CS3219 are planned in Sem 5 as their prerequisites are met by completed modules.\",\n    \"CS4236 is planned in Sem 7 (Y4S1) to satisfy the mandatory timing constraint.\",\n    \"CS2102 is planned in Sem 7 after CS2105 (Sem 5) and CS3230 (completed) satisfy its prerequisites, ensuring CS2102 is taken before CS4236.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2105",
+    "CS3219"
+   ],
+   "7": [
+    "CS4236",
+    "CS2102"
+   ]
+  },
+  "reasons": [
+   "CS2105 and CS3219 are planned in Sem 5 as their prerequisites are met by completed modules.",
+   "CS4236 is planned in Sem 7 (Y4S1) to satisfy the mandatory timing constraint.",
+   "CS2102 is planned in Sem 7 after CS2105 (Sem 5) and CS3230 (completed) satisfy its prerequisites, ensuring CS2102 is taken before CS4236."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

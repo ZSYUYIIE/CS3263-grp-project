@@ -1,0 +1,95 @@
+{
+ "id": "q2-S6-050",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 10.47,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3125,
+  "total_tokens": 3590,
+  "completion_tokens": 465,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 10.47,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"programme\": \"BComp CS Hons\",\n  \"completed\": [\n    \"MA1522\",\n    \"CS1231S\",\n    \"CS1101S\",\n    \"IS1108\",\n    \"ES2660\",\n    \"MA1521\",\n    \"CS2040S\",\n    \"CS2030S\"\n  ],\n  \"current_sem\": 3,\n  \"must_take\": [\n    \"CS4223\",\n    \"CS2109S\",\n    \"LAJ1201\",\n    \"CS2106\",\n    \"CS4240\"\n  ],\n  \"objective\": \"earliest_graduation\",\n  \"rules\": [\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS2106\",\n      \"b\": \"CS4240\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS4240\",\n      \"sem\": 6,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS2106\",\n      \"sem\": 5,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS2109S\",\n      \"sem\": 4,\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS4240\",\n      \"b\": \"CS4223\",\n      \"strength\": \"prefer\"\n    }\n  ],\n  \"late\": [\n    \"CS2109S\",\n    \"CS4223\"\n  ],\n  \"unsupported\": [\n    \"rather not have classes on Fridays\"\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "programme": "BComp CS Hons",
+  "completed": [
+   "MA1522",
+   "CS1231S",
+   "CS1101S",
+   "IS1108",
+   "ES2660",
+   "MA1521",
+   "CS2040S",
+   "CS2030S"
+  ],
+  "current_sem": 3,
+  "must_take": [
+   "CS4223",
+   "CS2109S",
+   "LAJ1201",
+   "CS2106",
+   "CS4240"
+  ],
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS2106",
+    "b": "CS4240",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4240",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2106",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2109S",
+    "sem": 4,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS4240",
+    "b": "CS4223",
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "CS2109S",
+   "CS4223"
+  ],
+  "unsupported": [
+   "rather not have classes on Fridays"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "OUT_OF_SCOPE",
+  "reasons": [
+   "course LAJ1201 (in must_take) is not in the catalogue"
+  ],
+  "message": "I can only plan for BComp (CS) Hons single-major students under AY2026/2027 rules, and this request is outside that (course LAJ1201 (in must_take) is not in the catalogue). Course rules differ by programme and aren't in my data for your case, so please check with your faculty or academic advisor."
+ }
+}

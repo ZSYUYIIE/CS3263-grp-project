@@ -1,0 +1,80 @@
+{
+ "id": "q2-S4-100",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 4.87,
+ "solver_seconds": 0.002,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3113,
+  "total_tokens": 3461,
+  "completion_tokens": 348,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 4.86,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 5,\n\"programme\": \"BComp CS Hons\",\n\"completed\": [\n\"CS2100\",\n\"MA1521\",\n\"ST2334\",\n\"CS1101S\",\n\"CS1231S\",\n\"CS2106\",\n\"CS2109S\",\n\"ES2660\",\n\"CS3230\",\n\"MA1522\",\n\"CS2103T\",\n\"IS1108\",\n\"CS2030S\",\n\"CS2040S\"\n],\n\"must_take\": [\n\"CS4222\",\n\"CS2101\",\n\"CS4330\",\n\"CS3223\",\n\"CS2102\",\n\"CS3264\",\n\"CS3244\"\n],\n\"mc_max\": 12,\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2101\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2102\",\n\"b\": \"CS4222\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4330\",\n\"b\": \"CS2101\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "CS2100",
+   "MA1521",
+   "ST2334",
+   "CS1101S",
+   "CS1231S",
+   "CS2106",
+   "CS2109S",
+   "ES2660",
+   "CS3230",
+   "MA1522",
+   "CS2103T",
+   "IS1108",
+   "CS2030S",
+   "CS2040S"
+  ],
+  "must_take": [
+   "CS4222",
+   "CS2101",
+   "CS4330",
+   "CS3223",
+   "CS2102",
+   "CS3264",
+   "CS3244"
+  ],
+  "mc_max": 12,
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS2101",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2102",
+    "b": "CS4222",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS4330",
+    "b": "CS2101",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3244 is ruled out by completed CS2109S"
+  ]
+ }
+}

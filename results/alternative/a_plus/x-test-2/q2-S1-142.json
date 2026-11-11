@@ -1,0 +1,112 @@
+{
+ "id": "q2-S1-142",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 107.88,
+ "usage": {
+  "prompt_tokens": 10175,
+  "total_tokens": 20755,
+  "completion_tokens": 10580,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 8576
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 10421
+  },
+  "finish_reason": "stop",
+  "request_seconds": 107.88,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS3237\",\"CS3263\",\"CS2105\"],\"6\":[\"CS4215\",\"CS2107\"],\"7\":[\"CS3231\",\"CS3235\"],\"8\":[\"CS4238\",\"CS2102\",\"CS4246\"]},\"reasons\":[\"Added CS2107 and CS3235 because CS4238 requires CS3235, which requires CS2107 and CS2105.\",\"CS4215 is in sem6 so CS3231 can be in sem7; CS4238 is fixed in sem8.\",\"CS3237 and CS3263 are earliest in sem5; CS2102 is latest in sem8 with CS4246, meeting 3 soft wishes.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS3237",
+    "CS3263",
+    "CS2105"
+   ],
+   "6": [
+    "CS4215",
+    "CS2107"
+   ],
+   "7": [
+    "CS3231",
+    "CS3235"
+   ],
+   "8": [
+    "CS4238",
+    "CS2102",
+    "CS4246"
+   ]
+  },
+  "reasons": [
+   "Added CS2107 and CS3235 because CS4238 requires CS3235, which requires CS2107 and CS2105.",
+   "CS4215 is in sem6 so CS3231 can be in sem7; CS4238 is fixed in sem8.",
+   "CS3237 and CS3263 are earliest in sem5; CS2102 is latest in sem8 with CS4246, meeting 3 soft wishes."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS3237\",\"CS3263\",\"CS2105\"],\"6\":[\"CS4215\",\"CS2107\"],\"7\":[\"CS3231\",\"CS3235\"],\"8\":[\"CS4238\",\"CS2102\",\"CS4246\"]},\"reasons\":[\"Added CS2107 and CS3235 because CS4238 requires CS3235, which requires CS2107 and CS2105.\",\"CS4215 is in sem6 so CS3231 can be in sem7; CS4238 is fixed in sem8.\",\"CS3237 and CS3263 are earliest in sem5; CS2102 is latest in sem8 with CS4246, meeting 3 soft wishes.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS3237",
+      "CS3263",
+      "CS2105"
+     ],
+     "6": [
+      "CS4215",
+      "CS2107"
+     ],
+     "7": [
+      "CS3231",
+      "CS3235"
+     ],
+     "8": [
+      "CS4238",
+      "CS2102",
+      "CS4246"
+     ]
+    },
+    "reasons": [
+     "Added CS2107 and CS3235 because CS4238 requires CS3235, which requires CS2107 and CS2105.",
+     "CS4215 is in sem6 so CS3231 can be in sem7; CS4238 is fixed in sem8.",
+     "CS3237 and CS3263 are earliest in sem5; CS2102 is latest in sem8 with CS4246, meeting 3 soft wishes."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10175,
+    "total_tokens": 20755,
+    "completion_tokens": 10580,
+    "prompt_tokens_details": {
+     "cached_tokens": 1536,
+     "created_cache_tokens": 8576,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 10421
+    },
+    "finish_reason": "stop",
+    "request_seconds": 107.88,
+    "attempts": 1
+   },
+   "seconds": 107.88,
+   "violations": []
+  }
+ ]
+}

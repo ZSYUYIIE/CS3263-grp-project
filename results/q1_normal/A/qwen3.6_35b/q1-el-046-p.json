@@ -1,0 +1,24 @@
+{
+ "id": "q1-el-046-p",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 21.47,
+ "usage": {
+  "prompt_tokens": 7910,
+  "total_tokens": 8912,
+  "completion_tokens": 1002,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 21.47,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NOT_ELIGIBLE\", \"reasons\": [\"Prerequisite (EE2012A or EE2012 or ST2131 or MA2216 or ST2334 or MA2116 or MA2116T) not satisfied: only ST2334 is completed, but CS4261 requires one from the first group AND one from the second group (MA1100/MA1100T/CS1231S/CS1231) AND one from the third group (MA2001/MA1101R/MA1311/MA1508E/MA1513/MA1522). The student has CS1231S (satisfies second group) but lacks any from the first group (EE2012A/EE2012/ST2131/MA2216/ST2334/MA2116/MA2116T) - wait, ST2334 is in the first group. Let's re-read carefully. Prereq: (EE2012A or EE2012 or ST2131 or MA2216 or ST2334 or MA2116 or MA2116T) AND (CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS) AND (MA1100 or MA1100T or CS1231S or CS1231) AND (MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522). Student has ST2334 (1st group OK), CS2040S (2nd group OK), CS1231S (3rd group OK). But student does NOT have MA2001, MA1101R, MA1311, MA1508E, MA1513, or MA1522. Student has MA1521 and MA1522? No, student has MA1522. Wait, student list: MA1522 is in the completed list. So MA1522 satisfies the 4th group. Let's re-verify. Completed: CS2040S, CS2109S, CS2111, MA1522, ESP2111, IS1108, CS1101S, CS2103, ES1000, ST2334, CS1231S, MA1521, CS2030S, CS2100. 1st group: ST2334 is present. 2nd group: CS2040S is present. 3rd group: CS1231S is present. 4th group: MA1522 is present. All prerequisites seem met. Is CS4261 offered in Sem 1? Yes. Is it open to BComp CS Hons? Yes. Is it blocked? No. So why NOT_ELIGIBLE? Let me check mutual exclusions or \"cannot take if completed\". Cannot take if completed: CS5461. Student has not completed CS5461. So it should be ELIGIBLE. Let me double check the prereq logic. (EE2012A or EE2012 or ST2131 or MA2216 or ST2334 or MA2116 or MA2116T). Student has ST2334. OK. (CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS). Student has CS2040S. OK. (MA1100 or MA1100T or CS1231S or CS1231). Student has CS1231S. OK. (MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522). Student has MA1522. OK. All prereqs met. Offered Sem 1. Open to BComp CS Hons. Not blocked. So ELIGIBLE.\"]\n}",
+ "answer": {
+  "status": "NOT_ELIGIBLE"
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 4
+}

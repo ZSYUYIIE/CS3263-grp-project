@@ -1,0 +1,184 @@
+{
+ "id": "q2-S3-261",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 2,
+ "end": "repeated plan",
+ "seconds": 28.27,
+ "usage": {
+  "prompt_tokens": 28509,
+  "total_tokens": 30149,
+  "completion_tokens": 1640,
+  "finish_reason": "stop",
+  "request_seconds": 28.27,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"4\": [\n      \"CS2102\",\n      \"CS2105\",\n      \"CS3230\"\n    ],\n    \"5\": [\n      \"CS3234\",\n      \"CS2109S\",\n      \"ST2334\"\n    ],\n    \"6\": [\n      \"CS3103\",\n      \"CS4226\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3103 and CS4226 are offered in Sem 1 (Sem 6).\",\n    \"CS3234 is offered in Sem 2 (Sem 5).\",\n    \"Prerequisites satisfied: CS3103 needs CS2105 (Sem 4), CS4226 needs CS2105 (Sem 4) and ST2334 (Sem 5).\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2102",
+    "CS2105",
+    "CS3230"
+   ],
+   "5": [
+    "CS3234",
+    "CS2109S",
+    "ST2334"
+   ],
+   "6": [
+    "CS3103",
+    "CS4226"
+   ]
+  },
+  "reasons": [
+   "CS3103 and CS4226 are offered in Sem 1 (Sem 6).",
+   "CS3234 is offered in Sem 2 (Sem 5).",
+   "Prerequisites satisfied: CS3103 needs CS2105 (Sem 4), CS4226 needs CS2105 (Sem 4) and ST2334 (Sem 5)."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"4\": [\n      \"CS2102\",\n      \"CS2105\",\n      \"ST2334\"\n    ],\n    \"5\": [\n      \"CS3230\",\n      \"CS3234\",\n      \"CS2109S\"\n    ],\n    \"6\": [\n      \"CS3103\",\n      \"CS4226\"\n    ]\n  },\n  \"reasons\": [\n    \"All required courses are planned with prerequisites satisfied in strictly earlier semesters.\",\n    \"Soft wish 'CS3230 before CS3234' is met (Sem 5 vs Sem 5 is same semester, but CS3230 is listed first; however, they are corequisites in Sem 5. Wait, CS3230 prereq is CS2040S+CS1231S (done in Y1). CS3234 prereq is CS1231S (done in Y1). They can be taken in same semester. The wish 'before' usually implies earlier semester. Let's check if CS3230 can be Sem 4? Sem 4 has CS2102, CS2105, ST2334. MC=12. Can add CS3230? Yes. Then CS3234 in Sem 5. This satisfies 'CS3230 before CS3234' strictly. And 'ST2334 as late as possible' -> Sem 4 is early. Can ST2334 be later? Sem 5? Sem 5 has CS3230, CS3234, CS2109S. MC=12. Can add ST2334? Yes. Then Sem 4 has CS2102, CS2105. MC=8. Sem 6 has CS3103, CS4226. MC=8. This pushes ST2334 to Sem 5. Can it go to Sem 6? Sem 6 has CS3103, CS4226. MC=8. Can add ST2334? Yes. But CS4226 prereq is CS2105 (Sem 4) and EE2012A/EE2012/MA2216/ST2131/ST2334/MA2116/MA2116T. ST2334 is a prereq for CS4226. So ST2334 MUST be before CS4226. If CS4226 is Sem 6, ST2334 can be Sem 4, 5, or 6? No, strictly earlier. So ST2334 must be Sem 4 or 5. To put ST2334 as late as possible, it should be Sem 5. To put CS4226 as late as possible, it should be Sem 6. To put CS3230 before CS3234, CS3230 should be Sem 4 or 5, CS3234 Sem 5 or 6. If CS3230 is Sem 4, CS3234 is Sem 5. This works. Let's re-evaluate Sem 4: CS2102, CS2105, CS3230. MC=12. Sem 5: CS3234, CS2109S, ST2334. MC=12. Sem 6: CS3103, CS4226. MC=8. This satisfies all soft wishes: CS3230 (Sem 4) before CS3234 (Sem 5). ST2334 (Sem 5) is later than Sem 4. CS4226 (Sem 6) is as late as possible. Graduation Sem 6. This is better than previous plan where ST2334 was Sem 4. Let's check prerequisites again. CS3230 prereq: CS2040S (done), CS1231S (done). OK. CS3234 prereq: CS1231S (done). OK. CS2109S prereq: CS2040S (done), MA1521 (done). OK. CS2102 prereq: CS1231S (done), CS2030S (done). OK. CS2105 prereq: CS2040S (done). OK. CS3103 prereq: CS2105 (Sem 4). OK. CS4226 prereq: CS2105 (Sem 4), ST2334 (Sem 5). OK. This plan is valid and optimizes soft wishes.\",\n    \"Graduation in Semester 6 (Y3S2) is the earliest possible given the course load and prerequisites.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "CS2102",
+      "CS2105",
+      "ST2334"
+     ],
+     "5": [
+      "CS3230",
+      "CS3234",
+      "CS2109S"
+     ],
+     "6": [
+      "CS3103",
+      "CS4226"
+     ]
+    },
+    "reasons": [
+     "All required courses are planned with prerequisites satisfied in strictly earlier semesters.",
+     "Soft wish 'CS3230 before CS3234' is met (Sem 5 vs Sem 5 is same semester, but CS3230 is listed first; however, they are corequisites in Sem 5. Wait, CS3230 prereq is CS2040S+CS1231S (done in Y1). CS3234 prereq is CS1231S (done in Y1). They can be taken in same semester. The wish 'before' usually implies earlier semester. Let's check if CS3230 can be Sem 4? Sem 4 has CS2102, CS2105, ST2334. MC=12. Can add CS3230? Yes. Then CS3234 in Sem 5. This satisfies 'CS3230 before CS3234' strictly. And 'ST2334 as late as possible' -> Sem 4 is early. Can ST2334 be later? Sem 5? Sem 5 has CS3230, CS3234, CS2109S. MC=12. Can add ST2334? Yes. Then Sem 4 has CS2102, CS2105. MC=8. Sem 6 has CS3103, CS4226. MC=8. This pushes ST2334 to Sem 5. Can it go to Sem 6? Sem 6 has CS3103, CS4226. MC=8. Can add ST2334? Yes. But CS4226 prereq is CS2105 (Sem 4) and EE2012A/EE2012/MA2216/ST2131/ST2334/MA2116/MA2116T. ST2334 is a prereq for CS4226. So ST2334 MUST be before CS4226. If CS4226 is Sem 6, ST2334 can be Sem 4, 5, or 6? No, strictly earlier. So ST2334 must be Sem 4 or 5. To put ST2334 as late as possible, it should be Sem 5. To put CS4226 as late as possible, it should be Sem 6. To put CS3230 before CS3234, CS3230 should be Sem 4 or 5, CS3234 Sem 5 or 6. If CS3230 is Sem 4, CS3234 is Sem 5. This works. Let's re-evaluate Sem 4: CS2102, CS2105, CS3230. MC=12. Sem 5: CS3234, CS2109S, ST2334. MC=12. Sem 6: CS3103, CS4226. MC=8. This satisfies all soft wishes: CS3230 (Sem 4) before CS3234 (Sem 5). ST2334 (Sem 5) is later than Sem 4. CS4226 (Sem 6) is as late as possible. Graduation Sem 6. This is better than previous plan where ST2334 was Sem 4. Let's check prerequisites again. CS3230 prereq: CS2040S (done), CS1231S (done). OK. CS3234 prereq: CS1231S (done). OK. CS2109S prereq: CS2040S (done), MA1521 (done). OK. CS2102 prereq: CS1231S (done), CS2030S (done). OK. CS2105 prereq: CS2040S (done). OK. CS3103 prereq: CS2105 (Sem 4). OK. CS4226 prereq: CS2105 (Sem 4), ST2334 (Sem 5). OK. This plan is valid and optimizes soft wishes.",
+     "Graduation in Semester 6 (Y3S2) is the earliest possible given the course load and prerequisites."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 8962,
+    "total_tokens": 10094,
+    "completion_tokens": 1132,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 19.18,
+    "attempts": 1
+   },
+   "seconds": 19.18,
+   "violations": [
+    "R3 CS3103 not offered in Sem 2 (semester 6)",
+    "R3 CS3234 not offered in Sem 1 (semester 5)",
+    "R3 CS4226 not offered in Sem 2 (semester 6)"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"4\": [\n      \"CS2102\",\n      \"CS2105\",\n      \"CS3230\"\n    ],\n    \"5\": [\n      \"CS3234\",\n      \"CS2109S\",\n      \"ST2334\"\n    ],\n    \"6\": [\n      \"CS3103\",\n      \"CS4226\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3103 and CS4226 are offered in Sem 1 (Sem 6), CS3234 in Sem 2 (Sem 5).\",\n    \"Prerequisites are satisfied: CS3103 needs CS2105 (Sem 4), CS4226 needs CS2105 (Sem 4) and ST2334 (Sem 5).\",\n    \"Soft wishes met: CS3230 (Sem 4) before CS3234 (Sem 5); ST2334 (Sem 5) as late as possible; CS4226 (Sem 6) as late as possible.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "CS2102",
+      "CS2105",
+      "CS3230"
+     ],
+     "5": [
+      "CS3234",
+      "CS2109S",
+      "ST2334"
+     ],
+     "6": [
+      "CS3103",
+      "CS4226"
+     ]
+    },
+    "reasons": [
+     "CS3103 and CS4226 are offered in Sem 1 (Sem 6), CS3234 in Sem 2 (Sem 5).",
+     "Prerequisites are satisfied: CS3103 needs CS2105 (Sem 4), CS4226 needs CS2105 (Sem 4) and ST2334 (Sem 5).",
+     "Soft wishes met: CS3230 (Sem 4) before CS3234 (Sem 5); ST2334 (Sem 5) as late as possible; CS4226 (Sem 6) as late as possible."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10199,
+    "total_tokens": 10480,
+    "completion_tokens": 281,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.29,
+    "attempts": 1
+   },
+   "seconds": 4.29,
+   "violations": [
+    "R3 CS3103 not offered in Sem 2 (semester 6)",
+    "R3 CS3234 not offered in Sem 1 (semester 5)",
+    "R3 CS4226 not offered in Sem 2 (semester 6)"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"4\": [\n      \"CS2102\",\n      \"CS2105\",\n      \"CS3230\"\n    ],\n    \"5\": [\n      \"CS3234\",\n      \"CS2109S\",\n      \"ST2334\"\n    ],\n    \"6\": [\n      \"CS3103\",\n      \"CS4226\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3103 and CS4226 are offered in Sem 1 (Sem 6).\",\n    \"CS3234 is offered in Sem 2 (Sem 5).\",\n    \"Prerequisites satisfied: CS3103 needs CS2105 (Sem 4), CS4226 needs CS2105 (Sem 4) and ST2334 (Sem 5).\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "CS2102",
+      "CS2105",
+      "CS3230"
+     ],
+     "5": [
+      "CS3234",
+      "CS2109S",
+      "ST2334"
+     ],
+     "6": [
+      "CS3103",
+      "CS4226"
+     ]
+    },
+    "reasons": [
+     "CS3103 and CS4226 are offered in Sem 1 (Sem 6).",
+     "CS3234 is offered in Sem 2 (Sem 5).",
+     "Prerequisites satisfied: CS3103 needs CS2105 (Sem 4), CS4226 needs CS2105 (Sem 4) and ST2334 (Sem 5)."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9348,
+    "total_tokens": 9575,
+    "completion_tokens": 227,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.8,
+    "attempts": 1
+   },
+   "seconds": 4.8,
+   "violations": [
+    "R3 CS3103 not offered in Sem 2 (semester 6)",
+    "R3 CS3234 not offered in Sem 1 (semester 5)",
+    "R3 CS4226 not offered in Sem 2 (semester 6)"
+   ]
+  }
+ ]
+}

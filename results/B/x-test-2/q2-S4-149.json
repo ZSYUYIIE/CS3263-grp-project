@@ -1,0 +1,130 @@
+{
+ "id": "q2-S4-149",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 4.17,
+ "solver_seconds": 0.016,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2838,
+  "total_tokens": 3373,
+  "completion_tokens": 535,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 279
+  },
+  "finish_reason": "stop",
+  "request_seconds": 4.15,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":6,\"completed\":[\"CS3230\",\"CS2106\",\"CS1231S\",\"CS2103T\",\"CS1101S\",\"CS2040S\",\"MA1522\",\"CS3241\",\"CS3211\",\"CS3219\",\"IS1108\",\"CS2100\",\"ES2660\",\"CS2109S\",\"CS2030S\",\"CS2105\",\"MA1521\"],\"must_take\":[\"ST2334\",\"CS3237\",\"CS3247\",\"CS3249\",\"CS4277\",\"CS2102\"],\"objective\":\"min_total_mc\",\"early\":[\"CS3247\"],\"rules\":[{\"type\":\"same_sem\",\"a\":\"CS3249\",\"b\":\"CS2102\",\"strength\":\"must\"},{\"type\":\"apart\",\"a\":\"CS3247\",\"b\":\"CS3249\",\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS2102\",\"b\":\"CS3247\",\"strength\":\"prefer\"},{\"type\":\"in_sem\",\"course\":\"CS2102\",\"sem\":7,\"strength\":\"prefer\"},{\"type\":\"before\",\"a\":\"ST2334\",\"b\":\"CS2102\",\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 6,
+  "completed": [
+   "CS3230",
+   "CS2106",
+   "CS1231S",
+   "CS2103T",
+   "CS1101S",
+   "CS2040S",
+   "MA1522",
+   "CS3241",
+   "CS3211",
+   "CS3219",
+   "IS1108",
+   "CS2100",
+   "ES2660",
+   "CS2109S",
+   "CS2030S",
+   "CS2105",
+   "MA1521"
+  ],
+  "must_take": [
+   "ST2334",
+   "CS3237",
+   "CS3247",
+   "CS3249",
+   "CS4277",
+   "CS2102"
+  ],
+  "objective": "min_total_mc",
+  "early": [
+   "CS3247"
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS3249",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3247",
+    "b": "CS3249",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2102",
+    "b": "CS3247",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 7,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "ST2334",
+    "b": "CS2102",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 7,
+  "plan": {
+   "6": [
+    "CS2111",
+    "CS3247",
+    "CS4277",
+    "ST2334"
+   ],
+   "7": [
+    "CS2102",
+    "CS3237",
+    "CS3249"
+   ]
+  },
+  "mc_per_semester": {
+   "6": 16,
+   "7": 12
+  },
+  "preferences_met": [
+   "CS2102 in semester 7",
+   "ST2334 before CS2102",
+   "CS3247 as early as possible"
+  ],
+  "preferences_not_met": [
+   "CS2102 before CS3247"
+  ],
+  "added_prerequisites": [
+   "CS2111"
+  ]
+ }
+}

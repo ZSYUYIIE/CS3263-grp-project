@@ -1,0 +1,36 @@
+{
+ "id": "q2-S1-058",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 34.1,
+ "usage": {
+  "prompt_tokens": 10567,
+  "total_tokens": 12340,
+  "completion_tokens": 1773,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 34.1,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"6\": [\"CS4249\"], \"7\": [\"CS4263\", \"CS4239\"], \"8\": [\"CS4220\"]}, \"reasons\": [\"CS4249 requires CS3240, which requires CS2111. CS2111 is not in the completed list and has no prerequisites other than intro programming (completed). CS2111 must be taken in Sem 2 (Sem 6, 8). Since CS4249 is fixed in Sem 6, CS2111 must be in Sem 6 or earlier. Sem 6 is full with CS4249? No, MC limit is 20. CS2111 (4) + CS4249 (4) = 8 MC. This is valid. However, CS3240 requires CS2111. So CS2111 must be before CS3240. CS3240 is required for CS4249. So CS2111 -> CS3240 -> CS4249. CS4249 is in Sem 6. So CS3240 must be in Sem 5 or 6. CS2111 must be in Sem 5 or earlier. Sem 5 is Y3S1. Sem 6 is Y3S2. If CS3240 is in Sem 5, CS2111 must be in Sem 5 or earlier. Let's check Sem 5. Sem 5 is empty in the initial thought. I need to add CS2111 and CS3240. CS2111 (Sem 2) can be in Sem 5. CS3240 (Sem 1) can be in Sem 5. So Sem 5: CS2111, CS3240. Then Sem 6: CS4249. Then CS4263 in Sem 7. CS4239 in Sem 7. CS4220 in Sem 8. CS4263 requires CS2040S (completed) and CS1231S (completed). So CS4263 is eligible in Sem 7. CS4239 requires CS3235 and (CS2103T or ...). CS2103T is completed. CS3235 requires CS2105, CS2106, CS2107. None are completed. So CS4239 requires CS2105, CS2106, CS2107. These are not in the plan yet. I must add them. CS2105 requires CS2040S (completed). CS2106 requires CS2100 (completed). CS2107 requires intro programming (completed). So CS2105, CS2106, CS2107 are eligible. They are 4 MC each. Total 12 MC. They can be taken in Sem 5, 6, 7. Sem 5 has CS2111, CS3240 (8 MC). Can add CS2105, CS2106, CS2107? 8+12=20 MC. Yes. So Sem 5: CS2111, CS3240, CS2105, CS2106, CS2107. Sem 6: CS4249. Sem 7: CS4263, CS4239. Sem 8: CS4220. Check CS4220 prereq: CS2220. CS2220 requires CS2040S (completed). CS2220 is not in plan. Must add CS2220. CS2220 is Sem 1. Can be in Sem 5, 7, 8. If in Sem 5, MC becomes 24. Too high. Sem 5 is full. Sem 6 has CS4249 (4 MC). Can add CS2220? 4+4=8. Yes. So Sem 6: CS4249, CS2220. Sem 7: CS4263, CS4239. Sem 8: CS4220. Check CS4239 prereqs again: CS3235 and (CS2103T or ...). CS3235 requires CS2105, CS2106, CS2107. All in Sem 5. So CS3235 can be in Sem 6 or later. CS4239 is in Sem 7. So CS3235 must be in Sem 6 or 7. If CS3235 is in Sem 6, Sem 6 has CS4249, CS2220, CS3235. 4+4+4=12 MC. OK. If CS3235 is in Sem 7, Sem 7 has CS4263, CS4239, CS3235. 4+4+4=12 MC. OK. Let's put CS3235 in Sem 6 to clear Sem 7. Sem 6: CS4249, CS2220, CS3235. Sem 7: CS4263, CS4239. Sem 8: CS4220. Sem 5: CS2111, CS3240, CS2105, CS2106, CS2107. All constraints satisfied. CS4263 in Sem 7 (soft wish met). CS4263 before CS4249? No, CS4249 is Sem 6, CS4263 is Sem 7. Student said \"I'd rather do CS4263 before CS4249\". But CS4249 is fixed in Sem 6. So this soft wish cannot be met. CS4263 as early as possible? Sem 7 is the earliest possible because CS4239 is fixed in Y4S1 (Sem 7) and requires CS3235, which requires CS2105/06/07. CS2105/06/07 can be in Sem 5. CS3235 in Sem 6. CS4239 in Sem 7. CS4263 can be in Sem 5? No, CS4263 is not blocked by CS4239. But CS4263 is a \"must\" to take? No, it's a \"remaining required module\". So it must be taken. Can it be in Sem 5? Sem 5 is full with 5 courses (20 MC). Can we swap? CS2111, CS3240, CS2105, CS2106, CS2107. If we move CS4263 to Sem 5, we must drop one. But all are needed for other courses. CS2111 for CS3240. CS3240 for CS4249. CS2105/06/07 for CS3235. So Sem 5 is critical. CS4263 cannot be in Sem 5. Sem 6 is full with CS4249, CS2220, CS3235. Can we move CS4263 to Sem 6? No, full. So Sem 7 is earliest. Soft wish \"CS4263 before CS4249\" is impossible due to CS4249 fixed in Sem 6. Soft wish \"CS4263 in Sem 7\" is met. Soft wish \"CS4263 as early as possible\" is met (Sem 7 is earliest).\"]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS4249"
+   ],
+   "7": [
+    "CS4263",
+    "CS4239"
+   ],
+   "8": [
+    "CS4220"
+   ]
+  }
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

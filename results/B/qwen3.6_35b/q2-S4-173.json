@@ -1,0 +1,87 @@
+{
+ "id": "q2-S4-173",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.43,
+ "solver_seconds": 0.052,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3139,
+  "total_tokens": 3509,
+  "completion_tokens": 370,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 6.37,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"programme\": \"BComp CS Hons\",\n\"current_sem\": 6,\n\"completed\": [\n\"CS2040S\",\n\"ES2660\",\n\"CS2100\",\n\"CS3230\",\n\"CS2109S\",\n\"CS3219\",\n\"IS1108\",\n\"MA1522\",\n\"CS3227\",\n\"CS2030S\",\n\"MA1521\",\n\"CS2105\",\n\"CS1101S\",\n\"CS1231S\",\n\"CS2103T\",\n\"CS2101\",\n\"CS4218\",\n\"CS2106\"\n],\n\"must_take\": [\n\"CS3247\",\n\"CS4215\",\n\"CS2102\",\n\"ST2334\"\n],\n\"sem_caps\": {\n\"7\": 0\n},\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"ST2334\",\n\"b\": \"CS4215\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"ST2334\",\n\"sem\": 6,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"ST2334\",\n\"b\": \"CS2102\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "programme": "BComp CS Hons",
+  "current_sem": 6,
+  "completed": [
+   "CS2040S",
+   "ES2660",
+   "CS2100",
+   "CS3230",
+   "CS2109S",
+   "CS3219",
+   "IS1108",
+   "MA1522",
+   "CS3227",
+   "CS2030S",
+   "MA1521",
+   "CS2105",
+   "CS1101S",
+   "CS1231S",
+   "CS2103T",
+   "CS2101",
+   "CS4218",
+   "CS2106"
+  ],
+  "must_take": [
+   "CS3247",
+   "CS4215",
+   "CS2102",
+   "ST2334"
+  ],
+  "sem_caps": {
+   "7": 0
+  },
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "before",
+    "a": "ST2334",
+    "b": "CS4215",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "ST2334",
+    "sem": 6,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "ST2334",
+    "b": "CS2102",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the prerequisites of CS3247; the MC limits (at most 20 MC per semester; semesters 7 blocked); the semesters in which the courses are offered"
+  ]
+ }
+}

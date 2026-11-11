@@ -1,0 +1,106 @@
+{
+ "id": "q2-S4-150",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.21,
+ "solver_seconds": 0.002,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3206,
+  "total_tokens": 3699,
+  "completion_tokens": 493,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 7.21,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 7,\n\"completed\": [\n\"CS2103T\",\n\"CS2101\",\n\"CS1231S\",\n\"CS3223\",\n\"CS2109S\",\n\"CS2102\",\n\"MA1522\",\n\"CS2040S\",\n\"MA1521\",\n\"CS3230\",\n\"CS2105\",\n\"ST2334\",\n\"CS2100\",\n\"ES2660\",\n\"CS3219\",\n\"CS1101S\",\n\"CS2030S\",\n\"CS2106\",\n\"CS3281\"\n],\n\"must_take\": [\n\"CS3227\",\n\"CS4247\",\n\"CS4234\",\n\"CS4215\"\n],\n\"mc_max\": 16,\n\"sem_caps\": {\n\"8\": 0\n},\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3227\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS3227\",\n\"b\": \"CS4247\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4234\",\n\"b\": \"CS4247\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4247\",\n\"sem\": 8,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4234\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4234\",\n\"b\": \"CS3227\",\n\"strength\": \"prefer\"\n}\n],\n\"late\": [\n\"CS4247\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "completed": [
+   "CS2103T",
+   "CS2101",
+   "CS1231S",
+   "CS3223",
+   "CS2109S",
+   "CS2102",
+   "MA1522",
+   "CS2040S",
+   "MA1521",
+   "CS3230",
+   "CS2105",
+   "ST2334",
+   "CS2100",
+   "ES2660",
+   "CS3219",
+   "CS1101S",
+   "CS2030S",
+   "CS2106",
+   "CS3281"
+  ],
+  "must_take": [
+   "CS3227",
+   "CS4247",
+   "CS4234",
+   "CS4215"
+  ],
+  "mc_max": 16,
+  "sem_caps": {
+   "8": 0
+  },
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3227",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3227",
+    "b": "CS4247",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS4234",
+    "b": "CS4247",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4247",
+    "sem": 8,
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4234",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4234",
+    "b": "CS3227",
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "CS4247"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4247 cannot be placed in any remaining semester (offered in terms [2]; semesters left [7])",
+   "CS4215 cannot be placed in any remaining semester (offered in terms [2]; semesters left [7])"
+  ]
+ }
+}

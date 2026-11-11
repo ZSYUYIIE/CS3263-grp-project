@@ -1,0 +1,88 @@
+{
+ "id": "q2-S4-072",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 9.76,
+ "solver_seconds": 0.001,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3148,
+  "total_tokens": 3543,
+  "completion_tokens": 395,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 7.54,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 7,\n\"completed\": [\n\"CS3230\",\n\"MA1522\",\n\"CS1101S\",\n\"CS2109S\",\n\"CS2105\",\n\"IS1108\",\n\"CS2102\",\n\"CS1231S\",\n\"CS2040S\",\n\"CS2101\",\n\"CS2100\",\n\"CS2106\",\n\"ES2660\",\n\"CS2030S\",\n\"CS3219\",\n\"CS2103T\",\n\"CS3227\",\n\"MA1521\",\n\"CS4218\"\n],\n\"must_take\": [\n\"CS3263\",\n\"CS4212\",\n\"CS4249\",\n\"CS3243\",\n\"ST2334\"\n],\n\"mc_max\": 16,\n\"rules\": [\n{\n\"type\": \"apart\",\n\"a\": \"ST2334\",\n\"b\": \"CS4212\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"ST2334\",\n\"b\": \"CS4249\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4249\",\n\"b\": \"CS4212\",\n\"strength\": \"must\"\n}\n],\n\"early\": [\n\"CS4249\"\n],\n\"late\": [\n\"CS4212\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "completed": [
+   "CS3230",
+   "MA1522",
+   "CS1101S",
+   "CS2109S",
+   "CS2105",
+   "IS1108",
+   "CS2102",
+   "CS1231S",
+   "CS2040S",
+   "CS2101",
+   "CS2100",
+   "CS2106",
+   "ES2660",
+   "CS2030S",
+   "CS3219",
+   "CS2103T",
+   "CS3227",
+   "MA1521",
+   "CS4218"
+  ],
+  "must_take": [
+   "CS3263",
+   "CS4212",
+   "CS4249",
+   "CS3243",
+   "ST2334"
+  ],
+  "mc_max": 16,
+  "rules": [
+   {
+    "type": "apart",
+    "a": "ST2334",
+    "b": "CS4212",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "ST2334",
+    "b": "CS4249",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4249",
+    "b": "CS4212",
+    "strength": "must"
+   }
+  ],
+  "early": [
+   "CS4249"
+  ],
+  "late": [
+   "CS4212"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3243 is ruled out by completed CS2109S"
+  ]
+ }
+}

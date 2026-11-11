@@ -1,0 +1,62 @@
+{
+ "id": "q2-S1-017",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 100.65,
+ "usage": {
+  "prompt_tokens": 8297,
+  "total_tokens": 14761,
+  "completion_tokens": 6464,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 6656,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 6265
+  },
+  "finish_reason": "stop",
+  "request_seconds": 100.65,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"2\":[\"CS2040\",\"CS2107\"],\"3\":[\"CS2105\",\"CG2271\"],\"4\":[\"CS2102\",\"CS2113\"],\"5\":[\"CS3235\",\"CS3219\",\"CS3223\"],\"6\":[\"CS3230\",\"CS4218\"],\"8\":[\"CS4221\"]},\"reasons\":[\"CS3235 is fixed in semester 5 and CS3230 in semester 6; CS4221 is Sem 2 only and cannot share with either, so it is placed in semester 8.\",\"Added only prerequisites needed for the requested courses: CS2040, CS2107, CS2105, CG2271, CS2102, CS2113, CS3219 and CS3223.\",\"CS4218 is before CS4221 and CS3235 is before CS3230; all prerequisites are in strictly earlier semesters.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "2": [
+    "CS2040",
+    "CS2107"
+   ],
+   "3": [
+    "CS2105",
+    "CG2271"
+   ],
+   "4": [
+    "CS2102",
+    "CS2113"
+   ],
+   "5": [
+    "CS3235",
+    "CS3219",
+    "CS3223"
+   ],
+   "6": [
+    "CS3230",
+    "CS4218"
+   ],
+   "8": [
+    "CS4221"
+   ]
+  },
+  "reasons": [
+   "CS3235 is fixed in semester 5 and CS3230 in semester 6; CS4221 is Sem 2 only and cannot share with either, so it is placed in semester 8.",
+   "Added only prerequisites needed for the requested courses: CS2040, CS2107, CS2105, CG2271, CS2102, CS2113, CS3219 and CS3223.",
+   "CS4218 is before CS4221 and CS3235 is before CS3230; all prerequisites are in strictly earlier semesters."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 4
+}

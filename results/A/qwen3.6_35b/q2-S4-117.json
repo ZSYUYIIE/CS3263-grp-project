@@ -1,0 +1,39 @@
+{
+ "id": "q2-S4-117",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 6.87,
+ "usage": {
+  "prompt_tokens": 11057,
+  "total_tokens": 11331,
+  "completion_tokens": 274,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 6.86,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS2102\",\n      \"CS3237\"\n    ],\n    \"8\": [\n      \"CS3264\",\n      \"CS3103\"\n    ]\n  },\n  \"reasons\": [\n    \"Semester 6: CS2102 and CS3237 are taken together. Prerequisites for CS2102 (CS1231S, CS2040S) and CS3237 (CS2100, CS1101S) are completed. They are not mutually exclusive.\",\n    \"Semester 7 is exchange (0 MC). CS3103 requires CS2105 (completed). CS3264 requires CS2102 (completed in S6) and CS2040S (completed).\",\n    \"Semester 8: CS3264 and CS3237 are not in the same semester. CS3264 is taken as early as possible (S8) given S7 is exchange. CS3103 is also taken in S8.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS2102",
+    "CS3237"
+   ],
+   "8": [
+    "CS3264",
+    "CS3103"
+   ]
+  },
+  "reasons": [
+   "Semester 6: CS2102 and CS3237 are taken together. Prerequisites for CS2102 (CS1231S, CS2040S) and CS3237 (CS2100, CS1101S) are completed. They are not mutually exclusive.",
+   "Semester 7 is exchange (0 MC). CS3103 requires CS2105 (completed). CS3264 requires CS2102 (completed in S6) and CS2040S (completed).",
+   "Semester 8: CS3264 and CS3237 are not in the same semester. CS3264 is taken as early as possible (S8) given S7 is exchange. CS3103 is also taken in S8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

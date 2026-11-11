@@ -1,0 +1,59 @@
+{
+ "id": "q2-S1-104",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 3,
+ "end": "valid",
+ "seconds": 58.31,
+ "usage": {
+  "prompt_tokens": 44074,
+  "total_tokens": 48038,
+  "completion_tokens": 3964,
+  "finish_reason": "stop",
+  "request_seconds": 58.31,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2105\",\n      \"CS3230\"\n    ],\n    \"4\": [\n      \"CS2101\",\n      \"CS2102\",\n      \"ST2334\"\n    ],\n    \"5\": [\n      \"CS2100\",\n      \"CS2109S\",\n      \"CS2103T\",\n      \"CS3231\"\n    ],\n    \"6\": [\n      \"CS2106\",\n      \"CS3219\",\n      \"CS4430\"\n    ],\n    \"7\": [\n      \"CS3241\"\n    ],\n    \"8\": [\n      \"CS3247\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3241 is offered in Sem 1, so it must be in Sem 7.\",\n    \"CS3247 is offered in Sem 2, so it must be in Sem 8.\",\n    \"CS3231 is required for CS4430 and is offered in Sem 1, placed in Sem 5.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2105",
+    "CS3230"
+   ],
+   "4": [
+    "CS2101",
+    "CS2102",
+    "ST2334"
+   ],
+   "5": [
+    "CS2100",
+    "CS2109S",
+    "CS2103T",
+    "CS3231"
+   ],
+   "6": [
+    "CS2106",
+    "CS3219",
+    "CS4430"
+   ],
+   "7": [
+    "CS3241"
+   ],
+   "8": [
+    "CS3247"
+   ]
+  },
+  "reasons": [
+   "CS3241 is offered in Sem 1, so it must be in Sem 7.",
+   "CS3247 is offered in Sem 2, so it must be in Sem 8.",
+   "CS3231 is required for CS4430 and is offered in Sem 1, placed in Sem 5."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

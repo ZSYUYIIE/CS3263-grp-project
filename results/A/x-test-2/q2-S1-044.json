@@ -1,0 +1,70 @@
+{
+ "id": "q2-S1-044",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 160.15,
+ "usage": {
+  "prompt_tokens": 13206,
+  "total_tokens": 27258,
+  "completion_tokens": 14052,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 11648,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 13823
+  },
+  "finish_reason": "stop",
+  "request_seconds": 160.15,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"2\":[\"CS2040S\",\"CS2111\",\"IS1108\",\"CS2100\"],\"3\":[\"CS2102\",\"CS2107\",\"CS2113\",\"CS3240\"],\"4\":[\"CS2106\",\"MA1522\",\"CS2109S\"],\"5\":[\"CS2105\",\"CS4353\"],\"6\":[\"CS3235\"],\"7\":[\"CS4239\",\"ST2334\"],\"8\":[\"CS4248\",\"CS3263\"]},\"reasons\":[\"CS4239 in sem7 forces ST2334 in sem7; CS4248 and CS3263 need ST2334, so sem8 is the earliest finish.\",\"Added only prerequisite-chain courses: CS2111, CS3240, CS2113, CS2100, CS2106, CS2107, CS3235, CS2109S.\",\"CS2105 is in sem5, the latest possible because CS3235 must precede CS4239; CS3263 before CS4239 is impossible due ST2334 timing.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "2": [
+    "CS2040S",
+    "CS2111",
+    "IS1108",
+    "CS2100"
+   ],
+   "3": [
+    "CS2102",
+    "CS2107",
+    "CS2113",
+    "CS3240"
+   ],
+   "4": [
+    "CS2106",
+    "MA1522",
+    "CS2109S"
+   ],
+   "5": [
+    "CS2105",
+    "CS4353"
+   ],
+   "6": [
+    "CS3235"
+   ],
+   "7": [
+    "CS4239",
+    "ST2334"
+   ],
+   "8": [
+    "CS4248",
+    "CS3263"
+   ]
+  },
+  "reasons": [
+   "CS4239 in sem7 forces ST2334 in sem7; CS4248 and CS3263 need ST2334, so sem8 is the earliest finish.",
+   "Added only prerequisite-chain courses: CS2111, CS3240, CS2113, CS2100, CS2106, CS2107, CS3235, CS2109S.",
+   "CS2105 is in sem5, the latest possible because CS3235 must precede CS4239; CS3263 before CS4239 is impossible due ST2334 timing."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

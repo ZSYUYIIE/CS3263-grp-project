@@ -1,0 +1,53 @@
+{
+ "id": "q2-S1-001",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 1,
+ "end": "valid",
+ "seconds": 44.17,
+ "usage": {
+  "prompt_tokens": 12250,
+  "total_tokens": 14630,
+  "completion_tokens": 2380,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 44.17,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"1\": [\n      \"CS1010\",\n      \"CS1231\",\n      \"ES2660\"\n    ],\n    \"2\": [\n      \"CS2040\"\n    ],\n    \"3\": [\n      \"CS3230\"\n    ],\n    \"5\": [\n      \"CS3231\"\n    ],\n    \"8\": [\n      \"CS4430\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3231 is only offered in Sem 1, so it must be taken in an odd semester (Sem 5 in this plan).\",\n    \"CS4430 requires CS3231, so it is placed in Sem 8 after CS3231 in Sem 5.\",\n    \"CS3230 is placed in Sem 3 as early as possible, satisfying the prerequisite chain.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1010",
+    "CS1231",
+    "ES2660"
+   ],
+   "2": [
+    "CS2040"
+   ],
+   "3": [
+    "CS3230"
+   ],
+   "5": [
+    "CS3231"
+   ],
+   "8": [
+    "CS4430"
+   ]
+  },
+  "reasons": [
+   "CS3231 is only offered in Sem 1, so it must be taken in an odd semester (Sem 5 in this plan).",
+   "CS4430 requires CS3231, so it is placed in Sem 8 after CS3231 in Sem 5.",
+   "CS3230 is placed in Sem 3 as early as possible, satisfying the prerequisite chain."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

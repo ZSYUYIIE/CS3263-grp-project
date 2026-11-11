@@ -1,0 +1,101 @@
+{
+ "id": "q2-S4-180",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 8.58,
+ "solver_seconds": 0.052,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3154,
+  "total_tokens": 3606,
+  "completion_tokens": 452,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 8.53,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 6,\n\"completed\": [\n\"MA1522\",\n\"CS3219\",\n\"CS2105\",\n\"CS3230\",\n\"CS2040S\",\n\"CS2103T\",\n\"CS2030S\",\n\"CS1231S\",\n\"CS2100\",\n\"ES2660\",\n\"CS1101S\",\n\"CS2106\",\n\"CS4243\",\n\"CS2109S\",\n\"MA1521\",\n\"ST2334\",\n\"CS2101\"\n],\n\"must_take\": [\n\"CS3242\",\n\"CS4277\",\n\"IS1108\",\n\"CS2102\"\n],\n\"mc_max\": 12,\n\"sem_caps\": {\n\"7\": 0\n},\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"apart\",\n\"a\": \"IS1108\",\n\"b\": \"CS2102\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3233\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4277\",\n\"sem\": 6,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"IS1108\",\n\"sem\": 7,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS3233\",\n\"b\": \"IS1108\",\n\"strength\": \"prefer\"\n}\n],\n\"unsupported\": [\n\"modules taught by my favourite lecturer when possible\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 6,
+  "completed": [
+   "MA1522",
+   "CS3219",
+   "CS2105",
+   "CS3230",
+   "CS2040S",
+   "CS2103T",
+   "CS2030S",
+   "CS1231S",
+   "CS2100",
+   "ES2660",
+   "CS1101S",
+   "CS2106",
+   "CS4243",
+   "CS2109S",
+   "MA1521",
+   "ST2334",
+   "CS2101"
+  ],
+  "must_take": [
+   "CS3242",
+   "CS4277",
+   "IS1108",
+   "CS2102"
+  ],
+  "mc_max": 12,
+  "sem_caps": {
+   "7": 0
+  },
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "apart",
+    "a": "IS1108",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3233",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4277",
+    "sem": 6,
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "IS1108",
+    "sem": 7,
+    "strength": "prefer"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3233",
+    "b": "IS1108",
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "modules taught by my favourite lecturer when possible"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the prerequisites of CS3242; the MC limits (at most 12 MC per semester; semesters 7 blocked)"
+  ],
+  "not_applied": [
+   "modules taught by my favourite lecturer when possible"
+  ]
+ }
+}

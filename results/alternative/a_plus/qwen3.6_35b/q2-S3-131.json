@@ -1,0 +1,154 @@
+{
+ "id": "q2-S3-131",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 35.3,
+ "usage": {
+  "prompt_tokens": 35402,
+  "total_tokens": 36932,
+  "completion_tokens": 1530,
+  "finish_reason": "stop",
+  "request_seconds": 35.3,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4223 cannot be taken: prerequisite CS3210/CS3220/CG3207 is not completed or planned.\",\n    \"CS3237 is only offered in Sem 1, but the student is in Y3S2 (Sem 6) and later; it cannot be scheduled.\",\n    \"CS4222 is only offered in Sem 2, but the student is in Y3S2 (Sem 6) and later; it cannot be scheduled.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4223 cannot be taken: prerequisite CS3210/CS3220/CG3207 is not completed or planned.",
+   "CS3237 is only offered in Sem 1, but the student is in Y3S2 (Sem 6) and later; it cannot be scheduled.",
+   "CS4222 is only offered in Sem 2, but the student is in Y3S2 (Sem 6) and later; it cannot be scheduled."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"6\": [\"CS2101\", \"CS2102\", \"CS3237\"], \"7\": [\"CS4222\", \"CS4223\"], \"8\": [\"ES2660\"]}, \"reasons\": [\"All prerequisites satisfied by completed courses. CS2101 placed in Sem 6 (earliest available after Y3S1 start). CS2102 placed in Sem 6. CS3237 placed in Sem 6 (Sem 7 blocked by CS4223/4223 dependency on CS3210/CG3207 which are not taken, wait: CS4223 prereq is (CS2106 or CG2271) and (CS3210 or CS3220 or CG3207). Student has CS2106. Does student have CS3210, CS3220 or CG3207? No. So CS4223 cannot be taken in Sem 7 unless one of those is taken. CS3237 prereq is (EE2028 or EE2024 or CG2028 or CS2100 or CS2100DE or CS2100HS) and (CS1010...). Student has CS2100. So CS3237 is eligible. CS4222 prereq is (EE3204 or EE3204E or EE4204 or CS2105) and (EE2012A or EE2012 or ST2131 or ST2334 or MA2116 or MA2116T or MA2216). Student has CS2105 and ST2334. So CS4222 is eligible. However, CS4223 requires CS3210/CS3220/CG3207. None are in the plan. Thus CS4223 is impossible to take. Wait, let me re-read CS4223 prereq: (CS2106 or CG2271) and (CS3210 or CS3220 or CG3207). Student has CS2106. But lacks the second part. So CS4223 is NOT eligible. I must remove it. CS3237 is eligible. CS4222 is eligible. CS2102 is eligible. CS2101 is eligible. ES2660 is eligible. CS3237 ideally in Sem 7. Sem 7 is Y4S1. Sem 8 is Y4S2. If I put CS3237 in Sem 7, I can take CS4222 in Sem 7 or 8. CS4223 is impossible. So I will plan CS2101, CS2102, CS3237, CS4222, ES2660. CS2101 early -> Sem 6. CS2102 late -> Sem 8? No, Sem 6 is fine. CS3237 ideally Sem 7. CS4222 Sem 7 or 8. ES2660 any. Limit 16 MC. Sem 6: CS2101(4)+CS2102(4)+CS3237(4) = 12 MC. Sem 7: CS3237(4)+CS4222(4) = 8 MC. Sem 8: ES2660(4) = 4 MC. This works. CS4223 is excluded as ineligible.\", \"CS4223 excluded: missing prerequisite CS3210/CS3220/CG3207.\", \"Soft wishes: CS2101 early (Sem 6), CS2102 late (Sem 6 is earliest possible with CS2101? No, CS2102 prereq CS1231S and CS2030S/CS2040S. Both done. So CS2102 can be Sem 6. 'Late' is relative. Sem 8 is later. I can move CS2102 to Sem 8. Sem 6: CS2101, CS3237. Sem 7: CS4222, CS3237? No CS3237 in Sem 7. Sem 6: CS2101, CS3237. Sem 7: CS4222. Sem 8: CS2102, ES2660. This puts CS2102 in Sem 8 (later). CS3237 in Sem 6 (not 7). Can I put CS3237 in Sem 7? Sem 7: CS3237, CS4222. Sem 6: CS2101. Sem 8: CS2102, ES2660. This meets CS3237 ideally in Sem 7. CS2101 in Sem 6 (early). CS2102 in Sem 8 (late). This is better.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS2101",
+      "CS2102",
+      "CS3237"
+     ],
+     "7": [
+      "CS4222",
+      "CS4223"
+     ],
+     "8": [
+      "ES2660"
+     ]
+    },
+    "reasons": [
+     "All prerequisites satisfied by completed courses. CS2101 placed in Sem 6 (earliest available after Y3S1 start). CS2102 placed in Sem 6. CS3237 placed in Sem 6 (Sem 7 blocked by CS4223/4223 dependency on CS3210/CG3207 which are not taken, wait: CS4223 prereq is (CS2106 or CG2271) and (CS3210 or CS3220 or CG3207). Student has CS2106. Does student have CS3210, CS3220 or CG3207? No. So CS4223 cannot be taken in Sem 7 unless one of those is taken. CS3237 prereq is (EE2028 or EE2024 or CG2028 or CS2100 or CS2100DE or CS2100HS) and (CS1010...). Student has CS2100. So CS3237 is eligible. CS4222 prereq is (EE3204 or EE3204E or EE4204 or CS2105) and (EE2012A or EE2012 or ST2131 or ST2334 or MA2116 or MA2116T or MA2216). Student has CS2105 and ST2334. So CS4222 is eligible. However, CS4223 requires CS3210/CS3220/CG3207. None are in the plan. Thus CS4223 is impossible to take. Wait, let me re-read CS4223 prereq: (CS2106 or CG2271) and (CS3210 or CS3220 or CG3207). Student has CS2106. But lacks the second part. So CS4223 is NOT eligible. I must remove it. CS3237 is eligible. CS4222 is eligible. CS2102 is eligible. CS2101 is eligible. ES2660 is eligible. CS3237 ideally in Sem 7. Sem 7 is Y4S1. Sem 8 is Y4S2. If I put CS3237 in Sem 7, I can take CS4222 in Sem 7 or 8. CS4223 is impossible. So I will plan CS2101, CS2102, CS3237, CS4222, ES2660. CS2101 early -> Sem 6. CS2102 late -> Sem 8? No, Sem 6 is fine. CS3237 ideally Sem 7. CS4222 Sem 7 or 8. ES2660 any. Limit 16 MC. Sem 6: CS2101(4)+CS2102(4)+CS3237(4) = 12 MC. Sem 7: CS3237(4)+CS4222(4) = 8 MC. Sem 8: ES2660(4) = 4 MC. This works. CS4223 is excluded as ineligible.",
+     "CS4223 excluded: missing prerequisite CS3210/CS3220/CG3207.",
+     "Soft wishes: CS2101 early (Sem 6), CS2102 late (Sem 6 is earliest possible with CS2101? No, CS2102 prereq CS1231S and CS2030S/CS2040S. Both done. So CS2102 can be Sem 6. 'Late' is relative. Sem 8 is later. I can move CS2102 to Sem 8. Sem 6: CS2101, CS3237. Sem 7: CS4222, CS3237? No CS3237 in Sem 7. Sem 6: CS2101, CS3237. Sem 7: CS4222. Sem 8: CS2102, ES2660. This puts CS2102 in Sem 8 (later). CS3237 in Sem 6 (not 7). Can I put CS3237 in Sem 7? Sem 7: CS3237, CS4222. Sem 6: CS2101. Sem 8: CS2102, ES2660. This meets CS3237 ideally in Sem 7. CS2101 in Sem 6 (early). CS2102 in Sem 8 (late). This is better."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11248,
+    "total_tokens": 12423,
+    "completion_tokens": 1175,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 29.83,
+    "attempts": 1
+   },
+   "seconds": 29.83,
+   "violations": [
+    "R3 CS3237 not offered in Sem 2 (semester 6)",
+    "R3 CS4222 not offered in Sem 1 (semester 7)",
+    "R4 CS4223 in semester 7: prerequisite not met ((CS2106 or CG2271) and (CS3210 or CS3220 or CG3207))",
+    "R8 semester 8 has 4 MC, minimum 8"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS2101\",\n      \"CS3237\"\n    ],\n    \"7\": [\n      \"CS4222\"\n    ],\n    \"8\": [\n      \"CS2102\",\n      \"ES2660\"\n    ]\n  },\n  \"reasons\": [\n    \"CS4223 excluded: missing prerequisite CS3210/CS3220/CG3207.\",\n    \"CS3237 placed in Sem 6 (Sem 1) as it is not offered in Sem 2; Sem 7 wish cannot be met due to offering constraints.\",\n    \"CS2101 placed in Sem 6 (earliest). CS2102 placed in Sem 8 (latest possible). ES2660 in Sem 8 to meet 8 MC minimum.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS2101",
+      "CS3237"
+     ],
+     "7": [
+      "CS4222"
+     ],
+     "8": [
+      "CS2102",
+      "ES2660"
+     ]
+    },
+    "reasons": [
+     "CS4223 excluded: missing prerequisite CS3210/CS3220/CG3207.",
+     "CS3237 placed in Sem 6 (Sem 1) as it is not offered in Sem 2; Sem 7 wish cannot be met due to offering constraints.",
+     "CS2101 placed in Sem 6 (earliest). CS2102 placed in Sem 8 (latest possible). ES2660 in Sem 8 to meet 8 MC minimum."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12573,
+    "total_tokens": 12793,
+    "completion_tokens": 220,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 3.53,
+    "attempts": 1
+   },
+   "seconds": 3.53,
+   "violations": [
+    "R1 must-take CS4223 missing",
+    "R3 CS3237 not offered in Sem 2 (semester 6)",
+    "R3 CS4222 not offered in Sem 1 (semester 7)",
+    "R8 semester 7 has 4 MC, minimum 8"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4223 cannot be taken: prerequisite CS3210/CS3220/CG3207 is not completed or planned.\",\n    \"CS3237 is only offered in Sem 1, but the student is in Y3S2 (Sem 6) and later; it cannot be scheduled.\",\n    \"CS4222 is only offered in Sem 2, but the student is in Y3S2 (Sem 6) and later; it cannot be scheduled.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4223 cannot be taken: prerequisite CS3210/CS3220/CG3207 is not completed or planned.",
+     "CS3237 is only offered in Sem 1, but the student is in Y3S2 (Sem 6) and later; it cannot be scheduled.",
+     "CS4222 is only offered in Sem 2, but the student is in Y3S2 (Sem 6) and later; it cannot be scheduled."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11581,
+    "total_tokens": 11716,
+    "completion_tokens": 135,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 1.94,
+    "attempts": 1
+   },
+   "seconds": 1.94,
+   "violations": null
+  }
+ ]
+}

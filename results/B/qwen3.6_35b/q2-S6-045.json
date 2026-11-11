@@ -1,0 +1,87 @@
+{
+ "id": "q2-S6-045",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 17.01,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3072,
+  "total_tokens": 3427,
+  "completion_tokens": 355,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 17.01,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 1,\n\"completed\": [],\n\"programme\": \"BComp CS Hons with minor in Statistics\",\n\"must_take\": [\n\"ES2660\",\n\"CS4246\",\n\"CS4262\"\n],\n\"mc_max\": 12,\n\"objective\": \"earliest_graduation\",\n\"early\": [\n\"CS4246\"\n],\n\"rules\": [\n{\n\"type\": \"apart\",\n\"a\": \"ES2660\",\n\"b\": \"CS4246\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"ES2660\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4262\",\n\"sem\": 4,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4262\",\n\"b\": \"ES2660\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4262\",\n\"b\": \"CS4246\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4246\",\n\"sem\": 8,\n\"strength\": \"prefer\"\n}\n],\n\"unsupported\": [\n\"at most two modules with final exams in a semester\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "completed": [],
+  "programme": "BComp CS Hons with minor in Statistics",
+  "must_take": [
+   "ES2660",
+   "CS4246",
+   "CS4262"
+  ],
+  "mc_max": 12,
+  "objective": "earliest_graduation",
+  "early": [
+   "CS4246"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "ES2660",
+    "b": "CS4246",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "ES2660",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4262",
+    "sem": 4,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4262",
+    "b": "ES2660",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS4262",
+    "b": "CS4246",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4246",
+    "sem": 8,
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "at most two modules with final exams in a semester"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "OUT_OF_SCOPE",
+  "reasons": [
+   "programme 'BComp CS Hons with minor in Statistics' is not BComp (CS) Hons"
+  ],
+  "message": "I can only plan for BComp (CS) Hons single-major students under AY2026/2027 rules, and this request is outside that (programme 'BComp CS Hons with minor in Statistics' is not BComp (CS) Hons). Course rules differ by programme and aren't in my data for your case, so please check with your faculty or academic advisor."
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "id": "q2-S1-128",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 2,
+ "end": "valid",
+ "seconds": 11.58,
+ "usage": {
+  "prompt_tokens": 20716,
+  "total_tokens": 21420,
+  "completion_tokens": 704,
+  "finish_reason": "stop",
+  "request_seconds": 11.57,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"6\": [\"CS2102\", \"IS1108\"], \"7\": [\"CS3103\", \"CS4225\"], \"8\": [\"CS3235\", \"CS4221\"]}, \"reasons\": [\"CS2102 taken in Sem 6 to satisfy prerequisite for CS3235 and CS4221. CS3235 requires CS2107 which is not completed; however, CS2107 is not in the 'must take' list. Re-checking CS3235 prereqs: CS2105 (done), CS2106 (done), CS2107 (NOT done). CS2107 has no prereqs. I must add CS2107. CS2107 offered Sem 1,2. Can take in Sem 6. So Sem 6: CS2102, IS1108, CS2107. Sem 7: CS3103, CS4225. Sem 8: CS3235, CS4221. CS4221 requires CS3223. CS3223 requires CS2040S (done) and CS2102 (done in Sem 6). So CS3223 must be taken before CS4221. CS3223 offered Sem 1,2. Can take in Sem 7. So Sem 7: CS3103, CS4225, CS3223. Sem 8: CS3235, CS4221. MC check: Sem 6: 4+4+4=12. Sem 7: 4+4+4=12. Sem 8: 4+4=8. All <=16. IS1108 before CS2102? No, IS1108 in 6, CS2102 in 6. 'Before' usually means earlier semester. If strict, IS1108 in 5? But student is in Y3S2 (Sem 6). Cannot go back. So IS1108 and CS2102 same semester is best possible. CS4221 and CS3235 apart? Yes (7 vs 8). CS3103 and CS4225 same? Yes (7).\"]}}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS2102",
+    "IS1108"
+   ],
+   "7": [
+    "CS3103",
+    "CS4225"
+   ],
+   "8": [
+    "CS3235",
+    "CS4221"
+   ]
+  },
+  "reasons": [
+   "CS2102 taken in Sem 6 to satisfy prerequisite for CS3235 and CS4221. CS3235 requires CS2107 which is not completed; however, CS2107 is not in the 'must take' list. Re-checking CS3235 prereqs: CS2105 (done), CS2106 (done), CS2107 (NOT done). CS2107 has no prereqs. I must add CS2107. CS2107 offered Sem 1,2. Can take in Sem 6. So Sem 6: CS2102, IS1108, CS2107. Sem 7: CS3103, CS4225. Sem 8: CS3235, CS4221. CS4221 requires CS3223. CS3223 requires CS2040S (done) and CS2102 (done in Sem 6). So CS3223 must be taken before CS4221. CS3223 offered Sem 1,2. Can take in Sem 7. So Sem 7: CS3103, CS4225, CS3223. Sem 8: CS3235, CS4221. MC check: Sem 6: 4+4+4=12. Sem 7: 4+4+4=12. Sem 8: 4+4=8. All <=16. IS1108 before CS2102? No, IS1108 in 6, CS2102 in 6. 'Before' usually means earlier semester. If strict, IS1108 in 5? But student is in Y3S2 (Sem 6). Cannot go back. So IS1108 and CS2102 same semester is best possible. CS4221 and CS3235 apart? Yes (7 vs 8). CS3103 and CS4225 same? Yes (7)."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

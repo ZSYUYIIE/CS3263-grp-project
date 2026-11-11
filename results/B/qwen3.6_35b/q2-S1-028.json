@@ -1,0 +1,128 @@
+{
+ "id": "q2-S1-028",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 26.05,
+ "solver_seconds": 17.376,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3054,
+  "total_tokens": 3308,
+  "completion_tokens": 254,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 8.67,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 1,\n\"completed\": [],\n\"must_take\": [\n\"CS2030S\",\n\"IS1108\",\n\"CS2106\",\n\"CS3241\",\n\"CS3219\",\n\"MA1522\",\n\"CS3268\",\n\"CS3233\",\n\"CS3103\"\n],\n\"mc_max\": 16,\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS3241\",\n\"b\": \"IS1108\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3103\",\n\"sem\": 7,\n\"strength\": \"must\"\n}\n],\n\"late\": [\n\"CS3233\",\n\"CS2106\"\n],\n\"unsupported\": [\n\"chance I fail one module this semester and have to retake it\",\n\"like modules taught by my favourite lecturer when possible\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "completed": [],
+  "must_take": [
+   "CS2030S",
+   "IS1108",
+   "CS2106",
+   "CS3241",
+   "CS3219",
+   "MA1522",
+   "CS3268",
+   "CS3233",
+   "CS3103"
+  ],
+  "mc_max": 16,
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3241",
+    "b": "IS1108",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3103",
+    "sem": 7,
+    "strength": "must"
+   }
+  ],
+  "late": [
+   "CS3233",
+   "CS2106"
+  ],
+  "unsupported": [
+   "chance I fail one module this semester and have to retake it",
+   "like modules taught by my favourite lecturer when possible"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 8,
+  "plan": {
+   "1": [],
+   "2": [],
+   "3": [],
+   "4": [
+    "MA1522",
+    "UTC2851"
+   ],
+   "5": [
+    "CS2030S",
+    "CS2040",
+    "CS2100",
+    "MA1521"
+   ],
+   "6": [
+    "CS2103DE",
+    "CS2105",
+    "CS2109S",
+    "ST2334"
+   ],
+   "7": [
+    "CS3103",
+    "CS3241",
+    "CS3268"
+   ],
+   "8": [
+    "CS2106",
+    "CS3219",
+    "CS3233",
+    "IS1108"
+   ]
+  },
+  "mc_per_semester": {
+   "1": 0,
+   "2": 0,
+   "3": 0,
+   "4": 8,
+   "5": 16,
+   "6": 16,
+   "7": 12,
+   "8": 16
+  },
+  "preferences_met": [
+   "CS3233 as late as possible",
+   "CS2106 as late as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS2040",
+   "CS2100",
+   "CS2103DE",
+   "CS2105",
+   "CS2109S",
+   "MA1521",
+   "ST2334",
+   "UTC2851"
+  ],
+  "not_applied": [
+   "chance I fail one module this semester and have to retake it",
+   "like modules taught by my favourite lecturer when possible"
+  ]
+ }
+}

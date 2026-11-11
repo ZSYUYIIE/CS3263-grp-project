@@ -1,0 +1,130 @@
+{
+ "id": "q2-S1-058",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.64,
+ "solver_seconds": 0.089,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3074,
+  "total_tokens": 3439,
+  "completion_tokens": 365,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 6.55,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 4,\n\"completed\": [\n\"CS1101S\",\n\"IS1108\",\n\"CS2030S\",\n\"ES2660\",\n\"ST2334\",\n\"CS2040S\",\n\"MA1522\",\n\"MA1521\",\n\"CS1231S\",\n\"CS2100\",\n\"CS2103T\"\n],\n\"must_take\": [\n\"CS4220\",\n\"CS4263\",\n\"CS4239\",\n\"CS4249\"\n],\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS4263\",\n\"b\": \"CS4220\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4239\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4249\",\n\"sem\": 6,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4263\",\n\"b\": \"CS4249\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4263\",\n\"sem\": 7,\n\"strength\": \"prefer\"\n}\n],\n\"early\": [\n\"CS4263\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "CS1101S",
+   "IS1108",
+   "CS2030S",
+   "ES2660",
+   "ST2334",
+   "CS2040S",
+   "MA1522",
+   "MA1521",
+   "CS1231S",
+   "CS2100",
+   "CS2103T"
+  ],
+  "must_take": [
+   "CS4220",
+   "CS4263",
+   "CS4239",
+   "CS4249"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS4263",
+    "b": "CS4220",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4239",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4249",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4263",
+    "b": "CS4249",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4263",
+    "sem": 7,
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS4263"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 7,
+  "plan": {
+   "4": [
+    "CS2107",
+    "EE4204"
+   ],
+   "5": [
+    "CG2271",
+    "CS2220",
+    "CS4263",
+    "NM3243"
+   ],
+   "6": [
+    "CS3235",
+    "CS4220",
+    "CS4249"
+   ],
+   "7": [
+    "CS4239"
+   ]
+  },
+  "mc_per_semester": {
+   "4": 8,
+   "5": 16,
+   "6": 12,
+   "7": 4
+  },
+  "preferences_met": [
+   "CS4263 before CS4249",
+   "CS4263 as early as possible"
+  ],
+  "preferences_not_met": [
+   "CS4263 in semester 7"
+  ],
+  "added_prerequisites": [
+   "CG2271",
+   "CS2107",
+   "CS2220",
+   "CS3235",
+   "EE4204",
+   "NM3243"
+  ]
+ }
+}

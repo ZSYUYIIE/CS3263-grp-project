@@ -1,0 +1,101 @@
+{
+ "id": "q2-S1-078",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 7.9,
+ "usage": {
+  "prompt_tokens": 20811,
+  "total_tokens": 21278,
+  "completion_tokens": 467,
+  "finish_reason": "stop",
+  "request_seconds": 7.9,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS3242 requires CS3241 and physics/math prerequisites not completed by the student. CS4212 requires CS2104 or CS3212, neither of which is completed or planned. CS3219 requires CS2103 or similar, which is met, but the other courses are impossible to take due to missing prerequisites.\", \"The student cannot satisfy the requirement to take CS3242 and CS4212 because their prerequisites (CS3241, CS2104/CS3212) are not in the completed list and are not listed as 'must take' courses that can be added to the plan. Rule 8 forbids adding courses not asked for unless they are prerequisites for planned courses, but even if we added CS3241 and CS2104, the student has a 12 MC limit and NOC in Sem 6, making it impossible to fit all required courses and their prerequisites within the remaining slots while respecting offering terms and prerequisites.\", \"Specifically, CS4212 is offered only in Sem 2 (even semesters). The student is in Sem 4. Sem 6 is NOC. Sem 8 is the only even semester left for CS4212. However, CS4212 requires CS2104 (Sem 1 only) or CS3212 (not offered). CS2104 is not completed. Thus CS4212 cannot be taken.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3242 requires CS3241 and physics/math prerequisites not completed by the student. CS4212 requires CS2104 or CS3212, neither of which is completed or planned. CS3219 requires CS2103 or similar, which is met, but the other courses are impossible to take due to missing prerequisites.",
+   "The student cannot satisfy the requirement to take CS3242 and CS4212 because their prerequisites (CS3241, CS2104/CS3212) are not in the completed list and are not listed as 'must take' courses that can be added to the plan. Rule 8 forbids adding courses not asked for unless they are prerequisites for planned courses, but even if we added CS3241 and CS2104, the student has a 12 MC limit and NOC in Sem 6, making it impossible to fit all required courses and their prerequisites within the remaining slots while respecting offering terms and prerequisites.",
+   "Specifically, CS4212 is offered only in Sem 2 (even semesters). The student is in Sem 4. Sem 6 is NOC. Sem 8 is the only even semester left for CS4212. However, CS4212 requires CS2104 (Sem 1 only) or CS3212 (not offered). CS2104 is not completed. Thus CS4212 cannot be taken."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS3230\"], \"5\": [\"CS2109S\", \"CS4212\", \"CS4234\"], \"7\": [\"CS3219\", \"CS3242\"]}, \"reasons\": [\"CS3230 is placed in Sem 4 as required. CS2109S and CS3219 are separated. CS3219 is in Sem 8 as required. NOC in Sem 6 has 0 MC. Total MC is minimized by taking only required courses and their prerequisites.\"]}}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "CS3230"
+     ],
+     "5": [
+      "CS2109S",
+      "CS4212",
+      "CS4234"
+     ],
+     "7": [
+      "CS3219",
+      "CS3242"
+     ]
+    },
+    "reasons": [
+     "CS3230 is placed in Sem 4 as required. CS2109S and CS3219 are separated. CS3219 is in Sem 8 as required. NOC in Sem 6 has 0 MC. Total MC is minimized by taking only required courses and their prerequisites."
+    ]
+   },
+   "repair": "extra_text",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10207,
+    "total_tokens": 10342,
+    "completion_tokens": 135,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.69,
+    "attempts": 1
+   },
+   "seconds": 2.69,
+   "violations": [
+    "R3 CS3242 not offered in Sem 1 (semester 7)",
+    "R4 CS3242 in semester 7: prerequisite not met ((PC1201 or PC1221 or PC1221X) and CS3241 and (MA1522 or MA1508E or MA1513 or MA1311 or MA2001 or MA1101R) and (MA1521 or MA2002 or MA1505 or MA1507 or MA1102R or (MA1511 and MA1512)))",
+    "R3 CS4212 not offered in Sem 1 (semester 5)",
+    "R4 CS4212 in semester 5: prerequisite not met (CS2104 or CS3212)",
+    "R9 must rule not met: CS3219 in semester 8"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS3242 requires CS3241 and physics/math prerequisites not completed by the student. CS4212 requires CS2104 or CS3212, neither of which is completed or planned. CS3219 requires CS2103 or similar, which is met, but the other courses are impossible to take due to missing prerequisites.\", \"The student cannot satisfy the requirement to take CS3242 and CS4212 because their prerequisites (CS3241, CS2104/CS3212) are not in the completed list and are not listed as 'must take' courses that can be added to the plan. Rule 8 forbids adding courses not asked for unless they are prerequisites for planned courses, but even if we added CS3241 and CS2104, the student has a 12 MC limit and NOC in Sem 6, making it impossible to fit all required courses and their prerequisites within the remaining slots while respecting offering terms and prerequisites.\", \"Specifically, CS4212 is offered only in Sem 2 (even semesters). The student is in Sem 4. Sem 6 is NOC. Sem 8 is the only even semester left for CS4212. However, CS4212 requires CS2104 (Sem 1 only) or CS3212 (not offered). CS2104 is not completed. Thus CS4212 cannot be taken.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3242 requires CS3241 and physics/math prerequisites not completed by the student. CS4212 requires CS2104 or CS3212, neither of which is completed or planned. CS3219 requires CS2103 or similar, which is met, but the other courses are impossible to take due to missing prerequisites.",
+     "The student cannot satisfy the requirement to take CS3242 and CS4212 because their prerequisites (CS3241, CS2104/CS3212) are not in the completed list and are not listed as 'must take' courses that can be added to the plan. Rule 8 forbids adding courses not asked for unless they are prerequisites for planned courses, but even if we added CS3241 and CS2104, the student has a 12 MC limit and NOC in Sem 6, making it impossible to fit all required courses and their prerequisites within the remaining slots while respecting offering terms and prerequisites.",
+     "Specifically, CS4212 is offered only in Sem 2 (even semesters). The student is in Sem 4. Sem 6 is NOC. Sem 8 is the only even semester left for CS4212. However, CS4212 requires CS2104 (Sem 1 only) or CS3212 (not offered). CS2104 is not completed. Thus CS4212 cannot be taken."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10604,
+    "total_tokens": 10936,
+    "completion_tokens": 332,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.21,
+    "attempts": 1
+   },
+   "seconds": 5.21,
+   "violations": null
+  }
+ ]
+}

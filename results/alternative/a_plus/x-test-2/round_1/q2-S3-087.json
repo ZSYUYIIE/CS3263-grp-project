@@ -1,0 +1,51 @@
+{
+ "id": "q2-S3-087",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 28.68,
+ "usage": {
+  "prompt_tokens": 8008,
+  "total_tokens": 11252,
+  "completion_tokens": 3244,
+  "prompt_tokens_details": {
+   "cached_tokens": 7808,
+   "created_cache_tokens": 128
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3094
+  },
+  "finish_reason": "stop",
+  "request_seconds": 28.68,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS3210\",\"CS3219\"],\"6\":[\"CS2102\",\"CS2105\"],\"7\":[\"CS4223\"]},\"reasons\":[\"CS3210 is added because CS4223 requires CS3210/CS3220/CG3207, and CS3210 is the only feasible option without adding more prerequisites.\",\"CS3219 is in semester 5, allowing CS2102 in semester 6; CS2105 is also in semester 6, the latest possible before CS4223.\",\"CS4223 is offered only in Sem 1, so it is placed in semester 7 after CS3210 and CS2105.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS3210",
+    "CS3219"
+   ],
+   "6": [
+    "CS2102",
+    "CS2105"
+   ],
+   "7": [
+    "CS4223"
+   ]
+  },
+  "reasons": [
+   "CS3210 is added because CS4223 requires CS3210/CS3220/CG3207, and CS3210 is the only feasible option without adding more prerequisites.",
+   "CS3219 is in semester 5, allowing CS2102 in semester 6; CS2105 is also in semester 6, the latest possible before CS4223.",
+   "CS4223 is offered only in Sem 1, so it is placed in semester 7 after CS3210 and CS2105."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

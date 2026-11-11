@@ -1,0 +1,105 @@
+{
+ "id": "q2-S3-093",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 4.26,
+ "solver_seconds": 0.083,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3115,
+  "total_tokens": 3415,
+  "completion_tokens": 300,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 4.18,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 4,\n\"completed\": [\n\"CS2100\",\n\"IS1108\",\n\"MA1521\",\n\"MA1522\",\n\"CS2030S\",\n\"CS2101\",\n\"CS1101S\",\n\"CS2103T\",\n\"CS1231S\",\n\"CS2040S\"\n],\n\"must_take\": [\n\"CS2105\",\n\"CS2102\",\n\"ST2334\",\n\"CS3219\",\n\"CS4223\",\n\"CS2109S\",\n\"CS3230\",\n\"ES2660\",\n\"CS3103\",\n\"CS2106\"\n],\n\"mc_max\": 16,\n\"mc_min\": 9,\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2106\",\n\"sem\": 4,\n\"strength\": \"must\"\n}\n],\n\"early\": [\n\"CS2105\"\n],\n\"late\": [\n\"ES2660\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "CS2100",
+   "IS1108",
+   "MA1521",
+   "MA1522",
+   "CS2030S",
+   "CS2101",
+   "CS1101S",
+   "CS2103T",
+   "CS1231S",
+   "CS2040S"
+  ],
+  "must_take": [
+   "CS2105",
+   "CS2102",
+   "ST2334",
+   "CS3219",
+   "CS4223",
+   "CS2109S",
+   "CS3230",
+   "ES2660",
+   "CS3103",
+   "CS2106"
+  ],
+  "mc_max": 16,
+  "mc_min": 9,
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS2106",
+    "sem": 4,
+    "strength": "must"
+   }
+  ],
+  "early": [
+   "CS2105"
+  ],
+  "late": [
+   "ES2660"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "earliest_graduation",
+  "last_semester": 6,
+  "plan": {
+   "4": [
+    "CS2105",
+    "CS2106",
+    "CS3210",
+    "CS3230"
+   ],
+   "5": [
+    "CS3103",
+    "CS4223",
+    "ST2334"
+   ],
+   "6": [
+    "CS2102",
+    "CS2109S",
+    "CS3219",
+    "ES2660"
+   ]
+  },
+  "mc_per_semester": {
+   "4": 16,
+   "5": 12,
+   "6": 16
+  },
+  "preferences_met": [
+   "CS2105 as early as possible",
+   "ES2660 as late as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS3210"
+  ]
+ }
+}

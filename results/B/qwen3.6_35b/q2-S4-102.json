@@ -1,0 +1,89 @@
+{
+ "id": "q2-S4-102",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 13.42,
+ "solver_seconds": 0.002,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3143,
+  "total_tokens": 3552,
+  "completion_tokens": 409,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 13.42,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"programme\": \"BComp CS Hons\",\n\"current_sem\": 6,\n\"completed\": [\n\"ST2334\",\n\"CS3263\",\n\"CS3230\",\n\"CS1231S\",\n\"CS2040S\",\n\"CS2030S\",\n\"CS3219\",\n\"CS2109S\",\n\"CS2105\",\n\"CS2100\",\n\"CS2103T\",\n\"CS2101\",\n\"ES2660\",\n\"CS2106\",\n\"MA1521\",\n\"MA1522\",\n\"CS1101S\"\n],\n\"must_take\": [\n\"CS3264\",\n\"CS4220\",\n\"CS4238\",\n\"CS2102\",\n\"CS3244\",\n\"IS1108\",\n\"CS3233\"\n],\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3233\",\n\"sem\": 6,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"IS1108\",\n\"b\": \"CS4238\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2102\",\n\"sem\": 6,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4238\",\n\"b\": \"CS2102\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "programme": "BComp CS Hons",
+  "current_sem": 6,
+  "completed": [
+   "ST2334",
+   "CS3263",
+   "CS3230",
+   "CS1231S",
+   "CS2040S",
+   "CS2030S",
+   "CS3219",
+   "CS2109S",
+   "CS2105",
+   "CS2100",
+   "CS2103T",
+   "CS2101",
+   "ES2660",
+   "CS2106",
+   "MA1521",
+   "MA1522",
+   "CS1101S"
+  ],
+  "must_take": [
+   "CS3264",
+   "CS4220",
+   "CS4238",
+   "CS2102",
+   "CS3244",
+   "IS1108",
+   "CS3233"
+  ],
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3233",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "IS1108",
+    "b": "CS4238",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 6,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS4238",
+    "b": "CS2102",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3244 is ruled out by completed CS2109S"
+  ]
+ }
+}

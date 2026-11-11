@@ -1,0 +1,109 @@
+{
+ "id": "q2-S3-079",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 11.32,
+ "usage": {
+  "prompt_tokens": 28502,
+  "total_tokens": 29031,
+  "completion_tokens": 529,
+  "finish_reason": "stop",
+  "request_seconds": 11.32,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4223 requires (CS2106 or CG2271) AND (CS3210 or CS3220 or CG3207).\", \"The student has completed CS2106, satisfying the first part of the prerequisite.\", \"However, the student has not completed CS3210, CS3220, or CG3207, nor are they planned.\", \"Rule 8 prohibits adding courses not requested by the student unless they are prerequisites for a planned course. CS4223 is a required course, but its prerequisites (CS3210/CS3220/CG3207) are not prerequisites for any other required course (CS3219, CS2102, CS2105). Therefore, these prerequisites cannot be added to the plan to enable CS4223.\", \"Without CS3210, CS3220, or CG3207, CS4223 cannot be taken in any semester.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4223 requires (CS2106 or CG2271) AND (CS3210 or CS3220 or CG3207).",
+   "The student has completed CS2106, satisfying the first part of the prerequisite.",
+   "However, the student has not completed CS3210, CS3220, or CG3207, nor are they planned.",
+   "Rule 8 prohibits adding courses not requested by the student unless they are prerequisites for a planned course. CS4223 is a required course, but its prerequisites (CS3210/CS3220/CG3207) are not prerequisites for any other required course (CS3219, CS2102, CS2105). Therefore, these prerequisites cannot be added to the plan to enable CS4223.",
+   "Without CS3210, CS3220, or CG3207, CS4223 cannot be taken in any semester."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"5\": [\"CS3219\", \"CS2105\"], \"6\": [\"CP3880\"], \"7\": [\"CS2102\", \"CS4223\"]}, \"reasons\": [\"ATAP (CP3880) planned in Sem 6 with 0 other courses to respect the 8 MC limit for non-ATAP modules.\", \"CS2102 prerequisites (CS1231S, CS2030S/CS2040S) are completed. CS2105 prerequisites (CS2040S) are completed.\", \"CS4223 prerequisites (CS2106, CS3210/CS3220/CG3207) require CS3210, CS3220, or CG3207. None are in the completed list or the plan. CS3219 is not a prerequisite for CS4223. CS4223 cannot be taken because its prerequisites are not met.\", \"NO_PLAN: CS4223 cannot be scheduled as its prerequisites (CS3210, CS3220, or CG3207) are not completed and are not required by any other planned course, so they cannot be added to the plan.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS3219",
+      "CS2105"
+     ],
+     "6": [
+      "CP3880"
+     ],
+     "7": [
+      "CS2102",
+      "CS4223"
+     ]
+    },
+    "reasons": [
+     "ATAP (CP3880) planned in Sem 6 with 0 other courses to respect the 8 MC limit for non-ATAP modules.",
+     "CS2102 prerequisites (CS1231S, CS2030S/CS2040S) are completed. CS2105 prerequisites (CS2040S) are completed.",
+     "CS4223 prerequisites (CS2106, CS3210/CS3220/CG3207) require CS3210, CS3220, or CG3207. None are in the completed list or the plan. CS3219 is not a prerequisite for CS4223. CS4223 cannot be taken because its prerequisites are not met.",
+     "NO_PLAN: CS4223 cannot be scheduled as its prerequisites (CS3210, CS3220, or CG3207) are not completed and are not required by any other planned course, so they cannot be added to the plan."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 14057,
+    "total_tokens": 14350,
+    "completion_tokens": 293,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.99,
+    "attempts": 1
+   },
+   "seconds": 5.99,
+   "violations": [
+    "R4 CS4223 in semester 7: prerequisite not met ((CS2106 or CG2271) and (CS3210 or CS3220 or CG3207))"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4223 requires (CS2106 or CG2271) AND (CS3210 or CS3220 or CG3207).\", \"The student has completed CS2106, satisfying the first part of the prerequisite.\", \"However, the student has not completed CS3210, CS3220, or CG3207, nor are they planned.\", \"Rule 8 prohibits adding courses not requested by the student unless they are prerequisites for a planned course. CS4223 is a required course, but its prerequisites (CS3210/CS3220/CG3207) are not prerequisites for any other required course (CS3219, CS2102, CS2105). Therefore, these prerequisites cannot be added to the plan to enable CS4223.\", \"Without CS3210, CS3220, or CG3207, CS4223 cannot be taken in any semester.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4223 requires (CS2106 or CG2271) AND (CS3210 or CS3220 or CG3207).",
+     "The student has completed CS2106, satisfying the first part of the prerequisite.",
+     "However, the student has not completed CS3210, CS3220, or CG3207, nor are they planned.",
+     "Rule 8 prohibits adding courses not requested by the student unless they are prerequisites for a planned course. CS4223 is a required course, but its prerequisites (CS3210/CS3220/CG3207) are not prerequisites for any other required course (CS3219, CS2102, CS2105). Therefore, these prerequisites cannot be added to the plan to enable CS4223.",
+     "Without CS3210, CS3220, or CG3207, CS4223 cannot be taken in any semester."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 14445,
+    "total_tokens": 14681,
+    "completion_tokens": 236,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 5.33,
+    "attempts": 1
+   },
+   "seconds": 5.33,
+   "violations": null
+  }
+ ]
+}

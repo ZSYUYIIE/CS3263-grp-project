@@ -1,0 +1,53 @@
+{
+ "id": "q2-S3-009",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 23.43,
+ "usage": {
+  "prompt_tokens": 8754,
+  "total_tokens": 10954,
+  "completion_tokens": 2200,
+  "prompt_tokens_details": {
+   "cached_tokens": 8448,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2056
+  },
+  "finish_reason": "stop",
+  "request_seconds": 23.43,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS3227\",\"CS3281\"],\"7\":[\"CS2102\",\"CS4218\",\"CS3103\"],\"8\":[\"CS3210\",\"CS3282\"]},\"reasons\":[\"CS3227 is in semester 6 so it precedes CS3103, which is only offered in Sem 1 and must be in semester 7.\",\"CS2102 and CS4218 are together in semester 7 as required; CS3210 is placed as late as possible in semester 8.\",\"CS3281 is added in semester 6 because it is the prerequisite for CS3282, planned in semester 8.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS3227",
+    "CS3281"
+   ],
+   "7": [
+    "CS2102",
+    "CS4218",
+    "CS3103"
+   ],
+   "8": [
+    "CS3210",
+    "CS3282"
+   ]
+  },
+  "reasons": [
+   "CS3227 is in semester 6 so it precedes CS3103, which is only offered in Sem 1 and must be in semester 7.",
+   "CS2102 and CS4218 are together in semester 7 as required; CS3210 is placed as late as possible in semester 8.",
+   "CS3281 is added in semester 6 because it is the prerequisite for CS3282, planned in semester 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

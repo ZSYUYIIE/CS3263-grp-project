@@ -1,0 +1,93 @@
+{
+ "id": "q2-S4-312",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 10.27,
+ "solver_seconds": 0.163,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3133,
+  "total_tokens": 3603,
+  "completion_tokens": 470,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 10.11,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"current_sem\": 5,\n  \"programme\": \"BComp CS Hons\",\n  \"completed\": [\n    \"CS3230\",\n    \"MA1522\",\n    \"CS2101\",\n    \"CS2100\",\n    \"CS1231S\",\n    \"CS1101S\",\n    \"CS2106\",\n    \"CS2040S\",\n    \"MA1521\",\n    \"CS2030S\",\n    \"IS1108\",\n    \"CS2103T\",\n    \"CS2109S\",\n    \"ST2334\",\n    \"CS4243\"\n  ],\n  \"must_take\": [\n    \"CS2105\",\n    \"CS3242\",\n    \"CS4239\",\n    \"CS3219\",\n    \"CS4249\",\n    \"CS3268\"\n  ],\n  \"mc_max\": 12,\n  \"objective\": \"earliest_graduation\",\n  \"rules\": [\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS3268\",\n      \"sem\": 7,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS3219\",\n      \"sem\": 8,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS3242\",\n      \"sem\": 6,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS3242\",\n      \"b\": \"CS3268\",\n      \"strength\": \"prefer\"\n    }\n  ],\n  \"late\": [\n    \"CS2105\"\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "CS3230",
+   "MA1522",
+   "CS2101",
+   "CS2100",
+   "CS1231S",
+   "CS1101S",
+   "CS2106",
+   "CS2040S",
+   "MA1521",
+   "CS2030S",
+   "IS1108",
+   "CS2103T",
+   "CS2109S",
+   "ST2334",
+   "CS4243"
+  ],
+  "must_take": [
+   "CS2105",
+   "CS3242",
+   "CS4239",
+   "CS3219",
+   "CS4249",
+   "CS3268"
+  ],
+  "mc_max": 12,
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3268",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3219",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3242",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3242",
+    "b": "CS3268",
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "CS2105"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS3242 in semester 6; the prerequisites of CS3235; the prerequisites of CS3242; the prerequisites of CS4239; the MC limits (at most 12 MC per semester); the semesters in which the courses are offered"
+  ]
+ }
+}

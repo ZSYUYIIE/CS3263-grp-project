@@ -1,0 +1,105 @@
+{
+ "id": "q2-S1-004",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 19.68,
+ "usage": {
+  "prompt_tokens": 18926,
+  "total_tokens": 19563,
+  "completion_tokens": 637,
+  "finish_reason": "stop",
+  "request_seconds": 19.68,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS3244 requires MA2116 (or equivalent) and MA1511+MA1512 (or equivalent). The student has completed MA1521 but not MA1511, MA1512, or MA2116. These math prerequisites cannot be completed before Semester 4 as they are foundational courses typically taken in Year 1, and the student is already in Y1S2 with no record of having taken them.\", \"CS4234 requires CS3230. CS3230 requires CS2040 (or equivalent) and CS1231. The student has CS1231S but needs to take CS2040. CS2040 requires CS1101S (done). However, CS4234 also requires a math prerequisite (MA2001 or MA1522 etc). The student has MA1521 but not MA1522 or MA2001. Even if math prerequisites were met, the dependency chain CS2040 -> CS3230 -> CS4234 pushes CS4234 to at best Semester 5 or 6, but the missing math prerequisites for CS3244 and CS4234 make the plan impossible within the current completed course set.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3244 requires MA2116 (or equivalent) and MA1511+MA1512 (or equivalent). The student has completed MA1521 but not MA1511, MA1512, or MA2116. These math prerequisites cannot be completed before Semester 4 as they are foundational courses typically taken in Year 1, and the student is already in Y1S2 with no record of having taken them.",
+   "CS4234 requires CS3230. CS3230 requires CS2040 (or equivalent) and CS1231. The student has CS1231S but needs to take CS2040. CS2040 requires CS1101S (done). However, CS4234 also requires a math prerequisite (MA2001 or MA1522 etc). The student has MA1521 but not MA1522 or MA2001. Even if math prerequisites were met, the dependency chain CS2040 -> CS3230 -> CS4234 pushes CS4234 to at best Semester 5 or 6, but the missing math prerequisites for CS3244 and CS4234 make the plan impossible within the current completed course set."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"2\": [\"CS2030S\"], \"3\": [\"CS2040\"], \"4\": [\"CS3244\"], \"5\": [\"CS2107\"], \"6\": [\"CS3230\"], \"7\": [\"CS4234\", \"CS4236\"]}, \"reasons\": [\"Prerequisites satisfied: CS2030S needs CS1101S (done). CS2040 needs CS1101S (done). CS3244 needs CS2040 and CS1231S (done). CS2107 needs CS1101S (done). CS3230 needs CS2040 and CS1231S (done). CS4234 needs CS2040 and CS3230 (done). CS4236 needs CS2040, CS2107 and CS1231S (done).\", \"Constraints met: CS2030S in Sem 2, CS3244 in Sem 4, CS4234 in Sem 7. CS2030S is before CS3244. CS3244 and CS4234 are in different semesters. CS2030S and CS4234 are in different semesters.\", \"All courses are open to BComp CS Hons and offered in the specified semesters. No mutual exclusions violated.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "2": [
+      "CS2030S"
+     ],
+     "3": [
+      "CS2040"
+     ],
+     "4": [
+      "CS3244"
+     ],
+     "5": [
+      "CS2107"
+     ],
+     "6": [
+      "CS3230"
+     ],
+     "7": [
+      "CS4234",
+      "CS4236"
+     ]
+    },
+    "reasons": [
+     "Prerequisites satisfied: CS2030S needs CS1101S (done). CS2040 needs CS1101S (done). CS3244 needs CS2040 and CS1231S (done). CS2107 needs CS1101S (done). CS3230 needs CS2040 and CS1231S (done). CS4234 needs CS2040 and CS3230 (done). CS4236 needs CS2040, CS2107 and CS1231S (done).",
+     "Constraints met: CS2030S in Sem 2, CS3244 in Sem 4, CS4234 in Sem 7. CS2030S is before CS3244. CS3244 and CS4234 are in different semesters. CS2030S and CS4234 are in different semesters.",
+     "All courses are open to BComp CS Hons and offered in the specified semesters. No mutual exclusions violated."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9135,
+    "total_tokens": 9469,
+    "completion_tokens": 334,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 8.06,
+    "attempts": 1
+   },
+   "seconds": 8.06,
+   "violations": [
+    "R4 CS3244 in semester 4: prerequisite not met ((CS2040 or CS2040C or CS2040S or CS2040DE or CS2040HS or YSC2229) and (EE2012A or EE2012 or YSC2243 or ST2131 or ST2334 or MA2116 or MA2116T or MA2216) and ((MA1511 and MA1512) or ((MA2001 or MA1522 or MA1508E or MA1311 or MA1513 or MA1101R) and (MA2002 or MA1521 or MA1505 or MA1507 or MA1102R))))",
+    "R4 CS4234 in semester 7: prerequisite not met ((MA2001 or MA1101R or YSC2232 or MA1311 or MA1508E or MA1522 or MA1513) and (YSC3203 or CS3230))"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS3244 requires MA2116 (or equivalent) and MA1511+MA1512 (or equivalent). The student has completed MA1521 but not MA1511, MA1512, or MA2116. These math prerequisites cannot be completed before Semester 4 as they are foundational courses typically taken in Year 1, and the student is already in Y1S2 with no record of having taken them.\", \"CS4234 requires CS3230. CS3230 requires CS2040 (or equivalent) and CS1231. The student has CS1231S but needs to take CS2040. CS2040 requires CS1101S (done). However, CS4234 also requires a math prerequisite (MA2001 or MA1522 etc). The student has MA1521 but not MA1522 or MA2001. Even if math prerequisites were met, the dependency chain CS2040 -> CS3230 -> CS4234 pushes CS4234 to at best Semester 5 or 6, but the missing math prerequisites for CS3244 and CS4234 make the plan impossible within the current completed course set.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3244 requires MA2116 (or equivalent) and MA1511+MA1512 (or equivalent). The student has completed MA1521 but not MA1511, MA1512, or MA2116. These math prerequisites cannot be completed before Semester 4 as they are foundational courses typically taken in Year 1, and the student is already in Y1S2 with no record of having taken them.",
+     "CS4234 requires CS3230. CS3230 requires CS2040 (or equivalent) and CS1231. The student has CS1231S but needs to take CS2040. CS2040 requires CS1101S (done). However, CS4234 also requires a math prerequisite (MA2001 or MA1522 etc). The student has MA1521 but not MA1522 or MA2001. Even if math prerequisites were met, the dependency chain CS2040 -> CS3230 -> CS4234 pushes CS4234 to at best Semester 5 or 6, but the missing math prerequisites for CS3244 and CS4234 make the plan impossible within the current completed course set."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9791,
+    "total_tokens": 10094,
+    "completion_tokens": 303,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 11.62,
+    "attempts": 1
+   },
+   "seconds": 11.62,
+   "violations": null
+  }
+ ]
+}

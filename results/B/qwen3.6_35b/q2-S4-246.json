@@ -1,0 +1,80 @@
+{
+ "id": "q2-S4-246",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.48,
+ "solver_seconds": 0.575,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3070,
+  "total_tokens": 3386,
+  "completion_tokens": 316,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 6.9,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 1,\n\"programme\": \"BComp CS Hons\",\n\"completed\": [],\n\"must_take\": [\n\"CS3230\",\n\"CS3219\",\n\"CS3227\",\n\"IS1108\",\n\"ST2334\",\n\"CS2102\"\n],\n\"mc_max\": 12,\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"ST2334\",\n\"b\": \"CS2102\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"ST2334\",\n\"sem\": 6,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2102\",\n\"sem\": 3,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3219\",\n\"sem\": 4,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2102\",\n\"b\": \"CS3227\",\n\"strength\": \"prefer\"\n}\n],\n\"late\": [\n\"CS3219\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "programme": "BComp CS Hons",
+  "completed": [],
+  "must_take": [
+   "CS3230",
+   "CS3219",
+   "CS3227",
+   "IS1108",
+   "ST2334",
+   "CS2102"
+  ],
+  "mc_max": 12,
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "before",
+    "a": "ST2334",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "ST2334",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 3,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3219",
+    "sem": 4,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS2102",
+    "b": "CS3227",
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "CS3219"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: ST2334 before CS2102; your rule: ST2334 in semester 6; your rule: CS2102 in semester 3"
+  ]
+ }
+}

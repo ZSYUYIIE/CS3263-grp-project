@@ -1,0 +1,51 @@
+{
+ "id": "q2-S3-114",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 3,
+ "end": "switched to NO_PLAN",
+ "seconds": 71.66,
+ "usage": {
+  "prompt_tokens": 23258,
+  "total_tokens": 27732,
+  "completion_tokens": 4474,
+  "finish_reason": "stop",
+  "request_seconds": 71.66,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS3227\",\n      \"ST2334\"\n    ],\n    \"7\": [\n      \"CS3237\",\n      \"CS3231\",\n      \"CS2102\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3227 is taken in Sem 6 as required. ST2334 is taken in Sem 6 to satisfy the 'before' constraint for CS3237 in Sem 7.\",\n    \"CS3237 and CS3231 are taken together in Sem 7. CS3237 is offered in Sem 1 and Sem 2, so Sem 7 is valid.\",\n    \"CS2102 is taken in Sem 7. It is not in the same semester as CS3237? Wait, the constraint is 'CS3237 and CS2102 must not be in the same semester'. My plan puts them both in Sem 7. This violates the rule.\",\n    \"Correction: CS2102 must be in a different semester from CS3237. If CS3237 is in Sem 7, CS2102 must be in Sem 6 or Sem 8.\",\n    \"If CS2102 is in Sem 6: ST2334 must be before CS3237 (Sem 7). ST2334 can be in Sem 6. But CS2102 and ST2334 must be apart. If both in Sem 6, they are together. Violation.\",\n    \"If CS2102 is in Sem 8: ST2334 must be before CS3237 (Sem 7). ST2334 can be in Sem 6. CS2102 (Sem 8) and ST2334 (Sem 6) are apart. OK. CS3237 (Sem 7) and CS2102 (Sem 8) are apart. OK. CS3237 and CS3231 together in Sem 7. OK. CS3227 in Sem 6. OK. ST2334 as late as possible? Sem 6 is the latest it can be if CS3237 is in Sem 7? If CS3237 is in Sem 8, ST2334 can be in Sem 7. Then CS3231 in Sem 8. CS2102 in Sem 6 or 7? If CS2102 in Sem 6, ST2334 in Sem 7, they are apart. CS3237 in Sem 8, CS2102 in Sem 6, apart. This plan: Sem 6: CS3227, CS2102. Sem 7: ST2334. Sem 8: CS3237, CS3231. Graduation Sem 8. MC Sem 6: 8. Sem 7: 4. Sem 8: 8. This works.\",\n    \"Is Sem 7 graduation possible? Only if CS3237 is in Sem 7 and CS2102 is in Sem 6? No, CS2102 and ST2334 apart. If CS2102 in Sem 6, ST2334 must be in Sem 5 (impossible) or Sem 7? If ST2334 in Sem 7, it is with CS3237. 'Before' usually means strictly earlier. If ST2334 in Sem 7 and CS3237 in Sem 7, is it before? No. So ST2334 must be in Sem 6. If ST2334 in Sem 6 and CS2102 in Sem 6, they are together. Violation. So Sem 7 graduation is impossible with strict 'before' and 'apart' constraints.\",\n    \"Therefore, the earliest graduation is Sem 8.\",\n    \"Plan: Sem 6: CS3227, CS2102. Sem 7: ST2334. Sem 8: CS3237, CS3231.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS3227",
+    "ST2334"
+   ],
+   "7": [
+    "CS3237",
+    "CS3231",
+    "CS2102"
+   ]
+  },
+  "reasons": [
+   "CS3227 is taken in Sem 6 as required. ST2334 is taken in Sem 6 to satisfy the 'before' constraint for CS3237 in Sem 7.",
+   "CS3237 and CS3231 are taken together in Sem 7. CS3237 is offered in Sem 1 and Sem 2, so Sem 7 is valid.",
+   "CS2102 is taken in Sem 7. It is not in the same semester as CS3237? Wait, the constraint is 'CS3237 and CS2102 must not be in the same semester'. My plan puts them both in Sem 7. This violates the rule.",
+   "Correction: CS2102 must be in a different semester from CS3237. If CS3237 is in Sem 7, CS2102 must be in Sem 6 or Sem 8.",
+   "If CS2102 is in Sem 6: ST2334 must be before CS3237 (Sem 7). ST2334 can be in Sem 6. But CS2102 and ST2334 must be apart. If both in Sem 6, they are together. Violation.",
+   "If CS2102 is in Sem 8: ST2334 must be before CS3237 (Sem 7). ST2334 can be in Sem 6. CS2102 (Sem 8) and ST2334 (Sem 6) are apart. OK. CS3237 (Sem 7) and CS2102 (Sem 8) are apart. OK. CS3237 and CS3231 together in Sem 7. OK. CS3227 in Sem 6. OK. ST2334 as late as possible? Sem 6 is the latest it can be if CS3237 is in Sem 7? If CS3237 is in Sem 8, ST2334 can be in Sem 7. Then CS3231 in Sem 8. CS2102 in Sem 6 or 7? If CS2102 in Sem 6, ST2334 in Sem 7, they are apart. CS3237 in Sem 8, CS2102 in Sem 6, apart. This plan: Sem 6: CS3227, CS2102. Sem 7: ST2334. Sem 8: CS3237, CS3231. Graduation Sem 8. MC Sem 6: 8. Sem 7: 4. Sem 8: 8. This works.",
+   "Is Sem 7 graduation possible? Only if CS3237 is in Sem 7 and CS2102 is in Sem 6? No, CS2102 and ST2334 apart. If CS2102 in Sem 6, ST2334 must be in Sem 5 (impossible) or Sem 7? If ST2334 in Sem 7, it is with CS3237. 'Before' usually means strictly earlier. If ST2334 in Sem 7 and CS3237 in Sem 7, is it before? No. So ST2334 must be in Sem 6. If ST2334 in Sem 6 and CS2102 in Sem 6, they are together. Violation. So Sem 7 graduation is impossible with strict 'before' and 'apart' constraints.",
+   "Therefore, the earliest graduation is Sem 8.",
+   "Plan: Sem 6: CS3227, CS2102. Sem 7: ST2334. Sem 8: CS3237, CS3231."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

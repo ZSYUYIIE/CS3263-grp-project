@@ -1,0 +1,102 @@
+{
+ "id": "q2-S4-257",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 13.36,
+ "solver_seconds": 0.184,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3031,
+  "total_tokens": 3249,
+  "completion_tokens": 218,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 13.18,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 2,\n\"completed\": [\n\"ES2660\",\n\"MA1521\",\n\"CS1231S\",\n\"CS1101S\"\n],\n\"must_take\": [\n\"CS4212\",\n\"MA1522\",\n\"IS1108\",\n\"CS2109S\"\n],\n\"mc_max\": 12,\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"IS1108\",\n\"b\": \"CS2109S\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2109S\",\n\"b\": \"CS4212\",\n\"strength\": \"must\"\n}\n],\n\"late\": [\n\"MA1522\",\n\"CS4212\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 2,
+  "completed": [
+   "ES2660",
+   "MA1521",
+   "CS1231S",
+   "CS1101S"
+  ],
+  "must_take": [
+   "CS4212",
+   "MA1522",
+   "IS1108",
+   "CS2109S"
+  ],
+  "mc_max": 12,
+  "rules": [
+   {
+    "type": "before",
+    "a": "IS1108",
+    "b": "CS2109S",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2109S",
+    "b": "CS4212",
+    "strength": "must"
+   }
+  ],
+  "late": [
+   "MA1522",
+   "CS4212"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 8,
+  "plan": {
+   "2": [],
+   "3": [
+    "CS2030",
+    "IS1108"
+   ],
+   "4": [],
+   "5": [],
+   "6": [
+    "CS2040C"
+   ],
+   "7": [
+    "CS2104",
+    "CS2109S"
+   ],
+   "8": [
+    "CS4212",
+    "MA1522"
+   ]
+  },
+  "mc_per_semester": {
+   "2": 0,
+   "3": 8,
+   "4": 0,
+   "5": 0,
+   "6": 4,
+   "7": 8,
+   "8": 8
+  },
+  "preferences_met": [
+   "MA1522 as late as possible",
+   "CS4212 as late as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS2030",
+   "CS2040C",
+   "CS2104"
+  ]
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "id": "q1-wt-006-h",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 10.77,
+ "usage": {
+  "prompt_tokens": 11178,
+  "total_tokens": 11814,
+  "completion_tokens": 636,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 10.77,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"ELIGIBLE\", \"reasons\": [\"Prerequisites CS3235, CS2103T, and CS2107 are completed.\", \"Course is offered in Sem 1; Y4S2 is Sem 2, but eligibility for 'next semester' or general eligibility is confirmed as the course exists and prerequisites are met. Note: Strictly, CS4239 is only offered in Sem 1, so it cannot be taken in Y4S2 (Sem 2). However, the question asks 'Am I eligible to take...'. Usually, eligibility implies meeting prereqs. But rule says 'X is offered in that semester's term'. If the user asks for Y4S2 specifically, and it's not offered, they are NOT eligible for that specific slot. Let's re-read carefully: 'Can I take X (in semester N / next semester)?' -> 'X is eligible when... X is offered in that semester's term.' The user asks 'in Y4S2'. Y4S2 is Sem 2. CS4239 is offered Sem 1. Therefore, NOT ELIGIBLE for Y4S2.\", \"Correction: The user asks 'Am I eligible to take CS4239 in Y4S2?'. CS4239 is offered Sem 1. Y4S2 is Sem 2. Thus, it is not offered in Y4S2. Status should be NOT_ELIGIBLE due to semester offering.\"}\n\nWait, I need to be precise.\nCS4239 offered: Sem 1.\nUser asks: Y4S2 (Sem 2).\nRule: \"X is offered in that semester's term.\"\nResult: NOT ELIGIBLE.\n\nLet's double check prerequisites just in case I missed a blocker.\nCompleted: CS2107, CS2030S, CS3230, CS1231S, CS2106, CS2100, CS3235, CS2040S, CS2105, CS3219, CS1101S.\nPrereqs for CS4239:\n1. CS3235 (Completed)\n2. (CS2103T or CS2103 or CS2103DE or CS2113 or CS2113T) -> CS2103T is Completed.\n3. CS2107 (Completed)\n\nAll prereqs met.\nBlocked by completed? No.\nOpen to BComp CS Hons? Yes.\nOffered in Sem 2? No.\n\nTherefore, NOT ELIGIBLE for Y4S2.\n\n{\"status\": \"NOT_ELIGIBLE\", \"reasons\": [\"CS4239 is only offered in Sem 1, but Y4S2 is Sem 2.\", \"Prerequisites are satisfied.\", \"No other blockers.\"]}",
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "reasons": [
+   "CS4239 is only offered in Sem 1, but Y4S2 is Sem 2.",
+   "Prerequisites are satisfied.",
+   "No other blockers."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 4,
+ "ablation": 1
+}

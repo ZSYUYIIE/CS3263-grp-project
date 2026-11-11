@@ -1,0 +1,51 @@
+{
+ "id": "q1-ex-005-p",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 1.53,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2806,
+  "total_tokens": 2907,
+  "completion_tokens": 101,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 1.53,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\": \"eligible\", \"target\": \"CS2100HS\", \"current_sem\": 5, \"completed\": [\"IS1108\", \"CS2107\", \"MA1521\", \"MA2104\", \"ESP2111\", \"CS1101S\", \"CS2030S\", \"CS2100DE\", \"IS2101\", \"MA1522\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS2100HS",
+  "current_sem": 5,
+  "completed": [
+   "IS1108",
+   "CS2107",
+   "MA1521",
+   "MA2104",
+   "ESP2111",
+   "CS1101S",
+   "CS2030S",
+   "CS2100DE",
+   "IS2101",
+   "MA1522"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS2100HS",
+  "semester": 5,
+  "reasons": [
+   "precluded: already completed CS2100DE"
+  ],
+  "can_still_become_eligible": false,
+  "never_eligible_because": "CS2100HS is ruled out by completed CS2100DE"
+ }
+}

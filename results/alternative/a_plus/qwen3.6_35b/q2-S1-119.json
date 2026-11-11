@@ -1,0 +1,97 @@
+{
+ "id": "q2-S1-119",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 5.53,
+ "usage": {
+  "prompt_tokens": 18616,
+  "total_tokens": 18907,
+  "completion_tokens": 291,
+  "finish_reason": "stop",
+  "request_seconds": 5.53,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4247 is only offered in Sem 2 (even semesters), so it cannot be taken in Sem 7.\",\n    \"CS4247 requires CS3241 as a prerequisite, which is not completed and cannot be added to the plan.\",\n    \"CS2101 is required before CS4247, but CS4247 cannot be scheduled in Sem 7 due to offering and prerequisite constraints.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4247 is only offered in Sem 2 (even semesters), so it cannot be taken in Sem 7.",
+   "CS4247 requires CS3241 as a prerequisite, which is not completed and cannot be added to the plan.",
+   "CS2101 is required before CS4247, but CS4247 cannot be scheduled in Sem 7 due to offering and prerequisite constraints."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS2102\",\n      \"CS4230\"\n    ],\n    \"7\": [\n      \"CS2101\",\n      \"CS4247\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2102 and CS4230 are planned in Sem 6 as required and eligible.\",\n    \"CS2101 is planned in Sem 7 to satisfy the 'late as possible' wish while remaining before CS4247.\",\n    \"CS4247 is planned in Sem 7 after CS2101 is completed in the same or earlier semester.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS2102",
+      "CS4230"
+     ],
+     "7": [
+      "CS2101",
+      "CS4247"
+     ]
+    },
+    "reasons": [
+     "CS2102 and CS4230 are planned in Sem 6 as required and eligible.",
+     "CS2101 is planned in Sem 7 to satisfy the 'late as possible' wish while remaining before CS4247.",
+     "CS4247 is planned in Sem 7 after CS2101 is completed in the same or earlier semester."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9168,
+    "total_tokens": 9339,
+    "completion_tokens": 171,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.72,
+    "attempts": 1
+   },
+   "seconds": 2.72,
+   "violations": [
+    "R3 CS4247 not offered in Sem 1 (semester 7)",
+    "R4 CS4247 in semester 7: prerequisite not met (CS3241)",
+    "R9 must rule not met: before CS2101 CS4247"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4247 is only offered in Sem 2 (even semesters), so it cannot be taken in Sem 7.\",\n    \"CS4247 requires CS3241 as a prerequisite, which is not completed and cannot be added to the plan.\",\n    \"CS2101 is required before CS4247, but CS4247 cannot be scheduled in Sem 7 due to offering and prerequisite constraints.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4247 is only offered in Sem 2 (even semesters), so it cannot be taken in Sem 7.",
+     "CS4247 requires CS3241 as a prerequisite, which is not completed and cannot be added to the plan.",
+     "CS2101 is required before CS4247, but CS4247 cannot be scheduled in Sem 7 due to offering and prerequisite constraints."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9448,
+    "total_tokens": 9568,
+    "completion_tokens": 120,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.81,
+    "attempts": 1
+   },
+   "seconds": 2.81,
+   "violations": null
+  }
+ ]
+}

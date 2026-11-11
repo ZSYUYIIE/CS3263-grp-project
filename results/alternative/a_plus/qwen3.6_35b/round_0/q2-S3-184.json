@@ -1,0 +1,55 @@
+{
+ "id": "q2-S3-184",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 2,
+ "end": "repeated plan",
+ "seconds": 6.55,
+ "usage": {
+  "prompt_tokens": 10056,
+  "total_tokens": 10329,
+  "completion_tokens": 273,
+  "finish_reason": "stop",
+  "request_seconds": 6.55,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"2\": [\n      \"CS2030S\",\n      \"CS2101\",\n      \"CS2100\",\n      \"MA1522\"\n    ],\n    \"3\": [\n      \"CS2040S\",\n      \"CS2103T\",\n      \"CS3227\",\n      \"IS1108\"\n    ],\n    \"4\": [\n      \"CS3219\",\n      \"CS3230\",\n      \"CS3281\"\n    ],\n    \"5\": [\n      \"CS2109S\",\n      \"CS4261\"\n    ]\n  },\n  \"reasons\": [\n    \"Plan minimizes total credits by graduating in Semester 5.\",\n    \"CS2101 and CS3219 are taken together in Semester 4 as requested.\",\n    \"CS2101 is taken in Semester 2 (Sem 2) as preferred.\",\n    \"IS1108 is taken in Semester 3 as early as possible given prerequisites for other modules.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "2": [
+    "CS2030S",
+    "CS2101",
+    "CS2100",
+    "MA1522"
+   ],
+   "3": [
+    "CS2040S",
+    "CS2103T",
+    "CS3227",
+    "IS1108"
+   ],
+   "4": [
+    "CS3219",
+    "CS3230",
+    "CS3281"
+   ],
+   "5": [
+    "CS2109S",
+    "CS4261"
+   ]
+  },
+  "reasons": [
+   "Plan minimizes total credits by graduating in Semester 5.",
+   "CS2101 and CS3219 are taken together in Semester 4 as requested.",
+   "CS2101 is taken in Semester 2 (Sem 2) as preferred.",
+   "IS1108 is taken in Semester 3 as early as possible given prerequisites for other modules."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

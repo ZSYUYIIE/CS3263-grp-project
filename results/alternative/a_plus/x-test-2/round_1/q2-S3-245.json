@@ -1,0 +1,62 @@
+{
+ "id": "q2-S3-245",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 79.54,
+ "usage": {
+  "prompt_tokens": 9332,
+  "total_tokens": 16678,
+  "completion_tokens": 7346,
+  "prompt_tokens_details": {
+   "cached_tokens": 9088,
+   "created_cache_tokens": 128
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 7168
+  },
+  "finish_reason": "stop",
+  "request_seconds": 79.54,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"ST1131\"],\"5\":[\"CS4243\",\"CS2103T\"],\"6\":[\"CS2102\",\"CS3281\"],\"7\":[\"CS3223\",\"CS2105\",\"CS3219\"],\"8\":[\"CS4221\",\"CS4218\",\"CS3230\",\"CS2100\"]},\"reasons\":[\"Added only ST1131 for CS4243 and CS3223 for CS4221; total 48 MC is minimal.\",\"CS4221 is forced to semester 8 by the ST1131-CS4243-CS2102-CS3223 chain and its Sem 2 offering.\",\"CS2103T is as late as possible at semester 5 while keeping CS3281 before CS2105; CS3281 cannot be semester 8.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "ST1131"
+   ],
+   "5": [
+    "CS4243",
+    "CS2103T"
+   ],
+   "6": [
+    "CS2102",
+    "CS3281"
+   ],
+   "7": [
+    "CS3223",
+    "CS2105",
+    "CS3219"
+   ],
+   "8": [
+    "CS4221",
+    "CS4218",
+    "CS3230",
+    "CS2100"
+   ]
+  },
+  "reasons": [
+   "Added only ST1131 for CS4243 and CS3223 for CS4221; total 48 MC is minimal.",
+   "CS4221 is forced to semester 8 by the ST1131-CS4243-CS2102-CS3223 chain and its Sem 2 offering.",
+   "CS2103T is as late as possible at semester 5 while keeping CS3281 before CS2105; CS3281 cannot be semester 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,54 @@
+{
+ "id": "q2-S4-311",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 3,
+ "end": "cap",
+ "seconds": 167.02,
+ "usage": {
+  "prompt_tokens": 51416,
+  "total_tokens": 57654,
+  "completion_tokens": 6238,
+  "finish_reason": "stop",
+  "request_seconds": 167.02,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"4\": [\n      \"CS2102\",\n      \"CS2106\",\n      \"CS2109S\",\n      \"CS2111\",\n      \"CS2220\"\n    ],\n    \"5\": [\n      \"CS3240\",\n      \"CS3268\"\n    ],\n    \"6\": [\n      \"CS3223\",\n      \"CS3230\"\n    ],\n    \"7\": [\n      \"CS4330\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2220 is only offered in Sem 1, so it must be taken in Sem 4. CS4330 is only offered in Sem 2, so it must be taken in Sem 7 or later.\",\n    \"CS3268 is only offered in Sem 1. Its prerequisite CS2109S must be completed in a strictly earlier semester. CS2109S is offered in Sem 1 and 2. Taking CS2109S in Sem 4 (Sem 2) allows CS3268 in Sem 5 (Sem 1).\",\n    \"CS3240 requires CS2111 (Sem 4) and is offered in Sem 1, so it fits in Sem 5. CS3223 and CS3230 have no Sem 1/2 restrictions blocking them from Sem 6, and their prerequisites are met by Sem 4/5 courses.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2102",
+    "CS2106",
+    "CS2109S",
+    "CS2111",
+    "CS2220"
+   ],
+   "5": [
+    "CS3240",
+    "CS3268"
+   ],
+   "6": [
+    "CS3223",
+    "CS3230"
+   ],
+   "7": [
+    "CS4330"
+   ]
+  },
+  "reasons": [
+   "CS2220 is only offered in Sem 1, so it must be taken in Sem 4. CS4330 is only offered in Sem 2, so it must be taken in Sem 7 or later.",
+   "CS3268 is only offered in Sem 1. Its prerequisite CS2109S must be completed in a strictly earlier semester. CS2109S is offered in Sem 1 and 2. Taking CS2109S in Sem 4 (Sem 2) allows CS3268 in Sem 5 (Sem 1).",
+   "CS3240 requires CS2111 (Sem 4) and is offered in Sem 1, so it fits in Sem 5. CS3223 and CS3230 have no Sem 1/2 restrictions blocking them from Sem 6, and their prerequisites are met by Sem 4/5 courses."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

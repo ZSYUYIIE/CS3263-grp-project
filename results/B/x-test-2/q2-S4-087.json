@@ -1,0 +1,83 @@
+{
+ "id": "q2-S4-087",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 6.54,
+ "solver_seconds": 0.003,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2784,
+  "total_tokens": 3379,
+  "completion_tokens": 595,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 416
+  },
+  "finish_reason": "stop",
+  "request_seconds": 6.54,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":3,\"completed\":[\"IS1108\",\"MA1521\",\"MA1522\",\"ES2660\",\"CS3243\",\"CS1101S\",\"CS2030S\",\"CS1231S\",\"CS2040S\"],\"must_take\":[\"CS2103T\",\"CS4262\",\"CS3211\",\"CS2109S\",\"CS3237\"],\"objective\":\"earliest_graduation\",\"late\":[\"CS4262\",\"CS2103T\"],\"rules\":[{\"type\":\"same_sem\",\"a\":\"CS4262\",\"b\":\"CS2103T\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3237\",\"sem\":5,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3211\",\"sem\":6,\"strength\":\"must\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "completed": [
+   "IS1108",
+   "MA1521",
+   "MA1522",
+   "ES2660",
+   "CS3243",
+   "CS1101S",
+   "CS2030S",
+   "CS1231S",
+   "CS2040S"
+  ],
+  "must_take": [
+   "CS2103T",
+   "CS4262",
+   "CS3211",
+   "CS2109S",
+   "CS3237"
+  ],
+  "objective": "earliest_graduation",
+  "late": [
+   "CS4262",
+   "CS2103T"
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS4262",
+    "b": "CS2103T",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3237",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3211",
+    "sem": 6,
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS2109S is ruled out by completed CS3243"
+  ]
+ }
+}

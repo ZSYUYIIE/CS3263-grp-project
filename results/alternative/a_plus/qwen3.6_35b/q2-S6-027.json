@@ -1,0 +1,95 @@
+{
+ "id": "q2-S6-027",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 7.81,
+ "usage": {
+  "prompt_tokens": 18953,
+  "total_tokens": 19315,
+  "completion_tokens": 362,
+  "finish_reason": "stop",
+  "request_seconds": 7.81,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS2105 requires CS2040 (or equivalent) which is not completed and cannot be taken in Sem 7 or 8 as it requires CS1010 (assumed completed) but typically taken earlier; however, even if taken in Sem 7, CS4248 requires CS2109S/CS3244 etc. and Math prerequisites (MA1511/1512 or MA2002) which are not listed as completed.\", \"The student has not completed the necessary prerequisites for CS2105 (e.g., CS2040) or CS4248 (e.g., CS2109S, Math courses). Without these completed or planned in earlier semesters, the courses cannot be taken.\", \"It is impossible to satisfy the requirement that CS4248 is in Sem 8 and CS2105 is taken before it, given the missing prerequisites for both courses in the current context.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS2105 requires CS2040 (or equivalent) which is not completed and cannot be taken in Sem 7 or 8 as it requires CS1010 (assumed completed) but typically taken earlier; however, even if taken in Sem 7, CS4248 requires CS2109S/CS3244 etc. and Math prerequisites (MA1511/1512 or MA2002) which are not listed as completed.",
+   "The student has not completed the necessary prerequisites for CS2105 (e.g., CS2040) or CS4248 (e.g., CS2109S, Math courses). Without these completed or planned in earlier semesters, the courses cannot be taken.",
+   "It is impossible to satisfy the requirement that CS4248 is in Sem 8 and CS2105 is taken before it, given the missing prerequisites for both courses in the current context."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"7\": [\"CS2101\", \"CS2105\"], \"8\": [\"CS4248\"]}, \"reasons\": [\"CS2105 and CS2101 are scheduled in Sem 7 to satisfy the mutual exclusivity and prerequisite constraints while placing CS2101 as late as possible.\", \"CS4248 is placed in Sem 8 as requested, with prerequisites met by CS2105 in Sem 7.\", \"All courses are open to BComp CS Hons, prerequisites are satisfied, and the 16 MC limit per semester is respected.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "7": [
+      "CS2101",
+      "CS2105"
+     ],
+     "8": [
+      "CS4248"
+     ]
+    },
+    "reasons": [
+     "CS2105 and CS2101 are scheduled in Sem 7 to satisfy the mutual exclusivity and prerequisite constraints while placing CS2101 as late as possible.",
+     "CS4248 is placed in Sem 8 as requested, with prerequisites met by CS2105 in Sem 7.",
+     "All courses are open to BComp CS Hons, prerequisites are satisfied, and the 16 MC limit per semester is respected."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9277,
+    "total_tokens": 9416,
+    "completion_tokens": 139,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.44,
+    "attempts": 1
+   },
+   "seconds": 2.44,
+   "violations": [
+    "R4 CS2105 in semester 7: prerequisite not met (YSC2229 or CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS)",
+    "R4 CS4248 in semester 8: prerequisite not met ((CS2109S or CS2109HS or CS3244 or MA3270 or ST4248) and (EE2012A or EE2012 or ST2131 or MA2216 or MA2116 or MA2116T or ST2334 or YSC2243) and (MA1505 or MA1507 or MA1521 or MA1102R or YSC1216 or MA2002 or (MA1511 and MA1512)))"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS2105 requires CS2040 (or equivalent) which is not completed and cannot be taken in Sem 7 or 8 as it requires CS1010 (assumed completed) but typically taken earlier; however, even if taken in Sem 7, CS4248 requires CS2109S/CS3244 etc. and Math prerequisites (MA1511/1512 or MA2002) which are not listed as completed.\", \"The student has not completed the necessary prerequisites for CS2105 (e.g., CS2040) or CS4248 (e.g., CS2109S, Math courses). Without these completed or planned in earlier semesters, the courses cannot be taken.\", \"It is impossible to satisfy the requirement that CS4248 is in Sem 8 and CS2105 is taken before it, given the missing prerequisites for both courses in the current context.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS2105 requires CS2040 (or equivalent) which is not completed and cannot be taken in Sem 7 or 8 as it requires CS1010 (assumed completed) but typically taken earlier; however, even if taken in Sem 7, CS4248 requires CS2109S/CS3244 etc. and Math prerequisites (MA1511/1512 or MA2002) which are not listed as completed.",
+     "The student has not completed the necessary prerequisites for CS2105 (e.g., CS2040) or CS4248 (e.g., CS2109S, Math courses). Without these completed or planned in earlier semesters, the courses cannot be taken.",
+     "It is impossible to satisfy the requirement that CS4248 is in Sem 8 and CS2105 is taken before it, given the missing prerequisites for both courses in the current context."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9676,
+    "total_tokens": 9899,
+    "completion_tokens": 223,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.37,
+    "attempts": 1
+   },
+   "seconds": 5.37,
+   "violations": null
+  }
+ ]
+}

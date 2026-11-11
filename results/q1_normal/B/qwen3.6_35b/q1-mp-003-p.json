@@ -1,0 +1,47 @@
+{
+ "id": "q1-mp-003-p",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 1.79,
+ "solver_seconds": 0.001,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2901,
+  "total_tokens": 2987,
+  "completion_tokens": 86,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 1.79,
+  "attempts": 1
+ },
+ "raw": "{\"query\": \"eligible\", \"target\": \"CS3240\", \"current_sem\": 5, \"completed\": [\"CS2040DE\", \"CS1101S\", \"CS3230\", \"CS2101\", \"MA1301\", \"ES2660\", \"CS2100HS\", \"CS1231\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS3240",
+  "current_sem": 5,
+  "completed": [
+   "CS2040DE",
+   "CS1101S",
+   "CS3230",
+   "CS2101",
+   "MA1301",
+   "ES2660",
+   "CS2100HS",
+   "CS1231"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS3240",
+  "semester": 5,
+  "reasons": [
+   "missing prerequisite: CS2111 or NM2207"
+  ],
+  "can_still_become_eligible": true
+ }
+}

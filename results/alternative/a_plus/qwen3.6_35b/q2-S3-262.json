@@ -1,0 +1,231 @@
+{
+ "id": "q2-S3-262",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 3,
+ "end": "valid",
+ "seconds": 22.38,
+ "usage": {
+  "prompt_tokens": 36923,
+  "total_tokens": 38327,
+  "completion_tokens": 1404,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 22.37,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2102\",\n      \"CS2105\",\n      \"ST2334\"\n    ],\n    \"6\": [\n      \"CS3230\",\n      \"CS2109S\",\n      \"CS3234\"\n    ],\n    \"7\": [\n      \"CS3103\",\n      \"CS4226\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3103 is offered only in Sem 1, so it must be in an odd semester (7).\",\n    \"CS3234 is offered only in Sem 2, so it must be in an even semester (6).\",\n    \"CS4226 is offered only in Sem 1, so it must be in an odd semester (7).\",\n    \"CS3230 is placed in Sem 6 to satisfy the soft wish of taking it before CS3234 (Sem 6) is not possible if CS3234 is in Sem 6? No, CS3230 is a prerequisite for CS3234? No, CS3230 is not a prereq for CS3234. But the student prefers CS3230 before CS3234. Placing CS3230 in Sem 6 and CS3234 in Sem 6 is same semester. The student said 'before'. So CS3230 should be in Sem 5 or earlier. But Sem 5 is full with CS2102, CS2105, ST2334 (12 MC). Can we move ST2334? ST2334 has no prereqs. CS2102 requires CS2040S and CS2030S (completed). CS2105 requires CS2040S (completed). So Sem 5 can take CS2102, CS2105, CS3230? CS3230 requires CS2040S and CS1231S (completed). Yes. So Sem 5: CS2102, CS2105, CS3230. Then Sem 6: CS2109S, CS3234. Sem 7: CS3103, CS4226. ST2334 can be in Sem 8? ST2334 is offered Sem 1 and 2. So Sem 8 is valid. This puts ST2334 as late as possible (Sem 8). CS4226 is in Sem 7. Can CS4226 be later? No, Sem 8 is even. So Sem 7 is the latest for CS4226. This plan satisfies all hard rules and soft wishes.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS2105",
+    "ST2334"
+   ],
+   "6": [
+    "CS3230",
+    "CS2109S",
+    "CS3234"
+   ],
+   "7": [
+    "CS3103",
+    "CS4226"
+   ]
+  },
+  "reasons": [
+   "CS3103 is offered only in Sem 1, so it must be in an odd semester (7).",
+   "CS3234 is offered only in Sem 2, so it must be in an even semester (6).",
+   "CS4226 is offered only in Sem 1, so it must be in an odd semester (7).",
+   "CS3230 is placed in Sem 6 to satisfy the soft wish of taking it before CS3234 (Sem 6) is not possible if CS3234 is in Sem 6? No, CS3230 is a prerequisite for CS3234? No, CS3230 is not a prereq for CS3234. But the student prefers CS3230 before CS3234. Placing CS3230 in Sem 6 and CS3234 in Sem 6 is same semester. The student said 'before'. So CS3230 should be in Sem 5 or earlier. But Sem 5 is full with CS2102, CS2105, ST2334 (12 MC). Can we move ST2334? ST2334 has no prereqs. CS2102 requires CS2040S and CS2030S (completed). CS2105 requires CS2040S (completed). So Sem 5 can take CS2102, CS2105, CS3230? CS3230 requires CS2040S and CS1231S (completed). Yes. So Sem 5: CS2102, CS2105, CS3230. Then Sem 6: CS2109S, CS3234. Sem 7: CS3103, CS4226. ST2334 can be in Sem 8? ST2334 is offered Sem 1 and 2. So Sem 8 is valid. This puts ST2334 as late as possible (Sem 8). CS4226 is in Sem 7. Can CS4226 be later? No, Sem 8 is even. So Sem 7 is the latest for CS4226. This plan satisfies all hard rules and soft wishes."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2102\",\n      \"CS2105\",\n      \"ST2334\"\n    ],\n    \"6\": [\n      \"CS3230\",\n      \"CS3103\",\n      \"CS2109S\"\n    ],\n    \"7\": [\n      \"CS3234\",\n      \"CS4226\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2102 and CS2105 prerequisites are satisfied by completed modules.\",\n    \"CS3230, CS3103, and CS2109S prerequisites are satisfied by modules in Sem 5.\",\n    \"CS3234 and CS4226 prerequisites are satisfied by modules in Sem 6.\",\n    \"Soft wishes met: CS2102 before CS3234, CS3230 before CS3234, ST2334 and CS4226 as late as possible.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2102",
+      "CS2105",
+      "ST2334"
+     ],
+     "6": [
+      "CS3230",
+      "CS3103",
+      "CS2109S"
+     ],
+     "7": [
+      "CS3234",
+      "CS4226"
+     ]
+    },
+    "reasons": [
+     "CS2102 and CS2105 prerequisites are satisfied by completed modules.",
+     "CS3230, CS3103, and CS2109S prerequisites are satisfied by modules in Sem 5.",
+     "CS3234 and CS4226 prerequisites are satisfied by modules in Sem 6.",
+     "Soft wishes met: CS2102 before CS3234, CS3230 before CS3234, ST2334 and CS4226 as late as possible."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 8984,
+    "total_tokens": 9239,
+    "completion_tokens": 255,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 4.9,
+    "attempts": 1
+   },
+   "seconds": 4.9,
+   "violations": [
+    "R3 CS3103 not offered in Sem 2 (semester 6)",
+    "R3 CS3234 not offered in Sem 1 (semester 7)"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2102\",\n      \"CS2105\",\n      \"ST2334\"\n    ],\n    \"6\": [\n      \"CS3230\",\n      \"CS2109S\"\n    ],\n    \"7\": [\n      \"CS3103\",\n      \"CS3234\",\n      \"CS4226\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3103 is offered only in Sem 1, so it must be in Sem 7.\",\n    \"CS3234 is offered only in Sem 2, so it must be in Sem 6 or 8.\",\n    \"CS3230 is placed in Sem 6 to satisfy the soft wish of taking it before CS3234.\",\n    \"CS3234 is placed in Sem 8 to allow CS3230 in Sem 6 and satisfy prerequisites.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2102",
+      "CS2105",
+      "ST2334"
+     ],
+     "6": [
+      "CS3230",
+      "CS2109S"
+     ],
+     "7": [
+      "CS3103",
+      "CS3234",
+      "CS4226"
+     ]
+    },
+    "reasons": [
+     "CS3103 is offered only in Sem 1, so it must be in Sem 7.",
+     "CS3234 is offered only in Sem 2, so it must be in Sem 6 or 8.",
+     "CS3230 is placed in Sem 6 to satisfy the soft wish of taking it before CS3234.",
+     "CS3234 is placed in Sem 8 to allow CS3230 in Sem 6 and satisfy prerequisites."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9324,
+    "total_tokens": 9566,
+    "completion_tokens": 242,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.99,
+    "attempts": 1
+   },
+   "seconds": 4.99,
+   "violations": [
+    "R3 CS3234 not offered in Sem 1 (semester 7)"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2102\",\n      \"CS2105\",\n      \"ST2334\"\n    ],\n    \"6\": [\n      \"CS3230\",\n      \"CS2109S\"\n    ],\n    \"8\": [\n      \"CS3103\",\n      \"CS3234\",\n      \"CS4226\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3103 is offered only in Sem 1, so it must be in an odd semester (7 or 8).\",\n    \"CS3234 is offered only in Sem 2, so it must be in an even semester (6 or 8).\",\n    \"CS4226 requires CS2105 and a math module, satisfied in Sem 5. Placing CS3103 in Sem 8 allows CS3234 in Sem 8 as well, satisfying the soft wish to put CS4226 late.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2102",
+      "CS2105",
+      "ST2334"
+     ],
+     "6": [
+      "CS3230",
+      "CS2109S"
+     ],
+     "8": [
+      "CS3103",
+      "CS3234",
+      "CS4226"
+     ]
+    },
+    "reasons": [
+     "CS3103 is offered only in Sem 1, so it must be in an odd semester (7 or 8).",
+     "CS3234 is offered only in Sem 2, so it must be in an even semester (6 or 8).",
+     "CS4226 requires CS2105 and a math module, satisfied in Sem 5. Placing CS3103 in Sem 8 allows CS3234 in Sem 8 as well, satisfying the soft wish to put CS4226 late."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9291,
+    "total_tokens": 9546,
+    "completion_tokens": 255,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.79,
+    "attempts": 1
+   },
+   "seconds": 3.79,
+   "violations": [
+    "R3 CS3103 not offered in Sem 2 (semester 8)",
+    "R3 CS4226 not offered in Sem 2 (semester 8)"
+   ]
+  },
+  {
+   "round": 3,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2102\",\n      \"CS2105\",\n      \"ST2334\"\n    ],\n    \"6\": [\n      \"CS3230\",\n      \"CS2109S\",\n      \"CS3234\"\n    ],\n    \"7\": [\n      \"CS3103\",\n      \"CS4226\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3103 is offered only in Sem 1, so it must be in an odd semester (7).\",\n    \"CS3234 is offered only in Sem 2, so it must be in an even semester (6).\",\n    \"CS4226 is offered only in Sem 1, so it must be in an odd semester (7).\",\n    \"CS3230 is placed in Sem 6 to satisfy the soft wish of taking it before CS3234 (Sem 6) is not possible if CS3234 is in Sem 6? No, CS3230 is a prerequisite for CS3234? No, CS3230 is not a prereq for CS3234. But the student prefers CS3230 before CS3234. Placing CS3230 in Sem 6 and CS3234 in Sem 6 is same semester. The student said 'before'. So CS3230 should be in Sem 5 or earlier. But Sem 5 is full with CS2102, CS2105, ST2334 (12 MC). Can we move ST2334? ST2334 has no prereqs. CS2102 requires CS2040S and CS2030S (completed). CS2105 requires CS2040S (completed). So Sem 5 can take CS2102, CS2105, CS3230? CS3230 requires CS2040S and CS1231S (completed). Yes. So Sem 5: CS2102, CS2105, CS3230. Then Sem 6: CS2109S, CS3234. Sem 7: CS3103, CS4226. ST2334 can be in Sem 8? ST2334 is offered Sem 1 and 2. So Sem 8 is valid. This puts ST2334 as late as possible (Sem 8). CS4226 is in Sem 7. Can CS4226 be later? No, Sem 8 is even. So Sem 7 is the latest for CS4226. This plan satisfies all hard rules and soft wishes.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2102",
+      "CS2105",
+      "ST2334"
+     ],
+     "6": [
+      "CS3230",
+      "CS2109S",
+      "CS3234"
+     ],
+     "7": [
+      "CS3103",
+      "CS4226"
+     ]
+    },
+    "reasons": [
+     "CS3103 is offered only in Sem 1, so it must be in an odd semester (7).",
+     "CS3234 is offered only in Sem 2, so it must be in an even semester (6).",
+     "CS4226 is offered only in Sem 1, so it must be in an odd semester (7).",
+     "CS3230 is placed in Sem 6 to satisfy the soft wish of taking it before CS3234 (Sem 6) is not possible if CS3234 is in Sem 6? No, CS3230 is a prerequisite for CS3234? No, CS3230 is not a prereq for CS3234. But the student prefers CS3230 before CS3234. Placing CS3230 in Sem 6 and CS3234 in Sem 6 is same semester. The student said 'before'. So CS3230 should be in Sem 5 or earlier. But Sem 5 is full with CS2102, CS2105, ST2334 (12 MC). Can we move ST2334? ST2334 has no prereqs. CS2102 requires CS2040S and CS2030S (completed). CS2105 requires CS2040S (completed). So Sem 5 can take CS2102, CS2105, CS3230? CS3230 requires CS2040S and CS1231S (completed). Yes. So Sem 5: CS2102, CS2105, CS3230. Then Sem 6: CS2109S, CS3234. Sem 7: CS3103, CS4226. ST2334 can be in Sem 8? ST2334 is offered Sem 1 and 2. So Sem 8 is valid. This puts ST2334 as late as possible (Sem 8). CS4226 is in Sem 7. Can CS4226 be later? No, Sem 8 is even. So Sem 7 is the latest for CS4226. This plan satisfies all hard rules and soft wishes."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9324,
+    "total_tokens": 9976,
+    "completion_tokens": 652,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 8.69,
+    "attempts": 1
+   },
+   "seconds": 8.7,
+   "violations": []
+  }
+ ]
+}

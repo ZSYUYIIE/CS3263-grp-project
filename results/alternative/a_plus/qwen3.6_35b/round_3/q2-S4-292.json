@@ -1,0 +1,58 @@
+{
+ "id": "q2-S4-292",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 2,
+ "end": "valid",
+ "seconds": 124.09,
+ "usage": {
+  "prompt_tokens": 40834,
+  "total_tokens": 47260,
+  "completion_tokens": 6426,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 124.09,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2103\",\n      \"MA2116\",\n      \"ST1131\"\n    ],\n    \"4\": [\n      \"CS3219\",\n      \"CS3243\"\n    ],\n    \"5\": [\n      \"CS4211\",\n      \"CS3244\"\n    ],\n    \"6\": [\n      \"ES2660\"\n    ],\n    \"7\": [\n      \"CS4246\"\n    ],\n    \"8\": [\n      \"CS3236\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3243 is offered in Sem 1, so it is taken in Sem 4 to satisfy prerequisites for CS4246.\",\n    \"CS4211 is offered in Sem 1, so it is taken in Sem 5 after CS3219 in Sem 4.\",\n    \"CS4246 requires CS3243 and CS3236 prerequisites (via CS3243->CS4246 link? No, CS4246 prereq is CS3243 or CS3263). CS3236 is taken in Sem 8. CS4246 in Sem 7 satisfies 'CS4246 before CS3236' and 'CS4246 as late as possible' (limited by Sem 8 being last). CS3244 in Sem 5, ES2660 in Sem 6 to separate them.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2103",
+    "MA2116",
+    "ST1131"
+   ],
+   "4": [
+    "CS3219",
+    "CS3243"
+   ],
+   "5": [
+    "CS4211",
+    "CS3244"
+   ],
+   "6": [
+    "ES2660"
+   ],
+   "7": [
+    "CS4246"
+   ],
+   "8": [
+    "CS3236"
+   ]
+  },
+  "reasons": [
+   "CS3243 is offered in Sem 1, so it is taken in Sem 4 to satisfy prerequisites for CS4246.",
+   "CS4211 is offered in Sem 1, so it is taken in Sem 5 after CS3219 in Sem 4.",
+   "CS4246 requires CS3243 and CS3236 prerequisites (via CS3243->CS4246 link? No, CS4246 prereq is CS3243 or CS3263). CS3236 is taken in Sem 8. CS4246 in Sem 7 satisfies 'CS4246 before CS3236' and 'CS4246 as late as possible' (limited by Sem 8 being last). CS3244 in Sem 5, ES2660 in Sem 6 to separate them."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

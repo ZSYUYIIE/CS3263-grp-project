@@ -1,0 +1,54 @@
+{
+ "id": "q2-S3-006",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 44.85,
+ "usage": {
+  "prompt_tokens": 11980,
+  "total_tokens": 15603,
+  "completion_tokens": 3623,
+  "prompt_tokens_details": {
+   "cached_tokens": 11648,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3450
+  },
+  "finish_reason": "stop",
+  "request_seconds": 44.85,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS3227\",\"CS3281\",\"CP3880\"],\"7\":[\"CS2102\",\"CS4218\",\"CS3103\"],\"8\":[\"CS3210\",\"CS3282\"]},\"reasons\":[\"CS3227 is in semester 6 so it precedes CS3103 in semester 7; CS2102 and CS4218 are both in semester 7 as required.\",\"CS3281 is added because it is the prerequisite for CS3282; CS3210 is in semester 8 because CS2102 blocks semester 7 and ATAP limits semester 6 to 8 MC.\",\"ATAP is in semester 6 with 8 MC of other courses; the last semester used is 8, so ATAP is not in the final semester.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS3227",
+    "CS3281",
+    "CP3880"
+   ],
+   "7": [
+    "CS2102",
+    "CS4218",
+    "CS3103"
+   ],
+   "8": [
+    "CS3210",
+    "CS3282"
+   ]
+  },
+  "reasons": [
+   "CS3227 is in semester 6 so it precedes CS3103 in semester 7; CS2102 and CS4218 are both in semester 7 as required.",
+   "CS3281 is added because it is the prerequisite for CS3282; CS3210 is in semester 8 because CS2102 blocks semester 7 and ATAP limits semester 6 to 8 MC.",
+   "ATAP is in semester 6 with 8 MC of other courses; the last semester used is 8, so ATAP is not in the final semester."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

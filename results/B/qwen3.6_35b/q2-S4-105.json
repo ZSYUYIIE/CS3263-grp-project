@@ -1,0 +1,78 @@
+{
+ "id": "q2-S4-105",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 5.83,
+ "solver_seconds": 0.002,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3107,
+  "total_tokens": 3425,
+  "completion_tokens": 318,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 5.83,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 5,\n\"completed\": [\n\"CS2106\",\n\"CS1101S\",\n\"CS2030S\",\n\"CS2109S\",\n\"CS2040S\",\n\"CS3236\",\n\"MA1522\",\n\"ST2334\",\n\"CS2100\",\n\"CS1231S\",\n\"CS2103T\",\n\"CS2101\",\n\"ES2660\",\n\"MA1521\"\n],\n\"must_take\": [\n\"IS1108\",\n\"CS3230\",\n\"CS3281\",\n\"CS2102\",\n\"CS2105\",\n\"CS3219\"\n],\n\"sem_caps\": {\n\"6\": 0,\n\"8\": 0\n},\n\"late\": [\n\"CS3230\"\n],\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2102\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2102\",\n\"b\": \"CS3230\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "completed": [
+   "CS2106",
+   "CS1101S",
+   "CS2030S",
+   "CS2109S",
+   "CS2040S",
+   "CS3236",
+   "MA1522",
+   "ST2334",
+   "CS2100",
+   "CS1231S",
+   "CS2103T",
+   "CS2101",
+   "ES2660",
+   "MA1521"
+  ],
+  "must_take": [
+   "IS1108",
+   "CS3230",
+   "CS3281",
+   "CS2102",
+   "CS2105",
+   "CS3219"
+  ],
+  "sem_caps": {
+   "6": 0,
+   "8": 0
+  },
+  "late": [
+   "CS3230"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2102",
+    "b": "CS3230",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3281 cannot be placed in any remaining semester (offered in terms [2]; semesters left [5, 7])"
+  ]
+ }
+}

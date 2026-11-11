@@ -1,0 +1,84 @@
+{
+ "id": "q2-S3-236",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.04,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3083,
+  "total_tokens": 3467,
+  "completion_tokens": 384,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 6.04,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"current_sem\": 3,\n  \"completed\": [\n    \"IS1108\",\n    \"CS2040S\",\n    \"MA1522\",\n    \"ES2660\",\n    \"CS1231S\",\n    \"CS2030S\",\n    \"MA1521\",\n    \"CS1101S\"\n  ],\n  \"must_take\": [\n    \"CS4243\",\n    \"CS2103T\",\n    \"CS3281\",\n    \"CS4218\",\n    \"CS2102\",\n    \"CS3230\",\n    \"CS4221\",\n    \"CS3219\",\n    \"CS2100\",\n    \"CS2105\"\n  ],\n  \"objective\": \"min_total_mc\",\n  \"rules\": [\n    {\n      \"type\": \"before\",\n      \"a\": \"CS3219\",\n      \"b\": \"CS2102\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS3281\",\n      \"sem\": 8,\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"late\",\n      \"course\": \"CS4221\",\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"late\",\n      \"course\": \"CS2103T\",\n      \"strength\": \"prefer\"\n    }\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "completed": [
+   "IS1108",
+   "CS2040S",
+   "MA1522",
+   "ES2660",
+   "CS1231S",
+   "CS2030S",
+   "MA1521",
+   "CS1101S"
+  ],
+  "must_take": [
+   "CS4243",
+   "CS2103T",
+   "CS3281",
+   "CS4218",
+   "CS2102",
+   "CS3230",
+   "CS4221",
+   "CS3219",
+   "CS2100",
+   "CS2105"
+  ],
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3219",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3281",
+    "sem": 8,
+    "strength": "prefer"
+   },
+   {
+    "type": "late",
+    "course": "CS4221",
+    "strength": "prefer"
+   },
+   {
+    "type": "late",
+    "course": "CS2103T",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [
+  "rules[2].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'",
+  "rules[3].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'"
+ ],
+ "answer": {
+  "status": "INVALID_SPEC",
+  "errors": [
+   "rules[2].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'",
+   "rules[3].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'"
+  ]
+ }
+}

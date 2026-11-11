@@ -1,0 +1,103 @@
+{
+ "id": "q2-S3-109",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 11.07,
+ "solver_seconds": 0.013,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2804,
+  "total_tokens": 3691,
+  "completion_tokens": 887,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 694
+  },
+  "finish_reason": "stop",
+  "request_seconds": 11.05,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":6,\"completed\":[\"CS1101S\",\"CS3233\",\"CS2106\",\"CS2100\",\"CS2109S\",\"CS2030S\",\"CS2105\",\"CS2101\",\"CS2040S\",\"IS1108\",\"CS1231S\",\"ES2660\",\"MA1522\",\"MA1521\",\"CS3219\",\"CS2103T\",\"CS3230\"],\"must_take\":[\"ST2334\",\"CS3231\",\"CS2102\",\"CS3237\",\"CS3227\"],\"mc_min\":8,\"rules\":[{\"type\":\"before\",\"a\":\"ST2334\",\"b\":\"CS3237\",\"strength\":\"must\"},{\"type\":\"apart\",\"a\":\"CS3237\",\"b\":\"CS2102\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3227\",\"sem\":6,\"strength\":\"must\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 6,
+  "completed": [
+   "CS1101S",
+   "CS3233",
+   "CS2106",
+   "CS2100",
+   "CS2109S",
+   "CS2030S",
+   "CS2105",
+   "CS2101",
+   "CS2040S",
+   "IS1108",
+   "CS1231S",
+   "ES2660",
+   "MA1522",
+   "MA1521",
+   "CS3219",
+   "CS2103T",
+   "CS3230"
+  ],
+  "must_take": [
+   "ST2334",
+   "CS3231",
+   "CS2102",
+   "CS3237",
+   "CS3227"
+  ],
+  "mc_min": 8,
+  "rules": [
+   {
+    "type": "before",
+    "a": "ST2334",
+    "b": "CS3237",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3237",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3227",
+    "sem": 6,
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 7,
+  "plan": {
+   "6": [
+    "CS2102",
+    "CS3227",
+    "ST2334"
+   ],
+   "7": [
+    "CS3231",
+    "CS3237"
+   ]
+  },
+  "mc_per_semester": {
+   "6": 12,
+   "7": 8
+  },
+  "preferences_met": [],
+  "preferences_not_met": []
+ }
+}

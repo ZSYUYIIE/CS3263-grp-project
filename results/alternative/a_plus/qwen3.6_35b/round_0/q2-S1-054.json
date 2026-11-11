@@ -1,0 +1,63 @@
+{
+ "id": "q2-S1-054",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 63.23,
+ "usage": {
+  "prompt_tokens": 9420,
+  "total_tokens": 12992,
+  "completion_tokens": 3572,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 63.23,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS2109S requires (MA1511 and MA1512) or MA1521 or MA2002 or MA1102R or MA1312 or MA1507 or MA1505. The student has not completed any of these prerequisites (MA1521 is taken in Sem 1, but CS2109S is in Sem 6, so MA1521 is completed. However, CS2109S also requires YSC2229 or CS2040S or CS2040C or CS2040HS or CS2040 or CS2040DE. The student plans CS2040S in Sem 3 or 4. If CS2040S is in Sem 3, it is completed before Sem 6. So CS2109S is eligible in Sem 6.\",\n    \"CS4230 requires CS3230. The student must take CS3230 in Y2S1 (Sem 3). CS4230 is offered in Sem 2. Sem 3 is Sem 1. Therefore, CS4230 cannot be taken in Sem 3. The earliest CS4230 can be taken is Sem 4 (Y2S2). This is allowed.\",\n    \"CS2102 requires CS2030S (or equivalent) and CS2040S (or equivalent). CS2030S requires CS1010 (or equivalent). CS2040S requires CS1010 and CS1231S. The student has not completed CS1010, CS1231S, or CS2030S. These are prerequisites for the required courses. The student must take CS1010, CS1231S, CS2030S, and CS2040S. The student listed 'must take' courses but omitted the prerequisites CS1010, CS2030S, and CS2040S (and CS1231S is listed). CS1231S is listed. CS1010 is NOT listed as a must-take. CS2030S is NOT listed. CS2040S IS listed. CS2030S is a prerequisite for CS2102. CS1010 is a prerequisite for CS2030S and CS2040S. The student has not completed CS1010. Therefore, CS1010 must be taken. The student did not list CS1010 as a 'must take'. Rule 7 says 'Every must/has to wish holds'. It does not say 'only these'. But Rule 8 says 'Add a course... ONLY when it is a prerequisite needed by a planned course'. So we must add CS1010, CS2030S. Also CS2040S is listed. CS2040S requires CS1231S (listed) and CS1010. So CS1010 is needed. CS2030S is needed for CS2102. CS2030S requires CS1010. So CS1010 is needed. CS2102 requires CS2030S. So CS2030S is needed. CS2105 requires CS2040S (or equivalent). CS2106 requires CS2100. CS2100 requires CS1010. So CS1010 is needed. CS2103T requires CS2030S and CS2040S. So CS2030S is needed. CS3230 requires CS2040S. CS4230 requires CS3230. CS2109S requires CS2040S. So the set of required courses including prerequisites is: CS1010, CS1231S, CS2030S, CS2040S, CS2100, CS2101, CS2102, CS2103T, CS2105, CS2106, CS2109S, CS3230, CS4230, MA1521, ST2334. Let's check prerequisites for these. CS1010: none. CS1231S: none. MA1521: none. ST2334: MA1521. CS2030S: CS1010. CS2040S: CS1010, CS1231S. CS2100: CS1010. CS2101: none. CS2102: CS1231S, CS2030S. CS2103T: CS2030S, CS2040S. CS2105: CS2040S. CS2106: CS2100. CS2109S: CS2040S, MA1521. CS3230: CS2040S, CS1231S. CS4230: CS3230, CS1231S, ST2334. All prerequisites are covered by the set. Now we must schedule them. Constraints: MA1521 in Sem 1. CS2103T in Sem 4. CS3230 in Sem 3. CS2109S in Sem 6. CS2106 ideally in Sem 5. ST2334 before CS2103T (Sem 4), so ST2334 in Sem 1, 2, or 3. CS4230 as early as possible. CS4230 requires CS3230 (Sem 3) and ST2334 and CS1231S. CS4230 is offered Sem 2. So earliest is Sem 4. But CS2103T is in Sem 4. Max 4 modules per semester. Let's try to fit. Sem 1: MA1521, CS1010, CS1231S, ST2334 (4 modules). ST2334 prereq MA1521 (Sem 1). OK. Sem 2: CS2030S, CS2040S, CS2100, CS2101 (4 modules). CS2030S prereq CS1010 (Sem 1). OK. CS2040S prereq CS1010, CS1231S (Sem 1). OK. CS2100 prereq CS1010 (Sem 1). OK. CS2101 none. OK. Sem 3: CS3230, CS2102, CS2105, CS2103T? No, CS2103T is Sem 4. CS2102 prereq CS1231S, CS2030S (Sem 2). OK. CS2105 prereq CS2040S (Sem 2). OK. CS3230 prereq CS2040S, CS1231S (Sem 1, 2). OK. So Sem 3: CS3230, CS2102, CS2105. (3 modules). Sem 4: CS2103T, CS4230, CS2106? CS2103T is fixed Sem 4. CS4230 prereq CS3230 (Sem 3), ST2334 (Sem 1), CS1231S (Sem 1). OK. CS2106 prereq CS2100 (Sem 2). OK. So Sem 4: CS2103T, CS4230, CS2106. (3 modules). Sem 5: CS2109S? No, CS2109S is Sem 6. Any other courses? No. Sem 6: CS2109S. (1 module). This plan works. Wait, did I miss anything? CS2109S requires MA1521 (Sem 1) and CS2040S (Sem 2). OK. CS4230 requires ST2334 (Sem 1). OK. CS2106 ideally Sem 5. I put it in Sem 4. Is there a conflict? No. The student said 'Ideally CS2106 would be in Y3S1'. Y3S1 is Sem 5. Can I move CS2106 to Sem 5? Sem 4: CS2103T, CS4230. Sem 5: CS2106, CS2109S? No, CS2109S is fixed Sem 6. So Sem 5: CS2106. Sem 6: CS2109S. This is better for soft wish. So Sem 4: CS2103T, CS4230. Sem 5: CS2106. Sem 6: CS2109S. This satisfies all hard constraints and soft wishes. Why did I think NO_PLAN? I need to check if CS1010 is open to BComp CS Hons. Yes. CS2030S is open. CS2040S is open. CS2100 is open. CS2101 is open. CS2102 is open. CS2103T is open. CS2105 is open. CS2106 is open. CS2109S is open. CS3230 is open. CS4230 is open. MA1521 is open. ST2334 is open. CS1231S is open. All good. Max 4 modules per semester. Sem 1: 4. Sem 2: 4. Sem 3: 3. Sem 4: 2. Sem 5: 1. Sem 6: 1. Total 15 modules. Fewest total credits? All are 4 MC except MA1521 (4 MC). Total 60 MC. Is there a way to reduce? No, all are required. So PLAN is possible.\n\nWait, I missed one detail. CS2109S requires (MA1511 and MA1512) OR MA1521 OR ... The student takes MA1521 in Sem 1. So that condition is met.\n\nLet's re-verify the \"must take\" list vs prerequisites.\nMust take: CS2102, CS2105, CS4230, CS3230, MA1521, CS2101, CS1231S, CS2109S, CS2106, CS2103T, CS2040S, ST2334.\nPrerequisites needed:\nCS2102 needs CS2030S. CS2030S needs CS1010.\nCS2105 needs CS2040S (in list).\nCS4230 needs CS3230 (in list), CS1231S (in list), ST2334 (in list).\nCS3230 needs CS2040S (in list), CS1231S (in list).\nCS2101 needs none.\nCS1231S needs none.\nCS2109S needs CS2040S (in list), MA1521 (in list).\nCS2106 needs CS2100. CS2100 needs CS1010.\nCS2103T needs CS2030S, CS2040S.\nCS2040S needs CS1010, CS1231S.\nST2334 needs MA1521.\nMA1521 needs none.\n\nSo added courses: CS1010, CS2030S, CS2100.\nTotal courses: 12 + 3 = 15.\n\nSchedule:\nSem 1: MA1521, CS1010, CS1231S, ST2334. (4 mods). ST2334 prereq MA1521. OK.\nSem 2: CS2030S, CS2040S, CS2100, CS2101. (4 mods). CS2030S prereq CS1010. CS2040S prereq CS1010, CS1231S. CS2100 prereq CS1010. CS2101 none. OK.\nSem 3: CS3230, CS2102, CS2105. (3 mods). CS3230 prereq CS2040S, CS1231S. CS2102 prereq CS1231S, CS2030S. CS2105 prereq CS2040S. OK.\nSem 4: CS2103T, CS4230. (2 mods). CS2103T prereq CS2030S, CS2040S. CS4230 prereq CS3230, CS1231S, ST2334. OK.\nSem 5: CS2106. (1 mod). CS2106 prereq CS2100. OK.\nSem 6: CS2109S. (1 mod). CS2109S prereq CS2040S, MA1521. OK.\n\nSoft wishes:\nCS2109S in Sem 6: Met.\nCS2103T in Sem 4: Met.\nCS3230 in Y2S1 (Sem 3): Met.\nMA1521 in Sem 1: Met.\nCS2106 in Y3S1 (Sem 5): Met.\nST2334 before CS2103T: Met (Sem 1 vs Sem 4).\nCS4230 as early as possible: Sem 4 is earliest because CS3230 is Sem 3 and CS4230 is Sem 2 only. So Sem 4 is earliest. Met.\n\nFewest total credits: All courses are 4 MC. 15 * 4 = 60 MC. No way to reduce.\n\nSo the plan is valid.\n\n{\"status\": \"PLAN\", \"plan\": {\"1\": [\"MA1521\", \"CS1010\", \"CS1231S\", \"ST2334\"], \"2\": [\"CS2030S\", \"CS2040S\", \"CS2100\", \"CS2101\"], \"3\": [\"CS3230\", \"CS2102\", \"CS2105\"], \"4\": [\"CS2103T\", \"CS4230\"], \"5\": [\"CS2106\"], \"6\": [\"CS2109S\"]}, \"reasons\": [\"Added prerequisites CS1010, CS2030S, CS2100 required for listed courses.\", \"All hard constraints and soft wishes are satisfied.\", \"Total 60 MC across 6 semesters.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "MA1521",
+    "CS1010",
+    "CS1231S",
+    "ST2334"
+   ],
+   "2": [
+    "CS2030S",
+    "CS2040S",
+    "CS2100",
+    "CS2101"
+   ],
+   "3": [
+    "CS3230",
+    "CS2102",
+    "CS2105"
+   ],
+   "4": [
+    "CS2103T",
+    "CS4230"
+   ],
+   "5": [
+    "CS2106"
+   ],
+   "6": [
+    "CS2109S"
+   ]
+  },
+  "reasons": [
+   "Added prerequisites CS1010, CS2030S, CS2100 required for listed courses.",
+   "All hard constraints and soft wishes are satisfied.",
+   "Total 60 MC across 6 semesters."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

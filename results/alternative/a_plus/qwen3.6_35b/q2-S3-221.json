@@ -1,0 +1,142 @@
+{
+ "id": "q2-S3-221",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 11.18,
+ "usage": {
+  "prompt_tokens": 26012,
+  "total_tokens": 26612,
+  "completion_tokens": 600,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 11.18,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS4236 requires CS2107, which is not in the student's completed list and is not among the required courses (CS2102, CS3219, CS2105).\",\n\"CS4236 must be taken in Sem 7, but its prerequisite CS2107 cannot be completed by then as it has no prerequisites other than intro programming (met) but is not scheduled.\",\n\"Even if CS2107 were available, CS2105 and CS3219 must be in the same semester as CS4236 (Sem 7). CS2105 requires CS2040S (met) but CS3219 requires CS2103 or similar (met via CS2103T). However, the missing CS2107 makes CS4236 impossible.\"\n]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4236 requires CS2107, which is not in the student's completed list and is not among the required courses (CS2102, CS3219, CS2105).",
+   "CS4236 must be taken in Sem 7, but its prerequisite CS2107 cannot be completed by then as it has no prerequisites other than intro programming (met) but is not scheduled.",
+   "Even if CS2107 were available, CS2105 and CS3219 must be in the same semester as CS4236 (Sem 7). CS2105 requires CS2040S (met) but CS3219 requires CS2103 or similar (met via CS2103T). However, the missing CS2107 makes CS4236 impossible."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2102\",\n\"CS3219\"\n],\n\"7\": [\n\"CS2105\",\n\"CS4236\"\n]\n},\n\"reasons\": [\n\"Completed prerequisites for all planned courses are satisfied.\",\n\"CS2102 and CS3219 are taken in Sem 5 to satisfy prerequisites for later courses.\",\n\"CS2105, CS4236, and CS3219 are grouped in Sem 7 to meet the constraint that CS2105 and CS4236 are in the same semester, and CS3219 and CS4236 are in the same semester, while minimizing total credits by avoiding unnecessary early takes.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2102",
+      "CS3219"
+     ],
+     "7": [
+      "CS2105",
+      "CS4236"
+     ]
+    },
+    "reasons": [
+     "Completed prerequisites for all planned courses are satisfied.",
+     "CS2102 and CS3219 are taken in Sem 5 to satisfy prerequisites for later courses.",
+     "CS2105, CS4236, and CS3219 are grouped in Sem 7 to meet the constraint that CS2105 and CS4236 are in the same semester, and CS3219 and CS4236 are in the same semester, while minimizing total credits by avoiding unnecessary early takes."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 8423,
+    "total_tokens": 8608,
+    "completion_tokens": 185,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 4.1,
+    "attempts": 1
+   },
+   "seconds": 4.1,
+   "violations": [
+    "R4 CS4236 in semester 7: prerequisite not met ((YSC2229 or CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS) and CS2107 and (CS1231 or CS1231S or MA1100T or MA1100))",
+    "R9 must rule not met: same_sem CS3219 CS4236"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2102\",\n\"CS2105\",\n\"CS3219\"\n],\n\"7\": [\n\"CS4236\"\n]\n},\n\"reasons\": [\n\"CS2105, CS3219, and CS2102 are taken in Sem 5 to satisfy prerequisites for CS4236.\",\n\"CS4236 is taken in Sem 7 as required, with all prerequisites (CS2105, CS2102, CS1231S) met.\",\n\"CS3219 and CS4236 are in the same semester (Sem 7) to satisfy the hard constraint, and CS2105 is also in Sem 7 to satisfy the same-semester constraint with CS4236.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2102",
+      "CS2105",
+      "CS3219"
+     ],
+     "7": [
+      "CS4236"
+     ]
+    },
+    "reasons": [
+     "CS2105, CS3219, and CS2102 are taken in Sem 5 to satisfy prerequisites for CS4236.",
+     "CS4236 is taken in Sem 7 as required, with all prerequisites (CS2105, CS2102, CS1231S) met.",
+     "CS3219 and CS4236 are in the same semester (Sem 7) to satisfy the hard constraint, and CS2105 is also in Sem 7 to satisfy the same-semester constraint with CS4236."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 8767,
+    "total_tokens": 8971,
+    "completion_tokens": 204,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.2,
+    "attempts": 1
+   },
+   "seconds": 3.2,
+   "violations": [
+    "R4 CS4236 in semester 7: prerequisite not met ((YSC2229 or CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS) and CS2107 and (CS1231 or CS1231S or MA1100T or MA1100))",
+    "R8 semester 7 has 4 MC, minimum 8",
+    "R9 must rule not met: same_sem CS2105 CS4236",
+    "R9 must rule not met: same_sem CS3219 CS4236"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS4236 requires CS2107, which is not in the student's completed list and is not among the required courses (CS2102, CS3219, CS2105).\",\n\"CS4236 must be taken in Sem 7, but its prerequisite CS2107 cannot be completed by then as it has no prerequisites other than intro programming (met) but is not scheduled.\",\n\"Even if CS2107 were available, CS2105 and CS3219 must be in the same semester as CS4236 (Sem 7). CS2105 requires CS2040S (met) but CS3219 requires CS2103 or similar (met via CS2103T). However, the missing CS2107 makes CS4236 impossible.\"\n]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4236 requires CS2107, which is not in the student's completed list and is not among the required courses (CS2102, CS3219, CS2105).",
+     "CS4236 must be taken in Sem 7, but its prerequisite CS2107 cannot be completed by then as it has no prerequisites other than intro programming (met) but is not scheduled.",
+     "Even if CS2107 were available, CS2105 and CS3219 must be in the same semester as CS4236 (Sem 7). CS2105 requires CS2040S (met) but CS3219 requires CS2103 or similar (met via CS2103T). However, the missing CS2107 makes CS4236 impossible."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 8822,
+    "total_tokens": 9033,
+    "completion_tokens": 211,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.88,
+    "attempts": 1
+   },
+   "seconds": 3.88,
+   "violations": null
+  }
+ ]
+}

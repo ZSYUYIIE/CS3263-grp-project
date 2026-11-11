@@ -1,0 +1,89 @@
+{
+ "id": "q2-S4-238",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.97,
+ "solver_seconds": 0.362,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3086,
+  "total_tokens": 3440,
+  "completion_tokens": 354,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 6.61,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 2,\n\"completed\": [\n\"ES2660\",\n\"CS1101S\",\n\"MA1521\",\n\"CS1231S\"\n],\n\"must_take\": [\n\"CS4224\",\n\"CS3230\",\n\"CS2105\",\n\"CS2106\",\n\"CS2040S\"\n],\n\"mc_max\": 12,\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2106\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2105\",\n\"b\": \"CS3230\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS2105\",\n\"b\": \"CS3230\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4224\",\n\"sem\": 5,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4224\",\n\"b\": \"CS2040S\",\n\"strength\": \"prefer\"\n}\n],\n\"early\": [\n\"CS2105\"\n],\n\"late\": [\n\"CS2040S\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 2,
+  "completed": [
+   "ES2660",
+   "CS1101S",
+   "MA1521",
+   "CS1231S"
+  ],
+  "must_take": [
+   "CS4224",
+   "CS3230",
+   "CS2105",
+   "CS2106",
+   "CS2040S"
+  ],
+  "mc_max": 12,
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS2106",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2105",
+    "b": "CS3230",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS2105",
+    "b": "CS3230",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4224",
+    "sem": 5,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS4224",
+    "b": "CS2040S",
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS2105"
+  ],
+  "late": [
+   "CS2040S"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS2105 and CS3230 in the same semester; your rule: CS2105 and CS3230 in different semesters"
+  ]
+ }
+}

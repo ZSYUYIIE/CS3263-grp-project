@@ -1,0 +1,100 @@
+{
+ "id": "q2-S4-304",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 9.25,
+ "usage": {
+  "prompt_tokens": 20341,
+  "total_tokens": 20691,
+  "completion_tokens": 350,
+  "finish_reason": "stop",
+  "request_seconds": 9.25,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4220 requires CS2220, LSM2104, LSM2241, or ZB2101 as prerequisites, none of which are completed or planned.\",\n    \"CS3240 requires CS2111 or NM2207 as prerequisites, neither of which are completed or planned.\",\n    \"CS3242 requires CS3241 and specific math prerequisites (e.g., PC1201, MA1522) which are not completed or planned.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4220 requires CS2220, LSM2104, LSM2241, or ZB2101 as prerequisites, none of which are completed or planned.",
+   "CS3240 requires CS2111 or NM2207 as prerequisites, neither of which are completed or planned.",
+   "CS3242 requires CS3241 and specific math prerequisites (e.g., PC1201, MA1522) which are not completed or planned."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS2102\",\n      \"CS4220\"\n    ],\n    \"7\": [\n      \"CS2105\",\n      \"CS3240\",\n      \"CS4225\",\n      \"CS3242\"\n    ]\n  },\n  \"reasons\": [\n    \"CS4220 is placed in Sem 6 as required.\",\n    \"CS2102 is taken in Sem 6 to satisfy prerequisites for CS3242 and CS4225 as early as possible.\",\n    \"CS2105, CS3240, CS4225, and CS3242 are scheduled in Sem 7, meeting all mutual exclusions, prerequisites, and the Y4S1 requirement for CS4225.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS2102",
+      "CS4220"
+     ],
+     "7": [
+      "CS2105",
+      "CS3240",
+      "CS4225",
+      "CS3242"
+     ]
+    },
+    "reasons": [
+     "CS4220 is placed in Sem 6 as required.",
+     "CS2102 is taken in Sem 6 to satisfy prerequisites for CS3242 and CS4225 as early as possible.",
+     "CS2105, CS3240, CS4225, and CS3242 are scheduled in Sem 7, meeting all mutual exclusions, prerequisites, and the Y4S1 requirement for CS4225."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9932,
+    "total_tokens": 10142,
+    "completion_tokens": 210,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.09,
+    "attempts": 1
+   },
+   "seconds": 5.09,
+   "violations": [
+    "R4 CS3240 in semester 7: prerequisite not met (CS2111 or NM2207)",
+    "R3 CS3242 not offered in Sem 1 (semester 7)",
+    "R4 CS3242 in semester 7: prerequisite not met ((PC1201 or PC1221 or PC1221X) and CS3241 and (MA1522 or MA1508E or MA1513 or MA1311 or MA2001 or MA1101R) and (MA1521 or MA2002 or MA1505 or MA1507 or MA1102R or (MA1511 and MA1512)))",
+    "R4 CS4220 in semester 6: prerequisite not met (CS2220 or LSM2104 or LSM2241 or ZB2101)"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4220 requires CS2220, LSM2104, LSM2241, or ZB2101 as prerequisites, none of which are completed or planned.\",\n    \"CS3240 requires CS2111 or NM2207 as prerequisites, neither of which are completed or planned.\",\n    \"CS3242 requires CS3241 and specific math prerequisites (e.g., PC1201, MA1522) which are not completed or planned.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4220 requires CS2220, LSM2104, LSM2241, or ZB2101 as prerequisites, none of which are completed or planned.",
+     "CS3240 requires CS2111 or NM2207 as prerequisites, neither of which are completed or planned.",
+     "CS3242 requires CS3241 and specific math prerequisites (e.g., PC1201, MA1522) which are not completed or planned."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10409,
+    "total_tokens": 10549,
+    "completion_tokens": 140,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.16,
+    "attempts": 1
+   },
+   "seconds": 4.16,
+   "violations": null
+  }
+ ]
+}

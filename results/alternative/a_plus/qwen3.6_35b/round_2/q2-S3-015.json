@@ -1,0 +1,48 @@
+{
+ "id": "q2-S3-015",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 1,
+ "end": "valid",
+ "seconds": 21.98,
+ "usage": {
+  "prompt_tokens": 29032,
+  "total_tokens": 29586,
+  "completion_tokens": 554,
+  "finish_reason": "stop",
+  "request_seconds": 21.98,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS3231\",\n      \"CS2109S\",\n      \"CS2102\"\n    ],\n    \"6\": [\n      \"CP3880\"\n    ],\n    \"7\": [\n      \"CS3264\",\n      \"CS3230\",\n      \"CS3219\"\n    ]\n  },\n  \"reasons\": [\n    \"ATAP (CP3880) is planned in Semester 6 (Y3S2) as requested. No other courses are taken in this semester to respect the 8 MC limit for non-ATAP modules.\",\n    \"CS3231 is taken in Semester 5 (Y3S1) to satisfy the mandatory timing constraint.\",\n    \"CS3264 and CS3231 are in different semesters (7 and 5) to meet the soft preference.\",\n    \"CS2102 is taken in Semester 5, before CS3219 in Semester 7, satisfying the soft preference.\",\n    \"CS3230 is placed in Semester 7, the latest possible semester before graduation, satisfying the soft preference.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS3231",
+    "CS2109S",
+    "CS2102"
+   ],
+   "6": [
+    "CP3880"
+   ],
+   "7": [
+    "CS3264",
+    "CS3230",
+    "CS3219"
+   ]
+  },
+  "reasons": [
+   "ATAP (CP3880) is planned in Semester 6 (Y3S2) as requested. No other courses are taken in this semester to respect the 8 MC limit for non-ATAP modules.",
+   "CS3231 is taken in Semester 5 (Y3S1) to satisfy the mandatory timing constraint.",
+   "CS3264 and CS3231 are in different semesters (7 and 5) to meet the soft preference.",
+   "CS2102 is taken in Semester 5, before CS3219 in Semester 7, satisfying the soft preference.",
+   "CS3230 is placed in Semester 7, the latest possible semester before graduation, satisfying the soft preference."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,103 @@
+{
+ "id": "q2-S2-054",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 5.22,
+ "usage": {
+  "prompt_tokens": 20100,
+  "total_tokens": 20344,
+  "completion_tokens": 244,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.22,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4212 requires CS2104 or CS3212. Neither is in the mandatory list, nor are they prerequisites for any other mandatory course. CS2104 is not offered in Sem 2 (CS4212's semester), and CS3212 is not in the records. Thus, CS4212 cannot be taken.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4212 requires CS2104 or CS3212. Neither is in the mandatory list, nor are they prerequisites for any other mandatory course. CS2104 is not offered in Sem 2 (CS4212's semester), and CS3212 is not in the records. Thus, CS4212 cannot be taken."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"5\": [\"CS2105\", \"ST2334\"], \"6\": [\"IS1108\"], \"7\": [\"CS3237\", \"CS3219\"], \"8\": [\"CS4212\"]}, \"reasons\": [\"All mandatory courses scheduled respecting prerequisites and constraints.\", \"IS1108 taken in Sem 6 as required. CS3237 before CS4212 satisfied.\", \"Soft wishes met: ST2334 early, CS4212 late, CS3219/CS2105 apart, IS1108 before CS3219.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2105",
+      "ST2334"
+     ],
+     "6": [
+      "IS1108"
+     ],
+     "7": [
+      "CS3237",
+      "CS3219"
+     ],
+     "8": [
+      "CS4212"
+     ]
+    },
+    "reasons": [
+     "All mandatory courses scheduled respecting prerequisites and constraints.",
+     "IS1108 taken in Sem 6 as required. CS3237 before CS4212 satisfied.",
+     "Soft wishes met: ST2334 early, CS4212 late, CS3219/CS2105 apart, IS1108 before CS3219."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9937,
+    "total_tokens": 10088,
+    "completion_tokens": 151,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 3.2,
+    "attempts": 1
+   },
+   "seconds": 3.2,
+   "violations": [
+    "R4 CS4212 in semester 8: prerequisite not met (CS2104 or CS3212)"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4212 requires CS2104 or CS3212. Neither is in the mandatory list, nor are they prerequisites for any other mandatory course. CS2104 is not offered in Sem 2 (CS4212's semester), and CS3212 is not in the records. Thus, CS4212 cannot be taken.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4212 requires CS2104 or CS3212. Neither is in the mandatory list, nor are they prerequisites for any other mandatory course. CS2104 is not offered in Sem 2 (CS4212's semester), and CS3212 is not in the records. Thus, CS4212 cannot be taken."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10163,
+    "total_tokens": 10256,
+    "completion_tokens": 93,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.02,
+    "attempts": 1
+   },
+   "seconds": 2.02,
+   "violations": null
+  }
+ ]
+}

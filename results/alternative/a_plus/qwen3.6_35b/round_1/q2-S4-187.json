@@ -1,0 +1,46 @@
+{
+ "id": "q2-S4-187",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 3,
+ "end": "switched to NO_PLAN",
+ "seconds": 106.92,
+ "usage": {
+  "prompt_tokens": 23482,
+  "total_tokens": 28686,
+  "completion_tokens": 5204,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 106.92,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"3\": [\"CS2101\", \"CS2102\"], \"5\": [\"CS3223\", \"CS4261\"], \"6\": [\"CS4221\", \"ES2660\"]}, \"reasons\": [\"CS4221 is offered only in Sem 2, so it must be in Sem 6 (Sem 4 is NOC, Sem 8 is LOA). This requires CS3223 in Sem 5 or earlier. CS3223 requires CS2102, so CS2102 must be in Sem 3 or 5. CS2101 must be with CS2102. Placing them in Sem 3 allows CS3223 in Sem 5. CS4261 is required in Y3S1 (Sem 5). ES2660 is placed in Sem 6 to avoid conflict with CS2101/CS2102.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2101",
+    "CS2102"
+   ],
+   "5": [
+    "CS3223",
+    "CS4261"
+   ],
+   "6": [
+    "CS4221",
+    "ES2660"
+   ]
+  },
+  "reasons": [
+   "CS4221 is offered only in Sem 2, so it must be in Sem 6 (Sem 4 is NOC, Sem 8 is LOA). This requires CS3223 in Sem 5 or earlier. CS3223 requires CS2102, so CS2102 must be in Sem 3 or 5. CS2101 must be with CS2102. Placing them in Sem 3 allows CS3223 in Sem 5. CS4261 is required in Y3S1 (Sem 5). ES2660 is placed in Sem 6 to avoid conflict with CS2101/CS2102."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

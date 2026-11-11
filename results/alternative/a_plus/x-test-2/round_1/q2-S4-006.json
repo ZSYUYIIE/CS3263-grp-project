@@ -1,0 +1,54 @@
+{
+ "id": "q2-S4-006",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 44.28,
+ "usage": {
+  "prompt_tokens": 8640,
+  "total_tokens": 12368,
+  "completion_tokens": 3728,
+  "prompt_tokens_details": {
+   "cached_tokens": 8320,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3561
+  },
+  "finish_reason": "stop",
+  "request_seconds": 44.28,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS2105\",\"CS2102\",\"IS1108\"],\"7\":[\"CS2107\",\"CS3241\"],\"8\":[\"CS3235\",\"CS4247\",\"CS4277\"]},\"reasons\":[\"CS2105, CS2102 and IS1108 must share one semester; with the 12 MC limit and CS4247 fixed in semester 8, they are placed in semester 6.\",\"CS2107 and CS3241 are added as prerequisites for CS3235 and CS4247 respectively; both fit in semester 7.\",\"Semester 8 holds CS3235, CS4247 and CS4277 within 12 MC; the ideal CS2105 with CS4247 pairing is impossible under the constraints.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS2105",
+    "CS2102",
+    "IS1108"
+   ],
+   "7": [
+    "CS2107",
+    "CS3241"
+   ],
+   "8": [
+    "CS3235",
+    "CS4247",
+    "CS4277"
+   ]
+  },
+  "reasons": [
+   "CS2105, CS2102 and IS1108 must share one semester; with the 12 MC limit and CS4247 fixed in semester 8, they are placed in semester 6.",
+   "CS2107 and CS3241 are added as prerequisites for CS3235 and CS4247 respectively; both fit in semester 7.",
+   "Semester 8 holds CS3235, CS4247 and CS4277 within 12 MC; the ideal CS2105 with CS4247 pairing is impossible under the constraints."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

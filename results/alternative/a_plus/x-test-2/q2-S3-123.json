@@ -1,0 +1,110 @@
+{
+ "id": "q2-S3-123",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 63.47,
+ "usage": {
+  "prompt_tokens": 8132,
+  "total_tokens": 14576,
+  "completion_tokens": 6444,
+  "prompt_tokens_details": {
+   "cached_tokens": 7936,
+   "created_cache_tokens": 128
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 6271
+  },
+  "finish_reason": "stop",
+  "request_seconds": 63.47,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"ST2334\", \"CS2107\", \"CS3230\", \"CS2105\"], \"5\": [\"CS4236\", \"CS2104\", \"CS2109S\"], \"8\": [\"CS4212\", \"CS3233\", \"CS4222\", \"CS3219\"]}, \"reasons\": [\"Plan uses semesters 4, 5 and 8; every active semester has at least 12 MC.\", \"Added CS2107 for CS4236 and CS2104 for CS4212; total is 44 MC.\", \"ST2334 is in Y2S2, CS3230 is as early as possible, CS4222 and CS3219 share semester 8, and CS4212 is in semester 8.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "ST2334",
+    "CS2107",
+    "CS3230",
+    "CS2105"
+   ],
+   "5": [
+    "CS4236",
+    "CS2104",
+    "CS2109S"
+   ],
+   "8": [
+    "CS4212",
+    "CS3233",
+    "CS4222",
+    "CS3219"
+   ]
+  },
+  "reasons": [
+   "Plan uses semesters 4, 5 and 8; every active semester has at least 12 MC.",
+   "Added CS2107 for CS4236 and CS2104 for CS4212; total is 44 MC.",
+   "ST2334 is in Y2S2, CS3230 is as early as possible, CS4222 and CS3219 share semester 8, and CS4212 is in semester 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"ST2334\", \"CS2107\", \"CS3230\", \"CS2105\"], \"5\": [\"CS4236\", \"CS2104\", \"CS2109S\"], \"8\": [\"CS4212\", \"CS3233\", \"CS4222\", \"CS3219\"]}, \"reasons\": [\"Plan uses semesters 4, 5 and 8; every active semester has at least 12 MC.\", \"Added CS2107 for CS4236 and CS2104 for CS4212; total is 44 MC.\", \"ST2334 is in Y2S2, CS3230 is as early as possible, CS4222 and CS3219 share semester 8, and CS4212 is in semester 8.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "ST2334",
+      "CS2107",
+      "CS3230",
+      "CS2105"
+     ],
+     "5": [
+      "CS4236",
+      "CS2104",
+      "CS2109S"
+     ],
+     "8": [
+      "CS4212",
+      "CS3233",
+      "CS4222",
+      "CS3219"
+     ]
+    },
+    "reasons": [
+     "Plan uses semesters 4, 5 and 8; every active semester has at least 12 MC.",
+     "Added CS2107 for CS4236 and CS2104 for CS4212; total is 44 MC.",
+     "ST2334 is in Y2S2, CS3230 is as early as possible, CS4222 and CS3219 share semester 8, and CS4212 is in semester 8."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 8132,
+    "total_tokens": 14576,
+    "completion_tokens": 6444,
+    "prompt_tokens_details": {
+     "cached_tokens": 7936,
+     "created_cache_tokens": 128,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 6271
+    },
+    "finish_reason": "stop",
+    "request_seconds": 63.47,
+    "attempts": 1
+   },
+   "seconds": 63.47,
+   "violations": []
+  }
+ ]
+}

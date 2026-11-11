@@ -1,0 +1,41 @@
+{
+ "id": "q2-S4-190",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 97.0,
+ "usage": {
+  "prompt_tokens": 11540,
+  "total_tokens": 14786,
+  "completion_tokens": 3246,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 97.0,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS2102\", \"CS2105\"], \"5\": [\"CS3231\", \"CS4238\"], \"6\": [\"CS4240\", \"CS3244\"], \"8\": [\"CS4430\"]}, \"reasons\": [\"CS2102 and CS2105 prerequisites satisfied by completed courses; placed in Sem 4 as required.\", \"CS4238 requires CS3235 which is not in the mandatory list and has complex prerequisites; however, CS4238 is listed as mandatory. Checking CS3235 prereqs: CS2105, (CS2106 or CG2271), CS2107. Student has CS2105 but not CS2106/CG2271 or CS2107. Thus CS3235 cannot be taken. Consequently CS4238 cannot be taken. This creates a conflict with the 'must take' rule. Wait, let me re-read the prompt. 'I still have to take... CS4238'. If it's impossible, I should report NO_PLAN? Or did I miss a prereq satisfaction? CS2107 prereq: YSC1212 or CS1010J... CS1101S is completed. CS1101S is in the prereq list for CS2107. So CS2107 is eligible. CS2106 prereq: CS2100 (completed). So CS2106 is eligible. So CS3235 is eligible in Sem 5 (with CS2105, CS2106, CS2107). Then CS4238 in Sem 6 or 8. The student said CS4238 MUST be in Sem 8. So Sem 5: CS3235, CS2106, CS2107? No, CS2106 and CS2107 are not in the 'must take' list. Rule 8 says 'Add a course... ONLY when it is a prerequisite needed by a planned course.' So I can add CS2106, CS2107, CS3235. Let's re-plan.\", \"Re-evaluating: Must take: CS2102, CS4240, CS3244, CS4238, CS2105, CS4430. Prereqs for CS4238: CS3235. Prereqs for CS3235: CS2105, (CS2106 or CG2271), CS2107. Prereqs for CS2106: CS2100 (done). Prereqs for CS2107: CS1101S (done). Prereqs for CS3231: CS1231S (done), CS2040S (done). Prereqs for CS4430: CS3231. Prereqs for CS4240: CS3240. Prereqs for CS3240: CS2111. Prereqs for CS3244: CS2040S (done), EE2012A/EE2012/etc (not done), Math (not done). CS3244 has heavy math prereqs (EE2012, MA2116/ST2131 etc). Student has ST2334. ST2334 is mutually exclusive with EE2012/ST2131. So CS3244 prereqs are NOT met by current completed courses. Student must take EE2012 or ST2131 or MA2116 etc. But ST2334 blocks EE2012 and ST2131. MA2116 requires MA1505/1511/1521/2002. Student has MA1521. So MA2116 is eligible. CS3244 also needs (MA1511+1512) OR (MA2001/1522/1508E/1311/1513/1101R AND MA2002/1521/1505/1507/1102R). Student has MA1521. MA1521 is in the second group. Does student have MA2002/1521/1505/1507/1102R? Yes, MA1521. Does student have MA2001/1522/1508E/1311/1513/1101R? Student has MA1522. So the math prereq for CS3244 is satisfied by MA1521 and MA1522. So CS3244 is eligible now? Yes. So CS3244 can be taken. CS3240 needs CS2111. CS2111 needs CS1010A/E/X/1101S/UTC2851/HS/J/1010/NM2207. Student has CS1101S. So CS2111 is eligible. CS4240 needs CS3240. So chain: CS2111 -> CS3240 -> CS4240. CS2111 is not in 'must take' list, but is a prereq for CS3240 which is a prereq for CS4240 (must take). So CS2111 and CS3240 must be added. CS3231 is prereq for CS4430 (must take). So CS3231 must be added. CS3235 is prereq for CS4238 (must take). CS3235 needs CS2105 (must take), CS2106 (added), CS2107 (added). So CS2106 and CS2107 must be added. Plan: Sem 4: CS2102, CS2105 (must). Sem 5: CS3231 (for 4430), CS2111 (for 3240/4240), CS2106, CS2107 (for 3235). Sem 6: CS3235 (for 4238), CS3240 (for 4240), CS3244 (must). Sem 7: Exchange (0 MC). Sem 8: CS4238 (must), CS4240 (must), CS4430 (must). Check limits: Sem 4: 2 mods. Sem 5: 4 mods (limit 3). Too many. Need to spread. CS2106/2107 only needed for CS3235. CS3235 needed for CS4238 (Sem 8). CS3235 can be Sem 6 or 7? Sem 7 is exchange. So CS3235 must be Sem 6 or earlier. If Sem 6, then Sem 5 has CS3231, CS2111, CS2106, CS2107. Still 4. Can CS2106/2107 be Sem 4? No, Sem 4 has CS2102/2105. Can CS2106/2107 be Sem 5? Yes. Can CS3231 be Sem 4? No, CS2102/2105 are must. Can CS2111 be Sem 4? No. Can CS3231 be Sem 6? Yes. Then Sem 5: CS2106, CS2107, CS2111. (3 mods). Sem 6: CS3231, CS3235, CS3240, CS3244. (4 mods). Still too many. CS3244 can be Sem 7? No, exchange. CS3244 Sem 6? Yes. Can CS3240 be Sem 7? No. Can CS3240 be Sem 5? No, needs CS2111. Can CS2111 be Sem 4? No. Can CS2111 be Sem 5? Yes. Can CS3240 be Sem 6? Yes. Can CS3235 be Sem 5? Needs CS2106/2107. If CS2106/2107 Sem 4? No. If CS2106/2107 Sem 5, CS3235 Sem 6. Sem 6: CS3231, CS3235, CS3240, CS3244. 4 mods. Can CS3231 be Sem 5? Yes. Sem 5: CS3231, CS2106, CS2107, CS2111. 4 mods. Can CS2106/2107 be Sem 6? No, need for CS3235 in Sem 6? If CS3235 Sem 7 (exchange, 0 MC, can't take courses usually, but even if allowed, 0 MC limit). ATAP is CP3880. Exchange is 0 MC. So CS3235 must be Sem 6 or earlier. If CS3235 Sem 5? Needs CS2106/2107 Sem 4. Sem 4 has CS2102/2105. Can we swap? CS2102/2105 must be same semester. CS2102 prereq: CS1231S, CS2030S/CS2040S. Done. CS2105 prereq: CS2040S. Done. Can CS2102/2105 be Sem 5? Yes. Then Sem 4: CS2106, CS2107, CS2111? CS2111 prereq CS1101S. Done. CS2106 prereq CS2100. Done. CS2107 prereq CS1101S. Done. Sem 4: 3 mods. Sem 5: CS2102, CS2105, CS3231, CS3235. 4 mods. Still 4. CS3235 needs CS2106/2107. If CS2106/2107 Sem 4, CS3235 Sem 5. Sem 5: CS2102, CS2105, CS3231, CS3235. 4 mods. Can CS3231 be Sem 6? Yes. Sem 5: CS2102, CS2105, CS3235. 3 mods. Sem 6: CS3231, CS3240, CS3244. 3 mods. Sem 7: Exchange. Sem 8: CS4238, CS4240, CS4430. 3 mods. This works. CS4240 needs CS3240 (Sem 6). OK. CS4430 needs CS3231 (Sem 6). OK. CS4238 needs CS3235 (Sem 5). OK. CS2102/2105 Sem 5. OK. CS2111? Needed for CS3240. CS3240 Sem 6. So CS2111 must be Sem 5 or earlier. Sem 5 has CS2102, CS2105, CS3235. Full. So CS2111 must be Sem 4. Sem 4: CS2106, CS2107, CS2111. 3 mods. OK. So Plan: Sem 4: CS2106, CS2107, CS2111. Sem 5: CS2102, CS2105, CS3235. Sem 6: CS3231, CS3240, CS3244. Sem 7: Exchange. Sem 8: CS4238, CS4240, CS4430. Check CS4240 prereq CS3240 (Sem 6). OK. Check CS4430 prereq CS3231 (Sem 6). OK. Check CS4238 prereq CS3235 (Sem 5). OK. Check CS2102/2105 same sem (Sem 5). OK. Check CS4238 Sem 8. OK. Check CS2102 as early as possible (Sem 5 is earliest possible given Sem 4 load? Sem 4 was full with prereqs. Could Sem 4 take CS2102? If Sem 4: CS2102, CS2105, CS2106, CS2107, CS2111. 5 mods. No. If Sem 4: CS2102, CS2105, CS2111? Then CS2106/2107 Sem 5? CS3235 needs CS2106/2107. If CS2106/2107 Sem 5, CS3235 Sem 6. Sem 5: CS2102, CS2105, CS2106, CS2107. 4 mods. No. So Sem 5 for CS2102/2105 is optimal.\", \"Soft wishes: CS4240 before CS2105? CS4240 is Sem 8, CS2105 is Sem 5. Wish not met. CS2102 as early as possible. Sem 5 is the earliest feasible. CS4238 in Sem 8. Met.\"}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2102",
+    "CS2105"
+   ],
+   "5": [
+    "CS3231",
+    "CS4238"
+   ],
+   "6": [
+    "CS4240",
+    "CS3244"
+   ],
+   "8": [
+    "CS4430"
+   ]
+  }
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

@@ -1,0 +1,102 @@
+{
+ "id": "q2-S4-213",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 11.51,
+ "solver_seconds": 0.032,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2847,
+  "total_tokens": 4276,
+  "completion_tokens": 1429,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1177
+  },
+  "finish_reason": "stop",
+  "request_seconds": 11.48,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":4,\"completed\":[\"CS2040S\",\"ES2660\",\"CS1231S\",\"CS2101\",\"CS1101S\",\"IS1108\",\"MA1521\",\"CS2100\",\"CS2030S\",\"CS2103T\",\"MA1522\",\"ST2334\"],\"must_take\":[\"CS3247\",\"CS4234\",\"CS4247\",\"CS3230\",\"CS4230\",\"CS2105\"],\"mc_max\":16,\"objective\":\"earliest_graduation\",\"rules\":[{\"type\":\"before\",\"a\":\"CS4234\",\"b\":\"CS3247\",\"strength\":\"must\"},{\"type\":\"apart\",\"a\":\"CS4234\",\"b\":\"CS4230\",\"strength\":\"prefer\"},{\"type\":\"before\",\"a\":\"CS3230\",\"b\":\"CS2105\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3230\",\"sem\":6,\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS2105\",\"b\":\"CS3230\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS4234\",\"sem\":7,\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "CS2040S",
+   "ES2660",
+   "CS1231S",
+   "CS2101",
+   "CS1101S",
+   "IS1108",
+   "MA1521",
+   "CS2100",
+   "CS2030S",
+   "CS2103T",
+   "MA1522",
+   "ST2334"
+  ],
+  "must_take": [
+   "CS3247",
+   "CS4234",
+   "CS4247",
+   "CS3230",
+   "CS4230",
+   "CS2105"
+  ],
+  "mc_max": 16,
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS4234",
+    "b": "CS3247",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS4234",
+    "b": "CS4230",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS3230",
+    "b": "CS2105",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3230",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2105",
+    "b": "CS3230",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4234",
+    "sem": 7,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS3230 before CS2105; your rule: CS2105 before CS3230"
+  ]
+ }
+}

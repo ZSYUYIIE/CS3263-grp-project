@@ -1,0 +1,40 @@
+{
+ "id": "q2-S1-129",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "valid",
+ "seconds": 26.03,
+ "usage": {
+  "prompt_tokens": 9920,
+  "total_tokens": 11797,
+  "completion_tokens": 1877,
+  "finish_reason": "stop",
+  "request_seconds": 26.03,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"5\": [\"ST2334\", \"CS3237\", \"IS1108\"], \"6\": [\"CS3219\", \"CS2105\"], \"7\": [\"CS4212\"]}, \"reasons\": [\"All prerequisites satisfied by completed modules or earlier planned semesters.\", \"IS1108 placed in Sem 6 as required. CS3237 taken in Sem 5 before CS4212 in Sem 7.\", \"Soft wishes met: ST2334 as early as possible (Sem 5), CS4212 as late as possible (Sem 7), IS1108 before CS3219 (Sem 6 vs Sem 6 - same semester, but IS1108 listed first/earlier in planning logic? No, they are in same semester. Wait, IS1108 in Sem 6, CS3219 in Sem 6. The wish is 'IS1108 before CS3219'. If they are in the same semester, is that 'before'? Usually 'before' implies earlier semester. Let's re-read carefully. 'Ideally I'd take IS1108 before CS3219'. If I put IS1108 in Sem 5 and CS3219 in Sem 6, that satisfies 'before'. But IS1108 MUST be in Sem 6. So IS1108 cannot be before CS3219 if CS3219 is in Sem 6 or later. If CS3219 is in Sem 7, IS1108 (Sem 6) is before CS3219 (Sem 7). Can CS3219 be in Sem 7? Yes. Can CS2105 be in Sem 5? Yes. Let's check if we can move CS3219 to Sem 7 and CS2105 to Sem 5. Sem 5: ST2334, CS3237, CS2105, IS1108? No, IS1108 must be Sem 6. So IS1108 is fixed in Sem 6. To have IS1108 before CS3219, CS3219 must be in Sem 7 or later. CS4212 needs CS3219. So CS4212 would be Sem 8. This increases total credits? No, same courses. But 'fewest total credits' is the primary optimization. The set of courses is fixed. The number of semesters used might change. Sem 5, 6, 7, 8 vs Sem 5, 6, 7. Sem 5,6,7 uses 3 semesters. Sem 5,6,7,8 uses 4. Fewer semesters is not explicitly the goal, 'fewest total credits' is. Total MC is constant (4+4+4+4+4+4+4+4+4+4+4+4+4 = 52 MC? Let's count. ST2334(4), CS3237(4), IS1108(4), CS3219(4), CS2105(4), CS4212(4). Total 24 MC. Wait, I missed some? No, those are the required ones. Are there any other must-takes? No. So total MC is 24 regardless of schedule. So 'fewest total credits' doesn't distinguish between Sem 7 and Sem 8 finish. Then we look at 'fewest added courses' (0 added). Then 'soft wishes'. 'Ideally IS1108 before CS3219'. If IS1108 is Sem 6, CS3219 must be Sem 7+. If CS3219 is Sem 7, CS4212 is Sem 8. If CS3219 is Sem 6, IS1108 is NOT before CS3219. So to satisfy the soft wish, CS3219 must be Sem 7. Then CS4212 is Sem 8. This pushes graduation to Sem 8. Is there a way to put IS1108 in Sem 5? No, 'IS1108 has to be in semester 6'. So IS1108 is fixed at 6. To be before CS3219, CS3219 must be 7+. So CS3219 in 7, CS4212 in 8. This satisfies 'IS1108 before CS3219'. It also satisfies 'CS4212 as late as possible' (Sem 8 is later than Sem 7). It satisfies 'ST2334 as early as possible' (Sem 5). It satisfies 'keep CS3219 and CS2105 apart'. CS2105 in Sem 5, CS3219 in Sem 7. They are apart. This plan seems better for soft wishes. Let's check MC load. Sem 5: ST2334(4), CS3237(4), CS2105(4) = 12 MC. Sem 6: IS1108(4) = 4 MC. Sem 7: CS3219(4) = 4 MC. Sem 8: CS4212(4) = 4 MC. All under 20. Prerequisites: CS3237 needs CS2100/CG2028/EE2028/CS2100DE/CS2100HS AND CS1010... Student has CS2100 and CS1101S. OK. CS3219 needs CS2103/CS2103T/CS2103DE/CS2113T/CS2113. Student has CS2103T. OK. CS4212 needs CS2104 or CS3212. Student has NEITHER. CS2104 needs CS2030/CS2030S/CS2030DE/CS2030HS/CS2113/CS2113T. Student has CS2030S and CS2103T. So CS2104 is eligible! But CS2104 is NOT in the 'must take' list. Do I need to add it? Rule 8: 'Add a course the student did not ask for ONLY when it is a prerequisite needed by a planned course.' CS4212 is planned. Its prerequisite is CS2104 or CS3212. Student has neither. So I MUST add CS2104 or CS3212. CS3212 is not in the records. CS2104 is in the records. So I must add CS2104. CS2104 is offered Sem 1. So it can be taken in Sem 5, 7, etc. It needs CS2030S (completed) or others. Student has CS2030S. So CS2104 is eligible. I must add CS2104. This adds 4 MC. Total MC becomes 28. Where to put CS2104? It must be before CS4212. It can be in Sem 5, 6, or 7. To keep CS3219 and CS2105 apart, and IS1108 in Sem 6. If I put CS2104 in Sem 5, Sem 5 has ST2334, CS3237, CS2105, CS2104. 16 MC. OK. Then CS3219 in Sem 7, CS4212 in Sem 8. IS1108 in Sem 6. This works. Soft wishes: IS1108 (Sem 6) before CS3219 (Sem 7). Yes. CS4212 as late as possible (Sem 8). Yes. ST2334 as early as possible (Sem 5). Yes. CS3219 and CS2105 apart (Sem 7 vs Sem 5). Yes. This plan satisfies all hard and soft wishes. Previous plan missed CS2104. I must include it.}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "ST2334",
+    "CS3237",
+    "IS1108"
+   ],
+   "6": [
+    "CS3219",
+    "CS2105"
+   ],
+   "7": [
+    "CS4212"
+   ]
+  }
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,112 @@
+{
+ "id": "q2-S1-040",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 10.64,
+ "usage": {
+  "prompt_tokens": 22548,
+  "total_tokens": 23054,
+  "completion_tokens": 506,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 10.64,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS2101 is required to be in semester 5, but its prerequisites (none) and the requirement to finish it before CS2102 (Sem 5) implies CS2102 must be Sem 6 or later. However, CS2102 requires CS2030S/CS2040S which are not completed. More critically, CS3219 requires CS2103/CS2113 which are not in the 'must take' list and are not prerequisites for any other required course, making them unnecessary additions that violate Rule 8 (only add if prerequisite). Without CS2103/CS2113, CS3219 cannot be taken. Since CS3219 is a 'must take' course, and its prerequisites are not satisfied by completed courses nor can they be added (as they are not prerequisites for other must-take courses), no valid plan exists.\"\n]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS2101 is required to be in semester 5, but its prerequisites (none) and the requirement to finish it before CS2102 (Sem 5) implies CS2102 must be Sem 6 or later. However, CS2102 requires CS2030S/CS2040S which are not completed. More critically, CS3219 requires CS2103/CS2113 which are not in the 'must take' list and are not prerequisites for any other required course, making them unnecessary additions that violate Rule 8 (only add if prerequisite). Without CS2103/CS2113, CS3219 cannot be taken. Since CS3219 is a 'must take' course, and its prerequisites are not satisfied by completed courses nor can they be added (as they are not prerequisites for other must-take courses), no valid plan exists."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"2\": [\n\"CS2030S\",\n\"CS2040S\",\n\"CS2100\",\n\"CS2101\"\n],\n\"3\": [\n\"CS2102\",\n\"CS2105\",\n\"CS2106\",\n\"CS2109S\",\n\"MA1522\"\n],\n\"4\": [\n\"CS3219\",\n\"CS3230\",\n\"CS3236\",\n\"CS3237\"\n]\n},\n\"reasons\": [\n\"Prerequisites for core courses (CS2030S, CS2040S, CS2100) satisfied by completed CS1101S.\",\n\"CS2101 placed in Sem 2 to satisfy the requirement of finishing it before CS2102 in Sem 3.\",\n\"CS3230 and MA1522 taken together in Sem 3 as requested; CS3236 placed in Sem 4 (Y3S2) as it is not offered in Sem 2 (Y4S2) and preferred before CS2105.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "2": [
+      "CS2030S",
+      "CS2040S",
+      "CS2100",
+      "CS2101"
+     ],
+     "3": [
+      "CS2102",
+      "CS2105",
+      "CS2106",
+      "CS2109S",
+      "MA1522"
+     ],
+     "4": [
+      "CS3219",
+      "CS3230",
+      "CS3236",
+      "CS3237"
+     ]
+    },
+    "reasons": [
+     "Prerequisites for core courses (CS2030S, CS2040S, CS2100) satisfied by completed CS1101S.",
+     "CS2101 placed in Sem 2 to satisfy the requirement of finishing it before CS2102 in Sem 3.",
+     "CS3230 and MA1522 taken together in Sem 3 as requested; CS3236 placed in Sem 4 (Y3S2) as it is not offered in Sem 2 (Y4S2) and preferred before CS2105."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11008,
+    "total_tokens": 11292,
+    "completion_tokens": 284,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 5.85,
+    "attempts": 1
+   },
+   "seconds": 5.85,
+   "violations": [
+    "R4 CS3219 in semester 4: prerequisite not met (YSC3232 or CS2103 or CS2103T or CS2103DE or CS2113T or CS2113)",
+    "R4 CS3236 in semester 4: prerequisite not met ((MA1100 or MA1100T or CS1231 or CS1231S) and (EE2012 or EE2012A or MA2216 or MA2116 or MA2116T or ST2131 or ST2334))",
+    "R3 CS3237 not offered in Sem 2 (semester 4)",
+    "R7 semester 3 has 20 MC, limit 16",
+    "R9 must rule not met: CS2101 in semester 5"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS2101 is required to be in semester 5, but its prerequisites (none) and the requirement to finish it before CS2102 (Sem 5) implies CS2102 must be Sem 6 or later. However, CS2102 requires CS2030S/CS2040S which are not completed. More critically, CS3219 requires CS2103/CS2113 which are not in the 'must take' list and are not prerequisites for any other required course, making them unnecessary additions that violate Rule 8 (only add if prerequisite). Without CS2103/CS2113, CS3219 cannot be taken. Since CS3219 is a 'must take' course, and its prerequisites are not satisfied by completed courses nor can they be added (as they are not prerequisites for other must-take courses), no valid plan exists.\"\n]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS2101 is required to be in semester 5, but its prerequisites (none) and the requirement to finish it before CS2102 (Sem 5) implies CS2102 must be Sem 6 or later. However, CS2102 requires CS2030S/CS2040S which are not completed. More critically, CS3219 requires CS2103/CS2113 which are not in the 'must take' list and are not prerequisites for any other required course, making them unnecessary additions that violate Rule 8 (only add if prerequisite). Without CS2103/CS2113, CS3219 cannot be taken. Since CS3219 is a 'must take' course, and its prerequisites are not satisfied by completed courses nor can they be added (as they are not prerequisites for other must-take courses), no valid plan exists."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11540,
+    "total_tokens": 11762,
+    "completion_tokens": 222,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.79,
+    "attempts": 1
+   },
+   "seconds": 4.79,
+   "violations": null
+  }
+ ]
+}

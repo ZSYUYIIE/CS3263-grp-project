@@ -1,0 +1,61 @@
+{
+ "id": "q2-S3-064",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 3,
+ "end": "cap",
+ "seconds": 16.79,
+ "usage": {
+  "prompt_tokens": 28894,
+  "total_tokens": 29749,
+  "completion_tokens": 855,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 16.79,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"3\": [\n\"CS2100\",\n\"CS2105\",\n\"CS2109S\",\n\"CS2103T\"\n],\n\"4\": [\n\"CS2101\",\n\"CS2102\",\n\"CS3230\"\n],\n\"5\": [\n\"CS2106\",\n\"CS3219\"\n],\n\"6\": [\n\"CS3247\",\n\"CS4430\",\n\"ST2334\"\n],\n\"7\": [\n\"CP3880\"\n]\n},\n\"reasons\": [\n\"Sem 3: CS2100, CS2105, CS2109S, CS2103T (16 MC). CS2109S/CS2103T together. CS2100 in Y3S1.\",\n\"Sem 4: CS2101, CS2102, CS3230 (12 MC). CS3230 before CS2101 and CS2106.\",\n\"Sem 5: CS2106, CS3219 (8 MC). CS2106 after CS3230. CS3219 after CS2103T.\",\n\"Sem 6: CS3247, CS4430, ST2334 (12 MC). CS3247 after CS3241 (not taken, but CS3247 requires CS3241 which is not in the must-take list? Wait. CS3247 prereq is CS3241. CS3241 is not in the student's 'must take' list. However, CS3247 is required. If CS3241 is not required, can I take CS3247? No, prereq not met. I must add CS3241? Rule 8: Add a course ONLY when it is a prerequisite needed by a planned course. CS3241 is needed for CS3247. So I must add CS3241.\",\n\"Correction: I missed adding CS3241. Let's re-plan with CS3241.\"\n]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS2105",
+    "CS2109S",
+    "CS2103T"
+   ],
+   "4": [
+    "CS2101",
+    "CS2102",
+    "CS3230"
+   ],
+   "5": [
+    "CS2106",
+    "CS3219"
+   ],
+   "6": [
+    "CS3247",
+    "CS4430",
+    "ST2334"
+   ],
+   "7": [
+    "CP3880"
+   ]
+  },
+  "reasons": [
+   "Sem 3: CS2100, CS2105, CS2109S, CS2103T (16 MC). CS2109S/CS2103T together. CS2100 in Y3S1.",
+   "Sem 4: CS2101, CS2102, CS3230 (12 MC). CS3230 before CS2101 and CS2106.",
+   "Sem 5: CS2106, CS3219 (8 MC). CS2106 after CS3230. CS3219 after CS2103T.",
+   "Sem 6: CS3247, CS4430, ST2334 (12 MC). CS3247 after CS3241 (not taken, but CS3247 requires CS3241 which is not in the must-take list? Wait. CS3247 prereq is CS3241. CS3241 is not in the student's 'must take' list. However, CS3247 is required. If CS3241 is not required, can I take CS3247? No, prereq not met. I must add CS3241? Rule 8: Add a course ONLY when it is a prerequisite needed by a planned course. CS3241 is needed for CS3247. So I must add CS3241.",
+   "Correction: I missed adding CS3241. Let's re-plan with CS3241."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

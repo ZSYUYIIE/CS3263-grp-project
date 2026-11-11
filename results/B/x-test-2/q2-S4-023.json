@@ -1,0 +1,113 @@
+{
+ "id": "q2-S4-023",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 3.48,
+ "solver_seconds": 0.011,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2821,
+  "total_tokens": 3245,
+  "completion_tokens": 424,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 196
+  },
+  "finish_reason": "stop",
+  "request_seconds": 3.47,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":7,\"programme\":\"BComp CS Hons\",\"completed\":[\"CS2105\",\"CS1101S\",\"CS1231S\",\"CS2100\",\"CS3230\",\"CS2102\",\"CS2109S\",\"CS2101\",\"MA1521\",\"IS1108\",\"CS2106\",\"ES2660\",\"MA1522\",\"CS3219\",\"CS2103T\",\"CS2030S\",\"ST2334\",\"CS2040S\"],\"must_take\":[\"CS4234\",\"CS4277\",\"CS3281\",\"CS4261\"],\"mc_max\":8,\"rules\":[{\"type\":\"in_sem\",\"course\":\"CS4234\",\"sem\":7,\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS3281\",\"b\":\"CS4261\",\"strength\":\"prefer\"},{\"type\":\"before\",\"a\":\"CS4277\",\"b\":\"CS4261\",\"strength\":\"prefer\"},{\"type\":\"same_sem\",\"a\":\"CS3281\",\"b\":\"CS4234\",\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "CS2105",
+   "CS1101S",
+   "CS1231S",
+   "CS2100",
+   "CS3230",
+   "CS2102",
+   "CS2109S",
+   "CS2101",
+   "MA1521",
+   "IS1108",
+   "CS2106",
+   "ES2660",
+   "MA1522",
+   "CS3219",
+   "CS2103T",
+   "CS2030S",
+   "ST2334",
+   "CS2040S"
+  ],
+  "must_take": [
+   "CS4234",
+   "CS4277",
+   "CS3281",
+   "CS4261"
+  ],
+  "mc_max": 8,
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS4234",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3281",
+    "b": "CS4261",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS4277",
+    "b": "CS4261",
+    "strength": "prefer"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3281",
+    "b": "CS4234",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 8,
+  "plan": {
+   "7": [
+    "CS4234",
+    "CS4261"
+   ],
+   "8": [
+    "CS3281",
+    "CS4277"
+   ]
+  },
+  "mc_per_semester": {
+   "7": 8,
+   "8": 8
+  },
+  "preferences_met": [],
+  "preferences_not_met": [
+   "CS3281 before CS4261",
+   "CS4277 before CS4261",
+   "CS3281 and CS4234 in the same semester"
+  ]
+ }
+}

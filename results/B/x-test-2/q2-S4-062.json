@@ -1,0 +1,132 @@
+{
+ "id": "q2-S4-062",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 8.26,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2844,
+  "total_tokens": 3687,
+  "completion_tokens": 843,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 576
+  },
+  "finish_reason": "stop",
+  "request_seconds": 8.26,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":7,\"completed\":[\"MA1521\",\"CS2100\",\"IS1108\",\"CS2109S\",\"MA1522\",\"CS2101\",\"CS2102\",\"CS3230\",\"CS1101S\",\"CS2030S\",\"CS2040S\",\"CS2103T\",\"CS2106\",\"ES2660\",\"CS1231S\",\"CS3219\",\"ST2334\"],\"must_take\":[\"CS3263\",\"CS3210\",\"CS4212\",\"CS3264\"],\"mc_max\":16,\"objective\":\"min_total_mc\",\"late\":[\"CS4212\"],\"rules\":[{\"type\":\"apart\",\"a\":\"CS3210\",\"b\":\"CS4212\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3264\",\"sem\":8,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3210\",\"sem\":7,\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS3264\",\"b\":\"CS4212\",\"strength\":\"prefer\"},{\"type\":\"same_sem\",\"a\":\"CS3210\",\"b\":\"CS3264\",\"strength\":\"prefer\"}],\"unsupported\":[\"chance of failing one module and retaking it\"]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "completed": [
+   "MA1521",
+   "CS2100",
+   "IS1108",
+   "CS2109S",
+   "MA1522",
+   "CS2101",
+   "CS2102",
+   "CS3230",
+   "CS1101S",
+   "CS2030S",
+   "CS2040S",
+   "CS2103T",
+   "CS2106",
+   "ES2660",
+   "CS1231S",
+   "CS3219",
+   "ST2334"
+  ],
+  "must_take": [
+   "CS3263",
+   "CS3210",
+   "CS4212",
+   "CS3264"
+  ],
+  "mc_max": 16,
+  "objective": "min_total_mc",
+  "late": [
+   "CS4212"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS3210",
+    "b": "CS4212",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3264",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3210",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3264",
+    "b": "CS4212",
+    "strength": "prefer"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3210",
+    "b": "CS3264",
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "chance of failing one module and retaking it"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 8,
+  "plan": {
+   "7": [
+    "CS2104",
+    "CS3210",
+    "CS3263"
+   ],
+   "8": [
+    "CS3264",
+    "CS4212"
+   ]
+  },
+  "mc_per_semester": {
+   "7": 12,
+   "8": 8
+  },
+  "preferences_met": [
+   "CS4212 as late as possible"
+  ],
+  "preferences_not_met": [
+   "CS3264 before CS4212",
+   "CS3210 and CS3264 in the same semester"
+  ],
+  "added_prerequisites": [
+   "CS2104"
+  ],
+  "not_applied": [
+   "chance of failing one module and retaking it"
+  ]
+ }
+}

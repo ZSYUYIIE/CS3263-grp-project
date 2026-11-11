@@ -1,0 +1,68 @@
+{
+ "id": "q2-S1-033",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 146.87,
+ "usage": {
+  "prompt_tokens": 32130,
+  "total_tokens": 40835,
+  "completion_tokens": 8705,
+  "finish_reason": "stop",
+  "request_seconds": 146.86,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS2101 and CS2113 are mutually exclusive, but both are required as prerequisites for other mandatory courses (CS2101 is not a prereq for others, but CS2113 is needed for CS4239; however, CS2101 is mandatory itself. The conflict is that CS2113 is needed for CS4239, and CS2101 is mandatory. They cannot be taken together. Since CS2113 is a prerequisite for CS4239, and CS2101 is mandatory, we must take both. But they are mutually exclusive. Thus, no plan exists.\", \"CS3249 requires CS2111. CS2111 is not in the mandatory list, so it must be added. CS2111 is offered in Sem 2. The student is in Sem 2. CS2111 can be taken in Sem 2. However, the mutual exclusivity of CS2101 and CS2113 is the primary blocker.\", \"CS4239 requires CS2103T/CS2103/CS2103DE/CS2113/CS2113T. CS2113 is mutually exclusive with CS2101. CS2101 is mandatory. Therefore, CS2113 cannot be taken if CS2101 is taken. CS2103T/CS2103/CS2103DE are alternatives. CS2103 requires CS2030S/CS2030/CS2030DE/CS2030HS and CS2040S/CS2040/CS2040C/CS2040HS/CS2040DE. CS2030S requires CS1010... (Student has CS1101S). CS2040S requires CS1010... and CS1231... (Student has CS1101S and CS1231S). So CS2030S and CS2040S can be taken. Then CS2103 can be taken. CS2103 is not mutually exclusive with CS2101. So we can use CS2103 instead of CS2113 for CS4239. This avoids the CS2101/CS2113 conflict. Let's re-evaluate. Added courses: CS2040S, CS2030S, CS2100, CS2107, CS2111, NM3243, MA2116, ST2132, CS2105, CS2106, CS3230, CS3235, CS3243, CS2103. CS2103 prereq CS2030S and CS2040S. CS2030S prereq CS1101S. CS2040S prereq CS1101S and CS1231S. All available. CS2103 is offered Sem 1 and 2. CS4239 prereq CS3235 and CS2103. CS3235 prereq CS2105, CS2106, CS2107. CS2105 prereq CS2040S. CS2106 prereq CS2100. CS2107 prereq CS1101S. CS2100 prereq CS1101S. So we need CS2040S, CS2030S, CS2100, CS2107, CS2105, CS2106, CS2103, CS3235. Plus CS4246 needs CS3243 and Stats (MA2116, ST2132). CS4230 needs CS3230 and MA2116. CS3230 needs CS2040S and CS1231S. CS4249 needs NM3243 (or CS3240->CS2111). CS3249 needs CS2111. So CS2111 is needed. CS2111 prereq CS1101S. CS2111 is offered Sem 2. CS4236 needs CS2040S, CS2107, CS1231S. MA1522 no prereq. CS2101 no prereq. So mandatory: CS4239, CS3249, CS4246, MA1522, CS2101, CS4249, CS4230, CS4236. Added: CS2040S, CS2030S, CS2100, CS2107, CS2111, NM3243, MA2116, ST2132, CS2105, CS2106, CS3230, CS3235, CS3243, CS2103. Check constraints. CS4230 and CS2101 same semester. CS4246 in Sem 6. CS4230 before CS4246? Rule 9 says 'before CS4230 CS4246'. This likely means CS4230 must be before CS4246. CS4230 late as possible. CS4239 late as possible. Sem 2: CS2040S, CS2030S, CS2100, CS2107, CS2111, NM3243, MA1522? 7 courses = 28 MC. Too many. Sem 2: CS2040S, CS2030S, CS2100, CS2107, MA1522 (20 MC). Sem 3: CS2111, NM3243, CS2105, CS2106, CS2103, CS3230, CS3235? CS2105 prereq CS2040S (Sem 2). CS2106 prereq CS2100 (Sem 2). CS2103 prereq CS2030S (Sem 2) and CS2040S (Sem 2). CS3230 prereq CS2040S (Sem 2) and CS1231S (completed). CS3235 prereq CS2105, CS2106, CS2107 (Sem 2/3). So Sem 3: CS2111, NM3243, CS2105, CS2106, CS2103, CS3230, CS3235. 7 courses = 28 MC. Too many. Sem 3: CS2111, NM3243, CS2105, CS2106 (16 MC). Sem 4: CS2103, CS3230, CS3235, CS3243, MA2116, ST2132? CS2103 (Sem 4). CS3230 (Sem 4). CS3235 prereq CS2105 (Sem 3), CS2106 (Sem 3), CS2107 (Sem 2). OK. CS3243 prereq CS2040S (Sem 2), CS1231S (completed). OK. MA2116 prereq MA1521 (completed). OK. ST2132 prereq MA2116 (Sem 4). OK. Sem 4: CS2103, CS3230, CS3235, CS3243, MA2116, ST2132. 6 courses = 24 MC. Too many. Sem 4: CS2103, CS3230, CS3235, CS3243 (16 MC). Sem 5: MA2116, ST2132, CS4230, CS2101, CS4236, CS4239? CS4230 prereq CS3230 (Sem 4), MA2116 (Sem 5? No, must be before). So MA2116 must be Sem 4 or earlier. Move MA2116 to Sem 4. Sem 4: CS2103, CS3230, CS3235, CS3243, MA2116 (20 MC). Sem 5: ST2132, CS4230, CS2101, CS4236, CS4239? CS4230 prereq MA2116 (Sem 4). OK. CS4236 prereq CS2040S (Sem 2), CS2107 (Sem 2). OK. CS4239 prereq CS3235 (Sem 4), CS2103 (Sem 4). OK. Sem 5: ST2132, CS4230, CS2101, CS4236, CS4239. 5 courses = 20 MC. Sem 6: CS4246, CS4249? CS4246 prereq CS3243 (Sem 4), MA2116 (Sem 4), ST2132 (Sem 5). OK. CS4249 prereq NM3243 (Sem 3). OK. Sem 6: CS4246, CS4249. 8 MC. This plan works. CS4230 and CS2101 in Sem 5. CS4246 in Sem 6. CS4230 before CS4246. CS4230 late as possible? It could be Sem 6? No, CS4246 is Sem 6. If CS4230 is Sem 6, it's same semester. 'Before' usually means strictly earlier. So Sem 5 is correct. CS4239 late as possible? It is in Sem 5. Can it be Sem 6? Sem 6 has CS4246 and CS4249. CS4239 prereq CS3235 and CS2103. Both Sem 4. So CS4239 can be Sem 6. Sem 6: CS4246, CS4249, CS4239. 12 MC. Sem 5: ST2132, CS4230, CS2101, CS4236. 16 MC. This is better for 'late as possible'. So Sem 6: CS4246, CS4249, CS4239. Sem 5: ST2132, CS4230, CS2101, CS4236. Sem 4: CS2103, CS3230, CS3235, CS3243, MA2116. Sem 3: CS2111, NM3243, CS2105, CS2106. Sem 2: CS2040S, CS2030S, CS2100, CS2107, MA1522. This plan satisfies all rules.\n\n{\"status\": \"PLAN\", \"plan\": {\"2\": [\"CS2040S\", \"CS2030S\", \"CS2100\", \"CS2107\", \"MA1522\"], \"3\": [\"CS2111\", \"NM3243\", \"CS2105\", \"CS2106\"], \"4\": [\"CS2103\", \"CS3230\", \"CS3235\", \"CS3243\", \"MA2116\"], \"5\": [\"ST2132\", \"CS4230\", \"CS2101\", \"CS4236\"], \"6\": [\"CS4246\", \"CS4249\", \"CS4239\"]}, \"reasons\": [\"Added prerequisites: CS2040S, CS2030S, CS2100, CS2107, CS2111, NM3243, MA2116, ST2132, CS2105, CS2106, CS2103, CS3230, CS3235, CS3243.\", \"CS4230 and CS2101 in Sem 5, CS4246 in Sem 6, satisfying 'before' and 'Sem 6' constraints.\", \"CS4239 in Sem 6, as late as possible.\", \"CS4249 in Sem 6.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "2": [
+    "CS2040S",
+    "CS2030S",
+    "CS2100",
+    "CS2107",
+    "MA1522"
+   ],
+   "3": [
+    "CS2111",
+    "NM3243",
+    "CS2105",
+    "CS2106"
+   ],
+   "4": [
+    "CS2103",
+    "CS3230",
+    "CS3235",
+    "CS3243",
+    "MA2116"
+   ],
+   "5": [
+    "ST2132",
+    "CS4230",
+    "CS2101",
+    "CS4236"
+   ],
+   "6": [
+    "CS4246",
+    "CS4249",
+    "CS4239"
+   ]
+  },
+  "reasons": [
+   "Added prerequisites: CS2040S, CS2030S, CS2100, CS2107, CS2111, NM3243, MA2116, ST2132, CS2105, CS2106, CS2103, CS3230, CS3235, CS3243.",
+   "CS4230 and CS2101 in Sem 5, CS4246 in Sem 6, satisfying 'before' and 'Sem 6' constraints.",
+   "CS4239 in Sem 6, as late as possible.",
+   "CS4249 in Sem 6."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,36 @@
+{
+ "id": "q2-S4-148",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 40.78,
+ "usage": {
+  "prompt_tokens": 10371,
+  "total_tokens": 13188,
+  "completion_tokens": 2817,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 40.78,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"6\": [\n\"CS2102\",\n\"CS3237\",\n\"ST2334\"\n],\n\"8\": [\n\"CS3247\",\n\"CS3249\",\n\"CS4277\"\n]\n},\n\"reasons\": [\n\"Plan covers semesters 6 and 8, with semester 7 as NOC (0 MC).\",\n\"Prerequisites for all planned courses are satisfied by completed modules.\",\n\"Soft wishes met: CS2102 before CS3247, CS2102 in sem 7 is not possible due to NOC, so placed in sem 6. CS3247 as early as possible (sem 8, constrained by prerequisites and NOC). CS3249 and CS2102 not together (separated by NOC). ST2334 before CS2102 (both in sem 6, but ST2334 has no prereq, CS2102 has prereqs; taking them together is allowed, but 'before' usually implies earlier semester. Since they are in the same semester, this wish is partially met or interpreted as 'not after'. However, ST2334 is in sem 6, CS2102 is in sem 6. The wish 'Ideally I'd take ST2334 before CS2102' is not strictly met if they are in the same semester. Let's re-evaluate. Can ST2334 be in sem 5? No, student is in Y3S2 (Sem 6). So ST2334 must be in 6, 7, or 8. 7 is NOC. So ST2334 is in 6 or 8. CS2102 is in 6 or 8. If CS2102 is in 6, ST2334 cannot be before it. If CS2102 is in 8, ST2334 can be in 6. But CS2102 must be with CS3249. CS3249 prereq is CS2111. Student has NOT completed CS2111. Wait. CS3249 prerequisite is CS2111. Student completed: CS1101S, CS3241, CS3219, CS2109S, CS2105, ES2660, CS1231S, IS1108, CS3230, MA1522, CS3211, CS2100, CS2103T, MA1521, CS2106, CS2030S, CS2040S. CS2111 is NOT in the completed list. Therefore, CS3249 cannot be taken until CS2111 is completed. CS2111 is offered in Sem 2. So CS2111 can be taken in Sem 6, 8. If CS2111 is taken in Sem 6, CS3249 can be taken in Sem 8. If CS2111 is taken in Sem 8, CS3249 cannot be taken (no sem 9). So CS2111 MUST be in Sem 6. Then CS3249 MUST be in Sem 8. CS2102 must be with CS3249. So CS2102 MUST be in Sem 8. This contradicts my previous plan where CS2102 was in Sem 6. Let's re-plan.\",\n\"Re-planning: CS2111 is required for CS3249. CS2111 prereq: CS1010A/E/X/1101S/1010S/UTC2851/1010HS/1010J/1010/NM2207. Student has CS1101S. So CS2111 is eligible in Sem 6. CS3249 prereq: CS2111. So CS3249 can be in Sem 8. CS2102 must be with CS3249, so CS2102 in Sem 8. CS2102 prereqs: (CS1231/MA1100/MA1100T/CS1231S) AND (CS2030S/CS2030/CS2030DE/CS2030HS/YSC2229/CS2040/CS2040C/CS2040S/CS2040DE/CS2040HS). Student has CS1231S and CS2030S and CS2040S. So CS2102 is eligible in Sem 8. CS3247 prereq: CS3241. Student has CS3241. CS3247 offered Sem 2. So CS3247 can be in Sem 8. CS3237 prereqs: (EE2028/EE2024/CG2028/CS2100/CS2100DE/CS2100HS) AND (CS1010/1101S/1010X/1010E/1010J/1010S/1010A/1010HS/UTC2851). Student has CS2100 and CS1101S. So CS3237 is eligible in Sem 6. ST2334 prereq: MA1312/MA1505/MA1511/MA1521/MA2002. Student has MA1521. So ST2334 is eligible in Sem 6. CS4277 prereqs: (MA2001/MA1522/MA1101R/MA1311/MA1506/MA1508E) AND (CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS). Student has MA1522 and CS2040S. So CS4277 is eligible in Sem 8. So Sem 6: CS2111, CS3237, ST2334. Sem 8: CS2102, CS3249, CS3247, CS4277. Check MC: Sem 6: 4+4+4=12. Sem 8: 4+4+4+4=16. Limit 20. OK. CS2102 and CS3249 together in Sem 8. OK. CS3247 and CS3249 not together? They are in Sem 8. The student said 'definitely can't have CS3247 and CS3249 together'. This is a hard constraint. So they cannot be in the same semester. CS3249 MUST be with CS2102. So CS2102 and CS3249 are in Sem 8. CS3247 cannot be in Sem 8. CS3247 is offered Sem 2. Sem 6 is Sem 2. Sem 8 is Sem 2. So CS3247 can be in Sem 6. But Sem 6 has CS2111, CS3237, ST2334. Can we add CS3247 to Sem 6? 4+4+4+4=16. OK. So CS3247 in Sem 6. CS2102/CS3249 in Sem 8. CS4277 in Sem 8. CS3237 in Sem 6. ST2334 in Sem 6. CS2111 in Sem 6. Sem 6: CS2111, CS3237, ST2334, CS3247. Sem 8: CS2102, CS3249, CS4277. Check CS2102 before CS3247? CS2102 in 8, CS3247 in 6. No. Wish 'Ideally I'd take CS2102 before CS3247'. If CS3247 is in 6, CS2102 is in 8, this is not met. Can CS3247 be later? No, Sem 8 is full with CS2102/CS3249/CS4277? CS4277 is 4 MC. CS2102 4, CS3249 4. Total 12. CS3247 4. Total 16. Can CS3247 be in Sem 8? No, 'definitely can't have CS3247 and CS3249 together'. So CS3247 must be in Sem 6. So CS2102 (Sem 8) is after CS3247 (Sem 6). The wish 'CS2102 before CS3247' is not met. Is there another option? CS2102 must be with CS3249. CS3249 needs CS2111. CS2111 in Sem 6. CS3249 in Sem 8. CS2102 in Sem 8. CS3247 in Sem 6. This seems forced. What if CS2111 is in Sem 8? Then CS3249 cannot be taken. So CS2111 MUST be in Sem 6. So CS3249 MUST be in Sem 8. So CS2102 MUST be in Sem 8. So CS3247 MUST be in Sem 6 (or earlier, but student is in Sem 6). So CS3247 in Sem 6. CS2102 in Sem 8. Wish 'CS2102 before CS3247' is impossible. Wish 'CS2102 in Sem 7' is impossible (NOC). Wish 'ST2334 before CS2102'. ST2334 in Sem 6, CS2102 in Sem 8. This is met. Wish 'CS3247 as early as possible'. Sem 6 is the earliest. Met. Wish 'fewest total credits'. 16+12=28 MC. This is minimal. So the plan is Sem 6: CS2111, CS3237, ST2334, CS3247. Sem 8: CS2102, CS3249, CS4277. Wait, CS2111 is not in the 'must take' list. But it is a prerequisite for CS3249. Rule 8: 'Add a course the student did not ask for ONLY when it is a prerequisite needed by a planned course.' So CS2111 must be added. Is CS2111 open to BComp CS Hons? Yes. Is it blocked? No. Prereq: CS1101S (completed). So CS2111 is valid. Sem 6 MC: 4+4+4+4=16. Sem 8 MC: 4+4+4=12. Total 28. This is the plan.\",\n\"Plan: Sem 6: CS2111, CS3237, ST2334, CS3247. Sem 8: CS2102, CS3249, CS4277. CS2111 added as prereq for CS3249. CS2102 and CS3249 in Sem 8. CS3247 in Sem 6. ST2334 in Sem 6. CS3237 in Sem 6. CS4277 in Sem 8. CS2102 before CS3247 wish not met. CS2102 in Sem 7 wish not met. CS3247 as early as possible met. ST2334 before CS2102 met. CS3247 and CS3249 not together met.\"\n}\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS2102",
+    "CS3237",
+    "ST2334"
+   ],
+   "8": [
+    "CS3247",
+    "CS3249",
+    "CS4277"
+   ]
+  }
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

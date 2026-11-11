@@ -1,0 +1,29 @@
+{
+ "id": "q2-S1-146",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 13.95,
+ "usage": {
+  "prompt_tokens": 28561,
+  "total_tokens": 29349,
+  "completion_tokens": 788,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 13.95,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4225 requires CS2102, but CS2102 requires CS2040S (met) and CS1231S (met) and CS2030S (met) and CS2040S (met). Wait, CS2102 prereq is (CS1231 or ... ) and (CS2030S or ... CS2040S ...). Student has CS2040S, CS1231S, CS2030S. So CS2102 is eligible. CS4225 prereq is CS2102. So CS4225 can follow CS2102. However, CS3282 requires CS3281. CS3281 is not in the 'must take' list and is not a prerequisite for any other 'must take' course except CS3282. The student did not ask to take CS3281. Rule 8 says 'Add a course... ONLY when it is a prerequisite needed by a planned course.' CS3281 is needed for CS3282. So I must add CS3281. CS3281 prereq is CS2103 or CS2103T or CS2103DE or CS2113. Student has CS2103T. So CS3281 is eligible. CS3282 prereq is CS3281. So CS3282 can follow CS3281. CS4220 requires CS2220 or LSM2104 or LSM2241 or ZB2101. Student has none of these. CS2220 is not in the must-take list. Is CS2220 a prerequisite for any other must-take course? No. So I cannot add CS2220. Thus CS4220 cannot be taken. Therefore, no plan exists.\"}",
+ "answer": {
+  "status": "NO_PLAN"
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

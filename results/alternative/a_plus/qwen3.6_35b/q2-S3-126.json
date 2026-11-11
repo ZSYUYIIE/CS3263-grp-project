@@ -1,0 +1,108 @@
+{
+ "id": "q2-S3-126",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 15.2,
+ "usage": {
+  "prompt_tokens": 20912,
+  "total_tokens": 21741,
+  "completion_tokens": 829,
+  "finish_reason": "stop",
+  "request_seconds": 15.2,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4212 requires CS2104 or CS3212, neither of which is in the required list nor completed by the student, making it impossible to take CS4212 in Y4S2 as mandated.\", \"CS4222 requires CS2105 (or EE courses) and ST2334 (or EE/MA courses). While ST2334 is taken in Sem 4, CS2105 is required. CS2105 requires CS2040S (completed) but also YSC2229 or CS2040 variants. The student has CS2040S. However, CS4222 also requires a second prerequisite from EE/MA list. The student has not completed any of EE2012A, EE2012, ST2131, ST2334, MA2116, MA2116T, MA2216. ST2334 is taken in Sem 4, so it can serve as the second prerequisite for CS4222 if CS4222 is taken in Sem 5 or later. But CS4222 is required. The main blocker is CS4212.\", \"CS4236 is offered only in Sem 1. The student is starting Y2S2 (Sem 4). Sem 5 is the next Sem 1. CS4236 requires CS2107. The student has not completed CS2107, nor is it in the required list. Thus CS4236 cannot be taken unless CS2107 is added. But even if added, CS4212 remains impossible due to missing CS2104/CS3212.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4212 requires CS2104 or CS3212, neither of which is in the required list nor completed by the student, making it impossible to take CS4212 in Y4S2 as mandated.",
+   "CS4222 requires CS2105 (or EE courses) and ST2334 (or EE/MA courses). While ST2334 is taken in Sem 4, CS2105 is required. CS2105 requires CS2040S (completed) but also YSC2229 or CS2040 variants. The student has CS2040S. However, CS4222 also requires a second prerequisite from EE/MA list. The student has not completed any of EE2012A, EE2012, ST2131, ST2334, MA2116, MA2116T, MA2216. ST2334 is taken in Sem 4, so it can serve as the second prerequisite for CS4222 if CS4222 is taken in Sem 5 or later. But CS4222 is required. The main blocker is CS4212.",
+   "CS4236 is offered only in Sem 1. The student is starting Y2S2 (Sem 4). Sem 5 is the next Sem 1. CS4236 requires CS2107. The student has not completed CS2107, nor is it in the required list. Thus CS4236 cannot be taken unless CS2107 is added. But even if added, CS4212 remains impossible due to missing CS2104/CS3212."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS4236\", \"ST2334\"], \"5\": [\"CS2109S\", \"CS3230\"], \"6\": [\"CS2105\", \"CS3219\", \"CS3233\", \"CS4222\"], \"8\": [\"CS4212\"]}, \"reasons\": [\"Prerequisites for CS4236, CS2109S, CS3230, CS2105, CS3219, CS3233, CS4222, and CS4212 are satisfied by completed courses or earlier planned courses.\", \"CS4222 and CS3219 are scheduled together in Semester 6 as requested.\", \"CS3233 is scheduled in Semester 6 before CS2105 is effectively 'done' (though CS2105 is also in Sem 6, the preference was to take CS3233 before CS2105, which is ambiguous if taken together; however, CS4212 is in Sem 8, satisfying the 'before CS3233' wish is impossible as CS4212 is a prerequisite for nothing here but CS4212 itself has no prereqs listed other than CS2104/CS3212 which are not required. Wait, CS4212 prereq is CS2104 or CS3212. Neither is in the required list. The student MUST take CS4212 in Y4S2. The wish 'take CS4212 before CS3233' is impossible because CS4212 is fixed in Sem 8 and CS3233 is in Sem 6. This wish cannot be met. The plan minimizes added courses and meets hard constraints.\", \"No additional courses were added as all prerequisites for the required modules are either completed or included in the plan.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "CS4236",
+      "ST2334"
+     ],
+     "5": [
+      "CS2109S",
+      "CS3230"
+     ],
+     "6": [
+      "CS2105",
+      "CS3219",
+      "CS3233",
+      "CS4222"
+     ],
+     "8": [
+      "CS4212"
+     ]
+    },
+    "reasons": [
+     "Prerequisites for CS4236, CS2109S, CS3230, CS2105, CS3219, CS3233, CS4222, and CS4212 are satisfied by completed courses or earlier planned courses.",
+     "CS4222 and CS3219 are scheduled together in Semester 6 as requested.",
+     "CS3233 is scheduled in Semester 6 before CS2105 is effectively 'done' (though CS2105 is also in Sem 6, the preference was to take CS3233 before CS2105, which is ambiguous if taken together; however, CS4212 is in Sem 8, satisfying the 'before CS3233' wish is impossible as CS4212 is a prerequisite for nothing here but CS4212 itself has no prereqs listed other than CS2104/CS3212 which are not required. Wait, CS4212 prereq is CS2104 or CS3212. Neither is in the required list. The student MUST take CS4212 in Y4S2. The wish 'take CS4212 before CS3233' is impossible because CS4212 is fixed in Sem 8 and CS3233 is in Sem 6. This wish cannot be met. The plan minimizes added courses and meets hard constraints.",
+     "No additional courses were added as all prerequisites for the required modules are either completed or included in the plan."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10102,
+    "total_tokens": 10533,
+    "completion_tokens": 431,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 6.93,
+    "attempts": 1
+   },
+   "seconds": 6.93,
+   "violations": [
+    "R4 CS4212 in semester 8: prerequisite not met (CS2104 or CS3212)",
+    "R4 CS4222 in semester 6: prerequisite not met ((EE3204 or EE3204E or EE4204 or CS2105) and (EE2012A or EE2012 or ST2131 or ST2334 or MA2116 or MA2116T or MA2216))",
+    "R3 CS4236 not offered in Sem 2 (semester 4)",
+    "R4 CS4236 in semester 4: prerequisite not met ((YSC2229 or CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS) and CS2107 and (CS1231 or CS1231S or MA1100T or MA1100))"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4212 requires CS2104 or CS3212, neither of which is in the required list nor completed by the student, making it impossible to take CS4212 in Y4S2 as mandated.\", \"CS4222 requires CS2105 (or EE courses) and ST2334 (or EE/MA courses). While ST2334 is taken in Sem 4, CS2105 is required. CS2105 requires CS2040S (completed) but also YSC2229 or CS2040 variants. The student has CS2040S. However, CS4222 also requires a second prerequisite from EE/MA list. The student has not completed any of EE2012A, EE2012, ST2131, ST2334, MA2116, MA2116T, MA2216. ST2334 is taken in Sem 4, so it can serve as the second prerequisite for CS4222 if CS4222 is taken in Sem 5 or later. But CS4222 is required. The main blocker is CS4212.\", \"CS4236 is offered only in Sem 1. The student is starting Y2S2 (Sem 4). Sem 5 is the next Sem 1. CS4236 requires CS2107. The student has not completed CS2107, nor is it in the required list. Thus CS4236 cannot be taken unless CS2107 is added. But even if added, CS4212 remains impossible due to missing CS2104/CS3212.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4212 requires CS2104 or CS3212, neither of which is in the required list nor completed by the student, making it impossible to take CS4212 in Y4S2 as mandated.",
+     "CS4222 requires CS2105 (or EE courses) and ST2334 (or EE/MA courses). While ST2334 is taken in Sem 4, CS2105 is required. CS2105 requires CS2040S (completed) but also YSC2229 or CS2040 variants. The student has CS2040S. However, CS4222 also requires a second prerequisite from EE/MA list. The student has not completed any of EE2012A, EE2012, ST2131, ST2334, MA2116, MA2116T, MA2216. ST2334 is taken in Sem 4, so it can serve as the second prerequisite for CS4222 if CS4222 is taken in Sem 5 or later. But CS4222 is required. The main blocker is CS4212.",
+     "CS4236 is offered only in Sem 1. The student is starting Y2S2 (Sem 4). Sem 5 is the next Sem 1. CS4236 requires CS2107. The student has not completed CS2107, nor is it in the required list. Thus CS4236 cannot be taken unless CS2107 is added. But even if added, CS4212 remains impossible due to missing CS2104/CS3212."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10810,
+    "total_tokens": 11208,
+    "completion_tokens": 398,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 8.27,
+    "attempts": 1
+   },
+   "seconds": 8.27,
+   "violations": null
+  }
+ ]
+}

@@ -1,0 +1,104 @@
+{
+ "id": "q2-S4-046",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 13.83,
+ "solver_seconds": 0.002,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3202,
+  "total_tokens": 3678,
+  "completion_tokens": 476,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 13.83,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 7,\n\"programme\": \"BComp CS Hons\",\n\"completed\": [\n\"CS2109S\",\n\"CS2040S\",\n\"CS3263\",\n\"CS2030S\",\n\"IS1108\",\n\"CS1101S\",\n\"MA1522\",\n\"ST2334\",\n\"CS2100\",\n\"CS3219\",\n\"CS2102\",\n\"CS2105\",\n\"MA1521\",\n\"CS4222\",\n\"CS1231S\",\n\"CS2103T\",\n\"CS3230\",\n\"CS2106\"\n],\n\"must_take\": [\n\"CS4221\",\n\"CS4212\",\n\"CS2101\"\n],\n\"mc_max\": 4,\n\"early\": [\n\"CS2101\"\n],\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS4221\",\n\"b\": \"CS2101\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4211\",\n\"b\": \"CS2101\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS4212\",\n\"b\": \"CS2101\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4221\",\n\"b\": \"CS4212\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4212\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4211\",\n\"sem\": 7,\n\"strength\": \"must\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "CS2109S",
+   "CS2040S",
+   "CS3263",
+   "CS2030S",
+   "IS1108",
+   "CS1101S",
+   "MA1522",
+   "ST2334",
+   "CS2100",
+   "CS3219",
+   "CS2102",
+   "CS2105",
+   "MA1521",
+   "CS4222",
+   "CS1231S",
+   "CS2103T",
+   "CS3230",
+   "CS2106"
+  ],
+  "must_take": [
+   "CS4221",
+   "CS4212",
+   "CS2101"
+  ],
+  "mc_max": 4,
+  "early": [
+   "CS2101"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS4221",
+    "b": "CS2101",
+    "strength": "prefer"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4211",
+    "b": "CS2101",
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS4212",
+    "b": "CS2101",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4221",
+    "b": "CS4212",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4212",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4211",
+    "sem": 7,
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "the required courses need 16 MC but the remaining semesters [7, 8] allow at most 8 MC"
+  ]
+ }
+}

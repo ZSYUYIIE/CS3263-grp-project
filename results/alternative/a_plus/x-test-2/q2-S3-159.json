@@ -1,0 +1,112 @@
+{
+ "id": "q2-S3-159",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 88.73,
+ "usage": {
+  "prompt_tokens": 9277,
+  "total_tokens": 18020,
+  "completion_tokens": 8743,
+  "prompt_tokens_details": {
+   "cached_tokens": 8960,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 8585
+  },
+  "finish_reason": "stop",
+  "request_seconds": 88.73,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS3263\",\"CS3268\"],\"6\":[\"CS3281\",\"ES2660\",\"CS2102\"],\"7\":[\"CS4278\",\"CS2105\",\"CS4246\"],\"8\":[\"CS3219\",\"CS3282\"]},\"reasons\":[\"Added CS3281 as the prerequisite for CS3282 and CS3263 as the prerequisite for CS4278 and CS4246.\",\"All prerequisites are in strictly earlier semesters; CS4278 precedes CS3219 and ES2660 precedes CS4246.\",\"Every active semester has at least 8 MC; ES2660 is in semester 6 and CS2102 is as early as possible after CS3268.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS3263",
+    "CS3268"
+   ],
+   "6": [
+    "CS3281",
+    "ES2660",
+    "CS2102"
+   ],
+   "7": [
+    "CS4278",
+    "CS2105",
+    "CS4246"
+   ],
+   "8": [
+    "CS3219",
+    "CS3282"
+   ]
+  },
+  "reasons": [
+   "Added CS3281 as the prerequisite for CS3282 and CS3263 as the prerequisite for CS4278 and CS4246.",
+   "All prerequisites are in strictly earlier semesters; CS4278 precedes CS3219 and ES2660 precedes CS4246.",
+   "Every active semester has at least 8 MC; ES2660 is in semester 6 and CS2102 is as early as possible after CS3268."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS3263\",\"CS3268\"],\"6\":[\"CS3281\",\"ES2660\",\"CS2102\"],\"7\":[\"CS4278\",\"CS2105\",\"CS4246\"],\"8\":[\"CS3219\",\"CS3282\"]},\"reasons\":[\"Added CS3281 as the prerequisite for CS3282 and CS3263 as the prerequisite for CS4278 and CS4246.\",\"All prerequisites are in strictly earlier semesters; CS4278 precedes CS3219 and ES2660 precedes CS4246.\",\"Every active semester has at least 8 MC; ES2660 is in semester 6 and CS2102 is as early as possible after CS3268.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS3263",
+      "CS3268"
+     ],
+     "6": [
+      "CS3281",
+      "ES2660",
+      "CS2102"
+     ],
+     "7": [
+      "CS4278",
+      "CS2105",
+      "CS4246"
+     ],
+     "8": [
+      "CS3219",
+      "CS3282"
+     ]
+    },
+    "reasons": [
+     "Added CS3281 as the prerequisite for CS3282 and CS3263 as the prerequisite for CS4278 and CS4246.",
+     "All prerequisites are in strictly earlier semesters; CS4278 precedes CS3219 and ES2660 precedes CS4246.",
+     "Every active semester has at least 8 MC; ES2660 is in semester 6 and CS2102 is as early as possible after CS3268."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9277,
+    "total_tokens": 18020,
+    "completion_tokens": 8743,
+    "prompt_tokens_details": {
+     "cached_tokens": 8960,
+     "created_cache_tokens": 256,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 8585
+    },
+    "finish_reason": "stop",
+    "request_seconds": 88.73,
+    "attempts": 1
+   },
+   "seconds": 88.73,
+   "violations": []
+  }
+ ]
+}

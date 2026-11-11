@@ -1,0 +1,101 @@
+{
+ "id": "q2-S1-134",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 5.79,
+ "usage": {
+  "prompt_tokens": 22041,
+  "total_tokens": 22246,
+  "completion_tokens": 205,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.79,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\"CS3282 requires CS3281 as a prerequisite, but CS3281 is not in the list of modules the student needs to take or has completed. Without CS3281, CS3282 cannot be taken.\"]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3282 requires CS3281 as a prerequisite, but CS3281 is not in the list of modules the student needs to take or has completed. Without CS3281, CS3282 cannot be taken."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"6\": [\"CS3227\", \"CS3210\"], \"7\": [\"CS3103\", \"CS2102\", \"CS4218\", \"CS3282\"]}, \"reasons\": [\"All prerequisites satisfied by completed courses. CS3227 taken in Y3S2 to allow CS3103 in Y4S1. CS2102 and CS4218 co-taken in Y4S1 as required. CS3210 placed as late as possible in Y3S2.\"]}}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS3227",
+      "CS3210"
+     ],
+     "7": [
+      "CS3103",
+      "CS2102",
+      "CS4218",
+      "CS3282"
+     ]
+    },
+    "reasons": [
+     "All prerequisites satisfied by completed courses. CS3227 taken in Y3S2 to allow CS3103 in Y4S1. CS2102 and CS4218 co-taken in Y4S1 as required. CS3210 placed as late as possible in Y3S2."
+    ]
+   },
+   "repair": "extra_text",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10909,
+    "total_tokens": 11043,
+    "completion_tokens": 134,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 3.04,
+    "attempts": 1
+   },
+   "seconds": 3.04,
+   "violations": [
+    "R3 CS3282 not offered in Sem 1 (semester 7)",
+    "R4 CS3282 in semester 7: prerequisite not met (CS3281)"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\"CS3282 requires CS3281 as a prerequisite, but CS3281 is not in the list of modules the student needs to take or has completed. Without CS3281, CS3282 cannot be taken.\"]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3282 requires CS3281 as a prerequisite, but CS3281 is not in the list of modules the student needs to take or has completed. Without CS3281, CS3282 cannot be taken."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11132,
+    "total_tokens": 11203,
+    "completion_tokens": 71,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 2.75,
+    "attempts": 1
+   },
+   "seconds": 2.75,
+   "violations": null
+  }
+ ]
+}

@@ -1,0 +1,103 @@
+{
+ "id": "q2-S2-016",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 53.98,
+ "usage": {
+  "prompt_tokens": 25479,
+  "total_tokens": 28816,
+  "completion_tokens": 3337,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 53.98,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4226 is only offered in Sem 1, but the student is in Sem 4 (Y2S2) and cannot take it in Sem 4, 5, 6, 7, or 8.\",\n    \"CS4231 is only offered in Sem 2, but the student is in Sem 4 (Y2S2) and cannot take it in Sem 4, 5, 6, 7, or 8.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4226 is only offered in Sem 1, but the student is in Sem 4 (Y2S2) and cannot take it in Sem 4, 5, 6, 7, or 8.",
+   "CS4231 is only offered in Sem 2, but the student is in Sem 4 (Y2S2) and cannot take it in Sem 4, 5, 6, 7, or 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"Prerequisite conflict: CS4231 requires CS3210 or CS3230. The student has completed CS2100 (prereq for CS3210) but not CS3210. CS3230 requires CS2040S (completed) and CS1231/CS1231S (completed). Thus CS3230 is available. However, CS4231 must be taken after CS3230. CS2109S requires CS4231. CS4226 requires CS2105 and CS2109S (via CS4231? No, CS4226 prereq is CS2105 and EE2012A/EE2012/MA2216/ST2131/ST2334/MA2116/MA2116T). The student has ST2334. So CS4226 prereq is satisfied by CS2105 and ST2334. Wait, CS4226 prereq is (CS2105 or ...) AND (EE2012A or ... or ST2334 or ...). Student has ST2334. So CS4226 only needs CS2105. CS2109S needs CS4231. CS4231 needs CS3210 or CS3230. CS3230 needs CS2040S and CS1231S. Both completed. So CS3230 can be taken in Y2S2 (Sem 4). Then CS4231 in Sem 5 or 6. Then CS2109S in Sem 6 or 7. CS4226 needs CS2105. CS2105 needs CS2040S (completed). So CS2105 can be taken in Sem 4. CS2106 needs CS2100 (completed). CS2106 can be taken in Sem 4. Let's re-evaluate constraints. CS4231 before CS2109S. CS2106 before CS4231. CS4226 and CS4231 not same sem. CS3219 before CS4226. CS3219 needs CS2103T (completed). So CS3219 can be taken in Sem 4. CS4226 needs CS3219. So CS4226 after CS3219. CS2109S needs CS4231. CS4231 needs CS3230. CS3230 needs CS2040S, CS1231S. All good. Timeline: Sem 4: CS3230, CS2105, CS2106, CS3219 (16 MC). Sem 5: CS4231 (4 MC). Sem 6: CS2109S, CS4226 (8 MC). But CS4231 must be before CS2109S. CS4226 and CS4231 not same sem. CS2106 before CS4231. CS3219 before CS4226. This plan works? Sem 4: CS3230, CS2105, CS2106, CS3219. Sem 5: CS4231. Sem 6: CS2109S, CS4226. Check MC: Sem 4: 4+4+4+4=16 <= 20. Sem 5: 4 <= 20. Sem 6: 4+4=8 <= 12 (limit 12). Sem 6 limit 3 modules? 2 modules. OK. But student said \"I can take at most 12 MC per semester\". Sem 4 is 16 MC. Violation. Need to spread. Sem 4: CS3230, CS2105, CS2106 (12 MC). Sem 5: CS3219, CS4231 (8 MC). Sem 6: CS2109S, CS4226 (8 MC). CS3219 before CS4226? Yes (Sem 5 vs 6). CS4231 before CS2109S? Yes (Sem 5 vs 6). CS2106 before CS4231? Yes (Sem 4 vs 5). CS4226 and CS4231 not same sem? Yes. CS2109S late as possible? Sem 6 is last. CS4226 and CS2109S same sem? Yes. This seems valid. Why NO_PLAN? Ah, CS4231 prereq is CS3210 or CS3230. CS3230 is taken Sem 4. CS4231 Sem 5. OK. CS2109S prereq is CS4231. Sem 6. OK. CS4226 prereq CS2105 and ST2334. CS2105 Sem 4. ST2334 completed. OK. CS3219 prereq CS2103T. Completed. OK. Is there a hidden constraint? \"CS4231 must come before CS2109S\". \"CS2106 must come before CS4231\". \"CS3219 before CS4226\". \"CS4226 and CS4231 not same sem\". \"CS4226 and CS2109S same sem\". \"CS2109S as late as possible\". Sem 6 is late. Sem 7? If Sem 7, Sem 6 empty? No, must take all. If CS2109S in Sem 7, CS4231 in Sem 5 or 6. CS4226 in Sem 6 or 7. If CS4226 and CS2109S same sem, both Sem 7. CS3219 before CS4226, so Sem 5 or 6. CS2106 before CS4231. CS4231 before CS2109S (Sem 7). CS4231 Sem 5 or 6. CS2106 Sem 4 or 5. Let's try to push to Sem 7. Sem 4: CS3230, CS2105, CS2106 (12 MC). Sem 5: CS3219, CS4231 (8 MC). Sem 6: Empty? No, student wants fewest semesters. Sem 7: CS2109S, CS4226 (8 MC). This uses Sem 7. Sem 6 plan uses Sem 6. Sem 6 is earlier. So Sem 6 is better for \"fewest semesters\". The plan in Sem 4,5,6 is valid. Wait, did I miss a prerequisite? CS2109S prereq: (YSC2229 or CS2040S or CS2040C or CS2040HS or CS2040 or CS2040DE) AND ((MA1511 and MA1512) or MA1521 or MA2002 or MA1102R or MA1312 or MA1507 or MA1505). Student has CS2040S and MA1521. OK. CS4231 prereq: CS3210 or CS3230. Student has CS3230 planned. OK. CS4226 prereq: (CS2105 or ...) AND (EE2012A or ... or ST2334 or ...). Student has CS2105 and ST2334. OK. CS3219 prereq: YSC3232 or CS2103 or CS2103T or CS2103DE or CS2113T or CS2113. Student has CS2103T. OK. CS2106 prereq: CS2100 or ... Student has CS2100. OK. CS2105 prereq: YSC2229 or CS2040 or ... Student has CS2040S. OK. CS3230 prereq: (YSC2229 or CS2040S or ...) AND (CS1231 or CS1231S or ...). Student has CS2040S and CS1231S. OK. All prereqs met. MC limits: Sem 4: 12 MC. Sem 5: 8 MC. Sem 6: 8 MC. All <= 12. Sem 6 limit 3 modules: 2 modules. OK. \"Fewest semesters\": Ends in Sem 6. Is it possible to end in Sem 5? Sem 4: CS3230, CS2105, CS2106, CS3219 (16 MC > 12). No. Sem 4: CS3230, CS2105, CS2106 (12). Sem 5: CS3219, CS4231, CS2109S, CS4226? CS4231 before CS2109S. CS3219 before CS4226. CS4226 and CS4231 not same sem. So CS4231 and CS2109S cannot be same sem if CS4226 is with CS2109S? No, CS4226 and CS4231 not same sem. If CS4226 and CS2109S same sem, then CS4231 must be earlier. So CS4231 Sem 4 or 5. CS2109S Sem 5. CS4226 Sem 5. CS3219 before CS4226, so Sem 4. CS2106 before CS4231. CS4231 Sem 4? Then CS2106 Sem 3? No, starting Y2S2 (Sem 4). So CS4231 cannot be Sem 4 if CS2106 must be before it and CS2106 is Sem 4. So CS4231 must be Sem 5. Then CS2109S Sem 6. CS4226 Sem 6. CS3219 Sem 4 or 5. If CS3219 Sem 5, then Sem 5 has CS4231, CS3219 (8 MC). Sem 4 has CS3230, CS2105, CS2106 (12 MC). Sem 6 has CS2109S, CS4226 (8 MC). This is the Sem 6 plan. Can we do Sem 5? Sem 4: CS3230, CS2105, CS2106, CS3219 (16 MC). No. Sem 4: CS3230, CS2105, CS2106 (12). Sem 5: CS3219, CS4231, CS2109S, CS4226? CS4231 and CS2109S same sem? No, CS4231 before CS2109S. So CS2109S cannot be Sem 5 if CS4231 is Sem 5. CS4231 must be Sem 4? No, CS2106 before CS4231. CS2106 is Sem 4. So CS4231 Sem 5. CS2109S Sem 6. So Sem 6 is minimum. The plan is valid. Why did I think NO_PLAN? I didn't. I will output PLAN.\n\nWait, check \"CS4231 must come before CS2109S\". Strictly earlier. Sem 5 and Sem 6 is fine.\n\"CS2106 must come before CS4231\". Sem 4 and Sem 5 is fine.\n\"CS3219 before CS4226\". Sem 5 and Sem 6 is fine.\n\"CS4226 and CS4231 not same sem\". Sem 6 and Sem 5 is fine.\n\"CS4226 and CS2109S same sem\". Sem 6 and Sem 6 is fine.\n\"CS2109S as late as possible\". Sem 6 is the last semester used. If we pushed to Sem 7, it would be later, but \"fewest semesters\" takes precedence. So Sem 6 is correct.\n\nOne detail: \"In semester 6 I can only take 3 modules.\" My plan has 2 modules in Sem 6. This is fine.\n\nFinal check on MC:\nSem 4: CS3230 (4) + CS2105 (4) + CS2106 (4) = 12 MC. Limit 12. OK.\nSem 5: CS3219 (4) + CS4231 (4) = 8 MC. Limit 12. OK.\nSem 6: CS2109S (4) + CS4226 (4) = 8 MC. Limit 12. OK.\n\nAll constraints satisfied.\n\n{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS3230\", \"CS2105\", \"CS2106\"], \"5\": [\"CS3219\", \"CS4231\"], \"6\": [\"CS2109S\", \"CS4226\"]}, \"reasons\": [\"All prerequisites satisfied. MC limits respected. Constraints met.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "CS3230",
+      "CS2105",
+      "CS2106"
+     ],
+     "5": [
+      "CS3219",
+      "CS4231"
+     ],
+     "6": [
+      "CS2109S",
+      "CS4226"
+     ]
+    },
+    "reasons": [
+     "All prerequisites satisfied. MC limits respected. Constraints met."
+    ]
+   },
+   "repair": "extra_text",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11092,
+    "total_tokens": 14302,
+    "completion_tokens": 3210,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 51.03,
+    "attempts": 1
+   },
+   "seconds": 51.03,
+   "violations": [
+    "R3 CS4226 not offered in Sem 2 (semester 6)",
+    "R3 CS4231 not offered in Sem 1 (semester 5)"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4226 is only offered in Sem 1, but the student is in Sem 4 (Y2S2) and cannot take it in Sem 4, 5, 6, 7, or 8.\",\n    \"CS4231 is only offered in Sem 2, but the student is in Sem 4 (Y2S2) and cannot take it in Sem 4, 5, 6, 7, or 8.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4226 is only offered in Sem 1, but the student is in Sem 4 (Y2S2) and cannot take it in Sem 4, 5, 6, 7, or 8.",
+     "CS4231 is only offered in Sem 2, but the student is in Sem 4 (Y2S2) and cannot take it in Sem 4, 5, 6, 7, or 8."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 14387,
+    "total_tokens": 14514,
+    "completion_tokens": 127,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.95,
+    "attempts": 1
+   },
+   "seconds": 2.95,
+   "violations": null
+  }
+ ]
+}

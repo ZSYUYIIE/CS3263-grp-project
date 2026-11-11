@@ -1,0 +1,99 @@
+{
+ "id": "q2-S4-309",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 13.72,
+ "solver_seconds": 0.187,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3024,
+  "total_tokens": 3263,
+  "completion_tokens": 239,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 13.53,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"programme\": \"BComp CS Hons\",\n\"current_sem\": 2,\n\"completed\": [\n\"CS1101S\",\n\"CS1231S\",\n\"MA1521\"\n],\n\"must_take\": [\n\"CS4430\",\n\"CS2106\",\n\"CS3227\"\n],\n\"mc_max\": 12,\n\"early\": [\n\"CS2106\"\n],\n\"rules\": [\n{\n\"type\": \"apart\",\n\"a\": \"CS2106\",\n\"b\": \"CS4430\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3227\",\n\"sem\": 4,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4430\",\n\"b\": \"CS3227\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "programme": "BComp CS Hons",
+  "current_sem": 2,
+  "completed": [
+   "CS1101S",
+   "CS1231S",
+   "MA1521"
+  ],
+  "must_take": [
+   "CS4430",
+   "CS2106",
+   "CS3227"
+  ],
+  "mc_max": 12,
+  "early": [
+   "CS2106"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS2106",
+    "b": "CS4430",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3227",
+    "sem": 4,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4430",
+    "b": "CS3227",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 4,
+  "plan": {
+   "2": [
+    "CS2040S",
+    "CS2100DE"
+   ],
+   "3": [
+    "CS2106",
+    "CS2113",
+    "CS3231"
+   ],
+   "4": [
+    "CS3227",
+    "CS4430"
+   ]
+  },
+  "mc_per_semester": {
+   "2": 8,
+   "3": 12,
+   "4": 8
+  },
+  "preferences_met": [
+   "CS2106 as early as possible"
+  ],
+  "preferences_not_met": [
+   "CS4430 before CS3227"
+  ],
+  "added_prerequisites": [
+   "CS2040S",
+   "CS2100DE",
+   "CS2113",
+   "CS3231"
+  ]
+ }
+}

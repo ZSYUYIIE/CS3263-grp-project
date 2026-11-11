@@ -1,0 +1,45 @@
+{
+ "id": "q2-S3-116",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "repeated plan",
+ "seconds": 5.79,
+ "usage": {
+  "prompt_tokens": 14200,
+  "total_tokens": 14432,
+  "completion_tokens": 232,
+  "finish_reason": "stop",
+  "request_seconds": 5.79,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS3227\",\n      \"CS3231\"\n    ],\n    \"7\": [\n      \"CP3880\",\n      \"CS2102\",\n      \"ST2334\"\n    ],\n    \"8\": [\n      \"CS3237\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3231 and CS3227 are placed in Sem 6 as required, with CS3231 satisfying prerequisites.\",\n    \"ATAP (CP3880) is in Sem 7 with CS2102 and ST2334 (8 MC total), respecting the 8 MC limit for non-ATAP courses.\",\n    \"CS3237 is in Sem 8 to satisfy the constraint that it must come after ST2334 and not be in the same semester as CS2102.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS3227",
+    "CS3231"
+   ],
+   "7": [
+    "CP3880",
+    "CS2102",
+    "ST2334"
+   ],
+   "8": [
+    "CS3237"
+   ]
+  },
+  "reasons": [
+   "CS3231 and CS3227 are placed in Sem 6 as required, with CS3231 satisfying prerequisites.",
+   "ATAP (CP3880) is in Sem 7 with CS2102 and ST2334 (8 MC total), respecting the 8 MC limit for non-ATAP courses.",
+   "CS3237 is in Sem 8 to satisfy the constraint that it must come after ST2334 and not be in the same semester as CS2102."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,45 @@
+{
+ "id": "q2-S1-136",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 3,
+ "end": "switched to NO_PLAN",
+ "seconds": 14.09,
+ "usage": {
+  "prompt_tokens": 42461,
+  "total_tokens": 43346,
+  "completion_tokens": 885,
+  "finish_reason": "stop",
+  "request_seconds": 14.09,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS4261\",\n\"CS2105\",\n\"CS3103\"\n],\n\"6\": [\n\"CS2102\",\n\"CS3219\"\n],\n\"7\": [\n\"CS4226\",\n\"CS4223\",\n\"CS4218\"\n],\n\"8\": [\n\"CS4262\"\n]\n},\n\"reasons\": [\n\"CS3103 prerequisite CS2105 is taken in Sem 5.\",\n\"CS4223 prerequisites CS2106 (completed) and CS3219 (Sem 6) are met.\",\n\"CS4262 is offered in Sem 2 (Sem 8) and prerequisites CS2106 (completed) and CS3244/CS3264/CG3201 are not completed but CS2109S is completed; wait, CS4262 prereq is (CS2106 or CG2271) AND (CS3244 or CS3264 or CG3201). Student has CS2106. Student does NOT have CS3244, CS3264, or CG3201. Thus CS4262 is NOT ELIGIBLE.\"\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS4261",
+    "CS2105",
+    "CS3103"
+   ],
+   "6": [
+    "CS2102",
+    "CS3219"
+   ],
+   "7": [
+    "CS4226",
+    "CS4223",
+    "CS4218"
+   ],
+   "8": [
+    "CS4262"
+   ]
+  }
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

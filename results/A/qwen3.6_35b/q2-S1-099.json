@@ -1,0 +1,53 @@
+{
+ "id": "q2-S1-099",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 143.56,
+ "usage": {
+  "prompt_tokens": 11606,
+  "total_tokens": 20309,
+  "completion_tokens": 8703,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 143.56,
+  "attempts": 1
+ },
+ "raw": "\n\n{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS3230\"\n    ],\n    \"5\": [\n      \"CS2103T\",\n      \"CS4243\",\n      \"ST1131\"\n    ],\n    \"6\": [\n      \"CS3281\",\n      \"CS2102\",\n      \"CS3219\"\n    ],\n    \"7\": [\n      \"CS2105\",\n      \"CS3223\",\n      \"CS4218\"\n    ],\n    \"8\": [\n      \"CS4221\"\n    ]\n  },\n  \"reasons\": [\n    \"Prerequisites are satisfied by completed modules or strictly earlier planned modules.\",\n    \"CS3281 is in Sem 6 and CS2105 in Sem 7, satisfying CS3281 before CS2105.\",\n    \"CS4221 is in Sem 8 (latest possible) and CS2103T in Sem 5 (latest possible). CS3281 in Sem 8 is impossible due to CS2105 constraint.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS3230"
+   ],
+   "5": [
+    "CS2103T",
+    "CS4243",
+    "ST1131"
+   ],
+   "6": [
+    "CS3281",
+    "CS2102",
+    "CS3219"
+   ],
+   "7": [
+    "CS2105",
+    "CS3223",
+    "CS4218"
+   ],
+   "8": [
+    "CS4221"
+   ]
+  },
+  "reasons": [
+   "Prerequisites are satisfied by completed modules or strictly earlier planned modules.",
+   "CS3281 is in Sem 6 and CS2105 in Sem 7, satisfying CS3281 before CS2105.",
+   "CS4221 is in Sem 8 (latest possible) and CS2103T in Sem 5 (latest possible). CS3281 in Sem 8 is impossible due to CS2105 constraint."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

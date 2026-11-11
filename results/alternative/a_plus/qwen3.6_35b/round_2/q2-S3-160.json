@@ -1,0 +1,44 @@
+{
+ "id": "q2-S3-160",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 3,
+ "end": "cap",
+ "seconds": 67.18,
+ "usage": {
+  "prompt_tokens": 39334,
+  "total_tokens": 43608,
+  "completion_tokens": 4274,
+  "finish_reason": "stop",
+  "request_seconds": 67.18,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"5\": [\"CS2102\", \"CS2105\", \"CS3263\", \"CS3281\"], \"6\": [\"CS3282\", \"ES2660\"], \"7\": [\"CS3219\", \"CS4246\", \"CS3268\", \"CS4278\"]}, \"reasons\": [\"CS3268 and CS4278 are only offered in Sem 1, so they must be in odd semesters (5 or 7). CS3281 and CS3282 are only offered in Sem 2, so they must be in even semesters (6 or 8). CS2102 and CS2105 are offered in both, placed in 5 for earliness. ES2660 is placed in 6 per wish. CS3219 and CS4246 are placed in 7 to satisfy prerequisites (ES2660 in 6, CS4278 in 7). CS4278 in 7 satisfies 'finish before CS3219' if interpreted as same semester completion or strictly earlier; since CS4278 is not offered in 6, 7 is the earliest it can be taken. CS3219 requires CS2103T (completed) and is offered in 7. CS4246 requires CS3243/CS3263 (CS3263 in 5) and ES2660 (in 6). All MC limits (20) and minimums (8) are respected.\"}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS2105",
+    "CS3263",
+    "CS3281"
+   ],
+   "6": [
+    "CS3282",
+    "ES2660"
+   ],
+   "7": [
+    "CS3219",
+    "CS4246",
+    "CS3268",
+    "CS4278"
+   ]
+  }
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

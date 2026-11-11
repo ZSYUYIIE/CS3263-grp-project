@@ -1,0 +1,62 @@
+{
+ "id": "q2-S4-166",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 121.14,
+ "usage": {
+  "prompt_tokens": 9034,
+  "total_tokens": 20691,
+  "completion_tokens": 11657,
+  "prompt_tokens_details": {
+   "cached_tokens": 8704,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 11445
+  },
+  "finish_reason": "stop",
+  "request_seconds": 121.14,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS2102\",\"CS3210\",\"CS3231\",\"CS3241\"],\"6\":[\"CS3223\",\"CS2111\",\"PC1201\"],\"7\":[\"CS4224\",\"CS4223\",\"CS3240\"],\"8\":[\"CS3242\",\"CS4430\",\"CS4240\",\"CS4231\"]},\"reasons\":[\"CS2102 is forced into sem5 because CS4224 is Sem1-only and needs CS3223, which needs CS2102; CS4224 then fits sem7.\",\"CS4240 and CS4231 are both in sem8, meeting the same-semester preference; CS4231 before CS2102 is impossible because CS2102 is forced earlier.\",\"Added only required prerequisites (CS3223, CS3210, CS2111, CS3240, CS3231, CS3241, PC1201); total 56 MC. Exam-count preference is not checkable from the records.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS3210",
+    "CS3231",
+    "CS3241"
+   ],
+   "6": [
+    "CS3223",
+    "CS2111",
+    "PC1201"
+   ],
+   "7": [
+    "CS4224",
+    "CS4223",
+    "CS3240"
+   ],
+   "8": [
+    "CS3242",
+    "CS4430",
+    "CS4240",
+    "CS4231"
+   ]
+  },
+  "reasons": [
+   "CS2102 is forced into sem5 because CS4224 is Sem1-only and needs CS3223, which needs CS2102; CS4224 then fits sem7.",
+   "CS4240 and CS4231 are both in sem8, meeting the same-semester preference; CS4231 before CS2102 is impossible because CS2102 is forced earlier.",
+   "Added only required prerequisites (CS3223, CS3210, CS2111, CS3240, CS3231, CS3241, PC1201); total 56 MC. Exam-count preference is not checkable from the records."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

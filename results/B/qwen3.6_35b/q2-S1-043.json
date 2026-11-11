@@ -1,0 +1,163 @@
+{
+ "id": "q2-S1-043",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 38.68,
+ "solver_seconds": 0.519,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3120,
+  "total_tokens": 3575,
+  "completion_tokens": 455,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 8.4,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 1,\n\"completed\": [],\n\"must_take\": [\n\"IS1108\",\n\"MA1522\",\n\"CS2101\",\n\"CS4243\",\n\"CS2102\",\n\"CS2106\",\n\"CS4262\",\n\"CS2105\",\n\"ST2334\",\n\"CS2040S\"\n],\n\"sem_caps\": {\n\"3\": 0\n},\n\"rules\": [\n{\n\"type\": \"apart\",\n\"a\": \"CS4262\",\n\"b\": \"CS2102\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"IS1108\",\n\"b\": \"CS2102\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2105\",\n\"b\": \"CS4243\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2040S\",\n\"sem\": 4,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"ST2334\",\n\"sem\": 4,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2101\",\n\"sem\": 7,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2105\",\n\"b\": \"CS2040S\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"MA1522\",\n\"b\": \"CS2106\",\n\"strength\": \"prefer\"\n}\n],\n\"unsupported\": [\n\"at most two modules with final exams in a semester\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "completed": [],
+  "must_take": [
+   "IS1108",
+   "MA1522",
+   "CS2101",
+   "CS4243",
+   "CS2102",
+   "CS2106",
+   "CS4262",
+   "CS2105",
+   "ST2334",
+   "CS2040S"
+  ],
+  "sem_caps": {
+   "3": 0
+  },
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS4262",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "IS1108",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2105",
+    "b": "CS4243",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2040S",
+    "sem": 4,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "ST2334",
+    "sem": 4,
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2101",
+    "sem": 7,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS2105",
+    "b": "CS2040S",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "MA1522",
+    "b": "CS2106",
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "at most two modules with final exams in a semester"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 7,
+  "plan": {
+   "1": [
+    "IS1108",
+    "MA1100T",
+    "MA1505"
+   ],
+   "2": [
+    "CS1010X",
+    "MA1522"
+   ],
+   "3": [],
+   "4": [
+    "CS2040S",
+    "CS2100DE",
+    "ST2334"
+   ],
+   "5": [
+    "CS2106",
+    "CS3244"
+   ],
+   "6": [
+    "CS2030DE",
+    "CS2105",
+    "CS4262"
+   ],
+   "7": [
+    "CS2101",
+    "CS2102",
+    "CS4243"
+   ]
+  },
+  "mc_per_semester": {
+   "1": 12,
+   "2": 8,
+   "3": 0,
+   "4": 12,
+   "5": 8,
+   "6": 12,
+   "7": 12
+  },
+  "preferences_met": [
+   "ST2334 in semester 4",
+   "CS2101 in semester 7",
+   "MA1522 before CS2106"
+  ],
+  "preferences_not_met": [
+   "CS2105 before CS2040S"
+  ],
+  "added_prerequisites": [
+   "CS1010X",
+   "CS2030DE",
+   "CS2100DE",
+   "CS3244",
+   "MA1100T",
+   "MA1505"
+  ],
+  "not_applied": [
+   "at most two modules with final exams in a semester"
+  ]
+ }
+}

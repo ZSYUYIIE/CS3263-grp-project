@@ -1,0 +1,43 @@
+{
+ "id": "q2-S5-013",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 22.05,
+ "usage": {
+  "prompt_tokens": 8427,
+  "total_tokens": 9731,
+  "completion_tokens": 1304,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 22.05,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2105\"\n    ],\n    \"6\": [\n      \"CS3219\"\n    ],\n    \"7\": [\n      \"CS3233\"\n    ],\n    \"8\": [\n      \"CS3223\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2105 is taken in Sem 5 to satisfy the prerequisite for CS3219 and the constraint that it must be completed before CS3219 starts.\",\n    \"CS3219 is planned for Sem 6 to meet the soft wish of taking it in Sem 7 (adjusted to earliest possible after Sem 5 constraint) while respecting the 'finish in fewest semesters' goal. Note: The student's wish for Sem 7 conflicts with 'fewest semesters' if Sem 6 is available and valid. However, checking prerequisites: CS3219 requires YSC3232 or CS2103/CS2103T/CS2103DE/CS2113T/CS2113. Student has CS2103T. So CS3219 can be taken in Sem 5 or later. Since CS2105 is taken in Sem 5, and MC limit is 12, CS2105 (4MC) fits. Can CS3219 be taken in Sem 5? Yes. But student wants CS3219 in Sem 7 ideally. And CS2105 as late as possible. And CS2105 before CS3219. If CS3219 is in Sem 7, CS2105 must be in Sem 5 or 6. To minimize semesters, we pack courses. Sem 5: CS2105. Sem 6: CS3219. Sem 7: CS3233. Sem 8: CS3223. This uses 4 semesters. If CS3219 is in Sem 7, CS2105 could be Sem 5 or 6. If CS2105 is Sem 6, Sem 5 is empty? No, we must take remaining courses. Are there other courses? The student listed completed courses. Remaining required: CS3219, CS2105, CS3233, CS3223. That's it. So we just schedule these 4 courses. Constraints: CS2105 before CS3219. CS3233 in Y3S2 (Sem 6). Wait, Y3S2 is Semester 6. The student said 'I must take CS3233 in Y3S2'. Y3S2 is Semester 6. So CS3233 MUST be in Sem 6. This changes everything.\",\n    \"Re-evaluating with CS3233 fixed in Sem 6. CS2105 must be before CS3219. CS3219 ideally Sem 7. CS2105 as late as possible. CS2105 and CS3233 in different semesters (Sem 6 is taken by CS3233, so CS2105 cannot be Sem 6). CS2105 must be Sem 5 (since it's before CS3219, and if CS3219 is Sem 7, CS2105 can be Sem 5. If CS3219 is Sem 8, CS2105 can be Sem 5 or 7? No, CS2105 before CS3219. If CS3219 is Sem 7, CS2105 is Sem 5. If CS3219 is Sem 8, CS2105 can be Sem 5 or 7. But CS3233 is Sem 6. CS2105 and CS3233 different semesters. Sem 5, 7, 8 are open for CS2105. 'As late as possible' for CS2105 suggests Sem 7 or 8. But CS2105 must be before CS3219. If CS3219 is Sem 7, CS2105 must be Sem 5. If CS3219 is Sem 8, CS2105 can be Sem 7. Student wants CS3219 in Sem 7 ideally. If CS3219 is Sem 7, CS2105 is Sem 5. This satisfies 'CS2105 before CS3219'. CS3233 is Sem 6. CS3223 is Sem 8. Plan: Sem 5: CS2105. Sem 6: CS3233. Sem 7: CS3219. Sem 8: CS3223. This meets all hard constraints: CS3233 in Y3S2 (Sem 6). CS3223 in Sem 8. CS2105 before CS3219 (Sem 5 < Sem 7). CS2105 and CS3233 different semesters (5 vs 6). Soft wishes: CS3219 in Sem 7 (Met). CS2105 as late as possible? It's in Sem 5. Could it be later? If CS3219 is Sem 8, CS2105 could be Sem 7. But student wants CS3219 in Sem 7 ideally. 'Fewest semesters' is the primary optimization. This plan finishes in Sem 8. Is it possible to finish earlier? No, CS3223 is fixed in Sem 8. So Sem 8 is the last semester. The plan is valid.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2105"
+   ],
+   "6": [
+    "CS3219"
+   ],
+   "7": [
+    "CS3233"
+   ],
+   "8": [
+    "CS3223"
+   ]
+  },
+  "reasons": [
+   "CS2105 is taken in Sem 5 to satisfy the prerequisite for CS3219 and the constraint that it must be completed before CS3219 starts.",
+   "CS3219 is planned for Sem 6 to meet the soft wish of taking it in Sem 7 (adjusted to earliest possible after Sem 5 constraint) while respecting the 'finish in fewest semesters' goal. Note: The student's wish for Sem 7 conflicts with 'fewest semesters' if Sem 6 is available and valid. However, checking prerequisites: CS3219 requires YSC3232 or CS2103/CS2103T/CS2103DE/CS2113T/CS2113. Student has CS2103T. So CS3219 can be taken in Sem 5 or later. Since CS2105 is taken in Sem 5, and MC limit is 12, CS2105 (4MC) fits. Can CS3219 be taken in Sem 5? Yes. But student wants CS3219 in Sem 7 ideally. And CS2105 as late as possible. And CS2105 before CS3219. If CS3219 is in Sem 7, CS2105 must be in Sem 5 or 6. To minimize semesters, we pack courses. Sem 5: CS2105. Sem 6: CS3219. Sem 7: CS3233. Sem 8: CS3223. This uses 4 semesters. If CS3219 is in Sem 7, CS2105 could be Sem 5 or 6. If CS2105 is Sem 6, Sem 5 is empty? No, we must take remaining courses. Are there other courses? The student listed completed courses. Remaining required: CS3219, CS2105, CS3233, CS3223. That's it. So we just schedule these 4 courses. Constraints: CS2105 before CS3219. CS3233 in Y3S2 (Sem 6). Wait, Y3S2 is Semester 6. The student said 'I must take CS3233 in Y3S2'. Y3S2 is Semester 6. So CS3233 MUST be in Sem 6. This changes everything.",
+   "Re-evaluating with CS3233 fixed in Sem 6. CS2105 must be before CS3219. CS3219 ideally Sem 7. CS2105 as late as possible. CS2105 and CS3233 in different semesters (Sem 6 is taken by CS3233, so CS2105 cannot be Sem 6). CS2105 must be Sem 5 (since it's before CS3219, and if CS3219 is Sem 7, CS2105 can be Sem 5. If CS3219 is Sem 8, CS2105 can be Sem 5 or 7? No, CS2105 before CS3219. If CS3219 is Sem 7, CS2105 is Sem 5. If CS3219 is Sem 8, CS2105 can be Sem 5 or 7. But CS3233 is Sem 6. CS2105 and CS3233 different semesters. Sem 5, 7, 8 are open for CS2105. 'As late as possible' for CS2105 suggests Sem 7 or 8. But CS2105 must be before CS3219. If CS3219 is Sem 7, CS2105 must be Sem 5. If CS3219 is Sem 8, CS2105 can be Sem 7. Student wants CS3219 in Sem 7 ideally. If CS3219 is Sem 7, CS2105 is Sem 5. This satisfies 'CS2105 before CS3219'. CS3233 is Sem 6. CS3223 is Sem 8. Plan: Sem 5: CS2105. Sem 6: CS3233. Sem 7: CS3219. Sem 8: CS3223. This meets all hard constraints: CS3233 in Y3S2 (Sem 6). CS3223 in Sem 8. CS2105 before CS3219 (Sem 5 < Sem 7). CS2105 and CS3233 different semesters (5 vs 6). Soft wishes: CS3219 in Sem 7 (Met). CS2105 as late as possible? It's in Sem 5. Could it be later? If CS3219 is Sem 8, CS2105 could be Sem 7. But student wants CS3219 in Sem 7 ideally. 'Fewest semesters' is the primary optimization. This plan finishes in Sem 8. Is it possible to finish earlier? No, CS3223 is fixed in Sem 8. So Sem 8 is the last semester. The plan is valid."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

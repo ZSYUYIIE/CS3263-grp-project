@@ -1,0 +1,82 @@
+{
+ "id": "q2-S4-311",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 8.71,
+ "solver_seconds": 0.102,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3125,
+  "total_tokens": 3506,
+  "completion_tokens": 381,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 8.61,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"current_sem\": 4,\n  \"completed\": [\n    \"ES2660\",\n    \"CS2103T\",\n    \"CS1101S\",\n    \"CS2030S\",\n    \"CS1231S\",\n    \"CS2101\",\n    \"ST2334\",\n    \"CS2100\",\n    \"MA1522\",\n    \"MA1521\",\n    \"CS2040S\"\n  ],\n  \"must_take\": [\n    \"CS3223\",\n    \"CS4330\",\n    \"CS3240\",\n    \"CS3230\",\n    \"CS2106\",\n    \"CS3268\",\n    \"CS2109S\"\n  ],\n  \"objective\": \"min_total_mc\",\n  \"early\": [\n    \"CS3240\"\n  ],\n  \"rules\": [\n    {\n      \"type\": \"before\",\n      \"a\": \"CS2106\",\n      \"b\": \"CS4330\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS3268\",\n      \"b\": \"CS2109S\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS3268\",\n      \"sem\": 5,\n      \"strength\": \"prefer\"\n    }\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "ES2660",
+   "CS2103T",
+   "CS1101S",
+   "CS2030S",
+   "CS1231S",
+   "CS2101",
+   "ST2334",
+   "CS2100",
+   "MA1522",
+   "MA1521",
+   "CS2040S"
+  ],
+  "must_take": [
+   "CS3223",
+   "CS4330",
+   "CS3240",
+   "CS3230",
+   "CS2106",
+   "CS3268",
+   "CS2109S"
+  ],
+  "objective": "min_total_mc",
+  "early": [
+   "CS3240"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2106",
+    "b": "CS4330",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3268",
+    "b": "CS2109S",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3268",
+    "sem": 5,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS3268 before CS2109S; the prerequisites of CS3268; the course exclusions (courses that cannot be taken together)"
+  ]
+ }
+}

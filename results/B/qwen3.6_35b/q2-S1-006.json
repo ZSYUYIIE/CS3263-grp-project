@@ -1,0 +1,119 @@
+{
+ "id": "q2-S1-006",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.16,
+ "solver_seconds": 0.075,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3050,
+  "total_tokens": 3402,
+  "completion_tokens": 352,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 7.08,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"completed\": [\n    \"CS1231S\",\n    \"ES2660\",\n    \"CS1101S\",\n    \"MA1521\"\n  ],\n  \"current_sem\": 2,\n  \"must_take\": [\n    \"CS2102\",\n    \"CS2109S\",\n    \"CS4240\",\n    \"CS3213\"\n  ],\n  \"sem_caps\": {\n    \"4\": 0\n  },\n  \"objective\": \"min_total_mc\",\n  \"early\": [\n    \"CS2109S\"\n  ],\n  \"rules\": [\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS2109S\",\n      \"b\": \"CS2102\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS4240\",\n      \"sem\": 6,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS3213\",\n      \"sem\": 8,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS4240\",\n      \"b\": \"CS2109S\",\n      \"strength\": \"prefer\"\n    }\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "completed": [
+   "CS1231S",
+   "ES2660",
+   "CS1101S",
+   "MA1521"
+  ],
+  "current_sem": 2,
+  "must_take": [
+   "CS2102",
+   "CS2109S",
+   "CS4240",
+   "CS3213"
+  ],
+  "sem_caps": {
+   "4": 0
+  },
+  "objective": "min_total_mc",
+  "early": [
+   "CS2109S"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS2109S",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4240",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3213",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS4240",
+    "b": "CS2109S",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 8,
+  "plan": {
+   "2": [
+    "CS2040DE",
+    "CS2111"
+   ],
+   "3": [
+    "CS2109S"
+   ],
+   "4": [],
+   "5": [
+    "CS3240"
+   ],
+   "6": [
+    "CS2113",
+    "CS4240"
+   ],
+   "7": [],
+   "8": [
+    "CS2102",
+    "CS3213"
+   ]
+  },
+  "mc_per_semester": {
+   "2": 8,
+   "3": 4,
+   "4": 0,
+   "5": 4,
+   "6": 8,
+   "7": 0,
+   "8": 8
+  },
+  "preferences_met": [
+   "CS4240 and CS2109S in different semesters",
+   "CS2109S as early as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS2040DE",
+   "CS2111",
+   "CS2113",
+   "CS3240"
+  ]
+ }
+}

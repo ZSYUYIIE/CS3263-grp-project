@@ -1,0 +1,156 @@
+{
+ "id": "q2-S1-053",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 11.82,
+ "solver_seconds": 0.31,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3136,
+  "total_tokens": 3569,
+  "completion_tokens": 433,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.09,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 2,\n\"programme\": \"BComp CS Hons\",\n\"completed\": [\n\"ES2660\",\n\"CS1101S\",\n\"MA1521\",\n\"CS1231S\"\n],\n\"must_take\": [\n\"CS3230\",\n\"CS3219\",\n\"CS2040S\",\n\"CS3282\",\n\"CS2109S\",\n\"CS2101\",\n\"IS1108\",\n\"CS3227\",\n\"CS2102\",\n\"CS3211\",\n\"CS4240\",\n\"CS4212\"\n],\n\"mc_max\": 16,\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3227\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3230\",\n\"b\": \"CS4240\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS2109S\",\n\"b\": \"CS3219\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3264\",\n\"sem\": 4,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2109S\",\n\"b\": \"CS2101\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS3264\",\n\"b\": \"CS2040S\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 2,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "ES2660",
+   "CS1101S",
+   "MA1521",
+   "CS1231S"
+  ],
+  "must_take": [
+   "CS3230",
+   "CS3219",
+   "CS2040S",
+   "CS3282",
+   "CS2109S",
+   "CS2101",
+   "IS1108",
+   "CS3227",
+   "CS2102",
+   "CS3211",
+   "CS4240",
+   "CS4212"
+  ],
+  "mc_max": 16,
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3227",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3230",
+    "b": "CS4240",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS2109S",
+    "b": "CS3219",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3264",
+    "sem": 4,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2109S",
+    "b": "CS2101",
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS3264",
+    "b": "CS2040S",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "earliest_graduation",
+  "last_semester": 7,
+  "plan": {
+   "2": [
+    "CS2030S",
+    "CS2040S",
+    "MA1513"
+   ],
+   "3": [
+    "CS2101",
+    "CS2103T",
+    "CS2109S",
+    "ST2334"
+   ],
+   "4": [
+    "CS2111",
+    "CS3264",
+    "CS3281"
+   ],
+   "5": [
+    "CG2271",
+    "CS2104",
+    "CS3230",
+    "CS3240"
+   ],
+   "6": [
+    "CS3211",
+    "CS3282",
+    "CS4212",
+    "CS4240"
+   ],
+   "7": [
+    "CS2102",
+    "CS3219",
+    "CS3227",
+    "IS1108"
+   ]
+  },
+  "mc_per_semester": {
+   "2": 10,
+   "3": 16,
+   "4": 12,
+   "5": 16,
+   "6": 16,
+   "7": 16
+  },
+  "preferences_met": [
+   "CS2109S and CS2101 in the same semester",
+   "CS3264 and CS2040S in different semesters"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CG2271",
+   "CS2030S",
+   "CS2103T",
+   "CS2104",
+   "CS2111",
+   "CS3240",
+   "CS3281",
+   "MA1513",
+   "ST2334"
+  ]
+ }
+}

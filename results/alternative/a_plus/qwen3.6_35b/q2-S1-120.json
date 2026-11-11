@@ -1,0 +1,99 @@
+{
+ "id": "q2-S1-120",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 7.35,
+ "usage": {
+  "prompt_tokens": 20233,
+  "total_tokens": 20663,
+  "completion_tokens": 430,
+  "finish_reason": "stop",
+  "request_seconds": 7.35,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4223 requires (CS2106 or CG2271) AND (CS3210 or CS3220 or CG3207).\",\n    \"The student has completed CS2106, satisfying the first part of the prerequisite.\",\n    \"However, the student has not completed CS3210, CS3220, or CG3207, and none of these courses are listed as 'must take' or required by other planned courses (CS2102, CS2105, CS3219).\",\n    \"Without taking one of CS3210, CS3220, or CG3207, the prerequisite for CS4223 cannot be met.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4223 requires (CS2106 or CG2271) AND (CS3210 or CS3220 or CG3207).",
+   "The student has completed CS2106, satisfying the first part of the prerequisite.",
+   "However, the student has not completed CS3210, CS3220, or CG3207, and none of these courses are listed as 'must take' or required by other planned courses (CS2102, CS2105, CS3219).",
+   "Without taking one of CS3210, CS3220, or CG3207, the prerequisite for CS4223 cannot be met."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS3219\",\n      \"CS2105\"\n    ],\n    \"6\": [\n      \"CS2102\"\n    ],\n    \"7\": [\n      \"CS4223\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3219 and CS2105 are planned in Sem 5 to satisfy the prerequisite for CS2102 and CS4223 respectively, while meeting the soft wish for CS3219 in Sem 5.\",\n    \"CS2102 is planned in Sem 6 as it requires CS3219 and CS2040S (completed), and must follow CS3219.\",\n    \"CS4223 is planned in Sem 7 as it requires CS2105 (Sem 5) and CS2106 (completed), satisfying the constraint that CS2105 precedes it.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS3219",
+      "CS2105"
+     ],
+     "6": [
+      "CS2102"
+     ],
+     "7": [
+      "CS4223"
+     ]
+    },
+    "reasons": [
+     "CS3219 and CS2105 are planned in Sem 5 to satisfy the prerequisite for CS2102 and CS4223 respectively, while meeting the soft wish for CS3219 in Sem 5.",
+     "CS2102 is planned in Sem 6 as it requires CS3219 and CS2040S (completed), and must follow CS3219.",
+     "CS4223 is planned in Sem 7 as it requires CS2105 (Sem 5) and CS2106 (completed), satisfying the constraint that CS2105 precedes it."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9950,
+    "total_tokens": 10188,
+    "completion_tokens": 238,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.07,
+    "attempts": 1
+   },
+   "seconds": 4.07,
+   "violations": [
+    "R4 CS4223 in semester 7: prerequisite not met ((CS2106 or CG2271) and (CS3210 or CS3220 or CG3207))"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4223 requires (CS2106 or CG2271) AND (CS3210 or CS3220 or CG3207).\",\n    \"The student has completed CS2106, satisfying the first part of the prerequisite.\",\n    \"However, the student has not completed CS3210, CS3220, or CG3207, and none of these courses are listed as 'must take' or required by other planned courses (CS2102, CS2105, CS3219).\",\n    \"Without taking one of CS3210, CS3220, or CG3207, the prerequisite for CS4223 cannot be met.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4223 requires (CS2106 or CG2271) AND (CS3210 or CS3220 or CG3207).",
+     "The student has completed CS2106, satisfying the first part of the prerequisite.",
+     "However, the student has not completed CS3210, CS3220, or CG3207, and none of these courses are listed as 'must take' or required by other planned courses (CS2102, CS2105, CS3219).",
+     "Without taking one of CS3210, CS3220, or CG3207, the prerequisite for CS4223 cannot be met."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10283,
+    "total_tokens": 10475,
+    "completion_tokens": 192,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.28,
+    "attempts": 1
+   },
+   "seconds": 3.28,
+   "violations": null
+  }
+ ]
+}

@@ -1,0 +1,64 @@
+{
+ "id": "q2-S2-056",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 96.69,
+ "usage": {
+  "prompt_tokens": 9367,
+  "total_tokens": 19523,
+  "completion_tokens": 10156,
+  "prompt_tokens_details": {
+   "cached_tokens": 9088,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 9972
+  },
+  "finish_reason": "stop",
+  "request_seconds": 96.69,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"ST1131\",\"CS2100\"],\"4\":[\"CS3230\"],\"5\":[\"CS4243\",\"CS2103T\"],\"6\":[\"CS2102\",\"CS3281\",\"CS3219\"],\"7\":[\"CS3223\",\"CS2105\",\"CS4218\"],\"8\":[\"CS4221\"]},\"reasons\":[\"Total is 48 MC: the 10 required courses plus ST1131 for CS4243 and CS3223 for CS4221.\",\"CS4221 is in sem8, its latest offering, and CS2103T is in sem5, the latest feasible with CS3281 before CS2105.\",\"CS3281 cannot be in sem8 because it must precede CS2105 and sem8 is limited to one module; it is placed in sem6.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "ST1131",
+    "CS2100"
+   ],
+   "4": [
+    "CS3230"
+   ],
+   "5": [
+    "CS4243",
+    "CS2103T"
+   ],
+   "6": [
+    "CS2102",
+    "CS3281",
+    "CS3219"
+   ],
+   "7": [
+    "CS3223",
+    "CS2105",
+    "CS4218"
+   ],
+   "8": [
+    "CS4221"
+   ]
+  },
+  "reasons": [
+   "Total is 48 MC: the 10 required courses plus ST1131 for CS4243 and CS3223 for CS4221.",
+   "CS4221 is in sem8, its latest offering, and CS2103T is in sem5, the latest feasible with CS3281 before CS2105.",
+   "CS3281 cannot be in sem8 because it must precede CS2105 and sem8 is limited to one module; it is placed in sem6."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

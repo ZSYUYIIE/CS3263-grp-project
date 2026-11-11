@@ -1,0 +1,81 @@
+{
+ "id": "q2-S6-028",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 10.26,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2759,
+  "total_tokens": 3904,
+  "completion_tokens": 1145,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 987
+  },
+  "finish_reason": "stop",
+  "request_seconds": 10.26,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":7,\"must_take\":[\"CS2105\",\"CS4222\",\"CS3242\",\"CS3230\"],\"objective\":\"earliest_graduation\",\"early\":[\"CS2105\"],\"late\":[\"CS4222\",\"CS3242\"],\"rules\":[{\"type\":\"in_sem\",\"course\":\"CS3230\",\"sem\":7,\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS2105\",\"b\":\"CS3242\",\"strength\":\"must\"},{\"type\":\"same_sem\",\"a\":\"CS3230\",\"b\":\"CS2105\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS2105\",\"sem\":8,\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "must_take": [
+   "CS2105",
+   "CS4222",
+   "CS3242",
+   "CS3230"
+  ],
+  "objective": "earliest_graduation",
+  "early": [
+   "CS2105"
+  ],
+  "late": [
+   "CS4222",
+   "CS3242"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3230",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2105",
+    "b": "CS3242",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3230",
+    "b": "CS2105",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2105",
+    "sem": 8,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "MISSING_INFO",
+  "missing": [
+   "completed"
+  ],
+  "message": "This cannot be answered yet. Please give: the courses you have already completed (say so if there are none)."
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "id": "q2-S3-212",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 18.99,
+ "usage": {
+  "prompt_tokens": 6819,
+  "total_tokens": 8627,
+  "completion_tokens": 1808,
+  "prompt_tokens_details": {
+   "cached_tokens": 6528,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1683
+  },
+  "finish_reason": "stop",
+  "request_seconds": 18.99,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS2107\"],\"6\":[\"CS2105\"],\"7\":[\"CS4236\"],\"8\":[\"CS2102\",\"CS3219\"]},\"reasons\":[\"CS2107 is added because it is a prerequisite for CS4236 and must be completed earlier.\",\"CS2105 is placed in semester 6, before CS2102, and is not together with CS4236.\",\"CS2102 and CS3219 share semester 8, putting CS3219 as late as possible; total MC is 20.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2107"
+   ],
+   "6": [
+    "CS2105"
+   ],
+   "7": [
+    "CS4236"
+   ],
+   "8": [
+    "CS2102",
+    "CS3219"
+   ]
+  },
+  "reasons": [
+   "CS2107 is added because it is a prerequisite for CS4236 and must be completed earlier.",
+   "CS2105 is placed in semester 6, before CS2102, and is not together with CS4236.",
+   "CS2102 and CS3219 share semester 8, putting CS3219 as late as possible; total MC is 20."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

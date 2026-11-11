@@ -1,0 +1,31 @@
+{
+ "id": "q2-S3-171",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "not a plan",
+ "seconds": 17.9,
+ "usage": {
+  "prompt_tokens": 8227,
+  "total_tokens": 9222,
+  "completion_tokens": 995,
+  "finish_reason": "stop",
+  "request_seconds": 17.9,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"ST2334 prerequisite (MA1505/MA1511/MA1521/MA2002) is not satisfied by any completed or planned course in the available semesters before ST2334.\",\n\"CS2109S prerequisite includes (MA1511 and MA1512) or MA1521 or MA2002 etc. While MA1521 is planned, the other part of the prerequisite (YSC2229 or CS2040S...) is not met until CS2040/CS2040S is taken, which is late. More critically, ST2334 cannot be taken because its prerequisite is not met early enough or at all if MA1521 is taken too late or if the logic for ST2334's prerequisite chain fails.\",\n\"Specifically, ST2334 requires MA1521. MA1521 is in the 'must take' list. If MA1521 is taken in Sem 1, ST2334 can be taken in Sem 2. However, CS2109S requires (YSC2229 or CS2040S...) AND (MA1511+MA1512 or MA1521...). If MA1521 is taken in Sem 1, CS2109S can be taken in Sem 2. But CS2103T requires CS2030 and CS2040. CS2030 requires CS1010. CS2040 requires CS1010. The student has completed NO modules. CS1010 is not in the 'must take' list, but it is a prerequisite for CS2030, CS2040, CS2103T, CS2105, CS2109S, CS3219, CS3230. The student MUST take CS1010 (or equivalent) to satisfy prerequisites for the 'must take' courses. The student did not list CS1010 as a 'must take', but Rule 8 says 'Add a course... ONLY when it is a prerequisite needed by a planned course'. So CS1010 must be added. CS1010 is offered Sem 1 and Sem 2. It must be taken before CS2030/CS2040. CS2030/CS2040 are prerequisites for CS2103T, CS2105, CS2109S, CS3219, CS3230. This creates a long chain. Let's trace: Sem 1: CS1010, MA1521, MA1522, IS1108, ES2660 (5 courses, 20 MC). Sem 2: CS2030, CS2040, ST2334, CS2109S, CS2101 (5 courses, 20 MC). Sem 3: CS2103T, CS2105, CS3219, CS3230 (4 courses, 16 MC). Sem 4: Empty? No, Sem 6 is LOA. Sem 4 and 5 are available. But wait, CS2103T requires CS2030 and CS2040. CS2105 requires CS2040. CS3219 requires CS2103 or CS2103T. CS3230 requires CS2040 and CS1231. CS1231 is not in the 'must take' list but is a prerequisite for CS3230. So CS1231 must be added. CS1231 has no prereqs. It can be taken in Sem 1 or 2. If taken in Sem 1, Sem 1 has 6 courses (24 MC) -> Exceeds 20 MC limit. If taken in Sem 2, Sem 2 has 6 courses (24 MC) -> Exceeds 20 MC limit. Therefore, it is impossible to fit all prerequisites and must-take courses within the 20 MC limit per semester while respecting the 'at least 3 modules' rule (which is easy) and the LOA in Sem 6.\"\n]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "ST2334 prerequisite (MA1505/MA1511/MA1521/MA2002) is not satisfied by any completed or planned course in the available semesters before ST2334.",
+   "CS2109S prerequisite includes (MA1511 and MA1512) or MA1521 or MA2002 etc. While MA1521 is planned, the other part of the prerequisite (YSC2229 or CS2040S...) is not met until CS2040/CS2040S is taken, which is late. More critically, ST2334 cannot be taken because its prerequisite is not met early enough or at all if MA1521 is taken too late or if the logic for ST2334's prerequisite chain fails.",
+   "Specifically, ST2334 requires MA1521. MA1521 is in the 'must take' list. If MA1521 is taken in Sem 1, ST2334 can be taken in Sem 2. However, CS2109S requires (YSC2229 or CS2040S...) AND (MA1511+MA1512 or MA1521...). If MA1521 is taken in Sem 1, CS2109S can be taken in Sem 2. But CS2103T requires CS2030 and CS2040. CS2030 requires CS1010. CS2040 requires CS1010. The student has completed NO modules. CS1010 is not in the 'must take' list, but it is a prerequisite for CS2030, CS2040, CS2103T, CS2105, CS2109S, CS3219, CS3230. The student MUST take CS1010 (or equivalent) to satisfy prerequisites for the 'must take' courses. The student did not list CS1010 as a 'must take', but Rule 8 says 'Add a course... ONLY when it is a prerequisite needed by a planned course'. So CS1010 must be added. CS1010 is offered Sem 1 and Sem 2. It must be taken before CS2030/CS2040. CS2030/CS2040 are prerequisites for CS2103T, CS2105, CS2109S, CS3219, CS3230. This creates a long chain. Let's trace: Sem 1: CS1010, MA1521, MA1522, IS1108, ES2660 (5 courses, 20 MC). Sem 2: CS2030, CS2040, ST2334, CS2109S, CS2101 (5 courses, 20 MC). Sem 3: CS2103T, CS2105, CS3219, CS3230 (4 courses, 16 MC). Sem 4: Empty? No, Sem 6 is LOA. Sem 4 and 5 are available. But wait, CS2103T requires CS2030 and CS2040. CS2105 requires CS2040. CS3219 requires CS2103 or CS2103T. CS3230 requires CS2040 and CS1231. CS1231 is not in the 'must take' list but is a prerequisite for CS3230. So CS1231 must be added. CS1231 has no prereqs. It can be taken in Sem 1 or 2. If taken in Sem 1, Sem 1 has 6 courses (24 MC) -> Exceeds 20 MC limit. If taken in Sem 2, Sem 2 has 6 courses (24 MC) -> Exceeds 20 MC limit. Therefore, it is impossible to fit all prerequisites and must-take courses within the 20 MC limit per semester while respecting the 'at least 3 modules' rule (which is easy) and the LOA in Sem 6."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

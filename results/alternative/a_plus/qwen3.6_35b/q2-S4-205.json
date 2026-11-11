@@ -1,0 +1,166 @@
+{
+ "id": "q2-S4-205",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 2,
+ "end": "valid",
+ "seconds": 20.22,
+ "usage": {
+  "prompt_tokens": 32835,
+  "total_tokens": 34000,
+  "completion_tokens": 1165,
+  "finish_reason": "stop",
+  "request_seconds": 20.22,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2102\",\n      \"CS2105\"\n    ],\n    \"6\": [\n      \"CS3223\"\n    ],\n    \"7\": [\n      \"CS4226\",\n      \"CS2107\"\n    ],\n    \"8\": [\n      \"CS3235\"\n    ]\n  },\n  \"reasons\": [\n    \"CS4226 is offered only in Sem 1, so it must be taken in Sem 7 (Y3S1) or later, not Sem 6.\",\n    \"CS3223 requires CS2102 and CS2040S; CS2102 is taken in Sem 5, allowing CS3223 in Sem 6.\",\n    \"CS3235 requires CS2107, CS2105, and CS2106; CS2107 is taken in Sem 7 to satisfy the prerequisite for Sem 8.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS2105"
+   ],
+   "6": [
+    "CS3223"
+   ],
+   "7": [
+    "CS4226",
+    "CS2107"
+   ],
+   "8": [
+    "CS3235"
+   ]
+  },
+  "reasons": [
+   "CS4226 is offered only in Sem 1, so it must be taken in Sem 7 (Y3S1) or later, not Sem 6.",
+   "CS3223 requires CS2102 and CS2040S; CS2102 is taken in Sem 5, allowing CS3223 in Sem 6.",
+   "CS3235 requires CS2107, CS2105, and CS2106; CS2107 is taken in Sem 7 to satisfy the prerequisite for Sem 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"5\": [\"CS3223\", \"CS2105\"], \"6\": [\"CS2102\"], \"7\": [\"CS4226\"], \"8\": [\"CS3235\"]}, \"reasons\": [\"Prerequisites for CS3223 (CS2040S, CS2102) are not fully met in Sem 5; CS2102 is planned in Sem 6, so CS3223 cannot be in Sem 5. CS3223 requires CS2102. CS2102 requires CS2040S (completed) and CS2030S (completed) or CS2040S (completed). Wait, CS2102 prereq is (CS1231/MA...) AND (CS2030S/CS2040S...). CS2102 is eligible in Sem 5. CS3223 prereq is (CS2040S...) AND (CS2102...). So CS3223 needs CS2102. CS2102 needs CS2040S (done) and CS2030S (done). So CS2102 is eligible in Sem 5. CS3223 is eligible in Sem 6. CS4226 needs CS2105 (done in Sem 5) and EE2012A/EE2012/MA2216/ST2131/ST2334/MA2116/MA2116T. Student has ST2334. So CS4226 is eligible in Sem 6. CS3235 needs CS2105, CS2106, CS2107. CS2105 (Sem 5), CS2106 (done), CS2107 (prereq CS1010... done). CS3235 eligible Sem 6. But student wants CS3235 in Sem 8. CS2102 late as possible. CS3223 early as possible. CS3223 earliest is Sem 6. CS2102 can be Sem 5, 6, 7. If CS2102 in Sem 7, CS3223 in Sem 8? No, CS3223 early. So CS2102 in Sem 5 or 6. If CS2102 in Sem 5, CS3223 in Sem 6. CS4226 in Sem 6 or 7. CS3235 in Sem 8. This works.\"}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS3223",
+      "CS2105"
+     ],
+     "6": [
+      "CS2102"
+     ],
+     "7": [
+      "CS4226"
+     ],
+     "8": [
+      "CS3235"
+     ]
+    }
+   },
+   "repair": "cut_reasons",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10561,
+    "total_tokens": 11165,
+    "completion_tokens": 604,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 11.6,
+    "attempts": 1
+   },
+   "seconds": 11.6,
+   "violations": [
+    "R4 CS3223 in semester 5: prerequisite not met ((CS2040S or CS2040 or CS2040C or CS2040DE or CS2040HS) and (CS2102 or IT2002))",
+    "R4 CS3235 in semester 8: prerequisite not met ((CS2105 or EE3204 or EE4204) and (CS2106 or YSC3217 or CG2271) and CS2107)"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"5\": [\"CS2102\", \"CS2105\"], \"6\": [\"CS3223\", \"CS4226\"], \"7\": [\"CS2107\"], \"8\": [\"CS3235\"]}, \"reasons\": [\"CS2102 and CS2105 are taken in Sem 5 to satisfy prerequisites for later courses. CS3223 requires CS2102, so it is planned in Sem 6. CS4226 requires ST2334 (completed) and CS2105 (Sem 5), so it is eligible in Sem 6. CS2107 is taken in Sem 7 as it has no prerequisites but is needed for CS3235. CS3235 requires CS2105, CS2106, and CS2107; all are completed by Sem 8, satisfying the constraint to take it in Sem 8. CS2102 is taken as early as possible (Sem 5) to allow CS3223 in Sem 6, which is the earliest possible for CS3223. The wish for CS2102 'as late as possible' conflicts with CS3223 'as early as possible'; prioritizing CS3223's early placement forces CS2102 to Sem 5.\"}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2102",
+      "CS2105"
+     ],
+     "6": [
+      "CS3223",
+      "CS4226"
+     ],
+     "7": [
+      "CS2107"
+     ],
+     "8": [
+      "CS3235"
+     ]
+    }
+   },
+   "repair": "cut_reasons",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11340,
+    "total_tokens": 11648,
+    "completion_tokens": 308,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.76,
+    "attempts": 1
+   },
+   "seconds": 4.76,
+   "violations": [
+    "R3 CS4226 not offered in Sem 2 (semester 6)"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2102\",\n      \"CS2105\"\n    ],\n    \"6\": [\n      \"CS3223\"\n    ],\n    \"7\": [\n      \"CS4226\",\n      \"CS2107\"\n    ],\n    \"8\": [\n      \"CS3235\"\n    ]\n  },\n  \"reasons\": [\n    \"CS4226 is offered only in Sem 1, so it must be taken in Sem 7 (Y3S1) or later, not Sem 6.\",\n    \"CS3223 requires CS2102 and CS2040S; CS2102 is taken in Sem 5, allowing CS3223 in Sem 6.\",\n    \"CS3235 requires CS2107, CS2105, and CS2106; CS2107 is taken in Sem 7 to satisfy the prerequisite for Sem 8.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2102",
+      "CS2105"
+     ],
+     "6": [
+      "CS3223"
+     ],
+     "7": [
+      "CS4226",
+      "CS2107"
+     ],
+     "8": [
+      "CS3235"
+     ]
+    },
+    "reasons": [
+     "CS4226 is offered only in Sem 1, so it must be taken in Sem 7 (Y3S1) or later, not Sem 6.",
+     "CS3223 requires CS2102 and CS2040S; CS2102 is taken in Sem 5, allowing CS3223 in Sem 6.",
+     "CS3235 requires CS2107, CS2105, and CS2106; CS2107 is taken in Sem 7 to satisfy the prerequisite for Sem 8."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10934,
+    "total_tokens": 11187,
+    "completion_tokens": 253,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.86,
+    "attempts": 1
+   },
+   "seconds": 3.86,
+   "violations": []
+  }
+ ]
+}

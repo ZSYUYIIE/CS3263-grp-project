@@ -1,0 +1,50 @@
+{
+ "id": "q2-S3-266",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 2,
+ "end": "valid",
+ "seconds": 10.82,
+ "usage": {
+  "prompt_tokens": 27556,
+  "total_tokens": 28169,
+  "completion_tokens": 613,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 10.82,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2109S\",\n      \"ST2334\",\n      \"CS2105\"\n    ],\n    \"6\": [\n      \"CS3230\",\n      \"CS3234\"\n    ],\n    \"7\": [\n      \"CS3103\",\n      \"CS2102\",\n      \"CS4226\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3103 is offered only in Sem 1, so it must be placed in Sem 7.\",\n    \"CS2109S is placed in Sem 5 as requested, satisfying prerequisites for CS3234.\",\n    \"CS4226 is placed in Sem 7, the latest possible semester, as requested.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2109S",
+    "ST2334",
+    "CS2105"
+   ],
+   "6": [
+    "CS3230",
+    "CS3234"
+   ],
+   "7": [
+    "CS3103",
+    "CS2102",
+    "CS4226"
+   ]
+  },
+  "reasons": [
+   "CS3103 is offered only in Sem 1, so it must be placed in Sem 7.",
+   "CS2109S is placed in Sem 5 as requested, satisfying prerequisites for CS3234.",
+   "CS4226 is placed in Sem 7, the latest possible semester, as requested."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,54 @@
+{
+ "id": "q2-S5-009",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 46.33,
+ "usage": {
+  "prompt_tokens": 7801,
+  "total_tokens": 12630,
+  "completion_tokens": 4829,
+  "prompt_tokens_details": {
+   "cached_tokens": 7552,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4665
+  },
+  "finish_reason": "stop",
+  "request_seconds": 46.33,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CS2220\",\"CG2271\",\"CS2105\",\"CS2107\"],\"4\":[\"CS3230\",\"CS4330\"],\"5\":[\"CS3241\"],\"8\":[\"CS3235\"]},\"reasons\":[\"CS2220 in semester 3 is the prerequisite for CS4330; CG2271, CS2105 and CS2107 are prerequisites for CS3235.\",\"CS3230 and CS4330 are together in semester 4; CS3241 is in semester 5; CS3235 is in semester 8.\",\"CG2271 avoids the extra CS2100 prerequisite, giving the fewest total credits; CS3241 before CS3230 is impossible under the fixed semesters.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2220",
+    "CG2271",
+    "CS2105",
+    "CS2107"
+   ],
+   "4": [
+    "CS3230",
+    "CS4330"
+   ],
+   "5": [
+    "CS3241"
+   ],
+   "8": [
+    "CS3235"
+   ]
+  },
+  "reasons": [
+   "CS2220 in semester 3 is the prerequisite for CS4330; CG2271, CS2105 and CS2107 are prerequisites for CS3235.",
+   "CS3230 and CS4330 are together in semester 4; CS3241 is in semester 5; CS3235 is in semester 8.",
+   "CG2271 avoids the extra CS2100 prerequisite, giving the fewest total credits; CS3241 before CS3230 is impossible under the fixed semesters."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

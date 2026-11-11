@@ -1,0 +1,46 @@
+{
+ "id": "q2-S4-264",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 7.35,
+ "usage": {
+  "prompt_tokens": 8805,
+  "total_tokens": 9157,
+  "completion_tokens": 352,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 7.35,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"3\": [\"CS4234\", \"CS2101\"], \"4\": [\"CS3230\", \"CS2109S\"], \"5\": [\"CS4225\"], \"6\": [\"CS4236\"]}, \"reasons\": [\"Prerequisites for CS4236 (CS2107) are not met; CS2107 is not in the required list and has no prerequisites listed that are completed, making CS4236 ineligible.\", \"CS2109S requires MA1511/MA1512 or MA1521/MA2002 etc. MA1521 is completed. CS2040S is completed. Prerequisites met.\", \"CS4234 requires MA2001/MA1101R etc. and YSC3203/CS3230. CS3230 is planned in Sem 4, so CS4234 cannot be in Sem 3 as CS3230 is a prerequisite. This creates a conflict with the hard constraint 'CS4234 has to be in semester 3'.\", \"CS4225 requires CS2102 or IT2002. Neither is completed or planned. CS2102 requires CS2030S (completed) and CS1231/MA1100 etc. (CS1231S completed). So CS2102 is eligible. CS2102 must be taken before CS4225.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS4234",
+    "CS2101"
+   ],
+   "4": [
+    "CS3230",
+    "CS2109S"
+   ],
+   "5": [
+    "CS4225"
+   ],
+   "6": [
+    "CS4236"
+   ]
+  },
+  "reasons": [
+   "Prerequisites for CS4236 (CS2107) are not met; CS2107 is not in the required list and has no prerequisites listed that are completed, making CS4236 ineligible.",
+   "CS2109S requires MA1511/MA1512 or MA1521/MA2002 etc. MA1521 is completed. CS2040S is completed. Prerequisites met.",
+   "CS4234 requires MA2001/MA1101R etc. and YSC3203/CS3230. CS3230 is planned in Sem 4, so CS4234 cannot be in Sem 3 as CS3230 is a prerequisite. This creates a conflict with the hard constraint 'CS4234 has to be in semester 3'.",
+   "CS4225 requires CS2102 or IT2002. Neither is completed or planned. CS2102 requires CS2030S (completed) and CS1231/MA1100 etc. (CS1231S completed). So CS2102 is eligible. CS2102 must be taken before CS4225."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

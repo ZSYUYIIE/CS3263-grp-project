@@ -1,0 +1,39 @@
+{
+ "id": "q2-S4-205",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 11.6,
+ "usage": {
+  "prompt_tokens": 10561,
+  "total_tokens": 11165,
+  "completion_tokens": 604,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 11.6,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"5\": [\"CS3223\", \"CS2105\"], \"6\": [\"CS2102\"], \"7\": [\"CS4226\"], \"8\": [\"CS3235\"]}, \"reasons\": [\"Prerequisites for CS3223 (CS2040S, CS2102) are not fully met in Sem 5; CS2102 is planned in Sem 6, so CS3223 cannot be in Sem 5. CS3223 requires CS2102. CS2102 requires CS2040S (completed) and CS2030S (completed) or CS2040S (completed). Wait, CS2102 prereq is (CS1231/MA...) AND (CS2030S/CS2040S...). CS2102 is eligible in Sem 5. CS3223 prereq is (CS2040S...) AND (CS2102...). So CS3223 needs CS2102. CS2102 needs CS2040S (done) and CS2030S (done). So CS2102 is eligible in Sem 5. CS3223 is eligible in Sem 6. CS4226 needs CS2105 (done in Sem 5) and EE2012A/EE2012/MA2216/ST2131/ST2334/MA2116/MA2116T. Student has ST2334. So CS4226 is eligible in Sem 6. CS3235 needs CS2105, CS2106, CS2107. CS2105 (Sem 5), CS2106 (done), CS2107 (prereq CS1010... done). CS3235 eligible Sem 6. But student wants CS3235 in Sem 8. CS2102 late as possible. CS3223 early as possible. CS3223 earliest is Sem 6. CS2102 can be Sem 5, 6, 7. If CS2102 in Sem 7, CS3223 in Sem 8? No, CS3223 early. So CS2102 in Sem 5 or 6. If CS2102 in Sem 5, CS3223 in Sem 6. CS4226 in Sem 6 or 7. CS3235 in Sem 8. This works.\"}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS3223",
+    "CS2105"
+   ],
+   "6": [
+    "CS2102"
+   ],
+   "7": [
+    "CS4226"
+   ],
+   "8": [
+    "CS3235"
+   ]
+  }
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}
