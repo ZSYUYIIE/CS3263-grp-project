@@ -4,7 +4,7 @@
 11 hard rules of docs/SOLVER_GUIDE.md section 4: offering term, prerequisites (strictly earlier),
 corequisites (same or earlier), exclusions, MC caps, minimum MC, must-rules, no padding and ATAP.
 With `explain=True` each rule group is switched by an assumption literal (`guards`) so that
-`explain.py` can find a minimal conflict. Optimisation lives in `objectives.py`.
+`explain.py` can find a minimal conflict. Optimisation lives in `q2.py`.
 """
 from __future__ import annotations
 

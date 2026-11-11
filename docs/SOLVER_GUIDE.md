@@ -1,7 +1,7 @@
 # Solver guide (M2)
 
 This guide describes what the solver accepts, what it returns, and exactly what its answers mean. It is written for
-M3 (instance generator, pipelines A0/A/B/C, evaluation harness and the independent checker) and for any AI assistant
+M3 (instance generators, pipelines A and B, evaluation harness and the independent checker) and for any AI assistant
 helping M3. Every JSON example below was produced by running the solver, not typed by hand.
 
 The companion file [`docs/TRANSLATION_GUIDE.md`](TRANSLATION_GUIDE.md) covers pipeline B's natural-language to JSON
@@ -864,7 +864,7 @@ semester 5. The `CS3219 in semester 5` rule and the `CS2106` preference are not 
 ## 9. The four backtracking variants
 
 `solver/backtrack.py` is our own CSP solver, written independently of the CP-SAT model (it does not import
-`model.py` or `objectives.py`). It solves Q2 only; a Q1 spec is passed straight to the Q1 code with all counters at zero.
+`model.py` or `q2.py`). It solves Q2 only; a Q1 spec is passed straight to the Q1 code with all counters at zero.
 It exists for the solver ablation (plain backtracking vs MRV vs forward checking vs MAC) and for cross-checking CP-SAT.
 
 The variants are **cumulative**. Each one includes the techniques of the one before it:
@@ -946,7 +946,7 @@ Beyond the analyses already in the project plan, these are available from the so
    been in `unsupported` but was dropped, or a field of the other question (`warnings`).
 4. **Does a translation error change the answer?** Run the solver on the translated spec and on the gold spec and compare
    the two answers. Many spec differences leave the answer unchanged; this separates harmless from harmful errors.
-5. **Optimality classes** from section 6 for pipelines A0, A and C, by objective, and the number of added courses the LLM
+5. **Optimality classes** from section 6 for pipeline A, by objective, and the number of added courses the LLM
    plans compared with `added_prerequisites`.
 6. **Preference satisfaction rate** and the share of plans that meet every preference.
 7. **Solver ablation** with the counters in section 9: median nodes, checks and seconds per variant, the share of

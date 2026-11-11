@@ -27,12 +27,26 @@ This file covers what you need to avoid mistakes.
    with a reason (`m1_data/scope.py`, `docs/DATA_SCHEMA.md#scope`). Never answer "the CS part
    anyway".
 
+7. **The instance files are generated; never edit them by hand.** `instances/instances.json` comes from
+   `python -m instances.generate`, and `q1_400.json` / `q1_gating.json` from `python -m instances.generate_q1`.
+   Their gold answers are the solver's answers at generation time, so after any change to the spec format
+   (`solver/spec.py`) or to the solver's rules, regenerate them and run the tests. Regenerating can change the
+   request texts: results in `results/` made from an older file must be rerun, not mixed with new ones.
+8. **A change to a hard rule is made in three places:** `solver/model.py`, `solver/backtrack.py` and
+   `eval/checker.py` implement the rules independently on purpose. Do not make one import another. Update the
+   two prompts (`pipelines/prompt_a.py`, `pipelines/prompt_b.txt`) and the guides in the same change.
+9. **Only pipelines A and B exist.** A: the LLM answers directly. B: the LLM writes a spec and the solver
+   answers it. Do not describe other pipelines in the docs unless they are added to `pipelines/`.
+
 ## Finding things fast
 
 | Need | Where |
 |---|---|
 | One course, readable | `grep -n -A 12 "^### CS3263" data/processed/AY2026-2027/COURSES.md` |
 | One course, structured | `catalog.json → courses → "CS3263"` or `Catalog.load()["CS3263"]` |
+| Entry point for one spec | `solver/run.py` → `run(spec, catalog)`; Q1 in `solver/q1.py`, Q2 in `solver/q2.py` (model in `solver/model.py`) |
+| The instance sets | `instances/instances.json` (115 mixed), `q1_400.json`, `q1_gating.json`; counts in `instances/SUMMARY.md`, `Q1_SUMMARY.md` |
+| Run or grade a pipeline | `pipelines/README.md` |
 | Is X allowed now? (T1) | `Catalog.can_take(code, completed, semester)` |
 | Is X ruled out forever? | `Catalog.reachable(code, completed)` |
 | Courses that need X | `courses[X]["unlocks"]` |

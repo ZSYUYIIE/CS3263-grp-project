@@ -9,7 +9,7 @@ Scope: BComp (CS) Hons, NUSMods AY2026/27 data.
 |---|---|---|
 | **M1** (leader) | Data pipeline: prerequisite and exclusion parsing, coordination | `m1_data/`, `data/` (**done, see below**) |
 | M2 | CP-SAT model, own CSP solver | `solver/`, `experiments/` (**done, see below**) |
-| M3 | Instance generator and perturbations, pipelines A0/A/B/C, evaluation harness | `instances/`, `pipelines/`, `eval/` (to add) |
+| M3 | Instance generators, pipelines A and B, independent checker and grader | `instances/`, `pipelines/`, `eval/` (**done, see below**) |
 
 Key dates: data parsed and spot-checked by **Thu 29 Oct**, feasible T2 results by
 **Wed 4 Nov** (fallback point), presentation in the **week of 9 Nov** (15 min + 5 min Q&A,
@@ -202,9 +202,9 @@ conflicting rules.
 | `solver/run.py` | entry point: `run(spec, catalog)`; shared `prepare()` front half |
 | `solver/q1.py` | Q1 eligibility answer |
 | `solver/model.py` | CP-SAT model (variables and hard rules) |
-| `solver/objectives.py` | Q2 staged optimisation and answer building |
+| `solver/q2.py` | Q2 staged optimisation and answer building |
 | `solver/explain.py` | minimal conflicting rules for a `NO_PLAN` |
-| `solver/backtrack.py` | own backtracking solver with four variants (below); independent of `model.py` and `objectives.py` |
+| `solver/backtrack.py` | own backtracking solver with four variants (below); independent of `model.py` and `q2.py` |
 | `experiments/run_ablation.py` | ablation runner (CP-SAT against the four variants) |
 | `tests/test_solver.py`, `test_q2.py`, `test_explain.py`, `test_backtrack.py`, `test_ablation.py` | tests |
 
@@ -234,7 +234,8 @@ answer, stats = solve_with_stats(spec, variant="mac", time_limit=60)
 `nodes` counts assignment attempts over all stages and `backtracks` counts rejected assignments. A run that
 reaches the time limit returns status `TIMED_OUT` and `timed_out=True` (CP-SAT has no such status).
 
-Ablation over a JSON list of `{"id": ..., "spec": {...}}`:
+Ablation over a JSON list of `{"id": ..., "spec": {...}}`. The instance files keep the spec under `gold_spec`, so
+write such a list from them first (keep only the `"query": "plan"` rows and rename the key):
 
 ```bash
 python -m experiments.run_ablation instances.json --limit 30 --out rows.csv --time-limit 60
@@ -244,19 +245,92 @@ It writes one CSV row per instance and engine (`id, engine, status, last_semeste
 backtracks, checks, timed_out`) and prints, per engine, instances finished, median seconds, median nodes and
 agreement with CP-SAT over the finished instances.
 
+## Instances, pipelines and evaluation (M3)
+
+The experiment gives the same natural-language request to two pipelines and grades both answers against a gold
+answer:
+
+- **Pipeline A** (`pipelines/run_a.py`): the LLM answers the request itself. It is given the planning rules and the
+  catalogue records of the courses involved, and no tool.
+- **Pipeline B** (`pipelines/run_b.py`): the LLM only translates the request into a spec; the solver answers the spec.
+
+Only these two pipelines exist in the repo.
+
+### Instance sets
+
+Every instance is built spec-first: the generator writes a gold spec, renders the request text from it, and stores
+the solver's answer to that spec as the gold answer. An instance is kept only if the answer has the status its kind
+was built to have.
+
+| File | Instances | Made by | What it is for |
+|---|---|---|---|
+| `instances/instances.json` | 115 | `python -m instances.generate` | the mixed set: 30 Q1, 45 feasible Q2 (loose and tight), 24 infeasible Q2 in six kinds, 7 missing-info, 9 out-of-scope ([`SUMMARY.md`](instances/SUMMARY.md)) |
+| `instances/q1_400.json` | 400 | `python -m instances.generate_q1` | Q1 in depth: three complexity levels, three wording styles and paired twins ([`Q1_SUMMARY.md`](instances/Q1_SUMMARY.md)) |
+| `instances/q1_gating.json` | 80 | the same command | 40 pairs drawn from the 400, for a quick first run |
+
+The files are generated with seed 3263 and are reproducible: the same command writes the same bytes. **Do not edit
+them by hand, and regenerate them after any change to the spec format or the solver's rules**, because the gold
+answers are the solver's answers at the time of generation. Regenerating can change the request texts, so results
+obtained from an older file cannot be mixed with results from a newer one.
+
+### Run and grade
+
+Both pipelines call any OpenAI-compatible chat API; the settings come from `LLM_BASE_URL`, `LLM_API_KEY` and
+`LLM_MODEL`, so no key is written to the repo. One fresh call per instance, temperature 0; a stopped run resumes.
+
+```bash
+python -m pipelines.run_a --mock gold      # dry run without an API: every answer is the gold answer
+python -m pipelines.run_b --mock gold      # dry run: every spec is the gold spec, so only the solver is tested
+python -m pipelines.run_a                  # real run -> results/A/<model>/<instance id>.json
+python -m pipelines.run_b                  # real run -> results/B/<model>/<instance id>.json
+python -m eval.grade results/A/<model> results/B/<model>     # graded.csv, SUMMARY.md per folder, and COMPARE.md
+```
+
+Add `--instances instances/q1_400.json` to the three commands to use another set. Details, including the prompt
+ablation: [`pipelines/README.md`](pipelines/README.md).
+
+### How an answer is graded
+
+`eval/checker.py` implements the hard rules (1 to 11) of [`docs/SOLVER_GUIDE.md`](docs/SOLVER_GUIDE.md) section 4 straight
+from `catalog.json`. It does not import the solver or `m1_data.catalog`, so a bug on one side shows up as a
+disagreement. A plan of the wrong shape (not `{semester: [codes]}`) is an invalid
+answer, not an error.
+
+`eval/grade.py` puts each answer in one class. For a request that has a plan: **invalid** (breaks a hard rule), then
+**objective gap**, **extra courses**, **preference gap**, otherwise **optimal**; answering `NO_PLAN` is an
+**over-refusal**. For a request with no plan: **correct refusal**, or **invented plan**. The two headline metrics are
+valid-answer accuracy (over every instance) and optimal-plan accuracy (over the requests that have a plan).
+
+### Files
+
+| File | Role |
+|---|---|
+| `instances/generate.py`, `generate_q1.py` | instance generators (spec first, then text, then gold answer) |
+| `pipelines/prompt_a.py`, `run_a.py` | pipeline A prompt (rules + selected course records) and runner |
+| `pipelines/prompt_b.txt`, `run_b.py` | pipeline B translation prompt and runner |
+| `pipelines/ablation/` | prompt ablation 1 for both pipelines (semester numbering not explained) |
+| `eval/checker.py` | independent plan checker |
+| `eval/grade.py` | classes, metrics, result tables and tests of significance |
+| `tests/test_instances.py`, `test_checker.py` | the committed mixed set matches its kinds; every gold plan is valid and grades as optimal |
+
 ## Repository layout
 
 ```
 m1_data/            data pipeline package (fetch, rules, resolve, build, check, catalog,
                     graph, diagrams, scope)
-solver/             spec, run, q1, model, objectives, explain, backtrack (M2)
+solver/             spec, run, q1, q2, model, explain, backtrack (M2)
 experiments/        run_ablation.py (M2)
+instances/          instance generators and the generated instance sets (M3)
+pipelines/          pipeline A and B prompts and runners, prompt ablation (M3)
+eval/               independent checker and grader (M3)
+results/            written by the pipeline runners: results/<pipeline>/<model>/
 examples/           example spec JSON files
 data/config/        scope.json, student_context.json
 data/raw/           NUSMods responses, kept so results are reproducible (data drifts year to year)
 data/processed/     generated outputs (do not edit)
 data/manual/        overrides.json, SPOT_CHECK.md
-docs/               DATA_SCHEMA.md, SOLVER_GUIDE.md, TRANSLATION_GUIDE.md, diagrams/ (hand-laid overviews)
+docs/               CODE_GUIDE.md, FORMULATION.md, DATA_SCHEMA.md, SOLVER_GUIDE.md, TRANSLATION_GUIDE.md,
+                    diagrams/ (hand-laid overviews)
 tests/              pytest
 AGENTS.md           orientation for AI coding agents working in this repo
 ```

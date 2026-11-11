@@ -1,8 +1,8 @@
 """Our own CSP solver for Q2: branch-and-bound backtracking, for the ablation.
 
-Independent of the CP-SAT model (it does not import `model.py` or `objectives.py`). Four
+Independent of the CP-SAT model (it does not import `model.py` or `q2.py`). Four
 cumulative variants: plain -> mrv (most constrained course first) -> fc (forward checking) ->
-mac (repeat pruning to a fixpoint). Searches the same stages as `objectives.py`, so it proves
+mac (repeat pruning to a fixpoint). Searches the same stages as `q2.py`, so it proves
 the same optimum. Entry point: `solve_with_stats(spec, catalog, variant, time_limit)`.
 See docs/SOLVER_GUIDE.md section 9.
 """

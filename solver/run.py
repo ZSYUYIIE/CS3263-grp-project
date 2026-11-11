@@ -4,7 +4,7 @@
     run({"query": "eligible", "target": "CS3263", "completed": [...]})
 
 Order of checks (see docs/CODE_GUIDE.md, section 2): validate the spec, then scope, then missing
-information, then hand Q1 to `q1.answer` and Q2 to `objectives.answer`.
+information, then hand Q1 to `q1.answer` and Q2 to `q2.answer`.
 CLI: `python -m solver.run path/to/spec.json`.
 """
 from __future__ import annotations
@@ -14,7 +14,7 @@ import sys
 
 from m1_data.catalog import Catalog
 from m1_data.scope import OUT_OF_SCOPE_MESSAGE, ScopeResult, check_scope
-from solver import objectives, q1
+from solver import q1, q2
 from solver.spec import validate
 
 
@@ -63,7 +63,7 @@ def run(spec, catalog=None) -> dict:
     if cleaned["query"] == "eligible":
         result = q1.answer(cleaned, catalog)
     else:
-        result = objectives.answer(cleaned, catalog)
+        result = q2.answer(cleaned, catalog)
     if warnings:
         result["warnings"] = warnings
     return result
