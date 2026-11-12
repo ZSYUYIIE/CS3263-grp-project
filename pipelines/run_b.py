@@ -22,6 +22,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 from m1_data.catalog import Catalog
+from pipelines.config import load_env
 from pipelines.run_a import DEFAULT_MAX_TOKENS, call_api, parse_reply_how
 from solver.run import run
 from solver.spec import validate
@@ -44,6 +45,7 @@ def main():
     ap.add_argument("--max-tokens", type=int, default=DEFAULT_MAX_TOKENS)
     ap.add_argument("--mock", choices=["gold"], help="use the gold spec instead of a model, to test the solver and the grader")
     a = ap.parse_args()
+    load_env()
 
     model = "mock-gold" if a.mock else os.environ.get("LLM_MODEL")
     base, key = os.environ.get("LLM_BASE_URL"), os.environ.get("LLM_API_KEY")

@@ -1,6 +1,6 @@
 """Run pipeline A over the instance set with any OpenAI-compatible chat API (Qwen, GLM, SoC-hosted models, ...).
 
-Settings come from environment variables, so no key is ever written to the repo:
+Settings come from the project-root .env or environment variables (which take priority):
     LLM_BASE_URL   e.g. https://dashscope-intl.aliyuncs.com/compatible-mode/v1   (Qwen)
                         https://open.bigmodel.cn/api/paas/v4                       (GLM)
     LLM_API_KEY    your key
@@ -26,6 +26,7 @@ import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
+from pipelines.config import load_env
 from pipelines.prompt_a import build_messages
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -147,6 +148,7 @@ def main():
     ap.add_argument("--max-tokens", type=int, default=DEFAULT_MAX_TOKENS)
     ap.add_argument("--mock", choices=["gold"], help="answer without an API, for testing the harness")
     a = ap.parse_args()
+    load_env()
 
     model = "mock-gold" if a.mock else os.environ.get("LLM_MODEL")
     base, key = os.environ.get("LLM_BASE_URL"), os.environ.get("LLM_API_KEY")

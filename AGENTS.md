@@ -38,6 +38,13 @@ This file covers what you need to avoid mistakes.
 9. **Only pipelines A and B exist.** A: the LLM answers directly. B: the LLM writes a spec and the solver
    answers it. Do not describe other pipelines in the docs unless they are added to `pipelines/`.
 
+## LLM configuration
+
+All four pipeline CLI runners call `pipelines.config.load_env()` before reading settings.
+It loads only the project-root `.env` using `python-dotenv`, preserving existing environment
+variables. Keep `.env` Git-ignored and use `.env.example` for placeholder configuration.
+Update both `pyproject.toml` and `requirements-dev.txt` when adding runtime dependencies.
+
 ## Finding things fast
 
 | Need | Where |

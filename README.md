@@ -275,8 +275,10 @@ obtained from an older file cannot be mixed with results from a newer one.
 
 ### Run and grade
 
-Both pipelines call any OpenAI-compatible chat API; the settings come from `LLM_BASE_URL`, `LLM_API_KEY` and
-`LLM_MODEL`, so no key is written to the repo. One fresh call per instance, temperature 0; a stopped run resumes.
+Both pipelines call any OpenAI-compatible chat API. Copy `.env.example` to `.env` and set
+`LLM_BASE_URL`, `LLM_API_KEY` and `LLM_MODEL` there. The runners load the project-root `.env`
+automatically, with existing environment variables taking priority. `.env` is Git-ignored.
+One fresh call per instance, temperature 0; a stopped run resumes.
 
 ```bash
 python -m pipelines.run_a --mock gold      # dry run without an API: every answer is the gold answer

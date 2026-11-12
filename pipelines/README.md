@@ -7,14 +7,21 @@ Two pipelines answer the same instances, and `eval.grade` grades both:
 
 ## Pipeline A: the LLM answers directly
 
-1. Set the model (any OpenAI-compatible API; the key stays in your shell, never in the repo):
+1. Install dependencies and create your local configuration from the project root:
 
    ```bash
-   export LLM_BASE_URL=https://dashscope-intl.aliyuncs.com/compatible-mode/v1   # Qwen; GLM: https://open.bigmodel.cn/api/paas/v4
-   export LLM_API_KEY=...
-   export LLM_MODEL=qwen3-max                                                   # or glm-4.6
+   python -m pip install -r requirements-dev.txt
+   cp .env.example .env
    ```
-   (PowerShell: `$env:LLM_API_KEY="..."`.)
+
+   Edit `.env` to set `LLM_BASE_URL`, `LLM_API_KEY` and `LLM_MODEL` for your
+   OpenAI-compatible provider. All four runners (A, B and both ablations) automatically
+   load this project-root file on startup. No `source` command is needed. Restart the
+   command after editing the file. `.env` is Git-ignored and must not be committed.
+
+   Existing environment variables take priority over `.env`, so shell exports and CI
+   configuration still work. If `.env` is absent, the runners use the environment as
+   before. Mock runs do not require API credentials.
 
 2. Try 5 instances first, then run everything (it resumes if stopped):
 
