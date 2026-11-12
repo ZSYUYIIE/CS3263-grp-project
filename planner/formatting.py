@@ -18,6 +18,7 @@ HEADLINES = {
     "ELIGIBLE": "Yes, you can take {target}",
     "NOT_ELIGIBLE": "No, you cannot take {target} yet",
     "NEVER_ELIGIBLE": "No, you cannot take {target}",
+    "ALREADY_COMPLETED": "You have already completed {target}",
     "PLAN": "Here is your plan",
     "NO_PLAN": "No plan fits your request",
     "OUT_OF_SCOPE": "I can't help with this request",
@@ -135,11 +136,18 @@ def plan_lines(answer, catalog):
     return lines
 
 
-def format_answer(answer, catalog=None):
-    """Lead with a plain-language headline, then every solver explanation verbatim."""
+def format_answer(answer, catalog=None, completed=()):
+    """Lead with a plain-language headline, then every solver explanation verbatim.
+
+    `completed` is the student's cleaned transcript; it only picks the headline for a course already taken."""
     status = answer["status"]
     target = answer.get("target", "")
-    title_status = "NEVER_ELIGIBLE" if answer.get("can_still_become_eligible") is False else status
+    if status == "NOT_ELIGIBLE" and target in completed:
+        title_status = "ALREADY_COMPLETED"
+    elif answer.get("can_still_become_eligible") is False:
+        title_status = "NEVER_ELIGIBLE"
+    else:
+        title_status = status
     lines = [heading(HEADLINES.get(title_status, status).format(target=target))]
     if "message" in answer:
         lines += ["", wrap(answer["message"])]
@@ -162,7 +170,7 @@ def format_answer(answer, catalog=None):
     section(lines, "Why" if status != "ELIGIBLE" else "Details", reasons)
     section(lines, "Problems found", answer.get("errors", []))
     if answer.get("can_still_become_eligible") is True:
-        lines += ["", "  You can still become eligible once you meet the requirements above."]
+        lines += ["", wrap("You could still take it later, once the reasons above no longer apply.")]
     if "never_eligible_because" in answer:
         lines += ["", wrap(f"You can never become eligible: {answer['never_eligible_because']}")]
     section(lines, "Preferences met", answer.get("preferences_met", []), "+")

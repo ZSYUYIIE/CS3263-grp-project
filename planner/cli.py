@@ -49,14 +49,21 @@ def translate_request(request, *, model, base_url, key, max_tokens=DEFAULT_MAX_T
     return spec
 
 
+def or_list(items):
+    items = list(items)
+    return items[0] if len(items) == 1 else ", ".join(items[:-1]) + " or " + items[-1]
+
+
 def choice(prompt, options, read, write, default=None):
+    """The error names the keys the prompt shows (e.g. "Enter, R or B"), not internal option values."""
+    shown = re.findall(r"\[([^\]]+)\]", prompt) or list(options)
     while True:
         value = read(prompt).strip().lower()
         if not value and default is not None:
             return default
         if value in options:
             return value
-        write("Please choose " + ", ".join(options) + ".")
+        write(f"Please choose {or_list(shown)}.")
 
 
 def nonempty(prompt, read, write):
@@ -67,8 +74,17 @@ def nonempty(prompt, read, write):
         write("Please enter a value, or use /back to return to the menu.")
 
 
-def missing_value(field, read, write):
-    """Parse only the requested field; blanks never imply an empty transcript."""
+def unknown_codes(codes, catalog):
+    return [code for code in codes if code not in catalog]
+
+
+def missing_value(field, catalog, read, write):
+    """Parse only the requested field; blanks never imply an empty transcript.
+
+    Courses to take or check must be in the catalogue, so a typo is asked again here instead of
+    becoming an out-of-scope refusal. Completed courses are not checked: the solver warns about and
+    ignores unknown ones, and old codes from earlier years may be missing."""
+    ay = str(catalog.data["acad_year"]).replace("-", "/")
     while True:
         asked = MISSING_PROMPTS[field]
         if field in ("completed", "must_take"):   # replace the solver's own bracketed hint, not add a second one
@@ -81,13 +97,20 @@ def missing_value(field, read, write):
                 write('Enter course codes, or explicitly enter "none".')
                 continue
             codes = [item.strip().upper() for item in re.split(r"[,\s]+", value) if item.strip()]
-            if codes and all(re.fullmatch(r"[A-Z]{2,}\d{4}[A-Z]*", code) for code in codes):
+            if not (codes and all(re.fullmatch(r"[A-Z]{2,}\d{4}[A-Z]*", code) for code in codes)):
+                write('Use course codes such as CS1101S, or enter "none".')
+            elif field == "must_take" and unknown_codes(codes, catalog):
+                unknown = ", ".join(unknown_codes(codes, catalog))
+                write(f"Not in the AY{ay} catalogue: {unknown}. Please check the codes.")
+            else:
                 return codes
-            write('Use course codes such as CS1101S, or enter "none".')
         elif field == "target":
-            if re.fullmatch(r"[A-Za-z]{2,}\d{4}[A-Za-z]*", value):
+            if not re.fullmatch(r"[A-Za-z]{2,}\d{4}[A-Za-z]*", value):
+                write("Enter one course code.")
+            elif value.upper() not in catalog:
+                write(f"{value.upper()} is not in the AY{ay} catalogue. Please check the code.")
+            else:
                 return value.upper()
-            write("Enter one course code.")
         else:
             match = re.fullmatch(r"(?:[Yy]([1-9]\d*)[Ss]([12])|([1-9]\d*))", value)
             if match:
@@ -123,14 +146,14 @@ def review_request(query, spec, catalog, read, write):
         if early:
             write("\nI need a little more information to answer this.")
             for field in early["missing"]:
-                spec = {**spec, field: missing_value(field, read, write)}
+                spec = {**spec, field: missing_value(field, catalog, read, write)}
             continue
         write(summary(spec, cleaned, warnings))
         action = choice("\n[Enter] Solve  [R] Replace request  [B] Back: ", ("s", "r", "b"), read, write, default="s")
         if action != "s":
             return action
         write("\nWorking out the answer...")
-        write(format_answer(run(spec, catalog), catalog))
+        write(format_answer(run(spec, catalog), catalog, completed=cleaned["completed"]))
         return "done"
 
 
@@ -201,5 +224,14 @@ def main(argv=None):
         return translate_request(request, model=model, base_url=base, key=key, max_tokens=args.max_tokens,
                                  timeout=args.timeout, retries=args.retries)
 
+    enable_line_editing()
     run_session(translate, Catalog.load())
     return 0
+
+
+def enable_line_editing():
+    """Importing readline gives input() cursor movement and in-session history; not available on Windows."""
+    try:
+        import readline  # noqa: F401
+    except ImportError:
+        pass

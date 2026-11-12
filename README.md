@@ -136,8 +136,10 @@ For example:
 The planner uses Pipeline B to translate your words, asks for any missing required information, and shows
 its interpretation before solving. Check that summary, then press Enter to solve, choose `R` to replace
 the request, or `B` to return to the menu. Replacing a request starts a fresh translation. Missing course
-lists accept comma-separated codes or an explicit `none`; semesters accept numbers or forms like `Y2S1`.
-Enter `/back` or `/quit` at any prompt to leave a request or exit. Q1 does not require a semester; when it is
+lists accept comma-separated codes or an explicit `none`, and a course to check or take that is not in the
+catalogue is asked for again; semesters accept numbers or forms like `Y2S1`.
+Enter `/back` or `/quit` at any prompt to leave a request or exit. On macOS and Linux, arrow keys move the
+cursor and Up/Down recall earlier entries from the session. Q1 does not require a semester; when it is
 omitted, the answer includes the solver's offering notes.
 
 This covers BComp (CS) Hons, single major, no second major, minor, double or concurrent degree, under AY2026/27

@@ -227,7 +227,7 @@ def test_api_failure_can_replace_or_leave(catalog, action):
 def test_global_navigation_and_blank_menu(catalog):
     output, _ = session(["", "1", "/back", "2", "Plan my courses.", "/back", "1", "/quit"],
                         [{"query": "plan"}], catalog)
-    assert "Please choose 1, 2, 3" in output
+    assert "Please choose 1, 2 or 3." in output
     assert not any(headline(status) in output for status in HEADLINES)
     assert "Session ended" in output
 
@@ -410,3 +410,38 @@ def test_never_eligible_has_its_own_headline(catalog):
     output = format_answer(run(row["gold_spec"], catalog), catalog)
     title = output.strip().splitlines()[1].strip()
     assert title == f"No, you cannot take {row['gold_answer']['target']}"
+
+
+def test_already_completed_course_is_not_called_not_yet(catalog):
+    spec = {**Q1, "completed": ["CS1101S"], "current_sem": 2}
+    output, _ = session(["1", "Can I take CS1101S again?", "", "3"], [spec], catalog)
+    assert "You have already completed CS1101S" in output
+    assert "cannot take CS1101S yet" not in output
+
+
+def test_still_eligible_line_does_not_assume_missing_requirements(catalog):
+    answer = {"status": "NOT_ELIGIBLE", "target": "CS3263", "semester": 2,
+              "reasons": ["not offered in semester 2 (offered: [1])"], "can_still_become_eligible": True}
+    output = flat(format_answer(answer, catalog))
+    assert "once the reasons above no longer apply" in output
+    assert "meet the requirements" not in output
+
+
+def test_choice_errors_name_the_keys_on_screen(catalog):
+    output, _ = session(["1", "Check the course.", "x", "", "3"], [Q1], catalog)
+    assert "Please choose Enter, R or B." in output
+    assert "s, r, b" not in output
+
+
+def test_unknown_codes_in_followups_are_asked_again(catalog, monkeypatch):
+    spy = Mock(wraps=run)
+    monkeypatch.setattr(cli, "run", spy)
+    output, _ = session(["1", "Check eligibility.", "CS9999X", "cs1101s", "", "3"],
+                        [{"query": "eligible", "completed": []}], catalog)
+    assert "CS9999X is not in the AY" in output
+    assert spy.call_args.args[0]["target"] == "CS1101S"
+    output, _ = session(["2", "Plan my courses.", "CS1101S, CS9999X", "CS1101S", "", "3"],
+                        [{"query": "plan", "current_sem": 1, "completed": []}], catalog)
+    assert "Not in the AY" in output and "CS9999X" in output
+    assert spy.call_args.args[0]["must_take"] == ["CS1101S"]
+    assert headline("OUT_OF_SCOPE") not in output
