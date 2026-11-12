@@ -246,7 +246,9 @@ conflicting rules.
 | `solver/explain.py` | minimal conflicting rules for a `NO_PLAN` |
 | `solver/backtrack.py` | own backtracking solver with four variants (below); independent of `model.py` and `q2.py` |
 | `experiments/run_ablation.py` | ablation runner (CP-SAT against the four variants) |
-| `tests/test_solver.py`, `test_q2.py`, `test_explain.py`, `test_backtrack.py`, `test_ablation.py` | tests |
+| `solver/mdp.py`, `solver/admission.py` | MDP extension: bidding policy when a bid can fail; probabilities from the allocation reports |
+| `experiments/run_mdp.py`, `extract_demand.py` | bidding experiment (plan, replan, policy); extraction of the report rows |
+| `tests/test_solver.py`, `test_q2.py`, `test_explain.py`, `test_backtrack.py`, `test_ablation.py`, `test_mdp.py` | tests |
 
 ### Own CSP solver and ablation
 
@@ -284,6 +286,26 @@ python -m experiments.run_ablation instances.json --limit 30 --out rows.csv --ti
 It writes one CSV row per instance and engine (`id, engine, status, last_semester, preferences_met, seconds, nodes,
 backtracks, checks, timed_out`) and prints, per engine, instances finished, median seconds, median nodes and
 agreement with CP-SAT over the finished instances.
+
+### Bidding under uncertainty (MDP extension)
+
+The CP-SAT plan assumes the student gets every course in it. `solver/mdp.py` drops that assumption: a bid
+succeeds with a probability estimated from two years of NUS CourseReg demand and allocation reports
+(`data/demand/allocation.csv`, read by `solver/admission.py`), and the answer is a policy, not a fixed plan.
+It is a finite-horizon MDP solved exactly by backward induction. CP-SAT chooses which courses are needed and
+the MDP chooses when to bid for them; with every probability equal to 1 it gives the CP-SAT answer.
+
+```bash
+python -m solver.mdp examples/q2_bidding.json                     # policy for one Q2 spec
+python -m solver.mdp examples/q2_bidding.json --estimator round1  # pessimistic probabilities
+python -m experiments.run_mdp --out rows.csv                      # plan vs replan vs policy on the instance set
+```
+
+It takes the same Q2 spec and is separate from `solver.run`, the pipelines, the instance files and the checker.
+On the 45 committed requests that have a plan, the mean probability of finishing by semester 8 is 0.960 for
+the plan as written, 0.988 when replanning with CP-SAT every semester and 0.997 for the policy (optimistic
+estimate), and 0.714, 0.875 and 0.912 under the pessimistic estimate.
+Formulation, data, results and limits: [`docs/MDP_GUIDE.md`](docs/MDP_GUIDE.md).
 
 ## Instances, pipelines and evaluation (M3)
 
@@ -360,8 +382,8 @@ valid-answer accuracy (over every instance) and optimal-plan accuracy (over the 
 ```
 m1_data/            data pipeline package (fetch, rules, resolve, build, check, catalog,
                     graph, diagrams, scope)
-solver/             spec, run, q1, q2, model, explain, backtrack (M2)
-experiments/        run_ablation.py (M2)
+solver/             spec, run, q1, q2, model, explain, backtrack (M2); mdp, admission (MDP extension)
+experiments/        run_ablation.py (M2); run_mdp.py, extract_demand.py (MDP extension)
 instances/          instance generators and the generated instance sets (M3)
 pipelines/          pipeline A and B prompts and runners, prompt ablation (M3)
 eval/               independent checker and grader (M3)
@@ -371,7 +393,8 @@ data/config/        scope.json, student_context.json
 data/raw/           NUSMods responses, kept so results are reproducible (data drifts year to year)
 data/processed/     generated outputs (do not edit)
 data/manual/        overrides.json, SPOT_CHECK.md
-docs/               CODE_GUIDE.md, FORMULATION.md, DATA_SCHEMA.md, SOLVER_GUIDE.md, TRANSLATION_GUIDE.md,
+data/demand/        allocation.csv: CourseReg demand and allocation report rows (generated; see its README)
+docs/               CODE_GUIDE.md, FORMULATION.md, DATA_SCHEMA.md, SOLVER_GUIDE.md, TRANSLATION_GUIDE.md, MDP_GUIDE.md,
                     diagrams/ (hand-laid overviews)
 tests/              pytest
 AGENTS.md           orientation for AI coding agents working in this repo

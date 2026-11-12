@@ -38,6 +38,18 @@ This file covers what you need to avoid mistakes.
 9. **Only pipelines A and B exist.** A: the LLM answers directly. B: the LLM writes a spec and the solver
    answers it. Do not describe other pipelines in the docs unless they are added to `pipelines/`.
 
+10. **The MDP extension is an add-on, not a pipeline.** `solver/mdp.py` and `solver/admission.py` answer "what
+    should I bid for when a bid can fail" for a Q2 spec (`docs/MDP_GUIDE.md`). `solver/run.py`, the pipelines, the
+    instance generators and `eval/` must not import them, and the spec format does not change for them.
+    `BiddingMDP.legal` and `bids` restate the offering, prerequisite, corequisite, exclusion and MC-cap rules for
+    one semester, so a change to those rules (rule 8) is made there too; `tests/test_mdp.py` fails if the MDP
+    with every probability equal to 1 stops agreeing with CP-SAT and the checker.
+11. **`data/demand/allocation.csv` is generated; never edit it by hand.** It comes from
+    `python -m experiments.extract_demand <folder>` run on `pdftotext -layout` output of the CourseReg demand and
+    allocation reports (`data/demand/README.md`). The numbers in `docs/MDP_GUIDE.md` and the README come from
+    `python -m experiments.run_mdp`; rerun it and update them after changing that file, the estimators in
+    `solver/admission.py`, the MDP or the instance set.
+
 ## LLM configuration
 
 All four pipeline CLI runners call `pipelines.config.load_env()` before reading settings.
@@ -54,6 +66,8 @@ Update both `pyproject.toml` and `requirements-dev.txt` when adding runtime depe
 | Entry point for one spec | `solver/run.py` → `run(spec, catalog)`; Q1 in `solver/q1.py`, Q2 in `solver/q2.py` (model in `solver/model.py`) |
 | The instance sets | `instances/instances.json` (115 mixed), `q1_400.json`, `q1_gating.json`; counts in `instances/SUMMARY.md`, `Q1_SUMMARY.md` |
 | Run or grade a pipeline | `pipelines/README.md` |
+| Bidding policy when a bid can fail | `python -m solver.mdp spec.json`; `docs/MDP_GUIDE.md` |
+| Chance of getting a course | `Admission.load("all_rounds" or "round1").p(code, semester)` in `solver/admission.py` |
 | Is X allowed now? (T1) | `Catalog.can_take(code, completed, semester)` |
 | Is X ruled out forever? | `Catalog.reachable(code, completed)` |
 | Courses that need X | `courses[X]["unlocks"]` |

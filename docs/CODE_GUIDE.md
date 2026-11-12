@@ -134,6 +134,8 @@ flowchart LR
 | `solver/explain.py` | Smallest set of conflicting rules for `NO_PLAN` | M2 |
 | `solver/backtrack.py` | Own backtracking solver, four variants | M2 |
 | `experiments/run_ablation.py` | CP-SAT vs the four variants | M2 |
+| `solver/mdp.py`, `solver/admission.py` | MDP extension: bidding policy when a bid can fail ([`MDP_GUIDE.md`](MDP_GUIDE.md)); not called by `solver/run.py` | extension |
+| `experiments/run_mdp.py`, `extract_demand.py` | Plan vs replan vs policy; extraction of `data/demand/allocation.csv` from the CourseReg reports | extension |
 | `examples/*.json` | Example specs to run | M2 |
 | `data/processed/AY2026-2027/` | Generated data: catalogue, graph, diagrams, report | generated |
 | `tests/` | pytest for the data pipeline, the solver, the instance set and the checker | all |

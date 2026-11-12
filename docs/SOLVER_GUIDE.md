@@ -969,6 +969,7 @@ Beyond the analyses already in the project plan, these are available from the so
 - **Modelled range.** Semesters 1 to 8 only, and only BComp (CS) Hons, single major, AY2026/27.
 - **Graduation** means completing every course in `must_take`. Degree requirements are not derived.
 - **Not modelled:** S/U, CAP, module bidding, module mapping, timetable clashes, failed courses and waivers. Requests
-  about them belong in `unsupported`.
+  about them belong in `unsupported`. The solver assumes every planned course is obtained; the separate MDP
+  extension ([`MDP_GUIDE.md`](MDP_GUIDE.md)) studies what happens when a bid fails, and does not change this solver.
 - **The backtracking solver** has a time limit and a `TIMED_OUT` status that CP-SAT does not have. Instances with many
   added courses are the slowest.

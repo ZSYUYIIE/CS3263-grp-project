@@ -124,8 +124,27 @@ targets. MC caps are also awkward in PDDL without numeric fluents. That's the ar
 ## 8. What is deliberately not modelled
 
 - Future offerings are assumed to match AY2026/27, with no timetable clashes and no failed courses.
+- Every planned course is assumed to be obtained. Section 9 drops this assumption.
 - No waivers or appeals: "impossible" means impossible under the stated rules and the data, and an
   advisor can still decide otherwise.
 - Degree requirements are supplied as a must-take list, not derived from the programme rules.
 - Students outside BComp CS Hons single major (DDP, second major, minor, other programmes) are
   `OUT_OF_SCOPE`.
+
+## 9. Extension: bidding as an MDP
+
+A CourseReg bid can fail, so the plan of section 3 may not be executable. `solver/mdp.py` treats the courses
+CP-SAT chose as a finite-horizon MDP ([`MDP_GUIDE.md`](MDP_GUIDE.md)):
+
+- **State** `(s, G)`: the semester and the set of courses obtained so far.
+- **Action**: a set of courses to bid for that respects the offering, prerequisite, corequisite, exclusion
+  and MC-cap rules in semester `s`.
+- **Transition**: each course in the bid is obtained independently with probability `p(c, term)`, estimated
+  from two years of CourseReg demand and allocation reports.
+- **Cost**: 1 per semester until every `must_take` course is obtained, plus a penalty if that has not
+  happened by semester 8.
+- **Solution**: `V(s, G) = min_a [1 + Σ P(G' | G, a) V(s+1, G')]` by backward induction. The answer is a
+  policy.
+
+With `p = 1` everywhere the MDP is the CSP: its value is the CP-SAT last semester (tested on all 45 requests
+that have a plan). The extension is separate from pipelines A and B and from the grading.
