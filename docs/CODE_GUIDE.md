@@ -126,6 +126,7 @@ flowchart LR
 | `m1_data/scope.py` | In or out of scope; the standard decline message | M1 |
 | `m1_data/graph.py`, `diagrams.py`, `overviews.py`, `docs.py` | Graph exports, diagrams, `COURSES.md` | M1 |
 | `solver/run.py` | Entry point for every spec | M2 |
+| `planner/__main__.py`, `cli.py`, `formatting.py` | `python -m planner`: interactive Pipeline B interface; specs stay in memory | UI |
 | `solver/common.py` | Constants and small helpers shared by both solvers (`term_of`, `LAST_SEM`, ATAP limits) | M2 |
 | `solver/spec.py` | Validate and clean a spec | M2 |
 | `solver/q1.py` | "Can I take X?" | M2 |

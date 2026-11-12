@@ -5,6 +5,15 @@ Two pipelines answer the same instances, and `eval.grade` grades both:
 - **A** (`run_a.py`): the LLM answers the request itself, given the planning rules and the course records.
 - **B** (`run_b.py`): the LLM translates the request into a spec, and the solver answers the spec.
 
+For an interactive terminal interface to **Pipeline B**, configure `.env` as below and run
+`python -m planner` from the repo root. The startup title shows the supported programme and academic year.
+Choose an eligibility check or a course plan to enter a natural-language request directly.
+The interface collects missing information, shows the translated
+request for review, and formats the solver's answer. It uses the same translation prompt and shared API
+helpers, with its own shorter timeout/retry options. It does not write into `results/` or alter the batch
+runners, prompts, solver rules or evaluation protocol. Interactive revisions and follow-ups are separate
+from the experiment's one-call-per-instance protocol. See the root README for usage and scope limits.
+
 ## Pipeline A: the LLM answers directly
 
 1. Install dependencies and create your local configuration from the project root:

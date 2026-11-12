@@ -116,6 +116,41 @@ conditions are resolved for in `data/config/student_context.json`. Hand fixes go
 
 ## Solver (M2)
 
+### Interactive planner
+
+To ask a question without creating a JSON file, run from the repo root:
+
+```bash
+python -m pip install -r requirements-dev.txt
+cp .env.example .env    # first-time setup only; keep your existing .env if you have one
+# Fill in LLM_BASE_URL, LLM_API_KEY and LLM_MODEL in .env.
+python -m planner
+```
+
+The startup title shows the supported programme and academic year. Choose **1. Check whether I can take a course**
+or **2. Plan my remaining courses** to go straight to the natural-language prompt. Describe your request in one line.
+For example:
+
+> I have completed no courses. I am in Y1S1. Plan CS1101S and CS1231S with at most 20 MC per semester.
+
+The planner uses Pipeline B to translate your words, asks for any missing required information, and shows
+its interpretation before solving. Check that summary, then press Enter to solve, choose `R` to replace
+the request, or `B` to return to the menu. Replacing a request starts a fresh translation. Missing course
+lists accept comma-separated codes or an explicit `none`; semesters accept numbers or forms like `Y2S1`.
+Enter `/back` or `/quit` at any prompt to leave a request or exit. Q1 does not require a semester; when it is
+omitted, the answer includes the solver's offering notes.
+
+This covers BComp (CS) Hons, single major, no second major, minor, double or concurrent degree, under AY2026/27
+rules. Q2 schedules the courses you request and their necessary prerequisites; it does not check all graduation
+requirements. Warnings, unsupported wishes, unmet preferences and refusal reasons are displayed with the answer.
+
+The command loads the project-root `.env`, preserving existing environment variables. It keeps requests in memory
+and does not write experiment results. It uses the existing Pipeline B prompt and solver; the JSON CLI below still
+works. See `python -m planner --help` for API timeout, retry and token limits (defaults: 60 seconds per attempt,
+one retry, 24576 reply tokens). Translation requires your configured LLM service.
+
+### JSON interface
+
 The solver answers two kinds of request, each given as a JSON **spec**:
 
 - **Q1** (`"query": "eligible"`): can the student take one course now, and if not, why not.
