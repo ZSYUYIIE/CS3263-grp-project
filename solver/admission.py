@@ -70,9 +70,11 @@ def estimate(rounds: dict[int, tuple[int, int]], estimator: str) -> float | None
 class Admission:
     """Table of success probabilities by (course, term). Courses not in the table are certain."""
 
-    def __init__(self, table: dict[tuple[str, int], float] | None = None, estimator: str = "given"):
+    def __init__(self, table: dict[tuple[str, int], float] | None = None, estimator: str = "given",
+                 from_reports: bool = False):
         self.table = dict(table or {})
         self.estimator = estimator
+        self.from_reports = from_reports      # True: a course missing from the table has no data
 
     @classmethod
     def load(cls, estimator: str = DEFAULT_ESTIMATOR, path: str | Path | None = None) -> Admission:
@@ -83,7 +85,7 @@ class Admission:
             p = estimate(rounds, estimator)
             if p is not None:
                 table[key] = p
-        return cls(table, estimator)
+        return cls(table, estimator, from_reports=True)
 
     @classmethod
     def certain(cls) -> Admission:

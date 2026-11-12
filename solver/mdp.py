@@ -316,12 +316,13 @@ def solve(spec, catalog=None, admission: Admission | None = None,
 def _policy_answer(mdp: BiddingMDP, plan_answer: dict) -> dict:
     start, nothing = mdp.start, frozenset()
     cost = mdp.value(start, nothing)
-    finish = mdp.evaluate()
+    nothing_to_take = mdp.finished(nothing)
+    finish = {} if nothing_to_take else mdp.evaluate()
     first = mdp.policy(start, nothing)
-    last = expected_last(finish)
+    last = None if nothing_to_take else expected_last(finish)
 
     alternatives = []
-    if not mdp.finished(nothing):
+    if not nothing_to_take:
         scored = sorted(((mdp.q(start, nothing, bid), bid) for bid in mdp.bids(start, nothing)),
                         key=lambda item: (round(item[0], 9), item[1]))
         alternatives = [{"courses": list(bid), "expected_cost": _shown(value)} for value, bid in scored[:5]]
@@ -344,7 +345,7 @@ def _policy_answer(mdp: BiddingMDP, plan_answer: dict) -> dict:
         terms = [t for t in mdp.catalog[code]["offered"] if t in (1, 2)]
         if any(mdp.admission.p(code, t) < 1.0 for t in terms):
             table[code] = {str(t): mdp.admission.p(code, t) for t in terms}
-        if mdp.admission.estimator in ESTIMATORS and not any(mdp.admission.known(code, t) for t in terms):
+        if mdp.admission.from_reports and not any(mdp.admission.known(code, t) for t in terms):
             no_data.append(code)
 
     result = {

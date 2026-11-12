@@ -25,7 +25,7 @@ import time
 
 from m1_data.catalog import Catalog
 from solver.admission import ESTIMATORS, Admission
-from solver.mdp import BiddingMDP, build, on_time, plan_success
+from solver.mdp import BiddingMDP, TooLarge, build, on_time, plan_success
 from solver.run import run
 
 COLUMNS = ["id", "estimator", "last_semester", "courses", "uncertain", "states", "mdp_seconds",
@@ -67,7 +67,10 @@ def row_of(instance: dict, estimator: str, admission: Admission, catalog) -> dic
     early, mdp, plan_answer, _warnings = build(spec, catalog, admission)
     if early is not None:
         return None
-    finish = mdp.evaluate()
+    try:
+        finish = mdp.evaluate()
+    except TooLarge:
+        return None
     seconds = time.perf_counter() - started
     replan = replan_policy(spec, mdp, catalog)
     replan_finish = mdp.evaluate(replan)
@@ -143,7 +146,7 @@ def main() -> None:
             writer.writeheader()
             writer.writerows(rows)
     print(f"{len(instances)} requests with a plan; {len(skipped)} not covered by the MDP "
-          f"(must rules, ATAP or mc_min): {sorted(skipped)}")
+          f"(must rules, ATAP, mc_min or too many states): {sorted(skipped)}")
     for estimator in ESTIMATORS:
         summarise(rows, estimator)
 

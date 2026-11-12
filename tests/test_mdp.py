@@ -10,6 +10,7 @@ from pathlib import Path
 
 import pytest
 
+import solver.mdp
 from eval.checker import check_plan
 from experiments.extract_demand import parse_report
 from experiments.run_mdp import for_graduation, row_of
@@ -237,6 +238,22 @@ def test_nothing_left_to_take(cat):
     answer = solve(one_course(completed=["CS2100", "CS2106"]), cat, Admission.certain())
     assert answer["status"] == "POLICY"
     assert answer["first_bid"]["courses"] == [] and answer["on_time_probability"] == 1.0
+    assert answer["expected_last_semester"] is None and answer["finish_distribution"] == {}
+    assert answer["expected_cost"] == 0.0 and answer["alternatives"] == [] and answer["if_then"] == []
+
+
+def test_a_search_past_the_state_limit_is_reported(cat, monkeypatch):
+    monkeypatch.setattr(solver.mdp, "MAX_STATES", 3)
+    answer = solve(EXAMPLE, cat, Admission.from_dict(HAND))
+    assert answer["status"] == "TOO_LARGE" and "7 courses" in answer["reasons"][0]
+
+
+def test_courses_without_report_rows_are_listed(cat):
+    table = Admission.load("round1")
+    del table.table[("CS2106", 1)], table.table[("CS2106", 2)]
+    answer = solve(one_course(), cat, table)
+    assert answer["model"]["no_data"] == ["CS2106"] and answer["on_time_probability"] == 1.0
+    assert solve(one_course(), cat, Admission.from_dict({"CS2100": 0.5}))["model"]["no_data"] == []
 
 
 def test_the_spec_is_not_changed(cat):
