@@ -142,7 +142,10 @@ omitted, the answer includes the solver's offering notes.
 
 This covers BComp (CS) Hons, single major, no second major, minor, double or concurrent degree, under AY2026/27
 rules. Q2 schedules the courses you request and their necessary prerequisites; it does not check all graduation
-requirements. Warnings, unsupported wishes, unmet preferences and refusal reasons are displayed with the answer.
+requirements. Each answer opens with a plain-language headline (for example "Yes, you can take CS3263" or
+"Here is your plan"); a plan is listed semester by semester with each course's title and MC, marking the
+prerequisites the solver added. Warnings, unsupported wishes, unmet preferences and refusal reasons are displayed
+with the answer, in the solver's own words.
 
 The command loads the project-root `.env`, preserving existing environment variables. It keeps requests in memory
 and does not write experiment results. It uses the existing Pipeline B prompt and solver; the JSON CLI below still

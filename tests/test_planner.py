@@ -13,13 +13,22 @@ from eval.checker import check_plan
 from pipelines import config
 from pipelines.run_b import PROMPT
 from planner import cli
-from planner.formatting import format_answer, summary
+from planner.formatting import HEADLINES, format_answer, semester_label, summary
 from solver.run import prepare, run
 
 ROOT = Path(__file__).resolve().parent.parent
 Q1 = {"query": "eligible", "target": "CS1101S", "completed": []}
 Q2 = {"query": "plan", "current_sem": 1, "completed": [], "must_take": ["CS1101S"]}
 ROWS = json.loads((ROOT / "instances/instances.json").read_text())
+
+
+def flat(text):
+    """Answers are word-wrapped for the terminal; compare text with whitespace collapsed."""
+    return " ".join(text.split())
+
+
+def headline(status):
+    return HEADLINES[status].split("{")[0].strip()
 
 
 @pytest.fixture(scope="module")
@@ -42,19 +51,18 @@ def session(inputs, replies, catalog):
 
     cli.run_session(translator, catalog, read=read, write=output.append)
     assert list(pending) == []
-    return "\n".join(output), translator
+    return flat("\n".join(output)), translator
 
 
 def test_q1_session_preserves_optional_semester_and_solver_input(catalog, monkeypatch):
     spy = Mock(wraps=run)
     monkeypatch.setattr(cli, "run", spy)
     output, translator = session(["1", "Can I take CS1101S? I completed no courses.", "", "3"], [Q1], catalog)
-    assert "Result: ELIGIBLE" in output
+    assert headline("ELIGIBLE") in output
     assert "Not specified; see offering notes" in output
-    assert "Note: no semester given" in output
+    assert "Notes - no semester given" in output
     spy.assert_called_once_with(Q1, catalog)
-    assert output.startswith("NUS course planner for BComp (CS) Hons AY"
-                             + catalog.data["acad_year"].replace("-", "/"))
+    assert ("NUS course planner for BComp (CS) Hons AY" + catalog.data["acad_year"].replace("-", "/")) in output
     assert "Does this match" not in output
     assert "Student profile:" not in translator.call_args.args[0]
     assert "confirmed at startup" not in output
@@ -71,13 +79,13 @@ def test_plan_session_sends_unchanged_constraints_to_real_solver(catalog, monkey
     answer = run(spec, catalog)
     assert answer["status"] == "PLAN"
     assert check_plan(spec, answer["plan"]) == []
-    assert "Result: PLAN" in output
+    assert headline("PLAN") in output
     assert "Year 3 Semester 2 (semester 6): 0 (blocked)" in output
     assert "Must: CS2100 before CS2106" in output
     assert "Prefer: CS3230 in Year 3 Semester 1" in output
     assert "Minimum MC in each nonempty semester: 4" in output
-    assert "Wish not applied: no 8am classes" in output
-    assert "does not verify all graduation requirements" in output
+    assert "Wishes I could not apply - no 8am classes" in output
+    assert "does not check your full graduation requirements" in output
 
 
 def test_followups_update_only_missing_fields_and_do_not_call_llm_again(catalog, monkeypatch):
@@ -89,19 +97,19 @@ def test_followups_update_only_missing_fields_and_do_not_call_llm_again(catalog,
         [original], catalog)
     translator.assert_called_once()
     spy.assert_called_once_with({**original, "completed": [], "current_sem": 1, "must_take": ["CS1101S"]}, catalog)
-    assert "Result: PLAN" in output
+    assert headline("PLAN") in output
     assert "Maximum MC per semester: 12" in output
-    assert "Wish not applied: light last semester" in output
+    assert "Wishes I could not apply - light last semester" in output
 
 
 def test_target_and_explicit_empty_must_take_followups(catalog):
     output, _ = session(["1", "Check eligibility.", "CS1101S, CS1231S", "cs1101s", "", "3"],
                         [{"query": "eligible", "completed": []}], catalog)
     assert "Enter one course code" in output
-    assert "Result: ELIGIBLE" in output
+    assert headline("ELIGIBLE") in output
     output, _ = session(["2", "I have nothing left to schedule.", "none", "", "3"],
                         [{"query": "plan", "current_sem": 1, "completed": []}], catalog)
-    assert "No remaining courses to schedule" in output
+    assert "no remaining courses to schedule" in output
 
 
 @pytest.mark.parametrize("action", ["s", "r", "b"])
@@ -147,7 +155,7 @@ def test_out_of_scope_request_never_calls_solver(catalog, monkeypatch, programme
     monkeypatch.setattr(cli, "run", spy)
     request = f"I am in {programme}. Plan my courses."
     output, translator = session(["2", request, "b", "3"], [{**Q2, "programme": programme}], catalog)
-    assert "Result: OUT_OF_SCOPE" in output
+    assert headline("OUT_OF_SCOPE") in output
     translator.assert_called_once()
     assert request in translator.call_args.args[0]
     spy.assert_not_called()
@@ -164,7 +172,7 @@ def test_preflight_refusals_do_not_reach_solver(catalog, monkeypatch, spec, stat
     monkeypatch.setattr(cli, "run", spy)
     output, _ = session(["1" if spec["query"] == "eligible" else "2", "My request.", "b", "3"],
                         [spec], catalog)
-    assert f"Result: {status}" in output
+    assert headline(status) in output
     spy.assert_not_called()
 
 
@@ -173,7 +181,7 @@ def test_unknown_completed_warning_is_visible_without_changing_solver_policy(cat
     output, _ = session(["1", "Check the course.", "", "3"], [spec], catalog)
     assert "completed course UNKNOWN9999 is not in the catalogue and was ignored" in output
     assert "belongs to query 'plan'" in output
-    assert "Result: ELIGIBLE" in output
+    assert headline("ELIGIBLE") in output
 
 
 @pytest.mark.parametrize("status,menu", [("NOT_ELIGIBLE", "1"), ("NO_PLAN", "2")])
@@ -181,7 +189,7 @@ def test_solver_refusals_preserve_reasons_in_interactive_session(catalog, status
     spec = next(row["gold_spec"] for row in ROWS if row["gold_answer"]["status"] == status)
     answer = run(spec, catalog)
     output, _ = session([menu, "Check my request.", "", "3"], [spec], catalog)
-    assert f"Result: {status}" in output
+    assert headline(status) in output
     assert all(reason in output for reason in answer["reasons"])
 
 
@@ -190,7 +198,7 @@ def test_out_of_range_followup_is_rejected_by_existing_scope_rules(catalog, monk
     monkeypatch.setattr(cli, "run", spy)
     output, _ = session(["2", "Plan my courses.", "Y5S1", "b", "3"],
                         [{"query": "plan", "completed": [], "must_take": []}], catalog)
-    assert "Result: OUT_OF_SCOPE" in output
+    assert headline("OUT_OF_SCOPE") in output
     assert "current_sem is 9" in output
     spy.assert_not_called()
 
@@ -198,7 +206,7 @@ def test_out_of_range_followup_is_rejected_by_existing_scope_rules(catalog, monk
 def test_api_retry_keeps_request_and_recovers(catalog):
     output, translator = session(["1", "Check the course.", "t", "", "3"],
                                  [RuntimeError("API unavailable"), Q1], catalog)
-    assert "API unavailable" in output and "Result: ELIGIBLE" in output
+    assert "API unavailable" in output and headline("ELIGIBLE") in output
     assert translator.call_args_list[0] == translator.call_args_list[1]
 
 
@@ -220,7 +228,7 @@ def test_global_navigation_and_blank_menu(catalog):
     output, _ = session(["", "1", "/back", "2", "Plan my courses.", "/back", "1", "/quit"],
                         [{"query": "plan"}], catalog)
     assert "Please choose 1, 2, 3" in output
-    assert "Result:" not in output
+    assert not any(headline(status) in output for status in HEADLINES)
     assert "Session ended" in output
 
 
@@ -262,14 +270,16 @@ def test_formatting_preserves_all_gold_explanations_and_input(catalog):
     for row in ROWS:
         answer = copy.deepcopy(row["gold_answer"])
         before = copy.deepcopy(answer)
-        output = format_answer(answer)
+        output = flat(format_answer(answer, catalog))
         assert answer == before
-        assert answer["status"] in output
+        status = "NEVER_ELIGIBLE" if answer.get("can_still_become_eligible") is False else answer["status"]
+        assert HEADLINES[status].format(target=answer.get("target", "")) in output
+        assert "Result:" not in output
         for key in ("reasons", "errors", "warnings", "notes", "preferences_met", "preferences_not_met", "not_applied"):
-            assert all(item in output for item in answer.get(key, [])), (row["id"], key)
+            assert all(flat(item) in output for item in answer.get(key, [])), (row["id"], key)
         for key in ("message", "never_eligible_because"):
             if key in answer:
-                assert answer[key] in output
+                assert flat(answer[key]) in output
         spec = copy.deepcopy(row["gold_spec"])
         early, cleaned, warnings = prepare(spec, catalog)
         if early is None:
@@ -368,9 +378,9 @@ def test_unexpected_api_errors_reach_the_retry_menu(monkeypatch, catalog, error)
 def test_null_fields_from_translation_are_labelled_default(catalog):
     spec = {**Q2, "mc_max": None, "objective": None}
     _, cleaned, warnings = prepare(spec, catalog)
-    text = summary(spec, cleaned, warnings)
+    text = flat(summary(spec, cleaned, warnings))
     assert "Maximum MC per semester: 20 (default)" in text
-    assert "Objective: No primary objective (default)" in text
+    assert "Goal: No particular goal (default)" in text
 
 
 def test_completed_followup_has_one_hint(catalog):
@@ -378,3 +388,25 @@ def test_completed_followup_has_one_hint(catalog):
                         [{"query": "plan", "current_sem": 1, "must_take": ["CS1101S"]}], catalog)
     assert 'Please give the courses you have already completed (comma-separated codes, or "none"): ' in output
     assert "say so if there are none" not in output
+
+
+def test_plan_lists_each_semester_with_titles_and_totals(catalog):
+    answer = run({**Q2, "must_take": ["CS2040S"]}, catalog)
+    assert answer["status"] == "PLAN" and answer.get("added_prerequisites")
+    output = format_answer(answer, catalog)
+    assert "Result:" not in output and "PLAN" not in output
+    lines = output.splitlines()
+    for sem, codes in answer["plan"].items():
+        assert any(line.strip().startswith(semester_label(int(sem))) for line in lines)
+        for code in codes:
+            line = next(line for line in lines if line.strip().startswith(f"- {code} "))
+            assert catalog[code]["title"] in line
+            assert ("prerequisite" in line) == (code in answer["added_prerequisites"])
+    assert f"Total: {sum(answer['mc_per_semester'].values())} MC" in output
+
+
+def test_never_eligible_has_its_own_headline(catalog):
+    row = next(r for r in ROWS if r["gold_answer"].get("can_still_become_eligible") is False)
+    output = format_answer(run(row["gold_spec"], catalog), catalog)
+    title = output.strip().splitlines()[1].strip()
+    assert title == f"No, you cannot take {row['gold_answer']['target']}"

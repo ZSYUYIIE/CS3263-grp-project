@@ -10,10 +10,16 @@ from m1_data.catalog import Catalog
 from pipelines.config import load_env
 from pipelines.run_a import DEFAULT_MAX_TOKENS, call_api, parse_reply_how
 from pipelines.run_b import build_messages
-from planner.formatting import format_answer, summary
+from planner.formatting import format_answer, heading, summary
 from solver.run import MISSING_PROMPTS, prepare, run
 
 QUERY_NAMES = {"eligible": "check whether I can take a course", "plan": "plan my remaining courses"}
+EXAMPLES = {
+    "eligible": "I have completed CS1101S and CS1231S and I am in Y1S2. Can I take CS2040S?",
+    "plan": "I have completed no courses and I am in Y1S1. Plan CS1101S and CS1231S, at most 20 MC.",
+}
+MENU = ("\n\nWhat would you like to do?\n"
+        "  1. Check whether I can take a course\n  2. Plan my remaining courses\n  3. Exit")
 
 
 class BackToMenu(Exception):
@@ -91,12 +97,12 @@ def missing_value(field, read, write):
 
 def get_translation(request, translate, read, write):
     while True:
-        write("Translating your request...")
+        write("\nTranslating your request...")
         try:
             return translate(request), None
         except RuntimeError as error:
-            write(str(error))
-            action = choice("[T] Retry translation  [R] Replace request  [B] Back: ", ("t", "r", "b"), read, write)
+            write(f"\n  Problem: {error}")
+            action = choice("\n[T] Retry translation  [R] Replace request  [B] Back: ", ("t", "r", "b"), read, write)
             if action != "t":
                 return None, action
 
@@ -105,34 +111,34 @@ def review_request(query, spec, catalog, read, write):
     while True:
         early, cleaned, warnings = prepare(spec, catalog)
         if early and early["status"] != "MISSING_INFO":
-            write(format_answer(early))
-            for warning in warnings:
-                write(f"Warning: {warning}")
-            return choice("[R] Replace request  [B] Back: ", ("r", "b"), read, write)
+            write(format_answer({**early, "warnings": warnings} if warnings else early, catalog))
+            return choice("\n[R] Replace request  [B] Back: ", ("r", "b"), read, write)
         if spec["query"] != query:
-            write(f"Your request was interpreted as: {QUERY_NAMES[spec['query']]}.")
+            write(f"\nYour request was interpreted as: {QUERY_NAMES[spec['query']]}.")
             action = choice("[S] Switch to that query  [R] Replace request  [B] Back: ",
                             ("s", "r", "b"), read, write)
             if action != "s":
                 return action
             query = spec["query"]
         if early:
+            write("\nI need a little more information to answer this.")
             for field in early["missing"]:
                 spec = {**spec, field: missing_value(field, read, write)}
             continue
         write(summary(spec, cleaned, warnings))
-        action = choice("[Enter] Solve  [R] Replace request  [B] Back: ", ("s", "r", "b"), read, write, default="s")
+        action = choice("\n[Enter] Solve  [R] Replace request  [B] Back: ", ("s", "r", "b"), read, write, default="s")
         if action != "s":
             return action
-        write("Checking your request with the solver...")
-        write(format_answer(run(spec, catalog)))
+        write("\nWorking out the answer...")
+        write(format_answer(run(spec, catalog), catalog))
         return "done"
 
 
 def handle_request(query, translate, catalog, read, write):
     """A revision replaces the whole request; no transcript or spec leaks between requests."""
     while True:
-        request = nonempty("\nDescribe your request in natural language (one line):\n> ", read, write)
+        request = nonempty(f"\nDescribe your request in one line. For example:\n  {EXAMPLES[query]}\n> ",
+                           read, write)
         request = f"Selected task: {QUERY_NAMES[query]}.\nStudent request: {request}"
         spec, action = get_translation(request, translate, read, write)
         if action is None:
@@ -152,12 +158,12 @@ def run_session(translate: Callable, catalog, read=input, write=print):
         return value
 
     ay = str(catalog.data["acad_year"]).replace("-", "/")   # same form as the solver's refusal message
-    write(f"NUS course planner for BComp (CS) Hons AY{ay}")
-    write("Enter /back to return to the menu or /quit to exit at any prompt.")
+    write(heading(f"NUS course planner for BComp (CS) Hons AY{ay}").lstrip("\n"))
+    write("  Type /back to return to the menu or /quit to exit at any prompt.")
     try:
         while True:
             try:
-                write("\n1. Check whether I can take a course\n2. Plan my remaining courses\n3. Exit")
+                write(MENU)
                 selected = choice("> ", ("1", "2", "3"), ask, write)
                 if selected == "3":
                     break
