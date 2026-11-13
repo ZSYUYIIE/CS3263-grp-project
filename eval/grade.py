@@ -223,7 +223,7 @@ def q1_section(rows):
     for r in q:
         classes[r["gold_status"]].append(r["status_correct"])
     rec = {k: sum(v) / len(v) for k, v in classes.items()}
-    L += [f"Balanced accuracy (mean of the {len(rec)} per-class accuracies above): {(Decimal(100 * sum(rec.values())) / len(rec)).quantize(Decimal("0.1"), rounding=ROUND_HALF_UP)}%", ""]
+    L += [f"Balanced accuracy (mean of the {len(rec)} per-class accuracies above): {(Decimal(100 * sum(rec.values())) / len(rec)).quantize(Decimal('0.1'), rounding=ROUND_HALF_UP)}%", ""]
 
     def table(title, key, rs, order=None):
         groups = defaultdict(list)
@@ -696,7 +696,7 @@ def write_resources(out, items):
     plan_tokens = [t for t in plan_tokens if t is not None]
     valid = sum(valid_ok(r) for r in rows)
     optimal = sum(optimal_ok(r) for r in rows)
-    L += ["", f"- instances with a reply cut off at max_tokens: {cut} ({(Decimal(100 * cut) / n).quantize(Decimal("0.1"), rounding=ROUND_HALF_UP)}%)",
+    L += ["", f"- instances with a reply cut off at max_tokens: {cut} ({(Decimal(100 * cut) / n).quantize(Decimal('0.1'), rounding=ROUND_HALF_UP)}%)",
           f"- instances that needed more than one API attempt: {retried}",
           f"- total tokens over all instances: {sum(known)}"] + metric_lines(rows)
     if known:

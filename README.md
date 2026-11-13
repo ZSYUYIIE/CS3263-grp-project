@@ -1,262 +1,153 @@
-# CS3263 Project: LLM vs Solver for NUS Degree Plans
+# LLM vs Solver for NUS Degree Plans
 
-We compare a frontier LLM answering NUS degree-planning requests directly against the
-same LLM translating each request into a spec for a constraint solver (CP-SAT). We also
-measure where each approach breaks, including when no valid plan exists.
-Scope: BComp (CS) Hons, NUSMods AY2026/27 data.
+This repo compares two ways of answering NUS degree-planning questions with a frontier LLM. In pipeline A the
+LLM answers the question itself. In pipeline B the same LLM translates the question into a JSON spec, and a
+CP-SAT constraint solver answers the spec. The experiment measures where each approach goes wrong, including on
+requests that have no valid plan.
 
-| Role | Owns | Lives in |
-|---|---|---|
-| **M1** (leader) | Data pipeline: prerequisite and exclusion parsing, coordination | `m1_data/`, `data/` (**done, see below**) |
-| M2 | CP-SAT model, own CSP solver | `solver/`, `experiments/` (**done, see below**) |
-| M3 | Instance generator and perturbations, pipelines A0/A/B/C, evaluation harness | `instances/`, `pipelines/`, `eval/` (to add) |
+The two questions are Q1, "can I take this course?", and Q2, "plan my remaining semesters". Everything covers
+BComp (CS) Hons, single major, under NUSMods AY2026/27 data. Requests about DDPs, second majors, minors or other
+programmes get `OUT_OF_SCOPE` with a reason.
 
-Key dates: data parsed and spot-checked by **Thu 29 Oct**, feasible T2 results by
-**Wed 4 Nov** (fallback point), presentation in the **week of 9 Nov** (15 min + 5 min Q&A,
-possibly a recorded video), report **Fri 13 Nov**.
+## Setup
 
-**New here? Read [`docs/CODE_GUIDE.md`](docs/CODE_GUIDE.md) first.** It explains in about 15 minutes
-how the code fits together and follows one request through it step by step.
-**Presenting or writing the report?** [`docs/FORMULATION.md`](docs/FORMULATION.md) has the whole problem
-formulation (data + solver) on one page.
+Python 3.10+. From the repo root:
 
-## Data pipeline (M1)
-
-The NUSMods API gives prerequisites as rule strings with programme, cohort and A-level
-conditions mixed in. Preclusions come as free text plus a rule string. The pipeline turns
-both into **course-only logic trees** for a BComp CS Hons student, writes them as JSON for
-code and Markdown for people, and checks the result.
-
-```
-NUSMods API ──fetch──▶ data/raw/AY2026-2027/modules/*.json      (verbatim, minus timetables)
-                │
-              build      parse rule strings ─▶ resolve for student_context ─▶ simplify
-                │        cross-check against NUSMods' own prereqTree
-                ▼
-data/processed/AY2026-2027/
-    catalog.json        ◀── load this (one record per course)
-    COURSES.md          ◀── read this (one block per course)
-    diagrams/index.html ◀── look at this (one dependency diagram per course)
-    graph.json  course_graph.graphml  edges.csv  PARSE_REPORT.md  rules_literal.json
+```bash
+python -m pip install -r requirements-dev.txt
+cp .env.example .env    # then set LLM_BASE_URL, LLM_API_KEY and LLM_MODEL (any OpenAI-compatible API)
 ```
 
-### Use the data
+The LLM settings are needed for the eligibility checker and planner, and for real pipeline runs. `.env` is Git-ignored, and variables
+already set in your environment take priority over it.
 
-The processed data is committed, so you don't need to run anything to use it.
+## Eligibility checker and planner
+
+This interactive command-line tool is the main way to use the project. It answers both questions in plain English:
+
+- **Check a course:** "I have completed CS1101S, CS1231S, CS2030S and CS2040S and I am in Y2S1. Can I take CS3230
+  next semester?" You get yes or no, the reasons, and whether the course is ruled out for good.
+- **Plan your courses:** "I'm in Y3S1 ... Plan CS2109S, CS3263 and CS4248, at most 12 MC per semester." You get a
+  semester-by-semester plan, or the rules that make a plan impossible.
+
+```bash
+python -m planner
+```
+
+Pick a task from the menu, then describe the request in one line. The LLM translates it into a spec (pipeline B),
+and the tool shows how it understood the request before anything is solved. If something required is missing, such
+as your completed courses, it asks. We show a planning request example in the following:
+
+![Choosing a plan request and the tool's reading of it](docs/images/planner-request.webp)
+
+The solver then answers. A plan lists each semester's courses with titles and MC:
+
+![A plan from the planner](docs/images/planner-plan.png)
+
+A plan covers the courses you name and the prerequisites they need.
+
+After a plan, `C` checks your chances of getting its courses in CourseReg based on past module allocation data published. The bidding MDP (see
+[How it works](#how-it-works)) gives a range for each chance, the courses that are hardest to get, what to bid for
+now, and what to bid for next semester if a bid fails:
+
+![The chances of getting the plan's courses, with bidding advice](docs/images/planner-chances.png)
+
+The full walkthrough for both tasks, with every key and what each part of an answer means, is in
+[CHECKER_PLANNER_GUIDE.md](docs/CHECKER_PLANNER_GUIDE.md).
+
+## Other ways in
+
+**Run the solver on a spec.**
+
+```bash
+python -m solver.run examples/q1_eligible.json
+python -m solver.run examples/q2_plan.json
+```
+
+```python
+from solver.run import run
+answer = run({"query": "eligible", "target": "CS3263", "current_sem": 5,
+              "completed": ["CS1101S", "CS1231S", "CS2030S", "CS2040S", "MA1521", "MA1522", "ST2334"]})
+# {"status": "NOT_ELIGIBLE", "reasons": ["missing prerequisite: CS2109S or CS2109HS"], ...}
+```
+
+**Look up a course.** Open `data/processed/AY2026-2027/COURSES.md` and search for `### CS3263`, browse the
+per-course diagrams from `data/processed/AY2026-2027/diagrams/index.html`, or load the catalogue in Python:
 
 ```python
 from m1_data.catalog import Catalog
 cat = Catalog.load()
-
-cat["CS3263"]["prereq"]["text"]
-# '(CS2109S or CS2109HS) and (CS2040 or CS2040S or ...) and (MA2001 or MA1522 or ...) and (...)'
-
 cat.can_take("CS3263", {"CS2040S", "MA1521", "MA1522", "ST2334"})
 # (False, ['missing prerequisite: CS2109S or CS2109HS'])
-
-cat.reachable("CS3263", {"CS3244", "CS2040S", "MA1521", "MA1522", "ST2334"})
-# (False, 'CS3263: every option fails: CS2109S is ruled out by completed CS3244 |
-#          CS2109HS unavailable (not open to PROGRAMS 0300CSHON)')
 ```
 
-Without Python, open `data/processed/AY2026-2027/COURSES.md` and search for `### CS3263`.
+If GitHub Pages is turned on for the repo (Settings → Pages → Deploy from a branch → `main` / root), the diagrams
+are also at `https://zsyuyiie.github.io/cs3263-project/data/processed/AY2026-2027/diagrams/index.html`.
 
-### See it as a graph
+## How it works
 
 ![Why completing CS3244 makes CS3263 impossible](docs/diagrams/exclusion-trap.svg)
 
-All diagrams come as `.svg` images, which GitHub and VS Code show directly, and as clickable `.html` pages:
+**Course data** (`m1_data/`). NUSMods gives prerequisites and preclusions as rule strings mixed with programme,
+cohort and A-level conditions. The pipeline resolves those conditions for a BComp CS Hons student and writes
+course-only logic trees to `data/processed/AY2026-2027/catalog.json`, cross-checked against NUSMods' own
+prerequisite trees. The processed data is committed. To rebuild it, run `python -m m1_data fetch` and then
+`python -m m1_data build`. Fields and interpretation decisions: [DATA_SCHEMA.md](docs/DATA_SCHEMA.md).
 
-| Diagram | Image (GitHub / IDE) | For the report or slides |
-|---|---|---|
-| Every course: what it needs, what needs it, what it excludes | [`diagrams/` gallery](data/processed/AY2026-2027/diagrams/README.md) | – |
-| BComp CS core chain (year 1 → CS3263) | [svg](docs/diagrams/cs-core-chain.svg) | [png](docs/diagrams/cs-core-chain.png) |
-| The CS3244 trap (shown above) | [svg](docs/diagrams/exclusion-trap.svg) | [png](docs/diagrams/exclusion-trap.png) |
-| How the solver answers a spec | [svg](docs/diagrams/solver-flow.svg) | [png](docs/diagrams/solver-flow.png) |
+**Solver** (`solver/`). Q1 evaluates the course's prerequisite and preclusion trees against the student's
+transcript. Q2 is a CP-SAT model with 11 hard rules (prerequisites, offering terms, exclusions, MC caps, ATAP and
+others), optimised in stages: the objective, then the fewest added courses, then the most preferences met. When
+no plan exists, `solver/explain.py` names a minimal set of rules that conflict. A hand-written backtracking solver
+(`solver/backtrack.py`, four variants from plain search to MAC) solves the same problem for an ablation and must
+reach the same optimum. Spec fields, answers and rules: [SOLVER_GUIDE.md](docs/SOLVER_GUIDE.md).
 
-**Clickable version (one-time setup):** repo **Settings → Pages → Deploy from a branch → `main` / root → Save**.
-After a minute, the course explorer is at
-`https://zsyuyiie.github.io/cs3263-project/data/processed/AY2026-2027/diagrams/index.html`.
-Opening `index.html` from a local clone in a browser also works.
+**Bidding** (`solver/mdp.py`). A CP-SAT plan assumes every CourseReg bid succeeds. The MDP extension estimates the
+chance of getting each course from two years of CourseReg allocation reports and returns a bidding policy instead
+of a fixed plan. On the 45 test requests that have a plan, the chance of finishing by semester 8 rises from 0.947
+for the plan as written to 0.992 for the policy (all-rounds scenario), and from 0.690 to 0.904 under the
+round-1-only scenario. Details: [MDP_GUIDE.md](docs/MDP_GUIDE.md).
 
-**For code:** `graph.json` is a node-link graph that keeps the and/or structure; `course_graph.graphml`
-opens in yEd, Gephi or Cytoscape. The diagrams follow the diagram-design skill and pass its
-`self_check.py` and `verify-geometry.py`.
+## Run the experiment
 
-**Scope:** BComp (CS) Hons, single major, AY2026/27. Requests about DDPs, second majors,
-minors or other programmes are answered `OUT_OF_SCOPE` with a reason (`m1_data/scope.py`).
-
-**Field reference and every interpretation decision: [`docs/DATA_SCHEMA.md`](docs/DATA_SCHEMA.md).**
-
-### Rebuild the data
-
-Python 3.10+ and the standard library only. Run from the repo root:
+Each instance is a natural-language request generated from a gold spec, with the solver's answer as the gold
+answer. `instances/instances.json` has 115 mixed requests (Q1, feasible and infeasible Q2, missing information,
+out of scope), and `instances/q1_400.json` has 400 Q1 requests. Both are generated, so don't edit them by hand.
 
 ```bash
-python -m m1_data fetch    # download from NUSMods (internet; about 1 min)
-python -m m1_data build    # parse + write data/processed + run checks
-python -m m1_data check    # checks only
-python -m pytest -q        # tests
-ruff check .               # lint (style and likely bugs)
+python -m pipelines.run_a --mock gold      # dry run with no API: every answer is the gold answer
+python -m pipelines.run_a                  # pipeline A  -> results/A/<model>/
+python -m pipelines.run_b                  # pipeline B  -> results/B/<model>/
+python -m eval.grade results/A/<model> results/B/<model>
 ```
 
-Change which courses are fetched in `data/config/scope.json`, and the student that
-conditions are resolved for in `data/config/student_context.json`. Hand fixes go in
-`data/manual/overrides.json`, and every fix needs a reason.
+`eval/checker.py` checks every plan against the hard rules on its own, without importing the solver.
+`eval/grade.py` sorts each answer into a class (optimal, preference gap, extra courses, objective gap, invalid,
+over-refusal, invented plan) and writes `graded.csv`, `SUMMARY.md` and `COMPARE.md`. Options, other instance
+sets and the prompt ablation: [pipelines/README.md](pipelines/README.md).
 
-### Status
+## Docs and layout
 
-| | |
-|---|---|
-| Courses with full data | 306 (all CS 1000–4999 + prerequisite closure + referenced) |
-| Rule strings parsed | 918 / 918, 0 errors |
-| Cross-check with NUSMods prereqTree | 198 match, 31 differ (all explained in `PARSE_REPORT.md`) |
-| Invariant checks | pass |
-| Hand spot-check | **to do:** `data/manual/SPOT_CHECK.md` (before generating instances) |
-
-## Solver (M2)
-
-The solver answers two kinds of request, each given as a JSON **spec**:
-
-- **Q1** (`"query": "eligible"`): can the student take one course now, and if not, why not.
-- **Q2** (`"query": "plan"`): plan the remaining semesters (1 to 8) so that every course in
-  `must_take` is completed, and optimise the stated objective and preferences.
-
-It needs Python 3.10+ and the `ortools` package (CP-SAT). Run from the repo root:
-
-```bash
-python -m pip install -r requirements-dev.txt    # pytest and ortools
-python -m solver.run spec.json                   # answer one spec as JSON
-python -m pytest -q                              # all tests
-```
-
-```python
-import json
-from m1_data.catalog import Catalog
-from solver.run import run
-
-answer = run(json.load(open("spec.json")), Catalog.load())
-```
-
-Solver reference (inputs, outputs, rules, optimality, variants): [`docs/SOLVER_GUIDE.md`](docs/SOLVER_GUIDE.md)
-Pipeline B translation guide and prompt: [`docs/TRANSLATION_GUIDE.md`](docs/TRANSLATION_GUIDE.md)
-
-### Spec fields
-
-| Field | Used by | Meaning |
-|---|---|---|
-| `query` | both | `"eligible"` or `"plan"` |
-| `current_sem` | both | first semester still to plan (odd semester = Sem 1, even = Sem 2); optional in Q1 |
-| `completed` | both | courses already passed (`[]` if none) |
-| `programme` | both | copied from the student; checked by `m1_data/scope.py` |
-| `unsupported` | both | wishes the solver cannot model; echoed back as `not_applied` |
-| `target` | Q1 | the course asked about |
-| `must_take` | Q2 | courses the plan must contain (`[]` if none) |
-| `mc_max`, `mc_min` | Q2 | MC limit per semester (default 20); minimum MC in every semester that has courses |
-| `sem_caps` | Q2 | per-semester limit overriding `mc_max`; `0` blocks the semester |
-| `atap_sems` | Q2 | semesters where ATAP (`CP3880`, 12 MC) may be planned; giving the field asks for ATAP |
-| `rules` | Q2 | list of `{"type": before / in_sem / apart / same_sem, "strength": must / prefer, ...}` |
-| `objective` | Q2 | `earliest_graduation`, `min_total_mc` or `none` |
-| `early`, `late` | Q2 | preferences: earlier or later courses |
-
-A field the student did not state is left out of the spec. `null`, `""` and `[]` are never used as placeholders;
-`[]` is written only when the student says there are none. Field values of the wrong type or unknown fields give
-`INVALID_SPEC`.
-
-### Answer statuses
-
-| Query | Statuses |
-|---|---|
-| Q1 | `ELIGIBLE`, `NOT_ELIGIBLE`, `MISSING_INFO`, `INVALID_SPEC`, `OUT_OF_SCOPE` |
-| Q2 | `PLAN`, `NO_PLAN`, `MISSING_INFO`, `INVALID_SPEC`, `OUT_OF_SCOPE` |
-
-The check order is `INVALID_SPEC`, then `OUT_OF_SCOPE`, then `MISSING_INFO`. `MISSING_INFO` lists the mandatory
-fields that were not given (Q1: `completed`, `target`; Q2: `completed`, `current_sem`, `must_take`).
-`NO_PLAN` carries a `reasons` list; when the rules conflict, `solver/explain.py` names a minimal set of
-conflicting rules.
-
-### Rules the model enforces
-
-- Prerequisites in a strictly earlier semester, corequisites in the same or an earlier one.
-- A course only in semesters of a term it is offered in; preclusions and mutual exclusions respected.
-- MC per semester at most `mc_max` (or the `sem_caps` value); `mc_min` for semesters that have courses.
-- A course the student did not list is added only when a planned course in a later semester needs it
-  (reported as `added_prerequisites`).
-- ATAP only in `atap_sems`, never the last semester used, and the other courses in that semester total at most
-  min(8, the semester cap) MC; ATAP's own 12 MC is not counted against the cap.
-- A `must` rule is hard; a `prefer` rule only counts towards the preference tie-break.
-
-### Optimisation order (Q2)
-
-1. Hard rules. No solution gives `NO_PLAN`.
-2. The objective (`earliest_graduation` minimises the last semester, `min_total_mc` minimises total MC); fixed.
-3. Fewest added courses; fixed.
-4. Preferences: the number met among `prefer` rules, `early` and `late`; fixed.
-5. Earliest last semester (only when the objective is not `earliest_graduation`; a presentation tie-break).
-
-### Files
-
-| File | Role |
-|---|---|
-| `solver/spec.py` | validates and cleans a spec |
-| `solver/run.py` | entry point: `run(spec, catalog)`; shared `prepare()` front half |
-| `solver/q1.py` | Q1 eligibility answer |
-| `solver/model.py` | CP-SAT model (variables and hard rules) |
-| `solver/objectives.py` | Q2 staged optimisation and answer building |
-| `solver/explain.py` | minimal conflicting rules for a `NO_PLAN` |
-| `solver/backtrack.py` | own backtracking solver with four variants (below); independent of `model.py` and `objectives.py` |
-| `experiments/run_ablation.py` | ablation runner (CP-SAT against the four variants) |
-| `tests/test_solver.py`, `test_q2.py`, `test_explain.py`, `test_backtrack.py`, `test_ablation.py` | tests |
-
-### Own CSP solver and ablation
-
-`solver/backtrack.py` solves Q2 with its own backtracking search over partial assignments. The four variants are
-cumulative:
-
-- **plain**: static variable order; each value is checked only against the variables already assigned.
-- **mrv**: plain plus MRV (minimum remaining values): next variable is the one with the fewest legal values
-  given the current assignment, counted on demand.
-- **fc**: MRV plus forward checking: after each assignment, values of unassigned variables that conflict with
-  the assigned ones are deleted.
-- **mac**: MRV plus forward checking plus domain propagation: the pruning is repeated, using the reduced domains,
-  until no domain changes; an empty domain means backtrack.
-
-Every complete plan gets a full validity check, so pruning only changes speed. The search is branch-and-bound over
-the same stages as CP-SAT, so all four variants and CP-SAT reach the same optimum (status, last semester and number
-of preferences met); several plans can tie, so the plans themselves may differ.
-
-```python
-from solver.backtrack import solve_with_stats
-answer, stats = solve_with_stats(spec, variant="mac", time_limit=60)
-# stats: nodes, backtracks, checks, seconds, timed_out
-```
-
-`nodes` counts assignment attempts over all stages and `backtracks` counts rejected assignments. A run that
-reaches the time limit returns status `TIMED_OUT` and `timed_out=True` (CP-SAT has no such status).
-
-Ablation over a JSON list of `{"id": ..., "spec": {...}}`:
-
-```bash
-python -m experiments.run_ablation instances.json --limit 30 --out rows.csv --time-limit 60
-```
-
-It writes one CSV row per instance and engine (`id, engine, status, last_semester, preferences_met, seconds, nodes,
-backtracks, checks, timed_out`) and prints, per engine, instances finished, median seconds, median nodes and
-agreement with CP-SAT over the finished instances.
-
-## Repository layout
+| Doc | What it covers |
+| --- | --- |
+| [CHECKER_PLANNER_GUIDE.md](docs/CHECKER_PLANNER_GUIDE.md) | using the eligibility checker and planner: requests, keys, answers, chances |
+| [CODE_GUIDE.md](docs/CODE_GUIDE.md) | how the code fits together, following one request through it (start here) |
+| [FORMULATION.md](docs/FORMULATION.md) | the whole problem formulation on one page |
+| [DATA_SCHEMA.md](docs/DATA_SCHEMA.md) | the catalogue format and how the NUSMods rules were read |
+| [SOLVER_GUIDE.md](docs/SOLVER_GUIDE.md) | spec fields, answers, hard rules, optimality, the backtracking variants |
+| [TRANSLATION_GUIDE.md](docs/TRANSLATION_GUIDE.md) | how pipeline B turns a request into a spec, and how that is scored |
+| [MDP_GUIDE.md](docs/MDP_GUIDE.md) | the bidding extension: formulation, data, results, limits |
 
 ```
-m1_data/            data pipeline package (fetch, rules, resolve, build, check, catalog,
-                    graph, diagrams, scope)
-solver/             spec, run, q1, model, objectives, explain, backtrack (M2)
-experiments/        run_ablation.py (M2)
-examples/           example spec JSON files
-data/config/        scope.json, student_context.json
-data/raw/           NUSMods responses, kept so results are reproducible (data drifts year to year)
-data/processed/     generated outputs (do not edit)
-data/manual/        overrides.json, SPOT_CHECK.md
-docs/               DATA_SCHEMA.md, SOLVER_GUIDE.md, TRANSLATION_GUIDE.md, diagrams/ (hand-laid overviews)
-tests/              pytest
-AGENTS.md           orientation for AI coding agents working in this repo
+m1_data/       data pipeline: fetch, parse, resolve, build, check, catalog
+solver/        Q1, Q2 (CP-SAT), conflict explanation, backtracking solver, bidding MDP
+planner/       eligibility checker and planner (python -m planner)
+pipelines/     pipeline A and B prompts and runners
+instances/     instance generators and the generated sets
+eval/          independent checker and grader
+experiments/   ablation and bidding experiments
+data/          raw NUSMods data, processed catalogue, CourseReg rows, config and manual fixes
+examples/      example specs
+tests/         pytest
 ```
+
+Before pushing, run `ruff check .` and `python -m pytest -q`.

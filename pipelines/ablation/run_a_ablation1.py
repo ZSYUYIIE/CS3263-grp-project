@@ -16,6 +16,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 from pipelines.ablation.prompt_a_ablation1 import build_messages
+from pipelines.config import load_env
 from pipelines.run_a import DEFAULT_MAX_TOKENS, ROOT, call_api, parse_reply_how
 
 
@@ -28,6 +29,7 @@ def main():
     ap.add_argument("--max-tokens", type=int, default=DEFAULT_MAX_TOKENS)
     ap.add_argument("--mock", choices=["gold"], help="answer without an API, for testing the harness")
     a = ap.parse_args()
+    load_env()
 
     model = "mock-gold" if a.mock else os.environ.get("LLM_MODEL")
     base, key = os.environ.get("LLM_BASE_URL"), os.environ.get("LLM_API_KEY")

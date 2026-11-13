@@ -1,10 +1,11 @@
 """Independent plan checker.
 
-Implements the hard rules of docs/SOLVER_GUIDE.md section 4 straight from catalog.json, without importing
+Implements the hard rules (1 to 11) of docs/SOLVER_GUIDE.md section 4 straight from catalog.json, without importing
 m1_data.catalog, m1_data.resolve or the solver (AGENTS.md rule 4), so a bug on either side shows up as a
 disagreement instead of being shared.
 
-    check_plan(spec, plan)            -> list of violated rules (empty = valid)
+    check_plan(spec, plan)            -> list of violated rules (empty = valid); a plan of the wrong
+                                         shape gives one "format: ..." entry instead of an exception
     measures(spec, plan)              -> last semester, total MC, added courses
     preferences_met(spec, plan, gold) -> number of soft wishes met
 """
@@ -16,6 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 C = json.loads((ROOT / "data/processed/AY2026-2027/catalog.json").read_text())["courses"]
 ATAP = "CP3880"
+ATAP_OTHER_MC = 8      # most MC of other courses in the semester that holds ATAP (rule 11)
 
 
 def holds(tree, done: set) -> bool:
@@ -37,6 +39,26 @@ def holds(tree, done: set) -> bool:
     raise ValueError(f"unknown node {op}")
 
 
+def plan_format_error(plan) -> str | None:
+    """Why `plan` is not {semester: [course codes]}, or None when it is. An LLM reply can have any shape
+    (a list, "Y3S1" as a key, a string instead of a list), and a badly shaped plan is an invalid answer,
+    not a reason to stop grading."""
+    if plan is None:
+        return None
+    if not isinstance(plan, dict):
+        return "the plan is not an object of semester -> list of course codes"
+    for s, codes in plan.items():
+        try:
+            int(s)
+        except (TypeError, ValueError):
+            return f"semester key {s!r} is not a semester number"
+        if codes is not None and not isinstance(codes, list):
+            return f"semester {s}: the courses are not given as a list"
+        if any(not isinstance(c, str) for c in codes or []):
+            return f"semester {s}: a course code is not a string"
+    return None
+
+
 def normalise_plan(plan) -> dict[int, list[str]]:
     out: dict[int, list[str]] = {}
     for s, codes in (plan or {}).items():
@@ -52,7 +74,41 @@ def must_rule_courses(spec) -> set[str]:
     return out
 
 
+def required_courses(spec) -> set[str]:
+    """Courses the request itself asks for: must-take, courses in must rules, and ATAP when `atap_sems` is given
+    (giving the field asks for ATAP to be planned). Rule 10 does not apply to these."""
+    out = set(spec.get("must_take") or []) | must_rule_courses(spec)
+    if "atap_sems" in spec:
+        out.add(ATAP)
+    return out
+
+
+def check_atap(spec, plan, sem_of, done) -> list[str]:
+    """Rule 11. ATAP is asked for with `atap_sems` (or by naming CP3880 in must_take or a must rule); the place
+    rules hold whenever it was asked for. ATAP that nobody asked for is left to rule 10."""
+    v: list[str] = []
+    asked = "atap_sems" in spec
+    if asked and ATAP not in sem_of and ATAP not in done:
+        v.append(f"R11 ATAP ({ATAP}) was asked for but is not planned")
+    if ATAP not in sem_of or ATAP not in required_courses(spec):
+        return v
+    s = sem_of[ATAP]
+    if asked:
+        allowed = sorted({int(x) for x in spec["atap_sems"]})
+        if s not in allowed:
+            v.append(f"R11 {ATAP} in semester {s}, allowed semesters {allowed}")
+    if not any(t > s for c, t in sem_of.items() if c != ATAP):
+        v.append(f"R11 {ATAP} is in the last semester used (semester {s}); a course must come later")
+    other = sum(C[c]["mc"] or 0 for c in plan.get(s, []) if c in C and c != ATAP)
+    if other > ATAP_OTHER_MC:
+        v.append(f"R11 semester {s} has {other} MC beside ATAP, limit {ATAP_OTHER_MC}")
+    return v
+
+
 def check_plan(spec: dict, plan) -> list[str]:
+    bad_format = plan_format_error(plan)
+    if bad_format:
+        return [f"format: {bad_format}"]
     v: list[str] = []
     plan = normalise_plan(plan)
     done = set(spec.get("completed") or [])
@@ -107,22 +163,8 @@ def check_plan(spec: dict, plan) -> list[str]:
             continue
         if not rule_holds(r, sem_of, done):
             v.append(f"R9 must rule not met: {describe(r)}")
-    required = must | must_rule_courses(spec)
-    atap_sems = spec.get("atap_sems")
-    if ATAP in sem_of or atap_sems:
-        s = sem_of.get(ATAP)
-        if s is None:
-            if atap_sems:
-                v.append("R11 ATAP asked for but not planned")
-        else:
-            if not (atap_sems and s in atap_sems) and ATAP not in required:
-                v.append(f"R11 ATAP in semester {s}, not an allowed ATAP semester")
-            used = [t for t, codes in plan.items() if codes]
-            if used and s == max(used):
-                v.append(f"R11 ATAP in semester {s}, the last semester used")
-            beside = sum(C[c]["mc"] or 0 for c in plan[s] if c in C and c != ATAP)
-            if beside > min(8, caps.get(s, cap)):
-                v.append(f"R11 {beside} MC beside ATAP in semester {s}")
+    v += check_atap(spec, plan, sem_of, done)
+    required = required_courses(spec)
     for c, s in sem_of.items():
         if c in required or c not in C or c == ATAP:
             continue
@@ -158,7 +200,7 @@ def measures(spec, plan) -> dict:
     plan = normalise_plan(plan)
     used = [s for s, codes in plan.items() if codes]
     codes = [c for cs in plan.values() for c in cs]
-    required = set(spec.get("must_take") or []) | must_rule_courses(spec) | set(spec.get("completed") or [])
+    required = required_courses(spec) | set(spec.get("completed") or [])
     return {"last_semester": max(used) if used else None,
             "total_mc": sum((C[c]["mc"] or 0) for c in codes if c in C),
             "added": sorted(c for c in codes if c not in required and c != ATAP)}

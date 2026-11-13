@@ -7,7 +7,7 @@
     # -> (False, ["blocked: completed CS3244 ... ", "missing prerequisite: ..."])
 
 This is a convenience layer over catalog.json for T1 ground truth, debugging
-and prompts. The evaluation checker (M3) should implement its own logic from
+and prompts. The evaluation checker should implement its own logic from
 docs/DATA_SCHEMA.md so it stays independent of this code.
 """
 from __future__ import annotations

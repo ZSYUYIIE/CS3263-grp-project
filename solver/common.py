@@ -1,6 +1,6 @@
 """Constants and small helpers shared by the solver modules.
 
-Both solvers use these: the CP-SAT model (`model.py`, `objectives.py`) and the
+Both solvers use these: the CP-SAT model (`model.py`, `q2.py`) and the
 hand-written backtracking search (`backtrack.py`). Sharing them here does not
 couple the two searches, which stay independent of each other.
 """

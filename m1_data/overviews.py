@@ -292,11 +292,11 @@ def solver_flow(cat) -> tuple[str, str]:
     ]
     body += _legend(652, [("text", None, "Oval = start or answer · Rectangle = step · Diamond = decision")],
                     note="Q1 = \u201ccan I take X?\u201d, Q2 = \u201cplan my semesters\u201d. Code: solver/run.py, "
-                         "spec.py, q1.py, model.py, objectives.py, explain.py.")
+                         "spec.py, q1.py, model.py, q2.py, explain.py.")
     svg = _svg("solver-flow", "How the solver answers a spec",
                "Flowchart: a spec is checked, then answered as Q1 eligibility or as a Q2 CP-SAT plan; an infeasible "
                "plan request returns the smallest set of conflicting rules.", body, height=716)
-    return svg, page("How the solver answers a spec", "Flowchart · solver (M2)",
+    return svg, page("How the solver answers a spec", "Flowchart · solver",
                      "<h1>How the solver answers a spec</h1>"
                      f'<div class="diagram-container">{svg}</div>')
 

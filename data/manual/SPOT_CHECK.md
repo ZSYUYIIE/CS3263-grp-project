@@ -1,11 +1,10 @@
 # Spot-check sheet
 
-The doc requires our parsed prerequisites and exclusions to be checked by hand against
-NUSMods **before** any instances are generated (target: 29 Oct). For each row open the link,
-compare, then put your initials in **Checked** and ✅ or ❌ in **OK**. For ❌, add a fix to
+Check the parsed prerequisites and exclusions by hand against NUSMods. For each row open the
+link, compare, then put your initials in **Checked** and ✅ or ❌ in **OK**. For ❌, add a fix to
 `data/manual/overrides.json` (or fix the parser) and note it here.
 
-Rows: the doc's 5 courses + BComp CS core, every course with a parser warning, and 8 random courses (seed 3263).
+Rows: CS3263 and the AI courses around it, the BComp CS core, every course with a parser warning, and 8 random courses (seed 3263).
 
 | Course | Prereq (ours) | Blocked if (ours) | Available | Checked | OK | Notes |
 |---|---|---|---|---|---|---|
