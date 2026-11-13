@@ -1,0 +1,109 @@
+{
+ "id": "q2-S3-032",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 19.39,
+ "usage": {
+  "prompt_tokens": 28494,
+  "total_tokens": 29725,
+  "completion_tokens": 1231,
+  "finish_reason": "stop",
+  "request_seconds": 19.39,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"ATAP (CP3880) is planned in Semester 7, which is the last semester used in the plan. Rule 10 forbids ATAP in the last semester used because a course must be planned in a later semester.\",\n\"CS2106 is required in Semester 6, but Semester 6 is not the last semester used if ATAP is in Semester 7. However, the ATAP constraint itself makes the plan invalid.\",\n\"Even if ATAP were moved, CS2109S is required in Y2S2 (Semester 2). The student is starting Y2S2. Semesters 1-3 are available. Exchange is in Y3S1 (Sem 5). ATAP in Sem 7. If ATAP is in Sem 7, Sem 8 must have a course. CS2106 is in Sem 6. CS2109S in Sem 2. CS2105 with CS2109S in Sem 2. CS3210 before CS2102. Remaining: CS3230, CS3219. Sem 3, 4, 8 available for courses. Sem 5 is exchange. Sem 6 has CS2106. Sem 7 has ATAP. Sem 8 needs a course. CS3219 requires CS2103T (completed) or others. CS3230 requires CS2040S (completed) and CS1231S (completed). CS2102 requires CS2109S (planned Sem 2) and CS2040S (completed) and CS2030S (completed). CS2102 can be in Sem 3, 4, 8. CS3210 requires CS2100 (completed). CS3210 can be in Sem 3, 4, 8. CS3230 can be in Sem 3, 4, 8. CS3219 can be in Sem 3, 4, 8. We need to fit CS2102, CS3210, CS3230, CS3219 into Sem 3, 4, 8. Sem 3, 4, 8 are 3 semesters. 4 courses. Pigeonhole principle: one semester must have 2 courses. Sem 3, 4, 8 have 20 MC limit. 2 courses = 8 MC. OK. But ATAP in Sem 7 means Sem 8 must have a course. If we put a course in Sem 8, we have Sem 3, 4, 8 for 4 courses. One semester has 2. This is possible. However, the previous plan failed because ATAP was in the LAST semester. If we put a course in Sem 8, ATAP in Sem 7 is valid. Let's re-evaluate. Sem 2: CS2109S, CS2105. Sem 3: Exchange (0 MC). Sem 4: CS3210, CS3230. Sem 5: Exchange (0 MC). Sem 6: CS2106. Sem 7: CP3880. Sem 8: CS2102, CS3219. Check prerequisites: CS2102 needs CS2109S (Sem 2) and CS2040S (completed). OK. CS3219 needs CS2103T (completed). OK. CS3210 needs CS2100 (completed). OK. CS3230 needs CS2040S, CS1231S (completed). OK. CS2106 needs CS2100 (completed). OK. CS2109S needs MA1521, MA1522, CS2040S (completed). OK. CS2105 needs CS2040S (completed). OK. ATAP needs IS2101 (completed) and CS2103T (completed). OK. This plan works. Sem 2: CS2109S, CS2105. Sem 4: CS3210, CS3230. Sem 6: CS2106. Sem 7: CP3880. Sem 8: CS2102, CS3219. Sem 3, 5 are exchange. This satisfies all constraints. The previous error was putting ATAP in the last semester. Here Sem 8 is last. ATAP is Sem 7. Valid.\"\n]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "ATAP (CP3880) is planned in Semester 7, which is the last semester used in the plan. Rule 10 forbids ATAP in the last semester used because a course must be planned in a later semester.",
+   "CS2106 is required in Semester 6, but Semester 6 is not the last semester used if ATAP is in Semester 7. However, the ATAP constraint itself makes the plan invalid.",
+   "Even if ATAP were moved, CS2109S is required in Y2S2 (Semester 2). The student is starting Y2S2. Semesters 1-3 are available. Exchange is in Y3S1 (Sem 5). ATAP in Sem 7. If ATAP is in Sem 7, Sem 8 must have a course. CS2106 is in Sem 6. CS2109S in Sem 2. CS2105 with CS2109S in Sem 2. CS3210 before CS2102. Remaining: CS3230, CS3219. Sem 3, 4, 8 available for courses. Sem 5 is exchange. Sem 6 has CS2106. Sem 7 has ATAP. Sem 8 needs a course. CS3219 requires CS2103T (completed) or others. CS3230 requires CS2040S (completed) and CS1231S (completed). CS2102 requires CS2109S (planned Sem 2) and CS2040S (completed) and CS2030S (completed). CS2102 can be in Sem 3, 4, 8. CS3210 requires CS2100 (completed). CS3210 can be in Sem 3, 4, 8. CS3230 can be in Sem 3, 4, 8. CS3219 can be in Sem 3, 4, 8. We need to fit CS2102, CS3210, CS3230, CS3219 into Sem 3, 4, 8. Sem 3, 4, 8 are 3 semesters. 4 courses. Pigeonhole principle: one semester must have 2 courses. Sem 3, 4, 8 have 20 MC limit. 2 courses = 8 MC. OK. But ATAP in Sem 7 means Sem 8 must have a course. If we put a course in Sem 8, we have Sem 3, 4, 8 for 4 courses. One semester has 2. This is possible. However, the previous plan failed because ATAP was in the LAST semester. If we put a course in Sem 8, ATAP in Sem 7 is valid. Let's re-evaluate. Sem 2: CS2109S, CS2105. Sem 3: Exchange (0 MC). Sem 4: CS3210, CS3230. Sem 5: Exchange (0 MC). Sem 6: CS2106. Sem 7: CP3880. Sem 8: CS2102, CS3219. Check prerequisites: CS2102 needs CS2109S (Sem 2) and CS2040S (completed). OK. CS3219 needs CS2103T (completed). OK. CS3210 needs CS2100 (completed). OK. CS3230 needs CS2040S, CS1231S (completed). OK. CS2106 needs CS2100 (completed). OK. CS2109S needs MA1521, MA1522, CS2040S (completed). OK. CS2105 needs CS2040S (completed). OK. ATAP needs IS2101 (completed) and CS2103T (completed). OK. This plan works. Sem 2: CS2109S, CS2105. Sem 4: CS3210, CS3230. Sem 6: CS2106. Sem 7: CP3880. Sem 8: CS2102, CS3219. Sem 3, 5 are exchange. This satisfies all constraints. The previous error was putting ATAP in the last semester. Here Sem 8 is last. ATAP is Sem 7. Valid."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"2\": [\"CS2109S\", \"CS2105\"], \"3\": [], \"4\": [\"CS2106\", \"CS3210\", \"ST2334\"], \"5\": [\"CS2102\", \"CS3230\"], \"6\": [\"CS3219\"], \"7\": [\"CP3880\"]}, \"reasons\": [\"ATAP (CP3880) planned in Sem 7 as requested. Exchange in Sem 3 results in 0 MC. CS2106 placed in Sem 6 per constraint. CS2109S and CS2105 taken together in Sem 2 as required. CS3210 completed before CS2102 in Sem 5. Prerequisites satisfied by completed courses or earlier planned courses.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "2": [
+      "CS2109S",
+      "CS2105"
+     ],
+     "3": [],
+     "4": [
+      "CS2106",
+      "CS3210",
+      "ST2334"
+     ],
+     "5": [
+      "CS2102",
+      "CS3230"
+     ],
+     "6": [
+      "CS3219"
+     ],
+     "7": [
+      "CP3880"
+     ]
+    },
+    "reasons": [
+     "ATAP (CP3880) planned in Sem 7 as requested. Exchange in Sem 3 results in 0 MC. CS2106 placed in Sem 6 per constraint. CS2109S and CS2105 taken together in Sem 2 as required. CS3210 completed before CS2102 in Sem 5. Prerequisites satisfied by completed courses or earlier planned courses."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 14089,
+    "total_tokens": 14279,
+    "completion_tokens": 190,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.56,
+    "attempts": 1
+   },
+   "seconds": 3.56,
+   "violations": [
+    "R1 semester 2 is outside 4..8",
+    "R7 semester 5 has 8 MC, limit 0",
+    "R9 must rule not met: CS2106 in semester 6",
+    "R9 must rule not met: CS2109S in semester 4",
+    "R11 ATAP in semester 7, the last semester used"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"ATAP (CP3880) is planned in Semester 7, which is the last semester used in the plan. Rule 10 forbids ATAP in the last semester used because a course must be planned in a later semester.\",\n\"CS2106 is required in Semester 6, but Semester 6 is not the last semester used if ATAP is in Semester 7. However, the ATAP constraint itself makes the plan invalid.\",\n\"Even if ATAP were moved, CS2109S is required in Y2S2 (Semester 2). The student is starting Y2S2. Semesters 1-3 are available. Exchange is in Y3S1 (Sem 5). ATAP in Sem 7. If ATAP is in Sem 7, Sem 8 must have a course. CS2106 is in Sem 6. CS2109S in Sem 2. CS2105 with CS2109S in Sem 2. CS3210 before CS2102. Remaining: CS3230, CS3219. Sem 3, 4, 8 available for courses. Sem 5 is exchange. Sem 6 has CS2106. Sem 7 has ATAP. Sem 8 needs a course. CS3219 requires CS2103T (completed) or others. CS3230 requires CS2040S (completed) and CS1231S (completed). CS2102 requires CS2109S (planned Sem 2) and CS2040S (completed) and CS2030S (completed). CS2102 can be in Sem 3, 4, 8. CS3210 requires CS2100 (completed). CS3210 can be in Sem 3, 4, 8. CS3230 can be in Sem 3, 4, 8. CS3219 can be in Sem 3, 4, 8. We need to fit CS2102, CS3210, CS3230, CS3219 into Sem 3, 4, 8. Sem 3, 4, 8 are 3 semesters. 4 courses. Pigeonhole principle: one semester must have 2 courses. Sem 3, 4, 8 have 20 MC limit. 2 courses = 8 MC. OK. But ATAP in Sem 7 means Sem 8 must have a course. If we put a course in Sem 8, we have Sem 3, 4, 8 for 4 courses. One semester has 2. This is possible. However, the previous plan failed because ATAP was in the LAST semester. If we put a course in Sem 8, ATAP in Sem 7 is valid. Let's re-evaluate. Sem 2: CS2109S, CS2105. Sem 3: Exchange (0 MC). Sem 4: CS3210, CS3230. Sem 5: Exchange (0 MC). Sem 6: CS2106. Sem 7: CP3880. Sem 8: CS2102, CS3219. Check prerequisites: CS2102 needs CS2109S (Sem 2) and CS2040S (completed). OK. CS3219 needs CS2103T (completed). OK. CS3210 needs CS2100 (completed). OK. CS3230 needs CS2040S, CS1231S (completed). OK. CS2106 needs CS2100 (completed). OK. CS2109S needs MA1521, MA1522, CS2040S (completed). OK. CS2105 needs CS2040S (completed). OK. ATAP needs IS2101 (completed) and CS2103T (completed). OK. This plan works. Sem 2: CS2109S, CS2105. Sem 4: CS3210, CS3230. Sem 6: CS2106. Sem 7: CP3880. Sem 8: CS2102, CS3219. Sem 3, 5 are exchange. This satisfies all constraints. The previous error was putting ATAP in the last semester. Here Sem 8 is last. ATAP is Sem 7. Valid.\"\n]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "ATAP (CP3880) is planned in Semester 7, which is the last semester used in the plan. Rule 10 forbids ATAP in the last semester used because a course must be planned in a later semester.",
+     "CS2106 is required in Semester 6, but Semester 6 is not the last semester used if ATAP is in Semester 7. However, the ATAP constraint itself makes the plan invalid.",
+     "Even if ATAP were moved, CS2109S is required in Y2S2 (Semester 2). The student is starting Y2S2. Semesters 1-3 are available. Exchange is in Y3S1 (Sem 5). ATAP in Sem 7. If ATAP is in Sem 7, Sem 8 must have a course. CS2106 is in Sem 6. CS2109S in Sem 2. CS2105 with CS2109S in Sem 2. CS3210 before CS2102. Remaining: CS3230, CS3219. Sem 3, 4, 8 available for courses. Sem 5 is exchange. Sem 6 has CS2106. Sem 7 has ATAP. Sem 8 needs a course. CS3219 requires CS2103T (completed) or others. CS3230 requires CS2040S (completed) and CS1231S (completed). CS2102 requires CS2109S (planned Sem 2) and CS2040S (completed) and CS2030S (completed). CS2102 can be in Sem 3, 4, 8. CS3210 requires CS2100 (completed). CS3210 can be in Sem 3, 4, 8. CS3230 can be in Sem 3, 4, 8. CS3219 can be in Sem 3, 4, 8. We need to fit CS2102, CS3210, CS3230, CS3219 into Sem 3, 4, 8. Sem 3, 4, 8 are 3 semesters. 4 courses. Pigeonhole principle: one semester must have 2 courses. Sem 3, 4, 8 have 20 MC limit. 2 courses = 8 MC. OK. But ATAP in Sem 7 means Sem 8 must have a course. If we put a course in Sem 8, we have Sem 3, 4, 8 for 4 courses. One semester has 2. This is possible. However, the previous plan failed because ATAP was in the LAST semester. If we put a course in Sem 8, ATAP in Sem 7 is valid. Let's re-evaluate. Sem 2: CS2109S, CS2105. Sem 3: Exchange (0 MC). Sem 4: CS3210, CS3230. Sem 5: Exchange (0 MC). Sem 6: CS2106. Sem 7: CP3880. Sem 8: CS2102, CS3219. Check prerequisites: CS2102 needs CS2109S (Sem 2) and CS2040S (completed). OK. CS3219 needs CS2103T (completed). OK. CS3210 needs CS2100 (completed). OK. CS3230 needs CS2040S, CS1231S (completed). OK. CS2106 needs CS2100 (completed). OK. CS2109S needs MA1521, MA1522, CS2040S (completed). OK. CS2105 needs CS2040S (completed). OK. ATAP needs IS2101 (completed) and CS2103T (completed). OK. This plan works. Sem 2: CS2109S, CS2105. Sem 4: CS3210, CS3230. Sem 6: CS2106. Sem 7: CP3880. Sem 8: CS2102, CS3219. Sem 3, 5 are exchange. This satisfies all constraints. The previous error was putting ATAP in the last semester. Here Sem 8 is last. ATAP is Sem 7. Valid."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 14405,
+    "total_tokens": 15446,
+    "completion_tokens": 1041,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 15.83,
+    "attempts": 1
+   },
+   "seconds": 15.83,
+   "violations": null
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+{
+ "id": "q2-S5-012",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 213.47,
+ "usage": {
+  "prompt_tokens": 8833,
+  "total_tokens": 23395,
+  "completion_tokens": 14562,
+  "prompt_tokens_details": {
+   "cached_tokens": 8576,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 14384
+  },
+  "finish_reason": "stop",
+  "request_seconds": 213.47,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS2102\", \"PC1201\", \"CS3230\"], \"5\": [\"CS3241\", \"CS2104\", \"CS2220\", \"CS3223\"], \"6\": [\"CS3242\", \"CS4330\", \"CS4212\"], \"7\": [\"CS2106\"], \"8\": [\"CS3219\", \"CS4221\", \"CS4231\"]}, \"reasons\": [\"CS3241 must be sem5 and CS3242 sem6, so CS4221 is forced to sem8; CS2106 cannot be after it.\", \"CS4330 earliest is sem6 after CS2220 sem5; CS4231 latest is sem8 after CS3230.\", \"CS3219 is fixed in sem8; added prerequisites are minimal.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2102",
+    "PC1201",
+    "CS3230"
+   ],
+   "5": [
+    "CS3241",
+    "CS2104",
+    "CS2220",
+    "CS3223"
+   ],
+   "6": [
+    "CS3242",
+    "CS4330",
+    "CS4212"
+   ],
+   "7": [
+    "CS2106"
+   ],
+   "8": [
+    "CS3219",
+    "CS4221",
+    "CS4231"
+   ]
+  },
+  "reasons": [
+   "CS3241 must be sem5 and CS3242 sem6, so CS4221 is forced to sem8; CS2106 cannot be after it.",
+   "CS4330 earliest is sem6 after CS2220 sem5; CS4231 latest is sem8 after CS3230.",
+   "CS3219 is fixed in sem8; added prerequisites are minimal."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 4
+}

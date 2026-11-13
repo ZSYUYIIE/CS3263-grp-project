@@ -1,0 +1,68 @@
+{
+ "id": "q2-S4-085",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 4.91,
+ "solver_seconds": 0.354,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3063,
+  "total_tokens": 3310,
+  "completion_tokens": 247,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 4.56,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 1,\n\"programme\": \"BComp CS Hons\",\n\"completed\": [],\n\"must_take\": [\n\"CS2105\",\n\"CS4236\",\n\"CS2109S\",\n\"CS2103T\",\n\"ST2334\",\n\"CS3243\",\n\"CS2102\",\n\"CS3219\",\n\"CS1101S\"\n],\n\"mc_max\": 16,\n\"sem_caps\": {\n\"5\": 0\n},\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS2102\",\n\"b\": \"ST2334\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2103T\",\n\"sem\": 4,\n\"strength\": \"prefer\"\n}\n],\n\"late\": [\n\"CS3219\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "programme": "BComp CS Hons",
+  "completed": [],
+  "must_take": [
+   "CS2105",
+   "CS4236",
+   "CS2109S",
+   "CS2103T",
+   "ST2334",
+   "CS3243",
+   "CS2102",
+   "CS3219",
+   "CS1101S"
+  ],
+  "mc_max": 16,
+  "sem_caps": {
+   "5": 0
+  },
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2102",
+    "b": "ST2334",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2103T",
+    "sem": 4,
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "CS3219"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the course exclusions (courses that cannot be taken together)"
+  ]
+ }
+}

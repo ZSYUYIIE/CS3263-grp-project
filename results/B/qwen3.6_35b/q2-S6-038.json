@@ -1,0 +1,95 @@
+{
+ "id": "q2-S6-038",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 17.8,
+ "solver_seconds": 0.001,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3134,
+  "total_tokens": 3566,
+  "completion_tokens": 432,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 17.8,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 3,\n\"programme\": \"BComp CS Hons with second major in Economics\",\n\"completed\": [\n\"CS1101S\",\n\"CS1231S\",\n\"MA1522\",\n\"CS2030S\",\n\"IS1108\",\n\"MA1521\",\n\"CS2040S\",\n\"ES2660\"\n],\n\"must_take\": [\n\"CS4353\",\n\"CS3264\",\n\"CS4246\",\n\"CS4430\",\n\"CS4215\",\n\"CS4278\",\n\"CS2101\",\n\"ST2334\"\n],\n\"mc_max\": 16,\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"apart\",\n\"a\": \"CS4246\",\n\"b\": \"CS4278\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4246\",\n\"b\": \"CS3264\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2101\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4246\",\n\"b\": \"CS4353\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4215\",\n\"sem\": 6,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2101\",\n\"b\": \"CS4278\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "programme": "BComp CS Hons with second major in Economics",
+  "completed": [
+   "CS1101S",
+   "CS1231S",
+   "MA1522",
+   "CS2030S",
+   "IS1108",
+   "MA1521",
+   "CS2040S",
+   "ES2660"
+  ],
+  "must_take": [
+   "CS4353",
+   "CS3264",
+   "CS4246",
+   "CS4430",
+   "CS4215",
+   "CS4278",
+   "CS2101",
+   "ST2334"
+  ],
+  "mc_max": 16,
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS4246",
+    "b": "CS4278",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4246",
+    "b": "CS3264",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2101",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4246",
+    "b": "CS4353",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4215",
+    "sem": 6,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS2101",
+    "b": "CS4278",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "OUT_OF_SCOPE",
+  "reasons": [
+   "programme 'BComp CS Hons with second major in Economics' is not BComp (CS) Hons"
+  ],
+  "message": "I can only plan for BComp (CS) Hons single-major students under AY2026/2027 rules, and this request is outside that (programme 'BComp CS Hons with second major in Economics' is not BComp (CS) Hons). Course rules differ by programme and aren't in my data for your case, so please check with your faculty or academic advisor."
+ }
+}

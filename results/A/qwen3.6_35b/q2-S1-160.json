@@ -1,0 +1,40 @@
+{
+ "id": "q2-S1-160",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 7.39,
+ "usage": {
+  "prompt_tokens": 9087,
+  "total_tokens": 9476,
+  "completion_tokens": 389,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 7.39,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"7\": [\n      \"CS3103\",\n      \"ES2660\"\n    ],\n    \"8\": [\n      \"CS3230\",\n      \"CS4430\",\n      \"CS4212\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3103 is taken in Sem 7 as required.\",\n    \"ES2660 is taken in Sem 7 to satisfy the prerequisite for CS3230 and the 'before' constraint, while respecting the 'early as possible' wish.\",\n    \"CS3230, CS4430, and CS4212 are taken in Sem 8. CS3230 is placed in Sem 8 to satisfy the 'late as possible' wish, as it cannot be taken in Sem 7 due to the prerequisite chain (CS3230 requires CS1231S which is done, but CS3230 is offered Sem 1/2, and we need to fit CS3103/ES2660/CS3230 logic. Wait, CS3230 is offered Sem 1 and Sem 2. Sem 7 is Sem 1 of Y4. Sem 8 is Sem 2 of Y4. CS3230 can be taken in Sem 7. However, the student wants CS3230 as late as possible. Sem 8 is later than Sem 7. So Sem 8 is preferred for CS3230. CS4430 and CS4212 are forced to Sem 8. CS3230 fits in Sem 8.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "7": [
+    "CS3103",
+    "ES2660"
+   ],
+   "8": [
+    "CS3230",
+    "CS4430",
+    "CS4212"
+   ]
+  },
+  "reasons": [
+   "CS3103 is taken in Sem 7 as required.",
+   "ES2660 is taken in Sem 7 to satisfy the prerequisite for CS3230 and the 'before' constraint, while respecting the 'early as possible' wish.",
+   "CS3230, CS4430, and CS4212 are taken in Sem 8. CS3230 is placed in Sem 8 to satisfy the 'late as possible' wish, as it cannot be taken in Sem 7 due to the prerequisite chain (CS3230 requires CS1231S which is done, but CS3230 is offered Sem 1/2, and we need to fit CS3103/ES2660/CS3230 logic. Wait, CS3230 is offered Sem 1 and Sem 2. Sem 7 is Sem 1 of Y4. Sem 8 is Sem 2 of Y4. CS3230 can be taken in Sem 7. However, the student wants CS3230 as late as possible. Sem 8 is later than Sem 7. So Sem 8 is preferred for CS3230. CS4430 and CS4212 are forced to Sem 8. CS3230 fits in Sem 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

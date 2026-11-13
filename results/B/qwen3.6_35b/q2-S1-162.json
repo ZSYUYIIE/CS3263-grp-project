@@ -1,0 +1,124 @@
+{
+ "id": "q2-S1-162",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 10.43,
+ "solver_seconds": 0.013,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3175,
+  "total_tokens": 3674,
+  "completion_tokens": 499,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 10.42,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 7,\n\"programme\": \"BComp CS Hons\",\n\"completed\": [\n\"CS3219\",\n\"CS1231S\",\n\"MA1522\",\n\"CS3230\",\n\"MA1521\",\n\"IS1108\",\n\"CS2040S\",\n\"ST2334\",\n\"CS2103T\",\n\"CS3227\",\n\"CS2100\",\n\"CS4215\",\n\"CS1101S\",\n\"CS2109S\",\n\"CS2030S\",\n\"CS2106\",\n\"CS3241\",\n\"CS2102\",\n\"CS2105\"\n],\n\"must_take\": [\n\"CS3236\",\n\"CS3223\",\n\"CS3247\",\n\"CS4261\"\n],\n\"mc_max\": 16,\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS3223\",\n\"b\": \"CS3236\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3223\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3247\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4261\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS3236\",\n\"b\": \"CS4261\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS3247\",\n\"b\": \"CS3223\",\n\"strength\": \"prefer\"\n}\n],\n\"early\": [\n\"CS3236\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "CS3219",
+   "CS1231S",
+   "MA1522",
+   "CS3230",
+   "MA1521",
+   "IS1108",
+   "CS2040S",
+   "ST2334",
+   "CS2103T",
+   "CS3227",
+   "CS2100",
+   "CS4215",
+   "CS1101S",
+   "CS2109S",
+   "CS2030S",
+   "CS2106",
+   "CS3241",
+   "CS2102",
+   "CS2105"
+  ],
+  "must_take": [
+   "CS3236",
+   "CS3223",
+   "CS3247",
+   "CS4261"
+  ],
+  "mc_max": 16,
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3223",
+    "b": "CS3236",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3223",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3247",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4261",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3236",
+    "b": "CS4261",
+    "strength": "prefer"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3247",
+    "b": "CS3223",
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS3236"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 8,
+  "plan": {
+   "7": [
+    "CS3223",
+    "CS4261"
+   ],
+   "8": [
+    "CS3236",
+    "CS3247"
+   ]
+  },
+  "mc_per_semester": {
+   "7": 8,
+   "8": 8
+  },
+  "preferences_met": [
+   "CS3236 as early as possible"
+  ],
+  "preferences_not_met": [
+   "CS3236 and CS4261 in the same semester",
+   "CS3247 and CS3223 in the same semester"
+  ]
+ }
+}

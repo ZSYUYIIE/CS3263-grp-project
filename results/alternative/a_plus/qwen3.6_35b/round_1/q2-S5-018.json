@@ -1,0 +1,34 @@
+{
+ "id": "q2-S5-018",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 40.44,
+ "usage": {
+  "prompt_tokens": 30543,
+  "total_tokens": 33632,
+  "completion_tokens": 3089,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 40.44,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3235 requires CS2107 which is not in the completed list.\",\n    \"CS4222 and CS4231 are only offered in Sem 2, so they cannot be taken in Sem 7 (Y4S1).\",\n    \"CS2102 must be taken in Y4S1 (Sem 7), but its prerequisite ES2660 must be finished before it, forcing ES2660 into Sem 6 or earlier. However, CS4222 and CS4231 cannot be taken in Sem 7, and their prerequisites are met, but they are not offered in Sem 1, making it impossible to schedule them in Sem 7. Since the user must take them, and they can only be taken in Sem 2 (6 or 8), and Sem 8 is the last semester, we must check if Sem 8 is viable for both. But CS4222 and CS4231 cannot be together. One must be in Sem 6, one in Sem 8. Sem 6 has ES2660, CS2102 (no, CS2102 is Sem 7), CS3211, CS4218. Sem 6 capacity is 16 MC. ES2660 (4) + CS3211 (4) + CS4218 (4) = 12 MC. Can add one 4 MC course. If CS4222 is in Sem 6, total 16 MC. Then CS4231 must be in Sem 8. CS3235 must be after CS4218. If CS4218 is in Sem 6, CS3235 can be in Sem 8. But CS3235 requires CS2107 (not completed). Thus, CS3235 cannot be taken. Therefore, no plan exists.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3235 requires CS2107 which is not in the completed list.",
+   "CS4222 and CS4231 are only offered in Sem 2, so they cannot be taken in Sem 7 (Y4S1).",
+   "CS2102 must be taken in Y4S1 (Sem 7), but its prerequisite ES2660 must be finished before it, forcing ES2660 into Sem 6 or earlier. However, CS4222 and CS4231 cannot be taken in Sem 7, and their prerequisites are met, but they are not offered in Sem 1, making it impossible to schedule them in Sem 7. Since the user must take them, and they can only be taken in Sem 2 (6 or 8), and Sem 8 is the last semester, we must check if Sem 8 is viable for both. But CS4222 and CS4231 cannot be together. One must be in Sem 6, one in Sem 8. Sem 6 has ES2660, CS2102 (no, CS2102 is Sem 7), CS3211, CS4218. Sem 6 capacity is 16 MC. ES2660 (4) + CS3211 (4) + CS4218 (4) = 12 MC. Can add one 4 MC course. If CS4222 is in Sem 6, total 16 MC. Then CS4231 must be in Sem 8. CS3235 must be after CS4218. If CS4218 is in Sem 6, CS3235 can be in Sem 8. But CS3235 requires CS2107 (not completed). Thus, CS3235 cannot be taken. Therefore, no plan exists."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

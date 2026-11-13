@@ -1,0 +1,50 @@
+{
+ "id": "q1-mp-018-p",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 1.71,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2804,
+  "total_tokens": 2902,
+  "completion_tokens": 98,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 1.71,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\": \"eligible\", \"target\": \"CS2106\", \"current_sem\": 6, \"completed\": [\"ES1000\", \"MA1522\", \"IS1108\", \"CS3234\", \"MA1100T\", \"MA1521\", \"ESP2111\", \"MA3236\", \"MA2311\", \"ES2660\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS2106",
+  "current_sem": 6,
+  "completed": [
+   "ES1000",
+   "MA1522",
+   "IS1108",
+   "CS3234",
+   "MA1100T",
+   "MA1521",
+   "ESP2111",
+   "MA3236",
+   "MA2311",
+   "ES2660"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS2106",
+  "semester": 6,
+  "reasons": [
+   "missing prerequisite: CS2100 or CS2100DE or CS2100HS or EE2007 or EE2024 or EE2028"
+  ],
+  "can_still_become_eligible": true
+ }
+}

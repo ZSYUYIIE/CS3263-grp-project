@@ -1,0 +1,51 @@
+{
+ "id": "q2-S3-234",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 54.34,
+ "usage": {
+  "prompt_tokens": 8018,
+  "total_tokens": 13633,
+  "completion_tokens": 5615,
+  "prompt_tokens_details": {
+   "cached_tokens": 7680,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5458
+  },
+  "finish_reason": "stop",
+  "request_seconds": 54.34,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS2104\",\"CS3237\",\"CS2105\",\"ST2334\"],\"6\":[\"IS1108\",\"CS4212\",\"CS3219\"]},\"reasons\":[\"CS2104 is added because it is the prerequisite for CS4212; it is placed in semester 5 before CS4212 in semester 6.\",\"IS1108 is fixed in semester 6, and CS3237 is in semester 5 so it precedes CS4212.\",\"Semester 5 has 4 modules and semester 6 has 3, meeting the minimum of 3 modules; CS2105 and CS3219 are in different semesters and ST2334 is as early as possible.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2104",
+    "CS3237",
+    "CS2105",
+    "ST2334"
+   ],
+   "6": [
+    "IS1108",
+    "CS4212",
+    "CS3219"
+   ]
+  },
+  "reasons": [
+   "CS2104 is added because it is the prerequisite for CS4212; it is placed in semester 5 before CS4212 in semester 6.",
+   "IS1108 is fixed in semester 6, and CS3237 is in semester 5 so it precedes CS4212.",
+   "Semester 5 has 4 modules and semester 6 has 3, meeting the minimum of 3 modules; CS2105 and CS3219 are in different semesters and ST2334 is as early as possible."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

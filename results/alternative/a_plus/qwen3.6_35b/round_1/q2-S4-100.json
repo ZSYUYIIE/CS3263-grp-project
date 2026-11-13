@@ -1,0 +1,50 @@
+{
+ "id": "q2-S4-100",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 80.61,
+ "usage": {
+  "prompt_tokens": 25196,
+  "total_tokens": 28954,
+  "completion_tokens": 3758,
+  "finish_reason": "stop",
+  "request_seconds": 80.61,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2105\",\n      \"CS2220\",\n      \"CS3264\"\n    ],\n    \"6\": [\n      \"CS2102\",\n      \"CS4222\",\n      \"CS4330\"\n    ],\n    \"7\": [\n      \"CS3223\",\n      \"CS3244\"\n    ],\n    \"8\": [\n      \"CS2101\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3244 is not blocked by completed courses; CS3264 is taken in Sem 5 and CS3244 in Sem 7, satisfying mutual exclusivity.\",\n    \"CS2102 and CS4222 are taken in the same semester (Sem 6).\",\n    \"CS4330 is taken in Sem 6, before CS2101 in Sem 8.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2105",
+    "CS2220",
+    "CS3264"
+   ],
+   "6": [
+    "CS2102",
+    "CS4222",
+    "CS4330"
+   ],
+   "7": [
+    "CS3223",
+    "CS3244"
+   ],
+   "8": [
+    "CS2101"
+   ]
+  },
+  "reasons": [
+   "CS3244 is not blocked by completed courses; CS3264 is taken in Sem 5 and CS3244 in Sem 7, satisfying mutual exclusivity.",
+   "CS2102 and CS4222 are taken in the same semester (Sem 6).",
+   "CS4330 is taken in Sem 6, before CS2101 in Sem 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

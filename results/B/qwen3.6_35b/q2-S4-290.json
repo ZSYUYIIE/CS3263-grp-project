@@ -1,0 +1,79 @@
+{
+ "id": "q2-S4-290",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 4.3,
+ "solver_seconds": 0.331,
+ "max_tokens": 49152,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 3101,
+  "total_tokens": 3405,
+  "completion_tokens": 304,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 3.97,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 2,\n\"completed\": [\n\"CS1101S\",\n\"ES2660\",\n\"CS1231S\",\n\"MA1521\"\n],\n\"must_take\": [\n\"CS3231\",\n\"CS2105\",\n\"CS3264\",\n\"CS4277\",\n\"CS2106\",\n\"CS4278\"\n],\n\"mc_max\": 12,\n\"sem_caps\": {\n\"8\": 0\n},\n\"objective\": \"min_total_mc\",\n\"early\": [\n\"CS2106\",\n\"CS3231\"\n],\n\"late\": [\n\"CS2105\"\n],\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2105\",\n\"sem\": 2,\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS2105\",\n\"b\": \"CS2106\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4278\",\n\"sem\": 5,\n\"strength\": \"must\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 2,
+  "completed": [
+   "CS1101S",
+   "ES2660",
+   "CS1231S",
+   "MA1521"
+  ],
+  "must_take": [
+   "CS3231",
+   "CS2105",
+   "CS3264",
+   "CS4277",
+   "CS2106",
+   "CS4278"
+  ],
+  "mc_max": 12,
+  "sem_caps": {
+   "8": 0
+  },
+  "objective": "min_total_mc",
+  "early": [
+   "CS2106",
+   "CS3231"
+  ],
+  "late": [
+   "CS2105"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS2105",
+    "sem": 2,
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS2105",
+    "b": "CS2106",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4278",
+    "sem": 5,
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS2105 in semester 2; the prerequisites of CS2105"
+  ]
+ }
+}

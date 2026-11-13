@@ -1,0 +1,52 @@
+{
+ "id": "q1-mp-038-p",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 2.0,
+ "solver_seconds": 0.004,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2815,
+  "total_tokens": 2928,
+  "completion_tokens": 113,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 2.0,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\": \"eligible\", \"target\": \"CS2309\", \"current_sem\": 7, \"completed\": [\"IS1108\", \"CS1010E\", \"CS2040\", \"MA3252\", \"CS4277\", \"ES2660\", \"ST1131\", \"CS1231S\", \"MA1512\", \"MA1522\", \"ES1000\", \"CS2101\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS2309",
+  "current_sem": 7,
+  "completed": [
+   "IS1108",
+   "CS1010E",
+   "CS2040",
+   "MA3252",
+   "CS4277",
+   "ES2660",
+   "ST1131",
+   "CS1231S",
+   "MA1512",
+   "MA1522",
+   "ES1000",
+   "CS2101"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS2309",
+  "semester": 7,
+  "reasons": [
+   "missing prerequisite: ((CS2030 or CS2030S or CS2030DE or CS2030HS) and (CS2040 or CS2040S or CS2040HS or CS2040C or CS2040DE)) or CS2113 or CS2113T"
+  ],
+  "can_still_become_eligible": true
+ }
+}

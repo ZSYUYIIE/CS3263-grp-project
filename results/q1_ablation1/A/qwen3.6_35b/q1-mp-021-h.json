@@ -1,0 +1,31 @@
+{
+ "id": "q1-mp-021-h",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 10.32,
+ "usage": {
+  "prompt_tokens": 5845,
+  "total_tokens": 6394,
+  "completion_tokens": 549,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 10.32,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"ELIGIBLE\", \"reasons\": [\"Prerequisites CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS are satisfied by completed CS2030 (as CS2030 is a prerequisite for CS2040 variants in standard curriculum, but strictly looking at records: CS2030 is NOT a prerequisite for CS2108. CS2108 requires CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS. The student has completed CS2030, but NOT CS2040 or its variants. Wait. Let's re-read carefully. CS2108 prerequisite: (CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS) AND (MA1522 or ...). Student has MA1522. Student has CS2030. Student does NOT have CS2040, CS2040S, CS2040C, CS2040DE, or CS2040HS. Therefore, the prerequisite is NOT met.\"]}\n\nWait, I must check if CS2030 satisfies the prerequisite.\nCS2108 Prereq: CS2040 OR CS2040S OR CS2040C OR CS2040DE OR CS2040HS.\nStudent completed: CS2030.\nCS2030 is NOT in the list of acceptable prerequisites for CS2108.\nTherefore, the student is NOT eligible.\n\nLet me double check the \"cannot take if completed\" for CS2108.\n\"cannot take if completed: CS3246\". Student has not completed CS3246.\n\"mutually exclusive with: CS3246\".\n\nThe blocker is the prerequisite.\nStudent has: CS2030.\nCS2108 needs: CS2040 (or variants).\nCS2030 is not CS2040.\nSo, NOT ELIGIBLE.\n\n{\"status\": \"NOT_ELIGIBLE\", \"reasons\": [\"Prerequisite CS2040 (or CS2040S/C/DE/HS) is not completed. CS2030 is not a valid substitute.\"]}",
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "reasons": [
+   "Prerequisite CS2040 (or CS2040S/C/DE/HS) is not completed. CS2030 is not a valid substitute."
+  ]
+ },
+ "fenced": true,
+ "repair": "last_of_several",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 4,
+ "ablation": 1
+}

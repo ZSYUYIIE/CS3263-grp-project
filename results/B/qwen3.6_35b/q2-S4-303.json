@@ -1,0 +1,87 @@
+{
+ "id": "q2-S4-303",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 8.48,
+ "solver_seconds": 0.053,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3135,
+  "total_tokens": 3519,
+  "completion_tokens": 384,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 8.43,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 5,\n\"programme\": \"BComp CS Hons\",\n\"completed\": [\n\"MA1522\",\n\"IS1108\",\n\"CS1231S\",\n\"CS2040S\",\n\"CS2030S\",\n\"CS2101\",\n\"CS2103T\",\n\"CS2106\",\n\"CS2100\",\n\"ST2334\",\n\"CS2109S\",\n\"CS1101S\",\n\"CS3230\",\n\"MA1521\"\n],\n\"must_take\": [\n\"CS4278\",\n\"CS3219\",\n\"ES2660\",\n\"CS4222\"\n],\n\"mc_max\": 12,\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4240\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4278\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4222\",\n\"b\": \"CS4278\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS3219\",\n\"b\": \"CS4222\",\n\"strength\": \"prefer\"\n}\n],\n\"early\": [\n\"CS3219\",\n\"CS4278\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "MA1522",
+   "IS1108",
+   "CS1231S",
+   "CS2040S",
+   "CS2030S",
+   "CS2101",
+   "CS2103T",
+   "CS2106",
+   "CS2100",
+   "ST2334",
+   "CS2109S",
+   "CS1101S",
+   "CS3230",
+   "MA1521"
+  ],
+  "must_take": [
+   "CS4278",
+   "CS3219",
+   "ES2660",
+   "CS4222"
+  ],
+  "mc_max": 12,
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS4240",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4278",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4222",
+    "b": "CS4278",
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS3219",
+    "b": "CS4222",
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS3219",
+   "CS4278"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS4278 in semester 5; the prerequisites of CS4278"
+  ]
+ }
+}

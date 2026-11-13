@@ -1,0 +1,46 @@
+{
+ "id": "q2-S1-132",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 13.16,
+ "usage": {
+  "prompt_tokens": 21177,
+  "total_tokens": 21928,
+  "completion_tokens": 751,
+  "finish_reason": "stop",
+  "request_seconds": 13.16,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS2105\",\n      \"CS3231\"\n    ],\n    \"7\": [\n      \"CS2102\",\n      \"CS3235\"\n    ],\n    \"8\": [\n      \"CS4223\",\n      \"CS4238\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3231 is Sem 1 only, so moved to Sem 6. CS2105 taken in Sem 6 to enable CS4223 in Sem 8 (Sem 1 only). CS3235 prerequisites met in Sem 7 (CS2105, CS2106, CS2107). CS4223 requires CG3207 or CS3210/CS3220; none completed/planned. Cannot plan CS4223 without adding CG3207/CS3210/CS3220. Adding CG3207 (prereq EE2026+CG2028/EE2028) adds significant MC. Student wants fewest total credits. CS4223 is mandatory. If I add CG3207, I must add EE2026 and CG2028. This increases MC. Is there a way to avoid adding courses? No, prerequisites are hard. Wait, rule 8 says 'Add a course... ONLY when it is a prerequisite needed by a planned course.' So I MUST add CG3207 if I plan CS4223. But CG3207 needs EE2026 and CG2028. EE2026 needs CG1111A/EE1111B and CS1010E/CS1010. CG2028 needs CS1010... The student has CS1101S. CS1101S is NOT in the prereq list for EE2026 (needs CS1010E or CS1010). CS1101S is mutually exclusive with CS1010. So the student cannot take CS1010. Thus cannot take EE2026. Thus cannot take CG3207. Thus cannot take CS4223. Therefore NO_PLAN.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS2105",
+    "CS3231"
+   ],
+   "7": [
+    "CS2102",
+    "CS3235"
+   ],
+   "8": [
+    "CS4223",
+    "CS4238"
+   ]
+  },
+  "reasons": [
+   "CS3231 is Sem 1 only, so moved to Sem 6. CS2105 taken in Sem 6 to enable CS4223 in Sem 8 (Sem 1 only). CS3235 prerequisites met in Sem 7 (CS2105, CS2106, CS2107). CS4223 requires CG3207 or CS3210/CS3220; none completed/planned. Cannot plan CS4223 without adding CG3207/CS3210/CS3220. Adding CG3207 (prereq EE2026+CG2028/EE2028) adds significant MC. Student wants fewest total credits. CS4223 is mandatory. If I add CG3207, I must add EE2026 and CG2028. This increases MC. Is there a way to avoid adding courses? No, prerequisites are hard. Wait, rule 8 says 'Add a course... ONLY when it is a prerequisite needed by a planned course.' So I MUST add CG3207 if I plan CS4223. But CG3207 needs EE2026 and CG2028. EE2026 needs CG1111A/EE1111B and CS1010E/CS1010. CG2028 needs CS1010... The student has CS1101S. CS1101S is NOT in the prereq list for EE2026 (needs CS1010E or CS1010). CS1101S is mutually exclusive with CS1010. So the student cannot take CS1010. Thus cannot take EE2026. Thus cannot take CG3207. Thus cannot take CS4223. Therefore NO_PLAN."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

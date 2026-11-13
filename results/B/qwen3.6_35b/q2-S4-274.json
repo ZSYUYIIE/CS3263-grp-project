@@ -1,0 +1,93 @@
+{
+ "id": "q2-S4-274",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 5.64,
+ "solver_seconds": 0.17,
+ "max_tokens": 49152,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 3116,
+  "total_tokens": 3510,
+  "completion_tokens": 394,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.47,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 4,\n\"completed\": [\n\"MA1521\",\n\"CS2030S\",\n\"CS2103T\",\n\"CS2101\",\n\"CS1231S\",\n\"MA1522\",\n\"IS1108\",\n\"CS2100\",\n\"CS1101S\",\n\"CS2040S\",\n\"ES2660\"\n],\n\"must_take\": [\n\"ST2334\",\n\"CS3249\",\n\"CS2109S\",\n\"CS4234\",\n\"CS4248\",\n\"CS4330\"\n],\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4248\",\n\"sem\": 6,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4330\",\n\"sem\": 4,\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS3249\",\n\"b\": \"ST2334\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4330\",\n\"sem\": 8,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2109S\",\n\"b\": \"ST2334\",\n\"strength\": \"prefer\"\n}\n],\n\"late\": [\n\"CS4330\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "MA1521",
+   "CS2030S",
+   "CS2103T",
+   "CS2101",
+   "CS1231S",
+   "MA1522",
+   "IS1108",
+   "CS2100",
+   "CS1101S",
+   "CS2040S",
+   "ES2660"
+  ],
+  "must_take": [
+   "ST2334",
+   "CS3249",
+   "CS2109S",
+   "CS4234",
+   "CS4248",
+   "CS4330"
+  ],
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS4248",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4330",
+    "sem": 4,
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3249",
+    "b": "ST2334",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4330",
+    "sem": 8,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS2109S",
+    "b": "ST2334",
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "CS4330"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS4330 in semester 4; the prerequisites of CS4330"
+  ]
+ }
+}

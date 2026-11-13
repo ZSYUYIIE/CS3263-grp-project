@@ -1,0 +1,115 @@
+{
+ "id": "q2-S3-119",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 27.92,
+ "solver_seconds": 0.048,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2807,
+  "total_tokens": 5553,
+  "completion_tokens": 2746,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2556
+  },
+  "finish_reason": "stop",
+  "request_seconds": 27.87,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"completed\":[\"CS2030S\",\"CS1101S\",\"MA1521\",\"ES2660\",\"CS2101\",\"CS1231S\",\"CS2100\",\"CS2040S\",\"CS2103T\",\"MA1522\",\"IS1108\"],\"current_sem\":4,\"must_take\":[\"ST2334\",\"CS2105\",\"CS4236\",\"CS3233\",\"CS4222\",\"CS2109S\",\"CS3219\",\"CS3230\"],\"mc_min\":12,\"objective\":\"min_total_mc\",\"rules\":[{\"type\":\"apart\",\"a\":\"CS2105\",\"b\":\"ST2334\",\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS3233\",\"b\":\"CS2105\",\"strength\":\"prefer\"},{\"type\":\"before\",\"a\":\"CS4212\",\"b\":\"CS3233\",\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "completed": [
+   "CS2030S",
+   "CS1101S",
+   "MA1521",
+   "ES2660",
+   "CS2101",
+   "CS1231S",
+   "CS2100",
+   "CS2040S",
+   "CS2103T",
+   "MA1522",
+   "IS1108"
+  ],
+  "current_sem": 4,
+  "must_take": [
+   "ST2334",
+   "CS2105",
+   "CS4236",
+   "CS3233",
+   "CS4222",
+   "CS2109S",
+   "CS3219",
+   "CS3230"
+  ],
+  "mc_min": 12,
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS2105",
+    "b": "ST2334",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3233",
+    "b": "CS2105",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS4212",
+    "b": "CS3233",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 6,
+  "plan": {
+   "4": [
+    "CS2107",
+    "CS3233",
+    "ST2334"
+   ],
+   "5": [
+    "CS2105",
+    "CS3230",
+    "CS4236"
+   ],
+   "6": [
+    "CS2109S",
+    "CS3219",
+    "CS4222"
+   ]
+  },
+  "mc_per_semester": {
+   "4": 12,
+   "5": 12,
+   "6": 12
+  },
+  "preferences_met": [
+   "CS3233 before CS2105"
+  ],
+  "preferences_not_met": [
+   "CS4212 before CS3233"
+  ],
+  "added_prerequisites": [
+   "CS2107"
+  ]
+ }
+}

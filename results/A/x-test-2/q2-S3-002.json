@@ -1,0 +1,52 @@
+{
+ "id": "q2-S3-002",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 44.0,
+ "usage": {
+  "prompt_tokens": 12271,
+  "total_tokens": 16076,
+  "completion_tokens": 3805,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 10624,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3644
+  },
+  "finish_reason": "stop",
+  "request_seconds": 44.0,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS3281\",\"CS4218\",\"CS2102\"],\"7\":[\"CS3103\",\"CS3227\",\"CP3880\"],\"8\":[\"CS3282\",\"CS3210\"]},\"reasons\":[\"CS3282 requires CS3281, so CS3281 is added in semester 6 and CS3282 is placed in semester 8; this makes semester 8 the earliest finish.\",\"CS3103 is offered only in Sem 1, so it is paired with CS3227 in semester 7; CP3880 fits there with 8 MC of other courses.\",\"CS4218 is before CS3282, and CS3210 is placed as late as possible in semester 8.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS3281",
+    "CS4218",
+    "CS2102"
+   ],
+   "7": [
+    "CS3103",
+    "CS3227",
+    "CP3880"
+   ],
+   "8": [
+    "CS3282",
+    "CS3210"
+   ]
+  },
+  "reasons": [
+   "CS3282 requires CS3281, so CS3281 is added in semester 6 and CS3282 is placed in semester 8; this makes semester 8 the earliest finish.",
+   "CS3103 is offered only in Sem 1, so it is paired with CS3227 in semester 7; CP3880 fits there with 8 MC of other courses.",
+   "CS4218 is before CS3282, and CS3210 is placed as late as possible in semester 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

@@ -1,0 +1,106 @@
+{
+ "id": "q2-S3-251",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 9.19,
+ "usage": {
+  "prompt_tokens": 17840,
+  "total_tokens": 18260,
+  "completion_tokens": 420,
+  "finish_reason": "stop",
+  "request_seconds": 9.19,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3235 is required in semester 8 but its prerequisites (CS2106/CG2271 and CS2107) are not in the list of remaining required modules and cannot be added as they are not prerequisites for any other required course.\",\n    \"The student's list of remaining required modules is incomplete for graduation as it omits prerequisites for CS3235.\",\n    \"Without CS2106 or CG2271 and CS2107, CS3235 cannot be taken in semester 8 or any other semester.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3235 is required in semester 8 but its prerequisites (CS2106/CG2271 and CS2107) are not in the list of remaining required modules and cannot be added as they are not prerequisites for any other required course.",
+   "The student's list of remaining required modules is incomplete for graduation as it omits prerequisites for CS3235.",
+   "Without CS2106 or CG2271 and CS2107, CS3235 cannot be taken in semester 8 or any other semester."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS2101\",\n      \"CS2105\",\n      \"ST2334\"\n    ],\n    \"4\": [\n      \"CS3230\"\n    ],\n    \"5\": [],\n    \"6\": [\n      \"CS2109S\"\n    ],\n    \"7\": [\n      \"CS3235\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2100 is taken in Y2S1 to satisfy the prerequisite for CS2109S.\",\n    \"CS2101 and CS2105 are grouped in Y2S1 as requested.\",\n    \"ST2334 and CS2109S are kept apart (Y2S1 and Y3S2 respectively) to meet the soft wish.\",\n    \"CS3235 is scheduled in Y4S1 (Sem 7) as required.\",\n    \"Exchange in Y3S1 (Sem 5) results in an empty semester with 0 MC.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS2101",
+      "CS2105",
+      "ST2334"
+     ],
+     "4": [
+      "CS3230"
+     ],
+     "5": [],
+     "6": [
+      "CS2109S"
+     ],
+     "7": [
+      "CS3235"
+     ]
+    },
+    "reasons": [
+     "CS2100 is taken in Y2S1 to satisfy the prerequisite for CS2109S.",
+     "CS2101 and CS2105 are grouped in Y2S1 as requested.",
+     "ST2334 and CS2109S are kept apart (Y2S1 and Y3S2 respectively) to meet the soft wish.",
+     "CS3235 is scheduled in Y4S1 (Sem 7) as required.",
+     "Exchange in Y3S1 (Sem 5) results in an empty semester with 0 MC."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 8721,
+    "total_tokens": 8992,
+    "completion_tokens": 271,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.85,
+    "attempts": 1
+   },
+   "seconds": 5.85,
+   "violations": [
+    "R4 CS3235 in semester 7: prerequisite not met ((CS2105 or EE3204 or EE4204) and (CS2106 or YSC3217 or CG2271) and CS2107)",
+    "R9 must rule not met: CS3235 in semester 8"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3235 is required in semester 8 but its prerequisites (CS2106/CG2271 and CS2107) are not in the list of remaining required modules and cannot be added as they are not prerequisites for any other required course.\",\n    \"The student's list of remaining required modules is incomplete for graduation as it omits prerequisites for CS3235.\",\n    \"Without CS2106 or CG2271 and CS2107, CS3235 cannot be taken in semester 8 or any other semester.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3235 is required in semester 8 but its prerequisites (CS2106/CG2271 and CS2107) are not in the list of remaining required modules and cannot be added as they are not prerequisites for any other required course.",
+     "The student's list of remaining required modules is incomplete for graduation as it omits prerequisites for CS3235.",
+     "Without CS2106 or CG2271 and CS2107, CS3235 cannot be taken in semester 8 or any other semester."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9119,
+    "total_tokens": 9268,
+    "completion_tokens": 149,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.34,
+    "attempts": 1
+   },
+   "seconds": 3.34,
+   "violations": null
+  }
+ ]
+}

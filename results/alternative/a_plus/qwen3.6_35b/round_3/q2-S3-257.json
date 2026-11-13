@@ -1,0 +1,45 @@
+{
+ "id": "q2-S3-257",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 41.41,
+ "usage": {
+  "prompt_tokens": 6786,
+  "total_tokens": 9178,
+  "completion_tokens": 2392,
+  "finish_reason": "stop",
+  "request_seconds": 41.41,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"The student is currently in Y2S1 (Semester 3) and has a leave of absence in Semester 5 (Y3S1). This leaves only Semesters 3, 4, 6, 7, and 8 for coursework. The mandatory courses CS2105 and CS3230 have prerequisites (CS2040S/CS2040 etc. for CS2105; CS2040S/CS2040 and CS1231/CS1231S for CS3230) which are satisfied by completed courses CS2040S and CS1231S. However, CS2109S requires (CS2040S or ...) AND (MA1511 and MA1512 or MA1521 or ...). The student has completed MA1521, satisfying the math prerequisite. CS2101 has no prerequisites. CS2100 requires CS1010 or equivalent; the student has completed CS1101S, which satisfies the prerequisite for CS2100. The core issue is the MC limit and semester availability. The student must take 7 courses: CS2100 (4), CS2105 (4), CS3230 (4), CS2109S (4), CS2101 (4), ST2334 (4). Total 24 MC. Plus the constraint that CS2105 and CS3230 must be together (8 MC). CS2109S and CS2101 must be separate. ST2334 and CS2109S preferred separate. Available semesters: 3, 4, 6, 7, 8. Max 16 MC/sem. Sem 3: Can take CS2105+CS3230 (8 MC). Remaining 6 courses (24 MC) in 4 semesters (4,6,7,8). 24/4 = 6 MC/sem avg. But CS2109S and CS2101 must be separate. Let's try to pack. Sem 4: CS2100 (4), CS2101 (4), ST2334 (4) = 12 MC. Sem 6: CS2109S (4). Sem 7: Empty? No, must take all. Wait, CS2109S is 4 MC. Sem 7: CS2109S (4). Sem 8: Empty? No, all courses taken. Wait, I listed 6 courses. CS2100, CS2105, CS3230, CS2109S, CS2101, ST2334. That's 6 courses. 24 MC. Sem 3: CS2105, CS3230 (8 MC). Sem 4: CS2100, CS2101, ST2334 (12 MC). Sem 6: CS2109S (4 MC). Sem 7: Empty. Sem 8: Empty. This plan works for MC and constraints. CS2109S and CS2101 are in Sem 6 and 4 (different). ST2334 and CS2109S are in Sem 4 and 6 (different). CS2101 is as early as possible (Sem 4). Is there a reason this fails? Prerequisites: CS2100 needs CS1101S (Done). CS2105 needs CS2040S (Done). CS3230 needs CS2040S and CS1231S (Done). CS2109S needs CS2040S and MA1521 (Done). CS2101 needs none. ST2334 needs MA1521 (Done). All prerequisites met. Why NO_PLAN? Ah, the student said \"I've finished ... CS1101S\". CS1101S is a prerequisite for CS2100. Yes. Is CS2100 open to BComp CS Hons? Yes. Is CS2105 open? Yes. Is CS3230 open? Yes. Is CS2109S open? Yes. Is CS2101 open? Yes. Is ST2334 open? Yes. Are there any mutual exclusions blocking? No. Did I miss a course? \"I must take CS2100, CS2105, CS3230, CS2109S, CS2101 and ST2334.\" That is 6 courses. The plan above uses Sem 3, 4, 6. Sem 5 is LOA. Sem 7, 8 empty. This seems valid. Let me re-read carefully. \"I am currently in Y2S1.\" Y2S1 is Semester 3. \"Leave of absence in semester 5.\" Sem 5 is Y3S1. So Sem 3, 4, 6, 7, 8 are available. The plan fits. Why would it be NO_PLAN? Maybe I missed a prerequisite for CS2109S? \"prerequisite: (YSC2229 or CS2040S or CS2040C or CS2040HS or CS2040 or CS2040DE) and ((MA1511 and MA1512) or MA1521 or MA2002 or MA1102R or MA1312 or MA1507 or MA1505)\". Student has MA1521. So the second part is satisfied. First part has CS2040S. Satisfied. CS2100: \"prerequisite: YSC1212 or CS1010 or CS1010J or CS1010E or CS1010S or CS1010X or CS1101S or CS1010A or CS1010HS or UTC2851\". Student has CS1101S. Satisfied. CS2105: \"prerequisite: YSC2229 or CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS\". Student has CS2040S. Satisfied. CS3230: \"prerequisite: (YSC2229 or CS2040S or CS2040 or CS2040C or CS2040DE or CS2040HS) and (CS1231 or CS1231S or MA1100T or MA1100)\". Student has CS2040S and CS1231S. Satisfied. ST2334: \"prerequisite: MA1312 or MA1505 or MA1511 or MA1521 or MA2002\". Student has MA1521. Satisfied. CS2101: None. Satisfied. Constraints: CS2105 and CS3230 together. Sem 3. CS2109S and CS2101 separate. Sem 6 and 4. ST2334 and CS2109S separate. Sem 4 and 6. CS2101 as early as possible. Sem 4 is the earliest possible after Sem 3 (which is full with 8 MC, can we add more? Sem 3 limit 16. CS2105+CS3230=8. Can add CS2101? If CS2101 in Sem 3, then CS2109S must be later. CS2101 in Sem 3 is earlier than Sem 4. So Sem 3: CS2105, CS3230, CS2101 (12 MC). Sem 4: CS2100, ST2334 (8 MC). Sem 6: CS2109S (4 MC). This puts CS2101 in Sem 3, which is earlier. Is this valid? Yes. So a plan exists. Why did I think NO_PLAN? I must have made a mistake in the initial quick check. Let's construct the JSON for PLAN. Status: PLAN. Plan: {\"3\": [\"CS2105\", \"CS3230\", \"CS2101\"], \"4\": [\"CS2100\", \"ST2334\"], \"6\": [\"CS2109S\"]}. Reasons: [\"All prerequisites satisfied by completed courses.\", \"CS2105 and CS3230 taken together in Sem 3.\", \"CS2101 taken as early as possible in Sem 3.\"] Wait, check mutual exclusions. CS2101 mutually exclusive with CS2103, CS2113, ES2002, ES2007D, IS2101, CS2101X. Student has none of these. CS2100 mutually exclusive with CG2028, CS2100DE, CS2100HS. Student has none. CS2105 mutually exclusive with EE4204, EE4204E, TEE4204. Student has none. CS3230 no mutual exclusions listed. CS2109S mutually exclusive with CG3201, CS2109HS, CS3243, CS3244, CS4263, DMX1401AI, EE2211, EE2213, IT3101. Student has none. ST2334 mutually exclusive with EC2303, EE2012, EE2012A, MA2116, MA2116T, MA2301, ST1232, ST2131. Student has none. All good. The plan is valid.\n\n{\"status\": \"PLAN\", \"plan\": {\"3\": [\"CS2105\", \"CS3230\", \"CS2101\"], \"4\": [\"CS2100\", \"ST2334\"], \"6\": [\"CS2109S\"]}, \"reasons\": [\"All prerequisites are satisfied by completed courses.\", \"CS2105 and CS3230 are scheduled together in Sem 3.\", \"CS2101 is taken as early as possible in Sem 3.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2105",
+    "CS3230",
+    "CS2101"
+   ],
+   "4": [
+    "CS2100",
+    "ST2334"
+   ],
+   "6": [
+    "CS2109S"
+   ]
+  },
+  "reasons": [
+   "All prerequisites are satisfied by completed courses.",
+   "CS2105 and CS3230 are scheduled together in Sem 3.",
+   "CS2101 is taken as early as possible in Sem 3."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,113 @@
+{
+ "id": "q2-S4-083",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 14.25,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2842,
+  "total_tokens": 4522,
+  "completion_tokens": 1680,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1391
+  },
+  "finish_reason": "stop",
+  "request_seconds": 14.25,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":8,\"completed\":[\"MA1522\",\"CS2030S\",\"IS1108\",\"CS1101S\",\"CS2103T\",\"CS2100\",\"CS3230\",\"CS1231S\",\"CS2106\",\"CS3219\",\"ST2334\",\"CS2101\",\"CS2040S\",\"CS2109S\",\"MA1521\",\"CS2105\",\"CS4243\"],\"must_take\":[\"CS3264\",\"CS3244\",\"CS2102\",\"ES2660\",\"CS3213\"],\"early\":[\"ES2660\"],\"rules\":[{\"type\":\"same_sem\",\"a\":\"ES2660\",\"b\":\"CS2102\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3213\",\"sem\":8,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3264\",\"sem\":8,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS2102\",\"sem\":8,\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS2102\",\"b\":\"CS3264\",\"strength\":\"prefer\"},{\"type\":\"in_sem\",\"course\":\"ES2660\",\"sem\":8,\"strength\":\"prefer\"},{\"type\":\"apart\",\"a\":\"CS2102\",\"b\":\"CS3213\",\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 8,
+  "completed": [
+   "MA1522",
+   "CS2030S",
+   "IS1108",
+   "CS1101S",
+   "CS2103T",
+   "CS2100",
+   "CS3230",
+   "CS1231S",
+   "CS2106",
+   "CS3219",
+   "ST2334",
+   "CS2101",
+   "CS2040S",
+   "CS2109S",
+   "MA1521",
+   "CS2105",
+   "CS4243"
+  ],
+  "must_take": [
+   "CS3264",
+   "CS3244",
+   "CS2102",
+   "ES2660",
+   "CS3213"
+  ],
+  "early": [
+   "ES2660"
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "ES2660",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3213",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3264",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2102",
+    "b": "CS3264",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "ES2660",
+    "sem": 8,
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS2102",
+    "b": "CS3213",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3244 is ruled out by completed CS2109S"
+  ]
+ }
+}

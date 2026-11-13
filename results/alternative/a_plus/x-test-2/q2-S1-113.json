@@ -1,0 +1,92 @@
+{
+ "id": "q2-S1-113",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 43.47,
+ "usage": {
+  "prompt_tokens": 8048,
+  "total_tokens": 12315,
+  "completion_tokens": 4267,
+  "prompt_tokens_details": {
+   "cached_tokens": 3968,
+   "created_cache_tokens": 3968
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4147
+  },
+  "finish_reason": "stop",
+  "request_seconds": 43.47,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS3227\",\"ST2131\"],\"6\":[\"CS3263\",\"CS2105\"]},\"reasons\":[\"CS3263 is fixed in semester 6, so CS2105 must also be in semester 6; CS3227 is fixed in semester 5.\",\"ST2131 is added in semester 5 as the missing prerequisite for CS3263.\",\"The semester-8 CS2105 wish and same-semester CS3227 wishes conflict with the hard constraints, so they are not met.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS3227",
+    "ST2131"
+   ],
+   "6": [
+    "CS3263",
+    "CS2105"
+   ]
+  },
+  "reasons": [
+   "CS3263 is fixed in semester 6, so CS2105 must also be in semester 6; CS3227 is fixed in semester 5.",
+   "ST2131 is added in semester 5 as the missing prerequisite for CS3263.",
+   "The semester-8 CS2105 wish and same-semester CS3227 wishes conflict with the hard constraints, so they are not met."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS3227\",\"ST2131\"],\"6\":[\"CS3263\",\"CS2105\"]},\"reasons\":[\"CS3263 is fixed in semester 6, so CS2105 must also be in semester 6; CS3227 is fixed in semester 5.\",\"ST2131 is added in semester 5 as the missing prerequisite for CS3263.\",\"The semester-8 CS2105 wish and same-semester CS3227 wishes conflict with the hard constraints, so they are not met.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS3227",
+      "ST2131"
+     ],
+     "6": [
+      "CS3263",
+      "CS2105"
+     ]
+    },
+    "reasons": [
+     "CS3263 is fixed in semester 6, so CS2105 must also be in semester 6; CS3227 is fixed in semester 5.",
+     "ST2131 is added in semester 5 as the missing prerequisite for CS3263.",
+     "The semester-8 CS2105 wish and same-semester CS3227 wishes conflict with the hard constraints, so they are not met."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 8048,
+    "total_tokens": 12315,
+    "completion_tokens": 4267,
+    "prompt_tokens_details": {
+     "cached_tokens": 3968,
+     "created_cache_tokens": 3968,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 4147
+    },
+    "finish_reason": "stop",
+    "request_seconds": 43.47,
+    "attempts": 1
+   },
+   "seconds": 43.47,
+   "violations": []
+  }
+ ]
+}

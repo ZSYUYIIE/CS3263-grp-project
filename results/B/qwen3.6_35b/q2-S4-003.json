@@ -1,0 +1,83 @@
+{
+ "id": "q2-S4-003",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 13.5,
+ "solver_seconds": 0.041,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3115,
+  "total_tokens": 3452,
+  "completion_tokens": 337,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 13.46,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 4,\n\"programme\": \"BComp CS Hons\",\n\"completed\": [\n\"CS2030S\",\n\"CS2103T\",\n\"CS2040S\",\n\"ES2660\",\n\"IS1108\",\n\"MA1521\",\n\"CS2100\",\n\"ST2334\",\n\"CS1231S\",\n\"CS1101S\",\n\"MA1522\"\n],\n\"must_take\": [\n\"CS4353\",\n\"CS3219\",\n\"CS2102\",\n\"CS3235\",\n\"CS2109S\",\n\"CS4262\"\n],\n\"mc_max\": 4,\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2102\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2109S\",\n\"b\": \"CS4353\",\n\"strength\": \"must\"\n}\n],\n\"early\": [\n\"CS4262\"\n],\n\"late\": [\n\"CS4353\"\n],\n\"unsupported\": [\n\"at most two modules with final exams in a semester\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "CS2030S",
+   "CS2103T",
+   "CS2040S",
+   "ES2660",
+   "IS1108",
+   "MA1521",
+   "CS2100",
+   "ST2334",
+   "CS1231S",
+   "CS1101S",
+   "MA1522"
+  ],
+  "must_take": [
+   "CS4353",
+   "CS3219",
+   "CS2102",
+   "CS3235",
+   "CS2109S",
+   "CS4262"
+  ],
+  "mc_max": 4,
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2109S",
+    "b": "CS4353",
+    "strength": "must"
+   }
+  ],
+  "early": [
+   "CS4262"
+  ],
+  "late": [
+   "CS4353"
+  ],
+  "unsupported": [
+   "at most two modules with final exams in a semester"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "the required courses need 24 MC but the remaining semesters [4, 5, 6, 7, 8] allow at most 20 MC"
+  ],
+  "not_applied": [
+   "at most two modules with final exams in a semester"
+  ]
+ }
+}

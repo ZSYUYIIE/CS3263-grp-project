@@ -1,0 +1,107 @@
+{
+ "id": "q2-S1-130",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 23.43,
+ "usage": {
+  "prompt_tokens": 23708,
+  "total_tokens": 24955,
+  "completion_tokens": 1247,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 23.43,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4223 requires CS3210, CS3220, or CG3207. CS3220 is not offered. CS3210 was declined by the student. CG3207 requires EE2026 and CG2028/EE2028, which the student has not completed and cannot take due to missing lower-level prerequisites (e.g., EE1111A/CG1111A).\",\n    \"CS4222 is offered only in Sem 2, but the student is in Sem 6 (Y3S2) and needs to take it. Sem 7 is Sem 1, Sem 8 is Sem 2. So CS4222 can be taken in Sem 8.\",\n    \"CS3237 is offered only in Sem 1. Sem 7 is Sem 1, so CS3237 can be taken in Sem 7. However, CS3237 is a prerequisite for CS4223. Since CS4223 cannot be taken, the dependency chain for CS4223 is broken.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4223 requires CS3210, CS3220, or CG3207. CS3220 is not offered. CS3210 was declined by the student. CG3207 requires EE2026 and CG2028/EE2028, which the student has not completed and cannot take due to missing lower-level prerequisites (e.g., EE1111A/CG1111A).",
+   "CS4222 is offered only in Sem 2, but the student is in Sem 6 (Y3S2) and needs to take it. Sem 7 is Sem 1, Sem 8 is Sem 2. So CS4222 can be taken in Sem 8.",
+   "CS3237 is offered only in Sem 1. Sem 7 is Sem 1, so CS3237 can be taken in Sem 7. However, CS3237 is a prerequisite for CS4223. Since CS4223 cannot be taken, the dependency chain for CS4223 is broken."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS2101\",\n      \"CS2102\",\n      \"CS3237\"\n    ],\n    \"7\": [\n      \"CS4222\",\n      \"CS4223\"\n    ],\n    \"8\": [\n      \"ES2660\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2101, CS2102, CS3237, CS4222, CS4223 are all open to BComp CS Hons and prerequisites are met by completed courses.\",\n    \"CS2101 is placed in Sem 6 (current) as early as possible. CS2102 is placed in Sem 6 to allow CS4222/CS4223 in Sem 7, satisfying the 'late as possible' wish for CS2102 given the dependency chain.\",\n    \"CS3237 is in Sem 6 (not 7) because it is a prerequisite for CS4223, which is needed in Sem 7. Placing CS3237 in Sem 7 would delay CS4223 to Sem 8, which is later than necessary for the core requirements, but the user's soft wish for CS3237 in Sem 7 conflicts with the hard requirement of CS4223 being taken. However, looking at the rules, we must optimize for earliest graduation (Sem 8 is the end). Let's re-evaluate. CS4223 requires CS3237. CS4222 requires CS2102. CS2102 requires CS2030S/CS2040S (done). CS4223 requires CS2106/CG2271 (done) AND CS3210/CS3220/CG3207. Wait, CS4223 prerequisite is (CS2106 or CG2271) AND (CS3210 or CS3220 or CG3207). The student completed CS2106. But they did NOT complete CS3210, CS3220, or CG3207. They said 'scratch CS3210'. They did not say they completed CS3220 or CG3207. Therefore, CS4223 is NOT eligible unless they take CS3220 or CG3207. The student did not list CS3220 or CG3207 as completed. I must add a prerequisite if needed? Rule 8: 'Add a course... ONLY when it is a prerequisite needed by a planned course.' So I must add CS3220 or CG3207. CS3220 is 'not offered'. CG3207 is offered Sem 1, Sem 2. Prereq: EE2026 and (CG2028 or EE2028). Student has not completed EE2026, CG2028, or EE2028. This creates a long chain. Let's check CS3220 again. 'NOT open to BComp CS Hons students: not offered in any semester'. So CS3220 is out. CG3207 requires EE2026. EE2026 requires (EE1111A/B/EE2111A/CG1111A) and CS1010E/CS1010. Student has CS1101S, CS2030S, CS2040S, CS2100, CS2105, CS2106, CS2109S, CS2103T, CS3219, CS3230, CS4243, IS1108, MA1521, MA1522, ST2334, CS1231S. None of these are EE1111A/B, EE2111A, CG1111A, CS1010E, or CS1010. So CG3207 is impossible to take now. Thus CS4223 is impossible to take. Status NO_PLAN.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS2101",
+      "CS2102",
+      "CS3237"
+     ],
+     "7": [
+      "CS4222",
+      "CS4223"
+     ],
+     "8": [
+      "ES2660"
+     ]
+    },
+    "reasons": [
+     "CS2101, CS2102, CS3237, CS4222, CS4223 are all open to BComp CS Hons and prerequisites are met by completed courses.",
+     "CS2101 is placed in Sem 6 (current) as early as possible. CS2102 is placed in Sem 6 to allow CS4222/CS4223 in Sem 7, satisfying the 'late as possible' wish for CS2102 given the dependency chain.",
+     "CS3237 is in Sem 6 (not 7) because it is a prerequisite for CS4223, which is needed in Sem 7. Placing CS3237 in Sem 7 would delay CS4223 to Sem 8, which is later than necessary for the core requirements, but the user's soft wish for CS3237 in Sem 7 conflicts with the hard requirement of CS4223 being taken. However, looking at the rules, we must optimize for earliest graduation (Sem 8 is the end). Let's re-evaluate. CS4223 requires CS3237. CS4222 requires CS2102. CS2102 requires CS2030S/CS2040S (done). CS4223 requires CS2106/CG2271 (done) AND CS3210/CS3220/CG3207. Wait, CS4223 prerequisite is (CS2106 or CG2271) AND (CS3210 or CS3220 or CG3207). The student completed CS2106. But they did NOT complete CS3210, CS3220, or CG3207. They said 'scratch CS3210'. They did not say they completed CS3220 or CG3207. Therefore, CS4223 is NOT eligible unless they take CS3220 or CG3207. The student did not list CS3220 or CG3207 as completed. I must add a prerequisite if needed? Rule 8: 'Add a course... ONLY when it is a prerequisite needed by a planned course.' So I must add CS3220 or CG3207. CS3220 is 'not offered'. CG3207 is offered Sem 1, Sem 2. Prereq: EE2026 and (CG2028 or EE2028). Student has not completed EE2026, CG2028, or EE2028. This creates a long chain. Let's check CS3220 again. 'NOT open to BComp CS Hons students: not offered in any semester'. So CS3220 is out. CG3207 requires EE2026. EE2026 requires (EE1111A/B/EE2111A/CG1111A) and CS1010E/CS1010. Student has CS1101S, CS2030S, CS2040S, CS2100, CS2105, CS2106, CS2109S, CS2103T, CS3219, CS3230, CS4243, IS1108, MA1521, MA1522, ST2334, CS1231S. None of these are EE1111A/B, EE2111A, CG1111A, CS1010E, or CS1010. So CG3207 is impossible to take now. Thus CS4223 is impossible to take. Status NO_PLAN."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11299,
+    "total_tokens": 12274,
+    "completion_tokens": 975,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 18.95,
+    "attempts": 1
+   },
+   "seconds": 18.95,
+   "violations": [
+    "R3 CS3237 not offered in Sem 2 (semester 6)",
+    "R3 CS4222 not offered in Sem 1 (semester 7)",
+    "R4 CS4223 in semester 7: prerequisite not met ((CS2106 or CG2271) and (CS3210 or CS3220 or CG3207))"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4223 requires CS3210, CS3220, or CG3207. CS3220 is not offered. CS3210 was declined by the student. CG3207 requires EE2026 and CG2028/EE2028, which the student has not completed and cannot take due to missing lower-level prerequisites (e.g., EE1111A/CG1111A).\",\n    \"CS4222 is offered only in Sem 2, but the student is in Sem 6 (Y3S2) and needs to take it. Sem 7 is Sem 1, Sem 8 is Sem 2. So CS4222 can be taken in Sem 8.\",\n    \"CS3237 is offered only in Sem 1. Sem 7 is Sem 1, so CS3237 can be taken in Sem 7. However, CS3237 is a prerequisite for CS4223. Since CS4223 cannot be taken, the dependency chain for CS4223 is broken.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4223 requires CS3210, CS3220, or CG3207. CS3220 is not offered. CS3210 was declined by the student. CG3207 requires EE2026 and CG2028/EE2028, which the student has not completed and cannot take due to missing lower-level prerequisites (e.g., EE1111A/CG1111A).",
+     "CS4222 is offered only in Sem 2, but the student is in Sem 6 (Y3S2) and needs to take it. Sem 7 is Sem 1, Sem 8 is Sem 2. So CS4222 can be taken in Sem 8.",
+     "CS3237 is offered only in Sem 1. Sem 7 is Sem 1, so CS3237 can be taken in Sem 7. However, CS3237 is a prerequisite for CS4223. Since CS4223 cannot be taken, the dependency chain for CS4223 is broken."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12409,
+    "total_tokens": 12681,
+    "completion_tokens": 272,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.48,
+    "attempts": 1
+   },
+   "seconds": 4.48,
+   "violations": null
+  }
+ ]
+}

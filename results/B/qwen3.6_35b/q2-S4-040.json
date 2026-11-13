@@ -1,0 +1,87 @@
+{
+ "id": "q2-S4-040",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.67,
+ "solver_seconds": 0.043,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3111,
+  "total_tokens": 3472,
+  "completion_tokens": 361,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 6.62,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 3,\n\"completed\": [\n\"MA1521\",\n\"MA1522\",\n\"ES2660\",\n\"CS2030S\",\n\"IS1108\",\n\"CS2040S\",\n\"CS1101S\",\n\"CS1231S\"\n],\n\"must_take\": [\n\"CS4353\",\n\"CS4236\",\n\"CS2101\",\n\"CS2103T\",\n\"CS4330\",\n\"CS2105\",\n\"CS4222\"\n],\n\"mc_max\": 4,\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2103T\",\n\"b\": \"CS4330\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS4353\",\n\"b\": \"CS4222\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4236\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4353\",\n\"b\": \"CS2103T\",\n\"strength\": \"prefer\"\n}\n],\n\"early\": [\n\"CS4353\",\n\"CS4222\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "completed": [
+   "MA1521",
+   "MA1522",
+   "ES2660",
+   "CS2030S",
+   "IS1108",
+   "CS2040S",
+   "CS1101S",
+   "CS1231S"
+  ],
+  "must_take": [
+   "CS4353",
+   "CS4236",
+   "CS2101",
+   "CS2103T",
+   "CS4330",
+   "CS2105",
+   "CS4222"
+  ],
+  "mc_max": 4,
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS2103T",
+    "b": "CS4330",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS4353",
+    "b": "CS4222",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4236",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4353",
+    "b": "CS2103T",
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS4353",
+   "CS4222"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "the required courses need 28 MC but the remaining semesters [3, 4, 5, 6, 7, 8] allow at most 24 MC"
+  ]
+ }
+}

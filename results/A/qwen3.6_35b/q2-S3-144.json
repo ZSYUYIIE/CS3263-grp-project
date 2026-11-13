@@ -1,0 +1,44 @@
+{
+ "id": "q2-S3-144",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 13.86,
+ "usage": {
+  "prompt_tokens": 11906,
+  "total_tokens": 12630,
+  "completion_tokens": 724,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 13.86,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2102\",\n      \"CS2105\",\n      \"ST2334\"\n    ],\n    \"6\": [\n      \"CS3219\",\n      \"CS3247\"\n    ],\n    \"7\": [\n      \"CS4248\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2105 and ST2334 prerequisites are met by completed courses (CS2040S and MA1521 respectively).\",\n    \"CS2102 prerequisites (CS1231S and CS2030S) are met by completed courses.\",\n    \"CS3219 and CS3247 prerequisites are met by completed courses (CS2103T and CS3247 by CS3241? No, CS3247 requires CS3241. Wait. CS3247 prerequisite is CS3241. CS3241 is not completed. CS3241 prerequisite is (CS2030S...) and (CS2040...). CS2030S and CS2040S are completed. So CS3241 is eligible in Sem 5 or 6. CS3247 requires CS3241. So CS3241 must be taken before CS3247. I missed CS3241 in the 'must take' list? The student said 'I still have to take CS4248, CS2102, CS3247, ST2334, CS3219 and CS2105'. They did NOT list CS3241. However, CS3247 requires CS3241. Rule 8 says 'Add a course the student did not ask for ONLY when it is a prerequisite needed by a planned course.' So I must add CS3241.\",\n    \"CS3241 is offered in Sem 1. Sem 5 is Sem 1. So CS3241 can be in Sem 5. CS3247 is offered in Sem 2. So CS3247 can be in Sem 6. CS3219 is offered Sem 1/2. CS4248 is offered Sem 1/2. CS4248 requires CS2109S (completed). CS3247 before CS4248 is a soft wish. CS3219 has no prereqs from the 'must' list other than YSC3232 or CS2103 etc. CS2103T is completed. So CS3219 is eligible anytime. To minimize semesters, we pack them. Sem 5: CS2102, CS2105, ST2334, CS3241 (4+4+4+4=16 MC). Sem 6: CS3219, CS3247 (4+4=8 MC). Sem 7: CS4248 (4 MC). Sem 8 is LOA. This satisfies all constraints.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS2105",
+    "ST2334"
+   ],
+   "6": [
+    "CS3219",
+    "CS3247"
+   ],
+   "7": [
+    "CS4248"
+   ]
+  },
+  "reasons": [
+   "CS2105 and ST2334 prerequisites are met by completed courses (CS2040S and MA1521 respectively).",
+   "CS2102 prerequisites (CS1231S and CS2030S) are met by completed courses.",
+   "CS3219 and CS3247 prerequisites are met by completed courses (CS2103T and CS3247 by CS3241? No, CS3247 requires CS3241. Wait. CS3247 prerequisite is CS3241. CS3241 is not completed. CS3241 prerequisite is (CS2030S...) and (CS2040...). CS2030S and CS2040S are completed. So CS3241 is eligible in Sem 5 or 6. CS3247 requires CS3241. So CS3241 must be taken before CS3247. I missed CS3241 in the 'must take' list? The student said 'I still have to take CS4248, CS2102, CS3247, ST2334, CS3219 and CS2105'. They did NOT list CS3241. However, CS3247 requires CS3241. Rule 8 says 'Add a course the student did not ask for ONLY when it is a prerequisite needed by a planned course.' So I must add CS3241.",
+   "CS3241 is offered in Sem 1. Sem 5 is Sem 1. So CS3241 can be in Sem 5. CS3247 is offered in Sem 2. So CS3247 can be in Sem 6. CS3219 is offered Sem 1/2. CS4248 is offered Sem 1/2. CS4248 requires CS2109S (completed). CS3247 before CS4248 is a soft wish. CS3219 has no prereqs from the 'must' list other than YSC3232 or CS2103 etc. CS2103T is completed. So CS3219 is eligible anytime. To minimize semesters, we pack them. Sem 5: CS2102, CS2105, ST2334, CS3241 (4+4+4+4=16 MC). Sem 6: CS3219, CS3247 (4+4=8 MC). Sem 7: CS4248 (4 MC). Sem 8 is LOA. This satisfies all constraints."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

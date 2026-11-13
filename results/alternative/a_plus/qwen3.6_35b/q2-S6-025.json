@@ -1,0 +1,104 @@
+{
+ "id": "q2-S6-025",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 10.45,
+ "usage": {
+  "prompt_tokens": 19988,
+  "total_tokens": 20296,
+  "completion_tokens": 308,
+  "finish_reason": "stop",
+  "request_seconds": 10.45,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"Student has not completed prerequisites for required courses (e.g., CS2102, CS2105, CS3219, CS4223, ST2334).\",\n    \"Without completed prerequisites, these courses cannot be taken in any semester.\",\n    \"No valid plan exists to complete the remaining requirements.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "Student has not completed prerequisites for required courses (e.g., CS2102, CS2105, CS3219, CS4223, ST2334).",
+   "Without completed prerequisites, these courses cannot be taken in any semester.",
+   "No valid plan exists to complete the remaining requirements."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2102\",\n      \"ST2334\",\n      \"ES2660\"\n    ],\n    \"6\": [\n      \"CS4223\",\n      \"CS2105\",\n      \"CS3219\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2102 and ST2334 taken in Sem 5 to satisfy prerequisite order and allow early completion.\",\n    \"CS4223 requires CS2102 and CS2105 requires CS4223; both fit in Sem 6 with CS3219 within 12 MC limit.\",\n    \"ES2660 taken in Sem 5 to satisfy 'as early as possible' wish; Sem 7 left empty as no courses remain.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2102",
+      "ST2334",
+      "ES2660"
+     ],
+     "6": [
+      "CS4223",
+      "CS2105",
+      "CS3219"
+     ]
+    },
+    "reasons": [
+     "CS2102 and ST2334 taken in Sem 5 to satisfy prerequisite order and allow early completion.",
+     "CS4223 requires CS2102 and CS2105 requires CS4223; both fit in Sem 6 with CS3219 within 12 MC limit.",
+     "ES2660 taken in Sem 5 to satisfy 'as early as possible' wish; Sem 7 left empty as no courses remain."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9672,
+    "total_tokens": 9882,
+    "completion_tokens": 210,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 7.84,
+    "attempts": 1
+   },
+   "seconds": 7.84,
+   "violations": [
+    "R4 CS2102 in semester 5: prerequisite not met ((CS1231 or MA1100 or MA1100T or CS1231S) and (CS2030S or CS2030 or CS2030DE or CS2030HS or YSC2229 or CS2040 or CS2040C or CS2040S or CS2040DE or CS2040HS))",
+    "R4 CS2105 in semester 6: prerequisite not met (YSC2229 or CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS)",
+    "R4 CS3219 in semester 6: prerequisite not met (YSC3232 or CS2103 or CS2103T or CS2103DE or CS2113T or CS2113)",
+    "R3 CS4223 not offered in Sem 2 (semester 6)",
+    "R4 CS4223 in semester 6: prerequisite not met ((CS2106 or CG2271) and (CS3210 or CS3220 or CG3207))",
+    "R4 ST2334 in semester 5: prerequisite not met (MA1312 or MA1505 or MA1511 or MA1521 or MA2002)",
+    "R9 must rule not met: before CS2102 ST2334",
+    "R9 must rule not met: before CS4223 CS2105"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"Student has not completed prerequisites for required courses (e.g., CS2102, CS2105, CS3219, CS4223, ST2334).\",\n    \"Without completed prerequisites, these courses cannot be taken in any semester.\",\n    \"No valid plan exists to complete the remaining requirements.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "Student has not completed prerequisites for required courses (e.g., CS2102, CS2105, CS3219, CS4223, ST2334).",
+     "Without completed prerequisites, these courses cannot be taken in any semester.",
+     "No valid plan exists to complete the remaining requirements."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10316,
+    "total_tokens": 10414,
+    "completion_tokens": 98,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.61,
+    "attempts": 1
+   },
+   "seconds": 2.61,
+   "violations": null
+  }
+ ]
+}

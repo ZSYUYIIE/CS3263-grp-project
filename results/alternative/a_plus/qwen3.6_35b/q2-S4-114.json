@@ -1,0 +1,54 @@
+{
+ "id": "q2-S4-114",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "not a plan",
+ "seconds": 15.4,
+ "usage": {
+  "prompt_tokens": 12160,
+  "total_tokens": 12758,
+  "completion_tokens": 598,
+  "finish_reason": "stop",
+  "request_seconds": 15.4,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS3263 prerequisite includes CS2109S (completed) and CS2040S (completed), but also requires MA2001 or MA1522 or MA1513 or MA1508E or MA1101R. The student has completed MA1522, satisfying this part. However, CS3263 also requires (EE2012A or EE2012 or ST2131 or MA2116 or MA2116T or ST2334 or MA2216). The student has completed ST2334, so this prerequisite is satisfied. CS3268 requires (CS2109S or CS2109HS or CS3243) and (ST2334 or ((ST2131 or MA2116 or MA2116T) and ST2132)). The student has CS2109S and ST2334, so CS3268 is eligible. CS4243 requires many prerequisites including YSC2232 or MA2001... and ST1131... and CS2030... and YSC2229... and MA1102R... The student has CS2030S. But CS4243 requires YSC2229 or CS2040... The student has CS2040S. It requires ST1131 or ... The student has not completed ST1131, ST1232, ST2131, MA2116, etc. The student has ST2334, but ST2334 is not in the list for CS4243's statistics prerequisite (which lists ST1131, ST1131A, ST1232, ST2131, MA2116, MA2116T, MA2216, EE2012A, EE2012, ST2334, YSC2243). Wait, ST2334 IS in the list. So CS4243 stat prereq is met. CS4243 requires YSC2232 or MA2001... The student has MA1522, MA1521. Neither is YSC2232 or MA2001. MA1522 is mutually exclusive with YSC2232. The student has not taken YSC2232 or MA2001. Thus CS4243 prerequisite is NOT met.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3263 prerequisite includes CS2109S (completed) and CS2040S (completed), but also requires MA2001 or MA1522 or MA1513 or MA1508E or MA1101R. The student has completed MA1522, satisfying this part. However, CS3263 also requires (EE2012A or EE2012 or ST2131 or MA2116 or MA2116T or ST2334 or MA2216). The student has completed ST2334, so this prerequisite is satisfied. CS3268 requires (CS2109S or CS2109HS or CS3243) and (ST2334 or ((ST2131 or MA2116 or MA2116T) and ST2132)). The student has CS2109S and ST2334, so CS3268 is eligible. CS4243 requires many prerequisites including YSC2232 or MA2001... and ST1131... and CS2030... and YSC2229... and MA1102R... The student has CS2030S. But CS4243 requires YSC2229 or CS2040... The student has CS2040S. It requires ST1131 or ... The student has not completed ST1131, ST1232, ST2131, MA2116, etc. The student has ST2334, but ST2334 is not in the list for CS4243's statistics prerequisite (which lists ST1131, ST1131A, ST1232, ST2131, MA2116, MA2116T, MA2216, EE2012A, EE2012, ST2334, YSC2243). Wait, ST2334 IS in the list. So CS4243 stat prereq is met. CS4243 requires YSC2232 or MA2001... The student has MA1522, MA1521. Neither is YSC2232 or MA2001. MA1522 is mutually exclusive with YSC2232. The student has not taken YSC2232 or MA2001. Thus CS4243 prerequisite is NOT met."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS3263 prerequisite includes CS2109S (completed) and CS2040S (completed), but also requires MA2001 or MA1522 or MA1513 or MA1508E or MA1101R. The student has completed MA1522, satisfying this part. However, CS3263 also requires (EE2012A or EE2012 or ST2131 or MA2116 or MA2116T or ST2334 or MA2216). The student has completed ST2334, so this prerequisite is satisfied. CS3268 requires (CS2109S or CS2109HS or CS3243) and (ST2334 or ((ST2131 or MA2116 or MA2116T) and ST2132)). The student has CS2109S and ST2334, so CS3268 is eligible. CS4243 requires many prerequisites including YSC2232 or MA2001... and ST1131... and CS2030... and YSC2229... and MA1102R... The student has CS2030S. But CS4243 requires YSC2229 or CS2040... The student has CS2040S. It requires ST1131 or ... The student has not completed ST1131, ST1232, ST2131, MA2116, etc. The student has ST2334, but ST2334 is not in the list for CS4243's statistics prerequisite (which lists ST1131, ST1131A, ST1232, ST2131, MA2116, MA2116T, MA2216, EE2012A, EE2012, ST2334, YSC2243). Wait, ST2334 IS in the list. So CS4243 stat prereq is met. CS4243 requires YSC2232 or MA2001... The student has MA1522, MA1521. Neither is YSC2232 or MA2001. MA1522 is mutually exclusive with YSC2232. The student has not taken YSC2232 or MA2001. Thus CS4243 prerequisite is NOT met.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3263 prerequisite includes CS2109S (completed) and CS2040S (completed), but also requires MA2001 or MA1522 or MA1513 or MA1508E or MA1101R. The student has completed MA1522, satisfying this part. However, CS3263 also requires (EE2012A or EE2012 or ST2131 or MA2116 or MA2116T or ST2334 or MA2216). The student has completed ST2334, so this prerequisite is satisfied. CS3268 requires (CS2109S or CS2109HS or CS3243) and (ST2334 or ((ST2131 or MA2116 or MA2116T) and ST2132)). The student has CS2109S and ST2334, so CS3268 is eligible. CS4243 requires many prerequisites including YSC2232 or MA2001... and ST1131... and CS2030... and YSC2229... and MA1102R... The student has CS2030S. But CS4243 requires YSC2229 or CS2040... The student has CS2040S. It requires ST1131 or ... The student has not completed ST1131, ST1232, ST2131, MA2116, etc. The student has ST2334, but ST2334 is not in the list for CS4243's statistics prerequisite (which lists ST1131, ST1131A, ST1232, ST2131, MA2116, MA2116T, MA2216, EE2012A, EE2012, ST2334, YSC2243). Wait, ST2334 IS in the list. So CS4243 stat prereq is met. CS4243 requires YSC2232 or MA2001... The student has MA1522, MA1521. Neither is YSC2232 or MA2001. MA1522 is mutually exclusive with YSC2232. The student has not taken YSC2232 or MA2001. Thus CS4243 prerequisite is NOT met."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12160,
+    "total_tokens": 12758,
+    "completion_tokens": 598,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 15.4,
+    "attempts": 1
+   },
+   "seconds": 15.4,
+   "violations": null
+  }
+ ]
+}

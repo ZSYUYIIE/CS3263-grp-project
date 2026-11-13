@@ -1,0 +1,56 @@
+{
+ "id": "q1-ex-009-p",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 2.1,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2816,
+  "total_tokens": 2930,
+  "completion_tokens": 114,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 2.1,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\": \"eligible\", \"target\": \"MA3270\", \"current_sem\": 5, \"completed\": [\"CS1010A\", \"CS2040C\", \"MA1522\", \"MA1301\", \"MA2104\", \"ST2132\", \"ST2334\", \"CS2108\", \"ESP2107\", \"IS2101\", \"MA1511\", \"CS1231S\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "MA3270",
+  "current_sem": 5,
+  "completed": [
+   "CS1010A",
+   "CS2040C",
+   "MA1522",
+   "MA1301",
+   "MA2104",
+   "ST2132",
+   "ST2334",
+   "CS2108",
+   "ESP2107",
+   "IS2101",
+   "MA1511",
+   "CS1231S"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "MA3270",
+  "semester": 5,
+  "reasons": [
+   "mutually exclusive with completed MA1301 (listed on their page)"
+  ],
+  "can_still_become_eligible": false,
+  "never_eligible_because": "MA3270 is ruled out by completed MA1301"
+ }
+}

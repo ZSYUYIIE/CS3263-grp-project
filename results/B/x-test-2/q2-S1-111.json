@@ -1,0 +1,142 @@
+{
+ "id": "q2-S1-111",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 12.02,
+ "solver_seconds": 0.033,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2842,
+  "total_tokens": 4195,
+  "completion_tokens": 1353,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1069
+  },
+  "finish_reason": "stop",
+  "request_seconds": 11.99,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"completed\":[\"ES2660\",\"CS1101S\",\"CS2040S\",\"ST2334\",\"CS2030S\",\"CS2103T\",\"MA1521\",\"CS2100\",\"CS2106\",\"CS1231S\",\"CS2101\",\"MA1522\",\"CS2109S\",\"CS3264\"],\"current_sem\":5,\"programme\":\"BComp CS Hons\",\"must_take\":[\"CS2105\",\"CS4350\",\"CS4430\"],\"mc_max\":12,\"sem_caps\":{\"8\":0},\"objective\":\"min_total_mc\",\"rules\":[{\"type\":\"before\",\"a\":\"CS2105\",\"b\":\"CS4350\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS4430\",\"sem\":6,\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS4430\",\"b\":\"CS4350\",\"strength\":\"prefer\"},{\"type\":\"same_sem\",\"a\":\"CS4430\",\"b\":\"CS2105\",\"strength\":\"prefer\"},{\"type\":\"in_sem\",\"course\":\"CS2105\",\"sem\":7,\"strength\":\"prefer\"},{\"type\":\"in_sem\",\"course\":\"CS4350\",\"sem\":7,\"strength\":\"prefer\"}],\"unsupported\":[\"at most two modules with final exams in a semester\"]}",
+ "spec": {
+  "query": "plan",
+  "completed": [
+   "ES2660",
+   "CS1101S",
+   "CS2040S",
+   "ST2334",
+   "CS2030S",
+   "CS2103T",
+   "MA1521",
+   "CS2100",
+   "CS2106",
+   "CS1231S",
+   "CS2101",
+   "MA1522",
+   "CS2109S",
+   "CS3264"
+  ],
+  "current_sem": 5,
+  "programme": "BComp CS Hons",
+  "must_take": [
+   "CS2105",
+   "CS4350",
+   "CS4430"
+  ],
+  "mc_max": 12,
+  "sem_caps": {
+   "8": 0
+  },
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2105",
+    "b": "CS4350",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4430",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4430",
+    "b": "CS4350",
+    "strength": "prefer"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4430",
+    "b": "CS2105",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2105",
+    "sem": 7,
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4350",
+    "sem": 7,
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "at most two modules with final exams in a semester"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 7,
+  "plan": {
+   "5": [
+    "CS3231",
+    "CS3241"
+   ],
+   "6": [
+    "CS2105",
+    "CS3247",
+    "CS4430"
+   ],
+   "7": [
+    "CS4350"
+   ]
+  },
+  "mc_per_semester": {
+   "5": 8,
+   "6": 12,
+   "7": 4
+  },
+  "preferences_met": [
+   "CS4430 before CS4350",
+   "CS4430 and CS2105 in the same semester",
+   "CS4350 in semester 7"
+  ],
+  "preferences_not_met": [
+   "CS2105 in semester 7"
+  ],
+  "added_prerequisites": [
+   "CS3231",
+   "CS3241",
+   "CS3247"
+  ],
+  "not_applied": [
+   "at most two modules with final exams in a semester"
+  ]
+ }
+}

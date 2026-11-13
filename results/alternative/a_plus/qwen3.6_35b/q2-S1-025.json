@@ -1,0 +1,168 @@
+{
+ "id": "q2-S1-025",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "repeated plan",
+ "seconds": 13.34,
+ "usage": {
+  "prompt_tokens": 14222,
+  "total_tokens": 15005,
+  "completion_tokens": 783,
+  "finish_reason": "stop",
+  "request_seconds": 13.34,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"1\": [\n      \"CS1010\",\n      \"CS1231\"\n    ],\n    \"2\": [\n      \"CS2030S\",\n      \"CS2040S\"\n    ],\n    \"3\": [\n      \"CS2101\",\n      \"CS2103T\"\n    ],\n    \"4\": [\n      \"CS3281\",\n      \"CS3230\"\n    ],\n    \"5\": [\n      \"CS3213\"\n    ],\n    \"6\": [\n      \"CS3219\"\n    ]\n  },\n  \"reasons\": [\n    \"CS1010 and CS1231 are taken in Sem 1 to satisfy prerequisites for later courses.\",\n    \"CS2030S and CS2040S are taken in Sem 2, satisfying their prerequisite CS1010.\",\n    \"CS2101 and CS2103T are taken in Sem 3; CS2103T requires CS2030S and CS2040S.\",\n    \"CS3281 and CS3230 are taken in Sem 4; CS3281 requires CS2103T, CS3230 requires CS2040S and CS1231.\",\n    \"CS3213 is taken in Sem 5; it requires CS2103T, CS3281, CS2030S, and CS2101, all completed by Sem 3.\",\n    \"CS3219 is taken in Sem 6; it requires CS2103T and CS3213, completed by Sem 5.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1010",
+    "CS1231"
+   ],
+   "2": [
+    "CS2030S",
+    "CS2040S"
+   ],
+   "3": [
+    "CS2101",
+    "CS2103T"
+   ],
+   "4": [
+    "CS3281",
+    "CS3230"
+   ],
+   "5": [
+    "CS3213"
+   ],
+   "6": [
+    "CS3219"
+   ]
+  },
+  "reasons": [
+   "CS1010 and CS1231 are taken in Sem 1 to satisfy prerequisites for later courses.",
+   "CS2030S and CS2040S are taken in Sem 2, satisfying their prerequisite CS1010.",
+   "CS2101 and CS2103T are taken in Sem 3; CS2103T requires CS2030S and CS2040S.",
+   "CS3281 and CS3230 are taken in Sem 4; CS3281 requires CS2103T, CS3230 requires CS2040S and CS1231.",
+   "CS3213 is taken in Sem 5; it requires CS2103T, CS3281, CS2030S, and CS2101, all completed by Sem 3.",
+   "CS3219 is taken in Sem 6; it requires CS2103T and CS3213, completed by Sem 5."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"1\": [\n      \"CS1010\",\n      \"CS1231\"\n    ],\n    \"2\": [\n      \"CS2030S\",\n      \"CS2040S\"\n    ],\n    \"3\": [\n      \"CS2101\",\n      \"CS2103T\"\n    ],\n    \"4\": [\n      \"CS3281\",\n      \"CS3230\"\n    ],\n    \"5\": [\n      \"CS3213\"\n    ],\n    \"6\": [\n      \"CS3219\"\n    ]\n  },\n  \"reasons\": [\n    \"Prerequisites for CS2030S and CS2040S (CS1010) are completed in Sem 1.\",\n    \"CS2103T requires CS2030S and CS2040S, completed in Sem 2.\",\n    \"CS3230 requires CS2040S and CS1231, both completed by Sem 2.\",\n    \"CS3281 requires CS2103T, completed in Sem 3.\",\n    \"CS3213 requires CS2103T, CS3281, CS2030S, and CS2101, all completed by Sem 3.\",\n    \"CS3219 requires CS2103T and CS3213, completed by Sem 5.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "1": [
+      "CS1010",
+      "CS1231"
+     ],
+     "2": [
+      "CS2030S",
+      "CS2040S"
+     ],
+     "3": [
+      "CS2101",
+      "CS2103T"
+     ],
+     "4": [
+      "CS3281",
+      "CS3230"
+     ],
+     "5": [
+      "CS3213"
+     ],
+     "6": [
+      "CS3219"
+     ]
+    },
+    "reasons": [
+     "Prerequisites for CS2030S and CS2040S (CS1010) are completed in Sem 1.",
+     "CS2103T requires CS2030S and CS2040S, completed in Sem 2.",
+     "CS3230 requires CS2040S and CS1231, both completed by Sem 2.",
+     "CS3281 requires CS2103T, completed in Sem 3.",
+     "CS3213 requires CS2103T, CS3281, CS2030S, and CS2101, all completed by Sem 3.",
+     "CS3219 requires CS2103T and CS3213, completed by Sem 5."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 6897,
+    "total_tokens": 7260,
+    "completion_tokens": 363,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.38,
+    "attempts": 1
+   },
+   "seconds": 5.38,
+   "violations": [
+    "R3 CS3213 not offered in Sem 1 (semester 5)"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"1\": [\n      \"CS1010\",\n      \"CS1231\"\n    ],\n    \"2\": [\n      \"CS2030S\",\n      \"CS2040S\"\n    ],\n    \"3\": [\n      \"CS2101\",\n      \"CS2103T\"\n    ],\n    \"4\": [\n      \"CS3281\",\n      \"CS3230\"\n    ],\n    \"5\": [\n      \"CS3213\"\n    ],\n    \"6\": [\n      \"CS3219\"\n    ]\n  },\n  \"reasons\": [\n    \"CS1010 and CS1231 are taken in Sem 1 to satisfy prerequisites for later courses.\",\n    \"CS2030S and CS2040S are taken in Sem 2, satisfying their prerequisite CS1010.\",\n    \"CS2101 and CS2103T are taken in Sem 3; CS2103T requires CS2030S and CS2040S.\",\n    \"CS3281 and CS3230 are taken in Sem 4; CS3281 requires CS2103T, CS3230 requires CS2040S and CS1231.\",\n    \"CS3213 is taken in Sem 5; it requires CS2103T, CS3281, CS2030S, and CS2101, all completed by Sem 3.\",\n    \"CS3219 is taken in Sem 6; it requires CS2103T and CS3213, completed by Sem 5.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "1": [
+      "CS1010",
+      "CS1231"
+     ],
+     "2": [
+      "CS2030S",
+      "CS2040S"
+     ],
+     "3": [
+      "CS2101",
+      "CS2103T"
+     ],
+     "4": [
+      "CS3281",
+      "CS3230"
+     ],
+     "5": [
+      "CS3213"
+     ],
+     "6": [
+      "CS3219"
+     ]
+    },
+    "reasons": [
+     "CS1010 and CS1231 are taken in Sem 1 to satisfy prerequisites for later courses.",
+     "CS2030S and CS2040S are taken in Sem 2, satisfying their prerequisite CS1010.",
+     "CS2101 and CS2103T are taken in Sem 3; CS2103T requires CS2030S and CS2040S.",
+     "CS3281 and CS3230 are taken in Sem 4; CS3281 requires CS2103T, CS3230 requires CS2040S and CS1231.",
+     "CS3213 is taken in Sem 5; it requires CS2103T, CS3281, CS2030S, and CS2101, all completed by Sem 3.",
+     "CS3219 is taken in Sem 6; it requires CS2103T and CS3213, completed by Sem 5."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 7325,
+    "total_tokens": 7745,
+    "completion_tokens": 420,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 7.96,
+    "attempts": 1
+   },
+   "seconds": 7.96,
+   "violations": [
+    "R3 CS3213 not offered in Sem 1 (semester 5)"
+   ]
+  }
+ ]
+}

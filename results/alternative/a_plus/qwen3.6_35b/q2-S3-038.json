@@ -1,0 +1,135 @@
+{
+ "id": "q2-S3-038",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "valid",
+ "seconds": 58.75,
+ "usage": {
+  "prompt_tokens": 30781,
+  "total_tokens": 33513,
+  "completion_tokens": 2732,
+  "finish_reason": "stop",
+  "request_seconds": 58.74,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS2109S\", \"CS2105\", \"CS3219\", \"CS3210\"], \"6\": [\"CP3880\", \"CS2106\"], \"7\": [\"CS2102\", \"CS3230\", \"ST2334\"]}, \"reasons\": [\"Sem 4: CS2109S, CS2105, CS3219, CS3210. Sem 5: LOA. Sem 6: ATAP + CS2106. Sem 7: CS2102, CS3230, ST2334. All must-takes included. CS3210 before CS2102. CS2106 in Sem 6. CS2109S in Y2S2.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2109S",
+    "CS2105",
+    "CS3219",
+    "CS3210"
+   ],
+   "6": [
+    "CP3880",
+    "CS2106"
+   ],
+   "7": [
+    "CS2102",
+    "CS3230",
+    "ST2334"
+   ]
+  },
+  "reasons": [
+   "Sem 4: CS2109S, CS2105, CS3219, CS3210. Sem 5: LOA. Sem 6: ATAP + CS2106. Sem 7: CS2102, CS3230, ST2334. All must-takes included. CS3210 before CS2102. CS2106 in Sem 6. CS2109S in Y2S2."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS2109S prerequisite requires (MA1511 and MA1512) or MA1521 or MA2002 etc. Student has MA1521, so this is met. However, CS2109S also requires (YSC2229 or CS2040S or ...). Student has CS2040S. So CS2109S is eligible in Sem 4. CS2105 requires CS2040S or similar. Student has CS2040S. So CS2105 is eligible in Sem 4. The student must take CS2109S and CS2105 together in Sem 4. This is possible (4+4=8 MC). CS2106 must be in Sem 6. Prerequisite is CS2100 (completed). OK. CS2102 requires CS1231S (completed) and CS2030S/CS2040S (completed). OK. CS3210 requires CS2100 (completed). OK. CS3219 requires CS2103T (completed). OK. CS3230 requires CS2040S (completed) and CS1231S (completed). OK. The student has a LOA in Sem 5. ATAP is in Sem 6? No, ATAP is in Y3S2 which is Sem 6. But CS2106 must be in Sem 6. ATAP is 12 MC. Other courses in ATAP sem max 8 MC. CS2106 is 4 MC. So Sem 6 can have ATAP + CS2106. But wait, the student said ATAP is in Y3S2. Y3S2 is Sem 6. So Sem 6 is ATAP. CS2106 is in Sem 6. This is allowed. The student must finish CS3210 before CS2102. CS3210 is 4 MC. CS2102 is 4 MC. CS3210 can be taken in Sem 4, 7, or 8. CS2102 can be taken in Sem 4, 7, or 8. If CS3210 is in Sem 4, CS2102 can be in Sem 7 or 8. If CS3210 is in Sem 7, CS2102 must be in Sem 8. CS2109S and CS2105 are in Sem 4. CS2106 is in Sem 6. CS3219 should be as early as possible. Prereq CS2103T (completed). Can be taken in Sem 4, 7, 8. If taken in Sem 4, total MC in Sem 4: CS2109S(4) + CS2105(4) + CS3219(4) = 12 MC. This is under 20. So Sem 4: CS2109S, CS2105, CS3219. Sem 5: LOA (0 MC). Sem 6: ATAP (CP3880) + CS2106. Sem 7: CS3210, CS2102, CS3230. Check prereqs for CS3230: CS2040S (completed), CS1231S (completed). OK. Check prereqs for CS2102: CS1231S (completed), CS2030S/CS2040S (completed). OK. Check prereqs for CS3210: CS2100 (completed). OK. Is CS3210 before CS2102? Yes, Sem 7 vs Sem 7? No, \"before\" usually means strictly earlier semester. If they are in the same semester, is it \"before\"? The rule says \"completed or planned in a STRICTLY earlier semester\". So CS3210 must be in Sem < Sem of CS2102. If both are in Sem 7, CS3210 is not strictly earlier. So CS3210 must be in Sem 4 or Sem 7? If Sem 4, then CS2102 can be Sem 7 or 8. If CS3210 is in Sem 4, Sem 4 has CS2109S, CS2105, CS3219, CS3210. That's 16 MC. OK. Then CS2102 can be in Sem 7. Sem 7: CS2102, CS3230. Sem 8: empty? No, student wants to finish ASAP. Last semester used is 7. Can we do Sem 7? Sem 4: CS2109S, CS2105, CS3219, CS3210. Sem 5: LOA. Sem 6: ATAP, CS2106. Sem 7: CS2102, CS3230. This works. CS3219 is in Sem 4 (as early as possible). CS2102 is in Sem 7. CS2106 is in Sem 6. CS2109S in Y2S2 (Sem 4). CS2105 with CS2109S (Sem 4). ATAP in Y3S2 (Sem 6). LOA in Sem 5. All constraints met. Why NO_PLAN? Let's re-read carefully. \"CS3210 before I start CS2102\". If CS3210 is in Sem 4 and CS2102 in Sem 7, it is strictly earlier. OK. Is there any issue with ATAP? ATAP prereq: (IS2101 or ...) and (CS2103 or ...). Student has CS2103T. Is CS2103T in the list for ATAP? ATAP prereq list: CS2103 or CS2103T or CS2103DE or CS2113 or IS3106 or BT3103 or IS2108. Yes, CS2103T is there. So ATAP is eligible. Sem 6 has ATAP (12 MC) + CS2106 (4 MC). Total 16 MC. Limit 20. OK. Sem 4 has CS2109S(4)+CS2105(4)+CS3219(4)+CS3210(4) = 16 MC. OK. Sem 7 has CS2102(4)+CS3230(4) = 8 MC. OK. This plan seems valid. Status PLAN.\n\nWait, did I miss anything? \"CS2106 has to be in semester 6\". Yes. \"ATAP internship is in year 3 semester 2\". Y3S2 is Sem 6. Yes. \"Leave of absence in semester 5\". Yes. \"CS2109S in Y2S2\". Y2S2 is Sem 4. Yes. \"CS2109S and CS2105 together\". Yes. \"CS3219 as early as possible\". Sem 4 is earliest possible (Sem 1-3 are past or blocked? Student is starting Y2S2, so Sem 4 is current. Sem 1-3 are completed? No, student is *starting* Y2S2. So Sem 4 is the current semester. Can we plan Sem 4? Yes. \"Plan my remaining semesters... from the semester the student is in now (inclusive)\". So Sem 4 is included.\n\nIs CS3219 offered in Sem 4? Yes, Sem 1 and Sem 2. Sem 4 is even, so Sem 2 of Y2. Yes.\nIs CS3210 offered in Sem 4? Yes.\nIs CS2109S offered in Sem 4? Yes.\nIs CS2105 offered in Sem 4? Yes.\n\nSo the plan is:\nSem 4: CS2109S, CS2105, CS3219, CS3210\nSem 5: (LOA)\nSem 6: CP3880, CS2106\nSem 7: CS2102, CS3230\n\nCheck CS2102 prereq: CS1231S (completed), CS2030S/CS2040S (completed). OK.\nCheck CS3230 prereq: CS2040S (completed), CS1231S (completed). OK.\nCheck CS3210 prereq: CS2100 (completed). OK.\nCheck CS3219 prereq: CS2103T (completed). OK.\nCheck CS2106 prereq: CS2100 (completed). OK.\nCheck CS2109S prereq: CS2040S (completed), MA1521 (completed). OK.\nCheck CS2105 prereq: CS2040S (completed). OK.\nCheck ATAP prereq: CS2103T (completed). OK.\n\nIs there any mutual exclusion?\nCS2109S mutually exclusive with CG3201, CS2109HS, CS3243, CS3244, CS4263, DMX1401AI, EE2211, EE2213, IT3011. None of these are in the plan.\nCS2105 mutually exclusive with EE4204, EE4204E, TEE4204. None in plan.\nCS3210 no mutual exclusions listed.\nCS3219 no mutual exclusions listed.\nCS2102 mutually exclusive with CS2102S, IT2002. None in plan.\nCS3230 no mutual exclusions listed.\nCS2106 mutually exclusive with CG2271, EE4214. None in plan.\nCP3880 no mutual exclusions listed.\n\nSo the plan is valid.\n\n{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS2109S\", \"CS2105\", \"CS3219\", \"CS3210\"], \"6\": [\"CP3880\", \"CS2106\"], \"7\": [\"CS2102\", \"CS3230\"]}, \"reasons\": [\"Sem 4: CS2109S, CS2105, CS3219, CS3210 (16 MC). Sem 5: LOA. Sem 6: ATAP + CS2106. Sem 7: CS2102, CS3230. CS3210 taken before CS2102. CS3219 as early as possible. CS2106 in Sem 6. CS2109S in Y2S2 with CS2105.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "CS2109S",
+      "CS2105",
+      "CS3219",
+      "CS3210"
+     ],
+     "6": [
+      "CP3880",
+      "CS2106"
+     ],
+     "7": [
+      "CS2102",
+      "CS3230"
+     ]
+    },
+    "reasons": [
+     "Sem 4: CS2109S, CS2105, CS3219, CS3210 (16 MC). Sem 5: LOA. Sem 6: ATAP + CS2106. Sem 7: CS2102, CS3230. CS3210 taken before CS2102. CS3219 as early as possible. CS2106 in Sem 6. CS2109S in Y2S2 with CS2105."
+    ]
+   },
+   "repair": "extra_text",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 14096,
+    "total_tokens": 16627,
+    "completion_tokens": 2531,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 55.0,
+    "attempts": 1
+   },
+   "seconds": 55.0,
+   "violations": [
+    "R1 must-take ST2334 missing"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS2109S\", \"CS2105\", \"CS3219\", \"CS3210\"], \"6\": [\"CP3880\", \"CS2106\"], \"7\": [\"CS2102\", \"CS3230\", \"ST2334\"]}, \"reasons\": [\"Sem 4: CS2109S, CS2105, CS3219, CS3210. Sem 5: LOA. Sem 6: ATAP + CS2106. Sem 7: CS2102, CS3230, ST2334. All must-takes included. CS3210 before CS2102. CS2106 in Sem 6. CS2109S in Y2S2.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "CS2109S",
+      "CS2105",
+      "CS3219",
+      "CS3210"
+     ],
+     "6": [
+      "CP3880",
+      "CS2106"
+     ],
+     "7": [
+      "CS2102",
+      "CS3230",
+      "ST2334"
+     ]
+    },
+    "reasons": [
+     "Sem 4: CS2109S, CS2105, CS3219, CS3210. Sem 5: LOA. Sem 6: ATAP + CS2106. Sem 7: CS2102, CS3230, ST2334. All must-takes included. CS3210 before CS2102. CS2106 in Sem 6. CS2109S in Y2S2."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 16685,
+    "total_tokens": 16886,
+    "completion_tokens": 201,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 3.74,
+    "attempts": 1
+   },
+   "seconds": 3.75,
+   "violations": []
+  }
+ ]
+}

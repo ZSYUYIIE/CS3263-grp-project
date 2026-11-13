@@ -1,0 +1,63 @@
+{
+ "id": "q2-S1-012",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 118.17,
+ "usage": {
+  "prompt_tokens": 5818,
+  "total_tokens": 15244,
+  "completion_tokens": 9426,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 4224
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 9252
+  },
+  "finish_reason": "stop",
+  "request_seconds": 118.17,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"1\":[\"CS1010\",\"MA1521\"],\"2\":[\"CS2040\"],\"3\":[\"CS2030\"],\"5\":[\"CS3241\"],\"6\":[\"CS3247\"],\"7\":[\"CS2101\",\"CS2105\"],\"8\":[\"CS2109S\"]},\"reasons\":[\"Total is 36 MC: the four requested courses plus CS1010, CS2040, CS2030, CS3241 and MA1521 as prerequisites.\",\"CS3247 is fixed in semester 6, and CS2101 with CS2105 are together in semester 7.\",\"This meets CS2101 before CS2109S and CS3247 before CS2101; the CS2105/CS2101 timing is the resulting compromise.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1010",
+    "MA1521"
+   ],
+   "2": [
+    "CS2040"
+   ],
+   "3": [
+    "CS2030"
+   ],
+   "5": [
+    "CS3241"
+   ],
+   "6": [
+    "CS3247"
+   ],
+   "7": [
+    "CS2101",
+    "CS2105"
+   ],
+   "8": [
+    "CS2109S"
+   ]
+  },
+  "reasons": [
+   "Total is 36 MC: the four requested courses plus CS1010, CS2040, CS2030, CS3241 and MA1521 as prerequisites.",
+   "CS3247 is fixed in semester 6, and CS2101 with CS2105 are together in semester 7.",
+   "This meets CS2101 before CS2109S and CS3247 before CS2101; the CS2105/CS2101 timing is the resulting compromise."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

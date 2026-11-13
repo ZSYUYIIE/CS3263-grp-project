@@ -1,0 +1,52 @@
+{
+ "id": "q2-S2-035",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 29.49,
+ "usage": {
+  "prompt_tokens": 11928,
+  "total_tokens": 13607,
+  "completion_tokens": 1679,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 29.49,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2105\",\n      \"CS2102\",\n      \"CS3219\"\n    ],\n    \"6\": [\n      \"ST2334\"\n    ],\n    \"7\": [\n      \"CS3247\",\n      \"CS4248\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2105 and CS2102 prerequisites are satisfied by completed courses.\",\n    \"CS3219 prerequisite (CS2103T) is completed.\",\n    \"ST2334 prerequisite (MA1521) is completed and taken after CS2105.\",\n    \"CS3247 prerequisite (CS3241) is not completed, but CS3247 is listed as a must-take course. However, checking CS3247 record: prerequisite is CS3241. CS3241 is NOT in the completed list. CS3241 is offered Sem 1. Semester 5 is Sem 1. Can I take CS3241 in Sem 5? Prereq for CS3241: (CS2030S or ...) and (CS2040 or ...). CS2030S and CS2040S are completed. So CS3241 is eligible in Sem 5. I missed adding CS3241. Let's re-evaluate.\",\n    \"Re-evaluation: CS3247 requires CS3241. CS3241 requires CS2030S/CS2030/etc and CS2040/YSC2229/etc. Student has CS2030S and CS2040S. So CS3241 is eligible in Sem 5 (Sem 1). CS3247 is offered Sem 2. So CS3241 must be taken in Sem 5 or earlier. CS3247 can be taken in Sem 6 or later. Student has limit 1 MC in Sem 6. CS3247 is 4 MC. So CS3247 cannot be in Sem 6. CS3247 can be in Sem 7 or 8. CS4248 requires CS2109S (completed) and others. CS4248 is offered Sem 1, Sem 2. CS4248 can be taken in Sem 7. Ideally CS3247 before CS4248. So CS3247 in Sem 7, CS4248 in Sem 7 or 8. If both in Sem 7, that's 8 MC. Limit is 12 MC. This works. Sem 6 has 1 MC limit. ST2334 is 4 MC. So ST2334 cannot be in Sem 6. ST2334 must be in Sem 5, 7, or 8. Student said 'finish CS2105 before ST2334'. CS2105 in Sem 5. So ST2334 in Sem 7 or 8. But student also said 'In semester 6 I can only take 1 module'. This is a constraint on MC/modules, not just a wish. 1 module usually implies 4 MC. If the limit is 1 module, ST2334 (4 MC) is 1 module. So ST2334 CAN be in Sem 6. The prompt says 'I can take at most 12 MC per semester. In semester 6 I can only take 1 module.' This implies a module count limit of 1 for Sem 6. ST2334 is 1 module. So ST2334 can be in Sem 6. This frees up Sem 7 for CS3247 and CS4248. Let's check if CS3241 is needed. Yes, for CS3247. CS3241 is 4 MC. If I put CS3241 in Sem 5, Sem 5 has CS2105 (4), CS2102 (4), CS3219 (4), CS3241 (4) = 16 MC. Limit is 12 MC. So I cannot take all 4 in Sem 5. I must spread them. CS3219 must be in Y3S2 (Sem 6). So CS3219 in Sem 6. But Sem 6 limit is 1 module. CS3219 is 1 module. So CS3219 in Sem 6 is valid. Then Sem 5 can take CS2105, CS2102, CS3241. That's 12 MC. Valid. Sem 6 takes CS3219. Valid. Sem 7 takes CS3247 and CS4248. 8 MC. Valid. ST2334 needs to be after CS2105. CS2105 in Sem 5. ST2334 can be in Sem 7 or 8. If ST2334 in Sem 7, Sem 7 has CS3247, CS4248, ST2334 = 12 MC. Valid. Ideally CS3247 before CS4248. They are in same semester. Is that 'before'? Usually 'before' means earlier semester. If so, CS3247 in Sem 7, CS4248 in Sem 8. Sem 7: CS3247, ST2334 (8 MC). Sem 8: CS4248 (4 MC). This satisfies 'CS3247 before CS4248'. Let's check if ST2334 can be in Sem 7. Yes. So Plan: Sem 5: CS2105, CS2102, CS3241. Sem 6: CS3219. Sem 7: CS3247, ST2334. Sem 8: CS4248. Check prerequisites: CS3241 prereq CS2030S/CS2040S (done). CS3219 prereq CS2103T (done). CS3247 prereq CS3241 (done in Sem 5). CS4248 prereq CS2109S (done). ST2334 prereq MA1521 (done). CS2105 prereq CS2040S (done). All good. MC limits: Sem 5: 12 MC (ok). Sem 6: 4 MC (1 module, ok). Sem 7: 8 MC (ok). Sem 8: 4 MC (ok). Soft wishes: CS3247 before CS4248 (Sem 7 vs Sem 8, yes). CS2105 as early as possible (Sem 5, yes). CS3219 in Y3S2 (Sem 6, yes). ST2334 after CS2105 (Sem 7 after Sem 5, yes).\",\n    \"CS3241 is required for CS3247 and is taken in Sem 5 to respect MC limits.\",\n    \"CS3219 is placed in Sem 6 to satisfy the 'must take in Y3S2' and 1-module limit.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2105",
+    "CS2102",
+    "CS3219"
+   ],
+   "6": [
+    "ST2334"
+   ],
+   "7": [
+    "CS3247",
+    "CS4248"
+   ]
+  },
+  "reasons": [
+   "CS2105 and CS2102 prerequisites are satisfied by completed courses.",
+   "CS3219 prerequisite (CS2103T) is completed.",
+   "ST2334 prerequisite (MA1521) is completed and taken after CS2105.",
+   "CS3247 prerequisite (CS3241) is not completed, but CS3247 is listed as a must-take course. However, checking CS3247 record: prerequisite is CS3241. CS3241 is NOT in the completed list. CS3241 is offered Sem 1. Semester 5 is Sem 1. Can I take CS3241 in Sem 5? Prereq for CS3241: (CS2030S or ...) and (CS2040 or ...). CS2030S and CS2040S are completed. So CS3241 is eligible in Sem 5. I missed adding CS3241. Let's re-evaluate.",
+   "Re-evaluation: CS3247 requires CS3241. CS3241 requires CS2030S/CS2030/etc and CS2040/YSC2229/etc. Student has CS2030S and CS2040S. So CS3241 is eligible in Sem 5 (Sem 1). CS3247 is offered Sem 2. So CS3241 must be taken in Sem 5 or earlier. CS3247 can be taken in Sem 6 or later. Student has limit 1 MC in Sem 6. CS3247 is 4 MC. So CS3247 cannot be in Sem 6. CS3247 can be in Sem 7 or 8. CS4248 requires CS2109S (completed) and others. CS4248 is offered Sem 1, Sem 2. CS4248 can be taken in Sem 7. Ideally CS3247 before CS4248. So CS3247 in Sem 7, CS4248 in Sem 7 or 8. If both in Sem 7, that's 8 MC. Limit is 12 MC. This works. Sem 6 has 1 MC limit. ST2334 is 4 MC. So ST2334 cannot be in Sem 6. ST2334 must be in Sem 5, 7, or 8. Student said 'finish CS2105 before ST2334'. CS2105 in Sem 5. So ST2334 in Sem 7 or 8. But student also said 'In semester 6 I can only take 1 module'. This is a constraint on MC/modules, not just a wish. 1 module usually implies 4 MC. If the limit is 1 module, ST2334 (4 MC) is 1 module. So ST2334 CAN be in Sem 6. The prompt says 'I can take at most 12 MC per semester. In semester 6 I can only take 1 module.' This implies a module count limit of 1 for Sem 6. ST2334 is 1 module. So ST2334 can be in Sem 6. This frees up Sem 7 for CS3247 and CS4248. Let's check if CS3241 is needed. Yes, for CS3247. CS3241 is 4 MC. If I put CS3241 in Sem 5, Sem 5 has CS2105 (4), CS2102 (4), CS3219 (4), CS3241 (4) = 16 MC. Limit is 12 MC. So I cannot take all 4 in Sem 5. I must spread them. CS3219 must be in Y3S2 (Sem 6). So CS3219 in Sem 6. But Sem 6 limit is 1 module. CS3219 is 1 module. So CS3219 in Sem 6 is valid. Then Sem 5 can take CS2105, CS2102, CS3241. That's 12 MC. Valid. Sem 6 takes CS3219. Valid. Sem 7 takes CS3247 and CS4248. 8 MC. Valid. ST2334 needs to be after CS2105. CS2105 in Sem 5. ST2334 can be in Sem 7 or 8. If ST2334 in Sem 7, Sem 7 has CS3247, CS4248, ST2334 = 12 MC. Valid. Ideally CS3247 before CS4248. They are in same semester. Is that 'before'? Usually 'before' means earlier semester. If so, CS3247 in Sem 7, CS4248 in Sem 8. Sem 7: CS3247, ST2334 (8 MC). Sem 8: CS4248 (4 MC). This satisfies 'CS3247 before CS4248'. Let's check if ST2334 can be in Sem 7. Yes. So Plan: Sem 5: CS2105, CS2102, CS3241. Sem 6: CS3219. Sem 7: CS3247, ST2334. Sem 8: CS4248. Check prerequisites: CS3241 prereq CS2030S/CS2040S (done). CS3219 prereq CS2103T (done). CS3247 prereq CS3241 (done in Sem 5). CS4248 prereq CS2109S (done). ST2334 prereq MA1521 (done). CS2105 prereq CS2040S (done). All good. MC limits: Sem 5: 12 MC (ok). Sem 6: 4 MC (1 module, ok). Sem 7: 8 MC (ok). Sem 8: 4 MC (ok). Soft wishes: CS3247 before CS4248 (Sem 7 vs Sem 8, yes). CS2105 as early as possible (Sem 5, yes). CS3219 in Y3S2 (Sem 6, yes). ST2334 after CS2105 (Sem 7 after Sem 5, yes).",
+   "CS3241 is required for CS3247 and is taken in Sem 5 to respect MC limits.",
+   "CS3219 is placed in Sem 6 to satisfy the 'must take in Y3S2' and 1-module limit."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

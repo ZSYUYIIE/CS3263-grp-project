@@ -1,0 +1,86 @@
+{
+ "id": "q2-S4-311",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 7.26,
+ "solver_seconds": 0.055,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2822,
+  "total_tokens": 3623,
+  "completion_tokens": 801,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 613
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.21,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":4,\"completed\":[\"ES2660\",\"CS2103T\",\"CS1101S\",\"CS2030S\",\"CS1231S\",\"CS2101\",\"ST2334\",\"CS2100\",\"MA1522\",\"MA1521\",\"CS2040S\"],\"must_take\":[\"CS3223\",\"CS4330\",\"CS3240\",\"CS3230\",\"CS2106\",\"CS3268\",\"CS2109S\"],\"objective\":\"min_total_mc\",\"early\":[\"CS3240\"],\"rules\":[{\"type\":\"before\",\"a\":\"CS2106\",\"b\":\"CS4330\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3268\",\"sem\":5,\"strength\":\"prefer\"},{\"type\":\"before\",\"a\":\"CS3268\",\"b\":\"CS2109S\",\"strength\":\"must\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "ES2660",
+   "CS2103T",
+   "CS1101S",
+   "CS2030S",
+   "CS1231S",
+   "CS2101",
+   "ST2334",
+   "CS2100",
+   "MA1522",
+   "MA1521",
+   "CS2040S"
+  ],
+  "must_take": [
+   "CS3223",
+   "CS4330",
+   "CS3240",
+   "CS3230",
+   "CS2106",
+   "CS3268",
+   "CS2109S"
+  ],
+  "objective": "min_total_mc",
+  "early": [
+   "CS3240"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2106",
+    "b": "CS4330",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3268",
+    "sem": 5,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS3268",
+    "b": "CS2109S",
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS3268 before CS2109S; the prerequisites of CS3268; the course exclusions (courses that cannot be taken together)"
+  ]
+ }
+}

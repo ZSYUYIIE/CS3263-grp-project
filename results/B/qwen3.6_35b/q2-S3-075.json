@@ -1,0 +1,98 @@
+{
+ "id": "q2-S3-075",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.21,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3153,
+  "total_tokens": 3601,
+  "completion_tokens": 448,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 7.21,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 4,\n\"completed\": [\n\"CS2103T\",\n\"CS2030S\",\n\"CS1101S\",\n\"MA1522\",\n\"CS2100\",\n\"ST2334\",\n\"CS2101\",\n\"CS2040S\",\n\"ES2660\",\n\"CS1231S\",\n\"MA1521\",\n\"IS1108\"\n],\n\"must_take\": [\n\"CS4226\",\n\"CS4231\",\n\"CS2106\",\n\"CS2105\",\n\"CS2109S\",\n\"CS3219\"\n],\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS3219\",\n\"b\": \"CS4226\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4231\",\n\"b\": \"CS2109S\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS4226\",\n\"b\": \"CS4231\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2106\",\n\"b\": \"CS4231\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4226\",\n\"b\": \"CS2109S\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"late\",\n\"course\": \"CS2109S\",\n\"strength\": \"prefer\"\n}\n],\n\"unsupported\": [\n\"chance I fail one module this semester and have to retake it\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "CS2103T",
+   "CS2030S",
+   "CS1101S",
+   "MA1522",
+   "CS2100",
+   "ST2334",
+   "CS2101",
+   "CS2040S",
+   "ES2660",
+   "CS1231S",
+   "MA1521",
+   "IS1108"
+  ],
+  "must_take": [
+   "CS4226",
+   "CS4231",
+   "CS2106",
+   "CS2105",
+   "CS2109S",
+   "CS3219"
+  ],
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3219",
+    "b": "CS4226",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4231",
+    "b": "CS2109S",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS4226",
+    "b": "CS4231",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2106",
+    "b": "CS4231",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4226",
+    "b": "CS2109S",
+    "strength": "prefer"
+   },
+   {
+    "type": "late",
+    "course": "CS2109S",
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "chance I fail one module this semester and have to retake it"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [
+  "rules[5].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'"
+ ],
+ "answer": {
+  "status": "INVALID_SPEC",
+  "errors": [
+   "rules[5].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'"
+  ]
+ }
+}

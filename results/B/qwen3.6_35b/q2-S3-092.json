@@ -1,0 +1,97 @@
+{
+ "id": "q2-S3-092",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 4.0,
+ "solver_seconds": 0.088,
+ "max_tokens": 49152,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 3094,
+  "total_tokens": 3352,
+  "completion_tokens": 258,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 3.91,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 4,\n\"completed\": [\n\"CS2103T\",\n\"CS2101\",\n\"CS2030S\",\n\"CS2100\",\n\"CS1231S\",\n\"MA1522\",\n\"CS1101S\",\n\"CS2040S\",\n\"IS1108\",\n\"MA1521\"\n],\n\"must_take\": [\n\"CS2109S\",\n\"CS3230\",\n\"CS3103\",\n\"CS2106\",\n\"ES2660\",\n\"ST2334\",\n\"CS2102\",\n\"CS2105\",\n\"CS4223\",\n\"CS3219\"\n],\n\"mc_max\": 16,\n\"mc_min\": 12,\n\"objective\": \"earliest_graduation\",\n\"early\": [\n\"CS2105\"\n],\n\"late\": [\n\"ES2660\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "CS2103T",
+   "CS2101",
+   "CS2030S",
+   "CS2100",
+   "CS1231S",
+   "MA1522",
+   "CS1101S",
+   "CS2040S",
+   "IS1108",
+   "MA1521"
+  ],
+  "must_take": [
+   "CS2109S",
+   "CS3230",
+   "CS3103",
+   "CS2106",
+   "ES2660",
+   "ST2334",
+   "CS2102",
+   "CS2105",
+   "CS4223",
+   "CS3219"
+  ],
+  "mc_max": 16,
+  "mc_min": 12,
+  "objective": "earliest_graduation",
+  "early": [
+   "CS2105"
+  ],
+  "late": [
+   "ES2660"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "earliest_graduation",
+  "last_semester": 6,
+  "plan": {
+   "4": [
+    "CS2105",
+    "CS2106",
+    "CS3210",
+    "CS3219"
+   ],
+   "5": [
+    "CS3103",
+    "CS4223",
+    "ST2334"
+   ],
+   "6": [
+    "CS2102",
+    "CS2109S",
+    "CS3230",
+    "ES2660"
+   ]
+  },
+  "mc_per_semester": {
+   "4": 16,
+   "5": 12,
+   "6": 16
+  },
+  "preferences_met": [
+   "CS2105 as early as possible",
+   "ES2660 as late as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS3210"
+  ]
+ }
+}

@@ -1,0 +1,102 @@
+{
+ "id": "q2-S4-226",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 8.64,
+ "solver_seconds": 0.026,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3189,
+  "total_tokens": 3656,
+  "completion_tokens": 467,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.88,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 7,\n\"completed\": [\n\"CS2103T\",\n\"CS2040S\",\n\"CS2102\",\n\"CS2030S\",\n\"IS1108\",\n\"CS1231S\",\n\"CS4222\",\n\"CS2100\",\n\"CS2106\",\n\"CS1101S\",\n\"ST2334\",\n\"CS2101\",\n\"CS3230\",\n\"CS2109S\",\n\"CS3219\",\n\"CS2105\",\n\"MA1522\",\n\"MA1521\"\n],\n\"must_take\": [\n\"CS3211\",\n\"ES2660\",\n\"CS4225\",\n\"CS4330\",\n\"CS4226\"\n],\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3211\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS3211\",\n\"b\": \"ES2660\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3211\",\n\"b\": \"CS4226\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4225\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"ES2660\",\n\"b\": \"CS4226\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"ES2660\",\n\"b\": \"CS4226\",\n\"strength\": \"must\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "completed": [
+   "CS2103T",
+   "CS2040S",
+   "CS2102",
+   "CS2030S",
+   "IS1108",
+   "CS1231S",
+   "CS4222",
+   "CS2100",
+   "CS2106",
+   "CS1101S",
+   "ST2334",
+   "CS2101",
+   "CS3230",
+   "CS2109S",
+   "CS3219",
+   "CS2105",
+   "MA1522",
+   "MA1521"
+  ],
+  "must_take": [
+   "CS3211",
+   "ES2660",
+   "CS4225",
+   "CS4330",
+   "CS4226"
+  ],
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3211",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3211",
+    "b": "ES2660",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS3211",
+    "b": "CS4226",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4225",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "ES2660",
+    "b": "CS4226",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "ES2660",
+    "b": "CS4226",
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: ES2660 and CS4226 in different semesters; your rule: ES2660 and CS4226 in the same semester"
+  ]
+ }
+}

@@ -1,0 +1,117 @@
+{
+ "id": "q2-S3-238",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 14.54,
+ "usage": {
+  "prompt_tokens": 23929,
+  "total_tokens": 24678,
+  "completion_tokens": 749,
+  "finish_reason": "stop",
+  "request_seconds": 14.54,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS4243 requires prerequisites not in the student's completed or required list: specifically ST1131 (Statistics) and YSC2229/MA2001/MA1508E/MA1513/MA1522 (Linear Algebra/Calculus). The student has MA1522 but it is mutually exclusive with YSC2229 and MA2001, and does not satisfy the second part of the OR condition for the first prerequisite group (ST courses). MA1522 is not an ST course. The student lacks any ST course (ST1131, ST2131, etc.) and the specific Linear Algebra/Calculus courses required (YSC2229, MA2001, MA1508E, MA1513, MA1522 is listed in the prereq but let's re-read carefully: MA1522 is in the prereq list for CS4243? Yes: 'MA1508E or MA1513 or MA1522'. So MA1522 satisfies the first part. However, the second part requires an ST course: 'ST1131 or ...'. The student has not completed any ST course. Thus CS4243 is not eligible.\",\n\"CS4221 requires CS3223 as a prerequisite. CS3223 is not in the student's list of remaining required modules. Therefore, CS4221 cannot be taken.\",\n\"CS4218 requires CS3213 or CS3219. The student has CS3219 in their required list, so this is possible if CS3219 is taken first. However, the other blockers make the plan impossible.\"\n]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4243 requires prerequisites not in the student's completed or required list: specifically ST1131 (Statistics) and YSC2229/MA2001/MA1508E/MA1513/MA1522 (Linear Algebra/Calculus). The student has MA1522 but it is mutually exclusive with YSC2229 and MA2001, and does not satisfy the second part of the OR condition for the first prerequisite group (ST courses). MA1522 is not an ST course. The student lacks any ST course (ST1131, ST2131, etc.) and the specific Linear Algebra/Calculus courses required (YSC2229, MA2001, MA1508E, MA1513, MA1522 is listed in the prereq but let's re-read carefully: MA1522 is in the prereq list for CS4243? Yes: 'MA1508E or MA1513 or MA1522'. So MA1522 satisfies the first part. However, the second part requires an ST course: 'ST1131 or ...'. The student has not completed any ST course. Thus CS4243 is not eligible.",
+   "CS4221 requires CS3223 as a prerequisite. CS3223 is not in the student's list of remaining required modules. Therefore, CS4221 cannot be taken.",
+   "CS4218 requires CS3213 or CS3219. The student has CS3219 in their required list, so this is possible if CS3219 is taken first. However, the other blockers make the plan impossible."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"3\": [\n\"CS2100\"\n],\n\"4\": [\n\"CS2102\",\n\"CS2103T\",\n\"CS3230\"\n],\n\"5\": [\n\"CS3219\",\n\"CS4218\"\n],\n\"6\": [\n\"CS2105\",\n\"CS3281\"\n],\n\"7\": [\n\"CS4221\",\n\"CS4243\"\n]\n},\n\"reasons\": [\n\"Prerequisites satisfied in strict order: CS2100 (Y2S1) -> CS3281 (Y3S1); CS2103T, CS2040S, CS2030S (Y2S1) -> CS3219 (Y3S2); CS3219 -> CS4218 (Y3S2); CS2102, CS3230 (Y2S2) -> CS4221, CS4243 (Y4S1).\",\n\"Soft wishes met: CS3281 in Y4S2 (Sem 6), CS4221 as late as possible (Sem 7), CS2103T as late as possible (Sem 4).\",\n\"Total MC minimized by taking 4 MC modules per semester where possible, avoiding unnecessary early loading.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100"
+     ],
+     "4": [
+      "CS2102",
+      "CS2103T",
+      "CS3230"
+     ],
+     "5": [
+      "CS3219",
+      "CS4218"
+     ],
+     "6": [
+      "CS2105",
+      "CS3281"
+     ],
+     "7": [
+      "CS4221",
+      "CS4243"
+     ]
+    },
+    "reasons": [
+     "Prerequisites satisfied in strict order: CS2100 (Y2S1) -> CS3281 (Y3S1); CS2103T, CS2040S, CS2030S (Y2S1) -> CS3219 (Y3S2); CS3219 -> CS4218 (Y3S2); CS2102, CS3230 (Y2S2) -> CS4221, CS4243 (Y4S1).",
+     "Soft wishes met: CS3281 in Y4S2 (Sem 6), CS4221 as late as possible (Sem 7), CS2103T as late as possible (Sem 4).",
+     "Total MC minimized by taking 4 MC modules per semester where possible, avoiding unnecessary early loading."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11590,
+    "total_tokens": 11927,
+    "completion_tokens": 337,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 8.71,
+    "attempts": 1
+   },
+   "seconds": 8.71,
+   "violations": [
+    "R4 CS4218 in semester 5: prerequisite not met (CS3213 or CS3219)",
+    "R3 CS4221 not offered in Sem 1 (semester 7)",
+    "R4 CS4221 in semester 7: prerequisite not met (CS3223)",
+    "R4 CS4243 in semester 7: prerequisite not met ((YSC2232 or MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522) and (ST1131 or ST1131A or ST1232 or ST2131 or MA2116 or MA2116T or MA2216 or EE2012A or EE2012 or ST2334 or YSC2243) and (CS2030 or CS2030S or CS2030DE or CS2030HS or CS2113 or CS2113T) and (YSC2229 or CS2040 or CS2040S or CS2040DE or CS2040C or CS2040HS) and (MA1102R or MA2002 or YSC1216 or MA1505 or MA1521 or MA1507 or (MA1512 and MA1511)))",
+    "R9 must rule not met: before CS3219 CS2102"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS4243 requires prerequisites not in the student's completed or required list: specifically ST1131 (Statistics) and YSC2229/MA2001/MA1508E/MA1513/MA1522 (Linear Algebra/Calculus). The student has MA1522 but it is mutually exclusive with YSC2229 and MA2001, and does not satisfy the second part of the OR condition for the first prerequisite group (ST courses). MA1522 is not an ST course. The student lacks any ST course (ST1131, ST2131, etc.) and the specific Linear Algebra/Calculus courses required (YSC2229, MA2001, MA1508E, MA1513, MA1522 is listed in the prereq but let's re-read carefully: MA1522 is in the prereq list for CS4243? Yes: 'MA1508E or MA1513 or MA1522'. So MA1522 satisfies the first part. However, the second part requires an ST course: 'ST1131 or ...'. The student has not completed any ST course. Thus CS4243 is not eligible.\",\n\"CS4221 requires CS3223 as a prerequisite. CS3223 is not in the student's list of remaining required modules. Therefore, CS4221 cannot be taken.\",\n\"CS4218 requires CS3213 or CS3219. The student has CS3219 in their required list, so this is possible if CS3219 is taken first. However, the other blockers make the plan impossible.\"\n]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4243 requires prerequisites not in the student's completed or required list: specifically ST1131 (Statistics) and YSC2229/MA2001/MA1508E/MA1513/MA1522 (Linear Algebra/Calculus). The student has MA1522 but it is mutually exclusive with YSC2229 and MA2001, and does not satisfy the second part of the OR condition for the first prerequisite group (ST courses). MA1522 is not an ST course. The student lacks any ST course (ST1131, ST2131, etc.) and the specific Linear Algebra/Calculus courses required (YSC2229, MA2001, MA1508E, MA1513, MA1522 is listed in the prereq but let's re-read carefully: MA1522 is in the prereq list for CS4243? Yes: 'MA1508E or MA1513 or MA1522'. So MA1522 satisfies the first part. However, the second part requires an ST course: 'ST1131 or ...'. The student has not completed any ST course. Thus CS4243 is not eligible.",
+     "CS4221 requires CS3223 as a prerequisite. CS3223 is not in the student's list of remaining required modules. Therefore, CS4221 cannot be taken.",
+     "CS4218 requires CS3213 or CS3219. The student has CS3219 in their required list, so this is possible if CS3219 is taken first. However, the other blockers make the plan impossible."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12339,
+    "total_tokens": 12751,
+    "completion_tokens": 412,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 5.83,
+    "attempts": 1
+   },
+   "seconds": 5.83,
+   "violations": null
+  }
+ ]
+}

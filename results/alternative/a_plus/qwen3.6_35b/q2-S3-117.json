@@ -1,0 +1,107 @@
+{
+ "id": "q2-S3-117",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 7.25,
+ "usage": {
+  "prompt_tokens": 19986,
+  "total_tokens": 20329,
+  "completion_tokens": 343,
+  "finish_reason": "stop",
+  "request_seconds": 7.25,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3227 must be taken in Sem 6, but its prerequisite CS2103 is not completed by the student.\",\n    \"CS3231 and CS3237 are only offered in Sem 1, so they cannot be placed in Sem 6 or Sem 8.\",\n    \"The student cannot satisfy the requirement to take CS3227 in Sem 6 due to missing prerequisites.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3227 must be taken in Sem 6, but its prerequisite CS2103 is not completed by the student.",
+   "CS3231 and CS3237 are only offered in Sem 1, so they cannot be placed in Sem 6 or Sem 8.",
+   "The student cannot satisfy the requirement to take CS3227 in Sem 6 due to missing prerequisites."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS3231\",\n      \"CS2102\"\n    ],\n    \"7\": [\n      \"ST2334\",\n      \"CS3227\"\n    ],\n    \"8\": [\n      \"CS3237\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3231 and CS2102 are planned in Sem 6 as they have no unmet prerequisites and fit the 8 MC minimum.\",\n    \"ST2334 and CS3227 are planned in Sem 7 to satisfy the 'must take CS3227 in Y3S2' rule and keep ST2334 late.\",\n    \"CS3237 is planned in Sem 8 to satisfy the prerequisite chain (ST2334 before CS3237) and the mutual exclusion with CS2102.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS3231",
+      "CS2102"
+     ],
+     "7": [
+      "ST2334",
+      "CS3227"
+     ],
+     "8": [
+      "CS3237"
+     ]
+    },
+    "reasons": [
+     "CS3231 and CS2102 are planned in Sem 6 as they have no unmet prerequisites and fit the 8 MC minimum.",
+     "ST2334 and CS3227 are planned in Sem 7 to satisfy the 'must take CS3227 in Y3S2' rule and keep ST2334 late.",
+     "CS3237 is planned in Sem 8 to satisfy the prerequisite chain (ST2334 before CS3237) and the mutual exclusion with CS2102."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9820,
+    "total_tokens": 10048,
+    "completion_tokens": 228,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.22,
+    "attempts": 1
+   },
+   "seconds": 5.22,
+   "violations": [
+    "R3 CS3231 not offered in Sem 2 (semester 6)",
+    "R3 CS3237 not offered in Sem 2 (semester 8)",
+    "R8 semester 8 has 4 MC, minimum 8",
+    "R9 must rule not met: CS3227 in semester 6"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3227 must be taken in Sem 6, but its prerequisite CS2103 is not completed by the student.\",\n    \"CS3231 and CS3237 are only offered in Sem 1, so they cannot be placed in Sem 6 or Sem 8.\",\n    \"The student cannot satisfy the requirement to take CS3227 in Sem 6 due to missing prerequisites.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3227 must be taken in Sem 6, but its prerequisite CS2103 is not completed by the student.",
+     "CS3231 and CS3237 are only offered in Sem 1, so they cannot be placed in Sem 6 or Sem 8.",
+     "The student cannot satisfy the requirement to take CS3227 in Sem 6 due to missing prerequisites."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10166,
+    "total_tokens": 10281,
+    "completion_tokens": 115,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 2.03,
+    "attempts": 1
+   },
+   "seconds": 2.03,
+   "violations": null
+  }
+ ]
+}

@@ -1,0 +1,118 @@
+{
+ "id": "q2-S4-016",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 14.03,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2865,
+  "total_tokens": 4521,
+  "completion_tokens": 1656,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1343
+  },
+  "finish_reason": "stop",
+  "request_seconds": 14.03,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":8,\"completed\":[\"CS2103T\",\"CS2030S\",\"CS2100\",\"CS2102\",\"CS3219\",\"CS3263\",\"CS2109S\",\"CS2040S\",\"CS4226\",\"CS4231\",\"CS1231S\",\"ES2660\",\"MA1521\",\"MA1522\",\"IS1108\",\"ST2334\",\"CS2105\",\"CS2101\",\"CS2106\",\"CS1101S\",\"CS3230\"],\"must_take\":[\"CS4218\",\"CS3227\",\"CS3234\",\"CS4248\"],\"mc_max\":12,\"objective\":\"min_total_mc\",\"late\":[\"CS4218\"],\"rules\":[{\"type\":\"same_sem\",\"a\":\"CS4218\",\"b\":\"CS3227\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3234\",\"sem\":8,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS4248\",\"sem\":8,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3227\",\"sem\":8,\"strength\":\"must\"},{\"type\":\"apart\",\"a\":\"CS4248\",\"b\":\"CS3227\",\"strength\":\"prefer\"},{\"type\":\"before\",\"a\":\"CS3234\",\"b\":\"CS4218\",\"strength\":\"prefer\"},{\"type\":\"before\",\"a\":\"CS3227\",\"b\":\"CS3234\",\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 8,
+  "completed": [
+   "CS2103T",
+   "CS2030S",
+   "CS2100",
+   "CS2102",
+   "CS3219",
+   "CS3263",
+   "CS2109S",
+   "CS2040S",
+   "CS4226",
+   "CS4231",
+   "CS1231S",
+   "ES2660",
+   "MA1521",
+   "MA1522",
+   "IS1108",
+   "ST2334",
+   "CS2105",
+   "CS2101",
+   "CS2106",
+   "CS1101S",
+   "CS3230"
+  ],
+  "must_take": [
+   "CS4218",
+   "CS3227",
+   "CS3234",
+   "CS4248"
+  ],
+  "mc_max": 12,
+  "objective": "min_total_mc",
+  "late": [
+   "CS4218"
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS4218",
+    "b": "CS3227",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3234",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4248",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3227",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS4248",
+    "b": "CS3227",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS3234",
+    "b": "CS4218",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS3227",
+    "b": "CS3234",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "the required courses need 16 MC but the remaining semesters [8] allow at most 12 MC"
+  ]
+ }
+}

@@ -1,0 +1,143 @@
+{
+ "id": "q2-S1-103",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 11.2,
+ "solver_seconds": 0.114,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2884,
+  "total_tokens": 4217,
+  "completion_tokens": 1333,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1085
+  },
+  "finish_reason": "stop",
+  "request_seconds": 11.08,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":4,\"completed\":[\"CS1231S\",\"IS1108\",\"CS2030S\",\"ES2660\",\"CS2040S\",\"CS1101S\",\"CS2101\",\"ST2334\",\"CS2100\",\"MA1521\",\"CS2103T\",\"MA1522\"],\"programme\":\"BComp CS Hons\",\"must_take\":[\"CS2109S\",\"CS3230\",\"CS3219\",\"CS4330\",\"CS4230\",\"CS2105\",\"CS2102\",\"CS3211\",\"CS2106\",\"CS4226\",\"CS4222\",\"CS4220\"],\"mc_max\":12,\"early\":[\"CS4330\"],\"late\":[\"CS2102\"],\"rules\":[{\"type\":\"in_sem\",\"course\":\"CS4226\",\"sem\":7,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS4230\",\"sem\":8,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS2106\",\"sem\":5,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS2102\",\"sem\":7,\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "CS1231S",
+   "IS1108",
+   "CS2030S",
+   "ES2660",
+   "CS2040S",
+   "CS1101S",
+   "CS2101",
+   "ST2334",
+   "CS2100",
+   "MA1521",
+   "CS2103T",
+   "MA1522"
+  ],
+  "programme": "BComp CS Hons",
+  "must_take": [
+   "CS2109S",
+   "CS3230",
+   "CS3219",
+   "CS4330",
+   "CS4230",
+   "CS2105",
+   "CS2102",
+   "CS3211",
+   "CS2106",
+   "CS4226",
+   "CS4222",
+   "CS4220"
+  ],
+  "mc_max": 12,
+  "early": [
+   "CS4330"
+  ],
+  "late": [
+   "CS2102"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS4226",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4230",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2106",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 7,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 8,
+  "plan": {
+   "4": [
+    "CS2105",
+    "CS3219",
+    "CS3230"
+   ],
+   "5": [
+    "CS2106",
+    "CS2109S",
+    "CS2220"
+   ],
+   "6": [
+    "CS3211",
+    "CS4220",
+    "CS4330"
+   ],
+   "7": [
+    "CS4226"
+   ],
+   "8": [
+    "CS2102",
+    "CS4222",
+    "CS4230"
+   ]
+  },
+  "mc_per_semester": {
+   "4": 12,
+   "5": 12,
+   "6": 12,
+   "7": 4,
+   "8": 12
+  },
+  "preferences_met": [
+   "CS4330 as early as possible",
+   "CS2102 as late as possible"
+  ],
+  "preferences_not_met": [
+   "CS2102 in semester 7"
+  ],
+  "added_prerequisites": [
+   "CS2220"
+  ]
+ }
+}

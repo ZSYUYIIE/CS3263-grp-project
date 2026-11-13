@@ -1,0 +1,44 @@
+{
+ "id": "q2-S3-016",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 6.16,
+ "usage": {
+  "prompt_tokens": 14370,
+  "total_tokens": 14672,
+  "completion_tokens": 302,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 6.16,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS3231\",\n\"CS3230\"\n],\n\"6\": [\n\"CP3880\"\n],\n\"7\": [\n\"CS2102\",\n\"CS3219\",\n\"CS2109S\",\n\"CS3264\"\n]\n},\n\"reasons\": [\n\"Prerequisites for CS3231, CS3230, CS2102, CS2109S, CS3264, and CS3219 are satisfied by completed courses.\",\n\"CS3231 is placed in Sem 5 as requested. CS3230 is placed in Sem 5 to allow CS2102 in Sem 7, satisfying the constraint that CS3230 precedes CS2102.\",\n\"ATAP (CP3880) is in Sem 6. CS2102, CS3219, CS2109S, and CS3264 are grouped in Sem 7. Soft wishes for CS3231/CS3264 separation and CS2102 before CS3219 are met. CS3230 is as late as possible given the dependency chain.\"\n]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS3231",
+    "CS3230"
+   ],
+   "6": [
+    "CP3880"
+   ],
+   "7": [
+    "CS2102",
+    "CS3219",
+    "CS2109S",
+    "CS3264"
+   ]
+  },
+  "reasons": [
+   "Prerequisites for CS3231, CS3230, CS2102, CS2109S, CS3264, and CS3219 are satisfied by completed courses.",
+   "CS3231 is placed in Sem 5 as requested. CS3230 is placed in Sem 5 to allow CS2102 in Sem 7, satisfying the constraint that CS3230 precedes CS2102.",
+   "ATAP (CP3880) is in Sem 6. CS2102, CS3219, CS2109S, and CS3264 are grouped in Sem 7. Soft wishes for CS3231/CS3264 separation and CS2102 before CS3219 are met. CS3230 is as late as possible given the dependency chain."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

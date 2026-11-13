@@ -1,0 +1,53 @@
+{
+ "id": "q2-S6-026",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 49.02,
+ "usage": {
+  "prompt_tokens": 9443,
+  "total_tokens": 14169,
+  "completion_tokens": 4726,
+  "prompt_tokens_details": {
+   "cached_tokens": 1664,
+   "created_cache_tokens": 7680,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4556
+  },
+  "finish_reason": "stop",
+  "request_seconds": 49.02,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS3235\",\"CS3234\",\"IS1108\"],\"7\":[\"CS3103\",\"CS3240\",\"CS2102\"],\"8\":[\"CS4238\",\"CS4240\",\"CS4246\"]},\"reasons\":[\"All nine required courses are planned in semesters 6-8 with no extra courses, so total MC is 36.\",\"CS3103 and CS3240 are in semester 7 because both are Sem 1 only; this is CS3240's earliest possible term, and CS4240 is fixed in semester 8.\",\"CS3235 precedes CS2102, CS3240 precedes CS4238, CS2102 and CS3234 are separated, and CS3103 is kept apart from CS4240.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS3235",
+    "CS3234",
+    "IS1108"
+   ],
+   "7": [
+    "CS3103",
+    "CS3240",
+    "CS2102"
+   ],
+   "8": [
+    "CS4238",
+    "CS4240",
+    "CS4246"
+   ]
+  },
+  "reasons": [
+   "All nine required courses are planned in semesters 6-8 with no extra courses, so total MC is 36.",
+   "CS3103 and CS3240 are in semester 7 because both are Sem 1 only; this is CS3240's earliest possible term, and CS4240 is fixed in semester 8.",
+   "CS3235 precedes CS2102, CS3240 precedes CS4238, CS2102 and CS3234 are separated, and CS3103 is kept apart from CS4240."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

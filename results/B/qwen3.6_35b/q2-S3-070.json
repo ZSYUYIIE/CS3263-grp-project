@@ -1,0 +1,123 @@
+{
+ "id": "q2-S3-070",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 8.21,
+ "solver_seconds": 0.022,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3121,
+  "total_tokens": 3514,
+  "completion_tokens": 393,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 8.18,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 4,\n\"completed\": [\n\"CS2040S\",\n\"ES2660\",\n\"CS2100\",\n\"CS2030S\",\n\"CS2101\",\n\"CS1231S\",\n\"ST2334\",\n\"IS1108\",\n\"CS2103T\",\n\"MA1522\",\n\"CS1101S\",\n\"MA1521\"\n],\n\"must_take\": [\n\"CS2105\",\n\"CS3219\",\n\"CS4231\",\n\"CS2106\",\n\"CS4226\",\n\"CS2109S\"\n],\n\"sem_caps\": {\n\"7\": 0\n},\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS3219\",\n\"b\": \"CS4226\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4231\",\n\"b\": \"CS2109S\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS4226\",\n\"b\": \"CS4231\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2106\",\n\"b\": \"CS4231\",\n\"strength\": \"must\"\n}\n],\n\"unsupported\": [\n\"chance I fail one module this semester and have to retake it\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "CS2040S",
+   "ES2660",
+   "CS2100",
+   "CS2030S",
+   "CS2101",
+   "CS1231S",
+   "ST2334",
+   "IS1108",
+   "CS2103T",
+   "MA1522",
+   "CS1101S",
+   "MA1521"
+  ],
+  "must_take": [
+   "CS2105",
+   "CS3219",
+   "CS4231",
+   "CS2106",
+   "CS4226",
+   "CS2109S"
+  ],
+  "sem_caps": {
+   "7": 0
+  },
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3219",
+    "b": "CS4226",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4231",
+    "b": "CS2109S",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS4226",
+    "b": "CS4231",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2106",
+    "b": "CS4231",
+    "strength": "must"
+   }
+  ],
+  "unsupported": [
+   "chance I fail one module this semester and have to retake it"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "earliest_graduation",
+  "last_semester": 8,
+  "plan": {
+   "4": [
+    "CS2105",
+    "CS3219"
+   ],
+   "5": [
+    "CS2106",
+    "CS3230",
+    "CS4226"
+   ],
+   "6": [
+    "CS4231"
+   ],
+   "7": [],
+   "8": [
+    "CS2109S"
+   ]
+  },
+  "mc_per_semester": {
+   "4": 8,
+   "5": 12,
+   "6": 4,
+   "7": 0,
+   "8": 4
+  },
+  "preferences_met": [],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS3230"
+  ],
+  "not_applied": [
+   "chance I fail one module this semester and have to retake it"
+  ]
+ }
+}

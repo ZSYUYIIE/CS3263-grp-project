@@ -1,0 +1,267 @@
+{
+ "id": "q2-S1-104",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 3,
+ "end": "valid",
+ "seconds": 58.31,
+ "usage": {
+  "prompt_tokens": 44074,
+  "total_tokens": 48038,
+  "completion_tokens": 3964,
+  "finish_reason": "stop",
+  "request_seconds": 58.31,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2105\",\n      \"CS3230\"\n    ],\n    \"4\": [\n      \"CS2101\",\n      \"CS2102\",\n      \"ST2334\"\n    ],\n    \"5\": [\n      \"CS2100\",\n      \"CS2109S\",\n      \"CS2103T\",\n      \"CS3231\"\n    ],\n    \"6\": [\n      \"CS2106\",\n      \"CS3219\",\n      \"CS4430\"\n    ],\n    \"7\": [\n      \"CS3241\"\n    ],\n    \"8\": [\n      \"CS3247\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3241 is offered in Sem 1, so it must be in Sem 7.\",\n    \"CS3247 is offered in Sem 2, so it must be in Sem 8.\",\n    \"CS3231 is required for CS4430 and is offered in Sem 1, placed in Sem 5.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2105",
+    "CS3230"
+   ],
+   "4": [
+    "CS2101",
+    "CS2102",
+    "ST2334"
+   ],
+   "5": [
+    "CS2100",
+    "CS2109S",
+    "CS2103T",
+    "CS3231"
+   ],
+   "6": [
+    "CS2106",
+    "CS3219",
+    "CS4430"
+   ],
+   "7": [
+    "CS3241"
+   ],
+   "8": [
+    "CS3247"
+   ]
+  },
+  "reasons": [
+   "CS3241 is offered in Sem 1, so it must be in Sem 7.",
+   "CS3247 is offered in Sem 2, so it must be in Sem 8.",
+   "CS3231 is required for CS4430 and is offered in Sem 1, placed in Sem 5."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS2100 is offered in Sem 1 and Sem 2, but the student wants it in Sem 5 (Y3S1). Sem 5 is an odd semester (Sem 1 of AY3), so CS2100 can be taken. However, CS2106 requires CS2100 as a prerequisite. CS2106 is offered in Sem 1 and Sem 2. If CS2100 is taken in Sem 5, CS2106 can be taken in Sem 6. This is valid. The main issue is CS2109S. Prerequisite for CS2109S is (YSC2229 or CS2040S or CS2040C or CS2040HS or CS2040 or CS2040DE) AND ((MA1511 and MA1512) or MA1521 or MA2002 or MA1102R or MA1312 or MA1507 or MA1505). The student has completed CS2040S and MA1521. So CS2109S is eligible. CS2103T requires (CS2030 or CS2030S or CS2030DE or CS2030HS) and (CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS). Student has CS2030S and CS2040S. So CS2103T is eligible. CS2102 requires (CS1231 or MA1100 or MA1100T or CS1231S) and (CS2030S or CS2030 or CS2030DE or CS2030HS or YSC2229 or CS2040 or CS2040C or CS2040S or CS2040DE or CS2040HS). Student has CS1231S, CS2030S, CS2040S. Eligible. CS3219 requires YSC3232 or CS2103 or CS2103T or CS2103DE or CS2113T or CS2113. Student must take CS2103T. So CS3219 can be taken after CS2103T. CS3230 requires (YSC2229 or CS2040S or CS2040 or CS2040C or CS2040DE or CS2040HS) and (CS1231 or CS1231S or MA1100T or MA1100). Student has CS2040S and CS1231S. Eligible. CS4430 requires CS3231. CS3231 is NOT in the list of must-take courses. The student did not list CS3231 as a must-take course. Therefore, CS4430 cannot be taken because its prerequisite CS3231 is not completed and not planned. The student must take CS3231 to take CS4430. Since CS3231 is not in the 'must take' list, and the student wants to take CS4430, the plan is impossible unless CS3231 is added. But rule 8 says add a course ONLY when it is a prerequisite needed by a planned course. CS3231 is a prerequisite for CS4430. So CS3231 must be added. Is CS3231 eligible? Prerequisite: (CS1231 or CS1231S or MA1100T or MA1100) and (CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS). Student has CS1231S and CS2040S. Eligible. Offered: Sem 1. So CS3231 must be in an odd semester. CS4430 is offered: Sem 2. So CS4430 must be in an even semester. CS3231 must be before CS4430. CS3230 must come before CS2106. CS2109S and CS2103T must be in the same semester. CS2100 ideally in Sem 5. CS2100 and CS2109S together. CS2105 as early as possible. CS2106 as early as possible. CS2103T requires CS2030S and CS2040S (completed). CS2109S requires CS2040S and MA1521 (completed). So CS2109S and CS2103T can be taken in Sem 5. If they are in Sem 5, CS2100 can also be in Sem 5 (ideally). Sem 5 MC: CS2100 (4) + CS2109S (4) + CS2103T (4) = 12 MC. Limit 16. OK. CS3231 must be in an odd semester before CS4430. CS3231 is offered Sem 1. Sem 5 is Sem 1 of AY3. So CS3231 can be in Sem 5? No, CS3231 is a prerequisite for CS4430. CS4430 is Sem 2. CS3231 must be completed before CS4430. If CS4430 is in Sem 6, CS3231 can be in Sem 5. But Sem 5 is full with CS2100, CS2109S, CS2103T (12 MC). Can we add CS3231? 12+4=16 MC. OK. So Sem 5: CS2100, CS2109S, CS2103T, CS3231. Sem 6: CS4430 (4 MC). CS3230 must be before CS2106. CS2106 requires CS2100. CS2100 is in Sem 5. So CS2106 can be in Sem 6. CS3230 can be in Sem 5 or 6. If CS3230 is in Sem 6, it must be before CS2106? No, \"CS3230 must come before CS2106\". So CS3230 must be in Sem 5 if CS2106 is in Sem 6. But Sem 5 is full (16 MC). Can we move something? CS2105 is offered Sem 1, Sem 2. As early as possible. Sem 5 is Y3S1. Sem 3 is Y2S1. Student is in Y2S1 (Sem 3). So Sem 3, 4, 5, 6, 7, 8 are future. CS2105 can be in Sem 3. CS2101 requires CS2103T? No, CS2101 has no prerequisite. But CS3230 must come before CS2101. So CS2101 must be after CS3230. CS2102 has no specific order relative to others except prerequisites. CS2106 requires CS2100. CS3219 requires CS2103T. CS2103T is in Sem 5. So CS3219 can be in Sem 6. Let's re-evaluate Sem 5. Must take: CS2100, CS2109S, CS2103T, CS3231. Total 16 MC. CS3230 must be before CS2106. If CS2106 is in Sem 6, CS3230 must be in Sem 5 or earlier. If CS3230 is in Sem 5, Sem 5 has 4 courses: CS2100, CS2109S, CS2103T, CS3231. That's 16 MC. CS3230 cannot be added. So CS3230 must be in Sem 3 or 4. CS3230 is offered Sem 1, Sem 2. Sem 3 is Sem 1 of AY2. Sem 4 is Sem 2 of AY2. So CS3230 can be in Sem 3 or 4. CS2105 as early as possible. Sem 3. CS2106 as early as possible. Requires CS2100 (Sem 5). So earliest Sem 6. CS2101 must be after CS3230. CS3230 in Sem 3 or 4. So CS2101 can be in Sem 4 or later. CS2102 no constraints. CS3219 after CS2103T (Sem 5). So Sem 6 or later. CS4430 after CS3231 (Sem 5). So Sem 6 or later. Let's try to fit everything. Sem 3: CS2105 (4), CS3230 (4). Total 8 MC. Sem 4: CS2101 (4), CS2102 (4). Total 8 MC. Sem 5: CS2100 (4), CS2109S (4), CS2103T (4), CS3231 (4). Total 16 MC. Sem 6: CS2106 (4), CS3219 (4), CS4430 (4). Total 12 MC. Sem 7: Empty? No, all courses taken. Check prerequisites. CS2105: YSC2229 or CS2040... Student has CS2040S. OK. CS3230: CS2040S and CS1231S. OK. CS2101: No prereq. OK. CS2102: CS1231S and CS2030S/CS2040S. OK. CS2100: CS1010... Student has CS1101S. OK. CS2109S: CS2040S and MA1521. OK. CS2103T: CS2030S and CS2040S. OK. CS3231: CS1231S and CS2040S. OK. CS2106: CS2100. OK. CS3219: CS2103T. OK. CS4430: CS3231. OK. Soft wishes: CS3230 before CS2106 (Sem 3 before Sem 6). OK. CS2109S and CS2103T same semester (Sem 5). OK. CS2100 in Sem 5 (Ideal). OK. CS2100 and CS2109S together (Sem 5). OK. CS2105 as early as possible (Sem 3). OK. CS2106 as early as possible (Sem 6, earliest after CS2100 in Sem 5). OK. This plan works. Why did I think NO_PLAN? I missed that CS3231 is not in the must-take list but is a prerequisite for CS4430. Rule 8 allows adding it. So a plan exists. Let's double check if CS3231 is offered in Sem 5. CS3231 is offered: Sem 1. Sem 5 is Sem 1 of AY3. So yes. Is CS3231 open to BComp CS Hons? Yes. Is it blocked? No. So the plan is valid.\n\nWait, I need to check if CS2101 has any prerequisite. CS2101: prerequisite none. OK.\nCS2102: prerequisite (CS1231 or ...) and (CS2030S or ...). Student has CS1231S and CS2030S. OK.\nCS2106: prerequisite CS2100. OK.\nCS3219: prerequisite CS2103T. OK.\nCS4430: prerequisite CS3231. OK.\n\nThe plan:\nSem 3: CS2105, CS3230\nSem 4: CS2101, CS2102\nSem 5: CS2100, CS2109S, CS2103T, CS3231\nSem 6: CS2106, CS3219, CS4430\n\nAll constraints satisfied.\n\n{\"status\": \"PLAN\", \"plan\": {\"3\": [\"CS2105\", \"CS3230\"], \"4\": [\"CS2101\", \"CS2102\"], \"5\": [\"CS2100\", \"CS2109S\", \"CS2103T\", \"CS3231\"], \"6\": [\"CS2106\", \"CS3219\", \"CS4430\"]}, \"reasons\": [\"Added CS3231 as prerequisite for CS4430.\", \"All must-take courses scheduled.\", \"Soft wishes met: CS2100 in Sem 5, CS2109S/CS2103T together, CS2105/CS2106 as early as possible.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2105",
+      "CS3230"
+     ],
+     "4": [
+      "CS2101",
+      "CS2102"
+     ],
+     "5": [
+      "CS2100",
+      "CS2109S",
+      "CS2103T",
+      "CS3231"
+     ],
+     "6": [
+      "CS2106",
+      "CS3219",
+      "CS4430"
+     ]
+    },
+    "reasons": [
+     "Added CS3231 as prerequisite for CS4430.",
+     "All must-take courses scheduled.",
+     "Soft wishes met: CS2100 in Sem 5, CS2109S/CS2103T together, CS2105/CS2106 as early as possible."
+    ]
+   },
+   "repair": "extra_text",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10044,
+    "total_tokens": 13182,
+    "completion_tokens": 3138,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 41.62,
+    "attempts": 1
+   },
+   "seconds": 41.62,
+   "violations": [
+    "R1 must-take CS3247 missing",
+    "R1 must-take ST2334 missing"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"3\": [\"CS2105\", \"CS3230\"], \"4\": [\"CS2101\", \"CS2102\", \"ST2334\"], \"5\": [\"CS2100\", \"CS2109S\", \"CS2103T\", \"CS3231\"], \"6\": [\"CS2106\", \"CS3219\", \"CS4430\", \"CS3247\"]}, \"reasons\": [\"Added CS3231 as prerequisite for CS4430.\", \"Included all must-take courses: CS2100, CS2101, CS2105, CS2109S, CS2102, CS3247, CS3219, ST2334, CS3230, CS2106, CS2103T, CS4430.\", \"Soft wishes met: CS2100 in Sem 5, CS2109S/CS2103T together, CS2105/CS2106 as early as possible.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2105",
+      "CS3230"
+     ],
+     "4": [
+      "CS2101",
+      "CS2102",
+      "ST2334"
+     ],
+     "5": [
+      "CS2100",
+      "CS2109S",
+      "CS2103T",
+      "CS3231"
+     ],
+     "6": [
+      "CS2106",
+      "CS3219",
+      "CS4430",
+      "CS3247"
+     ]
+    },
+    "reasons": [
+     "Added CS3231 as prerequisite for CS4430.",
+     "Included all must-take courses: CS2100, CS2101, CS2105, CS2109S, CS2102, CS3247, CS3219, ST2334, CS3230, CS2106, CS2103T, CS4430.",
+     "Soft wishes met: CS2100 in Sem 5, CS2109S/CS2103T together, CS2105/CS2106 as early as possible."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 13253,
+    "total_tokens": 13518,
+    "completion_tokens": 265,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.23,
+    "attempts": 1
+   },
+   "seconds": 5.23,
+   "violations": [
+    "R4 CS3247 in semester 6: prerequisite not met (CS3241)"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2105\",\n      \"CS3230\"\n    ],\n    \"4\": [\n      \"CS2101\",\n      \"CS2102\",\n      \"ST2334\"\n    ],\n    \"5\": [\n      \"CS2100\",\n      \"CS2109S\",\n      \"CS2103T\",\n      \"CS3231\"\n    ],\n    \"6\": [\n      \"CS2106\",\n      \"CS3219\",\n      \"CS4430\",\n      \"CS3241\"\n    ],\n    \"7\": [\n      \"CS3247\"\n    ]\n  },\n  \"reasons\": [\n    \"Added CS3231 as prerequisite for CS4430.\",\n    \"Added CS3241 as prerequisite for CS3247.\",\n    \"Graduation in Sem 7 is earliest possible due to CS3241/CS3247 chain and other prerequisites.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2105",
+      "CS3230"
+     ],
+     "4": [
+      "CS2101",
+      "CS2102",
+      "ST2334"
+     ],
+     "5": [
+      "CS2100",
+      "CS2109S",
+      "CS2103T",
+      "CS3231"
+     ],
+     "6": [
+      "CS2106",
+      "CS3219",
+      "CS4430",
+      "CS3241"
+     ],
+     "7": [
+      "CS3247"
+     ]
+    },
+    "reasons": [
+     "Added CS3231 as prerequisite for CS4430.",
+     "Added CS3241 as prerequisite for CS3247.",
+     "Graduation in Sem 7 is earliest possible due to CS3241/CS3247 chain and other prerequisites."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10378,
+    "total_tokens": 10648,
+    "completion_tokens": 270,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.69,
+    "attempts": 1
+   },
+   "seconds": 5.69,
+   "violations": [
+    "R3 CS3241 not offered in Sem 2 (semester 6)",
+    "R3 CS3247 not offered in Sem 1 (semester 7)"
+   ]
+  },
+  {
+   "round": 3,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2105\",\n      \"CS3230\"\n    ],\n    \"4\": [\n      \"CS2101\",\n      \"CS2102\",\n      \"ST2334\"\n    ],\n    \"5\": [\n      \"CS2100\",\n      \"CS2109S\",\n      \"CS2103T\",\n      \"CS3231\"\n    ],\n    \"6\": [\n      \"CS2106\",\n      \"CS3219\",\n      \"CS4430\"\n    ],\n    \"7\": [\n      \"CS3241\"\n    ],\n    \"8\": [\n      \"CS3247\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3241 is offered in Sem 1, so it must be in Sem 7.\",\n    \"CS3247 is offered in Sem 2, so it must be in Sem 8.\",\n    \"CS3231 is required for CS4430 and is offered in Sem 1, placed in Sem 5.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2105",
+      "CS3230"
+     ],
+     "4": [
+      "CS2101",
+      "CS2102",
+      "ST2334"
+     ],
+     "5": [
+      "CS2100",
+      "CS2109S",
+      "CS2103T",
+      "CS3231"
+     ],
+     "6": [
+      "CS2106",
+      "CS3219",
+      "CS4430"
+     ],
+     "7": [
+      "CS3241"
+     ],
+     "8": [
+      "CS3247"
+     ]
+    },
+    "reasons": [
+     "CS3241 is offered in Sem 1, so it must be in Sem 7.",
+     "CS3247 is offered in Sem 2, so it must be in Sem 8.",
+     "CS3231 is required for CS4430 and is offered in Sem 1, placed in Sem 5."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10399,
+    "total_tokens": 10690,
+    "completion_tokens": 291,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.77,
+    "attempts": 1
+   },
+   "seconds": 5.77,
+   "violations": []
+  }
+ ]
+}

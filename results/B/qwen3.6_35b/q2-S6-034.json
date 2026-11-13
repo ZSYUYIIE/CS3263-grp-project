@@ -1,0 +1,83 @@
+{
+ "id": "q2-S6-034",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 4.28,
+ "solver_seconds": 0.01,
+ "max_tokens": 49152,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 3062,
+  "total_tokens": 3375,
+  "completion_tokens": 313,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 4.27,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 2,\n\"programme\": \"Information Security\",\n\"completed\": [\n\"CS1101S\",\n\"MA1521\",\n\"ES2660\",\n\"CS1231S\"\n],\n\"must_take\": [\n\"CS3219\",\n\"IS1108\",\n\"CS3247\",\n\"CS2100\",\n\"CS4330\",\n\"CS4261\",\n\"CS2101\",\n\"CS4353\"\n],\n\"early\": [\n\"CS2100\"\n],\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS4353\",\n\"b\": \"CS4330\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2100\",\n\"b\": \"CS4353\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4261\",\n\"b\": \"CS3247\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4353\",\n\"sem\": 5,\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 2,
+  "programme": "Information Security",
+  "completed": [
+   "CS1101S",
+   "MA1521",
+   "ES2660",
+   "CS1231S"
+  ],
+  "must_take": [
+   "CS3219",
+   "IS1108",
+   "CS3247",
+   "CS2100",
+   "CS4330",
+   "CS4261",
+   "CS2101",
+   "CS4353"
+  ],
+  "early": [
+   "CS2100"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS4353",
+    "b": "CS4330",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2100",
+    "b": "CS4353",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4261",
+    "b": "CS3247",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4353",
+    "sem": 5,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "OUT_OF_SCOPE",
+  "reasons": [
+   "programme 'Information Security' is not BComp (CS) Hons"
+  ],
+  "message": "I can only plan for BComp (CS) Hons single-major students under AY2026/2027 rules, and this request is outside that (programme 'Information Security' is not BComp (CS) Hons). Course rules differ by programme and aren't in my data for your case, so please check with your faculty or academic advisor."
+ }
+}

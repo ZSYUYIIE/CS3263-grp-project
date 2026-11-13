@@ -1,0 +1,121 @@
+{
+ "id": "q2-S1-125",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 8.46,
+ "solver_seconds": 0.025,
+ "max_tokens": 49152,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 3129,
+  "total_tokens": 3576,
+  "completion_tokens": 447,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 8.43,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 6,\n\"completed\": [\n\"CS3230\",\n\"MA1522\",\n\"CS2101\",\n\"CS3210\",\n\"CS2103T\",\n\"CS3234\",\n\"IS1108\",\n\"CS2040S\",\n\"CS2030S\",\n\"CS2109S\",\n\"CS1101S\",\n\"CS2100\",\n\"CS1231S\",\n\"CS2106\",\n\"CS2105\",\n\"CS3219\",\n\"MA1521\"\n],\n\"must_take\": [\n\"CS3233\",\n\"CS3263\",\n\"ST2334\",\n\"CS4277\"\n],\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3233\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3263\",\n\"b\": \"CS3233\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"ST2334\",\n\"b\": \"CS3263\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4277\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3263\",\n\"sem\": 6,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3233\",\n\"b\": \"ST2334\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 6,
+  "completed": [
+   "CS3230",
+   "MA1522",
+   "CS2101",
+   "CS3210",
+   "CS2103T",
+   "CS3234",
+   "IS1108",
+   "CS2040S",
+   "CS2030S",
+   "CS2109S",
+   "CS1101S",
+   "CS2100",
+   "CS1231S",
+   "CS2106",
+   "CS2105",
+   "CS3219",
+   "MA1521"
+  ],
+  "must_take": [
+   "CS3233",
+   "CS3263",
+   "ST2334",
+   "CS4277"
+  ],
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3233",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3263",
+    "b": "CS3233",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "ST2334",
+    "b": "CS3263",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4277",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3263",
+    "sem": 6,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS3233",
+    "b": "ST2334",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "earliest_graduation",
+  "last_semester": 8,
+  "plan": {
+   "6": [
+    "ST2334"
+   ],
+   "7": [
+    "CS3263"
+   ],
+   "8": [
+    "CS3233",
+    "CS4277"
+   ]
+  },
+  "mc_per_semester": {
+   "6": 4,
+   "7": 4,
+   "8": 8
+  },
+  "preferences_met": [],
+  "preferences_not_met": [
+   "CS3263 in semester 6",
+   "CS3233 before ST2334"
+  ]
+ }
+}

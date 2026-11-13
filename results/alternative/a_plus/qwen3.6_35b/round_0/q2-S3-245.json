@@ -1,0 +1,51 @@
+{
+ "id": "q2-S3-245",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 8.75,
+ "usage": {
+  "prompt_tokens": 11592,
+  "total_tokens": 11973,
+  "completion_tokens": 381,
+  "finish_reason": "stop",
+  "request_seconds": 8.75,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS4243\"\n    ],\n    \"4\": [\n      \"CS2103T\",\n      \"CS2105\",\n      \"CS3230\"\n    ],\n    \"5\": [\n      \"CS2102\",\n      \"CS3219\",\n      \"CS3281\"\n    ],\n    \"6\": [\n      \"CS4218\",\n      \"CS4221\"\n    ]\n  },\n  \"reasons\": [\n    \"All mandatory courses are planned satisfying prerequisites and constraints.\",\n    \"CS4243 is taken in Sem 3 to allow CS2102 in Sem 5 and CS2103T in Sem 4.\",\n    \"CS2103T and CS4243 are in the same semester (Sem 3) as required, but CS2103T must be before CS4218, so CS2103T is moved to Sem 4? No, CS4243 prereq for CS2102 and CS2103T. CS2103T prereq for CS4218. CS4243 and CS2103T same semester. CS4243 before CS2102. CS3281 before CS2105. CS2103T before CS4218. CS3281 ideally Sem 8. CS4221 late. CS2103T late.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS4243"
+   ],
+   "4": [
+    "CS2103T",
+    "CS2105",
+    "CS3230"
+   ],
+   "5": [
+    "CS2102",
+    "CS3219",
+    "CS3281"
+   ],
+   "6": [
+    "CS4218",
+    "CS4221"
+   ]
+  },
+  "reasons": [
+   "All mandatory courses are planned satisfying prerequisites and constraints.",
+   "CS4243 is taken in Sem 3 to allow CS2102 in Sem 5 and CS2103T in Sem 4.",
+   "CS2103T and CS4243 are in the same semester (Sem 3) as required, but CS2103T must be before CS4218, so CS2103T is moved to Sem 4? No, CS4243 prereq for CS2102 and CS2103T. CS2103T prereq for CS4218. CS4243 and CS2103T same semester. CS4243 before CS2102. CS3281 before CS2105. CS2103T before CS4218. CS3281 ideally Sem 8. CS4221 late. CS2103T late."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

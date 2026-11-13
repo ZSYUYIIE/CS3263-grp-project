@@ -1,0 +1,90 @@
+{
+ "id": "q2-S4-035",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.84,
+ "solver_seconds": 0.097,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3175,
+  "total_tokens": 3580,
+  "completion_tokens": 405,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 6.75,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 5,\n\"completed\": [\n\"CS2101\",\n\"CS2106\",\n\"CS2030S\",\n\"CS2109S\",\n\"MA1521\",\n\"CS2100\",\n\"ES2660\",\n\"CS4268\",\n\"CS2103T\",\n\"CS3230\",\n\"MA1522\",\n\"CS1231S\",\n\"ST2334\",\n\"IS1108\",\n\"CS1101S\",\n\"CS2040S\",\n\"CS2105\",\n\"CS2102\"\n],\n\"must_take\": [\n\"CS4247\",\n\"CS4220\",\n\"CS4211\",\n\"CS3219\"\n],\n\"objective\": \"earliest_graduation\",\n\"mc_max\": 4,\n\"early\": [\n\"CS4220\"\n],\n\"rules\": [\n{\n\"type\": \"apart\",\n\"a\": \"CS4247\",\n\"b\": \"CS4220\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4220\",\n\"b\": \"CS4211\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3219\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4211\",\n\"sem\": 7,\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "completed": [
+   "CS2101",
+   "CS2106",
+   "CS2030S",
+   "CS2109S",
+   "MA1521",
+   "CS2100",
+   "ES2660",
+   "CS4268",
+   "CS2103T",
+   "CS3230",
+   "MA1522",
+   "CS1231S",
+   "ST2334",
+   "IS1108",
+   "CS1101S",
+   "CS2040S",
+   "CS2105",
+   "CS2102"
+  ],
+  "must_take": [
+   "CS4247",
+   "CS4220",
+   "CS4211",
+   "CS3219"
+  ],
+  "objective": "earliest_graduation",
+  "mc_max": 4,
+  "early": [
+   "CS4220"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS4247",
+    "b": "CS4220",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4220",
+    "b": "CS4211",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3219",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4211",
+    "sem": 7,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the prerequisites of CS4220; the MC limits (at most 4 MC per semester)"
+  ]
+ }
+}

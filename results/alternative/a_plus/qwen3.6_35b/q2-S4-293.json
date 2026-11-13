@@ -1,0 +1,108 @@
+{
+ "id": "q2-S4-293",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 5.77,
+ "usage": {
+  "prompt_tokens": 21048,
+  "total_tokens": 21275,
+  "completion_tokens": 227,
+  "finish_reason": "stop",
+  "request_seconds": 5.77,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4225 requires CS2102 or IT2002, neither of which is completed or in the required list.\", \"CS4212 requires CS2104 or CS3212, neither of which is completed or in the required list.\", \"CS4239 requires CS3235, which is not completed or in the required list.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4225 requires CS2102 or IT2002, neither of which is completed or in the required list.",
+   "CS4212 requires CS2104 or CS3212, neither of which is completed or in the required list.",
+   "CS4239 requires CS3235, which is not completed or in the required list."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS4225\"], \"5\": [\"CS2106\"], \"6\": [\"CS3281\", \"CS4212\"], \"7\": [\"CS4239\"]}, \"reasons\": [\"Prerequisites for CS4239 (CS3235) are not met by completed or planned courses.\", \"CS3235 is a prerequisite for CS4239 but is not in the list of remaining required modules nor completed.\", \"Cannot plan CS4239 without CS3235.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "CS4225"
+     ],
+     "5": [
+      "CS2106"
+     ],
+     "6": [
+      "CS3281",
+      "CS4212"
+     ],
+     "7": [
+      "CS4239"
+     ]
+    },
+    "reasons": [
+     "Prerequisites for CS4239 (CS3235) are not met by completed or planned courses.",
+     "CS3235 is a prerequisite for CS4239 but is not in the list of remaining required modules nor completed.",
+     "Cannot plan CS4239 without CS3235."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10377,
+    "total_tokens": 10508,
+    "completion_tokens": 131,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.03,
+    "attempts": 1
+   },
+   "seconds": 3.03,
+   "violations": [
+    "R4 CS4212 in semester 6: prerequisite not met (CS2104 or CS3212)",
+    "R4 CS4225 in semester 4: prerequisite not met (CS2102 or IT2002)",
+    "R4 CS4239 in semester 7: prerequisite not met (CS3235 and (CS2103T or CS2103 or CS2103DE or CS2113 or CS2113T))"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4225 requires CS2102 or IT2002, neither of which is completed or in the required list.\", \"CS4212 requires CS2104 or CS3212, neither of which is completed or in the required list.\", \"CS4239 requires CS3235, which is not completed or in the required list.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4225 requires CS2102 or IT2002, neither of which is completed or in the required list.",
+     "CS4212 requires CS2104 or CS3212, neither of which is completed or in the required list.",
+     "CS4239 requires CS3235, which is not completed or in the required list."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10671,
+    "total_tokens": 10767,
+    "completion_tokens": 96,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 2.74,
+    "attempts": 1
+   },
+   "seconds": 2.74,
+   "violations": null
+  }
+ ]
+}

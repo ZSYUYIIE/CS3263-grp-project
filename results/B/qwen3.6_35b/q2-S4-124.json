@@ -1,0 +1,95 @@
+{
+ "id": "q2-S4-124",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 5.47,
+ "solver_seconds": 0.003,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3143,
+  "total_tokens": 3570,
+  "completion_tokens": 427,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 5.47,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 7,\n\"completed\": [\n\"CS2106\",\n\"MA1522\",\n\"CS2102\",\n\"CS2103T\",\n\"ES2660\",\n\"CS2030S\",\n\"CS3263\",\n\"IS1108\",\n\"CS2109S\",\n\"CS2040S\",\n\"CS2100\",\n\"CS3233\",\n\"ST2334\",\n\"CS3230\",\n\"CS3219\",\n\"CS1231S\",\n\"CS1101S\",\n\"CS2101\",\n\"MA1521\",\n\"CS2105\"\n],\n\"must_take\": [\n\"CS3213\",\n\"CS4234\",\n\"CS4226\",\n\"CS3281\"\n],\n\"mc_max\": 16,\n\"sem_caps\": {\n\"7\": 0\n},\n\"early\": [\n\"CS4234\"\n],\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3213\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3281\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS3213\",\n\"b\": \"CS4234\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS4234\",\n\"b\": \"CS3281\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "completed": [
+   "CS2106",
+   "MA1522",
+   "CS2102",
+   "CS2103T",
+   "ES2660",
+   "CS2030S",
+   "CS3263",
+   "IS1108",
+   "CS2109S",
+   "CS2040S",
+   "CS2100",
+   "CS3233",
+   "ST2334",
+   "CS3230",
+   "CS3219",
+   "CS1231S",
+   "CS1101S",
+   "CS2101",
+   "MA1521",
+   "CS2105"
+  ],
+  "must_take": [
+   "CS3213",
+   "CS4234",
+   "CS4226",
+   "CS3281"
+  ],
+  "mc_max": 16,
+  "sem_caps": {
+   "7": 0
+  },
+  "early": [
+   "CS4234"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3213",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3281",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3213",
+    "b": "CS4234",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS4234",
+    "b": "CS3281",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4234 cannot be placed in any remaining semester (offered in terms [1]; semesters left [8])",
+   "CS4226 cannot be placed in any remaining semester (offered in terms [1]; semesters left [8])"
+  ]
+ }
+}

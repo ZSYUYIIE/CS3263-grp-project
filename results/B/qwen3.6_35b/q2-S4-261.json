@@ -1,0 +1,65 @@
+{
+ "id": "q2-S4-261",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 4.4,
+ "solver_seconds": 0.432,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2985,
+  "total_tokens": 3210,
+  "completion_tokens": 225,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 3.97,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"current_sem\": 1,\n  \"completed\": [],\n  \"must_take\": [\n    \"CS3268\",\n    \"CS2040S\",\n    \"CS4277\"\n  ],\n  \"rules\": [\n    {\n      \"type\": \"before\",\n      \"a\": \"CS4277\",\n      \"b\": \"CS3268\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS2040S\",\n      \"sem\": 1,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS3268\",\n      \"sem\": 7,\n      \"strength\": \"prefer\"\n    }\n  ],\n  \"late\": [\n    \"CS4277\"\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "completed": [],
+  "must_take": [
+   "CS3268",
+   "CS2040S",
+   "CS4277"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS4277",
+    "b": "CS3268",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2040S",
+    "sem": 1,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3268",
+    "sem": 7,
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "CS4277"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS2040S in semester 1; the prerequisites of CS2040S"
+  ]
+ }
+}

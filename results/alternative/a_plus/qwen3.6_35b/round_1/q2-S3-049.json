@@ -1,0 +1,56 @@
+{
+ "id": "q2-S3-049",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 13.48,
+ "usage": {
+  "prompt_tokens": 26533,
+  "total_tokens": 27161,
+  "completion_tokens": 628,
+  "finish_reason": "stop",
+  "request_seconds": 13.48,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"4\": [\n      \"CS2105\",\n      \"CS3231\",\n      \"CS3210\",\n      \"IS1108\"\n    ],\n    \"5\": [\n      \"CS2106\",\n      \"CS3230\",\n      \"CS3219\",\n      \"CS2102\"\n    ],\n    \"6\": [\n      \"CS2109S\",\n      \"CS3281\"\n    ],\n    \"7\": [\n      \"CS3282\",\n      \"CS3243\"\n    ],\n    \"8\": [\n      \"CS4246\"\n    ]\n  },\n  \"reasons\": [\n    \"Corrected offerings: CS3231 and CS3210 in Sem 4; CS2106, CS3230, CS3219, CS2102 in Sem 5.\",\n    \"Prerequisites met: CS3281 in Sem 6 enables CS3282 in Sem 7. CS2109S in Sem 6 enables CS3243 in Sem 7.\",\n    \"CS4246 in Sem 8 requires CS3243 (Sem 7) and ST2334 (completed). CS3240 not included as prerequisite CS2111/NM2207 is missing and cannot be added without violating 'fewest added courses' or MC limits.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2105",
+    "CS3231",
+    "CS3210",
+    "IS1108"
+   ],
+   "5": [
+    "CS2106",
+    "CS3230",
+    "CS3219",
+    "CS2102"
+   ],
+   "6": [
+    "CS2109S",
+    "CS3281"
+   ],
+   "7": [
+    "CS3282",
+    "CS3243"
+   ],
+   "8": [
+    "CS4246"
+   ]
+  },
+  "reasons": [
+   "Corrected offerings: CS3231 and CS3210 in Sem 4; CS2106, CS3230, CS3219, CS2102 in Sem 5.",
+   "Prerequisites met: CS3281 in Sem 6 enables CS3282 in Sem 7. CS2109S in Sem 6 enables CS3243 in Sem 7.",
+   "CS4246 in Sem 8 requires CS3243 (Sem 7) and ST2334 (completed). CS3240 not included as prerequisite CS2111/NM2207 is missing and cannot be added without violating 'fewest added courses' or MC limits."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,133 @@
+{
+ "id": "q2-S1-139",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 8.18,
+ "solver_seconds": 0.025,
+ "max_tokens": 49152,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 3183,
+  "total_tokens": 3623,
+  "completion_tokens": 440,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 8.15,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 6,\n\"completed\": [\n\"CS2106\",\n\"ES2660\",\n\"CS2030S\",\n\"MA1521\",\n\"CS1101S\",\n\"CS3227\",\n\"ST2334\",\n\"CS2101\",\n\"CS2103T\",\n\"CS2040S\",\n\"CS2109S\",\n\"CS3230\",\n\"IS1108\",\n\"CS3263\",\n\"CS2100\",\n\"CS1231S\",\n\"MA1522\",\n\"CS3219\"\n],\n\"must_take\": [\n\"CS3282\",\n\"CS4247\",\n\"CS3103\",\n\"CS4218\",\n\"CS4225\",\n\"CS4246\",\n\"CS2102\",\n\"CS2105\"\n],\n\"rules\": [\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4247\",\n\"b\": \"CS4246\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS3282\",\n\"b\": \"CS3103\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4218\",\n\"sem\": 7,\n\"strength\": \"must\"\n}\n],\n\"early\": [\n\"CS2105\",\n\"CS3103\"\n],\n\"late\": [\n\"CS4247\"\n],\n\"unsupported\": [\n\"friend and I want to take our modules together where possible\",\n\"don't want one semester much heavier than another\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 6,
+  "completed": [
+   "CS2106",
+   "ES2660",
+   "CS2030S",
+   "MA1521",
+   "CS1101S",
+   "CS3227",
+   "ST2334",
+   "CS2101",
+   "CS2103T",
+   "CS2040S",
+   "CS2109S",
+   "CS3230",
+   "IS1108",
+   "CS3263",
+   "CS2100",
+   "CS1231S",
+   "MA1522",
+   "CS3219"
+  ],
+  "must_take": [
+   "CS3282",
+   "CS4247",
+   "CS3103",
+   "CS4218",
+   "CS4225",
+   "CS4246",
+   "CS2102",
+   "CS2105"
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS4247",
+    "b": "CS4246",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3282",
+    "b": "CS3103",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4218",
+    "sem": 7,
+    "strength": "must"
+   }
+  ],
+  "early": [
+   "CS2105",
+   "CS3103"
+  ],
+  "late": [
+   "CS4247"
+  ],
+  "unsupported": [
+   "friend and I want to take our modules together where possible",
+   "don't want one semester much heavier than another"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 8,
+  "plan": {
+   "6": [
+    "CS2102",
+    "CS2105",
+    "CS3281"
+   ],
+   "7": [
+    "CS3103",
+    "CS3241",
+    "CS4218"
+   ],
+   "8": [
+    "CS3282",
+    "CS4225",
+    "CS4246",
+    "CS4247"
+   ]
+  },
+  "mc_per_semester": {
+   "6": 12,
+   "7": 12,
+   "8": 16
+  },
+  "preferences_met": [
+   "CS2105 as early as possible",
+   "CS3103 as early as possible",
+   "CS4247 as late as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS3241",
+   "CS3281"
+  ],
+  "not_applied": [
+   "friend and I want to take our modules together where possible",
+   "don't want one semester much heavier than another"
+  ]
+ }
+}

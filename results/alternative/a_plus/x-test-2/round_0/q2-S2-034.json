@@ -1,0 +1,53 @@
+{
+ "id": "q2-S2-034",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 37.45,
+ "usage": {
+  "prompt_tokens": 9527,
+  "total_tokens": 13154,
+  "completion_tokens": 3627,
+  "prompt_tokens_details": {
+   "cached_tokens": 9216,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3486
+  },
+  "finish_reason": "stop",
+  "request_seconds": 37.45,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS2105\",\"CS3241\",\"CS2102\"],\"6\":[\"CS3219\",\"ST2334\",\"CS3247\"],\"7\":[\"CS4248\"]},\"reasons\":[\"CS2105 is earliest in semester 5; ST2334 follows in semester 6; CS3247 is in semester 6 before CS4248 in semester 7.\",\"CS3219 is in semester 6 as required; CS3241 is added in semester 5 as the prerequisite for CS3247.\",\"Semester 7 has only one module, and all semesters stay within 16 MC.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2105",
+    "CS3241",
+    "CS2102"
+   ],
+   "6": [
+    "CS3219",
+    "ST2334",
+    "CS3247"
+   ],
+   "7": [
+    "CS4248"
+   ]
+  },
+  "reasons": [
+   "CS2105 is earliest in semester 5; ST2334 follows in semester 6; CS3247 is in semester 6 before CS4248 in semester 7.",
+   "CS3219 is in semester 6 as required; CS3241 is added in semester 5 as the prerequisite for CS3247.",
+   "Semester 7 has only one module, and all semesters stay within 16 MC."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,105 @@
+{
+ "id": "q2-S4-194",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 6.38,
+ "usage": {
+  "prompt_tokens": 29147,
+  "total_tokens": 29426,
+  "completion_tokens": 279,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 6.38,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3235 requires CS2107 which is not completed and not in the required list.\",\n    \"CS4246 requires CS3243 or CS3263 which are not completed and not in the required list.\",\n    \"Cannot satisfy all 'must' requirements due to missing prerequisites for CS3235 and CS4246.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3235 requires CS2107 which is not completed and not in the required list.",
+   "CS4246 requires CS3243 or CS3263 which are not completed and not in the required list.",
+   "Cannot satisfy all 'must' requirements due to missing prerequisites for CS3235 and CS4246."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"7\": [\n      \"CS3213\",\n      \"CS4243\",\n      \"IS1108\"\n    ],\n    \"8\": [\n      \"CS3235\",\n      \"CS4246\"\n    ]\n  },\n  \"reasons\": [\n    \"All required courses are planned with prerequisites satisfied by completed modules.\",\n    \"CS3213 and CS4243 are separated as requested; CS3213 is taken as early as possible in Sem 7.\",\n    \"IS1108 is placed in Sem 7 and CS3235 in Sem 8 to meet soft wishes.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "7": [
+      "CS3213",
+      "CS4243",
+      "IS1108"
+     ],
+     "8": [
+      "CS3235",
+      "CS4246"
+     ]
+    },
+    "reasons": [
+     "All required courses are planned with prerequisites satisfied by completed modules.",
+     "CS3213 and CS4243 are separated as requested; CS3213 is taken as early as possible in Sem 7.",
+     "IS1108 is placed in Sem 7 and CS3235 in Sem 8 to meet soft wishes."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 14357,
+    "total_tokens": 14530,
+    "completion_tokens": 173,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 3.97,
+    "attempts": 1
+   },
+   "seconds": 3.97,
+   "violations": [
+    "R3 CS3213 not offered in Sem 1 (semester 7)",
+    "R4 CS3235 in semester 8: prerequisite not met ((CS2105 or EE3204 or EE4204) and (CS2106 or YSC3217 or CG2271) and CS2107)",
+    "R4 CS4246 in semester 8: prerequisite not met ((EE2012A or EE2012 or ST2132 or ST2334 or ((ST2131 or MA2116 or MA2116T or MA2216) and (ST1131 or ST1232 or DCS2008 or ST1131A))) and (CS3243 or CS3263))",
+    "R9 must rule not met: apart CS3213 CS4243"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3235 requires CS2107 which is not completed and not in the required list.\",\n    \"CS4246 requires CS3243 or CS3263 which are not completed and not in the required list.\",\n    \"Cannot satisfy all 'must' requirements due to missing prerequisites for CS3235 and CS4246.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3235 requires CS2107 which is not completed and not in the required list.",
+     "CS4246 requires CS3243 or CS3263 which are not completed and not in the required list.",
+     "Cannot satisfy all 'must' requirements due to missing prerequisites for CS3235 and CS4246."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 14790,
+    "total_tokens": 14896,
+    "completion_tokens": 106,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.41,
+    "attempts": 1
+   },
+   "seconds": 2.41,
+   "violations": null
+  }
+ ]
+}

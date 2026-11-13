@@ -1,0 +1,54 @@
+{
+ "id": "q2-S3-270",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 29.33,
+ "usage": {
+  "prompt_tokens": 7262,
+  "total_tokens": 10153,
+  "completion_tokens": 2891,
+  "prompt_tokens_details": {
+   "cached_tokens": 7040,
+   "created_cache_tokens": 128
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2731
+  },
+  "finish_reason": "stop",
+  "request_seconds": 29.33,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"4\":[\"CS2105\",\"ST2334\",\"CS3230\",\"CS2102\"],\"5\":[\"CS2109S\",\"CS3103\",\"CS4226\"],\"6\":[\"CS3234\"]},\"reasons\":[\"Earliest possible finish is semester 6: CS3234 is Sem 2 only and must follow CS2109S, which is fixed in semester 5.\",\"CS2105 and ST2334 are placed in semester 4 so CS3103 and CS4226, both Sem 1 only, can be taken in semester 5.\",\"CS3230 is before CS3234; ST2334 and CS4226 are as late as the earliest-finish constraint allows.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2105",
+    "ST2334",
+    "CS3230",
+    "CS2102"
+   ],
+   "5": [
+    "CS2109S",
+    "CS3103",
+    "CS4226"
+   ],
+   "6": [
+    "CS3234"
+   ]
+  },
+  "reasons": [
+   "Earliest possible finish is semester 6: CS3234 is Sem 2 only and must follow CS2109S, which is fixed in semester 5.",
+   "CS2105 and ST2334 are placed in semester 4 so CS3103 and CS4226, both Sem 1 only, can be taken in semester 5.",
+   "CS3230 is before CS3234; ST2334 and CS4226 are as late as the earliest-finish constraint allows."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

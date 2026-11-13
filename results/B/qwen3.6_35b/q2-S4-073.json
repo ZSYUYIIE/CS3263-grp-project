@@ -1,0 +1,81 @@
+{
+ "id": "q2-S4-073",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.36,
+ "solver_seconds": 0.361,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3056,
+  "total_tokens": 3378,
+  "completion_tokens": 322,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 6.0,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 1,\n\"completed\": [],\n\"must_take\": [\n\"MA1522\",\n\"CS3264\",\n\"CS1101S\",\n\"CS2101\",\n\"CS3244\",\n\"CS3242\"\n],\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3242\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"MA1522\",\n\"b\": \"CS3242\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS1101S\",\n\"b\": \"CS2101\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"MA1522\",\n\"b\": \"CS1101S\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS1101S\",\n\"sem\": 1,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2101\",\n\"sem\": 8,\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "completed": [],
+  "must_take": [
+   "MA1522",
+   "CS3264",
+   "CS1101S",
+   "CS2101",
+   "CS3244",
+   "CS3242"
+  ],
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3242",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "MA1522",
+    "b": "CS3242",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS1101S",
+    "b": "CS2101",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "MA1522",
+    "b": "CS1101S",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS1101S",
+    "sem": 1,
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2101",
+    "sem": 8,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the course exclusions (courses that cannot be taken together)"
+  ]
+ }
+}

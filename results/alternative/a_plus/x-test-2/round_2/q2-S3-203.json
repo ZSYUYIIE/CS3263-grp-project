@@ -1,0 +1,48 @@
+{
+ "id": "q2-S3-203",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 2,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 19.64,
+ "usage": {
+  "prompt_tokens": 7355,
+  "total_tokens": 9345,
+  "completion_tokens": 1990,
+  "prompt_tokens_details": {
+   "cached_tokens": 7040,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1854
+  },
+  "finish_reason": "stop",
+  "request_seconds": 19.64,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"7\":[\"CS2102\",\"CS3103\"],\"8\":[\"CS3234\",\"CS4225\"]},\"reasons\":[\"CS3103 is fixed in semester 7, while CS3234 is only offered in semester 2, so CS3234 cannot come before CS3103.\",\"CS4225 requires CS2102 strictly earlier, so CS2102 is placed in semester 7 and CS4225 in semester 8; this also makes CS2102 as late as possible.\",\"Only the four required courses are planned, totaling 16 MC; the unspecified waiver request cannot be applied.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "7": [
+    "CS2102",
+    "CS3103"
+   ],
+   "8": [
+    "CS3234",
+    "CS4225"
+   ]
+  },
+  "reasons": [
+   "CS3103 is fixed in semester 7, while CS3234 is only offered in semester 2, so CS3234 cannot come before CS3103.",
+   "CS4225 requires CS2102 strictly earlier, so CS2102 is placed in semester 7 and CS4225 in semester 8; this also makes CS2102 as late as possible.",
+   "Only the four required courses are planned, totaling 16 MC; the unspecified waiver request cannot be applied."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

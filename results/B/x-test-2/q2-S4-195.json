@@ -1,0 +1,98 @@
+{
+ "id": "q2-S4-195",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 10.02,
+ "solver_seconds": 0.016,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2833,
+  "total_tokens": 3864,
+  "completion_tokens": 1031,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 794
+  },
+  "finish_reason": "stop",
+  "request_seconds": 10.0,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":8,\"completed\":[\"IS1108\",\"CS3230\",\"MA1521\",\"CS2100\",\"CS4231\",\"CS2030S\",\"CS3219\",\"CS2101\",\"CS2106\",\"CS2040S\",\"CS2109S\",\"CS2103T\",\"MA1522\",\"ES2660\",\"CS3264\",\"CS2105\",\"ST2334\",\"CS1101S\",\"CS1231S\"],\"must_take\":[\"CS3247\",\"CS2102\",\"CS4222\",\"CS3263\"],\"mc_max\":16,\"objective\":\"min_total_mc\",\"early\":[\"CS2102\"],\"rules\":[{\"type\":\"same_sem\",\"a\":\"CS2102\",\"b\":\"CS4222\",\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS4222\",\"b\":\"CS3263\",\"strength\":\"prefer\"},{\"type\":\"in_sem\",\"course\":\"CS4222\",\"sem\":8,\"strength\":\"prefer\"},{\"type\":\"in_sem\",\"course\":\"CS3263\",\"sem\":8,\"strength\":\"must\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 8,
+  "completed": [
+   "IS1108",
+   "CS3230",
+   "MA1521",
+   "CS2100",
+   "CS4231",
+   "CS2030S",
+   "CS3219",
+   "CS2101",
+   "CS2106",
+   "CS2040S",
+   "CS2109S",
+   "CS2103T",
+   "MA1522",
+   "ES2660",
+   "CS3264",
+   "CS2105",
+   "ST2334",
+   "CS1101S",
+   "CS1231S"
+  ],
+  "must_take": [
+   "CS3247",
+   "CS2102",
+   "CS4222",
+   "CS3263"
+  ],
+  "mc_max": 16,
+  "objective": "min_total_mc",
+  "early": [
+   "CS2102"
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS2102",
+    "b": "CS4222",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4222",
+    "b": "CS3263",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4222",
+    "sem": 8,
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3263",
+    "sem": 8,
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the prerequisites of CS3247"
+  ]
+ }
+}

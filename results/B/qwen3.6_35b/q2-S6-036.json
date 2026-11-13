@@ -1,0 +1,85 @@
+{
+ "id": "q2-S6-036",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.65,
+ "solver_seconds": 0.001,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3108,
+  "total_tokens": 3444,
+  "completion_tokens": 336,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.64,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 3,\n\"programme\": \"BComp CS Hons with second major in Mathematics\",\n\"completed\": [\n\"CS2040S\",\n\"CS2030S\",\n\"ES2660\",\n\"CS1101S\",\n\"IS1108\",\n\"MA1521\",\n\"CS1231S\",\n\"MA1522\"\n],\n\"must_take\": [\n\"CS3230\",\n\"CS3219\",\n\"CS4236\",\n\"CS2106\",\n\"CS2105\",\n\"CS3234\"\n],\n\"sem_caps\": {\n\"6\": 0\n},\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS2105\",\n\"b\": \"CS4236\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3230\",\n\"sem\": 3,\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS2105\",\n\"b\": \"CS3234\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3234\",\n\"sem\": 4,\n\"strength\": \"must\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "programme": "BComp CS Hons with second major in Mathematics",
+  "completed": [
+   "CS2040S",
+   "CS2030S",
+   "ES2660",
+   "CS1101S",
+   "IS1108",
+   "MA1521",
+   "CS1231S",
+   "MA1522"
+  ],
+  "must_take": [
+   "CS3230",
+   "CS3219",
+   "CS4236",
+   "CS2106",
+   "CS2105",
+   "CS3234"
+  ],
+  "sem_caps": {
+   "6": 0
+  },
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2105",
+    "b": "CS4236",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3230",
+    "sem": 3,
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS2105",
+    "b": "CS3234",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3234",
+    "sem": 4,
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "OUT_OF_SCOPE",
+  "reasons": [
+   "programme 'BComp CS Hons with second major in Mathematics' is not BComp (CS) Hons"
+  ],
+  "message": "I can only plan for BComp (CS) Hons single-major students under AY2026/2027 rules, and this request is outside that (programme 'BComp CS Hons with second major in Mathematics' is not BComp (CS) Hons). Course rules differ by programme and aren't in my data for your case, so please check with your faculty or academic advisor."
+ }
+}

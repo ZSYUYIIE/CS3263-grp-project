@@ -1,0 +1,59 @@
+{
+ "id": "q2-S3-050",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 2,
+ "end": "valid",
+ "seconds": 135.93,
+ "usage": {
+  "prompt_tokens": 30272,
+  "total_tokens": 38138,
+  "completion_tokens": 7866,
+  "finish_reason": "stop",
+  "request_seconds": 135.93,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS3230\", \"CS2105\", \"IS1108\", \"CS3281\"], \"5\": [\"CS3240\", \"CS3231\", \"CS2109S\", \"CS2102\"], \"6\": [\"CS4246\", \"CS3219\", \"CS3282\", \"CS3243\"], \"7\": [\"CS3210\"], \"8\": [\"CS2106\"]}, \"reasons\": [\"Added prerequisites CS3281, CS3243, and CS3240's prerequisite NM2207 is not needed as CS3240 requires CS2111 or NM2207; wait, CS3240 prereq is CS2111 or NM2207. Student has neither. I must add CS2111 or NM2207. NM2207 is blocked by CS1101S. CS2111 is offered Sem 2. I must add CS2111. CS2111 is 4 MC. I will add CS2111 in Sem 4. Then CS3240 can be Sem 5. This satisfies the prerequisite.\", \"CS2109S and CS3243 are mutually exclusive. CS3243 is a prerequisite for CS4246. CS2109S is a required module. I cannot drop CS2109S. I must drop CS3243? No, CS4246 is required. CS4246 prereq is CS3243 or CS3263. I can use CS3263 instead. CS3263 is offered Sem 1/2. CS3263 prereq is CS2109S and CS2040... and Math... Student has CS2109S (planned) and CS2040S (completed). Math prereq for CS3263 is MA2001 or ... Student has MA1522. MA1522 is not in the list for CS3263. CS3263 prereq math: MA2001 or MA1522 or MA1513 or MA1508E or MA1101R. Student has MA1522. So CS3263 is eligible if CS2109S is taken. So I can use CS3263 instead of CS3243. CS3263 is Sem 1/2. I can take CS3263 in Sem 6 with CS4246? No, CS3263 is a prereq for CS4246. So CS3263 must be before CS4246. If CS4246 is Sem 6, CS3263 must be Sem 4 or 5. Sem 4 is full. Sem 5 is full. Can I move CS3263 to Sem 4? Sem 4 has CS3230, CS2105, IS1108, CS3281. 16 MC. Full. Can I move CS3281? CS3281 is Sem 2. Must be Sem 4, 6, 2... Sem 6 is full. This is tight. Let's try putting CS3263 in Sem 5. Sem 5 has CS3240, CS3231, CS2109S, CS2102. 16 MC. Full. I need to make space for CS3263. CS3240 needs CS2111. CS2111 is Sem 2. I must add CS2111. CS2111 in Sem 4? Sem 4 full. CS2111 in Sem 6? Sem 6 full. CS2111 in Sem 2? Past. This path is blocked. Let's re-evaluate CS3240 prereq. CS3240 prereq is CS2111 or NM2207. NM2207 blocked. CS2111 is the only option. CS2111 is Sem 2. So CS2111 must be in Sem 4, 6, 2... Sem 4 is Y2S2. Sem 6 is Y3S2. If I put CS2111 in Sem 4, I must drop one from Sem 4. CS3230, CS2105, IS1108, CS3281. All required or prereqs. CS3281 is prereq for CS3282. CS3230, CS2105, IS1108 are required. I cannot drop any. So Sem 4 is full. CS2111 cannot be in Sem 4. Can CS2111 be in Sem 6? Sem 6 has CS4246, CS3219, CS3282, CS3263 (if I use CS3263). 16 MC. Full. Can I drop CS3263 from Sem 6? No, it's a prereq for CS4246. Can I put CS3263 in Sem 4? Sem 4 full. Can I put CS3263 in Sem 5? Sem 5 full. This implies I cannot take CS4246 if I need CS3263 and Sem 4/5 are full with other required courses. Let's check if CS4246 can be later. Sem 7? Sem 7 has CS3210. 4 MC. Space for CS4246 (4 MC) and CS3263 (4 MC)? 8 MC. Yes. So CS3263 and CS4246 in Sem 7. Then CS2106 in Sem 8. CS3210 in Sem 7? CS3210 and CS4246 in Sem 7? 12 MC. Plus CS3263? 16 MC. Yes. So Sem 7: CS3210, CS4246, CS3263. Sem 8: CS2106. This works. CS3240 needs CS2111. CS2111 in Sem 4? No space. CS2111 in Sem 6? Sem 6 has CS3219, CS3282, CS2102, CS3231? No, CS3231 is Sem 1. CS3231 in Sem 5. Sem 5: CS3240, CS3231, CS2109S, CS2102. 16 MC. CS2111 must be before CS3240. So CS2111 in Sem 4. But Sem 4 is full. Is there any flexibility in Sem 4? CS3230, CS2105, IS1108, CS3281. All 4 MC. 16 MC. No. Did I miss a course? CS3281 is Sem 2. CS3230 Sem 1/2. CS2105 Sem 1/2. IS1108 Sem 1/2. All Sem 2 or 1/2. Sem 4 is Sem 2. So they can be in Sem 4. But no space for CS2111. This means CS3240 cannot be taken if CS2111 is required and Sem 4 is full. Is CS2111 the only prereq for CS3240? Yes. Is NM2207 really blocked? CS1101S is completed. NM2207 cannot take if completed CS1101S. Yes. So CS3240 is impossible? No, I must have made a mistake in Sem 4 planning. Can I move CS3281 to Sem 6? CS3281 is Sem 2. Sem 6 is Sem 2. Yes. If CS3281 is in Sem 6, Sem 4 has space. Sem 4: CS3230, CS2105, IS1108. 12 MC. Add CS2111 (4 MC). Total 16 MC. Then CS3281 in Sem 6. Sem 6: CS4246, CS3219, CS3282, CS3281. 16 MC. But CS3282 needs CS3281. So CS3281 must be before CS3282. If both in Sem 6, is that allowed? Prereq strictly earlier. So CS3281 must be Sem 4 or earlier. If CS3281 is Sem 4, CS2111 cannot be Sem 4. This is a conflict. CS3281 and CS2111 both need Sem 4. Sem 4 has 16 MC limit. I can only take 4 courses. I have CS3230, CS2105, IS1108, CS3281, CS2111. 5 courses. 20 MC. Exceeds limit. So I cannot take all in Sem 4. I must move one. CS3230, CS2105, IS1108 are Sem 1/2. Can they be Sem 5? Sem 5 is Sem 1. CS3230 is Sem 1/2. CS2105 is Sem 1/2. IS1108 is Sem 1/2. Yes. If I move CS3230 to Sem 5, Sem 4 has space for CS2111 and CS3281? Sem 4: CS2105, IS1108, CS3281, CS2111. 16 MC. Yes. Then Sem 5: CS3240, CS3231, CS2109S, CS2102, CS3230. 20 MC. Exceeds limit. Move CS2102 to Sem 6? CS2102 is Sem 1/2. Sem 6 is Sem 2. Yes. Sem 5: CS3240, CS3231, CS2109S, CS3230. 16 MC. Sem 6: CS4246, CS3219, CS3282, CS2102. 16 MC. But CS3282 needs CS3281 (Sem 4). OK. CS4246 needs CS3263. CS3263 needs CS2109S (Sem 5). So CS3263 can be Sem 6? No, strictly earlier. So CS3263 must be Sem 5 or earlier. Sem 5 is full. CS3263 must be Sem 4? Sem 4 is full. This is the same problem. CS3263 needs to be before CS4246. If CS4246 is Sem 6, CS3263 must be Sem 4 or 5. Both full. So CS4246 must be later. Sem 7. Sem 7: CS3210, CS4246, CS3263. 12 MC. CS2106 in Sem 8. This works. So the plan is: Sem 4: CS2105, IS1108, CS3281, CS2111. Sem 5: CS3240, CS3231, CS2109S, CS3230. Sem 6: CS3219, CS3282, CS2102. Sem 7: CS3210, CS4246, CS3263. Sem 8: CS2106. Check MC: Sem 4: 16. Sem 5: 16. Sem 6: 12. Sem 7: 12. Sem 8: 4. All <= 16. Prereqs: CS3240 needs CS2111 (Sem 4). OK. CS3282 needs CS3281 (Sem 4). OK. CS4246 needs CS3263 (Sem 7? No, CS3263 is in Sem 7 with CS4246. Prereq strictly earlier. So CS3263 must be before Sem 7. Sem 6 is full. Sem 5 is full. Sem 4 is full. I cannot put CS3263 before Sem 7. So CS4246 cannot be Sem 7. It must be Sem 8? Sem 8: CS2106, CS4246, CS3263. 12 MC. CS2106 and CS4246 in Sem 8. CS3210 in Sem 7. This works. CS3210 before CS2106? Sem 7 before Sem 8. OK. CS2106 and CS3231 not together? CS3231 in Sem 5. OK. CS2106 and CS3282 not together? CS3282 in Sem 6. OK. CS3240 as early as possible? Sem 5. OK. CS4246 as early as possible? Sem 8. Can it be earlier? No, because CS3263 needs to be before it, and Sem 4-6 are full with other required courses that cannot be moved without violating other constraints (like CS3231 Sem 1, CS3240 Sem 1, etc.). So Sem 8 is the earliest for CS4246.\n\nFinal Plan:\nSem 4: CS2105, IS1108, CS3281, CS2111\nSem 5: CS3240, CS3231, CS2109S, CS3230\nSem 6: CS3219, CS3282, CS2102\nSem 7: CS3210\nSem 8: CS2106, CS4246, CS3263\n\nReasons:\n- Added prerequisites CS2111, CS3281, CS3263.\n- CS3240 in Sem 5 (earliest after CS2111 in Sem 4).\n- CS4246 in Sem 8 (earliest after CS3263, which must be before Sem 8 due to full Sem 4-6).\n- CS3210 in Sem 7, CS2106 in Sem 8 to satisfy ordering.\n- CS2106 not with CS3231 or CS3282.\n\n{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS2105\", \"IS1108\", \"CS3281\", \"CS2111\"], \"5\": [\"CS3240\", \"CS3231\", \"CS2109S\", \"CS3230\"], \"6\": [\"CS3219\", \"CS3282\", \"CS2102\"], \"7\": [\"CS3210\"], \"8\": [\"CS2106\", \"CS4246\", \"CS3263\"]}, \"reasons\": [\"Added prerequisites CS2111, CS3281, CS3263 required for CS3240, CS3282, CS4246 respectively.\", \"CS3240 placed in Sem 5 as early as possible after CS2111 in Sem 4.\", \"CS4246 placed in Sem 8 as early as possible after CS3263, constrained by full earlier semesters.\", \"CS3210 in Sem 7 and CS2106 in Sem 8 to satisfy CS3210 before CS2106 constraint.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2105",
+    "IS1108",
+    "CS3281",
+    "CS2111"
+   ],
+   "5": [
+    "CS3240",
+    "CS3231",
+    "CS2109S",
+    "CS3230"
+   ],
+   "6": [
+    "CS3219",
+    "CS3282",
+    "CS2102"
+   ],
+   "7": [
+    "CS3210"
+   ],
+   "8": [
+    "CS2106",
+    "CS4246",
+    "CS3263"
+   ]
+  },
+  "reasons": [
+   "Added prerequisites CS2111, CS3281, CS3263 required for CS3240, CS3282, CS4246 respectively.",
+   "CS3240 placed in Sem 5 as early as possible after CS2111 in Sem 4.",
+   "CS4246 placed in Sem 8 as early as possible after CS3263, constrained by full earlier semesters.",
+   "CS3210 in Sem 7 and CS2106 in Sem 8 to satisfy CS3210 before CS2106 constraint."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

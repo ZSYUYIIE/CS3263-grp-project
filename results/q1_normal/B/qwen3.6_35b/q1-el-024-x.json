@@ -1,0 +1,56 @@
+{
+ "id": "q1-el-024-x",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 2.51,
+ "solver_seconds": 0.001,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2932,
+  "total_tokens": 3056,
+  "completion_tokens": 124,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 2.51,
+  "attempts": 1
+ },
+ "raw": "{\"query\": \"eligible\", \"target\": \"CS5439\", \"current_sem\": 7, \"completed\": [\"CS2102\", \"CS1101S\", \"CS2106\", \"CS2105\", \"CS2040S\", \"CS2100\", \"CS2103T\", \"CS3235\", \"MA1301X\", \"CS1231S\", \"CS4239\", \"CS2030S\", \"CS2107\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS5439",
+  "current_sem": 7,
+  "completed": [
+   "CS2102",
+   "CS1101S",
+   "CS2106",
+   "CS2105",
+   "CS2040S",
+   "CS2100",
+   "CS2103T",
+   "CS3235",
+   "MA1301X",
+   "CS1231S",
+   "CS4239",
+   "CS2030S",
+   "CS2107"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS5439",
+  "semester": 7,
+  "reasons": [
+   "precluded: already completed CS4239"
+  ],
+  "can_still_become_eligible": false,
+  "never_eligible_because": "CS5439 is ruled out by completed CS4239"
+ }
+}

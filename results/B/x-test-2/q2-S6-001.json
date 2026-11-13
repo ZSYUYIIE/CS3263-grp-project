@@ -1,0 +1,74 @@
+{
+ "id": "q2-S6-001",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 7.31,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2737,
+  "total_tokens": 3556,
+  "completion_tokens": 819,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 688
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.31,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"programme\":\"BComp CS Hons\",\"completed\":[],\"must_take\":[\"CS3268\",\"ST2334\",\"CS4220\"],\"sem_caps\":{\"5\":0},\"early\":[\"ST2334\",\"CS3268\"],\"rules\":[{\"type\":\"in_sem\",\"course\":\"CS4220\",\"sem\":8,\"strength\":\"must\"},{\"type\":\"apart\",\"a\":\"ST2334\",\"b\":\"CS3268\",\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS4220\",\"b\":\"ST2334\",\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "programme": "BComp CS Hons",
+  "completed": [],
+  "must_take": [
+   "CS3268",
+   "ST2334",
+   "CS4220"
+  ],
+  "sem_caps": {
+   "5": 0
+  },
+  "early": [
+   "ST2334",
+   "CS3268"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS4220",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "ST2334",
+    "b": "CS3268",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4220",
+    "b": "ST2334",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "MISSING_INFO",
+  "missing": [
+   "current_sem"
+  ],
+  "message": "This cannot be answered yet. Please give: the semester you are in now (1 to 8)."
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "id": "q2-S3-112",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 12.89,
+ "usage": {
+  "prompt_tokens": 7900,
+  "total_tokens": 9392,
+  "completion_tokens": 1492,
+  "prompt_tokens_details": {
+   "cached_tokens": 7680,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1357
+  },
+  "finish_reason": "stop",
+  "request_seconds": 12.89,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS3227\",\"ST2334\",\"CS2102\"],\"7\":[\"CS3237\",\"CS3231\"]},\"reasons\":[\"ST2334 is in semester 6 so it is completed before CS3237, which can only be taken in semester 7 because it is offered in Sem 1 only.\",\"CS2102 is placed as early as possible in semester 6 and is not in the same semester as CS3237.\",\"CS3227 is in semester 6 before CS3231 in semester 7; both used semesters meet the 8 MC minimum.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS3227",
+    "ST2334",
+    "CS2102"
+   ],
+   "7": [
+    "CS3237",
+    "CS3231"
+   ]
+  },
+  "reasons": [
+   "ST2334 is in semester 6 so it is completed before CS3237, which can only be taken in semester 7 because it is offered in Sem 1 only.",
+   "CS2102 is placed as early as possible in semester 6 and is not in the same semester as CS3237.",
+   "CS3227 is in semester 6 before CS3231 in semester 7; both used semesters meet the 8 MC minimum."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

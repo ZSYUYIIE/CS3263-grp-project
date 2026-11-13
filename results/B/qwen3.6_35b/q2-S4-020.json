@@ -1,0 +1,91 @@
+{
+ "id": "q2-S4-020",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.44,
+ "solver_seconds": 0.013,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3134,
+  "total_tokens": 3545,
+  "completion_tokens": 411,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 7.43,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"programme\": \"BComp CS Hons\",\n\"current_sem\": 5,\n\"completed\": [\n\"CS2109S\",\n\"CS2106\",\n\"CS3281\",\n\"CS1231S\",\n\"CS2101\",\n\"IS1108\",\n\"CS2030S\",\n\"CS2100\",\n\"ST2334\",\n\"CS2040S\",\n\"ES2660\",\n\"MA1521\",\n\"CS1101S\",\n\"CS3230\",\n\"MA1522\",\n\"CS2103T\"\n],\n\"must_take\": [\n\"CS3219\",\n\"CS4249\",\n\"CS2105\",\n\"CS2102\",\n\"CS4231\",\n\"CS3223\",\n\"CS4234\"\n],\n\"mc_max\": 4,\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4234\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3219\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4249\",\n\"b\": \"CS2102\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2102\",\n\"sem\": 7,\n\"strength\": \"prefer\"\n}\n],\n\"early\": [\n\"CS2102\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "programme": "BComp CS Hons",
+  "current_sem": 5,
+  "completed": [
+   "CS2109S",
+   "CS2106",
+   "CS3281",
+   "CS1231S",
+   "CS2101",
+   "IS1108",
+   "CS2030S",
+   "CS2100",
+   "ST2334",
+   "CS2040S",
+   "ES2660",
+   "MA1521",
+   "CS1101S",
+   "CS3230",
+   "MA1522",
+   "CS2103T"
+  ],
+  "must_take": [
+   "CS3219",
+   "CS4249",
+   "CS2105",
+   "CS2102",
+   "CS4231",
+   "CS3223",
+   "CS4234"
+  ],
+  "mc_max": 4,
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS4234",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3219",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4249",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 7,
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS2102"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "the required courses need 28 MC but the remaining semesters [5, 6, 7, 8] allow at most 16 MC"
+  ]
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "id": "q2-S2-019",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 4.4,
+ "usage": {
+  "prompt_tokens": 9966,
+  "total_tokens": 10208,
+  "completion_tokens": 242,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 4.4,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2102\",\n      \"CS3219\"\n    ],\n    \"6\": [\n      \"CS2105\"\n    ],\n    \"7\": [\n      \"CS4223\"\n    ]\n  },\n  \"reasons\": [\n    \"All required courses (CS2102, CS4223, CS2105, CS3219) are planned with prerequisites satisfied.\",\n    \"Constraints met: CS3219 before CS2102, CS2105 before CS4223, max 2 modules per semester, max 3 in Sem 8 (Sem 8 is empty).\",\n    \"Optimized for fewest total credits (16 MC) and earliest graduation (Sem 7). Soft wishes for timing of CS3219, CS2102, and CS2105 are accommodated where possible without violating hard constraints or increasing credits.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS3219"
+   ],
+   "6": [
+    "CS2105"
+   ],
+   "7": [
+    "CS4223"
+   ]
+  },
+  "reasons": [
+   "All required courses (CS2102, CS4223, CS2105, CS3219) are planned with prerequisites satisfied.",
+   "Constraints met: CS3219 before CS2102, CS2105 before CS4223, max 2 modules per semester, max 3 in Sem 8 (Sem 8 is empty).",
+   "Optimized for fewest total credits (16 MC) and earliest graduation (Sem 7). Soft wishes for timing of CS3219, CS2102, and CS2105 are accommodated where possible without violating hard constraints or increasing credits."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

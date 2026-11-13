@@ -1,0 +1,101 @@
+{
+ "id": "q2-S2-036",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 7.76,
+ "usage": {
+  "prompt_tokens": 24205,
+  "total_tokens": 24545,
+  "completion_tokens": 340,
+  "finish_reason": "stop",
+  "request_seconds": 7.76,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3247 requires CS3241 as a prerequisite, but CS3241 is not in the list of courses the student must take and has not completed it.\",\n    \"The student must take CS3247, but cannot satisfy its prerequisite CS3241 with the given constraints.\",\n    \"Therefore, no valid plan exists.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3247 requires CS3241 as a prerequisite, but CS3241 is not in the list of courses the student must take and has not completed it.",
+   "The student must take CS3247, but cannot satisfy its prerequisite CS3241 with the given constraints.",
+   "Therefore, no valid plan exists."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2105\",\n      \"ST2334\"\n    ],\n    \"6\": [\n      \"CS2102\",\n      \"CS3219\"\n    ],\n    \"7\": [\n      \"CS3247\",\n      \"CS4248\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2105 and ST2334 taken in Sem 5 to satisfy 'CS2105 before ST2334' and 'CS2105 as early as possible'.\",\n    \"CS3219 taken in Sem 6 to satisfy 'must take in Y3S2' (Sem 5 is full with 2 modules).\",\n    \"CS3247 and CS4248 taken in Sem 7 to satisfy 'CS3247 before CS4248' and leave Sem 8 empty as requested.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2105",
+      "ST2334"
+     ],
+     "6": [
+      "CS2102",
+      "CS3219"
+     ],
+     "7": [
+      "CS3247",
+      "CS4248"
+     ]
+    },
+    "reasons": [
+     "CS2105 and ST2334 taken in Sem 5 to satisfy 'CS2105 before ST2334' and 'CS2105 as early as possible'.",
+     "CS3219 taken in Sem 6 to satisfy 'must take in Y3S2' (Sem 5 is full with 2 modules).",
+     "CS3247 and CS4248 taken in Sem 7 to satisfy 'CS3247 before CS4248' and leave Sem 8 empty as requested."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11929,
+    "total_tokens": 12167,
+    "completion_tokens": 238,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.08,
+    "attempts": 1
+   },
+   "seconds": 5.08,
+   "violations": [
+    "R3 CS3247 not offered in Sem 1 (semester 7)",
+    "R4 CS3247 in semester 7: prerequisite not met (CS3241)",
+    "R9 must rule not met: before CS2105 ST2334"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3247 requires CS3241 as a prerequisite, but CS3241 is not in the list of courses the student must take and has not completed it.\",\n    \"The student must take CS3247, but cannot satisfy its prerequisite CS3241 with the given constraints.\",\n    \"Therefore, no valid plan exists.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3247 requires CS3241 as a prerequisite, but CS3241 is not in the list of courses the student must take and has not completed it.",
+     "The student must take CS3247, but cannot satisfy its prerequisite CS3241 with the given constraints.",
+     "Therefore, no valid plan exists."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12276,
+    "total_tokens": 12378,
+    "completion_tokens": 102,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.68,
+    "attempts": 1
+   },
+   "seconds": 2.68,
+   "violations": null
+  }
+ ]
+}

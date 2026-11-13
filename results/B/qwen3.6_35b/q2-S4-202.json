@@ -1,0 +1,97 @@
+{
+ "id": "q2-S4-202",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.87,
+ "solver_seconds": 0.091,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3130,
+  "total_tokens": 3562,
+  "completion_tokens": 432,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 7.78,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 4,\n\"completed\": [\n\"ST2334\",\n\"CS1101S\",\n\"IS1108\",\n\"CS2040S\",\n\"CS2100\",\n\"ES2660\",\n\"MA1522\",\n\"CS2103T\",\n\"CS2030S\",\n\"CS1231S\",\n\"MA1521\"\n],\n\"must_take\": [\n\"CS4224\",\n\"CS2109S\",\n\"CS2106\",\n\"CS3263\",\n\"CS3231\"\n],\n\"sem_caps\": {\n\"7\": 0\n},\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS2106\",\n\"b\": \"CS3263\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2106\",\n\"sem\": 6,\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS3231\",\n\"b\": \"CS2109S\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2109S\",\n\"b\": \"CS3263\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2109S\",\n\"b\": \"CS2106\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3263\",\n\"sem\": 7,\n\"strength\": \"prefer\"\n}\n],\n\"early\": [\n\"CS3231\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "ST2334",
+   "CS1101S",
+   "IS1108",
+   "CS2040S",
+   "CS2100",
+   "ES2660",
+   "MA1522",
+   "CS2103T",
+   "CS2030S",
+   "CS1231S",
+   "MA1521"
+  ],
+  "must_take": [
+   "CS4224",
+   "CS2109S",
+   "CS2106",
+   "CS3263",
+   "CS3231"
+  ],
+  "sem_caps": {
+   "7": 0
+  },
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2106",
+    "b": "CS3263",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2106",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3231",
+    "b": "CS2109S",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2109S",
+    "b": "CS3263",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS2109S",
+    "b": "CS2106",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3263",
+    "sem": 7,
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS3231"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the prerequisites of CS3223; the prerequisites of CS4224; the MC limits (at most 20 MC per semester; semesters 7 blocked); the semesters in which the courses are offered"
+  ]
+ }
+}

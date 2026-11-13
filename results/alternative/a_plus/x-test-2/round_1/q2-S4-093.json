@@ -1,0 +1,49 @@
+{
+ "id": "q2-S4-093",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 22.12,
+ "usage": {
+  "prompt_tokens": 8670,
+  "total_tokens": 10947,
+  "completion_tokens": 2277,
+  "prompt_tokens_details": {
+   "cached_tokens": 4352,
+   "created_cache_tokens": 4224
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2146
+  },
+  "finish_reason": "stop",
+  "request_seconds": 22.12,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"7\":[\"CS3263\",\"CS3241\",\"CS3230\",\"CS3264\"],\"8\":[\"CS3247\"]},\"reasons\":[\"CS3241 is only offered in Sem 1, so it must be in semester 7; CS3247 then must be in semester 8.\",\"CS3230 must precede CS3247, so it must be in semester 7; CS3263 is required in semester 7.\",\"The requests for CS3230 in semester 8 and keeping CS3263 and CS3241 apart are impossible under these constraints.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "7": [
+    "CS3263",
+    "CS3241",
+    "CS3230",
+    "CS3264"
+   ],
+   "8": [
+    "CS3247"
+   ]
+  },
+  "reasons": [
+   "CS3241 is only offered in Sem 1, so it must be in semester 7; CS3247 then must be in semester 8.",
+   "CS3230 must precede CS3247, so it must be in semester 7; CS3263 is required in semester 7.",
+   "The requests for CS3230 in semester 8 and keeping CS3263 and CS3241 apart are impossible under these constraints."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

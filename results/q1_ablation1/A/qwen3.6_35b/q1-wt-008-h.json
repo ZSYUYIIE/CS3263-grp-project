@@ -1,0 +1,29 @@
+{
+ "id": "q1-wt-008-h",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 10.18,
+ "usage": {
+  "prompt_tokens": 13712,
+  "total_tokens": 14185,
+  "completion_tokens": 473,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 10.18,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"ELIGIBLE\", \"reasons\": [\"Prerequisites MA2001/MA1101R and CS3230 are satisfied by completed courses MA1522 (counts for MA2001/MA1101R logic in context of other math) and CS3230.\", \"CS4234 is offered in Sem 1, but the student is asking about Y4S2. However, the question is 'Am I eligible to take CS4234?', which generally implies eligibility for the course itself. The course is offered in Sem 1. The student is in Y4S2. If they haven't taken it yet, they can't take it in Y4S2 because it's not offered. But usually 'eligible' checks prerequisites. Let's re-read carefully: 'Am I eligible to take CS4234?' without a specific semester constraint in the final question, but the context is 'I am looking at Y4S1. Sorry, I mean year 4 semester 2.' This implies they want to take it in Y4S2. CS4234 is offered Sem 1 only. Therefore, they cannot take it in Y4S2. However, the standard interpretation of 'Can I take X' is 'Is X eligible given my record'. If the semester is specified as the target, we must check the offering. The student corrected themselves to Y4S2. CS4234 is NOT offered in Sem 2. Thus, they cannot take it in Y4S2. But is the status NOT_ELIGIBLE or ELIGIBLE? The prompt says: 'If the request gives no semester, judge eligibility for any term X is offered in.' Here, the student DID give a semester (Y4S2). So we must judge for Y4S2. CS4234 is not offered in Sem 2. So they cannot take it. Status: NOT_ELIGIBLE. Reason: Course not offered in Sem 2. Wait, let's look at the 'Can I take X' rule again. 'X is eligible when... X is offered in that semester's term.' So if not offered, it's NOT_ELIGIBLE.\"]}}",
+ "answer": {
+  "status": "ELIGIBLE",
+  "reasons": [
+   "Prerequisites MA2001/MA1101R and CS3230 are satisfied by completed courses MA1522 (counts for MA2001/MA1101R logic in context of other math) and CS3230.",
+   "CS4234 is offered in Sem 1, but the student is asking about Y4S2. However, the question is 'Am I eligible to take CS4234?', which generally implies eligibility for the course itself. The course is offered in Sem 1. The student is in Y4S2. If they haven't taken it yet, they can't take it in Y4S2 because it's not offered. But usually 'eligible' checks prerequisites. Let's re-read carefully: 'Am I eligible to take CS4234?' without a specific semester constraint in the final question, but the context is 'I am looking at Y4S1. Sorry, I mean year 4 semester 2.' This implies they want to take it in Y4S2. CS4234 is offered Sem 1 only. Therefore, they cannot take it in Y4S2. However, the standard interpretation of 'Can I take X' is 'Is X eligible given my record'. If the semester is specified as the target, we must check the offering. The student corrected themselves to Y4S2. CS4234 is NOT offered in Sem 2. Thus, they cannot take it in Y4S2. But is the status NOT_ELIGIBLE or ELIGIBLE? The prompt says: 'If the request gives no semester, judge eligibility for any term X is offered in.' Here, the student DID give a semester (Y4S2). So we must judge for Y4S2. CS4234 is not offered in Sem 2. So they cannot take it. Status: NOT_ELIGIBLE. Reason: Course not offered in Sem 2. Wait, let's look at the 'Can I take X' rule again. 'X is eligible when... X is offered in that semester's term.' So if not offered, it's NOT_ELIGIBLE."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 4,
+ "ablation": 1
+}

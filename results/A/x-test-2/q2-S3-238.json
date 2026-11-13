@@ -1,0 +1,62 @@
+{
+ "id": "q2-S3-238",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 84.78,
+ "usage": {
+  "prompt_tokens": 9334,
+  "total_tokens": 16877,
+  "completion_tokens": 7543,
+  "prompt_tokens_details": {
+   "cached_tokens": 9088,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 7343
+  },
+  "finish_reason": "stop",
+  "request_seconds": 84.78,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CS2100\",\"CS3230\",\"CS2105\",\"ST1131\"],\"4\":[\"CS2103T\",\"CS4243\"],\"5\":[\"CS3219\"],\"6\":[\"CS2102\",\"CS3281\",\"CS4218\"],\"7\":[\"CS3223\"],\"8\":[\"CS4221\"]},\"reasons\":[\"Added CS3223 and ST1131 as prerequisites for CS4221 and CS4243; total is 48 MC, the minimum with all required modules.\",\"CS2103T is as late as possible at semester 4, forcing CS3219, CS2102, CS3223, CS4221 in sequence; CS4221 is latest at semester 8.\",\"CS3281 cannot be in Y4S2 because CS4221 must be there and they cannot share a semester; CS3281 is placed in semester 6.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS3230",
+    "CS2105",
+    "ST1131"
+   ],
+   "4": [
+    "CS2103T",
+    "CS4243"
+   ],
+   "5": [
+    "CS3219"
+   ],
+   "6": [
+    "CS2102",
+    "CS3281",
+    "CS4218"
+   ],
+   "7": [
+    "CS3223"
+   ],
+   "8": [
+    "CS4221"
+   ]
+  },
+  "reasons": [
+   "Added CS3223 and ST1131 as prerequisites for CS4221 and CS4243; total is 48 MC, the minimum with all required modules.",
+   "CS2103T is as late as possible at semester 4, forcing CS3219, CS2102, CS3223, CS4221 in sequence; CS4221 is latest at semester 8.",
+   "CS3281 cannot be in Y4S2 because CS4221 must be there and they cannot share a semester; CS3281 is placed in semester 6."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

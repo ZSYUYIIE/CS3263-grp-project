@@ -1,0 +1,89 @@
+{
+ "id": "q2-S4-152",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 5.8,
+ "solver_seconds": 0.001,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2813,
+  "total_tokens": 3443,
+  "completion_tokens": 630,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 442
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.8,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":5,\"completed\":[\"CS2109S\",\"CS2101\",\"CS4231\",\"ES2660\",\"CS1231S\",\"CS2040S\",\"ST2334\",\"CS3230\",\"CS2030S\",\"MA1521\",\"CS2103T\",\"CS1101S\",\"IS1108\",\"MA1522\",\"CS2106\",\"CS2100\"],\"must_take\":[\"CS4249\",\"CS4220\",\"CS2102\",\"CS3219\",\"CS3236\",\"CS2105\"],\"sem_caps\":{\"6\":0,\"8\":0},\"early\":[\"CS4249\"],\"rules\":[{\"type\":\"apart\",\"a\":\"CS2102\",\"b\":\"CS4249\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS2102\",\"sem\":8,\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "completed": [
+   "CS2109S",
+   "CS2101",
+   "CS4231",
+   "ES2660",
+   "CS1231S",
+   "CS2040S",
+   "ST2334",
+   "CS3230",
+   "CS2030S",
+   "MA1521",
+   "CS2103T",
+   "CS1101S",
+   "IS1108",
+   "MA1522",
+   "CS2106",
+   "CS2100"
+  ],
+  "must_take": [
+   "CS4249",
+   "CS4220",
+   "CS2102",
+   "CS3219",
+   "CS3236",
+   "CS2105"
+  ],
+  "sem_caps": {
+   "6": 0,
+   "8": 0
+  },
+  "early": [
+   "CS4249"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS2102",
+    "b": "CS4249",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 8,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4249 cannot be placed in any remaining semester (offered in terms [2]; semesters left [5, 7])",
+   "CS4220 cannot be placed in any remaining semester (offered in terms [2]; semesters left [5, 7])",
+   "CS3236 cannot be placed in any remaining semester (offered in terms [2]; semesters left [5, 7])"
+  ]
+ }
+}

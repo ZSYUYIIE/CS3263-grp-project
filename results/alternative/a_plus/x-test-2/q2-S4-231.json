@@ -1,0 +1,112 @@
+{
+ "id": "q2-S4-231",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 64.89,
+ "usage": {
+  "prompt_tokens": 8487,
+  "total_tokens": 13684,
+  "completion_tokens": 5197,
+  "prompt_tokens_details": {
+   "cached_tokens": 8320,
+   "created_cache_tokens": 128
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5051
+  },
+  "finish_reason": "stop",
+  "request_seconds": 64.89,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CS2103\"],\"4\":[\"CS2111\",\"CS3219\"],\"5\":[\"CS3240\"],\"7\":[\"CS3249\",\"CS4353\"],\"8\":[\"CS4249\",\"CS3230\"]},\"reasons\":[\"Added CS2103 and CS2111 as prerequisites needed for CS4353, CS3219 and CS3240.\",\"CS2111 in sem4 allows CS3240 in sem5, so CS4353 can be earliest in sem7.\",\"CS3249 is in sem7, its latest possible term, and before CS4249 and CS3230 together in sem8.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2103"
+   ],
+   "4": [
+    "CS2111",
+    "CS3219"
+   ],
+   "5": [
+    "CS3240"
+   ],
+   "7": [
+    "CS3249",
+    "CS4353"
+   ],
+   "8": [
+    "CS4249",
+    "CS3230"
+   ]
+  },
+  "reasons": [
+   "Added CS2103 and CS2111 as prerequisites needed for CS4353, CS3219 and CS3240.",
+   "CS2111 in sem4 allows CS3240 in sem5, so CS4353 can be earliest in sem7.",
+   "CS3249 is in sem7, its latest possible term, and before CS4249 and CS3230 together in sem8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CS2103\"],\"4\":[\"CS2111\",\"CS3219\"],\"5\":[\"CS3240\"],\"7\":[\"CS3249\",\"CS4353\"],\"8\":[\"CS4249\",\"CS3230\"]},\"reasons\":[\"Added CS2103 and CS2111 as prerequisites needed for CS4353, CS3219 and CS3240.\",\"CS2111 in sem4 allows CS3240 in sem5, so CS4353 can be earliest in sem7.\",\"CS3249 is in sem7, its latest possible term, and before CS4249 and CS3230 together in sem8.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2103"
+     ],
+     "4": [
+      "CS2111",
+      "CS3219"
+     ],
+     "5": [
+      "CS3240"
+     ],
+     "7": [
+      "CS3249",
+      "CS4353"
+     ],
+     "8": [
+      "CS4249",
+      "CS3230"
+     ]
+    },
+    "reasons": [
+     "Added CS2103 and CS2111 as prerequisites needed for CS4353, CS3219 and CS3240.",
+     "CS2111 in sem4 allows CS3240 in sem5, so CS4353 can be earliest in sem7.",
+     "CS3249 is in sem7, its latest possible term, and before CS4249 and CS3230 together in sem8."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 8487,
+    "total_tokens": 13684,
+    "completion_tokens": 5197,
+    "prompt_tokens_details": {
+     "cached_tokens": 8320,
+     "created_cache_tokens": 128,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 5051
+    },
+    "finish_reason": "stop",
+    "request_seconds": 64.89,
+    "attempts": 1
+   },
+   "seconds": 64.89,
+   "violations": []
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+ "id": "q2-S1-099",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 2,
+ "end": "repeated plan",
+ "seconds": 157.0,
+ "usage": {
+  "prompt_tokens": 36060,
+  "total_tokens": 45357,
+  "completion_tokens": 9297,
+  "finish_reason": "stop",
+  "request_seconds": 156.99,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS3230\"\n    ],\n    \"5\": [\n      \"CS2103T\",\n      \"CS4243\"\n    ],\n    \"6\": [\n      \"CS3281\",\n      \"CS2102\",\n      \"CS3219\"\n    ],\n    \"7\": [\n      \"CS2105\",\n      \"CS3223\",\n      \"CS4218\"\n    ],\n    \"8\": [\n      \"CS4221\"\n    ]\n  },\n  \"reasons\": [\n    \"CS4243 prerequisites met: MA1522, MA1521, CS2030S, CS2040S completed; ST1131 added as prerequisite.\",\n    \"ST1131 is required for CS4243, so it is added in Sem 5.\",\n    \"CS3281 in Sem 6, CS2105 in Sem 7 satisfies CS3281 before CS2105. CS4221 in Sem 8 is latest possible.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS3230"
+   ],
+   "5": [
+    "CS2103T",
+    "CS4243"
+   ],
+   "6": [
+    "CS3281",
+    "CS2102",
+    "CS3219"
+   ],
+   "7": [
+    "CS2105",
+    "CS3223",
+    "CS4218"
+   ],
+   "8": [
+    "CS4221"
+   ]
+  },
+  "reasons": [
+   "CS4243 prerequisites met: MA1522, MA1521, CS2030S, CS2040S completed; ST1131 added as prerequisite.",
+   "ST1131 is required for CS4243, so it is added in Sem 5.",
+   "CS3281 in Sem 6, CS2105 in Sem 7 satisfies CS3281 before CS2105. CS4221 in Sem 8 is latest possible."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

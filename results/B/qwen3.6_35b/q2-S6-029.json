@@ -1,0 +1,76 @@
+{
+ "id": "q2-S6-029",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 22.83,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3009,
+  "total_tokens": 3284,
+  "completion_tokens": 275,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 22.83,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 1,\n\"must_take\": [\n\"IS1108\",\n\"MA1522\",\n\"CS4222\",\n\"CS3236\"\n],\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"IS1108\",\n\"sem\": 1,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4222\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3236\",\n\"sem\": 4,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"IS1108\",\n\"b\": \"CS4222\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"MA1522\",\n\"b\": \"IS1108\",\n\"strength\": \"must\"\n}\n],\n\"early\": [\n\"MA1522\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "must_take": [
+   "IS1108",
+   "MA1522",
+   "CS4222",
+   "CS3236"
+  ],
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "IS1108",
+    "sem": 1,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4222",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3236",
+    "sem": 4,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "IS1108",
+    "b": "CS4222",
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "MA1522",
+    "b": "IS1108",
+    "strength": "must"
+   }
+  ],
+  "early": [
+   "MA1522"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "MISSING_INFO",
+  "missing": [
+   "completed"
+  ],
+  "message": "This cannot be answered yet. Please give: the courses you have already completed (say so if there are none)."
+ }
+}

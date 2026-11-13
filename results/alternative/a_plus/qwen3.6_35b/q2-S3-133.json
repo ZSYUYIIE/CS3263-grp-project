@@ -1,0 +1,104 @@
+{
+ "id": "q2-S3-133",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 9.36,
+ "usage": {
+  "prompt_tokens": 22907,
+  "total_tokens": 23460,
+  "completion_tokens": 553,
+  "finish_reason": "stop",
+  "request_seconds": 9.36,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\"CS4223 requires CS3210, CS3220, or CG3207 as prerequisites, none of which are completed or planned. CS3210 requires CS2100 (completed) but also has no other listed prerequisites, however CS4223 specifically needs one of those three architecture/parallel courses. The student has not taken CS3210, CS3220 (not offered), or CG3207. Without these, CS4223 cannot be taken.\", \"CS4222 is only offered in Sem 2. Semester 7 is Sem 1, so CS4222 cannot be taken in Sem 7. It must be taken in Sem 2, 4, 6, or 8. Since the student is in Sem 6, it can be taken in Sem 6 or 8. If taken in Sem 6, it blocks CS3237 (Sem 1 only) if we try to fit too much, but more importantly, CS4223 must come after CS4222. If CS4222 is in Sem 8, CS4223 must be in a later semester, which doesn't exist. If CS4222 is in Sem 6, CS4223 can be in Sem 7 or 8. However, CS4223's prerequisites are still missing.\", \"The core blocker is that CS4223 requires CS3210, CS3220, or CG3207. None of these are in the completed list. CS3220 is not offered. CS3210 and CG3207 are not completed. Therefore, CS4223 cannot be scheduled.\"]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4223 requires CS3210, CS3220, or CG3207 as prerequisites, none of which are completed or planned. CS3210 requires CS2100 (completed) but also has no other listed prerequisites, however CS4223 specifically needs one of those three architecture/parallel courses. The student has not taken CS3210, CS3220 (not offered), or CG3207. Without these, CS4223 cannot be taken.",
+   "CS4222 is only offered in Sem 2. Semester 7 is Sem 1, so CS4222 cannot be taken in Sem 7. It must be taken in Sem 2, 4, 6, or 8. Since the student is in Sem 6, it can be taken in Sem 6 or 8. If taken in Sem 6, it blocks CS3237 (Sem 1 only) if we try to fit too much, but more importantly, CS4223 must come after CS4222. If CS4222 is in Sem 8, CS4223 must be in a later semester, which doesn't exist. If CS4222 is in Sem 6, CS4223 can be in Sem 7 or 8. However, CS4223's prerequisites are still missing.",
+   "The core blocker is that CS4223 requires CS3210, CS3220, or CG3207. None of these are in the completed list. CS3220 is not offered. CS3210 and CG3207 are not completed. Therefore, CS4223 cannot be scheduled."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"6\": [\"CS3237\", \"CS2102\"], \"7\": [\"CS2101\", \"CS4222\", \"CS4223\"]}, \"reasons\": [\"All prerequisites satisfied by completed courses. CS3237 offered Sem 1, CS2102 offered Sem 1/2, CS2101 offered Sem 1/2, CS4222 offered Sem 2, CS4223 offered Sem 1. Constraints: CS3237 before CS2101, CS4222 before CS4223. MC limits respected (max 4 per sem).\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS3237",
+      "CS2102"
+     ],
+     "7": [
+      "CS2101",
+      "CS4222",
+      "CS4223"
+     ]
+    },
+    "reasons": [
+     "All prerequisites satisfied by completed courses. CS3237 offered Sem 1, CS2102 offered Sem 1/2, CS2101 offered Sem 1/2, CS4222 offered Sem 2, CS4223 offered Sem 1. Constraints: CS3237 before CS2101, CS4222 before CS4223. MC limits respected (max 4 per sem)."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11292,
+    "total_tokens": 11447,
+    "completion_tokens": 155,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.85,
+    "attempts": 1
+   },
+   "seconds": 3.85,
+   "violations": [
+    "R1 must-take ES2660 missing",
+    "R3 CS3237 not offered in Sem 2 (semester 6)",
+    "R3 CS4222 not offered in Sem 1 (semester 7)",
+    "R4 CS4223 in semester 7: prerequisite not met ((CS2106 or CG2271) and (CS3210 or CS3220 or CG3207))",
+    "R9 must rule not met: before CS4222 CS4223"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\"CS4223 requires CS3210, CS3220, or CG3207 as prerequisites, none of which are completed or planned. CS3210 requires CS2100 (completed) but also has no other listed prerequisites, however CS4223 specifically needs one of those three architecture/parallel courses. The student has not taken CS3210, CS3220 (not offered), or CG3207. Without these, CS4223 cannot be taken.\", \"CS4222 is only offered in Sem 2. Semester 7 is Sem 1, so CS4222 cannot be taken in Sem 7. It must be taken in Sem 2, 4, 6, or 8. Since the student is in Sem 6, it can be taken in Sem 6 or 8. If taken in Sem 6, it blocks CS3237 (Sem 1 only) if we try to fit too much, but more importantly, CS4223 must come after CS4222. If CS4222 is in Sem 8, CS4223 must be in a later semester, which doesn't exist. If CS4222 is in Sem 6, CS4223 can be in Sem 7 or 8. However, CS4223's prerequisites are still missing.\", \"The core blocker is that CS4223 requires CS3210, CS3220, or CG3207. None of these are in the completed list. CS3220 is not offered. CS3210 and CG3207 are not completed. Therefore, CS4223 cannot be scheduled.\"]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4223 requires CS3210, CS3220, or CG3207 as prerequisites, none of which are completed or planned. CS3210 requires CS2100 (completed) but also has no other listed prerequisites, however CS4223 specifically needs one of those three architecture/parallel courses. The student has not taken CS3210, CS3220 (not offered), or CG3207. Without these, CS4223 cannot be taken.",
+     "CS4222 is only offered in Sem 2. Semester 7 is Sem 1, so CS4222 cannot be taken in Sem 7. It must be taken in Sem 2, 4, 6, or 8. Since the student is in Sem 6, it can be taken in Sem 6 or 8. If taken in Sem 6, it blocks CS3237 (Sem 1 only) if we try to fit too much, but more importantly, CS4223 must come after CS4222. If CS4222 is in Sem 8, CS4223 must be in a later semester, which doesn't exist. If CS4222 is in Sem 6, CS4223 can be in Sem 7 or 8. However, CS4223's prerequisites are still missing.",
+     "The core blocker is that CS4223 requires CS3210, CS3220, or CG3207. None of these are in the completed list. CS3220 is not offered. CS3210 and CG3207 are not completed. Therefore, CS4223 cannot be scheduled."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11615,
+    "total_tokens": 12013,
+    "completion_tokens": 398,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 5.51,
+    "attempts": 1
+   },
+   "seconds": 5.51,
+   "violations": null
+  }
+ ]
+}

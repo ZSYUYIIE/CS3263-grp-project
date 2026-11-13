@@ -1,0 +1,31 @@
+{
+ "id": "q2-S5-008",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "not a plan",
+ "seconds": 13.61,
+ "usage": {
+  "prompt_tokens": 9939,
+  "total_tokens": 10705,
+  "completion_tokens": 766,
+  "finish_reason": "stop",
+  "request_seconds": 13.61,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS3235 prerequisite CS2106 is not completed and cannot be planned before semester 8 due to its own prerequisites (CS2100) which require CS1010 variants; CS2100 is not in the 'must take' list but is required for CS3235, creating a dependency chain that cannot be satisfied by semester 8 given the fixed slots for CS3230/4330/3241.\", \"CS3241 is fixed in Sem 5, but its prerequisite CS2113 requires CS2040S (completed) and CS2030S (completed), so it is eligible. However, CS3230 is fixed in Sem 4. CS3230 requires CS1231 (not completed). The student has not listed CS1231 as completed or required, but it is a prerequisite. If CS1231 is not taken, CS3230 cannot be taken. If it is taken, it must be before Sem 4. Sem 3 has no courses listed. Sem 4 has CS3230. Sem 5 has CS3241. Sem 8 has CS3235. CS4330 must be with CS3230 (Sem 4). CS4330 requires CS2220. CS2220 requires CS2040S (completed). So CS2220 must be taken before Sem 4. If CS2220 is taken in Sem 3, Sem 3 has CS2220. Sem 4 has CS3230, CS4330. Sem 5 has CS3241. Sem 8 has CS3235. CS3235 requires CS2106. CS2106 requires CS2100. CS2100 requires CS1010 variant. CS1010 variant is not completed. CS1010 variant must be taken before CS2100. CS2100 before CS2106. CS2106 before CS3235. This chain requires at least 3 semesters before Sem 8. Sem 6, 7 are available. CS1010 variant in Sem 6? CS2100 in Sem 7? CS2106 in Sem 8? No, CS2106 must be before CS3235. So CS2106 in Sem 7, CS2100 in Sem 6, CS1010 in Sem 5? Sem 5 is full with CS3241. CS1010 in Sem 4? Sem 4 full. Sem 3? Sem 3 has CS2220. So no room for the CS3235 prerequisite chain.\", \"The student's constraints force CS3230 and CS4330 into Sem 4, CS3241 into Sem 5, and CS3235 into Sem 8. The prerequisites for CS3235 (CS2106, CS2100, CS1010 variant) and CS3230 (CS1231) and CS4330 (CS2220) cannot all be satisfied in the remaining slots (Sem 3, 6, 7) without violating the fixed semester constraints or prerequisite ordering.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3235 prerequisite CS2106 is not completed and cannot be planned before semester 8 due to its own prerequisites (CS2100) which require CS1010 variants; CS2100 is not in the 'must take' list but is required for CS3235, creating a dependency chain that cannot be satisfied by semester 8 given the fixed slots for CS3230/4330/3241.",
+   "CS3241 is fixed in Sem 5, but its prerequisite CS2113 requires CS2040S (completed) and CS2030S (completed), so it is eligible. However, CS3230 is fixed in Sem 4. CS3230 requires CS1231 (not completed). The student has not listed CS1231 as completed or required, but it is a prerequisite. If CS1231 is not taken, CS3230 cannot be taken. If it is taken, it must be before Sem 4. Sem 3 has no courses listed. Sem 4 has CS3230. Sem 5 has CS3241. Sem 8 has CS3235. CS4330 must be with CS3230 (Sem 4). CS4330 requires CS2220. CS2220 requires CS2040S (completed). So CS2220 must be taken before Sem 4. If CS2220 is taken in Sem 3, Sem 3 has CS2220. Sem 4 has CS3230, CS4330. Sem 5 has CS3241. Sem 8 has CS3235. CS3235 requires CS2106. CS2106 requires CS2100. CS2100 requires CS1010 variant. CS1010 variant is not completed. CS1010 variant must be taken before CS2100. CS2100 before CS2106. CS2106 before CS3235. This chain requires at least 3 semesters before Sem 8. Sem 6, 7 are available. CS1010 variant in Sem 6? CS2100 in Sem 7? CS2106 in Sem 8? No, CS2106 must be before CS3235. So CS2106 in Sem 7, CS2100 in Sem 6, CS1010 in Sem 5? Sem 5 is full with CS3241. CS1010 in Sem 4? Sem 4 full. Sem 3? Sem 3 has CS2220. So no room for the CS3235 prerequisite chain.",
+   "The student's constraints force CS3230 and CS4330 into Sem 4, CS3241 into Sem 5, and CS3235 into Sem 8. The prerequisites for CS3235 (CS2106, CS2100, CS1010 variant) and CS3230 (CS1231) and CS4330 (CS2220) cannot all be satisfied in the remaining slots (Sem 3, 6, 7) without violating the fixed semester constraints or prerequisite ordering."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

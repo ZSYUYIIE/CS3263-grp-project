@@ -1,0 +1,142 @@
+{
+ "id": "q2-S1-160",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 9.56,
+ "solver_seconds": 0.013,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3164,
+  "total_tokens": 3675,
+  "completion_tokens": 511,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 9.54,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 7,\n\"programme\": \"BComp CS Hons\",\n\"completed\": [\n\"CS2105\",\n\"CS2102\",\n\"CS2109S\",\n\"IS1108\",\n\"CS2101\",\n\"ST2334\",\n\"CS1231S\",\n\"CS3234\",\n\"CS2030S\",\n\"CS2040S\",\n\"CS1101S\",\n\"MA1521\",\n\"CS2106\",\n\"MA1522\",\n\"CS2103T\",\n\"CS3219\",\n\"CS2100\",\n\"CS4225\"\n],\n\"must_take\": [\n\"CS3230\",\n\"ES2660\",\n\"CS4430\",\n\"CS4212\",\n\"CS3103\"\n],\n\"early\": [\n\"ES2660\"\n],\n\"late\": [\n\"CS3230\"\n],\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"ES2660\",\n\"b\": \"CS3230\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4430\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4212\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3103\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3230\",\n\"b\": \"CS4212\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"ES2660\",\n\"sem\": 8,\n\"strength\": \"prefer\"\n}\n],\n\"unsupported\": [\n\"I don't want one semester much heavier than another\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "CS2105",
+   "CS2102",
+   "CS2109S",
+   "IS1108",
+   "CS2101",
+   "ST2334",
+   "CS1231S",
+   "CS3234",
+   "CS2030S",
+   "CS2040S",
+   "CS1101S",
+   "MA1521",
+   "CS2106",
+   "MA1522",
+   "CS2103T",
+   "CS3219",
+   "CS2100",
+   "CS4225"
+  ],
+  "must_take": [
+   "CS3230",
+   "ES2660",
+   "CS4430",
+   "CS4212",
+   "CS3103"
+  ],
+  "early": [
+   "ES2660"
+  ],
+  "late": [
+   "CS3230"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "ES2660",
+    "b": "CS3230",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4430",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4212",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3103",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3230",
+    "b": "CS4212",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "ES2660",
+    "sem": 8,
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "I don't want one semester much heavier than another"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 8,
+  "plan": {
+   "7": [
+    "CS2104",
+    "CS3103",
+    "CS3231",
+    "ES2660"
+   ],
+   "8": [
+    "CS3230",
+    "CS4212",
+    "CS4430"
+   ]
+  },
+  "mc_per_semester": {
+   "7": 16,
+   "8": 12
+  },
+  "preferences_met": [
+   "ES2660 as early as possible",
+   "CS3230 as late as possible"
+  ],
+  "preferences_not_met": [
+   "CS3230 before CS4212",
+   "ES2660 in semester 8"
+  ],
+  "added_prerequisites": [
+   "CS2104",
+   "CS3231"
+  ],
+  "not_applied": [
+   "I don't want one semester much heavier than another"
+  ]
+ }
+}

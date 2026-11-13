@@ -1,0 +1,44 @@
+{
+ "id": "q2-S4-297",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 10.12,
+ "usage": {
+  "prompt_tokens": 21904,
+  "total_tokens": 22203,
+  "completion_tokens": 299,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 10.12,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"7\": [\n      \"CS3227\",\n      \"CS4218\",\n      \"ST2334\"\n    ],\n    \"8\": [\n      \"CS3235\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3235 requires CS2107 which is not completed; planned for Sem 8.\",\n    \"CS3227, CS4218, and ST2334 are planned in Sem 7 as requested.\",\n    \"All prerequisites for planned courses are satisfied by completed courses.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "7": [
+    "CS3227",
+    "CS4218",
+    "ST2334"
+   ],
+   "8": [
+    "CS3235"
+   ]
+  },
+  "reasons": [
+   "CS3235 requires CS2107 which is not completed; planned for Sem 8.",
+   "CS3227, CS4218, and ST2334 are planned in Sem 7 as requested.",
+   "All prerequisites for planned courses are satisfied by completed courses."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,59 @@
+{
+ "id": "q2-S1-003",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 2,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 79.32,
+ "usage": {
+  "prompt_tokens": 8970,
+  "total_tokens": 15554,
+  "completion_tokens": 6584,
+  "prompt_tokens_details": {
+   "cached_tokens": 1664,
+   "created_cache_tokens": 7296
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 6418
+  },
+  "finish_reason": "stop",
+  "request_seconds": 79.32,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"1\":[\"CS1010\"],\"2\":[\"CS2040\",\"CS2030\",\"EE2213\"],\"3\":[\"CG2271\",\"CG3201\"],\"4\":[\"CS4215\"],\"6\":[\"CS2100\",\"CS4262\"]},\"reasons\":[\"Plans the required CS2100, CS4215 and CS4262 plus only their prerequisites, for 36 MC total.\",\"CS4215 is in semester 4 before CS2100 and CS4262; CS2100 and CS4262 are together in semester 6 as preferred.\",\"CS2100 is placed in semester 6 to satisfy the semester-6 and together-with-CS4262 wishes, so it is not as early as possible.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1010"
+   ],
+   "2": [
+    "CS2040",
+    "CS2030",
+    "EE2213"
+   ],
+   "3": [
+    "CG2271",
+    "CG3201"
+   ],
+   "4": [
+    "CS4215"
+   ],
+   "6": [
+    "CS2100",
+    "CS4262"
+   ]
+  },
+  "reasons": [
+   "Plans the required CS2100, CS4215 and CS4262 plus only their prerequisites, for 36 MC total.",
+   "CS4215 is in semester 4 before CS2100 and CS4262; CS2100 and CS4262 are together in semester 6 as preferred.",
+   "CS2100 is placed in semester 6 to satisfy the semester-6 and together-with-CS4262 wishes, so it is not as early as possible."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

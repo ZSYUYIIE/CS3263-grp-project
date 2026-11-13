@@ -1,0 +1,46 @@
+{
+ "id": "q2-S3-068",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 47.8,
+ "usage": {
+  "prompt_tokens": 32351,
+  "total_tokens": 35278,
+  "completion_tokens": 2927,
+  "finish_reason": "stop",
+  "request_seconds": 47.8,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"6\": [\"CS2106\", \"CS2105\"], \"7\": [\"CP3880\", \"CS3219\", \"CS3210\"], \"8\": [\"CS4226\", \"CS2109S\", \"CS4231\"]}, \"reasons\": [\"CS3219 is a required module and is planned in Sem 7.\", \"CS4226 is offered in Sem 1 (odd), so it is correctly placed in Sem 8 (Y4S2 is even, wait. Sem 8 is Y4S2, which is Semester 2 of the academic year. CS4226 is offered Sem 1 only. This is a violation. I must place CS4226 in an odd semester. The remaining odd semesters are 5, 7. Sem 5 is before current. Sem 7 is current ATAP semester. ATAP allows max 8 MC other courses. CS4226 is 4 MC. If I put CS4226 in Sem 7, I can't put CS3219 and CS3210 there too if they exceed 8 MC. CS3219 (4) + CS3210 (4) + CS4226 (4) = 12 MC. Too much. Can I move CS3210 or CS3219? CS3219 is required. CS3210 is added for CS4231. If I move CS3210 to Sem 8, Sem 7 has CP3880, CS3219, CS4226 (8 MC). Sem 8 has CS2109S, CS4231, CS3210. CS4231 needs CS3210 (Sem 8? No, prereq must be completed or corequisite in same or earlier. If CS3210 is in Sem 8, it is corequisite. Is CS3210 a corequisite for CS4231? No, it's a prerequisite. So CS3210 must be completed before Sem 8. So CS3210 must be in Sem 7 or earlier. If CS3210 is in Sem 7, Sem 7 has CP3880, CS3219, CS3210 (8 MC). Then CS4226 cannot be in Sem 7. CS4226 must be in Sem 5? Student is in Y2S2 (Sem 6). Sem 5 is past. So CS4226 cannot be taken? Wait. 'Future years are assumed to offer courses as AY2026/27 does.' Sem 8 is Y4S2. CS4226 is offered Sem 1. Sem 1 of Y4 is Sem 7. So CS4226 can be taken in Sem 7. But Sem 7 is ATAP. ATAP limit 8 MC for other courses. CS3219 (4) + CS3210 (4) = 8 MC. If I add CS4226 (4), total 12 MC. Exceeds limit. Can I drop CS3210 from Sem 7? No, CS4231 needs it. Can I drop CS3219 from Sem 7? No, it's required. Can I take CS3219 in Sem 8? Sem 8 is even. CS3219 is offered Sem 1 and Sem 2. So yes. If CS3219 is in Sem 8, Sem 7 has CP3880, CS3210, CS4226 (8 MC). Sem 8 has CS2109S, CS4231, CS3219. CS4231 needs CS3210 (Sem 7, completed). OK. CS2109S in Sem 8. CS4226 in Sem 7. This works. Soft wish: CS4226 and CS2109S together? No, they are in different semesters. Can I put both in Sem 8? No, CS4226 not offered Sem 2. Can I put both in Sem 7? No, MC limit. So soft wish cannot be met. CS2109S as late as possible? Sem 8 is later than Sem 7. So Sem 8 is good. CS2106 in Sem 6. CS2105 in Sem 6. This plan satisfies all hard rules.\"]}}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS2106",
+    "CS2105"
+   ],
+   "7": [
+    "CP3880",
+    "CS3219",
+    "CS3210"
+   ],
+   "8": [
+    "CS4226",
+    "CS2109S",
+    "CS4231"
+   ]
+  },
+  "reasons": [
+   "CS3219 is a required module and is planned in Sem 7.",
+   "CS4226 is offered in Sem 1 (odd), so it is correctly placed in Sem 8 (Y4S2 is even, wait. Sem 8 is Y4S2, which is Semester 2 of the academic year. CS4226 is offered Sem 1 only. This is a violation. I must place CS4226 in an odd semester. The remaining odd semesters are 5, 7. Sem 5 is before current. Sem 7 is current ATAP semester. ATAP allows max 8 MC other courses. CS4226 is 4 MC. If I put CS4226 in Sem 7, I can't put CS3219 and CS3210 there too if they exceed 8 MC. CS3219 (4) + CS3210 (4) + CS4226 (4) = 12 MC. Too much. Can I move CS3210 or CS3219? CS3219 is required. CS3210 is added for CS4231. If I move CS3210 to Sem 8, Sem 7 has CP3880, CS3219, CS4226 (8 MC). Sem 8 has CS2109S, CS4231, CS3210. CS4231 needs CS3210 (Sem 8? No, prereq must be completed or corequisite in same or earlier. If CS3210 is in Sem 8, it is corequisite. Is CS3210 a corequisite for CS4231? No, it's a prerequisite. So CS3210 must be completed before Sem 8. So CS3210 must be in Sem 7 or earlier. If CS3210 is in Sem 7, Sem 7 has CP3880, CS3219, CS3210 (8 MC). Then CS4226 cannot be in Sem 7. CS4226 must be in Sem 5? Student is in Y2S2 (Sem 6). Sem 5 is past. So CS4226 cannot be taken? Wait. 'Future years are assumed to offer courses as AY2026/27 does.' Sem 8 is Y4S2. CS4226 is offered Sem 1. Sem 1 of Y4 is Sem 7. So CS4226 can be taken in Sem 7. But Sem 7 is ATAP. ATAP limit 8 MC for other courses. CS3219 (4) + CS3210 (4) = 8 MC. If I add CS4226 (4), total 12 MC. Exceeds limit. Can I drop CS3210 from Sem 7? No, CS4231 needs it. Can I drop CS3219 from Sem 7? No, it's required. Can I take CS3219 in Sem 8? Sem 8 is even. CS3219 is offered Sem 1 and Sem 2. So yes. If CS3219 is in Sem 8, Sem 7 has CP3880, CS3210, CS4226 (8 MC). Sem 8 has CS2109S, CS4231, CS3219. CS4231 needs CS3210 (Sem 7, completed). OK. CS2109S in Sem 8. CS4226 in Sem 7. This works. Soft wish: CS4226 and CS2109S together? No, they are in different semesters. Can I put both in Sem 8? No, CS4226 not offered Sem 2. Can I put both in Sem 7? No, MC limit. So soft wish cannot be met. CS2109S as late as possible? Sem 8 is later than Sem 7. So Sem 8 is good. CS2106 in Sem 6. CS2105 in Sem 6. This plan satisfies all hard rules."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,49 @@
+{
+ "id": "q2-S4-127",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 3,
+ "end": "valid",
+ "seconds": 10.38,
+ "usage": {
+  "prompt_tokens": 22707,
+  "total_tokens": 23320,
+  "completion_tokens": 613,
+  "finish_reason": "stop",
+  "request_seconds": 10.38,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2102\",\n\"CS3219\",\n\"CS3230\"\n],\n\"6\": [\n\"CS2105\"\n],\n\"7\": [\n\"CS3233\",\n\"CS4234\",\n\"CS4218\"\n],\n\"8\": [\n\"CS4230\"\n]\n},\n\"reasons\": [\n\"CS3233 is offered in Sem 2, so it is moved to Sem 7 to satisfy the prerequisite and soft wish.\",\n\"CS2105 is taken in Sem 6 (exchange semester is Sem 6? No, Y3S2 is Sem 6. Wait. Y3S1=5, Y3S2=6. Student is away on exchange in Y3S2. So Sem 6 is empty/exchange. CS2105 must be in Sem 5 or 7. Sem 5 is full with 3 modules? No, limit is 4. Let's re-evaluate Sem 5 capacity.\",\n\"Re-evaluating Sem 5: CS2102 (req met), CS3219 (req met), CS3230 (req met). That's 3 modules. CS2105 req is CS2040S (completed). CS2105 can be in Sem 5. If I put CS2105 in Sem 5, I have 4 modules. Then Sem 6 is exchange (empty). Sem 7 has CS3233, CS4234, CS4218. Sem 8 has CS4230. This works better and puts CS2105 earlier.\"\n]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS3219",
+    "CS3230"
+   ],
+   "6": [
+    "CS2105"
+   ],
+   "7": [
+    "CS3233",
+    "CS4234",
+    "CS4218"
+   ],
+   "8": [
+    "CS4230"
+   ]
+  },
+  "reasons": [
+   "CS3233 is offered in Sem 2, so it is moved to Sem 7 to satisfy the prerequisite and soft wish.",
+   "CS2105 is taken in Sem 6 (exchange semester is Sem 6? No, Y3S2 is Sem 6. Wait. Y3S1=5, Y3S2=6. Student is away on exchange in Y3S2. So Sem 6 is empty/exchange. CS2105 must be in Sem 5 or 7. Sem 5 is full with 3 modules? No, limit is 4. Let's re-evaluate Sem 5 capacity.",
+   "Re-evaluating Sem 5: CS2102 (req met), CS3219 (req met), CS3230 (req met). That's 3 modules. CS2105 req is CS2040S (completed). CS2105 can be in Sem 5. If I put CS2105 in Sem 5, I have 4 modules. Then Sem 6 is exchange (empty). Sem 7 has CS3233, CS4234, CS4218. Sem 8 has CS4230. This works better and puts CS2105 earlier."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

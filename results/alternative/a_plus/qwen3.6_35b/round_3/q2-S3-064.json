@@ -1,0 +1,64 @@
+{
+ "id": "q2-S3-064",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 3,
+ "end": "cap",
+ "seconds": 62.05,
+ "usage": {
+  "prompt_tokens": 59647,
+  "total_tokens": 62984,
+  "completion_tokens": 3337,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 62.05,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"3\": [\n\"CS2100\",\n\"CS2105\",\n\"CS2109S\",\n\"CS2103T\"\n],\n\"4\": [\n\"CS2101\",\n\"CS2102\",\n\"CS3230\"\n],\n\"5\": [\n\"CS2106\",\n\"CS3219\",\n\"CS3241\",\n\"CS3231\"\n],\n\"6\": [\n\"CS3247\",\n\"CS4430\",\n\"ST2334\"\n],\n\"7\": [\n\"CP3880\"\n]\n},\n\"reasons\": [\n\"Sem 3: CS2100, CS2105, CS2109S, CS2103T (16 MC). Meets soft wishes for CS2100 and pairing CS2109S/CS2103T.\",\n\"Sem 4: CS2101, CS2102, CS3230 (12 MC). CS3230 before CS2101 and CS2106 as required.\",\n\"Sem 5: CS2106, CS3219, CS3241, CS3231 (16 MC). CS3231 added for CS4430 prereq.\",\n\"Sem 6: CS3247, CS4430, ST2334 (12 MC). CS4430 after CS3231. CS3247 after CS3241.\",\n\"Sem 7: CP3880 (ATAP). ATAP is in Sem 7, but Sem 6 is the last semester with academic courses. ATAP rule: 'never in the last semester used (some course must be planned in a later semester)'. This implies the ATAP semester cannot be the final semester of the degree. If Sem 7 is ATAP only, and no courses in Sem 8, then Sem 7 is the last semester. This violates the rule. I must ensure there is a semester after ATAP with courses, or ATAP is not in the last semester. Since no courses remain for Sem 8, I cannot place ATAP in Sem 7 if it is the last semester. I must move ATAP to an earlier semester where other courses <= 8 MC, or extend to Sem 8. Extending to Sem 8 with no courses is not allowed (must have courses). So I must move ATAP. Sem 6 has 12 MC other courses. Too high. Sem 5 has 16 MC. Too high. Sem 4 has 12 MC. Too high. Sem 3 has 16 MC. Too high. Is there a way to reduce other courses in a semester to <= 8 MC? Move ST2334 to Sem 7? Then Sem 6 has 8 MC (CS3247, CS4430). ATAP in Sem 6. Sem 7 has ST2334. Last semester is 7. ATAP in 6 is valid. Sem 6 other courses 8 MC. OK.\",\n\"Revised Plan: Sem 3: CS2100, CS2105, CS2109S, CS2103T (16 MC). Sem 4: CS2101, CS2102, CS3230 (12 MC). Sem 5: CS2106, CS3219, CS3241, CS3231 (16 MC). Sem 6: CS3247, CS4430, CP3880 (ATAP). Other courses 8 MC. Sem 7: ST2334 (4 MC).\"\n]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS2105",
+    "CS2109S",
+    "CS2103T"
+   ],
+   "4": [
+    "CS2101",
+    "CS2102",
+    "CS3230"
+   ],
+   "5": [
+    "CS2106",
+    "CS3219",
+    "CS3241",
+    "CS3231"
+   ],
+   "6": [
+    "CS3247",
+    "CS4430",
+    "ST2334"
+   ],
+   "7": [
+    "CP3880"
+   ]
+  },
+  "reasons": [
+   "Sem 3: CS2100, CS2105, CS2109S, CS2103T (16 MC). Meets soft wishes for CS2100 and pairing CS2109S/CS2103T.",
+   "Sem 4: CS2101, CS2102, CS3230 (12 MC). CS3230 before CS2101 and CS2106 as required.",
+   "Sem 5: CS2106, CS3219, CS3241, CS3231 (16 MC). CS3231 added for CS4430 prereq.",
+   "Sem 6: CS3247, CS4430, ST2334 (12 MC). CS4430 after CS3231. CS3247 after CS3241.",
+   "Sem 7: CP3880 (ATAP). ATAP is in Sem 7, but Sem 6 is the last semester with academic courses. ATAP rule: 'never in the last semester used (some course must be planned in a later semester)'. This implies the ATAP semester cannot be the final semester of the degree. If Sem 7 is ATAP only, and no courses in Sem 8, then Sem 7 is the last semester. This violates the rule. I must ensure there is a semester after ATAP with courses, or ATAP is not in the last semester. Since no courses remain for Sem 8, I cannot place ATAP in Sem 7 if it is the last semester. I must move ATAP to an earlier semester where other courses <= 8 MC, or extend to Sem 8. Extending to Sem 8 with no courses is not allowed (must have courses). So I must move ATAP. Sem 6 has 12 MC other courses. Too high. Sem 5 has 16 MC. Too high. Sem 4 has 12 MC. Too high. Sem 3 has 16 MC. Too high. Is there a way to reduce other courses in a semester to <= 8 MC? Move ST2334 to Sem 7? Then Sem 6 has 8 MC (CS3247, CS4430). ATAP in Sem 6. Sem 7 has ST2334. Last semester is 7. ATAP in 6 is valid. Sem 6 other courses 8 MC. OK.",
+   "Revised Plan: Sem 3: CS2100, CS2105, CS2109S, CS2103T (16 MC). Sem 4: CS2101, CS2102, CS3230 (12 MC). Sem 5: CS2106, CS3219, CS3241, CS3231 (16 MC). Sem 6: CS3247, CS4430, CP3880 (ATAP). Other courses 8 MC. Sem 7: ST2334 (4 MC)."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

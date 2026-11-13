@@ -1,0 +1,57 @@
+{
+ "id": "q2-S3-016",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 77.82,
+ "usage": {
+  "prompt_tokens": 11442,
+  "total_tokens": 17934,
+  "completion_tokens": 6492,
+  "prompt_tokens_details": {
+   "cached_tokens": 11264,
+   "created_cache_tokens": 128
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 6346
+  },
+  "finish_reason": "stop",
+  "request_seconds": 77.82,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"4\":[\"CS2109S\"],\"5\":[\"CS3231\"],\"6\":[\"CP3880\",\"CS3230\"],\"7\":[\"CS2102\",\"CS3264\"],\"8\":[\"CS3219\"]},\"reasons\":[\"All six requested courses are planned once, with CP3880 in semester 6 and only 4 MC of other courses there.\",\"CS3231 is in semester 5 and CS3264 is in semester 7, so they are in different semesters.\",\"CS3230 precedes CS2102, which precedes CS3219; CS3230 is placed as late as possible under that chain.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2109S"
+   ],
+   "5": [
+    "CS3231"
+   ],
+   "6": [
+    "CP3880",
+    "CS3230"
+   ],
+   "7": [
+    "CS2102",
+    "CS3264"
+   ],
+   "8": [
+    "CS3219"
+   ]
+  },
+  "reasons": [
+   "All six requested courses are planned once, with CP3880 in semester 6 and only 4 MC of other courses there.",
+   "CS3231 is in semester 5 and CS3264 is in semester 7, so they are in different semesters.",
+   "CS3230 precedes CS2102, which precedes CS3219; CS3230 is placed as late as possible under that chain."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

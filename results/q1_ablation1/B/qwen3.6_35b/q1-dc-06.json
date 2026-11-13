@@ -1,0 +1,50 @@
+{
+ "id": "q1-dc-06",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 1.35,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2794,
+  "total_tokens": 2880,
+  "completion_tokens": 86,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 1.35,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\": \"eligible\", \"target\": \"BT2102\", \"completed\": [\"MA1521\", \"MA1513\", \"IS1108\", \"MA2108S\", \"IS2101\", \"CS2100\", \"CS2030S\", \"CS1101S\", \"CS1231\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "BT2102",
+  "completed": [
+   "MA1521",
+   "MA1513",
+   "IS1108",
+   "MA2108S",
+   "IS2101",
+   "CS2100",
+   "CS2030S",
+   "CS1101S",
+   "CS1231"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "BT2102",
+  "reasons": [
+   "missing prerequisite: EC2303 or BT1101 or BT1101HS or ST1131 or DSA1101 or DSE1101"
+  ],
+  "can_still_become_eligible": true
+ }
+}

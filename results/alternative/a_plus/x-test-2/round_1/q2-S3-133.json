@@ -1,0 +1,53 @@
+{
+ "id": "q2-S3-133",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 26.89,
+ "usage": {
+  "prompt_tokens": 9026,
+  "total_tokens": 11674,
+  "completion_tokens": 2648,
+  "prompt_tokens_details": {
+   "cached_tokens": 8704,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2506
+  },
+  "finish_reason": "stop",
+  "request_seconds": 26.89,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS3210\",\"CS4222\"],\"7\":[\"CS3237\",\"CS4223\"],\"8\":[\"CS2101\",\"CS2102\",\"ES2660\"]},\"reasons\":[\"CS3210 is added as the prerequisite for CS4223; CS4222 is in semester 6 so it comes before CS4223.\",\"CS3237 is in semester 7, its only offering, and must precede CS2101, so CS2101 is in semester 8.\",\"CS2102 is placed as late as possible in semester 8; every used semester has 2 to 4 modules.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS3210",
+    "CS4222"
+   ],
+   "7": [
+    "CS3237",
+    "CS4223"
+   ],
+   "8": [
+    "CS2101",
+    "CS2102",
+    "ES2660"
+   ]
+  },
+  "reasons": [
+   "CS3210 is added as the prerequisite for CS4223; CS4222 is in semester 6 so it comes before CS4223.",
+   "CS3237 is in semester 7, its only offering, and must precede CS2101, so CS2101 is in semester 8.",
+   "CS2102 is placed as late as possible in semester 8; every used semester has 2 to 4 modules."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

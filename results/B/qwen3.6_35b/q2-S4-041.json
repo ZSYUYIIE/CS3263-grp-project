@@ -1,0 +1,84 @@
+{
+ "id": "q2-S4-041",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 8.32,
+ "solver_seconds": 0.25,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3115,
+  "total_tokens": 3536,
+  "completion_tokens": 421,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 8.07,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"current_sem\": 5,\n  \"completed\": [\n    \"CS1231S\",\n    \"MA1522\",\n    \"CS1101S\",\n    \"CS2040S\",\n    \"CS2030S\",\n    \"MA1521\",\n    \"ES2660\",\n    \"IS1108\"\n  ],\n  \"must_take\": [\n    \"CS4236\",\n    \"CS4222\",\n    \"CS4330\",\n    \"CS2103T\",\n    \"CS2101\",\n    \"CS4353\",\n    \"CS2105\"\n  ],\n  \"mc_max\": 8,\n  \"objective\": \"earliest_graduation\",\n  \"rules\": [\n    {\n      \"type\": \"same_sem\",\n      \"a\": \"CS2103T\",\n      \"b\": \"CS4330\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS4353\",\n      \"b\": \"CS4222\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS4236\",\n      \"sem\": 7,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS4353\",\n      \"b\": \"CS2103T\",\n      \"strength\": \"prefer\"\n    }\n  ],\n  \"early\": [\n    \"CS4353\",\n    \"CS4222\"\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "completed": [
+   "CS1231S",
+   "MA1522",
+   "CS1101S",
+   "CS2040S",
+   "CS2030S",
+   "MA1521",
+   "ES2660",
+   "IS1108"
+  ],
+  "must_take": [
+   "CS4236",
+   "CS4222",
+   "CS4330",
+   "CS2103T",
+   "CS2101",
+   "CS4353",
+   "CS2105"
+  ],
+  "mc_max": 8,
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS2103T",
+    "b": "CS4330",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS4353",
+    "b": "CS4222",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4236",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4353",
+    "b": "CS2103T",
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS4353",
+   "CS4222"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the prerequisites of CS3240; the prerequisites of CS4353; the semesters in which the courses are offered"
+  ]
+ }
+}

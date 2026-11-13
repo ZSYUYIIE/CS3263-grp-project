@@ -1,0 +1,53 @@
+{
+ "id": "q2-S3-119",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 3,
+ "end": "switched to NO_PLAN",
+ "seconds": 57.96,
+ "usage": {
+  "prompt_tokens": 34754,
+  "total_tokens": 39164,
+  "completion_tokens": 4410,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 57.96,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"4\": [\n      \"CS3233\",\n      \"CS2107\",\n      \"ST2334\"\n    ],\n    \"5\": [\n      \"CS2105\",\n      \"CS3219\",\n      \"CS3230\"\n    ],\n    \"6\": [\n      \"CS2109S\",\n      \"CS4222\"\n    ],\n    \"7\": [\n      \"CS4236\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2107 added as prerequisite for CS4236.\",\n    \"CS4236 is offered only in Sem 1, so it must be taken in semester 7.\",\n    \"CS3233 taken before CS2105 to satisfy soft wish.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS3233",
+    "CS2107",
+    "ST2334"
+   ],
+   "5": [
+    "CS2105",
+    "CS3219",
+    "CS3230"
+   ],
+   "6": [
+    "CS2109S",
+    "CS4222"
+   ],
+   "7": [
+    "CS4236"
+   ]
+  },
+  "reasons": [
+   "CS2107 added as prerequisite for CS4236.",
+   "CS4236 is offered only in Sem 1, so it must be taken in semester 7.",
+   "CS3233 taken before CS2105 to satisfy soft wish."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

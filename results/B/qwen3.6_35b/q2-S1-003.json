@@ -1,0 +1,83 @@
+{
+ "id": "q2-S1-003",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.2,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3022,
+  "total_tokens": 3329,
+  "completion_tokens": 307,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 6.2,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 1,\n\"completed\": [],\n\"must_take\": [\n\"CS2100\",\n\"CS4215\",\n\"CS4262\"\n],\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS4215\",\n\"b\": \"CS2100\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4262\",\n\"sem\": 6,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2100\",\n\"sem\": 6,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4215\",\n\"b\": \"CS4262\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4262\",\n\"b\": \"CS2100\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"early\",\n\"a\": \"CS2100\",\n\"b\": null,\n\"strength\": \"prefer\"\n}\n],\n\"early\": [\n\"CS2100\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "completed": [],
+  "must_take": [
+   "CS2100",
+   "CS4215",
+   "CS4262"
+  ],
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS4215",
+    "b": "CS2100",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4262",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2100",
+    "sem": 6,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS4215",
+    "b": "CS4262",
+    "strength": "prefer"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4262",
+    "b": "CS2100",
+    "strength": "prefer"
+   },
+   {
+    "type": "early",
+    "a": "CS2100",
+    "b": null,
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS2100"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [
+  "rules[5].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'early'"
+ ],
+ "answer": {
+  "status": "INVALID_SPEC",
+  "errors": [
+   "rules[5].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'early'"
+  ]
+ }
+}

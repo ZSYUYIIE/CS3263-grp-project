@@ -1,0 +1,48 @@
+{
+ "id": "q2-S1-057",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 61.0,
+ "usage": {
+  "prompt_tokens": 18997,
+  "total_tokens": 21919,
+  "completion_tokens": 2922,
+  "finish_reason": "stop",
+  "request_seconds": 61.0,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2220\"\n    ],\n    \"4\": [\n      \"CS3230\"\n    ],\n    \"5\": [\n      \"CS4220\"\n    ],\n    \"6\": [\n      \"CS4268\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2220 is taken in Sem 3 to satisfy CS4220 prerequisite.\",\n    \"CS3230 is taken in Sem 4 after CS2220 (prereq for CS4268 is CS3230).\",\n    \"CS4220 is taken in Sem 5 after CS2220. CS4268 is in Sem 6 as required.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2220"
+   ],
+   "4": [
+    "CS3230"
+   ],
+   "5": [
+    "CS4220"
+   ],
+   "6": [
+    "CS4268"
+   ]
+  },
+  "reasons": [
+   "CS2220 is taken in Sem 3 to satisfy CS4220 prerequisite.",
+   "CS3230 is taken in Sem 4 after CS2220 (prereq for CS4268 is CS3230).",
+   "CS4220 is taken in Sem 5 after CS2220. CS4268 is in Sem 6 as required."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

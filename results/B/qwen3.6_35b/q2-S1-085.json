@@ -1,0 +1,136 @@
+{
+ "id": "q2-S1-085",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 28.46,
+ "solver_seconds": 0.145,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3142,
+  "total_tokens": 3630,
+  "completion_tokens": 488,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 28.32,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"programme\": \"BComp CS Hons\",\n  \"completed\": [\n    \"CS2103T\",\n    \"CS2100\",\n    \"MA1521\",\n    \"CS1101S\",\n    \"CS2101\",\n    \"CS2040S\",\n    \"ST2334\",\n    \"CS2030S\",\n    \"ES2660\",\n    \"IS1108\",\n    \"CS1231S\",\n    \"MA1522\"\n  ],\n  \"current_sem\": 4,\n  \"must_take\": [\n    \"CS3264\",\n    \"CS4330\",\n    \"CS4268\",\n    \"CS4236\",\n    \"CS3223\",\n    \"CS3235\",\n    \"CS2109S\",\n    \"CS2105\"\n  ],\n  \"mc_max\": 16,\n  \"rules\": [\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS4330\",\n      \"sem\": 6,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS3264\",\n      \"b\": \"CS4268\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS4236\",\n      \"b\": \"CS4330\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS3223\",\n      \"b\": \"CS2109S\",\n      \"strength\": \"prefer\"\n    }\n  ],\n  \"early\": [\n    \"CS4268\",\n    \"CS3223\"\n  ],\n  \"unsupported\": [\n    \"keep my workload roughly the same every semester\"\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "programme": "BComp CS Hons",
+  "completed": [
+   "CS2103T",
+   "CS2100",
+   "MA1521",
+   "CS1101S",
+   "CS2101",
+   "CS2040S",
+   "ST2334",
+   "CS2030S",
+   "ES2660",
+   "IS1108",
+   "CS1231S",
+   "MA1522"
+  ],
+  "current_sem": 4,
+  "must_take": [
+   "CS3264",
+   "CS4330",
+   "CS4268",
+   "CS4236",
+   "CS3223",
+   "CS3235",
+   "CS2109S",
+   "CS2105"
+  ],
+  "mc_max": 16,
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS4330",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3264",
+    "b": "CS4268",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4236",
+    "b": "CS4330",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3223",
+    "b": "CS2109S",
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS4268",
+   "CS3223"
+  ],
+  "unsupported": [
+   "keep my workload roughly the same every semester"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 7,
+  "plan": {
+   "4": [
+    "CS2102",
+    "CS2107",
+    "CS2109S",
+    "CS3230"
+   ],
+   "5": [
+    "CS2220",
+    "CS3223",
+    "CS3264",
+    "CS4236"
+   ],
+   "6": [
+    "CS2105",
+    "CS2106",
+    "CS4268",
+    "CS4330"
+   ],
+   "7": [
+    "CS3235"
+   ]
+  },
+  "mc_per_semester": {
+   "4": 16,
+   "5": 16,
+   "6": 16,
+   "7": 4
+  },
+  "preferences_met": [
+   "CS3223 and CS2109S in different semesters",
+   "CS4268 as early as possible",
+   "CS3223 as early as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS2102",
+   "CS2106",
+   "CS2107",
+   "CS2220",
+   "CS3230"
+  ],
+  "not_applied": [
+   "keep my workload roughly the same every semester"
+  ]
+ }
+}

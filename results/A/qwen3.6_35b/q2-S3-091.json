@@ -1,0 +1,41 @@
+{
+ "id": "q2-S3-091",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 27.29,
+ "usage": {
+  "prompt_tokens": 9974,
+  "total_tokens": 11333,
+  "completion_tokens": 1359,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 27.29,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2105\",\n      \"CS3219\"\n    ],\n    \"6\": [\n      \"CS2102\"\n    ],\n    \"7\": [\n      \"CS4223\"\n    ]\n  },\n  \"reasons\": [\n    \"All required courses (CS4223, CS2105, CS3219, CS2102) are planned.\",\n    \"Prerequisites are satisfied: CS2105 requires CS2040S (completed); CS3219 requires CS2103T (completed); CS2102 requires CS2030S and CS1231S (completed); CS4223 requires CS2106 and CS3210/CS3220/CG3207. Note: CS4223 prerequisite includes CS3210, CS3220, or CG3207. None of these are completed or planned. However, looking at the records: CS4223 prerequisite is (CS2106 or CG2271) and (CS3210 or CS3220 or CG3207). The student has CS2106. They do NOT have CS3210, CS3220, or CG3207. Therefore, CS4223 cannot be taken unless one of those is taken. The student did not list them as 'must take'. But rule 8 says 'Add a course... ONLY when it is a prerequisite needed by a planned course'. So I must add CS3210, CS3220, or CG3207. Let's check their prerequisites. CS3210: CS2100/CS2100DE/CS2100HS/CG2007/EE2028/CG2028/EE2024. Student has CS2100. So CS3210 is eligible. CS3220: not offered. CG3207: EE2026 and (CG2028 or EE2028). Student has neither. So only CS3210 is viable. I must add CS3210.\",\n    \"Re-evaluating plan with CS3210 added. CS3210 prereq: CS2100 (completed). So CS3210 can be taken in Sem 5. CS4223 prereq: CS2106 (completed) AND (CS3210 or ...). So CS3210 must be before CS4223. CS3219 must be before CS2102. CS2105 before CS4223. Soft wishes: CS3219 in Sem 5. CS2102 as early as possible. CS2105 as late as possible. Minimize total MC. Minimize last semester. Current Sem 5. Must take: CS3210, CS3219, CS2105, CS2102, CS4223. Constraints: CS3219 < CS2102. CS2105 < CS4223. CS3210 < CS4223. Soft: CS3219 in 5. CS2102 early. CS2105 late. Min MC. All are 4 MC. Total 20 MC. No ATAP mentioned. Min 2 modules per semester if taken. Sem 5: CS3219 (soft wish). Can we add CS3210? Yes. Sem 5: CS3219, CS3210. Sem 6: CS2102 (early). Can we add CS2105? No, want late. Sem 7: CS4223. Need CS2105 before. So CS2105 in Sem 6 or 7? If Sem 6, then Sem 6 has CS2102, CS2105. Sem 7 has CS4223. This works. CS2105 is late (Sem 6 vs Sem 5). Can CS2105 be Sem 7? No, must be before CS4223 (Sem 7). So Sem 6 is latest for CS2105 if CS4223 is Sem 7. Can CS4223 be Sem 8? Yes. If CS4223 Sem 8, CS2105 can be Sem 7. But we want to minimize last semester (Step 1 optimization: smallest last semester used). So Sem 7 is better than Sem 8. So CS4223 in Sem 7. CS2105 in Sem 6. CS2102 in Sem 6 (as early as possible, Sem 5 is taken by CS3219/CS3210? CS3219 soft wish Sem 5. If we put CS2102 in Sem 5, we violate soft wish? No, soft wish is 'if possible'. But CS3219 in Sem 5 is a soft wish. If we put CS2102 in Sem 5, we can't put CS3219 in Sem 5 unless we drop CS3219 from Sem 5. But we want to meet soft wishes. Let's try to keep CS3219 in Sem 5. Sem 5: CS3219, CS3210. Sem 6: CS2102, CS2105. Sem 7: CS4223. This satisfies all hard constraints. CS2102 is Sem 6 (early). CS2105 is Sem 6 (late relative to Sem 5). CS3219 is Sem 5 (soft wish met). Total MC: 20. Last semester 7. This seems optimal.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2105",
+    "CS3219"
+   ],
+   "6": [
+    "CS2102"
+   ],
+   "7": [
+    "CS4223"
+   ]
+  },
+  "reasons": [
+   "All required courses (CS4223, CS2105, CS3219, CS2102) are planned.",
+   "Prerequisites are satisfied: CS2105 requires CS2040S (completed); CS3219 requires CS2103T (completed); CS2102 requires CS2030S and CS1231S (completed); CS4223 requires CS2106 and CS3210/CS3220/CG3207. Note: CS4223 prerequisite includes CS3210, CS3220, or CG3207. None of these are completed or planned. However, looking at the records: CS4223 prerequisite is (CS2106 or CG2271) and (CS3210 or CS3220 or CG3207). The student has CS2106. They do NOT have CS3210, CS3220, or CG3207. Therefore, CS4223 cannot be taken unless one of those is taken. The student did not list them as 'must take'. But rule 8 says 'Add a course... ONLY when it is a prerequisite needed by a planned course'. So I must add CS3210, CS3220, or CG3207. Let's check their prerequisites. CS3210: CS2100/CS2100DE/CS2100HS/CG2007/EE2028/CG2028/EE2024. Student has CS2100. So CS3210 is eligible. CS3220: not offered. CG3207: EE2026 and (CG2028 or EE2028). Student has neither. So only CS3210 is viable. I must add CS3210.",
+   "Re-evaluating plan with CS3210 added. CS3210 prereq: CS2100 (completed). So CS3210 can be taken in Sem 5. CS4223 prereq: CS2106 (completed) AND (CS3210 or ...). So CS3210 must be before CS4223. CS3219 must be before CS2102. CS2105 before CS4223. Soft wishes: CS3219 in Sem 5. CS2102 as early as possible. CS2105 as late as possible. Minimize total MC. Minimize last semester. Current Sem 5. Must take: CS3210, CS3219, CS2105, CS2102, CS4223. Constraints: CS3219 < CS2102. CS2105 < CS4223. CS3210 < CS4223. Soft: CS3219 in 5. CS2102 early. CS2105 late. Min MC. All are 4 MC. Total 20 MC. No ATAP mentioned. Min 2 modules per semester if taken. Sem 5: CS3219 (soft wish). Can we add CS3210? Yes. Sem 5: CS3219, CS3210. Sem 6: CS2102 (early). Can we add CS2105? No, want late. Sem 7: CS4223. Need CS2105 before. So CS2105 in Sem 6 or 7? If Sem 6, then Sem 6 has CS2102, CS2105. Sem 7 has CS4223. This works. CS2105 is late (Sem 6 vs Sem 5). Can CS2105 be Sem 7? No, must be before CS4223 (Sem 7). So Sem 6 is latest for CS2105 if CS4223 is Sem 7. Can CS4223 be Sem 8? Yes. If CS4223 Sem 8, CS2105 can be Sem 7. But we want to minimize last semester (Step 1 optimization: smallest last semester used). So Sem 7 is better than Sem 8. So CS4223 in Sem 7. CS2105 in Sem 6. CS2102 in Sem 6 (as early as possible, Sem 5 is taken by CS3219/CS3210? CS3219 soft wish Sem 5. If we put CS2102 in Sem 5, we violate soft wish? No, soft wish is 'if possible'. But CS3219 in Sem 5 is a soft wish. If we put CS2102 in Sem 5, we can't put CS3219 in Sem 5 unless we drop CS3219 from Sem 5. But we want to meet soft wishes. Let's try to keep CS3219 in Sem 5. Sem 5: CS3219, CS3210. Sem 6: CS2102, CS2105. Sem 7: CS4223. This satisfies all hard constraints. CS2102 is Sem 6 (early). CS2105 is Sem 6 (late relative to Sem 5). CS3219 is Sem 5 (soft wish met). Total MC: 20. Last semester 7. This seems optimal."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

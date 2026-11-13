@@ -1,0 +1,121 @@
+{
+ "id": "q2-S4-231",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 4.34,
+ "solver_seconds": 0.05,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2774,
+  "total_tokens": 3183,
+  "completion_tokens": 409,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 241
+  },
+  "finish_reason": "stop",
+  "request_seconds": 4.29,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"completed\":[\"CS2030S\",\"CS2040S\",\"CS1231S\",\"CS1101S\",\"MA1521\",\"MA1522\",\"IS1108\"],\"current_sem\":3,\"must_take\":[\"CS4353\",\"CS3240\",\"CS3249\",\"CS4249\",\"CS3230\",\"CS3219\"],\"early\":[\"CS4353\"],\"late\":[\"CS3249\"],\"rules\":[{\"type\":\"same_sem\",\"a\":\"CS4249\",\"b\":\"CS3230\",\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS3240\",\"b\":\"CS4353\",\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS3249\",\"b\":\"CS4249\",\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "completed": [
+   "CS2030S",
+   "CS2040S",
+   "CS1231S",
+   "CS1101S",
+   "MA1521",
+   "MA1522",
+   "IS1108"
+  ],
+  "current_sem": 3,
+  "must_take": [
+   "CS4353",
+   "CS3240",
+   "CS3249",
+   "CS4249",
+   "CS3230",
+   "CS3219"
+  ],
+  "early": [
+   "CS4353"
+  ],
+  "late": [
+   "CS3249"
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS4249",
+    "b": "CS3230",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3240",
+    "b": "CS4353",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3249",
+    "b": "CS4249",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 8,
+  "plan": {
+   "3": [],
+   "4": [
+    "CS2111"
+   ],
+   "5": [
+    "CS3240"
+   ],
+   "6": [
+    "CS2113"
+   ],
+   "7": [
+    "CS3249",
+    "CS4353"
+   ],
+   "8": [
+    "CS3219",
+    "CS3230",
+    "CS4249"
+   ]
+  },
+  "mc_per_semester": {
+   "3": 0,
+   "4": 4,
+   "5": 4,
+   "6": 4,
+   "7": 8,
+   "8": 12
+  },
+  "preferences_met": [
+   "CS3249 before CS4249",
+   "CS4353 as early as possible",
+   "CS3249 as late as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS2111",
+   "CS2113"
+  ]
+ }
+}

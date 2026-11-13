@@ -1,0 +1,47 @@
+{
+ "id": "q2-S4-205",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 2,
+ "end": "valid",
+ "seconds": 20.22,
+ "usage": {
+  "prompt_tokens": 32835,
+  "total_tokens": 34000,
+  "completion_tokens": 1165,
+  "finish_reason": "stop",
+  "request_seconds": 20.22,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2102\",\n      \"CS2105\"\n    ],\n    \"6\": [\n      \"CS3223\"\n    ],\n    \"7\": [\n      \"CS4226\",\n      \"CS2107\"\n    ],\n    \"8\": [\n      \"CS3235\"\n    ]\n  },\n  \"reasons\": [\n    \"CS4226 is offered only in Sem 1, so it must be taken in Sem 7 (Y3S1) or later, not Sem 6.\",\n    \"CS3223 requires CS2102 and CS2040S; CS2102 is taken in Sem 5, allowing CS3223 in Sem 6.\",\n    \"CS3235 requires CS2107, CS2105, and CS2106; CS2107 is taken in Sem 7 to satisfy the prerequisite for Sem 8.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS2105"
+   ],
+   "6": [
+    "CS3223"
+   ],
+   "7": [
+    "CS4226",
+    "CS2107"
+   ],
+   "8": [
+    "CS3235"
+   ]
+  },
+  "reasons": [
+   "CS4226 is offered only in Sem 1, so it must be taken in Sem 7 (Y3S1) or later, not Sem 6.",
+   "CS3223 requires CS2102 and CS2040S; CS2102 is taken in Sem 5, allowing CS3223 in Sem 6.",
+   "CS3235 requires CS2107, CS2105, and CS2106; CS2107 is taken in Sem 7 to satisfy the prerequisite for Sem 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

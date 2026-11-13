@@ -1,0 +1,53 @@
+{
+ "id": "q1-mp-028-h",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 2.45,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2861,
+  "total_tokens": 2980,
+  "completion_tokens": 119,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 2.45,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\n\"query\": \"eligible\",\n\"target\": \"EE2026\",\n\"current_sem\": 6,\n\"completed\": [\n\"CS2030S\",\n\"MA1521\",\n\"CS2100\",\n\"CS1010\",\n\"ESP2107\",\n\"MA3252\",\n\"MA1508E\",\n\"ST1131\",\n\"CS2111\",\n\"IS1108\"\n]\n}",
+ "spec": {
+  "query": "eligible",
+  "target": "EE2026",
+  "current_sem": 6,
+  "completed": [
+   "CS2030S",
+   "MA1521",
+   "CS2100",
+   "CS1010",
+   "ESP2107",
+   "MA3252",
+   "MA1508E",
+   "ST1131",
+   "CS2111",
+   "IS1108"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "EE2026",
+  "semester": 6,
+  "reasons": [
+   "missing prerequisite: EE1111A or EE1111B or EE2111A or CG1111A"
+  ],
+  "can_still_become_eligible": true
+ }
+}

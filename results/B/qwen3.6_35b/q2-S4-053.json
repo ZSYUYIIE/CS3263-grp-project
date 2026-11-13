@@ -1,0 +1,60 @@
+{
+ "id": "q2-S4-053",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 3.82,
+ "solver_seconds": 0.209,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3051,
+  "total_tokens": 3241,
+  "completion_tokens": 190,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 3.61,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 1,\n\"completed\": [],\n\"must_take\": [\n\"CS3230\",\n\"CS3263\",\n\"CS2102\",\n\"CS1101S\",\n\"CS2040S\",\n\"CS4263\",\n\"CS2030S\",\n\"CS4223\",\n\"CS1231S\"\n],\n\"sem_caps\": {\n\"3\": 0\n},\n\"late\": [\n\"CS1101S\",\n\"CS2040S\"\n],\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3230\",\n\"sem\": 5,\n\"strength\": \"must\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "completed": [],
+  "must_take": [
+   "CS3230",
+   "CS3263",
+   "CS2102",
+   "CS1101S",
+   "CS2040S",
+   "CS4263",
+   "CS2030S",
+   "CS4223",
+   "CS1231S"
+  ],
+  "sem_caps": {
+   "3": 0
+  },
+  "late": [
+   "CS1101S",
+   "CS2040S"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3230",
+    "sem": 5,
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the course exclusions (courses that cannot be taken together)"
+  ]
+ }
+}

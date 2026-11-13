@@ -1,0 +1,102 @@
+{
+ "id": "q2-S3-137",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 5.07,
+ "usage": {
+  "prompt_tokens": 25110,
+  "total_tokens": 25382,
+  "completion_tokens": 272,
+  "finish_reason": "stop",
+  "request_seconds": 5.07,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\"CS4223 requires CS3210, CS3220, or CG3207 as prerequisites, none of which are in the required or completed list and cannot be taken due to their own prerequisites (e.g., CG3207 needs EE2026 and CG2028/EE2028).\", \"CS3237 is only offered in Sem 1, but the student is in Sem 6 and must finish by Sem 8, making it impossible to take CS3237 in the remaining semesters.\"]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4223 requires CS3210, CS3220, or CG3207 as prerequisites, none of which are in the required or completed list and cannot be taken due to their own prerequisites (e.g., CG3207 needs EE2026 and CG2028/EE2028).",
+   "CS3237 is only offered in Sem 1, but the student is in Sem 6 and must finish by Sem 8, making it impossible to take CS3237 in the remaining semesters."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"6\": [\"CS2101\", \"CS3237\"], \"7\": [\"CS2102\", \"CS4223\"], \"8\": [\"ES2660\", \"CS4222\"]}, \"reasons\": [\"All prerequisites satisfied for planned courses. ES2660 placed in Y4S2 as required. CS4222 placed in Y4S2 (latest possible). CS3237 and CS4222 are in different semesters. MC limits respected (max 16 MC/sem).\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS2101",
+      "CS3237"
+     ],
+     "7": [
+      "CS2102",
+      "CS4223"
+     ],
+     "8": [
+      "ES2660",
+      "CS4222"
+     ]
+    },
+    "reasons": [
+     "All prerequisites satisfied for planned courses. ES2660 placed in Y4S2 as required. CS4222 placed in Y4S2 (latest possible). CS3237 and CS4222 are in different semesters. MC limits respected (max 16 MC/sem)."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12431,
+    "total_tokens": 12564,
+    "completion_tokens": 133,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.53,
+    "attempts": 1
+   },
+   "seconds": 2.53,
+   "violations": [
+    "R3 CS3237 not offered in Sem 2 (semester 6)",
+    "R4 CS4223 in semester 7: prerequisite not met ((CS2106 or CG2271) and (CS3210 or CS3220 or CG3207))"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\"CS4223 requires CS3210, CS3220, or CG3207 as prerequisites, none of which are in the required or completed list and cannot be taken due to their own prerequisites (e.g., CG3207 needs EE2026 and CG2028/EE2028).\", \"CS3237 is only offered in Sem 1, but the student is in Sem 6 and must finish by Sem 8, making it impossible to take CS3237 in the remaining semesters.\"]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4223 requires CS3210, CS3220, or CG3207 as prerequisites, none of which are in the required or completed list and cannot be taken due to their own prerequisites (e.g., CG3207 needs EE2026 and CG2028/EE2028).",
+     "CS3237 is only offered in Sem 1, but the student is in Sem 6 and must finish by Sem 8, making it impossible to take CS3237 in the remaining semesters."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12679,
+    "total_tokens": 12818,
+    "completion_tokens": 139,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 2.54,
+    "attempts": 1
+   },
+   "seconds": 2.54,
+   "violations": null
+  }
+ ]
+}

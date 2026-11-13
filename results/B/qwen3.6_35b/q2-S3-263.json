@@ -1,0 +1,90 @@
+{
+ "id": "q2-S3-263",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 20.84,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3125,
+  "total_tokens": 3520,
+  "completion_tokens": 395,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 20.84,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 4,\n\"programme\": \"BComp CS Hons\",\n\"completed\": [\n\"ES2660\",\n\"CS1101S\",\n\"CS2103T\",\n\"CS2100\",\n\"MA1521\",\n\"CS2040S\",\n\"CS1231S\",\n\"IS1108\",\n\"MA1522\",\n\"CS2030S\",\n\"CS2101\"\n],\n\"must_take\": [\n\"CS2102\",\n\"ST2334\",\n\"CS3234\",\n\"CS2109S\",\n\"CS3103\",\n\"CS4226\",\n\"CS2105\",\n\"CS3230\"\n],\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS2102\",\n\"b\": \"CS3234\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2105\",\n\"b\": \"CS4226\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3230\",\n\"b\": \"CS3234\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4226\",\n\"b\": \"CS4226\",\n\"strength\": \"prefer\"\n}\n],\n\"late\": [\n\"ST2334\",\n\"CS4226\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "ES2660",
+   "CS1101S",
+   "CS2103T",
+   "CS2100",
+   "MA1521",
+   "CS2040S",
+   "CS1231S",
+   "IS1108",
+   "MA1522",
+   "CS2030S",
+   "CS2101"
+  ],
+  "must_take": [
+   "CS2102",
+   "ST2334",
+   "CS3234",
+   "CS2109S",
+   "CS3103",
+   "CS4226",
+   "CS2105",
+   "CS3230"
+  ],
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2102",
+    "b": "CS3234",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2105",
+    "b": "CS4226",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3230",
+    "b": "CS3234",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS4226",
+    "b": "CS4226",
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "ST2334",
+   "CS4226"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [
+  "rules[3]: a and b must be different courses"
+ ],
+ "answer": {
+  "status": "INVALID_SPEC",
+  "errors": [
+   "rules[3]: a and b must be different courses"
+  ]
+ }
+}

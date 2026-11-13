@@ -1,0 +1,56 @@
+{
+ "id": "q2-S3-050",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 80.85,
+ "usage": {
+  "prompt_tokens": 13005,
+  "total_tokens": 17175,
+  "completion_tokens": 4170,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 80.85,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS3230\", \"CS2105\", \"IS1108\"], \"5\": [\"CS2109S\", \"CS3240\", \"CS2102\"], \"6\": [\"CS4246\", \"CS3219\", \"CS3231\"], \"7\": [\"CS2106\", \"CS3282\", \"CS3210\"]}, \"reasons\": [\"All prerequisites satisfied by completed modules or earlier planned modules.\", \"CS3240 placed in Sem 5 as early as possible given its prerequisite CS2111 is not required but CS3240 requires CS2111 or NM2207; wait, CS3240 prerequisite is CS2111 or NM2207. Student has neither. I must add CS2111 or NM2207. NM2111 is not in the 'must' list but is a prerequisite. Rule 8 allows adding prerequisites. NM2207 is offered Sem 2. CS2111 is offered Sem 2. I should add NM2207 or CS2111 as early as possible. Let's add NM2207 in Sem 4. Then CS3240 can be Sem 5. This matches the plan.\", \"CS3210 prerequisite is CS2100 (completed). CS2106 prerequisite is CS2100 (completed). CS3282 prerequisite is CS3281. Wait, CS3282 prerequisite is CS3281. Student did not list CS3281 as required. But CS3282 is listed. I must add CS3281. CS3281 prerequisite is CS2103 or ... Student has CS2103T. So CS3281 is eligible. CS3281 is offered Sem 2. I must add CS3281 before CS3282. I will add CS3281 in Sem 6 or 7? CS3282 is Sem 2 only. So CS3281 must be Sem 1 or 2 of a year. Sem 5 is Y3S1 (odd). Sem 6 is Y3S2 (even). CS3281 is Sem 2. So CS3281 must be in Sem 6, 4, 2... Sem 4 is Y2S2. Can I take CS3281 in Sem 4? Prereq CS2103T is completed. Yes. So CS3281 in Sem 4. Then CS3282 in Sem 6. Let's re-evaluate Sem 4. Sem 4: CS3230, CS2105, IS1108, CS3281. That's 16 MC. Sem 5: CS2109S, CS3240, CS2102. 12 MC. Sem 6: CS4246, CS3219, CS3231, CS3282. 16 MC. Sem 7: CS2106, CS3210. 8 MC. This works. CS3210 before CS2106? Sem 7 vs Sem 7. They are in the same semester. Rule 4: Prerequisites strictly earlier. Corequisites same or earlier. CS3210 is not a prereq for CS2106. The student said \"CS3210 must come before CS2106\". This is a hard constraint/wish? \"CS3210 must come before CS2106\" is listed with \"definitely can't have... together\". It sounds like a hard constraint. If so, CS3210 must be in Sem 6 or earlier. But Sem 6 is full with 16 MC (CS4246, CS3219, CS3231, CS3282). Can I move something? CS3219 prereq YSC3232 or CS2103... Student has CS2103T. CS3219 is Sem 1/2. CS3231 is Sem 1. CS4246 is Sem 1/2. CS3282 is Sem 2. If CS3210 is Sem 6, I must drop one from Sem 6. CS3219? No, it's required. CS3231? Required. CS4246? Required. CS3282? Required. So Sem 6 is full. CS3210 cannot be Sem 6. Can CS3210 be Sem 5? Sem 5 has CS2109S, CS3240, CS2102. 12 MC. Limit 16. I can add CS3210 (4 MC) to Sem 5. Total 16 MC. Then CS2106 is Sem 7. CS3210 (Sem 5) before CS2106 (Sem 7). This satisfies the constraint. So Sem 5: CS2109S, CS3240, CS2102, CS3210. Sem 6: CS4246, CS3219, CS3231, CS3282. Sem 7: CS2106. This is better for \"CS3210 before CS2106\". Also CS3240 is Sem 5 (as early as possible after adding NM2207 in Sem 4). CS4246 is Sem 6 (as early as possible, prereq CS3243/CS3263? No, prereq is EE2012... and CS3243/CS3263. Student has neither CS3243 nor CS3263. I must add CS3243 or CS3263. CS3243 is Sem 2. CS3263 is Sem 1/2. CS3243 prereq CS2040... and CS1231... Student has CS2040S and CS1231S. So CS3243 is eligible. CS3243 is 4 MC. I must add CS3243. CS3243 is offered Sem 2. So CS3243 must be in Sem 4, 6, 2... Sem 4 is full (16 MC). Sem 6 is full (16 MC). Can I put CS3243 in Sem 5? Sem 5 has 16 MC now. If I add CS3243, I exceed 16. I must move something. CS3210 is in Sem 5. Can CS3210 go to Sem 4? Sem 4 has CS3230, CS2105, IS1108, CS3281. 16 MC. Full. Can I move CS3281? CS3281 is Sem 2. Must be Sem 4, 6, 2... Sem 4 is full. Sem 6 is full. This is getting tight. Let's restart the plan with all prerequisites.\n\nRequired: CS3230, CS2105, CS2109S, IS1108, CS3240, CS2102, CS4246, CS3219, CS3231, CS2106, CS3282, CS3210.\nPrereqs to add:\n- CS3240 needs CS2111 or NM2207. Add NM2207 (Sem 2).\n- CS3282 needs CS3281. Add CS3281 (Sem 2).\n- CS4246 needs CS3243 or CS3263. Add CS3243 (Sem 2).\n- CS2109S needs MA1521 (done) and CS2040S (done) and YSC2229 or ... YSC2229 is not offered. CS2040S is done. So CS2109S is eligible.\n- CS2102 needs CS1231S (done) and CS2030S (done). Eligible.\n- CS3230 needs CS2040S (done) and CS1231S (done). Eligible.\n- CS3219 needs CS2103T (done). Eligible.\n- CS3231 needs CS1231S (done) and CS2040S (done). Eligible.\n- CS2106 needs CS2100 (done). Eligible.\n- CS3210 needs CS2100 (done). Eligible.\n- CS2105 needs CS2040S (done). Eligible.\n\nCourses to plan:\n1. NM2207 (Sem 2)\n2. CS3281 (Sem 2)\n3. CS3243 (Sem 2)\n4. CS3230 (Sem 1/2)\n5. CS2105 (Sem 1/2)\n6. CS2109S (Sem 1/2)\n7. IS1108 (Sem 1/2)\n8. CS3240 (Sem 1) - Needs NM2207.\n9. CS2102 (Sem 1/2)\n10. CS4246 (Sem 1/2) - Needs CS3243.\n11. CS3219 (Sem 1/2)\n12. CS3231 (Sem 1)\n13. CS2106 (Sem 1/2)\n14. CS3282 (Sem 2) - Needs CS3281.\n15. CS3210 (Sem 1/2)\n\nConstraints:\n- CS3210 before CS2106.\n- CS2106 and CS3231 not together.\n- CS2106 and CS3282 not together.\n- Fewest total credits.\n- CS3240 as early as possible.\n- CS4246 as early as possible.\n\nSem 4 (Y2S2, Sem 2):\n- NM2207 (4)\n- CS3281 (4)\n- CS3243 (4)\n- CS3230 (4)\nTotal 16 MC.\n\nSem 5 (Y3S1, Sem 1):\n- CS3240 (4) - Early as possible.\n- CS3231 (4) - Sem 1 only.\n- CS2105 (4)\n- CS2109S (4)\nTotal 16 MC.\n\nSem 6 (Y3S2, Sem 2):\n- CS4246 (4) - Early as possible (needs CS3243 in Sem 4).\n- CS3219 (4)\n- CS2102 (4)\n- CS3282 (4) - Needs CS3281 in Sem 4.\nTotal 16 MC.\n\nSem 7 (Y4S1, Sem 1):\n- CS2106 (4)\n- CS3210 (4)\nTotal 8 MC.\n\nCheck constraints:\n- CS3210 (Sem 7) before CS2106 (Sem 7)? No, they are in the same semester. The student said \"CS3210 must come before CS2106\". This usually implies strict ordering in time, i.e., different semesters or CS3210 in an earlier semester. If they are in the same semester, is it \"before\"? Usually no. I should separate them.\nCan I move CS3210 to Sem 6? Sem 6 is full (16 MC).\nCan I move CS2106 to Sem 8? Sem 8 is Y4S2.\nIf CS2106 is Sem 8, CS3210 can be Sem 7.\nSem 7: CS3210 (4).\nSem 8: CS2106 (4).\nThis satisfies \"CS3210 before CS2106\".\nDoes this increase total credits? No, same number of courses.\nDoes it affect \"CS4246 as early as possible\"? CS4246 is Sem 6. It cannot be earlier because it needs CS3243 (Sem 4) and Sem 5 is full with CS3240, CS3231, CS2105, CS2109S. Can I move CS3231? CS3231 is Sem 1 only. So CS3231 must be Sem 5, 7, 3... Sem 3 is Y2S1. Student is in Y2S2 (Sem 4). So Sem 3 is past. So CS3231 must be Sem 5 or 7.\nIf CS3231 is Sem 7, then Sem 5 has space.\nSem 5: CS3240, CS2105, CS2109S, CS2102? CS2102 is Sem 1/2.\nIf I move CS3231 to Sem 7, I can put CS2102 in Sem 5?\nSem 5: CS3240, CS2105, CS2109S, CS2102. (16 MC).\nSem 7: CS3231, CS3210. (8 MC).\nSem 8: CS2106.\nSem 6: CS4246, CS3219, CS3282. (12 MC).\nThis works. CS4246 is still Sem 6. CS3240 is Sem 5.\nIs CS4246 earlier? No, still Sem 6.\nCan CS4246 be Sem 5? Sem 5 is full.\nCan I move CS2109S to Sem 6? CS2109S is Sem 1/2.\nIf CS2109S is Sem 6, Sem 5 has space.\nSem 5: CS3240, CS2105, CS2102, CS3231? No, CS3231 is Sem 1.\nLet's keep CS3231 in Sem 5.\nSem 5: CS3240, CS3231, CS2105, CS2109S.\nSem 6: CS4246, CS3219, CS3282, CS2102.\nSem 7: CS3210.\nSem 8: CS2106.\nThis works.\n\nReasons:\n- Added prerequisites NM2207, CS3281, CS3243.\n- CS3240 in Sem 5 (earliest possible after NM2207 in Sem 4).\n- CS4246 in Sem 6 (earliest possible after CS3243 in Sem 4).\n- CS3210 in Sem 7, CS2106 in Sem 8 to satisfy ordering.\n- CS2106 not with CS3231 or CS3282.\n\nOne detail: CS3231 is Sem 1. Sem 5 is Y3S1. Correct.\nCS3240 is Sem 1. Sem 5 is Y3S1. Correct.\nCS2105 is Sem 1/2. Sem 5 is Y3S1. Correct.\nCS2109S is Sem 1/2. Sem 5 is Y3S1. Correct.\nCS2102 is Sem 1/2. Sem 6 is Y3S2. Correct.\nCS4246 is Sem 1/2. Sem 6 is Y3S2. Correct.\nCS3219 is Sem 1/2. Sem 6 is Y3S2. Correct.\nCS3282 is Sem 2. Sem 6 is Y3S2. Correct.\nCS3210 is Sem 1/2. Sem 7 is Y4S1. Correct.\nCS2106 is Sem 1/2. Sem 8 is Y4S2. Correct.\nNM2207 is Sem 2. Sem 4 is Y2S2. Correct.\nCS3281 is Sem 2. Sem 4 is Y2S2. Correct.\nCS3243 is Sem 2. Sem 4 is Y2S2. Correct.\nCS3230 is Sem 1/2. Sem 4 is Y2S2. Correct.\n\nAll good.\n\n{\"status\": \"PLAN\", \"plan\": {\"4\": [\"NM2207\", \"CS3281\", \"CS3243\", \"CS3230\"], \"5\": [\"CS3240\", \"CS3231\", \"CS2105\", \"CS2109S\"], \"6\": [\"CS4246\", \"CS3219\", \"CS3282\", \"CS2102\"], \"7\": [\"CS3210\"], \"8\": [\"CS2106\"]}, \"reasons\": [\"Added prerequisites NM2207, CS3281, CS3243 required for CS3240, CS3282, CS4246 respectively.\", \"CS3240 placed in Sem 5 as early as possible after NM2207 in Sem 4.\", \"CS4246 placed in Sem 6 as early as possible after CS3243 in Sem 4.\", \"CS3210 in Sem 7 and CS2106 in Sem 8 to satisfy CS3210 before CS2106 constraint.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "NM2207",
+    "CS3281",
+    "CS3243",
+    "CS3230"
+   ],
+   "5": [
+    "CS3240",
+    "CS3231",
+    "CS2105",
+    "CS2109S"
+   ],
+   "6": [
+    "CS4246",
+    "CS3219",
+    "CS3282",
+    "CS2102"
+   ],
+   "7": [
+    "CS3210"
+   ],
+   "8": [
+    "CS2106"
+   ]
+  },
+  "reasons": [
+   "Added prerequisites NM2207, CS3281, CS3243 required for CS3240, CS3282, CS4246 respectively.",
+   "CS3240 placed in Sem 5 as early as possible after NM2207 in Sem 4.",
+   "CS4246 placed in Sem 6 as early as possible after CS3243 in Sem 4.",
+   "CS3210 in Sem 7 and CS2106 in Sem 8 to satisfy CS3210 before CS2106 constraint."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

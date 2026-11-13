@@ -1,0 +1,67 @@
+{
+ "id": "q2-S4-017",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 5.55,
+ "solver_seconds": 0.029,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3058,
+  "total_tokens": 3312,
+  "completion_tokens": 254,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 5.52,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 3,\n\"completed\": [\n\"IS1108\",\n\"MA1522\",\n\"CS1101S\",\n\"ES2660\",\n\"CS2040S\",\n\"CS2030S\",\n\"MA1521\",\n\"CS1231S\"\n],\n\"must_take\": [\n\"ST2334\",\n\"CS2101\",\n\"CS3219\",\n\"CS4221\",\n\"CS2100\",\n\"CS2109S\",\n\"CS3213\",\n\"CS2103T\"\n],\n\"mc_max\": 4,\n\"objective\": \"earliest_graduation\",\n\"early\": [\n\"CS3219\",\n\"CS4221\"\n],\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS3219\",\n\"b\": \"CS2101\",\n\"strength\": \"must\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "completed": [
+   "IS1108",
+   "MA1522",
+   "CS1101S",
+   "ES2660",
+   "CS2040S",
+   "CS2030S",
+   "MA1521",
+   "CS1231S"
+  ],
+  "must_take": [
+   "ST2334",
+   "CS2101",
+   "CS3219",
+   "CS4221",
+   "CS2100",
+   "CS2109S",
+   "CS3213",
+   "CS2103T"
+  ],
+  "mc_max": 4,
+  "objective": "earliest_graduation",
+  "early": [
+   "CS3219",
+   "CS4221"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3219",
+    "b": "CS2101",
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "the required courses need 32 MC but the remaining semesters [3, 4, 5, 6, 7, 8] allow at most 24 MC"
+  ]
+ }
+}

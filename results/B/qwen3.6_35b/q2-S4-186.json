@@ -1,0 +1,109 @@
+{
+ "id": "q2-S4-186",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 11.28,
+ "solver_seconds": 0.09,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3182,
+  "total_tokens": 3798,
+  "completion_tokens": 616,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 11.15,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"current_sem\": 6,\n  \"completed\": [\n    \"CS2100\",\n    \"CS2101\",\n    \"CS2103T\",\n    \"CS3219\",\n    \"CS2106\",\n    \"CS2040S\",\n    \"CS1101S\",\n    \"CS3230\",\n    \"MA1522\",\n    \"CS2109S\",\n    \"CS4231\",\n    \"MA1521\",\n    \"ES2660\",\n    \"CS2105\",\n    \"CS2030S\",\n    \"CS1231S\",\n    \"IS1108\"\n  ],\n  \"must_take\": [\n    \"CS3236\",\n    \"CS4215\",\n    \"CS4211\",\n    \"CS2102\",\n    \"ST2334\",\n    \"CS3242\"\n  ],\n  \"mc_max\": 12,\n  \"sem_caps\": {\n    \"6\": 0\n  },\n  \"objective\": \"min_total_mc\",\n  \"rules\": [\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS3236\",\n      \"sem\": 8,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"same_sem\",\n      \"a\": \"CS2102\",\n      \"b\": \"ST2334\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"ST2334\",\n      \"b\": \"CS4215\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS3236\",\n      \"b\": \"CS4211\",\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS2102\",\n      \"sem\": 6,\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS4211\",\n      \"b\": \"CS2102\",\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS4211\",\n      \"b\": \"CS4215\",\n      \"strength\": \"prefer\"\n    }\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 6,
+  "completed": [
+   "CS2100",
+   "CS2101",
+   "CS2103T",
+   "CS3219",
+   "CS2106",
+   "CS2040S",
+   "CS1101S",
+   "CS3230",
+   "MA1522",
+   "CS2109S",
+   "CS4231",
+   "MA1521",
+   "ES2660",
+   "CS2105",
+   "CS2030S",
+   "CS1231S",
+   "IS1108"
+  ],
+  "must_take": [
+   "CS3236",
+   "CS4215",
+   "CS4211",
+   "CS2102",
+   "ST2334",
+   "CS3242"
+  ],
+  "mc_max": 12,
+  "sem_caps": {
+   "6": 0
+  },
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3236",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2102",
+    "b": "ST2334",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "ST2334",
+    "b": "CS4215",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3236",
+    "b": "CS4211",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 6,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS4211",
+    "b": "CS2102",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS4211",
+    "b": "CS4215",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the prerequisites of CS3242; the MC limits (at most 12 MC per semester; semesters 6 blocked)"
+  ]
+ }
+}

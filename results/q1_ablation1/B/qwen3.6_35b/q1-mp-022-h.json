@@ -1,0 +1,51 @@
+{
+ "id": "q1-mp-022-h",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 2.65,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2830,
+  "total_tokens": 2918,
+  "completion_tokens": 88,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 2.65,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\": \"eligible\", \"target\": \"MA2108S\", \"current_sem\": 4, \"completed\": [\"CS1010S\", \"IS1108\", \"MA1513\", \"CS1231S\", \"CS2101\", \"CS2040S\", \"CS2030DE\", \"CS2108\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "MA2108S",
+  "current_sem": 4,
+  "completed": [
+   "CS1010S",
+   "IS1108",
+   "MA1513",
+   "CS1231S",
+   "CS2101",
+   "CS2040S",
+   "CS2030DE",
+   "CS2108"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "MA2108S",
+  "semester": 4,
+  "reasons": [
+   "missing prerequisite: MA1505 or MA1511 or MA1521 or MA2002"
+  ],
+  "can_still_become_eligible": true
+ }
+}

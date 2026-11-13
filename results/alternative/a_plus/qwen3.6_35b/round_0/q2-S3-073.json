@@ -1,0 +1,53 @@
+{
+ "id": "q2-S3-073",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 5.26,
+ "usage": {
+  "prompt_tokens": 15217,
+  "total_tokens": 15501,
+  "completion_tokens": 284,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.26,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"4\": [\n\"CS2106\"\n],\n\"5\": [\n\"CS4231\"\n],\n\"6\": [\n\"CS3219\",\n\"CS2105\"\n],\n\"7\": [\n\"CP3880\",\n\"CS4226\"\n],\n\"8\": [\n\"CS2109S\"\n]\n},\n\"reasons\": [\n\"Prerequisites for all planned courses are satisfied by completed modules.\",\n\"ATAP (CP3880) is planned in semester 7 as requested, with CS4226 (4 MC) added to stay within the 8 MC limit for non-ATAP modules.\",\n\"CS2109S is placed in semester 8 because its prerequisite MA1521 is completed, but CS2105 (prerequisite for CS4226) and CS3219 (prerequisite for CS4226) must be completed before CS4226 in sem 7. CS2109S requires CS2040S (completed) and math (MA1521 completed). It can be taken in sem 8.\"\n]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2106"
+   ],
+   "5": [
+    "CS4231"
+   ],
+   "6": [
+    "CS3219",
+    "CS2105"
+   ],
+   "7": [
+    "CP3880",
+    "CS4226"
+   ],
+   "8": [
+    "CS2109S"
+   ]
+  },
+  "reasons": [
+   "Prerequisites for all planned courses are satisfied by completed modules.",
+   "ATAP (CP3880) is planned in semester 7 as requested, with CS4226 (4 MC) added to stay within the 8 MC limit for non-ATAP modules.",
+   "CS2109S is placed in semester 8 because its prerequisite MA1521 is completed, but CS2105 (prerequisite for CS4226) and CS3219 (prerequisite for CS4226) must be completed before CS4226 in sem 7. CS2109S requires CS2040S (completed) and math (MA1521 completed). It can be taken in sem 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

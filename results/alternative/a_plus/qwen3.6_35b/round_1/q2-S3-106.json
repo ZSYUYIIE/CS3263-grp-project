@@ -1,0 +1,45 @@
+{
+ "id": "q2-S3-106",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 3,
+ "end": "valid",
+ "seconds": 9.91,
+ "usage": {
+  "prompt_tokens": 18816,
+  "total_tokens": 19264,
+  "completion_tokens": 448,
+  "finish_reason": "stop",
+  "request_seconds": 9.91,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS3237\"\n    ],\n    \"7\": [\n      \"CS3231\",\n      \"CS2102\",\n      \"ST2334\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3231 and CS3237 are only offered in Sem 1, so they must be in Sem 7 or later.\",\n    \"CS3237 must precede ST2334, so CS3237 is in Sem 6 and ST2334 in Sem 7.\",\n    \"CS3231 is placed in Sem 7 with other remaining courses to minimize semesters.\",\n    \"Soft wishes: CS2102 and ST2334 in same semester (cannot be different if CS3231 is delayed), ST2334 as late as possible.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS3237"
+   ],
+   "7": [
+    "CS3231",
+    "CS2102",
+    "ST2334"
+   ]
+  },
+  "reasons": [
+   "CS3231 and CS3237 are only offered in Sem 1, so they must be in Sem 7 or later.",
+   "CS3237 must precede ST2334, so CS3237 is in Sem 6 and ST2334 in Sem 7.",
+   "CS3231 is placed in Sem 7 with other remaining courses to minimize semesters.",
+   "Soft wishes: CS2102 and ST2334 in same semester (cannot be different if CS3231 is delayed), ST2334 as late as possible."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

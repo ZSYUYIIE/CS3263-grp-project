@@ -1,0 +1,39 @@
+{
+ "id": "q2-S4-093",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 2,
+ "end": "repeated plan",
+ "seconds": 3.76,
+ "usage": {
+  "prompt_tokens": 10839,
+  "total_tokens": 11012,
+  "completion_tokens": 173,
+  "finish_reason": "stop",
+  "request_seconds": 3.76,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"7\": [\"CS3263\", \"CS3241\"], \"8\": [\"CS3230\", \"CS3247\"]}, \"reasons\": [\"All requested courses are planned in semesters 7 and 8. Prerequisites for all courses are satisfied by completed modules. CS3263 is in semester 7 as required. CS3230 is in semester 8 as preferred. CS3241 is before CS3247. CS3263 and CS3241 are in the same semester, which cannot be avoided due to prerequisite constraints and the requirement to take CS3263 in semester 7 while CS3241 is needed for CS3247 in semester 8.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "7": [
+    "CS3263",
+    "CS3241"
+   ],
+   "8": [
+    "CS3230",
+    "CS3247"
+   ]
+  },
+  "reasons": [
+   "All requested courses are planned in semesters 7 and 8. Prerequisites for all courses are satisfied by completed modules. CS3263 is in semester 7 as required. CS3230 is in semester 8 as preferred. CS3241 is before CS3247. CS3263 and CS3241 are in the same semester, which cannot be avoided due to prerequisite constraints and the requirement to take CS3263 in semester 7 while CS3241 is needed for CS3247 in semester 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

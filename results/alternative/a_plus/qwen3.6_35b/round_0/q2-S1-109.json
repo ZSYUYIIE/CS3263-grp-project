@@ -1,0 +1,37 @@
+{
+ "id": "q2-S1-109",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 13.04,
+ "usage": {
+  "prompt_tokens": 12467,
+  "total_tokens": 13128,
+  "completion_tokens": 661,
+  "finish_reason": "stop",
+  "request_seconds": 13.04,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"5\": [\"CS4278\"], \"6\": [\"CS4212\"], \"7\": [\"CS4239\"]}, \"reasons\": [\"CS4278 prerequisites (CS3263/CS3243, MA, EE) are not met by completed courses. CS3243 requires CS2040S (completed) and CS1231S (completed), so CS3243 can be taken in Sem 5. CS4278 requires CS3243, so it must be Sem 6 or later. CS4212 requires CS4278, so it must be after CS4278. CS4239 requires CS3235 and CS2103T/CS2103/CS2103DE/CS2113/CS2113T. CS2103T is completed. CS3235 requires CS2105, CS2106/CG2271/YSC3217, and CS2107. CS2106 is completed. CS2105 requires CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS (CS2040S completed). CS2107 requires CS1010/CS1101S/etc (CS1101S completed). So CS3235 prerequisites are met. CS3235 is offered Sem 1,2. CS4239 is offered Sem 1. So CS3235 must be before Sem 7. CS4278 is offered Sem 1. CS4212 is offered Sem 2. The student wants CS4278 as late as possible, but must finish CS4212. CS4278 in Sem 7 means CS4212 in Sem 8 (Sem 2). CS4239 in Sem 7. This fits. CS3235 must be taken before Sem 7. It can be taken in Sem 5 or 6. CS3243 must be taken before CS4278. If CS4278 is Sem 7, CS3243 can be Sem 5 or 6. CS3235 can be Sem 5 or 6. We need to fit CS3243, CS3235, CS4278, CS4212, CS4239. Sem 5: CS3243, CS3235. Sem 6: CS4278. Sem 7: CS4239. Sem 8: CS4212. This satisfies all constraints. CS4278 is in Sem 7 (late). CS4239 in Sem 7. CS4212 in Sem 8.\"}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS4278"
+   ],
+   "6": [
+    "CS4212"
+   ],
+   "7": [
+    "CS4239"
+   ]
+  }
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

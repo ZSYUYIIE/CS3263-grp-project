@@ -1,0 +1,157 @@
+{
+ "id": "q2-S4-036",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "valid",
+ "seconds": 117.52,
+ "usage": {
+  "prompt_tokens": 14277,
+  "total_tokens": 24904,
+  "completion_tokens": 10627,
+  "prompt_tokens_details": {
+   "cached_tokens": 8320,
+   "created_cache_tokens": 5760
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 10378
+  },
+  "finish_reason": "stop",
+  "request_seconds": 117.52,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS2220\",\"CS3219\"],\"6\":[\"CS4220\",\"CS2102\"],\"7\":[\"CS4211\",\"CS3241\"],\"8\":[\"CS4247\",\"CS2105\"]},\"reasons\":[\"CS2220 and CS3241 are added as prerequisites for CS4220 and CS4247 respectively.\",\"CS3219 is in semester 5; CS4220 is in semester 6 before CS4211 in semester 7.\",\"CS4247 is kept apart from CS4220 and placed in semester 8, the earliest Sem 2 slot after CS3241.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2220",
+    "CS3219"
+   ],
+   "6": [
+    "CS4220",
+    "CS2102"
+   ],
+   "7": [
+    "CS4211",
+    "CS3241"
+   ],
+   "8": [
+    "CS4247",
+    "CS2105"
+   ]
+  },
+  "reasons": [
+   "CS2220 and CS3241 are added as prerequisites for CS4220 and CS4247 respectively.",
+   "CS3219 is in semester 5; CS4220 is in semester 6 before CS4211 in semester 7.",
+   "CS4247 is kept apart from CS4220 and placed in semester 8, the earliest Sem 2 slot after CS3241."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS3241\",\"CS2105\"],\"6\":[\"CS4247\"]},\"reasons\":[\"CS3241 is added as the prerequisite for CS4247 because it is not in your completed courses.\",\"CS4247 is offered only in Sem 2, so the earliest possible placement after semester 5 is semester 6.\",\"Completed courses such as CS4220, CS4211, CS3219 and CS2102 are not replanned.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS3241",
+      "CS2105"
+     ],
+     "6": [
+      "CS4247"
+     ]
+    },
+    "reasons": [
+     "CS3241 is added as the prerequisite for CS4247 because it is not in your completed courses.",
+     "CS4247 is offered only in Sem 2, so the earliest possible placement after semester 5 is semester 6.",
+     "Completed courses such as CS4220, CS4211, CS3219 and CS2102 are not replanned."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 7020,
+    "total_tokens": 14702,
+    "completion_tokens": 7682,
+    "prompt_tokens_details": {
+     "cached_tokens": 6784,
+     "created_cache_tokens": 128,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 7574
+    },
+    "finish_reason": "stop",
+    "request_seconds": 82.61,
+    "attempts": 1
+   },
+   "seconds": 82.61,
+   "violations": [
+    "R1 must-take CS2102 missing",
+    "R1 must-take CS3219 missing",
+    "R1 must-take CS4211 missing",
+    "R1 must-take CS4220 missing",
+    "R9 must rule not met: apart CS4247 CS4220",
+    "R9 must rule not met: CS3219 in semester 5",
+    "R9 must rule not met: before CS4220 CS4211"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS2220\",\"CS3219\"],\"6\":[\"CS4220\",\"CS2102\"],\"7\":[\"CS4211\",\"CS3241\"],\"8\":[\"CS4247\",\"CS2105\"]},\"reasons\":[\"CS2220 and CS3241 are added as prerequisites for CS4220 and CS4247 respectively.\",\"CS3219 is in semester 5; CS4220 is in semester 6 before CS4211 in semester 7.\",\"CS4247 is kept apart from CS4220 and placed in semester 8, the earliest Sem 2 slot after CS3241.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2220",
+      "CS3219"
+     ],
+     "6": [
+      "CS4220",
+      "CS2102"
+     ],
+     "7": [
+      "CS4211",
+      "CS3241"
+     ],
+     "8": [
+      "CS4247",
+      "CS2105"
+     ]
+    },
+    "reasons": [
+     "CS2220 and CS3241 are added as prerequisites for CS4220 and CS4247 respectively.",
+     "CS3219 is in semester 5; CS4220 is in semester 6 before CS4211 in semester 7.",
+     "CS4247 is kept apart from CS4220 and placed in semester 8, the earliest Sem 2 slot after CS3241."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 7257,
+    "total_tokens": 10202,
+    "completion_tokens": 2945,
+    "prompt_tokens_details": {
+     "cached_tokens": 1536,
+     "created_cache_tokens": 5632,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 2804
+    },
+    "finish_reason": "stop",
+    "request_seconds": 34.91,
+    "attempts": 1
+   },
+   "seconds": 34.91,
+   "violations": []
+  }
+ ]
+}

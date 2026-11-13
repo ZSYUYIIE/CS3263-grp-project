@@ -1,0 +1,112 @@
+{
+ "id": "q2-S1-055",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 4.78,
+ "solver_seconds": 0.059,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3048,
+  "total_tokens": 3312,
+  "completion_tokens": 264,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 4.72,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"programme\": \"BComp CS Hons\",\n\"current_sem\": 3,\n\"completed\": [\n\"CS1231S\",\n\"CS1101S\",\n\"IS1108\",\n\"MA1521\",\n\"CS2030S\",\n\"MA1522\",\n\"ES2660\",\n\"CS2040S\"\n],\n\"must_take\": [\n\"CS4234\",\n\"CS3219\",\n\"CS4215\"\n],\n\"early\": [\n\"CS4234\"\n],\n\"late\": [\n\"CS3219\"\n],\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4215\",\n\"sem\": 6,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4234\",\n\"b\": \"CS3219\",\n\"strength\": \"must\"\n}\n],\n\"unsupported\": [\n\"avoid modules with heavy group projects\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "programme": "BComp CS Hons",
+  "current_sem": 3,
+  "completed": [
+   "CS1231S",
+   "CS1101S",
+   "IS1108",
+   "MA1521",
+   "CS2030S",
+   "MA1522",
+   "ES2660",
+   "CS2040S"
+  ],
+  "must_take": [
+   "CS4234",
+   "CS3219",
+   "CS4215"
+  ],
+  "early": [
+   "CS4234"
+  ],
+  "late": [
+   "CS3219"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS4215",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4234",
+    "b": "CS3219",
+    "strength": "must"
+   }
+  ],
+  "unsupported": [
+   "avoid modules with heavy group projects"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 8,
+  "plan": {
+   "3": [],
+   "4": [
+    "CS3230"
+   ],
+   "5": [
+    "CS4234"
+   ],
+   "6": [
+    "CS4215"
+   ],
+   "7": [
+    "CS2113"
+   ],
+   "8": [
+    "CS3219"
+   ]
+  },
+  "mc_per_semester": {
+   "3": 0,
+   "4": 4,
+   "5": 4,
+   "6": 4,
+   "7": 4,
+   "8": 4
+  },
+  "preferences_met": [
+   "CS4234 as early as possible",
+   "CS3219 as late as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS2113",
+   "CS3230"
+  ],
+  "not_applied": [
+   "avoid modules with heavy group projects"
+  ]
+ }
+}

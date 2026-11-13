@@ -1,0 +1,108 @@
+{
+ "id": "q2-S4-129",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 9.67,
+ "solver_seconds": 0.002,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3183,
+  "total_tokens": 3726,
+  "completion_tokens": 543,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 9.66,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"current_sem\": 7,\n  \"completed\": [\n    \"MA1521\",\n    \"CS2030S\",\n    \"MA1522\",\n    \"CS2106\",\n    \"IS1108\",\n    \"CS2102\",\n    \"CS2040S\",\n    \"CS1231S\",\n    \"CS2103T\",\n    \"ES2660\",\n    \"CS4215\",\n    \"CS2109S\",\n    \"CS1101S\",\n    \"CS2100\",\n    \"ST2334\",\n    \"CS3230\",\n    \"CS3219\",\n    \"CS2105\"\n  ],\n  \"must_take\": [\n    \"CS4262\",\n    \"CS4211\",\n    \"CS2101\",\n    \"CS4221\",\n    \"CS4234\"\n  ],\n  \"sem_caps\": {\n    \"7\": 0\n  },\n  \"rules\": [\n    {\n      \"type\": \"before\",\n      \"a\": \"CS4234\",\n      \"b\": \"CS4221\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"same_sem\",\n      \"a\": \"CS2101\",\n      \"b\": \"CS4262\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"same_sem\",\n      \"a\": \"CS4221\",\n      \"b\": \"CS2101\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS4262\",\n      \"b\": \"CS4221\",\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS2101\",\n      \"sem\": 7,\n      \"strength\": \"prefer\"\n    }\n  ],\n  \"late\": [\n    \"CS2101\"\n  ],\n  \"unsupported\": [\n    \"light final semester\"\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "completed": [
+   "MA1521",
+   "CS2030S",
+   "MA1522",
+   "CS2106",
+   "IS1108",
+   "CS2102",
+   "CS2040S",
+   "CS1231S",
+   "CS2103T",
+   "ES2660",
+   "CS4215",
+   "CS2109S",
+   "CS1101S",
+   "CS2100",
+   "ST2334",
+   "CS3230",
+   "CS3219",
+   "CS2105"
+  ],
+  "must_take": [
+   "CS4262",
+   "CS4211",
+   "CS2101",
+   "CS4221",
+   "CS4234"
+  ],
+  "sem_caps": {
+   "7": 0
+  },
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS4234",
+    "b": "CS4221",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2101",
+    "b": "CS4262",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4221",
+    "b": "CS2101",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS4262",
+    "b": "CS4221",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2101",
+    "sem": 7,
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "CS2101"
+  ],
+  "unsupported": [
+   "light final semester"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4211 cannot be placed in any remaining semester (offered in terms [1]; semesters left [8])",
+   "CS4234 cannot be placed in any remaining semester (offered in terms [1]; semesters left [8])"
+  ],
+  "not_applied": [
+   "light final semester"
+  ]
+ }
+}

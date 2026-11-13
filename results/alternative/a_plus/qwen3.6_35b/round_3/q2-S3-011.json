@@ -1,0 +1,29 @@
+{
+ "id": "q2-S3-011",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "not a plan",
+ "seconds": 18.93,
+ "usage": {
+  "prompt_tokens": 10905,
+  "total_tokens": 11939,
+  "completion_tokens": 1034,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 18.93,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS3227 prerequisite is CS2103, CS2103T, CS2113 or CS2103DE. The student has completed CS2103T, so this is satisfied. However, CS3103 prerequisite is CS2105, EE3204, EE3204E or EE4204. The student has completed CS2105, so this is satisfied. The constraint 'CS3227 must come before CS3103' is satisfiable. The constraint 'CS2102 and CS4218 together in one semester' is satisfiable. The constraint 'CS2102 in semester 7' is satisfiable. The constraint 'CS2102 and CS3210 not together' is satisfiable. The constraint 'CS4218 before CS3282' is satisfiable. The constraint 'CS3210 as late as possible' is a soft wish. The constraint 'keep total MC low' is a soft wish. Let's re-read carefully. CS3227 prereq: CS2103 or CS2103T or CS2113 or CS2103DE. Student has CS2103T. OK. CS3103 prereq: CS2105 or ... Student has CS2105. OK. CS4218 prereq: CS3213 or CS3219. Student has CS3219. OK. CS3282 prereq: CS3281. Student has NOT completed CS3281. CS3281 is not in the 'modules I still need' list, nor in the 'completed' list. The student says 'Modules I still need: CS2102, CS3210, CS3227 and CS4218. Oh, I forgot to say I also completed CS1101S and CS2100. I almost forgot CS3282 and CS3103, I need those as well.' This implies CS3281 is also needed? Or is CS3281 a prerequisite for CS3282 that the student forgot to mention they need? Rule 8: 'Add a course the student did not ask for ONLY when it is a prerequisite needed by a planned course.' CS3282 is needed. Its prerequisite is CS3281. So CS3281 must be added. CS3281 prereq: CS2103 or CS2103T or CS2103DE or CS2113. Student has CS2103T. So CS3281 can be taken. CS3281 is offered Sem 2. CS3282 is offered Sem 2. So CS3281 must be in Sem 6 or earlier (if Sem 7 is used for CS3282? No, CS3282 is Sem 2 only. Sem 7 is Sem 1 of Y4. So CS3282 cannot be in Sem 7. It must be in Sem 6, 4, 2... Student is in Y3S2 (Sem 6). So CS3282 can be in Sem 6? No, CS3281 must be before. So CS3281 in Sem 5, CS3282 in Sem 6? Or CS3281 in Sem 4? Student is in Sem 6. So CS3281 must be in Sem 5? But Sem 5 is Y3S1. Student is currently in Y3S2. Can they go back? No, plan is from current semester inclusive. So Sem 5 is past? 'Plan from the semester the student is in now (inclusive) to semester 8.' So Sem 5 is NOT available. The student is in Sem 6. So CS3281 must be in Sem 6 or later? But CS3281 is Sem 2 only. Sem 6 is Sem 2. So CS3281 can be in Sem 6. But CS3282 also requires CS3281 to be completed. If both are in Sem 6, is CS3281 completed before CS3282? No, they are in the same semester. Prerequisites must be completed or planned in a STRICTLY earlier semester. So CS3281 must be in Sem < 6. But Sem 5 is past. So CS3281 cannot be taken. Thus CS3282 cannot be taken. Thus NO_PLAN.\"}",
+ "answer": {
+  "status": "NO_PLAN"
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

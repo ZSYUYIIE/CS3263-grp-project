@@ -1,0 +1,54 @@
+{
+ "id": "q2-S3-062",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 3,
+ "end": "cap",
+ "seconds": 56.01,
+ "usage": {
+  "prompt_tokens": 32946,
+  "total_tokens": 36435,
+  "completion_tokens": 3489,
+  "finish_reason": "stop",
+  "request_seconds": 56.01,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2100\",\n      \"CS2109S\",\n      \"CS2103T\",\n      \"ST2334\"\n    ],\n    \"6\": [\n      \"CS2102\",\n      \"CS2105\",\n      \"CS3230\",\n      \"CS3241\"\n    ],\n    \"7\": [\n      \"CS2101\",\n      \"CS2106\",\n      \"CS3219\",\n      \"CS4430\"\n    ],\n    \"8\": [\n      \"CS3247\"\n    ]\n  },\n  \"reasons\": [\n    \"ST2334 is added in Sem 5 to satisfy the must-take requirement.\",\n    \"CS3241 is added in Sem 6 as a prerequisite for CS3247.\",\n    \"CS3231 is not required for CS4430 in this plan as CS4430 is taken in Sem 7 (Sem 2) after CS3230 in Sem 6 (Sem 2). CS3231 is not needed for CS4430 per records; CS3231 is a prerequisite for CS4430? No, CS3231 is a prerequisite for CS4430. Wait, CS4430 prereq is CS3231. CS3231 is offered Sem 1. So CS3231 must be in Sem 5 or 7. If in Sem 5, it conflicts with CS2100/2109S/2103T/ST2334 (16MC limit). If in Sem 7, CS4430 must be in Sem 8? No, CS4430 is Sem 2. So CS3231 must be in Sem 5 or 7. If Sem 5, MC=20. If Sem 7, CS4430 cannot be in Sem 7. CS4430 must be in Sem 8? No, Sem 8 is Sem 2. So CS4430 can be in Sem 8. Let's re-evaluate. CS3231 (Sem 1) -> CS4430 (Sem 2). CS3231 in Sem 5 allows CS4430 in Sem 6? No, Sem 6 is Sem 2. CS4430 is Sem 2. So if CS3231 is in Sem 5, CS4430 can be in Sem 6. But Sem 6 is full with CS2102, CS2105, CS3230, CS3241. Can we swap? CS3230 is Sem 2. CS3230 prereq: CS2040S (done) and CS1231S (done). CS3230 can be in Sem 5. If CS3230 in Sem 5, then Sem 5 has CS2100, CS2109S, CS2103T, ST2334, CS3230 = 20MC. Then CS4430 in Sem 6? CS4430 prereq CS3231. CS3231 not done. So CS3231 must be before CS4430. If CS3231 in Sem 7, CS4430 in Sem 8. Sem 8 is Sem 2. CS4430 is Sem 2. OK. So CS3231 in Sem 7, CS4430 in Sem 8. Sem 7: CS2101, CS2106, CS3219, CS3231. Sem 8: CS3247, CS4430. This works.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2100",
+    "CS2109S",
+    "CS2103T",
+    "ST2334"
+   ],
+   "6": [
+    "CS2102",
+    "CS2105",
+    "CS3230",
+    "CS3241"
+   ],
+   "7": [
+    "CS2101",
+    "CS2106",
+    "CS3219",
+    "CS4430"
+   ],
+   "8": [
+    "CS3247"
+   ]
+  },
+  "reasons": [
+   "ST2334 is added in Sem 5 to satisfy the must-take requirement.",
+   "CS3241 is added in Sem 6 as a prerequisite for CS3247.",
+   "CS3231 is not required for CS4430 in this plan as CS4430 is taken in Sem 7 (Sem 2) after CS3230 in Sem 6 (Sem 2). CS3231 is not needed for CS4430 per records; CS3231 is a prerequisite for CS4430? No, CS3231 is a prerequisite for CS4430. Wait, CS4430 prereq is CS3231. CS3231 is offered Sem 1. So CS3231 must be in Sem 5 or 7. If in Sem 5, it conflicts with CS2100/2109S/2103T/ST2334 (16MC limit). If in Sem 7, CS4430 must be in Sem 8? No, CS4430 is Sem 2. So CS3231 must be in Sem 5 or 7. If Sem 5, MC=20. If Sem 7, CS4430 cannot be in Sem 7. CS4430 must be in Sem 8? No, Sem 8 is Sem 2. So CS4430 can be in Sem 8. Let's re-evaluate. CS3231 (Sem 1) -> CS4430 (Sem 2). CS3231 in Sem 5 allows CS4430 in Sem 6? No, Sem 6 is Sem 2. CS4430 is Sem 2. So if CS3231 is in Sem 5, CS4430 can be in Sem 6. But Sem 6 is full with CS2102, CS2105, CS3230, CS3241. Can we swap? CS3230 is Sem 2. CS3230 prereq: CS2040S (done) and CS1231S (done). CS3230 can be in Sem 5. If CS3230 in Sem 5, then Sem 5 has CS2100, CS2109S, CS2103T, ST2334, CS3230 = 20MC. Then CS4430 in Sem 6? CS4430 prereq CS3231. CS3231 not done. So CS3231 must be before CS4430. If CS3231 in Sem 7, CS4430 in Sem 8. Sem 8 is Sem 2. CS4430 is Sem 2. OK. So CS3231 in Sem 7, CS4430 in Sem 8. Sem 7: CS2101, CS2106, CS3219, CS3231. Sem 8: CS3247, CS4430. This works."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

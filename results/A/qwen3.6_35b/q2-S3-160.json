@@ -1,0 +1,38 @@
+{
+ "id": "q2-S3-160",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 45.92,
+ "usage": {
+  "prompt_tokens": 11639,
+  "total_tokens": 14428,
+  "completion_tokens": 2789,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 45.92,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"5\": [\"CS2102\", \"CS2105\", \"ES2660\"], \"6\": [\"CS3219\", \"CS3268\", \"CS4246\", \"CS4278\", \"CS3282\"]}, \"reasons\": [\"All required courses are planned with prerequisites satisfied. ES2660 is placed in Sem 6 as requested. CS2102 is taken as early as possible in Sem 5. Total MC is minimized by taking only required courses and their direct prerequisites.\", \"CS3219 requires CS2103T (completed) and YSC3232 (not offered/open). However, CS3219 prerequisite is YSC3232 or CS2103 or CS2103T or CS2103DE or CS2113T or CS2113. Student has CS2103T, so CS3219 is eligible. CS4278 requires CS3263 or CS3243. Student has neither. CS3243 requires CS2109S (completed) and CS1231S (completed). So CS3243 is eligible. CS3263 requires CS2109S (completed) and CS2040S (completed) and MA2001 (not open) or MA1522 (completed) and EE2012A (not offered) or EE2012 (not taken) etc. Wait, CS3263 prereq: (CS2109S or CS2109HS) AND (CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS) AND (MA2001 or MA1522 or MA1513 or MA1508E or MA1101R) AND (EE2012A or EE2012 or ST2131 or MA2116 or MA2116T or ST2334 or MA2216). Student has CS2109S, CS2040S, MA1522, ST2334. So CS3263 is eligible. CS4278 requires CS3263 or CS3243. Student can take CS3243 or CS3263. CS3243 is Sem 2 only. CS3263 is Sem 1, Sem 2. If CS3263 is taken in Sem 5, CS4278 can be Sem 6. CS3268 requires CS2109S or CS2109HS or CS3243 AND (ST2334 or ((ST2131 or MA2116 or MA2116T) and ST2132)). Student has CS2109S and ST2334. So CS3268 is eligible in Sem 5. CS4246 requires (EE2012A or EE2012 or ST2132 or ST2334 or ((ST2131 or MA2116 or MA2116T or MA2216) and (ST1131 or ST1232 or DCS2008 or ST1131A))) AND (CS3243 or CS3263). Student has ST2334. Needs CS3243 or CS3263. If CS3263 is Sem 5, CS4246 can be Sem 6. CS3282 requires CS3281. CS3281 requires CS2103 or CS2103T or CS2103DE or CS2113. Student has CS2103T. So CS3281 is eligible in Sem 5. CS3282 is Sem 2 only. So CS3281 Sem 5, CS3282 Sem 6. CS2102 requires (CS1231 or MA1100 or MA1100T or CS1231S) AND (CS2030S or CS2030 or CS2030DE or CS2030HS or YSC2229 or CS2040 or CS2040C or CS2040S or CS2040DE or CS2040HS). Student has CS1231S and CS2030S and CS2040S. So CS2102 eligible Sem 5. CS2105 requires YSC2229 or CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS. Student has CS2040S. Eligible Sem 5. ES2660 no prereq. Eligible Sem 5. CS3219 requires CS2103T (completed). Eligible Sem 6. CS3268 eligible Sem 5 or 6. CS4246 needs CS3263 or CS3243. CS3243 Sem 2 only. CS3263 Sem 1/2. If CS3263 Sem 5, CS4246 Sem 6. CS4278 needs CS3263 or CS3243. If CS3263 Sem 5, CS4278 Sem 6. CS3282 needs CS3281. CS3281 Sem 5. CS3282 Sem 6. So Sem 5: CS2102, CS2105, CS3263, CS3268, CS3281. MC: 4+4+4+4+4=20. Sem 6: CS3219, CS4246, CS4278, CS3282, ES2660. MC: 4+4+4+4+4=20. This works. CS2102 as early as possible (Sem 5). ES2660 in Sem 6. CS3268 before CS2102? No, CS3268 Sem 5, CS2102 Sem 5. \"Before\" usually means strictly earlier semester. If so, CS3268 must be Sem 4 or earlier. But student is in Y3S1 (Sem 5). So CS3268 cannot be before CS2102 if both are Sem 5. The wish is \"Ideally\". So Sem 5 for both is acceptable for the ideal wish if not strictly possible. But wait, if CS3268 is Sem 5 and CS2102 is Sem 5, is CS3268 \"before\" CS2102? No. Can CS3268 be Sem 4? Student is in Y3S1. Sem 4 is past. So CS3268 must be Sem 5 or later. CS2102 must be Sem 5 or later. So they must be in the same semester or CS3268 later. If CS3268 is Sem 6 and CS2102 is Sem 5, then CS3268 is NOT before CS2102. The wish is \"Ideally I'd take CS3268 before CS2102\". This is impossible if CS2102 is Sem 5 (earliest) and CS3268 is Sem 5 or later. So the wish cannot be met. CS2102 as early as possible -> Sem 5. ES2660 in Sem 6. CS3219 after CS4278. CS4278 after CS3263/CS3243. CS3263 Sem 5 -> CS4278 Sem 6. CS3219 Sem 6. CS4246 after ES2660. ES2660 Sem 6 -> CS4246 Sem 7? But plan ends at Sem 8. If CS4246 is Sem 7, it's valid. But I put it in Sem 6. ES2660 Sem 6. CS4246 needs ES2660 finished. So CS4246 must be Sem 7 or later. My previous plan had CS4246 in Sem 6. That violates \"finish ES2660 before CS4246\". So CS4246 must be Sem 7. CS3219 needs ES2660 finished. So CS3219 must be Sem 7 or later. CS3219 also needs CS4278 finished. CS4278 Sem 6 -> CS3219 Sem 7. So Sem 7: CS3219, CS4246. Sem 8: CS3282? CS3282 needs CS3281. CS3281 Sem 5 -> CS3282 Sem 6. So CS3282 can be Sem 6. Let's re-plan. Sem 5: CS2102, CS2105, CS3263, CS3281. (20 MC). Sem 6: CS3268, CS4278, CS3282, ES2660. (16 MC). Sem 7: CS3219, CS4246. (8 MC). Sem 8: Empty. Total MC: 20+16+8 = 44. Is CS3268 before CS2102? No. CS2102 Sem 5, CS3268 Sem 6. Wish not met. Can CS3268 be Sem 5? If CS3268 Sem 5, CS2102 Sem 5. Still not before. Can CS2102 be Sem 6? No, \"as early as possible\". So Sem 5. So wish fails. CS4246 Sem 7. CS3219 Sem 7. CS3282 Sem 6. CS4278 Sem 6. CS3263 Sem 5. CS3281 Sem 5. CS2102 Sem 5. CS2105 Sem 5. ES2660 Sem 6. This plan works. MC per sem: 5: 20, 6: 16, 7: 8. All >= 8. Total MC 44. Can we reduce MC? No, all courses are 4 MC. Can we finish earlier? Sem 7 is last used. Can we do Sem 6? CS4246 needs ES2660. ES2660 Sem 6. So CS4246 Sem 7. CS3219 needs CS4278. CS4278 needs CS3263. CS3263 Sem 5. CS4278 Sem 6. CS3219 Sem 7. So Sem 7 is minimum. Plan: 5: CS2102, CS2105, CS3263, CS3281. 6: CS3268, CS4278, CS3282, ES2660. 7: CS3219, CS4246.\", \"reasons\": [\"CS3263 is required for CS4278 and CS4246. CS3263 is taken in Sem 5. CS4278 and CS3282 are taken in Sem 6. CS3219 and CS4246 are taken in Sem 7 as they depend on Sem 6 courses. ES2660 is in Sem 6. CS2102 is in Sem 5. CS3268 is in Sem 6. The wish for CS3268 before CS2102 is not met as CS2102 is in Sem 5 (earliest possible) and CS3268 is in Sem 6.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS2105",
+    "ES2660"
+   ],
+   "6": [
+    "CS3219",
+    "CS3268",
+    "CS4246",
+    "CS4278",
+    "CS3282"
+   ]
+  }
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

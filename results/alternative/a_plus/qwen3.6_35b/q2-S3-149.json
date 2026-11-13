@@ -1,0 +1,106 @@
+{
+ "id": "q2-S3-149",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 7.03,
+ "usage": {
+  "prompt_tokens": 24185,
+  "total_tokens": 24501,
+  "completion_tokens": 316,
+  "finish_reason": "stop",
+  "request_seconds": 7.03,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS3247 requires CS3241 as a prerequisite, but CS3241 is not in the list of required courses and has not been completed by the student.\",\n\"CS3241 is not listed among the mandatory courses the student must take, making it impossible to satisfy the prerequisite for CS3247 within the given constraints.\"\n]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3247 requires CS3241 as a prerequisite, but CS3241 is not in the list of required courses and has not been completed by the student.",
+   "CS3241 is not listed among the mandatory courses the student must take, making it impossible to satisfy the prerequisite for CS3247 within the given constraints."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2105\",\n\"CS2102\",\n\"ST2334\"\n],\n\"6\": [\n\"CS3219\",\n\"CS3247\"\n],\n\"7\": [\n\"CS4248\"\n]\n},\n\"reasons\": [\n\"Prerequisites for CS2102, CS2105, ST2334, CS3219, CS3247, and CS4248 are satisfied by completed courses.\",\n\"CS2105 is taken in Sem 5 before ST2334 in Sem 5, satisfying the dependency.\",\n\"CS3247 is taken in Sem 6 before CS4248 in Sem 7, satisfying the preference.\",\n\"Exchange in Sem 8 leaves Sem 7 for the final course CS4248.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2105",
+      "CS2102",
+      "ST2334"
+     ],
+     "6": [
+      "CS3219",
+      "CS3247"
+     ],
+     "7": [
+      "CS4248"
+     ]
+    },
+    "reasons": [
+     "Prerequisites for CS2102, CS2105, ST2334, CS3219, CS3247, and CS4248 are satisfied by completed courses.",
+     "CS2105 is taken in Sem 5 before ST2334 in Sem 5, satisfying the dependency.",
+     "CS3247 is taken in Sem 6 before CS4248 in Sem 7, satisfying the preference.",
+     "Exchange in Sem 8 leaves Sem 7 for the final course CS4248."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11931,
+    "total_tokens": 12150,
+    "completion_tokens": 219,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.94,
+    "attempts": 1
+   },
+   "seconds": 4.94,
+   "violations": [
+    "R4 CS3247 in semester 6: prerequisite not met (CS3241)",
+    "R8 semester 7 has 4 MC, minimum 8",
+    "R9 must rule not met: before CS2105 ST2334"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS3247 requires CS3241 as a prerequisite, but CS3241 is not in the list of required courses and has not been completed by the student.\",\n\"CS3241 is not listed among the mandatory courses the student must take, making it impossible to satisfy the prerequisite for CS3247 within the given constraints.\"\n]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3247 requires CS3241 as a prerequisite, but CS3241 is not in the list of required courses and has not been completed by the student.",
+     "CS3241 is not listed among the mandatory courses the student must take, making it impossible to satisfy the prerequisite for CS3247 within the given constraints."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12254,
+    "total_tokens": 12351,
+    "completion_tokens": 97,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 2.09,
+    "attempts": 1
+   },
+   "seconds": 2.09,
+   "violations": null
+  }
+ ]
+}

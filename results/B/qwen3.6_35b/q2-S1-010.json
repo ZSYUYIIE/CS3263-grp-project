@@ -1,0 +1,111 @@
+{
+ "id": "q2-S1-010",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 8.77,
+ "solver_seconds": 0.147,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3013,
+  "total_tokens": 3246,
+  "completion_tokens": 233,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 8.62,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 1,\n\"completed\": [],\n\"must_take\": [\n\"CS3240\",\n\"CS3282\",\n\"CS2109S\",\n\"CS2105\"\n],\n\"mc_max\": 12,\n\"rules\": [\n{\n\"type\": \"same_sem\",\n\"a\": \"CS3282\",\n\"b\": \"CS2109S\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3240\",\n\"b\": \"CS3282\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3240\",\n\"sem\": 5,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2105\",\n\"b\": \"CS3282\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "completed": [],
+  "must_take": [
+   "CS3240",
+   "CS3282",
+   "CS2109S",
+   "CS2105"
+  ],
+  "mc_max": 12,
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS3282",
+    "b": "CS2109S",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3240",
+    "b": "CS3282",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3240",
+    "sem": 5,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS2105",
+    "b": "CS3282",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 6,
+  "plan": {
+   "1": [
+    "UTC2851"
+   ],
+   "2": [
+    "CS2040",
+    "NM2207"
+   ],
+   "3": [
+    "CS2113",
+    "MA1521"
+   ],
+   "4": [
+    "CS2105",
+    "CS3281"
+   ],
+   "5": [
+    "CS3240"
+   ],
+   "6": [
+    "CS2109S",
+    "CS3282"
+   ]
+  },
+  "mc_per_semester": {
+   "1": 4,
+   "2": 8,
+   "3": 8,
+   "4": 8,
+   "5": 4,
+   "6": 8
+  },
+  "preferences_met": [
+   "CS3240 in semester 5",
+   "CS2105 before CS3282"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS2040",
+   "CS2113",
+   "CS3281",
+   "MA1521",
+   "NM2207",
+   "UTC2851"
+  ]
+ }
+}

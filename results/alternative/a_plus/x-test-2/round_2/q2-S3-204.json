@@ -1,0 +1,48 @@
+{
+ "id": "q2-S3-204",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 2,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 14.6,
+ "usage": {
+  "prompt_tokens": 7369,
+  "total_tokens": 8852,
+  "completion_tokens": 1483,
+  "prompt_tokens_details": {
+   "cached_tokens": 7040,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1341
+  },
+  "finish_reason": "stop",
+  "request_seconds": 14.6,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"7\":[\"CS3103\",\"CS2102\"],\"8\":[\"CS4225\",\"CS3234\"]},\"reasons\":[\"CS3103 is fixed in semester 7, and CS2102 must also be in semester 7 because CS4225 requires CS2102 completed earlier.\",\"Semester 8 holds CS4225 and CS3234, satisfying CS3103-before-CS4225 and placing CS3234 in semester 8.\",\"The wishes to put CS3234 or CS4225 before CS2102 and to separate CS2102 from CS3103 cannot be met without making CS4225 impossible.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "7": [
+    "CS3103",
+    "CS2102"
+   ],
+   "8": [
+    "CS4225",
+    "CS3234"
+   ]
+  },
+  "reasons": [
+   "CS3103 is fixed in semester 7, and CS2102 must also be in semester 7 because CS4225 requires CS2102 completed earlier.",
+   "Semester 8 holds CS4225 and CS3234, satisfying CS3103-before-CS4225 and placing CS3234 in semester 8.",
+   "The wishes to put CS3234 or CS4225 before CS2102 and to separate CS2102 from CS3103 cannot be met without making CS4225 impossible."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

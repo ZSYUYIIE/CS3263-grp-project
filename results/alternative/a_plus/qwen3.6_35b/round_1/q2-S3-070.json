@@ -1,0 +1,48 @@
+{
+ "id": "q2-S3-070",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 18.85,
+ "usage": {
+  "prompt_tokens": 31250,
+  "total_tokens": 32310,
+  "completion_tokens": 1060,
+  "finish_reason": "stop",
+  "request_seconds": 18.85,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2105\",\n\"CS2106\"\n],\n\"6\": [\n\"CS3219\"\n],\n\"7\": [\n\"CS4226\",\n\"CP3880\"\n],\n\"8\": [\n\"CS4231\",\n\"CS2109S\"\n]\n},\n\"reasons\": [\n\"CS4226 is offered only in Sem 1, so it must be in Sem 7 (Y4S1). CS4231 is offered only in Sem 2, so it must be in Sem 8 (Y4S2).\",\n\"CS2109S requires CS4231, so it must be in Sem 8. CS3219 requires CS2103T (completed) and is needed before CS4226 (Sem 7), so it is placed in Sem 6.\",\n\"ATAP (CP3880) is planned in Sem 7 as requested. CS4226 (4 MC) is added in Sem 7, totaling 4 MC for non-ATAP courses, which is within the 8 MC limit. CS2105 and CS2106 are placed in Sem 5 to satisfy prerequisites for later courses.\"\n]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2105",
+    "CS2106"
+   ],
+   "6": [
+    "CS3219"
+   ],
+   "7": [
+    "CS4226",
+    "CP3880"
+   ],
+   "8": [
+    "CS4231",
+    "CS2109S"
+   ]
+  },
+  "reasons": [
+   "CS4226 is offered only in Sem 1, so it must be in Sem 7 (Y4S1). CS4231 is offered only in Sem 2, so it must be in Sem 8 (Y4S2).",
+   "CS2109S requires CS4231, so it must be in Sem 8. CS3219 requires CS2103T (completed) and is needed before CS4226 (Sem 7), so it is placed in Sem 6.",
+   "ATAP (CP3880) is planned in Sem 7 as requested. CS4226 (4 MC) is added in Sem 7, totaling 4 MC for non-ATAP courses, which is within the 8 MC limit. CS2105 and CS2106 are placed in Sem 5 to satisfy prerequisites for later courses."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

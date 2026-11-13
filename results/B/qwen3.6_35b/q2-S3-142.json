@@ -1,0 +1,101 @@
+{
+ "id": "q2-S3-142",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.98,
+ "solver_seconds": 0.068,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3184,
+  "total_tokens": 3620,
+  "completion_tokens": 436,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.91,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 6,\n\"completed\": [\n\"CS3219\",\n\"IS1108\",\n\"CS3230\",\n\"CS2030S\",\n\"CS2106\",\n\"ST2334\",\n\"MA1522\",\n\"CS2100\",\n\"CS2103T\",\n\"CS4243\",\n\"CS2105\",\n\"CS2040S\",\n\"CS2109S\",\n\"MA1521\",\n\"CS1231S\",\n\"CS1101S\"\n],\n\"must_take\": [\n\"ES2660\",\n\"CS2102\",\n\"CS2101\",\n\"CS4223\",\n\"CS4222\",\n\"CS3237\"\n],\n\"mc_max\": 16,\n\"sem_caps\": {\n\"7\": 1\n},\n\"atap_sems\": [\n7\n],\n\"early\": [\n\"CS2101\"\n],\n\"late\": [\n\"CS2102\"\n],\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS2101\",\n\"b\": \"CS4223\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"ES2660\",\n\"b\": \"CS2102\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"ES2660\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3237\",\n\"sem\": 7,\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 6,
+  "completed": [
+   "CS3219",
+   "IS1108",
+   "CS3230",
+   "CS2030S",
+   "CS2106",
+   "ST2334",
+   "MA1522",
+   "CS2100",
+   "CS2103T",
+   "CS4243",
+   "CS2105",
+   "CS2040S",
+   "CS2109S",
+   "MA1521",
+   "CS1231S",
+   "CS1101S"
+  ],
+  "must_take": [
+   "ES2660",
+   "CS2102",
+   "CS2101",
+   "CS4223",
+   "CS4222",
+   "CS3237"
+  ],
+  "mc_max": 16,
+  "sem_caps": {
+   "7": 1
+  },
+  "atap_sems": [
+   7
+  ],
+  "early": [
+   "CS2101"
+  ],
+  "late": [
+   "CS2102"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2101",
+    "b": "CS4223",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "ES2660",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "ES2660",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3237",
+    "sem": 7,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the MC limits (at most 16 MC per semester; semester 7 at most 1 MC); the semesters in which the courses are offered"
+  ]
+ }
+}

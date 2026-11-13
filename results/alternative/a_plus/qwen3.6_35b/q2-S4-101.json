@@ -1,0 +1,109 @@
+{
+ "id": "q2-S4-101",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 9.55,
+ "usage": {
+  "prompt_tokens": 21062,
+  "total_tokens": 21561,
+  "completion_tokens": 499,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 9.55,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4222 requires CS2105 or EE4204/EE3204, none of which are completed or in the required list.\",\n    \"CS4330 requires CS2220 or LSM2104/LSM2241/ZB2101, none of which are completed or in the required list.\",\n    \"Missing prerequisites for required modules cannot be satisfied with the given course records.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4222 requires CS2105 or EE4204/EE3204, none of which are completed or in the required list.",
+   "CS4330 requires CS2220 or LSM2104/LSM2241/ZB2101, none of which are completed or in the required list.",
+   "Missing prerequisites for required modules cannot be satisfied with the given course records."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2102\",\n      \"CS4222\"\n    ],\n    \"6\": [\n      \"CS4330\"\n    ],\n    \"7\": [\n      \"CS3264\"\n    ],\n    \"8\": [\n      \"CS2101\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2102 and CS4222 are planned in Sem 5 as they are mutually exclusive with no other constraints preventing this, satisfying the wish to take them together.\",\n    \"CS4330 is planned in Sem 6 after CS2220 is not required but CS2040S is completed; CS2220 is a prerequisite for CS4330. Wait, CS2220 is NOT completed. Let's re-check CS4330 prereq.\",\n    \"CS4330 prerequisite: (CS2040C or CS2040 or CS2040S or CS2040DE or CS2040HS) and (CS2220 or LSM2104 or LSM2241 or ZB2101). The student has completed CS2040S. The student has NOT completed CS2220, LSM2104, LSM2241, or ZB2101. Therefore, CS4330 cannot be taken until one of those bioinformatics modules is completed. The student did not list CS2220 as completed. This is a missing prerequisite.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2102",
+      "CS4222"
+     ],
+     "6": [
+      "CS4330"
+     ],
+     "7": [
+      "CS3264"
+     ],
+     "8": [
+      "CS2101"
+     ]
+    },
+    "reasons": [
+     "CS2102 and CS4222 are planned in Sem 5 as they are mutually exclusive with no other constraints preventing this, satisfying the wish to take them together.",
+     "CS4330 is planned in Sem 6 after CS2220 is not required but CS2040S is completed; CS2220 is a prerequisite for CS4330. Wait, CS2220 is NOT completed. Let's re-check CS4330 prereq.",
+     "CS4330 prerequisite: (CS2040C or CS2040 or CS2040S or CS2040DE or CS2040HS) and (CS2220 or LSM2104 or LSM2241 or ZB2101). The student has completed CS2040S. The student has NOT completed CS2220, LSM2104, LSM2241, or ZB2101. Therefore, CS4330 cannot be taken until one of those bioinformatics modules is completed. The student did not list CS2220 as completed. This is a missing prerequisite."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10220,
+    "total_tokens": 10596,
+    "completion_tokens": 376,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 7.17,
+    "attempts": 1
+   },
+   "seconds": 7.17,
+   "violations": [
+    "R1 must-take CS3223 missing",
+    "R3 CS4222 not offered in Sem 1 (semester 5)",
+    "R4 CS4222 in semester 5: prerequisite not met ((EE3204 or EE3204E or EE4204 or CS2105) and (EE2012A or EE2012 or ST2131 or ST2334 or MA2116 or MA2116T or MA2216))",
+    "R4 CS4330 in semester 6: prerequisite not met ((CS2040C or CS2040 or CS2040S or CS2040DE or CS2040HS) and (CS2220 or LSM2104 or LSM2241 or ZB2101))"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4222 requires CS2105 or EE4204/EE3204, none of which are completed or in the required list.\",\n    \"CS4330 requires CS2220 or LSM2104/LSM2241/ZB2101, none of which are completed or in the required list.\",\n    \"Missing prerequisites for required modules cannot be satisfied with the given course records.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4222 requires CS2105 or EE4204/EE3204, none of which are completed or in the required list.",
+     "CS4330 requires CS2220 or LSM2104/LSM2241/ZB2101, none of which are completed or in the required list.",
+     "Missing prerequisites for required modules cannot be satisfied with the given course records."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10842,
+    "total_tokens": 10965,
+    "completion_tokens": 123,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.38,
+    "attempts": 1
+   },
+   "seconds": 2.38,
+   "violations": null
+  }
+ ]
+}

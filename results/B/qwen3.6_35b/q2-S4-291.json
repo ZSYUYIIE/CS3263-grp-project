@@ -1,0 +1,82 @@
+{
+ "id": "q2-S4-291",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.54,
+ "solver_seconds": 0.23,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3098,
+  "total_tokens": 3417,
+  "completion_tokens": 319,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 6.13,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 3,\n\"programme\": \"BComp CS Hons\",\n\"completed\": [\n\"CS1231S\",\n\"CS2030S\",\n\"MA1521\",\n\"MA1522\",\n\"CS2040S\",\n\"CS1101S\",\n\"IS1108\"\n],\n\"must_take\": [\n\"CS3236\",\n\"CS4246\",\n\"CS4211\",\n\"CS3219\",\n\"CS3244\",\n\"ES2660\"\n],\n\"early\": [\n\"CS3219\"\n],\n\"late\": [\n\"CS4246\",\n\"ES2660\",\n\"CS3244\"\n],\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS4246\",\n\"b\": \"CS3236\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"ES2660\",\n\"b\": \"CS3244\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3219\",\n\"sem\": 3,\n\"strength\": \"must\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "CS1231S",
+   "CS2030S",
+   "MA1521",
+   "MA1522",
+   "CS2040S",
+   "CS1101S",
+   "IS1108"
+  ],
+  "must_take": [
+   "CS3236",
+   "CS4246",
+   "CS4211",
+   "CS3219",
+   "CS3244",
+   "ES2660"
+  ],
+  "early": [
+   "CS3219"
+  ],
+  "late": [
+   "CS4246",
+   "ES2660",
+   "CS3244"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS4246",
+    "b": "CS3236",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "ES2660",
+    "b": "CS3244",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3219",
+    "sem": 3,
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS3219 in semester 3; the prerequisites of CS3219"
+  ]
+ }
+}

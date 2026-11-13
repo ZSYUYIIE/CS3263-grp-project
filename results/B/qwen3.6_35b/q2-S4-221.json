@@ -1,0 +1,97 @@
+{
+ "id": "q2-S4-221",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.91,
+ "solver_seconds": 0.198,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3109,
+  "total_tokens": 3519,
+  "completion_tokens": 410,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.72,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 3,\n\"completed\": [\n\"CS1231S\",\n\"MA1521\",\n\"MA1522\",\n\"CS1101S\",\n\"CS2030S\",\n\"IS1108\",\n\"CS2040S\",\n\"ES2660\"\n],\n\"must_take\": [\n\"CS4225\",\n\"CS2109S\",\n\"CS3219\",\n\"CS2100\",\n\"CS4231\"\n],\n\"early\": [\n\"CS3219\"\n],\n\"late\": [\n\"CS2100\"\n],\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4231\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4225\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS3219\",\n\"b\": \"CS2109S\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS3219\",\n\"b\": \"CS2109S\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2109S\",\n\"b\": \"CS4225\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS3219\",\n\"b\": \"CS4231\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "completed": [
+   "CS1231S",
+   "MA1521",
+   "MA1522",
+   "CS1101S",
+   "CS2030S",
+   "IS1108",
+   "CS2040S",
+   "ES2660"
+  ],
+  "must_take": [
+   "CS4225",
+   "CS2109S",
+   "CS3219",
+   "CS2100",
+   "CS4231"
+  ],
+  "early": [
+   "CS3219"
+  ],
+  "late": [
+   "CS2100"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS4231",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4225",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3219",
+    "b": "CS2109S",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3219",
+    "b": "CS2109S",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2109S",
+    "b": "CS4225",
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS3219",
+    "b": "CS4231",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS3219 and CS2109S in the same semester; your rule: CS3219 and CS2109S in different semesters"
+  ]
+ }
+}

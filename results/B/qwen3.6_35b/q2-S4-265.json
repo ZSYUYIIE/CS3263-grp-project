@@ -1,0 +1,84 @@
+{
+ "id": "q2-S4-265",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.12,
+ "solver_seconds": 0.091,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3107,
+  "total_tokens": 3451,
+  "completion_tokens": 344,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 6.03,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 4,\n\"completed\": [\n\"CS2030S\",\n\"MA1522\",\n\"CS2101\",\n\"MA1521\",\n\"CS2103T\",\n\"ES2660\",\n\"CS1101S\",\n\"CS2100\",\n\"IS1108\",\n\"CS1231S\",\n\"CS2040S\"\n],\n\"must_take\": [\n\"CS2102\",\n\"CS3263\",\n\"CS3230\",\n\"CS3219\",\n\"CS2106\",\n\"CS4240\",\n\"CS2109S\"\n],\n\"mc_max\": 12,\n\"objective\": \"earliest_graduation\",\n\"early\": [\n\"CS4240\",\n\"CS2109S\"\n],\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS2102\",\n\"b\": \"CS3230\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2106\",\n\"sem\": 4,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4240\",\n\"sem\": 4,\n\"strength\": \"must\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "CS2030S",
+   "MA1522",
+   "CS2101",
+   "MA1521",
+   "CS2103T",
+   "ES2660",
+   "CS1101S",
+   "CS2100",
+   "IS1108",
+   "CS1231S",
+   "CS2040S"
+  ],
+  "must_take": [
+   "CS2102",
+   "CS3263",
+   "CS3230",
+   "CS3219",
+   "CS2106",
+   "CS4240",
+   "CS2109S"
+  ],
+  "mc_max": 12,
+  "objective": "earliest_graduation",
+  "early": [
+   "CS4240",
+   "CS2109S"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2102",
+    "b": "CS3230",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2106",
+    "sem": 4,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4240",
+    "sem": 4,
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS4240 in semester 4; the prerequisites of CS4240"
+  ]
+ }
+}

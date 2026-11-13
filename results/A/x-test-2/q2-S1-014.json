@@ -1,0 +1,57 @@
+{
+ "id": "q2-S1-014",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 83.56,
+ "usage": {
+  "prompt_tokens": 7781,
+  "total_tokens": 14818,
+  "completion_tokens": 7037,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 6144,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 6843
+  },
+  "finish_reason": "stop",
+  "request_seconds": 83.56,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"1\":[\"CS1010\",\"CS1231\",\"MA1511\",\"MA1512\"],\"2\":[\"CS2111\",\"CG2028\",\"ST2334\"],\"3\":[\"CS2040S\",\"CS3240\"],\"5\":[\"CS3237\",\"CS3244\"]},\"reasons\":[\"Plan uses semesters 1-5; CS2040S is fixed in Y2S1 (semester 3) and CS3240 is also in semester 3 after CS2111.\",\"CS3244 and CS3237 are together in semester 5, the earliest odd semester after CS3240; CS2040S precedes CS3237.\",\"Added only required prerequisites: CS1010, CS1231, CS2111, CG2028, MA1511, MA1512, ST2334; all semesters are within 12 MC.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1010",
+    "CS1231",
+    "MA1511",
+    "MA1512"
+   ],
+   "2": [
+    "CS2111",
+    "CG2028",
+    "ST2334"
+   ],
+   "3": [
+    "CS2040S",
+    "CS3240"
+   ],
+   "5": [
+    "CS3237",
+    "CS3244"
+   ]
+  },
+  "reasons": [
+   "Plan uses semesters 1-5; CS2040S is fixed in Y2S1 (semester 3) and CS3240 is also in semester 3 after CS2111.",
+   "CS3244 and CS3237 are together in semester 5, the earliest odd semester after CS3240; CS2040S precedes CS3237.",
+   "Added only required prerequisites: CS1010, CS1231, CS2111, CG2028, MA1511, MA1512, ST2334; all semesters are within 12 MC."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

@@ -1,0 +1,129 @@
+{
+ "id": "q2-S4-058",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 9.23,
+ "solver_seconds": 0.033,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3092,
+  "total_tokens": 3490,
+  "completion_tokens": 398,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 9.19,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 4,\n\"completed\": [\n\"CS1231S\",\n\"CS2100\",\n\"CS2040S\",\n\"CS2030S\",\n\"MA1521\",\n\"ST2334\",\n\"CS2101\",\n\"CS2103T\",\n\"ES2660\",\n\"CS1101S\",\n\"MA1522\"\n],\n\"must_take\": [\n\"CS2106\",\n\"CS3242\",\n\"IS1108\",\n\"CS4263\",\n\"CS4249\",\n\"CS4236\",\n\"CS3223\"\n],\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4249\",\n\"sem\": 6,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2106\",\n\"sem\": 6,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4236\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3223\",\n\"sem\": 6,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"IS1108\",\n\"b\": \"CS3242\",\n\"strength\": \"prefer\"\n}\n],\n\"early\": [\n\"CS3242\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "CS1231S",
+   "CS2100",
+   "CS2040S",
+   "CS2030S",
+   "MA1521",
+   "ST2334",
+   "CS2101",
+   "CS2103T",
+   "ES2660",
+   "CS1101S",
+   "MA1522"
+  ],
+  "must_take": [
+   "CS2106",
+   "CS3242",
+   "IS1108",
+   "CS4263",
+   "CS4249",
+   "CS4236",
+   "CS3223"
+  ],
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS4249",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2106",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4236",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3223",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "IS1108",
+    "b": "CS3242",
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS3242"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "earliest_graduation",
+  "last_semester": 7,
+  "plan": {
+   "4": [],
+   "5": [
+    "CS2102",
+    "CS2107",
+    "CS3241",
+    "NM3243",
+    "PC1201"
+   ],
+   "6": [
+    "CS2106",
+    "CS3223",
+    "CS3242",
+    "CS4249",
+    "IS1108"
+   ],
+   "7": [
+    "CS4236",
+    "CS4263"
+   ]
+  },
+  "mc_per_semester": {
+   "4": 0,
+   "5": 20,
+   "6": 20,
+   "7": 8
+  },
+  "preferences_met": [
+   "IS1108 and CS3242 in the same semester",
+   "CS3242 as early as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS2102",
+   "CS2107",
+   "CS3241",
+   "NM3243",
+   "PC1201"
+  ]
+ }
+}

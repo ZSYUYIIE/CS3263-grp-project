@@ -1,0 +1,96 @@
+{
+ "id": "q2-S4-284",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.98,
+ "solver_seconds": 0.2,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3099,
+  "total_tokens": 3513,
+  "completion_tokens": 414,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.78,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 4,\n\"completed\": [\n\"MA1522\",\n\"CS2100\",\n\"ES2660\",\n\"MA1521\",\n\"CS1101S\",\n\"CS2030S\",\n\"IS1108\",\n\"CS2040S\",\n\"CS2103T\",\n\"CS2101\",\n\"ST2334\",\n\"CS1231S\"\n],\n\"must_take\": [\n\"CS2109S\",\n\"CS4278\",\n\"CS4220\",\n\"CS4238\",\n\"CS4243\"\n],\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS2109S\",\n\"b\": \"CS4220\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4243\",\n\"sem\": 4,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4278\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4220\",\n\"sem\": 8,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4220\",\n\"b\": \"CS4243\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4238\",\n\"sem\": 8,\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "MA1522",
+   "CS2100",
+   "ES2660",
+   "MA1521",
+   "CS1101S",
+   "CS2030S",
+   "IS1108",
+   "CS2040S",
+   "CS2103T",
+   "CS2101",
+   "ST2334",
+   "CS1231S"
+  ],
+  "must_take": [
+   "CS2109S",
+   "CS4278",
+   "CS4220",
+   "CS4238",
+   "CS4243"
+  ],
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2109S",
+    "b": "CS4220",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4243",
+    "sem": 4,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4278",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4220",
+    "sem": 8,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS4220",
+    "b": "CS4243",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4238",
+    "sem": 8,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS4278 in semester 5; the prerequisites of CS3263; the prerequisites of CS4278; the course exclusions (courses that cannot be taken together)"
+  ]
+ }
+}

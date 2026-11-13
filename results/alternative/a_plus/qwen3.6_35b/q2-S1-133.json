@@ -1,0 +1,103 @@
+{
+ "id": "q2-S1-133",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 7.29,
+ "usage": {
+  "prompt_tokens": 23665,
+  "total_tokens": 23965,
+  "completion_tokens": 300,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.29,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS4224 requires CS3223 as a prerequisite, but CS3223 is not in the student's completed list nor in their list of required courses to take.\",\n\"CS3223 is not listed as a course the student must take, making it impossible to satisfy the prerequisite for CS4224.\"\n]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4224 requires CS3223 as a prerequisite, but CS3223 is not in the student's completed list nor in their list of required courses to take.",
+   "CS3223 is not listed as a course the student must take, making it impossible to satisfy the prerequisite for CS4224."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2105\",\n\"CS2102\",\n\"CS4248\"\n],\n\"6\": [\n\"CS3227\"\n],\n\"7\": [\n\"CS4224\"\n]\n},\n\"reasons\": [\n\"Prerequisites for CS2102, CS4248, CS3227, CS4224, and CS2105 are satisfied by completed courses.\",\n\"CS2102 and CS4248 are scheduled in Sem 5 as requested. CS3227 is in Sem 6 to precede CS4224 in Sem 7.\",\n\"CS2105 is placed in Sem 5. ES2660 is omitted as it is not a required course and no prerequisite needs it.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2105",
+      "CS2102",
+      "CS4248"
+     ],
+     "6": [
+      "CS3227"
+     ],
+     "7": [
+      "CS4224"
+     ]
+    },
+    "reasons": [
+     "Prerequisites for CS2102, CS4248, CS3227, CS4224, and CS2105 are satisfied by completed courses.",
+     "CS2102 and CS4248 are scheduled in Sem 5 as requested. CS3227 is in Sem 6 to precede CS4224 in Sem 7.",
+     "CS2105 is placed in Sem 5. ES2660 is omitted as it is not a required course and no prerequisite needs it."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11688,
+    "total_tokens": 11895,
+    "completion_tokens": 207,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 4.44,
+    "attempts": 1
+   },
+   "seconds": 4.44,
+   "violations": [
+    "R1 must-take ES2660 missing",
+    "R4 CS4224 in semester 7: prerequisite not met (CS3223)"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS4224 requires CS3223 as a prerequisite, but CS3223 is not in the student's completed list nor in their list of required courses to take.\",\n\"CS3223 is not listed as a course the student must take, making it impossible to satisfy the prerequisite for CS4224.\"\n]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4224 requires CS3223 as a prerequisite, but CS3223 is not in the student's completed list nor in their list of required courses to take.",
+     "CS3223 is not listed as a course the student must take, making it impossible to satisfy the prerequisite for CS4224."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11977,
+    "total_tokens": 12070,
+    "completion_tokens": 93,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.85,
+    "attempts": 1
+   },
+   "seconds": 2.85,
+   "violations": null
+  }
+ ]
+}

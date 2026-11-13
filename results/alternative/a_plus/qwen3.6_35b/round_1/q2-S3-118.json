@@ -1,0 +1,51 @@
+{
+ "id": "q2-S3-118",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 2,
+ "end": "repeated plan",
+ "seconds": 86.21,
+ "usage": {
+  "prompt_tokens": 24574,
+  "total_tokens": 29031,
+  "completion_tokens": 4457,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 86.21,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"ST2334\", \"CS3233\", \"CS2107\", \"CS3230\"], \"5\": [\"CS2105\", \"CS2109S\", \"CS3219\"], \"6\": [\"CS4222\", \"CS4236\"]}, \"reasons\": [\"CS2107 added as prerequisite for CS4236.\", \"CS4222 requires ST2334 and CS2105; both completed by Sem 5, so CS4222 scheduled in Sem 6 (Sem 2).\", \"Soft wish CS3233 before CS2105 is met.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "ST2334",
+    "CS3233",
+    "CS2107",
+    "CS3230"
+   ],
+   "5": [
+    "CS2105",
+    "CS2109S",
+    "CS3219"
+   ],
+   "6": [
+    "CS4222",
+    "CS4236"
+   ]
+  },
+  "reasons": [
+   "CS2107 added as prerequisite for CS4236.",
+   "CS4222 requires ST2334 and CS2105; both completed by Sem 5, so CS4222 scheduled in Sem 6 (Sem 2).",
+   "Soft wish CS3233 before CS2105 is met."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,119 @@
+{
+ "id": "q2-S1-114",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 9.15,
+ "solver_seconds": 0.021,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2815,
+  "total_tokens": 3830,
+  "completion_tokens": 1015,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 791
+  },
+  "finish_reason": "stop",
+  "request_seconds": 9.13,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":6,\"programme\":\"BComp CS Hons\",\"completed\":[\"CS3230\",\"MA1521\",\"ES2660\",\"ST2334\",\"CS2101\",\"CS2100\",\"CS2106\",\"CS3219\",\"CS2030S\",\"CS2103T\",\"CS2040S\",\"MA1522\",\"CS2109S\",\"CS1101S\",\"CS1231S\"],\"must_take\":[\"CS4222\",\"CS2102\",\"CS4215\",\"CS4225\"],\"objective\":\"min_total_mc\",\"early\":[\"CS4222\"],\"rules\":[{\"type\":\"in_sem\",\"course\":\"CS4215\",\"sem\":6,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS4225\",\"sem\":7,\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS2102\",\"b\":\"CS4222\",\"strength\":\"must\"},{\"type\":\"same_sem\",\"a\":\"CS2102\",\"b\":\"CS4215\",\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 6,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "CS3230",
+   "MA1521",
+   "ES2660",
+   "ST2334",
+   "CS2101",
+   "CS2100",
+   "CS2106",
+   "CS3219",
+   "CS2030S",
+   "CS2103T",
+   "CS2040S",
+   "MA1522",
+   "CS2109S",
+   "CS1101S",
+   "CS1231S"
+  ],
+  "must_take": [
+   "CS4222",
+   "CS2102",
+   "CS4215",
+   "CS4225"
+  ],
+  "objective": "min_total_mc",
+  "early": [
+   "CS4222"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS4215",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4225",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2102",
+    "b": "CS4222",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2102",
+    "b": "CS4215",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 8,
+  "plan": {
+   "6": [
+    "CS2102",
+    "CS4215"
+   ],
+   "7": [
+    "CS4225",
+    "EE4204"
+   ],
+   "8": [
+    "CS4222"
+   ]
+  },
+  "mc_per_semester": {
+   "6": 8,
+   "7": 8,
+   "8": 4
+  },
+  "preferences_met": [
+   "CS2102 and CS4215 in the same semester",
+   "CS4222 as early as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "EE4204"
+  ]
+ }
+}

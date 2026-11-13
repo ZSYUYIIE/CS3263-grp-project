@@ -1,0 +1,93 @@
+{
+ "id": "q2-S4-117",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 5.61,
+ "solver_seconds": 0.001,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3152,
+  "total_tokens": 3566,
+  "completion_tokens": 414,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 5.61,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"programme\": \"BComp CS Hons\",\n\"current_sem\": 6,\n\"completed\": [\n\"CS2030S\",\n\"MA1521\",\n\"ST2334\",\n\"IS1108\",\n\"CS3219\",\n\"CS2109S\",\n\"CS2040S\",\n\"CS2101\",\n\"CS1231S\",\n\"CS3230\",\n\"CS2105\",\n\"MA1522\",\n\"CS2106\",\n\"CS2100\",\n\"CS1101S\",\n\"CS2103T\",\n\"ES2660\"\n],\n\"must_take\": [\n\"CS3264\",\n\"CS3103\",\n\"CS2102\",\n\"CS3237\"\n],\n\"sem_caps\": {\n\"7\": 0\n},\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS2102\",\n\"b\": \"CS3264\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS2102\",\n\"b\": \"CS3237\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3237\",\n\"b\": \"CS3264\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3264\",\n\"sem\": 8,\n\"strength\": \"prefer\"\n}\n],\n\"early\": [\n\"CS3264\",\n\"CS2102\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "programme": "BComp CS Hons",
+  "current_sem": 6,
+  "completed": [
+   "CS2030S",
+   "MA1521",
+   "ST2334",
+   "IS1108",
+   "CS3219",
+   "CS2109S",
+   "CS2040S",
+   "CS2101",
+   "CS1231S",
+   "CS3230",
+   "CS2105",
+   "MA1522",
+   "CS2106",
+   "CS2100",
+   "CS1101S",
+   "CS2103T",
+   "ES2660"
+  ],
+  "must_take": [
+   "CS3264",
+   "CS3103",
+   "CS2102",
+   "CS3237"
+  ],
+  "sem_caps": {
+   "7": 0
+  },
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2102",
+    "b": "CS3264",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS2102",
+    "b": "CS3237",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3237",
+    "b": "CS3264",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3264",
+    "sem": 8,
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS3264",
+   "CS2102"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3103 cannot be placed in any remaining semester (offered in terms [1]; semesters left [6, 8])",
+   "CS3237 cannot be placed in any remaining semester (offered in terms [1]; semesters left [6, 8])"
+  ]
+ }
+}

@@ -1,0 +1,81 @@
+{
+ "id": "q2-S4-064",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 5.33,
+ "solver_seconds": 0.142,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2755,
+  "total_tokens": 3310,
+  "completion_tokens": 555,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 390
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.18,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":1,\"completed\":[],\"must_take\":[\"CS3244\",\"CS3236\",\"CS2109S\",\"CS4278\",\"IS1108\"],\"sem_caps\":{\"2\":0},\"objective\":\"earliest_graduation\",\"late\":[\"CS4278\"],\"rules\":[{\"type\":\"before\",\"a\":\"CS3236\",\"b\":\"CS4278\",\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS3236\",\"b\":\"IS1108\",\"strength\":\"prefer\"},{\"type\":\"apart\",\"a\":\"CS4278\",\"b\":\"IS1108\",\"strength\":\"prefer\"},{\"type\":\"in_sem\",\"course\":\"CS3236\",\"sem\":4,\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "completed": [],
+  "must_take": [
+   "CS3244",
+   "CS3236",
+   "CS2109S",
+   "CS4278",
+   "IS1108"
+  ],
+  "sem_caps": {
+   "2": 0
+  },
+  "objective": "earliest_graduation",
+  "late": [
+   "CS4278"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3236",
+    "b": "CS4278",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3236",
+    "b": "IS1108",
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS4278",
+    "b": "IS1108",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3236",
+    "sem": 4,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the course exclusions (courses that cannot be taken together)"
+  ]
+ }
+}

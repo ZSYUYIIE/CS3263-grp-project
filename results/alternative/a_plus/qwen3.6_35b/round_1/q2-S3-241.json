@@ -1,0 +1,57 @@
+{
+ "id": "q2-S3-241",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 3,
+ "end": "switched to NO_PLAN",
+ "seconds": 45.49,
+ "usage": {
+  "prompt_tokens": 25434,
+  "total_tokens": 28076,
+  "completion_tokens": 2642,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 45.49,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS3230\",\n      \"ST1131\"\n    ],\n    \"4\": [\n      \"CS2103T\",\n      \"CS4243\",\n      \"CS2102\",\n      \"CS3219\"\n    ],\n    \"5\": [\n      \"CS3281\",\n      \"CS2105\",\n      \"CS4218\"\n    ],\n    \"6\": [\n      \"CS3223\",\n      \"CS4221\"\n    ]\n  },\n  \"reasons\": [\n    \"CS4243 requires ST1131 (prereq). ST1131 taken in Sem 3. CS4243 and CS2103T taken together in Sem 4.\",\n    \"CS2102 taken in Sem 4. Wish 'CS2102 before CS2103T' cannot be met as CS2103T is in Sem 4 and student is in Sem 3; CS2102 cannot be taken in Sem 1 or 2 retroactively.\",\n    \"CS2105 taken in Sem 5, after CS3281 (Sem 5) is completed? No, CS3281 is Sem 5. CS2105 prereq is CS2040S (completed). Constraint: 'finish CS3281 before I start CS2105'. So CS3281 must be in Sem 4 or earlier? No, 'finish before start'. If CS3281 is Sem 5, CS2105 must be Sem 6. Let's swap. CS3281 Sem 4? Prereq CS2103 (or variants). CS2103T is Sem 4. So CS3281 cannot be Sem 4. CS3281 must be Sem 5 or later. If CS3281 is Sem 5, CS2105 must be Sem 6. So: Sem 4: CS2103T, CS4243, CS2102, CS3219. Sem 5: CS3281. Sem 6: CS2105, CS3223, CS4218, CS4221. Wait, CS4218 prereq CS3219 (Sem 4). So CS4218 Sem 5 or 6. CS3223 prereq CS2102 (Sem 4) and CS2040S. So CS3223 Sem 5. CS4221 prereq CS3223. So CS4221 Sem 6. CS2105 Sem 6. CS4218 Sem 5. Sem 5: CS3281, CS4218. Sem 6: CS2105, CS3223, CS4221. This works. MC: Sem 4: 16. Sem 5: 8. Sem 6: 12. All <= 20.\",\n    \"CS3230 taken in Sem 3 (as early as possible). CS2100 taken in Sem 3.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS3230",
+    "ST1131"
+   ],
+   "4": [
+    "CS2103T",
+    "CS4243",
+    "CS2102",
+    "CS3219"
+   ],
+   "5": [
+    "CS3281",
+    "CS2105",
+    "CS4218"
+   ],
+   "6": [
+    "CS3223",
+    "CS4221"
+   ]
+  },
+  "reasons": [
+   "CS4243 requires ST1131 (prereq). ST1131 taken in Sem 3. CS4243 and CS2103T taken together in Sem 4.",
+   "CS2102 taken in Sem 4. Wish 'CS2102 before CS2103T' cannot be met as CS2103T is in Sem 4 and student is in Sem 3; CS2102 cannot be taken in Sem 1 or 2 retroactively.",
+   "CS2105 taken in Sem 5, after CS3281 (Sem 5) is completed? No, CS3281 is Sem 5. CS2105 prereq is CS2040S (completed). Constraint: 'finish CS3281 before I start CS2105'. So CS3281 must be in Sem 4 or earlier? No, 'finish before start'. If CS3281 is Sem 5, CS2105 must be Sem 6. Let's swap. CS3281 Sem 4? Prereq CS2103 (or variants). CS2103T is Sem 4. So CS3281 cannot be Sem 4. CS3281 must be Sem 5 or later. If CS3281 is Sem 5, CS2105 must be Sem 6. So: Sem 4: CS2103T, CS4243, CS2102, CS3219. Sem 5: CS3281. Sem 6: CS2105, CS3223, CS4218, CS4221. Wait, CS4218 prereq CS3219 (Sem 4). So CS4218 Sem 5 or 6. CS3223 prereq CS2102 (Sem 4) and CS2040S. So CS3223 Sem 5. CS4221 prereq CS3223. So CS4221 Sem 6. CS2105 Sem 6. CS4218 Sem 5. Sem 5: CS3281, CS4218. Sem 6: CS2105, CS3223, CS4221. This works. MC: Sem 4: 16. Sem 5: 8. Sem 6: 12. All <= 20.",
+   "CS3230 taken in Sem 3 (as early as possible). CS2100 taken in Sem 3."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

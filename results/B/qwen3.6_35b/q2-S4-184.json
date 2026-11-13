@@ -1,0 +1,139 @@
+{
+ "id": "q2-S4-184",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 5.62,
+ "solver_seconds": 0.06,
+ "max_tokens": 49152,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 3114,
+  "total_tokens": 3555,
+  "completion_tokens": 441,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 5.5,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"current_sem\": 4,\n  \"completed\": [\n    \"MA1521\",\n    \"CS1231S\",\n    \"CS1101S\",\n    \"MA1522\",\n    \"CS2103T\",\n    \"CS2101\",\n    \"CS2030S\",\n    \"CS2040S\",\n    \"CS2100\",\n    \"IS1108\",\n    \"ST2334\"\n  ],\n  \"must_take\": [\n    \"CS3236\",\n    \"CS2102\",\n    \"CS4243\",\n    \"CS4239\",\n    \"CS3242\",\n    \"CS4224\",\n    \"CS2106\",\n    \"CS3103\"\n  ],\n  \"sem_caps\": {\n    \"5\": 0\n  },\n  \"objective\": \"min_total_mc\",\n  \"rules\": [\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS3103\",\n      \"sem\": 7,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS3103\",\n      \"b\": \"CS4239\",\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS2106\",\n      \"sem\": 7,\n      \"strength\": \"prefer\"\n    }\n  ],\n  \"early\": [\n    \"CS4243\"\n  ],\n  \"late\": [\n    \"CS4239\"\n  ],\n  \"unsupported\": [\n    \"may S/U one of my modules\"\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "MA1521",
+   "CS1231S",
+   "CS1101S",
+   "MA1522",
+   "CS2103T",
+   "CS2101",
+   "CS2030S",
+   "CS2040S",
+   "CS2100",
+   "IS1108",
+   "ST2334"
+  ],
+  "must_take": [
+   "CS3236",
+   "CS2102",
+   "CS4243",
+   "CS4239",
+   "CS3242",
+   "CS4224",
+   "CS2106",
+   "CS3103"
+  ],
+  "sem_caps": {
+   "5": 0
+  },
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3103",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3103",
+    "b": "CS4239",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2106",
+    "sem": 7,
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS4243"
+  ],
+  "late": [
+   "CS4239"
+  ],
+  "unsupported": [
+   "may S/U one of my modules"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 8,
+  "plan": {
+   "4": [
+    "CS2102",
+    "CS2106",
+    "CS2107",
+    "CS4243",
+    "EE4204"
+   ],
+   "5": [],
+   "6": [
+    "CS3223",
+    "CS3235"
+   ],
+   "7": [
+    "CS3103",
+    "CS3241",
+    "CS4224",
+    "CS4239",
+    "PC1201"
+   ],
+   "8": [
+    "CS3236",
+    "CS3242"
+   ]
+  },
+  "mc_per_semester": {
+   "4": 20,
+   "5": 0,
+   "6": 8,
+   "7": 20,
+   "8": 8
+  },
+  "preferences_met": [
+   "CS4243 as early as possible",
+   "CS4239 as late as possible"
+  ],
+  "preferences_not_met": [
+   "CS3103 and CS4239 in different semesters",
+   "CS2106 in semester 7"
+  ],
+  "added_prerequisites": [
+   "CS2107",
+   "CS3223",
+   "CS3235",
+   "CS3241",
+   "EE4204",
+   "PC1201"
+  ],
+  "not_applied": [
+   "may S/U one of my modules"
+  ]
+ }
+}

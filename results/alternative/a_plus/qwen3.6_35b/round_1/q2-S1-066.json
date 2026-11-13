@@ -1,0 +1,29 @@
+{
+ "id": "q2-S1-066",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 36.88,
+ "usage": {
+  "prompt_tokens": 14010,
+  "total_tokens": 15739,
+  "completion_tokens": 1729,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 36.88,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4224 requires CS3223, which requires CS2102. CS2102 requires CS2030S (completed) and CS1231/MA1100/CS1231S (completed). However, CS2102 is not in the list of courses the student must take, but is a prerequisite for CS3223. The student did not list CS2102 as a required course to take, but it is necessary for CS4224. Assuming the student must take all prerequisites for their required courses, CS2102 must be planned. CS2102 is offered Sem 1 and Sem 2. Sem 3 is odd, so CS2102 can be taken in Sem 3. If CS2102 is taken in Sem 3, CS3223 can be taken in Sem 4 (odd). CS4224 requires CS3223, so CS4224 can be taken in Sem 5 (odd). CS2105 requires CS2040S (completed). CS2105 can be taken in Sem 3. The constraint 'CS4224 must come before CS2105' means Sem(4224) < Sem(2105). If CS4224 is in Sem 5, CS2105 must be in Sem 6 or later. CS3243 is fixed in Sem 6. CS4277 requires MA2001/MA1522/etc (MA1522 completed) and CS2040S (completed). CS4277 is offered Sem 2. Sem 7 is Sem 1 of AY2028/29. CS4277 is NOT offered in Sem 1. Thus CS4277 cannot be taken in Sem 7. It must be taken in an even semester. The remaining even semesters are 4, 6, 8. Sem 6 has CS3243. Sem 4 has CS3223. Sem 8 is available. So CS4277 in Sem 8. CS2105 must be after CS4224 (Sem 5), so Sem 6, 7, or 8. Sem 6 has CS3243. Sem 7 is odd, CS2105 offered Sem 1/2, so Sem 7 is OK for CS2105? No, CS2105 is offered Sem 1 and Sem 2. Sem 7 is Sem 1. So CS2105 can be in Sem 7. But we need CS4224 before CS2105. If CS4224 is Sem 5, CS2105 can be Sem 7. Let's re-verify prerequisites. CS3223 needs CS2102. CS2102 needs CS1231S (done) and CS2030S (done). So CS2102 is eligible in Sem 3. Plan: Sem 3: CS2102, CS2105? No, CS4224 must be before CS2105. If CS2105 is in Sem 3, CS4224 must be before Sem 3, i.e., Sem 1 or 2. But student is starting Sem 3. So CS4224 cannot be before CS2105 if CS2105 is in Sem 3. Thus CS2105 cannot be in Sem 3 if CS4224 is later. CS4224 needs CS3223. CS3223 needs CS2102. CS2102 needs Sem 3 (earliest). So CS3223 earliest Sem 4. CS4224 earliest Sem 5. So CS2105 must be after Sem 5. CS2105 offered Sem 1/2. Sem 6 is Sem 2. Sem 7 is Sem 1. Sem 8 is Sem 2. So CS2105 can be Sem 6, 7, 8. CS3243 is fixed in Sem 6. So CS2105 can be Sem 7 or 8. CS4277 offered Sem 2. Sem 7 is Sem 1 (not offered). Sem 8 is Sem 2 (offered). So CS4277 must be Sem 8 (or 4, 6). Sem 4 has CS3223. Sem 6 has CS3243. So CS4277 must be Sem 8. If CS4277 is Sem 8, CS2105 can be Sem 7. Plan: Sem 3: CS2102. Sem 4: CS3223. Sem 5: CS4224. Sem 6: CS3243. Sem 7: CS2105. Sem 8: CS4277. Check MC: Sem 3: 4 MC. Sem 4: 4 MC. Sem 5: 4 MC. Sem 6: 4 MC. Sem 7: 4 MC. Sem 8: 4 MC. All <= 12. Prerequisites: CS2102 (Sem 3) needs CS1231S, CS2030S (Done). CS3223 (Sem 4) needs CS2040S (Done), CS2102 (Sem 3, OK). CS4224 (Sem 5) needs CS3223 (Sem 4, OK). CS3243 (Sem 6) needs CS2040S (Done), CS1231S (Done). CS2105 (Sem 7) needs CS2040S (Done). CS4277 (Sem 8) needs MA1522 (Done), CS2040S (Done). Constraints: CS3243 in Sem 6 (OK). CS4224 before CS2105 (5 < 7, OK). CS4224 before CS3243 (5 < 6, OK). CS2105 as early as possible (Sem 7 is earliest possible given CS4224 constraint? CS2105 could be Sem 6 but CS3243 is there. Sem 7 is next. OK). CS4277 as late as possible (Sem 8 is last. OK). CS4224 as late as possible (Sem 5 is earliest possible due to prereqs. OK). Total MC 24. This plan works. Why did the previous answer fail? It missed CS2102. It put CS3223 in Sem 4 without CS2102. It put CS4277 in Sem 7 which is not offered. It put CS4224 in Sem 5 and CS2105 in Sem 3, violating order. The new plan includes CS2102.)\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN"
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

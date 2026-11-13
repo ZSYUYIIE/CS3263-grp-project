@@ -1,0 +1,47 @@
+{
+ "id": "q2-S3-160",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 3,
+ "end": "cap",
+ "seconds": 73.37,
+ "usage": {
+  "prompt_tokens": 51422,
+  "total_tokens": 56017,
+  "completion_tokens": 4595,
+  "finish_reason": "stop",
+  "request_seconds": 73.37,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2102\",\n\"CS2105\",\n\"CS3263\"\n],\n\"6\": [\n\"CS3281\",\n\"ES2660\"\n],\n\"7\": [\n\"CS3282\",\n\"CS4278\",\n\"CS3219\",\n\"CS4246\",\n\"CS3268\"\n]\n},\n\"reasons\": [\n\"CS3281/CS3282 are Sem 2 only, so CS3281 in 6, CS3282 in 7. CS3268/CS4278 are Sem 1 only, so they must be in 5 or 7. CS4278 is needed for CS4246 and CS3219 (per user constraint). CS3268 needs CS3243/CS3263. CS3263 is taken in 5. CS4278 taken in 7 allows CS3219 and CS4246 in 7. ES2660 in 6 satisfies user wish and prereq for CS4246/CS3219. CS2102/CS2105 in 5 for earliness. All MC limits respected.\"\n]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS2105",
+    "CS3263"
+   ],
+   "6": [
+    "CS3281",
+    "ES2660"
+   ],
+   "7": [
+    "CS3282",
+    "CS4278",
+    "CS3219",
+    "CS4246",
+    "CS3268"
+   ]
+  },
+  "reasons": [
+   "CS3281/CS3282 are Sem 2 only, so CS3281 in 6, CS3282 in 7. CS3268/CS4278 are Sem 1 only, so they must be in 5 or 7. CS4278 is needed for CS4246 and CS3219 (per user constraint). CS3268 needs CS3243/CS3263. CS3263 is taken in 5. CS4278 taken in 7 allows CS3219 and CS4246 in 7. ES2660 in 6 satisfies user wish and prereq for CS4246/CS3219. CS2102/CS2105 in 5 for earliness. All MC limits respected."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

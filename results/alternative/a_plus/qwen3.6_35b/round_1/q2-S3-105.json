@@ -1,0 +1,44 @@
+{
+ "id": "q2-S3-105",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 10.92,
+ "usage": {
+  "prompt_tokens": 18741,
+  "total_tokens": 19085,
+  "completion_tokens": 344,
+  "finish_reason": "stop",
+  "request_seconds": 10.91,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS3231\"\n    ],\n    \"7\": [\n      \"CS3237\",\n      \"CS2102\",\n      \"ST2334\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3231 is offered in Sem 1, so it is placed in Sem 6.\",\n    \"CS3237 is offered in Sem 1, so it is placed in Sem 7.\",\n    \"CS2102 and ST2334 are offered in both semesters; placed in Sem 7 to keep them apart from CS3231 and satisfy soft wishes.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS3231"
+   ],
+   "7": [
+    "CS3237",
+    "CS2102",
+    "ST2334"
+   ]
+  },
+  "reasons": [
+   "CS3231 is offered in Sem 1, so it is placed in Sem 6.",
+   "CS3237 is offered in Sem 1, so it is placed in Sem 7.",
+   "CS2102 and ST2334 are offered in both semesters; placed in Sem 7 to keep them apart from CS3231 and satisfy soft wishes."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

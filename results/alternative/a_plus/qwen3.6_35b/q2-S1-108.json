@@ -1,0 +1,280 @@
+{
+ "id": "q2-S1-108",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 3,
+ "end": "cap",
+ "seconds": 17.43,
+ "usage": {
+  "prompt_tokens": 47790,
+  "total_tokens": 48786,
+  "completion_tokens": 996,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 17.43,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"3\": [\n\"CS2100\",\n\"CS2101\",\n\"CS2105\",\n\"CS2109S\"\n],\n\"4\": [\n\"CS2103T\",\n\"CS3230\"\n],\n\"5\": [\n\"ST2334\"\n],\n\"6\": [\n\"CS3219\"\n],\n\"7\": [\n\"CS4226\"\n],\n\"8\": [\n\"CS2106\",\n\"CS4222\"\n]\n},\n\"reasons\": [\n\"Placed ST2334 in Sem 5 to satisfy the prerequisite for CS3219 in Sem 6.\",\n\"Placed CS4222 in Sem 8 (Sem 2 offer) as late as possible.\",\n\"Placed CS2106 in Sem 8 as required.\"\n]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS2101",
+    "CS2105",
+    "CS2109S"
+   ],
+   "4": [
+    "CS2103T",
+    "CS3230"
+   ],
+   "5": [
+    "ST2334"
+   ],
+   "6": [
+    "CS3219"
+   ],
+   "7": [
+    "CS4226"
+   ],
+   "8": [
+    "CS2106",
+    "CS4222"
+   ]
+  },
+  "reasons": [
+   "Placed ST2334 in Sem 5 to satisfy the prerequisite for CS3219 in Sem 6.",
+   "Placed CS4222 in Sem 8 (Sem 2 offer) as late as possible.",
+   "Placed CS2106 in Sem 8 as required."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"3\": [\n\"CS2100\",\n\"CS2101\",\n\"CS2105\",\n\"CS2109S\"\n],\n\"4\": [\n\"CS2103T\",\n\"CS3230\",\n\"ST2334\"\n],\n\"5\": [\n\"CS3219\"\n],\n\"6\": [\n\"CS4226\"\n],\n\"7\": [\n\"CS4222\"\n],\n\"8\": [\n\"CS2106\"\n]\n},\n\"reasons\": [\n\"Planned remaining courses to minimize total credits (all 4 MC each).\",\n\"Respected hard constraints: CS2101 before CS2106/CS3219, CS3219 before ST2334, CS2106 in Y4S2.\",\n\"Met soft wishes: CS3219 before CS2109S, CS2101 as late as possible (Sem 3), CS4222 as late as possible (Sem 7).\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS2101",
+      "CS2105",
+      "CS2109S"
+     ],
+     "4": [
+      "CS2103T",
+      "CS3230",
+      "ST2334"
+     ],
+     "5": [
+      "CS3219"
+     ],
+     "6": [
+      "CS4226"
+     ],
+     "7": [
+      "CS4222"
+     ],
+     "8": [
+      "CS2106"
+     ]
+    },
+    "reasons": [
+     "Planned remaining courses to minimize total credits (all 4 MC each).",
+     "Respected hard constraints: CS2101 before CS2106/CS3219, CS3219 before ST2334, CS2106 in Y4S2.",
+     "Met soft wishes: CS3219 before CS2109S, CS2101 as late as possible (Sem 3), CS4222 as late as possible (Sem 7)."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11683,
+    "total_tokens": 11954,
+    "completion_tokens": 271,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 5.76,
+    "attempts": 1
+   },
+   "seconds": 5.76,
+   "violations": [
+    "R1 must-take CS3264 missing",
+    "R3 CS4222 not offered in Sem 1 (semester 7)",
+    "R3 CS4226 not offered in Sem 2 (semester 6)",
+    "R9 must rule not met: before CS3219 ST2334"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"3\": [\n\"CS2100\",\n\"CS2101\",\n\"CS2105\",\n\"CS2109S\"\n],\n\"4\": [\n\"CS2103T\",\n\"CS3230\",\n\"ST2334\"\n],\n\"5\": [\n\"CS3219\",\n\"CS3264\"\n],\n\"6\": [\n\"CS4226\"\n],\n\"7\": [\n\"CS4222\"\n],\n\"8\": [\n\"CS2106\"\n]\n},\n\"reasons\": [\n\"Added CS3264 to satisfy must-take requirement.\",\n\"Placed CS4226 in Sem 6 (Sem 1 offer) and CS4222 in Sem 7 (Sem 2 offer) to respect offering terms.\",\n\"Placed CS3219 in Sem 5 after ST2334 in Sem 4 to satisfy prerequisite chain.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS2101",
+      "CS2105",
+      "CS2109S"
+     ],
+     "4": [
+      "CS2103T",
+      "CS3230",
+      "ST2334"
+     ],
+     "5": [
+      "CS3219",
+      "CS3264"
+     ],
+     "6": [
+      "CS4226"
+     ],
+     "7": [
+      "CS4222"
+     ],
+     "8": [
+      "CS2106"
+     ]
+    },
+    "reasons": [
+     "Added CS3264 to satisfy must-take requirement.",
+     "Placed CS4226 in Sem 6 (Sem 1 offer) and CS4222 in Sem 7 (Sem 2 offer) to respect offering terms.",
+     "Placed CS3219 in Sem 5 after ST2334 in Sem 4 to satisfy prerequisite chain."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12072,
+    "total_tokens": 12321,
+    "completion_tokens": 249,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.12,
+    "attempts": 1
+   },
+   "seconds": 4.12,
+   "violations": [
+    "R3 CS4222 not offered in Sem 1 (semester 7)",
+    "R3 CS4226 not offered in Sem 2 (semester 6)",
+    "R9 must rule not met: before CS3219 ST2334"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"3\": [\n\"CS2100\",\n\"CS2101\",\n\"CS2105\",\n\"CS2109S\"\n],\n\"4\": [\n\"CS2103T\",\n\"CS3230\",\n\"ST2334\"\n],\n\"5\": [\n\"CS3219\",\n\"CS3264\"\n],\n\"6\": [\n\"CS4222\"\n],\n\"7\": [\n\"CS4226\"\n],\n\"8\": [\n\"CS2106\"\n]\n},\n\"reasons\": [\n\"Placed CS4222 in Sem 6 (Sem 2 offer) and CS4226 in Sem 7 (Sem 1 offer) to respect offering terms.\",\n\"Placed CS3219 in Sem 5 after ST2334 in Sem 4 to satisfy prerequisite chain.\",\n\"Placed CS2106 in Sem 8 as required.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS2101",
+      "CS2105",
+      "CS2109S"
+     ],
+     "4": [
+      "CS2103T",
+      "CS3230",
+      "ST2334"
+     ],
+     "5": [
+      "CS3219",
+      "CS3264"
+     ],
+     "6": [
+      "CS4222"
+     ],
+     "7": [
+      "CS4226"
+     ],
+     "8": [
+      "CS2106"
+     ]
+    },
+    "reasons": [
+     "Placed CS4222 in Sem 6 (Sem 2 offer) and CS4226 in Sem 7 (Sem 1 offer) to respect offering terms.",
+     "Placed CS3219 in Sem 5 after ST2334 in Sem 4 to satisfy prerequisite chain.",
+     "Placed CS2106 in Sem 8 as required."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12037,
+    "total_tokens": 12287,
+    "completion_tokens": 250,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.92,
+    "attempts": 1
+   },
+   "seconds": 3.92,
+   "violations": [
+    "R9 must rule not met: before CS3219 ST2334"
+   ]
+  },
+  {
+   "round": 3,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"3\": [\n\"CS2100\",\n\"CS2101\",\n\"CS2105\",\n\"CS2109S\"\n],\n\"4\": [\n\"CS2103T\",\n\"CS3230\"\n],\n\"5\": [\n\"ST2334\"\n],\n\"6\": [\n\"CS3219\"\n],\n\"7\": [\n\"CS4226\"\n],\n\"8\": [\n\"CS2106\",\n\"CS4222\"\n]\n},\n\"reasons\": [\n\"Placed ST2334 in Sem 5 to satisfy the prerequisite for CS3219 in Sem 6.\",\n\"Placed CS4222 in Sem 8 (Sem 2 offer) as late as possible.\",\n\"Placed CS2106 in Sem 8 as required.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS2101",
+      "CS2105",
+      "CS2109S"
+     ],
+     "4": [
+      "CS2103T",
+      "CS3230"
+     ],
+     "5": [
+      "ST2334"
+     ],
+     "6": [
+      "CS3219"
+     ],
+     "7": [
+      "CS4226"
+     ],
+     "8": [
+      "CS2106",
+      "CS4222"
+     ]
+    },
+    "reasons": [
+     "Placed ST2334 in Sem 5 to satisfy the prerequisite for CS3219 in Sem 6.",
+     "Placed CS4222 in Sem 8 (Sem 2 offer) as late as possible.",
+     "Placed CS2106 in Sem 8 as required."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11998,
+    "total_tokens": 12224,
+    "completion_tokens": 226,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.63,
+    "attempts": 1
+   },
+   "seconds": 3.63,
+   "violations": [
+    "R1 must-take CS3264 missing",
+    "R9 must rule not met: before CS3219 ST2334"
+   ]
+  }
+ ]
+}

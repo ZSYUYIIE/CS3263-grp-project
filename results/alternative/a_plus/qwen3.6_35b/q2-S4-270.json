@@ -1,0 +1,101 @@
+{
+ "id": "q2-S4-270",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 14.69,
+ "usage": {
+  "prompt_tokens": 25998,
+  "total_tokens": 26699,
+  "completion_tokens": 701,
+  "finish_reason": "stop",
+  "request_seconds": 14.69,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS3235 requires CS2107, which is not completed and has no prerequisites but is not in the 'must take' list. Without CS2107, CS3235 cannot be taken.\", \"CS4246 requires either CS3243 or CS3263. CS3243 requires CS1231S (completed) and CS2040S (completed), so CS3243 is eligible. However, CS4246 also requires a statistics prerequisite: (EE2012A or EE2012 or ST2132 or ST2334 or ((ST2131 or MA2116 or MA2116T or MA2216) and (ST1131 or ...))). The student has completed ST2334, so this part is met. Thus CS4246 is eligible if CS3243 is taken. But CS3243 is not a 'must take' course. The student must take CS3235 and CS4246. CS3235 needs CS2107. CS2107 is not completed. The student did not say they must take CS2107. Therefore CS3235 cannot be taken.\", \"Even if CS2107 were taken, CS3235 and CS4248 are both required in Sem 8. CS4246 is preferred in Sem 8 but can be earlier. However, the blocker is CS2107 for CS3235. Since CS2107 is not completed and not mandated, CS3235 is impossible.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3235 requires CS2107, which is not completed and has no prerequisites but is not in the 'must take' list. Without CS2107, CS3235 cannot be taken.",
+   "CS4246 requires either CS3243 or CS3263. CS3243 requires CS1231S (completed) and CS2040S (completed), so CS3243 is eligible. However, CS4246 also requires a statistics prerequisite: (EE2012A or EE2012 or ST2132 or ST2334 or ((ST2131 or MA2116 or MA2116T or MA2216) and (ST1131 or ...))). The student has completed ST2334, so this part is met. Thus CS4246 is eligible if CS3243 is taken. But CS3243 is not a 'must take' course. The student must take CS3235 and CS4246. CS3235 needs CS2107. CS2107 is not completed. The student did not say they must take CS2107. Therefore CS3235 cannot be taken.",
+   "Even if CS2107 were taken, CS3235 and CS4248 are both required in Sem 8. CS4246 is preferred in Sem 8 but can be earlier. However, the blocker is CS2107 for CS3235. Since CS2107 is not completed and not mandated, CS3235 is impossible."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"7\": [\"CS4246\"], \"8\": [\"CS3235\", \"CS4248\"]}, \"reasons\": [\"Prerequisites for CS4246 (CS3243/CS3263) are not met by completed courses. CS3243 requires CS2040S and CS1231S, both completed. CS3263 requires CS2109S and CS2040S, both completed. Thus CS4246 is eligible in Sem 7.\", \"CS3235 requires CS2105, CS2106, and (CS2105/EE3204/EE4204) and (CS2106/YSC3217/CG2271). Completed: CS2105, CS2106. Prereqs met. Eligible Sem 8.\", \"CS4248 requires CS2109S, EE2012/ST2131/etc, and MA1505/MA1507/MA1521/MA1102R/YSC1216/MA2002/(MA1511&MA1512). Completed: CS2109S, MA1521. Prereqs met. Eligible Sem 8.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "7": [
+      "CS4246"
+     ],
+     "8": [
+      "CS3235",
+      "CS4248"
+     ]
+    },
+    "reasons": [
+     "Prerequisites for CS4246 (CS3243/CS3263) are not met by completed courses. CS3243 requires CS2040S and CS1231S, both completed. CS3263 requires CS2109S and CS2040S, both completed. Thus CS4246 is eligible in Sem 7.",
+     "CS3235 requires CS2105, CS2106, and (CS2105/EE3204/EE4204) and (CS2106/YSC3217/CG2271). Completed: CS2105, CS2106. Prereqs met. Eligible Sem 8.",
+     "CS4248 requires CS2109S, EE2012/ST2131/etc, and MA1505/MA1507/MA1521/MA1102R/YSC1216/MA2002/(MA1511&MA1512). Completed: CS2109S, MA1521. Prereqs met. Eligible Sem 8."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12730,
+    "total_tokens": 13048,
+    "completion_tokens": 318,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 7.34,
+    "attempts": 1
+   },
+   "seconds": 7.34,
+   "violations": [
+    "R4 CS3235 in semester 8: prerequisite not met ((CS2105 or EE3204 or EE4204) and (CS2106 or YSC3217 or CG2271) and CS2107)",
+    "R4 CS4246 in semester 7: prerequisite not met ((EE2012A or EE2012 or ST2132 or ST2334 or ((ST2131 or MA2116 or MA2116T or MA2216) and (ST1131 or ST1232 or DCS2008 or ST1131A))) and (CS3243 or CS3263))"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS3235 requires CS2107, which is not completed and has no prerequisites but is not in the 'must take' list. Without CS2107, CS3235 cannot be taken.\", \"CS4246 requires either CS3243 or CS3263. CS3243 requires CS1231S (completed) and CS2040S (completed), so CS3243 is eligible. However, CS4246 also requires a statistics prerequisite: (EE2012A or EE2012 or ST2132 or ST2334 or ((ST2131 or MA2116 or MA2116T or MA2216) and (ST1131 or ...))). The student has completed ST2334, so this part is met. Thus CS4246 is eligible if CS3243 is taken. But CS3243 is not a 'must take' course. The student must take CS3235 and CS4246. CS3235 needs CS2107. CS2107 is not completed. The student did not say they must take CS2107. Therefore CS3235 cannot be taken.\", \"Even if CS2107 were taken, CS3235 and CS4248 are both required in Sem 8. CS4246 is preferred in Sem 8 but can be earlier. However, the blocker is CS2107 for CS3235. Since CS2107 is not completed and not mandated, CS3235 is impossible.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3235 requires CS2107, which is not completed and has no prerequisites but is not in the 'must take' list. Without CS2107, CS3235 cannot be taken.",
+     "CS4246 requires either CS3243 or CS3263. CS3243 requires CS1231S (completed) and CS2040S (completed), so CS3243 is eligible. However, CS4246 also requires a statistics prerequisite: (EE2012A or EE2012 or ST2132 or ST2334 or ((ST2131 or MA2116 or MA2116T or MA2216) and (ST1131 or ...))). The student has completed ST2334, so this part is met. Thus CS4246 is eligible if CS3243 is taken. But CS3243 is not a 'must take' course. The student must take CS3235 and CS4246. CS3235 needs CS2107. CS2107 is not completed. The student did not say they must take CS2107. Therefore CS3235 cannot be taken.",
+     "Even if CS2107 were taken, CS3235 and CS4248 are both required in Sem 8. CS4246 is preferred in Sem 8 but can be earlier. However, the blocker is CS2107 for CS3235. Since CS2107 is not completed and not mandated, CS3235 is impossible."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 13268,
+    "total_tokens": 13651,
+    "completion_tokens": 383,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 7.35,
+    "attempts": 1
+   },
+   "seconds": 7.35,
+   "violations": null
+  }
+ ]
+}

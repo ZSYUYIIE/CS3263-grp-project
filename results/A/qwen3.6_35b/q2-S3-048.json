@@ -1,0 +1,56 @@
+{
+ "id": "q2-S3-048",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 7.53,
+ "usage": {
+  "prompt_tokens": 12995,
+  "total_tokens": 13383,
+  "completion_tokens": 388,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.52,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"4\": [\n      \"CS2102\",\n      \"CS2105\",\n      \"CS2106\",\n      \"CS3210\",\n      \"CS3231\",\n      \"IS1108\"\n    ],\n    \"5\": [\n      \"CS2109S\",\n      \"CS3219\",\n      \"CS3230\",\n      \"CS3240\"\n    ],\n    \"6\": [\n      \"CS3281\",\n      \"CS4246\"\n    ],\n    \"7\": [\n      \"CS3282\"\n    ]\n  },\n  \"reasons\": [\n    \"Y2S2 (Sem 4) takes CS2102, CS2105, CS2106, CS3210, CS3231, IS1108 (20 MC). CS3210 is taken before CS2106 as required.\",\n    \"Y3S1 (Sem 5) takes CS2109S, CS3219, CS3230, CS3240 (16 MC). CS3240 is scheduled as early as possible.\",\n    \"Y3S2 (Sem 6) takes CS3281, CS4246 (8 MC). CS4246 is scheduled as early as possible after prerequisites met.\",\n    \"Y4S1 (Sem 7) takes CS3282 (4 MC). CS3281 is a prerequisite for CS3282.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2102",
+    "CS2105",
+    "CS2106",
+    "CS3210",
+    "CS3231",
+    "IS1108"
+   ],
+   "5": [
+    "CS2109S",
+    "CS3219",
+    "CS3230",
+    "CS3240"
+   ],
+   "6": [
+    "CS3281",
+    "CS4246"
+   ],
+   "7": [
+    "CS3282"
+   ]
+  },
+  "reasons": [
+   "Y2S2 (Sem 4) takes CS2102, CS2105, CS2106, CS3210, CS3231, IS1108 (20 MC). CS3210 is taken before CS2106 as required.",
+   "Y3S1 (Sem 5) takes CS2109S, CS3219, CS3230, CS3240 (16 MC). CS3240 is scheduled as early as possible.",
+   "Y3S2 (Sem 6) takes CS3281, CS4246 (8 MC). CS4246 is scheduled as early as possible after prerequisites met.",
+   "Y4S1 (Sem 7) takes CS3282 (4 MC). CS3281 is a prerequisite for CS3282."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

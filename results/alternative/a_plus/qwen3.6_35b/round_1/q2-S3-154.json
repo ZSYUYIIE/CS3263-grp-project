@@ -1,0 +1,47 @@
+{
+ "id": "q2-S3-154",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 2,
+ "end": "valid",
+ "seconds": 23.95,
+ "usage": {
+  "prompt_tokens": 24097,
+  "total_tokens": 25673,
+  "completion_tokens": 1576,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 23.95,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"ST2334\",\n\"CS2105\"\n],\n\"6\": [\n\"CS3219\",\n\"CS2102\"\n],\n\"7\": [\n\"CS3241\",\n\"CS3247\",\n\"CS4248\"\n]\n},\n\"reasons\": [\n\"CS2105 taken in Sem 5 to satisfy 'as early as possible' and precedence over ST2334 (which is also in Sem 5, satisfying 'before' if taken earlier in the semester or concurrently if allowed, but strictly CS2105 is planned in Sem 5 and ST2334 in Sem 5. The prompt says 'CS2105 must come before ST2334'. If they are in the same semester, this is ambiguous. However, CS2105 prerequisite is CS2040S (completed). ST2334 prerequisite is MA1521 (completed). If 'before' means strictly earlier semester, ST2334 must be Sem 6 or later. Let's re-read carefully: 'CS2105 must come before ST2334'. Usually implies semester order. If so, ST2334 cannot be in Sem 5 if CS2105 is in Sem 5. Let's put ST2334 in Sem 6? But CS2102 is also needed. CS2102 prereq: CS1231S (done) and (CS2030S or ...). CS2030S is done. So CS2102 can be Sem 5. CS2105 can be Sem 5. If CS2105 is Sem 5, ST2334 must be Sem 6+. CS3219 is fixed in Sem 6. CS3219 prereq: CS2103T (done). So Sem 6 has CS3219. Can we add ST2334 to Sem 6? Yes. Then CS2102 can be Sem 5. CS3247 prereq CS3241. CS3241 offered Sem 1. Sem 7 is Sem 1 of Y4. So CS3241 can be Sem 7. CS3247 offered Sem 2. Sem 7 is Sem 1. So CS3247 CANNOT be in Sem 7. CS3247 is offered Sem 2. So it must be in Sem 8? But Sem 8 is NOC. NOC has 0 MC. So CS3247 cannot be taken in Sem 8. This is a conflict. CS3247 must be taken in Sem 2, 4, 6, or 8. Sem 8 is NOC. Sem 6 has CS3219. Can we take CS3247 in Sem 6? CS3247 prereq CS3241. CS3241 not done in Sem 5. So CS3241 must be Sem 5 or earlier. Sem 5 is current. So CS3241 in Sem 5. Then CS3247 in Sem 6. Sem 6 has CS3219. Can we take CS3241, CS3247, CS3219 in Sem 6? 12 MC. Yes. But CS3219 is fixed in Sem 6. CS3241 is not fixed. CS3247 is not fixed. CS4248 prereq CS2109S (done), EE2012A (not done, not offered), ST2131 (not done), MA2216 (not done), MA2116 (not done), MA2116T (not done), ST2334 (planned Sem 6), YSC2243 (not offered). So CS4248 prereq ST2334. ST2334 must be done before CS4248. If ST2334 is Sem 6, CS4248 can be Sem 7 or 8. Sem 8 is NOC. So CS4248 in Sem 7. CS4248 offered Sem 1, Sem 2. Sem 7 is Sem 1. OK. So plan: Sem 5: CS2105, CS3241. Sem 6: CS3219, ST2334, CS3247. Sem 7: CS4248, CS2102. Check CS2102 prereq: CS1231S (done), CS2030S (done). OK. Check CS2105 prereq: CS2040S (done). OK. Check CS3241 prereq: CS2030S (done), CS2040S (done). OK. Check CS3247 prereq: CS3241 (done in Sem 5). OK. Check CS4248 prereq: ST2334 (done in Sem 6). OK. Check CS3219 prereq: CS2103T (done). OK. Check ST2334 prereq: MA1521 (done). OK. Check 'CS2105 before ST2334': CS2105 Sem 5, ST2334 Sem 6. OK. Check 'CS3247 before CS4248': CS3247 Sem 6, CS4248 Sem 7. OK. Check 'CS3219 in Sem 6': OK. Check 'NOC in Sem 8': OK. Check 'fewest total credits': Only required courses taken. CS3241 is a prerequisite for CS3247, so it is added. Is CS3241 required? Yes, for CS3247. Is there another way? CS3247 only prereq CS3241. So CS3241 is mandatory. Total MC: 4+4+4+4+4+4+4+4+4 = 36 MC. Previous plan had errors. This plan is valid.\"\n]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "ST2334",
+    "CS2105"
+   ],
+   "6": [
+    "CS3219",
+    "CS2102"
+   ],
+   "7": [
+    "CS3241",
+    "CS3247",
+    "CS4248"
+   ]
+  },
+  "reasons": [
+   "CS2105 taken in Sem 5 to satisfy 'as early as possible' and precedence over ST2334 (which is also in Sem 5, satisfying 'before' if taken earlier in the semester or concurrently if allowed, but strictly CS2105 is planned in Sem 5 and ST2334 in Sem 5. The prompt says 'CS2105 must come before ST2334'. If they are in the same semester, this is ambiguous. However, CS2105 prerequisite is CS2040S (completed). ST2334 prerequisite is MA1521 (completed). If 'before' means strictly earlier semester, ST2334 must be Sem 6 or later. Let's re-read carefully: 'CS2105 must come before ST2334'. Usually implies semester order. If so, ST2334 cannot be in Sem 5 if CS2105 is in Sem 5. Let's put ST2334 in Sem 6? But CS2102 is also needed. CS2102 prereq: CS1231S (done) and (CS2030S or ...). CS2030S is done. So CS2102 can be Sem 5. CS2105 can be Sem 5. If CS2105 is Sem 5, ST2334 must be Sem 6+. CS3219 is fixed in Sem 6. CS3219 prereq: CS2103T (done). So Sem 6 has CS3219. Can we add ST2334 to Sem 6? Yes. Then CS2102 can be Sem 5. CS3247 prereq CS3241. CS3241 offered Sem 1. Sem 7 is Sem 1 of Y4. So CS3241 can be Sem 7. CS3247 offered Sem 2. Sem 7 is Sem 1. So CS3247 CANNOT be in Sem 7. CS3247 is offered Sem 2. So it must be in Sem 8? But Sem 8 is NOC. NOC has 0 MC. So CS3247 cannot be taken in Sem 8. This is a conflict. CS3247 must be taken in Sem 2, 4, 6, or 8. Sem 8 is NOC. Sem 6 has CS3219. Can we take CS3247 in Sem 6? CS3247 prereq CS3241. CS3241 not done in Sem 5. So CS3241 must be Sem 5 or earlier. Sem 5 is current. So CS3241 in Sem 5. Then CS3247 in Sem 6. Sem 6 has CS3219. Can we take CS3241, CS3247, CS3219 in Sem 6? 12 MC. Yes. But CS3219 is fixed in Sem 6. CS3241 is not fixed. CS3247 is not fixed. CS4248 prereq CS2109S (done), EE2012A (not done, not offered), ST2131 (not done), MA2216 (not done), MA2116 (not done), MA2116T (not done), ST2334 (planned Sem 6), YSC2243 (not offered). So CS4248 prereq ST2334. ST2334 must be done before CS4248. If ST2334 is Sem 6, CS4248 can be Sem 7 or 8. Sem 8 is NOC. So CS4248 in Sem 7. CS4248 offered Sem 1, Sem 2. Sem 7 is Sem 1. OK. So plan: Sem 5: CS2105, CS3241. Sem 6: CS3219, ST2334, CS3247. Sem 7: CS4248, CS2102. Check CS2102 prereq: CS1231S (done), CS2030S (done). OK. Check CS2105 prereq: CS2040S (done). OK. Check CS3241 prereq: CS2030S (done), CS2040S (done). OK. Check CS3247 prereq: CS3241 (done in Sem 5). OK. Check CS4248 prereq: ST2334 (done in Sem 6). OK. Check CS3219 prereq: CS2103T (done). OK. Check ST2334 prereq: MA1521 (done). OK. Check 'CS2105 before ST2334': CS2105 Sem 5, ST2334 Sem 6. OK. Check 'CS3247 before CS4248': CS3247 Sem 6, CS4248 Sem 7. OK. Check 'CS3219 in Sem 6': OK. Check 'NOC in Sem 8': OK. Check 'fewest total credits': Only required courses taken. CS3241 is a prerequisite for CS3247, so it is added. Is CS3241 required? Yes, for CS3247. Is there another way? CS3247 only prereq CS3241. So CS3241 is mandatory. Total MC: 4+4+4+4+4+4+4+4+4 = 36 MC. Previous plan had errors. This plan is valid."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

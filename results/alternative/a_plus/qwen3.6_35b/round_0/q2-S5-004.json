@@ -1,0 +1,53 @@
+{
+ "id": "q2-S5-004",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 82.46,
+ "usage": {
+  "prompt_tokens": 12094,
+  "total_tokens": 16084,
+  "completion_tokens": 3990,
+  "finish_reason": "stop",
+  "request_seconds": 82.46,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"ST2334 is a prerequisite for CS2105. The student requires ST2334 and MA1522 in the same semester. CS2105 requires ST2334 (or CS2040 etc) as a prerequisite. CS3230 requires ST2334. CS4246 requires CS3230 or CS3263. CS3263 requires CS2109S which requires CS2040S etc. The chain is ST2334 -> CS3230 -> CS4246. Also ST2334 -> CS2105. The student must take ST2334 in Y2S2 (Sem 4) or later. If ST2334 is in Sem 4, CS3230 can be in Sem 5 (Exchange, 0 MC) - impossible. CS3230 must be in Sem 6. Then CS4246 in Sem 7. CS2105 can be in Sem 6 or 7. CS2106 requires CS2100. CS2100 requires CS1010 etc (met). CS2100 is not listed as 'must take' but is a prerequisite for CS2106. The student did not list CS2100 as a completed course. Therefore CS2100 must be planned. CS2100 has no prereqs other than programming. CS2100 can be taken in Sem 2 (current), Sem 3, Sem 4, Sem 5 (Exchange), Sem 6, Sem 7, Sem 8. If CS2100 is taken in Sem 2, CS2106 can be Sem 3. If Sem 3, CS2106 is Sem 3. Let's trace: Sem 2: CS1101S, CS1231S, ES2660, MA1521 completed. Current: Sem 2. Must take: CS2106, CS4246, CS3230, ST2334, CS2105, CS2101, MA1522, CS3219. Prereqs for these: CS2106 needs CS2100. CS3219 needs CS2103 or CS2103T etc. CS2103 needs CS2030S and CS2040S. CS2040S needs CS1231S (met) and CS1010S (met). CS2030S needs CS1010S (met). So CS2030S and CS2040S are needed for CS3219. CS3230 needs CS2040S and CS1231S (met). So CS2040S is needed for CS3230 and CS3219. CS4246 needs CS3230. CS2105 needs CS2040S. CS2101 needs none. MA1522 needs none. ST2334 needs none. CS2100 needs CS1010S (met). So we must plan: CS2100, CS2030S, CS2040S, CS2103S (or CS2103 etc for CS3219), CS2106, CS3230, CS4246, ST2334, CS2105, CS2101, MA1522, CS3219. Constraint: ST2334 and MA1522 together. ST2334 before CS3230. CS3230 before CS2101. CS3230 and CS4246 different semesters. CS4246 early. CS2101 early. CS2105 late. Exchange Y3S1 (Sem 5). Limit 16 MC. Sem 2: Can take CS2100 (4), CS2030S (4), CS2040S (4). Total 12. OK. Sem 3: Can take CS2106 (4, prereq CS2100 met). CS2103S (4, prereq CS2030S, CS2040S met). CS3219 (4, prereq CS2103S met). Total 12. OK. Sem 4: Must take ST2334 (4) and MA1522 (4). Total 8. OK. CS3230 (4, prereq CS2040S, CS1231S met). CS2105 (4, prereq CS2040S met). CS2101 (4, prereq none). Total 16. OK. Sem 5: Exchange. 0 MC. Sem 6: CS4246 (4, prereq CS3230 met). CS3230 was in Sem 4. CS4246 in Sem 6. Different semesters. OK. CS2101 was in Sem 4. CS2105 was in Sem 4. CS2105 late? It's in Sem 4. Can it be later? Sem 5 is exchange. Sem 6 has CS4246. If we move CS2105 to Sem 6, we have CS4246 and CS2105. 8 MC. OK. But CS2101 early? It's in Sem 4. Can it be earlier? Sem 2: 12 MC. Sem 3: 12 MC. Sem 4: 16 MC. If we move CS2101 to Sem 3, we have CS2106, CS2103S, CS3219, CS2101. 16 MC. OK. Then Sem 4: ST2334, MA1522, CS3230, CS2105. 16 MC. OK. CS2105 in Sem 4. Can it be Sem 6? Sem 6: CS4246, CS2105. 8 MC. OK. CS2101 in Sem 3. CS4246 in Sem 6. CS3230 in Sem 4. CS3230 and CS4246 different. OK. CS2101 early (Sem 3). CS2105 late (Sem 6). This works. Plan: Sem 2: CS2100, CS2030S, CS2040S. Sem 3: CS2106, CS2103S, CS3219, CS2101. Sem 4: ST2334, MA1522, CS3230, CS2105. Sem 5: Exchange. Sem 6: CS4246. Sem 7: Empty. Sem 8: Empty. Graduation Sem 6. Is this valid? CS2103S is CS2103S? Record says CS2103S is not listed. Record has CS2103, CS2103DE, CS2103T, CS2113, CS2113T. CS3219 prereq: YSC3232 or CS2103 or CS2103T or CS2103DE or CS2113T or CS2113. CS2103 prereq: CS2030S and CS2040S. CS2030S and CS2040S are in Sem 2. So CS2103 can be Sem 3. CS2103 is 4 MC. CS2106 is 4 MC. CS3219 is 4 MC. CS2101 is 4 MC. Total 16 MC in Sem 3. OK. Sem 4: ST2334 (4), MA1522 (4), CS3230 (4), CS2105 (4). Total 16 MC. OK. Sem 6: CS4246 (4). OK. CS2105 in Sem 4. Can it be Sem 6? If Sem 6, Sem 4 has ST2334, MA1522, CS3230. 12 MC. Sem 6 has CS4246, CS2105. 8 MC. CS2101 in Sem 3. CS2105 in Sem 6. CS2101 early. CS2105 late. CS4246 in Sem 6. CS3230 in Sem 4. Different. OK. This plan works. Status PLAN.\n\nWait, I missed CS2103 in the \"must take\" list? No, CS3219 is must take. CS3219 needs CS2103. So CS2103 is implicitly required. The plan includes it.\n\nLet's check if CS2105 can be in Sem 7? Sem 7 is after Sem 6. CS4246 in Sem 6. CS2105 in Sem 7. CS2101 in Sem 3. CS3230 in Sem 4. CS4246 in Sem 6. CS3230 and CS4246 different. OK. CS2105 late (Sem 7). CS2101 early (Sem 3). This is better for \"CS2105 as late as possible\".\n\nPlan:\nSem 2: CS2100, CS2030S, CS2040S (12 MC)\nSem 3: CS2106, CS2103, CS3219, CS2101 (16 MC)\nSem 4: ST2334, MA1522, CS3230 (12 MC)\nSem 5: Exchange\nSem 6: CS4246 (4 MC)\nSem 7: CS2105 (4 MC)\nSem 8: Empty\n\nGraduation Sem 7.\nCan we graduate Sem 6? If CS2105 in Sem 6, then CS2105 is not as late as possible. Sem 7 is later.\nIs CS2105 allowed in Sem 7? Yes, offered Sem 1, Sem 2. Wait. CS2105 is offered Sem 1, Sem 2. Sem 7 is Y4S1, which is Sem 1 of the academic year. So yes, offered.\nCS4246 offered Sem 1, Sem 2. Sem 6 is Y3S2, Sem 2. Yes.\nCS3230 offered Sem 1, Sem 2. Sem 4 is Y2S2, Sem 2. Yes.\nST2334 offered Sem 1, Sem 2. Sem 4 is Y2S2, Sem 2. Yes.\nMA1522 offered Sem 1, Sem 2. Sem 4 is Y2S2, Sem 2. Yes.\nCS2101 offered Sem 1, Sem 2. Sem 3 is Y2S1, Sem 1. Yes.\nCS2103 offered Sem 1, Sem 2. Sem 3 is Y2S1, Sem 1. Yes.\nCS3219 offered Sem 1, Sem 2. Sem 3 is Y2S1, Sem 1. Yes.\nCS2106 offered Sem 1, Sem 2. Sem 3 is Y2S1, Sem 1. Yes.\nCS2100 offered Sem 1, Sem 2. Sem 2 is Y1S2, Sem 2. Yes.\nCS2030S offered Sem 1, Sem 2. Sem 2 is Y1S2, Sem 2. Yes.\nCS2040S offered Sem 1, Sem 2. Sem 2 is Y1S2, Sem 2. Yes.\n\nAll courses offered in their planned semesters.\nPrerequisites met.\nMutually exclusive? No conflicts.\nMC limits? 12, 16, 12, 0, 4, 4, 0. All <= 16.\nST2334 and MA1522 together in Sem 4. Yes.\nST2334 before CS3230 (Sem 4 vs Sem 4). \"ST2334 must come before CS3230\". Usually means strictly before? Or just prerequisite? Prerequisite is satisfied if taken in same semester? No, prerequisite must be completed or planned in strictly earlier semester. Rule 4: \"Prerequisites must be completed or planned in a STRICTLY earlier semester.\" So ST2334 must be in Sem < CS3230.\nIf ST2334 is Sem 4, CS3230 must be Sem > 4. Sem 5 is exchange. Sem 6 is available.\nSo CS3230 in Sem 6.\nThen CS4246 needs CS3230. So CS4246 in Sem > 6. Sem 7.\nThen CS2105 needs CS2040S (met in Sem 2). Can be Sem 7 or 8.\nCS2101 needs none. Can be Sem 3.\nCS2106 needs CS2100. CS2100 in Sem 2. CS2106 in Sem 3.\nCS3219 needs CS2103. CS2103 needs CS2030S and CS2040S (Sem 2). CS2103 in Sem 3.\nSo:\nSem 2: CS2100, CS2030S, CS2040S (12 MC)\nSem 3: CS2106, CS2103, CS3219, CS2101 (16 MC)\nSem 4: ST2334, MA1522 (8 MC)\nSem 5: Exchange\nSem 6: CS3230 (4 MC)\nSem 7: CS4246, CS2105 (8 MC)\nSem 8: Empty\n\nGraduation Sem 7.\nCS3230 and CS4246 different semesters (6 and 7). Yes.\nCS4246 as early as possible? Sem 7 is earliest possible because CS3230 is Sem 6 (due to ST2334 Sem 4).\nCS2101 as early as possible? Sem 3 is earliest possible (Sem 2 full with 12 MC, could we add CS2101? 12+4=16. Yes. If CS2101 in Sem 2, then Sem 3 has CS2106, CS2103, CS3219. 12 MC. CS2101 in Sem 2 is earlier.\nLet's check Sem 2: CS2100, CS2030S, CS2040S, CS2101. 16 MC.\nSem 3: CS2106, CS2103, CS3219. 12 MC.\nSem 4: ST2334, MA1522. 8 MC.\nSem 5: Exchange.\nSem 6: CS3230. 4 MC.\nSem 7: CS4246, CS2105. 8 MC.\nCS2101 in Sem 2 is earlier than Sem 3.\nCS2105 in Sem 7 is late.\nCS4246 in Sem 7 is early (constrained by CS3230).\nThis plan is better for CS2101.\n\nFinal Plan:\nSem 2: CS2100, CS2030S, CS2040S, CS2101\nSem 3: CS2106, CS2103, CS3219\nSem 4: ST2334, MA1522\nSem 5: Exchange\nSem 6: CS3230\nSem 7: CS4246, CS2105\n\nStatus: PLAN.\n\n{\"status\": \"PLAN\", \"plan\": {\"2\": [\"CS2100\", \"CS2030S\", \"CS2040S\", \"CS2101\"], \"3\": [\"CS2106\", \"CS2103\", \"CS3219\"], \"4\": [\"ST2334\", \"MA1522\"], \"6\": [\"CS3230\"], \"7\": [\"CS4246\", \"CS2105\"]}, \"reasons\": [\"ST2334 and MA1522 taken together in Sem 4. CS3230 in Sem 6 (after ST2334). CS4246 in Sem 7 (after CS3230). CS2101 in Sem 2 (early). CS2105 in Sem 7 (late). Exchange in Sem 5.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "2": [
+    "CS2100",
+    "CS2030S",
+    "CS2040S",
+    "CS2101"
+   ],
+   "3": [
+    "CS2106",
+    "CS2103",
+    "CS3219"
+   ],
+   "4": [
+    "ST2334",
+    "MA1522"
+   ],
+   "6": [
+    "CS3230"
+   ],
+   "7": [
+    "CS4246",
+    "CS2105"
+   ]
+  },
+  "reasons": [
+   "ST2334 and MA1522 taken together in Sem 4. CS3230 in Sem 6 (after ST2334). CS4246 in Sem 7 (after CS3230). CS2101 in Sem 2 (early). CS2105 in Sem 7 (late). Exchange in Sem 5."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

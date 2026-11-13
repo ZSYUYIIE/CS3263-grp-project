@@ -1,0 +1,59 @@
+{
+ "id": "q1-ex-008-p",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 2.15,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2846,
+  "total_tokens": 2996,
+  "completion_tokens": 150,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 2.15,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\": \"eligible\", \"target\": \"CS5422\", \"current_sem\": 5, \"completed\": [\"CS2220\", \"ES2660\", \"MA1521\", \"CS3236\", \"CS4222\", \"CS2109S\", \"CS3230\", \"MA1512\", \"CS2106\", \"CS1101S\", \"CS2040S\", \"CS2100\", \"ES1000\", \"CS2105\", \"ST2334\", \"IS2101\", \"CS1231S\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS5422",
+  "current_sem": 5,
+  "completed": [
+   "CS2220",
+   "ES2660",
+   "MA1521",
+   "CS3236",
+   "CS4222",
+   "CS2109S",
+   "CS3230",
+   "MA1512",
+   "CS2106",
+   "CS1101S",
+   "CS2040S",
+   "CS2100",
+   "ES1000",
+   "CS2105",
+   "ST2334",
+   "IS2101",
+   "CS1231S"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS5422",
+  "semester": 5,
+  "reasons": [
+   "not offered in semester 1 (offered: [2])",
+   "precluded: already completed CS4222"
+  ],
+  "can_still_become_eligible": false,
+  "never_eligible_because": "CS5422 is ruled out by completed CS4222"
+ }
+}

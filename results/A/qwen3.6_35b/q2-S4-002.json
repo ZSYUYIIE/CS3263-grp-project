@@ -1,0 +1,48 @@
+{
+ "id": "q2-S4-002",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 38.25,
+ "usage": {
+  "prompt_tokens": 8493,
+  "total_tokens": 10562,
+  "completion_tokens": 2069,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 38.24,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"The student's per-semester MC limit is 8, but the required courses total 28 MC. The minimum number of semesters needed is 28/8 = 3.5, so at least 4 semesters are required. The student is in Y2S1 (Sem 3). The available semesters are 3, 4, 5, 6, 7, 8. However, the prerequisite chain for CS4247 (CS3241 -> CS3237 -> CG2028/CS2100 etc) and CS4221 (CS3223 -> CS2102/CS2040S etc) creates a long dependency chain. Specifically, CS3237 requires CG2028 or CS2100. CS3241 requires CS2030S (completed) and CS2040S (completed). So CS3241 can be taken in Sem 3 if prerequisites are met. But CS3237 requires a hardware course (CG2028/CS2100/EE2028). None of these are completed. CG2028 requires CS1010/CS1101S (CS1101S is completed). So CG2028 can be taken in Sem 3. Then CS3237 in Sem 4. Then CS3241 in Sem 5 (requires CS3237). CS4247 in Sem 6 (requires CS3241). For the DB track: CS4221 requires CS3223. CS3223 requires CS2040S (completed) and CS2102. CS2102 requires CS1231S (completed) and CS2030S/CS2040S (completed). So CS2102 can be taken in Sem 3. CS3223 in Sem 4. CS4221 in Sem 5. CS2105 requires CS2040S (completed) or YSC2229. So CS2105 can be taken in Sem 3. CS2103T requires CS2030S and CS2040S (both completed). So CS2103T can be taken in Sem 3. Let's try to pack them. Sem 3: CS2102 (4), CS2105 (4), CS2103T (4). Total 12 MC > 8. Impossible. Sem 3: CS2102 (4), CS2105 (4). Total 8. Sem 4: CS2103T (4), CG2028 (2), CS3223 (4). Total 10 > 8. Impossible. Sem 4: CS2103T (4), CG2028 (2). Total 6. Sem 5: CS3223 (4), CS3237 (4). Total 8. Sem 6: CS4221 (4), CS3241 (4). Total 8. Sem 7: CS4247 (4). Total 4. This plan works for MC and prerequisites. Wait, CS2103T must come before CS3241. In this plan, CS2103T is Sem 4, CS3241 is Sem 6. OK. CS3237 before CS3241. CS3237 Sem 5, CS3241 Sem 6. OK. CS2103T before CS2105. CS2103T Sem 4, CS2105 Sem 3. VIOLATION. The student wants CS2103T before CS2105. Let's swap. Sem 3: CS2103T (4), CS2102 (4). Total 8. Sem 4: CS2105 (4), CG2028 (2). Total 6. Sem 5: CS3223 (4), CS3237 (4). Total 8. Sem 6: CS4221 (4), CS3241 (4). Total 8. Sem 7: CS4247 (4). Total 4. This satisfies all constraints. Is there any other constraint? \"At most two modules with final exams\". We don't have exam info, so we assume this is a soft wish or not checkable. The prompt says \"Wishes you cannot act on... do not change the answer\". So we ignore exam wishes. The plan seems valid. Why NO_PLAN? Let's re-read carefully. \"CS2103T must come before CS3241\". Yes. \"Ideally I'd take CS3237 before CS3241\". Yes. \"Rather do CS2103T before CS2105\". Yes. The plan: 3: CS2103T, CS2102. 4: CS2105, CG2028. 5: CS3223, CS3237. 6: CS4221, CS3241. 7: CS4247. All prerequisites met. MC <= 8. All courses taken. Status should be PLAN. Let me double check prerequisites. CS2102: CS1231S (done), CS2030S/CS2040S (done). OK. CS2103T: CS2030S (done), CS2040S (done). OK. CS2105: CS2040S (done). OK. CG2028: CS1101S (done). OK. CS3223: CS2040S (done), CS2102 (planned Sem 3, so done by Sem 5). OK. CS3237: CG2028 (planned Sem 4, done by Sem 5), CS1101S (done). OK. CS4221: CS3223 (planned Sem 5, done by Sem 6). OK. CS3241: CS2030S (done), CS2040S (done). Wait, CS3241 prerequisite is (CS2030S...) AND (CS2040...). It does NOT require CS3237. CS3237 is a separate course. The student wants CS3237 before CS3241 ideally. In my plan, CS3237 is Sem 5, CS3241 is Sem 6. OK. CS4247: CS3241 (planned Sem 6, done by Sem 7). OK. The plan is valid. I will output PLAN.\n\nWait, I missed one detail. \"CS2103T must come before CS3241\". In my plan, CS2103T is Sem 4, CS3241 is Sem 6. OK.\n\"CS2103T before CS2105\". In my plan, CS2103T is Sem 3, CS2105 is Sem 4. OK.\n\nIs there any issue with \"at most 8 MC\"?\nSem 3: 4+4=8.\nSem 4: 4+2=6.\nSem 5: 4+4=8.\nSem 6: 4+4=8.\nSem 7: 4.\nAll good.\n\nOne final check: \"CS3237 ... prerequisite: (EE2028 or EE2024 or CG2028 or CS2100 or CS2100DE or CS2100HS) and (CS1010 or CS1101S ...)\".\nI used CG2028. CG2028 prereq: CS1010 or CS1101S. Student has CS1101S. OK.\n\nSo the plan is:\nSem 3: CS2103T, CS2102\nSem 4: CS2105, CG2028\nSem 5: CS3223, CS3237\nSem 6: CS4221, CS3241\nSem 7: CS4247\n\nThis satisfies all hard constraints.\n\n{\"status\": \"PLAN\", \"plan\": {\"3\": [\"CS2103T\", \"CS2102\"], \"4\": [\"CS2105\", \"CG2028\"], \"5\": [\"CS3223\", \"CS3237\"], \"6\": [\"CS4221\", \"CS3241\"], \"7\": [\"CS4247\"]}, \"reasons\": [\"All prerequisites are satisfied. MC per semester is within the 8 MC limit. CS2103T is taken before CS2105 and CS3241. CS3237 is taken before CS3241.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2103T",
+    "CS2102"
+   ],
+   "4": [
+    "CS2105",
+    "CG2028"
+   ],
+   "5": [
+    "CS3223",
+    "CS3237"
+   ],
+   "6": [
+    "CS4221",
+    "CS3241"
+   ],
+   "7": [
+    "CS4247"
+   ]
+  },
+  "reasons": [
+   "All prerequisites are satisfied. MC per semester is within the 8 MC limit. CS2103T is taken before CS2105 and CS3241. CS3237 is taken before CS3241."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

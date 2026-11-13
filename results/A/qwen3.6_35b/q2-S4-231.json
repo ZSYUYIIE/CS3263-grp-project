@@ -1,0 +1,36 @@
+{
+ "id": "q2-S4-231",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 27.69,
+ "usage": {
+  "prompt_tokens": 10433,
+  "total_tokens": 12020,
+  "completion_tokens": 1587,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 27.69,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"3\": [\"CS3219\", \"CS3230\", \"CS3240\"], \"4\": [\"CS4249\", \"CS4353\", \"CS3249\"]}, \"reasons\": [\"Prerequisites satisfied: CS3219 needs CS2030S/CS2040S; CS3230 needs CS2040S/CS1231S; CS3240 needs CS2030S/CS1231S. CS3249 needs CS2111 which is not in the must-take list but is a prerequisite for CS3249 and CS4249/CS3240 dependencies? No, CS3249 prereq is CS2111. CS4249 prereq is CS3240. CS4353 prereq is CS2113+CS3240 or NM... The student must take CS2111 and CS2113 to unlock CS3249, CS4249, CS3240 (no, CS3240 prereq is CS2040S+CS1231S, so CS3240 is free). Wait, CS3249 prereq is CS2111. CS4249 prereq is CS3240. CS4353 prereq is (CS2103/CS2113) AND CS3240. The student did NOT list CS2111 or CS2113 as completed or must-take. However, CS3249 requires CS2111. CS4353 requires CS2113 (or CS2103 etc) AND CS3240. The student's 'must' list does not include CS2111 or CS2113. But they are prerequisites for the 'must' courses. Rule 8 says add a course ONLY when it is a prerequisite needed by a planned course. So I must add CS2111 and CS2113. CS2111 prereq: CS1010A/E/X/1101S/1010S/UTC2851/1010HS/1010J/1010/NM2207. Student has CS1101S and CS1010S. So CS2111 is eligible in Sem 3. CS2113 prereq: CS2040C/S/HS/DE. Student has CS2040S. So CS2113 is eligible in Sem 3. CS3249 prereq CS2111. CS4249 prereq CS3240. CS4353 prereq CS2113+CS3240. CS3230 prereq CS2040S+CS1231S. CS3219 prereq CS2103/CS2113 etc. CS3219 prereq is CS2103 or CS2113. Student has neither. So CS2113 is also prereq for CS3219. So CS2113 is needed for CS3219, CS4353. CS2111 is needed for CS3249. CS3240 needs no extra prereqs. CS3230 needs no extra prereqs. So Sem 3: CS2111, CS2113, CS3230, CS3240, CS3219? That's 20 MC. Sem 4: CS3249, CS4249, CS4353. CS4249 and CS3230 same semester? No, CS3230 is in Sem 3. The student said CS4249 and CS3230 must be in the same semester. This is a conflict. CS3230 prereq is CS2040S+CS1231S. CS4249 prereq is CS3240. CS3240 prereq is CS2040S+CS1231S. So CS3240 and CS3230 can be taken in Sem 3. If they must be in the same semester, they go to Sem 3. Then CS4249 is in Sem 3. But CS4249 prereq is CS3240. If CS3240 is in Sem 3, CS4249 can be in Sem 3? No, prereq must be completed or planned in strictly earlier semester. So CS4249 must be Sem 4 if CS3240 is Sem 3. But CS3230 is Sem 3. So they cannot be in the same semester if CS3240 is Sem 3. Can CS3230 and CS4249 be in Sem 4? CS3230 prereq is CS2040S+CS1231S. Yes. CS4249 prereq is CS3240. So CS3240 must be Sem 3 or earlier. If CS3240 is Sem 3, CS4249 is Sem 4. CS3230 can be Sem 4. So Sem 3: CS3240, CS3219, CS2111, CS2113. Sem 4: CS3230, CS4249, CS4353, CS3249. Check CS4353 prereq: CS2113+CS3240. Both in Sem 3. OK. CS3249 prereq CS2111. In Sem 3. OK. CS3219 prereq CS2113. In Sem 3. OK. CS3230 in Sem 4. CS4249 in Sem 4. Same semester. OK. CS3249 before CS4249? No, CS3249 is Sem 4, CS4249 is Sem 4. Student said 'Ideally I'd take CS3249 before CS4249'. This is a soft wish. Can we do CS3249 in Sem 3? No, CS2111 is Sem 3. CS3249 prereq CS2111. So CS3249 must be Sem 4 or later. CS4249 must be Sem 4 or later. So they can't be strictly before. Soft wish not met. CS4353 as early as possible: Sem 4 is earliest. CS3249 as late as possible: Sem 4 is last semester used. OK. MC: Sem 3: 4+4+4+4=16. Sem 4: 4+4+4+4=16. OK.\"}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS3219",
+    "CS3230",
+    "CS3240"
+   ],
+   "4": [
+    "CS4249",
+    "CS4353",
+    "CS3249"
+   ]
+  }
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 49152,
+ "workers": 4
+}

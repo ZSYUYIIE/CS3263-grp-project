@@ -1,0 +1,103 @@
+{
+ "id": "q2-S3-116",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 9.33,
+ "solver_seconds": 0.022,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3141,
+  "total_tokens": 3595,
+  "completion_tokens": 454,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 9.3,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 6,\n\"completed\": [\n\"CS2040S\",\n\"CS3219\",\n\"CS3233\",\n\"CS2030S\",\n\"CS2101\",\n\"MA1521\",\n\"CS2103T\",\n\"CS2109S\",\n\"CS3230\",\n\"MA1522\",\n\"CS2105\",\n\"CS1101S\",\n\"CS2100\",\n\"IS1108\",\n\"CS2106\",\n\"ES2660\",\n\"CS1231S\"\n],\n\"must_take\": [\n\"CS2102\",\n\"ST2334\",\n\"CS3237\",\n\"CS3231\",\n\"CS3227\"\n],\n\"atap_sems\": [\n7\n],\n\"sem_caps\": {\n\"7\": 1\n},\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"ST2334\",\n\"b\": \"CS3237\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS3237\",\n\"b\": \"CS2102\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3227\",\n\"sem\": 6,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS3237\",\n\"b\": \"CS3231\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS2102\",\n\"b\": \"ST2334\",\n\"strength\": \"prefer\"\n}\n],\n\"late\": [\n\"ST2334\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 6,
+  "completed": [
+   "CS2040S",
+   "CS3219",
+   "CS3233",
+   "CS2030S",
+   "CS2101",
+   "MA1521",
+   "CS2103T",
+   "CS2109S",
+   "CS3230",
+   "MA1522",
+   "CS2105",
+   "CS1101S",
+   "CS2100",
+   "IS1108",
+   "CS2106",
+   "ES2660",
+   "CS1231S"
+  ],
+  "must_take": [
+   "CS2102",
+   "ST2334",
+   "CS3237",
+   "CS3231",
+   "CS3227"
+  ],
+  "atap_sems": [
+   7
+  ],
+  "sem_caps": {
+   "7": 1
+  },
+  "rules": [
+   {
+    "type": "before",
+    "a": "ST2334",
+    "b": "CS3237",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3237",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3227",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3237",
+    "b": "CS3231",
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS2102",
+    "b": "ST2334",
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "ST2334"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the MC limits (at most 20 MC per semester; semester 7 at most 1 MC); the semesters in which the courses are offered"
+  ]
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "id": "q2-S4-215",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 3,
+ "end": "cap",
+ "seconds": 50.05,
+ "usage": {
+  "prompt_tokens": 41812,
+  "total_tokens": 44179,
+  "completion_tokens": 2367,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 50.05,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2102\"\n],\n\"6\": [\n\"CS2105\"\n],\n\"7\": [\n\"CS3223\",\n\"CS3213\"\n],\n\"8\": [\n\"CS3219\",\n\"CS4231\"\n]\n},\n\"reasons\": [\n\"CS2102 is taken in Sem 5 to satisfy the hard prerequisite for CS3223 and the ordering constraint with CS2105.\",\n\"CS2105 is taken in Sem 6, after CS2102, satisfying the hard rule that CS2105 must be finished before CS3223.\",\n\"CS3223 is taken in Sem 7 after CS2105. CS3213 is also in Sem 7. CS3219 and CS4231 are in Sem 8.\"\n]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102"
+   ],
+   "6": [
+    "CS2105"
+   ],
+   "7": [
+    "CS3223",
+    "CS3213"
+   ],
+   "8": [
+    "CS3219",
+    "CS4231"
+   ]
+  },
+  "reasons": [
+   "CS2102 is taken in Sem 5 to satisfy the hard prerequisite for CS3223 and the ordering constraint with CS2105.",
+   "CS2105 is taken in Sem 6, after CS2102, satisfying the hard rule that CS2105 must be finished before CS3223.",
+   "CS3223 is taken in Sem 7 after CS2105. CS3213 is also in Sem 7. CS3219 and CS4231 are in Sem 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

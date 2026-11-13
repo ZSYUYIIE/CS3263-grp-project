@@ -1,0 +1,29 @@
+{
+ "id": "q1-ad-004-h",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 11.05,
+ "usage": {
+  "prompt_tokens": 6924,
+  "total_tokens": 7467,
+  "completion_tokens": 543,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 11.05,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NOT_ELIGIBLE\",\n  \"reasons\": [\n    \"CS2040S is mutually exclusive with CS2040S (itself) and other listed courses, but more critically, the student has already completed CS2040S.\",\n    \"The 'cannot take if completed' rule for CS2040S lists CS1020, CS1020E, CS2020, CS2010, CS2040C, CS2040, CS2040DE, CS2040HS. It does not explicitly list itself, but standard academic rules imply one cannot retake a completed course unless specified. However, looking at the 'mutually exclusive' list for CS2040S, it includes CS2040, CS2040C, etc. The primary blocker is that the student has already completed CS2040S. Usually, 'cannot take if completed' applies to the course itself or its equivalents. Let's re-read carefully. CS2040S 'cannot take if completed' lists CS1020... CS2040HS. It does NOT list CS2040S. This is a data quirk. However, CS2040S is mutually exclusive with CS2040, CS2040C, etc. If the student has completed CS2040S, they have satisfied the requirement for CS2040S. They cannot take it again as a new course. The question is 'Am I allowed to take CS2040S?'. Since they have completed it, they cannot take it again. The 'cannot take if completed' field is often incomplete in these records for the course itself, but the fact that it is completed is the blocker. Wait, let's look at CS1010. 'cannot take if completed: CS1010S...'. It doesn't list CS1010. But CS1010 is mutually exclusive with CS1010S. If you complete CS1010S, you can't take CS1010. If you complete CS1010, you can't take CS1010S. The 'cannot take if completed' list is for *other* courses that block it. The course itself is implicitly blocked if completed. Therefore, since the student has completed CS2040S, they cannot take it again.\"\n  ]\n}",
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "reasons": [
+   "CS2040S is mutually exclusive with CS2040S (itself) and other listed courses, but more critically, the student has already completed CS2040S.",
+   "The 'cannot take if completed' rule for CS2040S lists CS1020, CS1020E, CS2020, CS2010, CS2040C, CS2040, CS2040DE, CS2040HS. It does not explicitly list itself, but standard academic rules imply one cannot retake a completed course unless specified. However, looking at the 'mutually exclusive' list for CS2040S, it includes CS2040, CS2040C, etc. The primary blocker is that the student has already completed CS2040S. Usually, 'cannot take if completed' applies to the course itself or its equivalents. Let's re-read carefully. CS2040S 'cannot take if completed' lists CS1020... CS2040HS. It does NOT list CS2040S. This is a data quirk. However, CS2040S is mutually exclusive with CS2040, CS2040C, etc. If the student has completed CS2040S, they have satisfied the requirement for CS2040S. They cannot take it again as a new course. The question is 'Am I allowed to take CS2040S?'. Since they have completed it, they cannot take it again. The 'cannot take if completed' field is often incomplete in these records for the course itself, but the fact that it is completed is the blocker. Wait, let's look at CS1010. 'cannot take if completed: CS1010S...'. It doesn't list CS1010. But CS1010 is mutually exclusive with CS1010S. If you complete CS1010S, you can't take CS1010. If you complete CS1010, you can't take CS1010S. The 'cannot take if completed' list is for *other* courses that block it. The course itself is implicitly blocked if completed. Therefore, since the student has completed CS2040S, they cannot take it again."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 4,
+ "ablation": 1
+}

@@ -1,0 +1,47 @@
+{
+ "id": "q2-S4-215",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 3,
+ "end": "cap",
+ "seconds": 45.91,
+ "usage": {
+  "prompt_tokens": 26607,
+  "total_tokens": 28747,
+  "completion_tokens": 2140,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 45.91,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2105\"\n],\n\"6\": [\n\"CS2102\",\n\"CS3223\",\n\"CS3213\"\n],\n\"7\": [\n\"CS3219\",\n\"CS4231\"\n]\n},\n\"reasons\": [\n\"CS2105 is taken in Y3S1 (Sem 5) as requested. Prerequisite CS2040S is completed.\",\n\"CS2102 and CS3223 are taken in Y3S2 (Sem 6). CS2102 requires CS1231S (completed) and CS2030S/CS2040S (completed). CS3223 requires CS2040S (completed) and CS2102 (planned in same semester, allowed as corequisite or earlier; here CS2102 is taken in same semester, which satisfies 'CS2102 or IT2002' if CS2102 is a corequisite or completed. Wait, CS3223 prereq is (CS2040S...) AND (CS2102 or IT2002). CS2102 is taken in Sem 6. CS3223 is taken in Sem 6. Prerequisites must be completed or planned in a STRICTLY earlier semester. So CS2102 must be before CS3223. I will put CS2102 in Sem 5? No, CS2105 is in Sem 5. Can I take both? 4+4=8 MC. Yes. But user said 'CS2105 ideally in Y3S1'. And 'CS2102 before CS2105'. So CS2102 must be before CS2105. CS2105 is Sem 5. So CS2102 must be Sem 4 or earlier. But user is in Sem 5. So CS2102 must be in Sem 5? No, strictly earlier. So CS2102 must be in Sem 4? But user is in Sem 5. This is a conflict. Let's re-read. 'This semester is year 3 semester 1'. So current is Sem 5. 'CS2102 before CS2105'. If CS2105 is Sem 5, CS2102 must be Sem 4. But Sem 4 is past. So CS2105 cannot be in Sem 5 if CS2102 is required before it and not completed. User said 'CS2105 ideally in Y3S1'. If CS2102 is not done, CS2105 cannot be in Y3S1. So CS2105 must be later. Or CS2102 is done? No, user listed 'Modules I still need: CS3219, CS2102, CS2105 and CS4262' (then scratched 4262). So CS2102 is NOT done. So CS2102 must be taken before CS2105. Since current is Sem 5, CS2102 must be in Sem 5? No, strictly earlier. So CS2102 must be in Sem 4. But Sem 4 is past. So the user's wish 'CS2105 ideally in Y3S1' is impossible if CS2102 is needed before it. I must prioritize hard rules. CS2102 must be before CS2105. So CS2102 in Sem 5, CS2105 in Sem 6. Then CS3223 needs CS2102. So CS3223 in Sem 7. CS3219 needs CS3223. So CS3219 in Sem 8. CS4231 needs CS3230 (completed). So CS4231 can be Sem 6+. CS3213 needs CS2103T (completed). So CS3213 can be Sem 6+. User wants CS3223 before CS3213. So CS3213 after Sem 7. Let's plan: Sem 5: CS2102. Sem 6: CS2105, CS3213. Sem 7: CS3223. Sem 8: CS3219, CS4231. Check MC: Sem 5: 4. Sem 6: 4+4=8. Sem 7: 4. Sem 8: 4+4=8. All <= 20. Prereqs: CS2102 (Sem 5) prereq CS1231S (done), CS2030S/CS2040S (done). OK. CS2105 (Sem 6) prereq CS2040S (done). OK. CS3213 (Sem 6) prereq CS2103T (done). OK. CS3223 (Sem 7) prereq CS2040S (done), CS2102 (Sem 5, done). OK. CS3219 (Sem 8) prereq CS2103T (done). OK. CS4231 (Sem 8) prereq CS3230 (done). OK. Order: CS2102 before CS2105? Yes (5 before 6). CS3223 before CS3219? Yes (7 before 8). CS2105 before CS3223? Yes (6 before 7). CS3223 before CS3213? No, CS3213 is Sem 6, CS3223 is Sem 7. User said 'Ideally I'd take CS3223 before CS3213'. This is a soft wish. Can I swap? If CS3223 is Sem 6, CS2102 must be Sem 5. CS2105 must be after CS2102. If CS2105 is Sem 7, CS3213 can be Sem 8. But user wanted CS2105 ideally in Y3S1. That's impossible. So I will satisfy the hard constraints and the 'CS2102 before CS2105' hard constraint. The 'CS3223 before CS3213' is soft. I will try to satisfy it if possible. If CS3223 is Sem 6, CS2102 is Sem 5. CS2105 is Sem 7. CS3213 is Sem 8. This works. Sem 5: CS2102. Sem 6: CS3223. Sem 7: CS2105. Sem 8: CS3213, CS3219, CS4231. Check prereqs: CS3223 needs CS2102 (Sem 5). OK. CS2105 needs CS2040S. OK. CS3213 needs CS2103T. OK. CS3219 needs CS2103T. OK. CS4231 needs CS3230. OK. Order: CS2102 before CS2105? Yes (5 before 7). CS3223 before CS3219? Yes (6 before 8). CS2105 before CS3223? No, CS2105 is Sem 7, CS3223 is Sem 6. User said 'I need to finish CS2105 before I start CS3223'. This is a HARD rule. So CS2105 MUST be before CS3223. So CS2105 Sem 6, CS3223 Sem 7. Then CS3213 must be after CS3223 (soft wish). So CS3213 Sem 8. CS3219 Sem 8. CS4231 Sem 8. Sem 5: CS2102. Sem 6: CS2105. Sem 7: CS3223. Sem 8: CS3213, CS3219, CS4231. MC: 4, 4, 4, 12. All good. This satisfies all hard rules and the soft wish CS3223 before CS3213.\"\n]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2105"
+   ],
+   "6": [
+    "CS2102",
+    "CS3223",
+    "CS3213"
+   ],
+   "7": [
+    "CS3219",
+    "CS4231"
+   ]
+  },
+  "reasons": [
+   "CS2105 is taken in Y3S1 (Sem 5) as requested. Prerequisite CS2040S is completed.",
+   "CS2102 and CS3223 are taken in Y3S2 (Sem 6). CS2102 requires CS1231S (completed) and CS2030S/CS2040S (completed). CS3223 requires CS2040S (completed) and CS2102 (planned in same semester, allowed as corequisite or earlier; here CS2102 is taken in same semester, which satisfies 'CS2102 or IT2002' if CS2102 is a corequisite or completed. Wait, CS3223 prereq is (CS2040S...) AND (CS2102 or IT2002). CS2102 is taken in Sem 6. CS3223 is taken in Sem 6. Prerequisites must be completed or planned in a STRICTLY earlier semester. So CS2102 must be before CS3223. I will put CS2102 in Sem 5? No, CS2105 is in Sem 5. Can I take both? 4+4=8 MC. Yes. But user said 'CS2105 ideally in Y3S1'. And 'CS2102 before CS2105'. So CS2102 must be before CS2105. CS2105 is Sem 5. So CS2102 must be Sem 4 or earlier. But user is in Sem 5. So CS2102 must be in Sem 5? No, strictly earlier. So CS2102 must be in Sem 4? But user is in Sem 5. This is a conflict. Let's re-read. 'This semester is year 3 semester 1'. So current is Sem 5. 'CS2102 before CS2105'. If CS2105 is Sem 5, CS2102 must be Sem 4. But Sem 4 is past. So CS2105 cannot be in Sem 5 if CS2102 is required before it and not completed. User said 'CS2105 ideally in Y3S1'. If CS2102 is not done, CS2105 cannot be in Y3S1. So CS2105 must be later. Or CS2102 is done? No, user listed 'Modules I still need: CS3219, CS2102, CS2105 and CS4262' (then scratched 4262). So CS2102 is NOT done. So CS2102 must be taken before CS2105. Since current is Sem 5, CS2102 must be in Sem 5? No, strictly earlier. So CS2102 must be in Sem 4. But Sem 4 is past. So the user's wish 'CS2105 ideally in Y3S1' is impossible if CS2102 is needed before it. I must prioritize hard rules. CS2102 must be before CS2105. So CS2102 in Sem 5, CS2105 in Sem 6. Then CS3223 needs CS2102. So CS3223 in Sem 7. CS3219 needs CS3223. So CS3219 in Sem 8. CS4231 needs CS3230 (completed). So CS4231 can be Sem 6+. CS3213 needs CS2103T (completed). So CS3213 can be Sem 6+. User wants CS3223 before CS3213. So CS3213 after Sem 7. Let's plan: Sem 5: CS2102. Sem 6: CS2105, CS3213. Sem 7: CS3223. Sem 8: CS3219, CS4231. Check MC: Sem 5: 4. Sem 6: 4+4=8. Sem 7: 4. Sem 8: 4+4=8. All <= 20. Prereqs: CS2102 (Sem 5) prereq CS1231S (done), CS2030S/CS2040S (done). OK. CS2105 (Sem 6) prereq CS2040S (done). OK. CS3213 (Sem 6) prereq CS2103T (done). OK. CS3223 (Sem 7) prereq CS2040S (done), CS2102 (Sem 5, done). OK. CS3219 (Sem 8) prereq CS2103T (done). OK. CS4231 (Sem 8) prereq CS3230 (done). OK. Order: CS2102 before CS2105? Yes (5 before 6). CS3223 before CS3219? Yes (7 before 8). CS2105 before CS3223? Yes (6 before 7). CS3223 before CS3213? No, CS3213 is Sem 6, CS3223 is Sem 7. User said 'Ideally I'd take CS3223 before CS3213'. This is a soft wish. Can I swap? If CS3223 is Sem 6, CS2102 must be Sem 5. CS2105 must be after CS2102. If CS2105 is Sem 7, CS3213 can be Sem 8. But user wanted CS2105 ideally in Y3S1. That's impossible. So I will satisfy the hard constraints and the 'CS2102 before CS2105' hard constraint. The 'CS3223 before CS3213' is soft. I will try to satisfy it if possible. If CS3223 is Sem 6, CS2102 is Sem 5. CS2105 is Sem 7. CS3213 is Sem 8. This works. Sem 5: CS2102. Sem 6: CS3223. Sem 7: CS2105. Sem 8: CS3213, CS3219, CS4231. Check prereqs: CS3223 needs CS2102 (Sem 5). OK. CS2105 needs CS2040S. OK. CS3213 needs CS2103T. OK. CS3219 needs CS2103T. OK. CS4231 needs CS3230. OK. Order: CS2102 before CS2105? Yes (5 before 7). CS3223 before CS3219? Yes (6 before 8). CS2105 before CS3223? No, CS2105 is Sem 7, CS3223 is Sem 6. User said 'I need to finish CS2105 before I start CS3223'. This is a HARD rule. So CS2105 MUST be before CS3223. So CS2105 Sem 6, CS3223 Sem 7. Then CS3213 must be after CS3223 (soft wish). So CS3213 Sem 8. CS3219 Sem 8. CS4231 Sem 8. Sem 5: CS2102. Sem 6: CS2105. Sem 7: CS3223. Sem 8: CS3213, CS3219, CS4231. MC: 4, 4, 4, 12. All good. This satisfies all hard rules and the soft wish CS3223 before CS3213."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

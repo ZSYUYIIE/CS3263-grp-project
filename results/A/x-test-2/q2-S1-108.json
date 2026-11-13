@@ -1,0 +1,62 @@
+{
+ "id": "q2-S1-108",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 83.45,
+ "usage": {
+  "prompt_tokens": 9335,
+  "total_tokens": 17494,
+  "completion_tokens": 8159,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 7680,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 7973
+  },
+  "finish_reason": "stop",
+  "request_seconds": 83.45,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"3\": [\"CS2103T\", \"CS2105\", \"CS2100\", \"CS3230\"], \"4\": [\"CS2101\"], \"5\": [\"CS3219\"], \"6\": [\"ST2334\", \"CS2109S\"], \"7\": [\"CS4226\", \"CS3264\"], \"8\": [\"CS2106\", \"CS4222\"]}, \"reasons\": [\"All 12 required courses are planned once; total is 48 MC with no added courses.\", \"CS2101 is in semester 4, the latest feasible, before CS3219 in 5 and CS2106 in 8; CS3219 precedes ST2334 in 6.\", \"CS4222 is in semester 8, the latest offering, and CS3219 precedes CS2109S in semester 6.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2103T",
+    "CS2105",
+    "CS2100",
+    "CS3230"
+   ],
+   "4": [
+    "CS2101"
+   ],
+   "5": [
+    "CS3219"
+   ],
+   "6": [
+    "ST2334",
+    "CS2109S"
+   ],
+   "7": [
+    "CS4226",
+    "CS3264"
+   ],
+   "8": [
+    "CS2106",
+    "CS4222"
+   ]
+  },
+  "reasons": [
+   "All 12 required courses are planned once; total is 48 MC with no added courses.",
+   "CS2101 is in semester 4, the latest feasible, before CS3219 in 5 and CS2106 in 8; CS3219 precedes ST2334 in 6.",
+   "CS4222 is in semester 8, the latest offering, and CS3219 precedes CS2109S in semester 6."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

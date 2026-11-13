@@ -1,0 +1,52 @@
+{
+ "id": "q2-S3-004",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 59.98,
+ "usage": {
+  "prompt_tokens": 11977,
+  "total_tokens": 17033,
+  "completion_tokens": 5056,
+  "prompt_tokens_details": {
+   "cached_tokens": 11648,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4894
+  },
+  "finish_reason": "stop",
+  "request_seconds": 59.98,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CP3880\",\"CS3281\",\"CS4218\"],\"7\":[\"CS3103\",\"CS3227\",\"CS3210\"],\"8\":[\"CS3282\",\"CS2102\"]},\"reasons\":[\"CS3282 is only offered in Sem 2 and needs CS3281, so CS3281 is in semester 6 and CS3282 in semester 8.\",\"CS3103 is Sem 1 only and must precede CS3282, so it is in semester 7 with CS3227 as required.\",\"CS3210 is placed as late as possible in semester 7 before CS2102 in semester 8; ATAP is in semester 6 with 8 MC of other courses.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CP3880",
+    "CS3281",
+    "CS4218"
+   ],
+   "7": [
+    "CS3103",
+    "CS3227",
+    "CS3210"
+   ],
+   "8": [
+    "CS3282",
+    "CS2102"
+   ]
+  },
+  "reasons": [
+   "CS3282 is only offered in Sem 2 and needs CS3281, so CS3281 is in semester 6 and CS3282 in semester 8.",
+   "CS3103 is Sem 1 only and must precede CS3282, so it is in semester 7 with CS3227 as required.",
+   "CS3210 is placed as late as possible in semester 7 before CS2102 in semester 8; ATAP is in semester 6 with 8 MC of other courses."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

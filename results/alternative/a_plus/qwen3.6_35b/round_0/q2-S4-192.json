@@ -1,0 +1,41 @@
+{
+ "id": "q2-S4-192",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 50.8,
+ "usage": {
+  "prompt_tokens": 10866,
+  "total_tokens": 13111,
+  "completion_tokens": 2245,
+  "finish_reason": "stop",
+  "request_seconds": 50.8,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2105\",\n      \"CS3219\",\n      \"ST2334\"\n    ],\n    \"6\": [\n      \"CS2102\",\n      \"CS3281\"\n    ],\n    \"7\": [\n      \"CS3268\",\n      \"CS3247\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2105 taken in Sem 5 to satisfy 'as early as possible' wish.\",\n    \"CS3268 taken in Sem 7 after CS3281 (Sem 6) and CS2105 (Sem 5) to satisfy prerequisites and mutual exclusion constraints.\",\n    \"CS3247 taken in Sem 7 after CS3241 is not required as CS3241 is not in the must-take list, but CS3247 requires CS3241. Wait, CS3247 prerequisite is CS3241. CS3241 is not in the student's 'must take' list. However, the student said 'I still have to take... CS3247'. This implies CS3241 must be taken or completed. It is not in completed list. So CS3241 must be planned. CS3241 requires CS2030S/CS2030/CS2030DE/CS2030HS/CS2113/CS2113T AND CS2040/YSC2229/CS2040S/CS2040C/CS2040DE/CS2040HS. Student has CS2030S and CS2040S. So CS3241 is eligible. CS3241 is offered Sem 1. Sem 5 is Sem 1. So CS3241 can be taken in Sem 5. But Sem 5 is full with 12 MC (4+4+4). Can we swap? CS3219 requires YSC3232 or CS2103/CS2103T/CS2103DE/CS2113T/CS2113. Student has CS2103T. So CS3219 is eligible. CS3219 is 4 MC. CS2105 is 4 MC. ST2334 is 4 MC. Total 12. If we add CS3241, we exceed 12. We must drop one. CS3247 requires CS3241. CS3241 is needed for CS3247. CS3247 is a must-take. So CS3241 is a necessary prerequisite. We must fit CS3241. We have 3 courses in Sem 5. We can only take 2 if we add CS3241? No, max 12 MC. 3 courses = 12 MC. Adding CS3241 (4 MC) makes 16 MC. Too many. We must drop one of CS2105, CS3219, ST2334. CS2105 is 'as early as possible'. CS3219 is a must. ST2334 is a must. CS3241 is a prerequisite for CS3247 (must). So we have 4 musts for Sem 5: CS2105, CS3219, ST2334, CS3241. Total 16 MC. Impossible in one semester. We must spread them. CS3241 offered Sem 1. Sem 5 is Sem 1. Sem 6 is Sem 2. CS3241 not offered Sem 2. So CS3241 MUST be in Sem 5 (or earlier, but student is in Y3S1). So CS3241 is in Sem 5. We have CS2105, CS3219, ST2334, CS3241. All 4 are 4 MC. Total 16 MC. Limit 12. Conflict. We must drop one from Sem 5. CS2105 'as early as possible'. If we drop CS2105 from Sem 5, when can we take it? CS2105 offered Sem 1, Sem 2. Sem 6 is Sem 2. So CS2105 can be in Sem 6. CS3219 offered Sem 1, Sem 2. Can be in Sem 6. ST2334 offered Sem 1, Sem 2. Can be in Sem 6. CS3241 ONLY Sem 1. So CS3241 MUST be Sem 5. Sem 5: CS3241 (4 MC). Remaining 8 MC. We have CS2105, CS3219, ST2334. Pick 2. CS2105 'as early as possible'. Take CS2105 in Sem 5. CS3219 'must'. Take CS3219 in Sem 5. ST2334 'must'. Push to Sem 6. Sem 5: CS3241, CS2105, CS3219 (12 MC). Sem 6: ST2334, CS2102, CS3281. CS2102 requires CS1231/MA1100/MA1100T/CS1231S AND (CS2030S/CS2030/CS2030DE/CS2030HS/YSC2229/CS2040/CS2040C/CS2040S/CS2040DE/CS2040HS). Student has CS1231S and CS2030S and CS2040S. Eligible. CS3281 requires CS2103/CS2103T/CS2103DE/CS2113. Student has CS2103T. Eligible. CS2102 and CS3268 cannot be together. CS2105 and CS3268 cannot be together. CS3281 before CS3268. Sem 6: ST2334, CS2102, CS3281 (12 MC). Sem 7: CS3268, CS3247. CS3247 requires CS3241. CS3241 taken Sem 5. Eligible. CS3268 requires CS2109S/CS2109HS/CS3243 AND (ST2334 AND (ST2131/MA2116/MA2116T AND ST2132)). Student has CS2109S. Student has ST2334 (Sem 6). Student does NOT have ST2131, MA2116, MA2116T, ST2132. These are prerequisites for CS3268. The student said 'I still have to take... CS3268'. This implies they will take the prerequisites. But they are not listed in 'must take'. Rule 8: 'Add a course the student did not ask for ONLY when it is a prerequisite needed by a planned course.' So we must add ST2131, MA2116/MA2116T, ST2132. ST2131 and ST2334 are mutually exclusive. Student is taking ST2334. So ST2131 cannot be taken. MA2116 and ST2334 are mutually exclusive. Student is taking ST2334. So MA2116 cannot be taken. MA2116T requires CS1231/CS1231S/MA1100/MA1100T AND MA2104/MA2311. Student has CS1231S. Does not have MA2104 or MA2311. So MA2116T is not eligible unless we add MA2104/MA2311. This gets complicated. Let's check CS3268 prereqs again: (CS2109S or CS2109HS or CS3243) AND (ST2334 or ((ST2131 or MA2116 or MA2116T) and ST2132)). The second part is: ST2334 OR ( (ST2131 OR MA2116 OR MA2116T) AND ST2132 ). Since student has ST2334, the second part is satisfied by ST2334 alone. So CS3268 only requires CS2109S (which student has) and ST2334 (which student takes in Sem 6). So CS3268 is eligible in Sem 7. No extra courses needed for CS3268. Sem 7: CS3268, CS3247 (8 MC). Sem 8: Empty. Graduation Sem 7. This works.\n\n    \"CS3241 added as prerequisite for CS3247. CS3241 only offered Sem 1, so placed in Sem 5. CS2105, CS3219, ST2334, CS3241 total 16 MC. CS2105 and CS3219 taken in Sem 5. ST2334 pushed to Sem 6. CS2102 and CS3281 in Sem 6. CS3268 and CS3247 in Sem 7.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2105",
+    "CS3219",
+    "ST2334"
+   ],
+   "6": [
+    "CS2102",
+    "CS3281"
+   ],
+   "7": [
+    "CS3268",
+    "CS3247"
+   ]
+  }
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

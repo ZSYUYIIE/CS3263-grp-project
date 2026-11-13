@@ -1,0 +1,56 @@
+{
+ "id": "q2-S2-014",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 3,
+ "end": "repeated plan",
+ "seconds": 12.99,
+ "usage": {
+  "prompt_tokens": 20511,
+  "total_tokens": 21083,
+  "completion_tokens": 572,
+  "finish_reason": "stop",
+  "request_seconds": 12.99,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2103T\",\n      \"CS2109S\",\n      \"ST2334\"\n    ],\n    \"4\": [\n      \"CS2100\",\n      \"CS2105\",\n      \"CS3230\"\n    ],\n    \"5\": [\n      \"CS2101\",\n      \"CS2106\",\n      \"CS2102\"\n    ],\n    \"6\": [\n      \"CS3219\",\n      \"CS3241\",\n      \"CS4430\"\n    ],\n    \"7\": [\n      \"CS3247\"\n    ]\n  },\n  \"reasons\": [\n    \"ST2334 is included in Sem 3 to satisfy the must-take requirement.\",\n    \"CS3230 is taken in Sem 4 to precede CS2106 and CS2101 in Sem 5.\",\n    \"CS3241 is added in Sem 6 as a prerequisite for CS3247, and CS3231 is taken in Sem 6 for CS4430.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2103T",
+    "CS2109S",
+    "ST2334"
+   ],
+   "4": [
+    "CS2100",
+    "CS2105",
+    "CS3230"
+   ],
+   "5": [
+    "CS2101",
+    "CS2106",
+    "CS2102"
+   ],
+   "6": [
+    "CS3219",
+    "CS3241",
+    "CS4430"
+   ],
+   "7": [
+    "CS3247"
+   ]
+  },
+  "reasons": [
+   "ST2334 is included in Sem 3 to satisfy the must-take requirement.",
+   "CS3230 is taken in Sem 4 to precede CS2106 and CS2101 in Sem 5.",
+   "CS3241 is added in Sem 6 as a prerequisite for CS3247, and CS3231 is taken in Sem 6 for CS4430."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

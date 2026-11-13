@@ -1,0 +1,95 @@
+{
+ "id": "q2-S4-191",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 6.23,
+ "solver_seconds": 0.107,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2836,
+  "total_tokens": 3530,
+  "completion_tokens": 694,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 471
+  },
+  "finish_reason": "stop",
+  "request_seconds": 6.12,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":5,\"completed\":[\"CS1231S\",\"CS2103T\",\"CS2106\",\"CS1101S\",\"CS3230\",\"MA1521\",\"CS2030S\",\"CS2101\",\"IS1108\",\"CS2100\",\"MA1522\",\"CS2109S\",\"CS2040S\",\"ES2660\"],\"must_take\":[\"CS2102\",\"ST2334\",\"CS2105\",\"CS3268\",\"CS4222\",\"CS3281\",\"CS3219\",\"CS3247\"],\"mc_max\":12,\"sem_caps\":{\"8\":0},\"objective\":\"earliest_graduation\",\"early\":[\"CS2105\",\"CS3268\"],\"rules\":[{\"type\":\"apart\",\"a\":\"CS2102\",\"b\":\"CS3268\",\"strength\":\"must\"},{\"type\":\"apart\",\"a\":\"CS2105\",\"b\":\"CS3268\",\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS3281\",\"b\":\"CS3268\",\"strength\":\"must\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "completed": [
+   "CS1231S",
+   "CS2103T",
+   "CS2106",
+   "CS1101S",
+   "CS3230",
+   "MA1521",
+   "CS2030S",
+   "CS2101",
+   "IS1108",
+   "CS2100",
+   "MA1522",
+   "CS2109S",
+   "CS2040S",
+   "ES2660"
+  ],
+  "must_take": [
+   "CS2102",
+   "ST2334",
+   "CS2105",
+   "CS3268",
+   "CS4222",
+   "CS3281",
+   "CS3219",
+   "CS3247"
+  ],
+  "mc_max": 12,
+  "sem_caps": {
+   "8": 0
+  },
+  "objective": "earliest_graduation",
+  "early": [
+   "CS2105",
+   "CS3268"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS2102",
+    "b": "CS3268",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS2105",
+    "b": "CS3268",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3281",
+    "b": "CS3268",
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS2102 and CS3268 in different semesters; the prerequisites of CS3247; the prerequisites of CS4222; the MC limits (at most 12 MC per semester; semesters 8 blocked); the semesters in which the courses are offered"
+  ]
+ }
+}

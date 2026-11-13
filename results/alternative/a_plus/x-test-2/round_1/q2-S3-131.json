@@ -1,0 +1,53 @@
+{
+ "id": "q2-S3-131",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 57.29,
+ "usage": {
+  "prompt_tokens": 8993,
+  "total_tokens": 14851,
+  "completion_tokens": 5858,
+  "prompt_tokens_details": {
+   "cached_tokens": 8704,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5705
+  },
+  "finish_reason": "stop",
+  "request_seconds": 57.29,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS2101\",\"CS3210\",\"ES2660\"],\"7\":[\"CS3237\",\"CS4223\"],\"8\":[\"CS2102\",\"CS4222\"]},\"reasons\":[\"CS2101 is in semester 6 as early as possible; CS2102 is in semester 8 as late as possible.\",\"CS3237 and CS4223 are Sem 1 only, so both are in semester 7; CS3210 is added in semester 6 as CS4223's prerequisite.\",\"CS4222 is Sem 2 only and placed in semester 8; every active semester has 8-12 MC, within the 16 MC limit.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS2101",
+    "CS3210",
+    "ES2660"
+   ],
+   "7": [
+    "CS3237",
+    "CS4223"
+   ],
+   "8": [
+    "CS2102",
+    "CS4222"
+   ]
+  },
+  "reasons": [
+   "CS2101 is in semester 6 as early as possible; CS2102 is in semester 8 as late as possible.",
+   "CS3237 and CS4223 are Sem 1 only, so both are in semester 7; CS3210 is added in semester 6 as CS4223's prerequisite.",
+   "CS4222 is Sem 2 only and placed in semester 8; every active semester has 8-12 MC, within the 16 MC limit."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

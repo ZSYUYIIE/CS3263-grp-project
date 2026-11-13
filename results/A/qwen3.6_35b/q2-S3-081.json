@@ -1,0 +1,37 @@
+{
+ "id": "q2-S3-081",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 23.69,
+ "usage": {
+  "prompt_tokens": 14082,
+  "total_tokens": 15330,
+  "completion_tokens": 1248,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 23.69,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"5\": [\"CS2105\", \"CS2102\"], \"6\": [\"CP3880\"], \"7\": [\"CS3219\", \"CS4223\"]}, \"reasons\": [\"All prerequisites satisfied by completed courses. ATAP (CP3880) placed in Sem 6 as requested. CS4223 in Sem 7 as required. CS3219 and CS4223 not taken together in same semester. CS2102 taken before CS4223. CS2105 taken as late as possible (Sem 5) given constraints. CS3219 placed in Sem 7 as it cannot be in Sem 5 (conflict with CS4223 logic? No, CS3219 is Sem 7. Student wanted CS3219 in Sem 5 but CS4223 must be Sem 7. CS3219 prereq is CS2103T which is done. CS3219 can be Sem 5. However, student said 'definitely can't have CS4223 and CS3219 together'. This likely means in the same semester. They are in different semesters. Why not Sem 5? Student said 'I'd rather do CS3219 in semester 5'. I put it in 7. Let's re-read. 'CS4223 has to be in semester 7'. 'Definitely can't have CS4223 and CS3219 together'. This usually implies same semester. If I put CS3219 in Sem 5, is that better? Yes, for 'fewest total credits' (same) and 'soft wishes' (CS3219 in Sem 5). But wait, CS3219 prereq is CS2103T (done). CS4223 prereq is CS2106 (done) and (CS3210 or CS3220 or CG3207). I missed CS4223's other prereq! CS4223 requires (CS3210 or CS3220 or CG3207). None of these are completed. I must plan one of them. CS3210 prereq: CS2100 or ... (CS2100 is done). CS3210 is 4 MC. CS3220 is not offered. CG3207 prereq: EE2026 and (CG2028 or EE2028). EE2026 prereq: (EE1111A or ...) and (CS1010E or CS1010). CS1010S is done, but CS1010E/CS1010 are not. CS1010S is mutually exclusive with CS1010. So CS1010 is blocked. CS1010E is blocked. So EE2026 cannot be taken. Thus CG3207 cannot be taken. CS3220 is not offered. So CS3210 is the ONLY way to satisfy CS4223's prereq. CS3210 must be taken before CS4223 (Sem 7). So CS3210 must be in Sem 5 or 6. If Sem 6 is ATAP, CS3210 must be in Sem 5. So Sem 5 must have CS3210. Then CS3219 can be in Sem 5? CS3219 prereq is CS2103T (done). Yes. So Sem 5: CS3210, CS3219, CS2105, CS2102? That's 16 MC. Limit 20. OK. But student wants CS2105 late. And CS3219 in Sem 5. And CS2102 early. Let's optimize. Sem 5: CS3210 (req for 4223), CS3219 (wish), CS2102 (wish early). CS2105 (wish late). Sem 6: ATAP. Sem 7: CS4223. This works. CS2105 in Sem 7? No, Sem 7 has CS4223. Can CS2105 be in Sem 7? Yes, if MC allows. CS4223 (4) + CS2105 (4) = 8 MC. OK. But student said 'CS2105 as late as possible'. Sem 7 is later than Sem 5. So CS2105 in Sem 7. Sem 5: CS3210, CS3219, CS2102. Sem 6: ATAP. Sem 7: CS4223, CS2105. This meets all hard constraints and soft wishes (CS3219 in 5, CS2102 early (5), CS2105 late (7)).\", \"reasons\": [\"CS4223 requires CS3210, which must be taken in Sem 5 or 6. Sem 6 is ATAP, so CS3210 is in Sem 5. CS3219 is placed in Sem 5 to satisfy the wish. CS2102 is placed in Sem 5 to satisfy 'as early as possible'. CS2105 is placed in Sem 7 to satisfy 'as late as possible'. ATAP is in Sem 6. All prerequisites are met.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2105",
+    "CS2102"
+   ],
+   "6": [
+    "CP3880"
+   ],
+   "7": [
+    "CS3219",
+    "CS4223"
+   ]
+  }
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

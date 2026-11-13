@@ -1,0 +1,136 @@
+{
+ "id": "q2-S1-075",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.64,
+ "solver_seconds": 0.09,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3142,
+  "total_tokens": 3553,
+  "completion_tokens": 411,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 7.55,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 3,\n\"programme\": \"BComp CS Hons\",\n\"completed\": [\n\"CS2030S\",\n\"ES2660\",\n\"CS1231S\",\n\"IS1108\",\n\"CS2040S\",\n\"CS1101S\",\n\"MA1521\",\n\"MA1522\"\n],\n\"must_take\": [\n\"CS4239\",\n\"CS3233\",\n\"CS2103T\",\n\"CS3281\",\n\"CS3282\",\n\"CS2109S\"\n],\n\"mc_max\": 12,\n\"sem_caps\": {\n\"6\": 0\n},\n\"objective\": \"min_total_mc\",\n\"early\": [\n\"CS3281\"\n],\n\"rules\": [\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2109S\",\n\"b\": \"CS3282\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2103T\",\n\"b\": \"CS3281\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2103T\",\n\"b\": \"CS3282\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3281\",\n\"sem\": 8,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2103T\",\n\"b\": \"CS3233\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "CS2030S",
+   "ES2660",
+   "CS1231S",
+   "IS1108",
+   "CS2040S",
+   "CS1101S",
+   "MA1521",
+   "MA1522"
+  ],
+  "must_take": [
+   "CS4239",
+   "CS3233",
+   "CS2103T",
+   "CS3281",
+   "CS3282",
+   "CS2109S"
+  ],
+  "mc_max": 12,
+  "sem_caps": {
+   "6": 0
+  },
+  "objective": "min_total_mc",
+  "early": [
+   "CS3281"
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS2109S",
+    "b": "CS3282",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2103T",
+    "b": "CS3281",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2103T",
+    "b": "CS3282",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3281",
+    "sem": 8,
+    "strength": "prefer"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2103T",
+    "b": "CS3233",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 8,
+  "plan": {
+   "3": [
+    "CS2103T",
+    "CS2107"
+   ],
+   "4": [
+    "CG2271",
+    "CS2105",
+    "CS3281"
+   ],
+   "5": [
+    "CS3235"
+   ],
+   "6": [],
+   "7": [
+    "CS4239"
+   ],
+   "8": [
+    "CS2109S",
+    "CS3233",
+    "CS3282"
+   ]
+  },
+  "mc_per_semester": {
+   "3": 8,
+   "4": 12,
+   "5": 4,
+   "6": 0,
+   "7": 4,
+   "8": 12
+  },
+  "preferences_met": [
+   "CS2103T before CS3282",
+   "CS3281 as early as possible"
+  ],
+  "preferences_not_met": [
+   "CS3281 in semester 8",
+   "CS2103T and CS3233 in the same semester"
+  ],
+  "added_prerequisites": [
+   "CG2271",
+   "CS2105",
+   "CS2107",
+   "CS3235"
+  ]
+ }
+}

@@ -1,0 +1,131 @@
+{
+ "id": "q2-S1-171",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 10.74,
+ "solver_seconds": 0.01,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3185,
+  "total_tokens": 3774,
+  "completion_tokens": 589,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 10.73,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"completed\": [\n    \"CS2040S\",\n    \"CS2030S\",\n    \"CS2100\",\n    \"ES2660\",\n    \"CS2105\",\n    \"CS2103T\",\n    \"CS3236\",\n    \"CS4234\",\n    \"CS3219\",\n    \"CS1231S\",\n    \"CS2109S\",\n    \"MA1521\",\n    \"CS3230\",\n    \"CS2101\",\n    \"CS1101S\",\n    \"CS2106\",\n    \"MA1522\",\n    \"ST2334\"\n  ],\n  \"current_sem\": 7,\n  \"must_take\": [\n    \"CS3264\",\n    \"IS1108\",\n    \"CS4248\",\n    \"CS4211\"\n  ],\n  \"mc_max\": 12,\n  \"objective\": \"min_total_mc\",\n  \"rules\": [\n    {\n      \"type\": \"before\",\n      \"a\": \"CS4248\",\n      \"b\": \"CS3264\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS4211\",\n      \"sem\": 7,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS3264\",\n      \"b\": \"CS4211\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"apart\",\n      \"a\": \"IS1108\",\n      \"b\": \"CS3264\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS4248\",\n      \"b\": \"CS4211\",\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"IS1108\",\n      \"b\": \"CS4248\",\n      \"strength\": \"prefer\"\n    }\n  ],\n  \"early\": [\n    \"CS3264\"\n  ],\n  \"unsupported\": [\n    \"don't want one semester much heavier than another\"\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "completed": [
+   "CS2040S",
+   "CS2030S",
+   "CS2100",
+   "ES2660",
+   "CS2105",
+   "CS2103T",
+   "CS3236",
+   "CS4234",
+   "CS3219",
+   "CS1231S",
+   "CS2109S",
+   "MA1521",
+   "CS3230",
+   "CS2101",
+   "CS1101S",
+   "CS2106",
+   "MA1522",
+   "ST2334"
+  ],
+  "current_sem": 7,
+  "must_take": [
+   "CS3264",
+   "IS1108",
+   "CS4248",
+   "CS4211"
+  ],
+  "mc_max": 12,
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS4248",
+    "b": "CS3264",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4211",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3264",
+    "b": "CS4211",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "IS1108",
+    "b": "CS3264",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS4248",
+    "b": "CS4211",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "IS1108",
+    "b": "CS4248",
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS3264"
+  ],
+  "unsupported": [
+   "don't want one semester much heavier than another"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 8,
+  "plan": {
+   "7": [
+    "CS4211",
+    "CS4248",
+    "IS1108"
+   ],
+   "8": [
+    "CS3264"
+   ]
+  },
+  "mc_per_semester": {
+   "7": 12,
+   "8": 4
+  },
+  "preferences_met": [
+   "CS3264 as early as possible"
+  ],
+  "preferences_not_met": [
+   "CS4248 and CS4211 in different semesters",
+   "IS1108 before CS4248"
+  ],
+  "not_applied": [
+   "don't want one semester much heavier than another"
+  ]
+ }
+}

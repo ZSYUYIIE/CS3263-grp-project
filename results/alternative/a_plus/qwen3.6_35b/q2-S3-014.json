@@ -1,0 +1,140 @@
+{
+ "id": "q2-S3-014",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "valid",
+ "seconds": 14.96,
+ "usage": {
+  "prompt_tokens": 29028,
+  "total_tokens": 29914,
+  "completion_tokens": 886,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 14.96,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"4\": [\n\"CS2109S\",\n\"CS3230\"\n],\n\"5\": [\n\"CS2102\",\n\"CS3219\"\n],\n\"6\": [\n\"CP3880\"\n],\n\"7\": [\n\"CS3231\",\n\"CS3264\"\n]\n},\n\"reasons\": [\n\"CS3231 is offered only in Sem 1, so it must be in Sem 7 (Y4S1) or later; Sem 7 is the earliest available after ATAP in Sem 6.\",\n\"ATAP (CP3880) is planned in Sem 6 (Y3S2) as requested. Prerequisites for CP3880 are met by completed courses (CS2103T, IS1108/UTW1001 equivalent via ES2660? No, IS1108 is not in the list. Wait. IS1108 is not in the prerequisite list for CP3880. The prerequisite is (IS2101 or ... or UTW1001...). The student has ES2660. ES2660 is NOT in the prerequisite list. The student has IS1108. IS1108 is NOT in the prerequisite list. The student has CS2103T. CS2103T IS in the prerequisite list for CP3880: (CS2103 or ... or IS2108). Wait, CS2103T is not CS2103. Let's check CP3880 prereq again: (IS2101 or CS2101 or ES1601 ... or UTW1001...) AND (CS2103 or CS2103T or CS2103DE or CS2113 or IS3106 or BT3103 or IS2108). The student has CS2103T. So the second part is met. The first part requires (IS2101 or CS2101 or ...). The student has CS2101. So CP3880 is eligible.\",\n\"Soft wishes: CS3231 and CS3264 are in Sem 7 together. CS2102 (Sem 5) is before CS3219 (Sem 5). CS3230 is in Sem 4, which is as late as possible given it must precede CS3231/CS3264 and CS2109S is needed for CS3264.\"\n]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2109S",
+    "CS3230"
+   ],
+   "5": [
+    "CS2102",
+    "CS3219"
+   ],
+   "6": [
+    "CP3880"
+   ],
+   "7": [
+    "CS3231",
+    "CS3264"
+   ]
+  },
+  "reasons": [
+   "CS3231 is offered only in Sem 1, so it must be in Sem 7 (Y4S1) or later; Sem 7 is the earliest available after ATAP in Sem 6.",
+   "ATAP (CP3880) is planned in Sem 6 (Y3S2) as requested. Prerequisites for CP3880 are met by completed courses (CS2103T, IS1108/UTW1001 equivalent via ES2660? No, IS1108 is not in the list. Wait. IS1108 is not in the prerequisite list for CP3880. The prerequisite is (IS2101 or ... or UTW1001...). The student has ES2660. ES2660 is NOT in the prerequisite list. The student has IS1108. IS1108 is NOT in the prerequisite list. The student has CS2103T. CS2103T IS in the prerequisite list for CP3880: (CS2103 or ... or IS2108). Wait, CS2103T is not CS2103. Let's check CP3880 prereq again: (IS2101 or CS2101 or ES1601 ... or UTW1001...) AND (CS2103 or CS2103T or CS2103DE or CS2113 or IS3106 or BT3103 or IS2108). The student has CS2103T. So the second part is met. The first part requires (IS2101 or CS2101 or ...). The student has CS2101. So CP3880 is eligible.",
+   "Soft wishes: CS3231 and CS3264 are in Sem 7 together. CS2102 (Sem 5) is before CS3219 (Sem 5). CS3230 is in Sem 4, which is as late as possible given it must precede CS3231/CS3264 and CS2109S is needed for CS3264."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"4\": [\n\"CS2109S\",\n\"CS3230\"\n],\n\"5\": [\n\"CS2102\",\n\"CS3219\"\n],\n\"6\": [\n\"CS3231\",\n\"CS3264\"\n]\n},\n\"reasons\": [\n\"Prerequisites for CS2109S, CS3230, CS2102, CS3219, CS3231, CS3264 are satisfied by completed courses.\",\n\"ATAP (CP3880) is planned in Semester 6 (Y3S2) as requested, with 0 additional courses to respect the 8 MC limit for other modules.\",\n\"Soft wishes met: CS3231 and CS3264 are in the same semester (6) but separated from CS2102 (5) and CS3230 (4); CS2102 is before CS3219; CS3230 is as late as possible (Sem 4) given it must precede CS3231/CS3264.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "CS2109S",
+      "CS3230"
+     ],
+     "5": [
+      "CS2102",
+      "CS3219"
+     ],
+     "6": [
+      "CS3231",
+      "CS3264"
+     ]
+    },
+    "reasons": [
+     "Prerequisites for CS2109S, CS3230, CS2102, CS3219, CS3231, CS3264 are satisfied by completed courses.",
+     "ATAP (CP3880) is planned in Semester 6 (Y3S2) as requested, with 0 additional courses to respect the 8 MC limit for other modules.",
+     "Soft wishes met: CS3231 and CS3264 are in the same semester (6) but separated from CS2102 (5) and CS3230 (4); CS2102 is before CS3219; CS3230 is as late as possible (Sem 4) given it must precede CS3231/CS3264."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 14338,
+    "total_tokens": 14613,
+    "completion_tokens": 275,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 5.89,
+    "attempts": 1
+   },
+   "seconds": 5.89,
+   "violations": [
+    "R3 CS3231 not offered in Sem 2 (semester 6)",
+    "R11 ATAP asked for but not planned"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"4\": [\n\"CS2109S\",\n\"CS3230\"\n],\n\"5\": [\n\"CS2102\",\n\"CS3219\"\n],\n\"6\": [\n\"CP3880\"\n],\n\"7\": [\n\"CS3231\",\n\"CS3264\"\n]\n},\n\"reasons\": [\n\"CS3231 is offered only in Sem 1, so it must be in Sem 7 (Y4S1) or later; Sem 7 is the earliest available after ATAP in Sem 6.\",\n\"ATAP (CP3880) is planned in Sem 6 (Y3S2) as requested. Prerequisites for CP3880 are met by completed courses (CS2103T, IS1108/UTW1001 equivalent via ES2660? No, IS1108 is not in the list. Wait. IS1108 is not in the prerequisite list for CP3880. The prerequisite is (IS2101 or ... or UTW1001...). The student has ES2660. ES2660 is NOT in the prerequisite list. The student has IS1108. IS1108 is NOT in the prerequisite list. The student has CS2103T. CS2103T IS in the prerequisite list for CP3880: (CS2103 or ... or IS2108). Wait, CS2103T is not CS2103. Let's check CP3880 prereq again: (IS2101 or CS2101 or ES1601 ... or UTW1001...) AND (CS2103 or CS2103T or CS2103DE or CS2113 or IS3106 or BT3103 or IS2108). The student has CS2103T. So the second part is met. The first part requires (IS2101 or CS2101 or ...). The student has CS2101. So CP3880 is eligible.\",\n\"Soft wishes: CS3231 and CS3264 are in Sem 7 together. CS2102 (Sem 5) is before CS3219 (Sem 5). CS3230 is in Sem 4, which is as late as possible given it must precede CS3231/CS3264 and CS2109S is needed for CS3264.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "CS2109S",
+      "CS3230"
+     ],
+     "5": [
+      "CS2102",
+      "CS3219"
+     ],
+     "6": [
+      "CP3880"
+     ],
+     "7": [
+      "CS3231",
+      "CS3264"
+     ]
+    },
+    "reasons": [
+     "CS3231 is offered only in Sem 1, so it must be in Sem 7 (Y4S1) or later; Sem 7 is the earliest available after ATAP in Sem 6.",
+     "ATAP (CP3880) is planned in Sem 6 (Y3S2) as requested. Prerequisites for CP3880 are met by completed courses (CS2103T, IS1108/UTW1001 equivalent via ES2660? No, IS1108 is not in the list. Wait. IS1108 is not in the prerequisite list for CP3880. The prerequisite is (IS2101 or ... or UTW1001...). The student has ES2660. ES2660 is NOT in the prerequisite list. The student has IS1108. IS1108 is NOT in the prerequisite list. The student has CS2103T. CS2103T IS in the prerequisite list for CP3880: (CS2103 or ... or IS2108). Wait, CS2103T is not CS2103. Let's check CP3880 prereq again: (IS2101 or CS2101 or ES1601 ... or UTW1001...) AND (CS2103 or CS2103T or CS2103DE or CS2113 or IS3106 or BT3103 or IS2108). The student has CS2103T. So the second part is met. The first part requires (IS2101 or CS2101 or ...). The student has CS2101. So CP3880 is eligible.",
+     "Soft wishes: CS3231 and CS3264 are in Sem 7 together. CS2102 (Sem 5) is before CS3219 (Sem 5). CS3230 is in Sem 4, which is as late as possible given it must precede CS3231/CS3264 and CS2109S is needed for CS3264."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 14690,
+    "total_tokens": 15301,
+    "completion_tokens": 611,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 9.07,
+    "attempts": 1
+   },
+   "seconds": 9.07,
+   "violations": []
+  }
+ ]
+}

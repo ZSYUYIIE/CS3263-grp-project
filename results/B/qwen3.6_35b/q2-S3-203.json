@@ -1,0 +1,101 @@
+{
+ "id": "q2-S3-203",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 10.02,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3165,
+  "total_tokens": 3636,
+  "completion_tokens": 471,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 10.02,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 7,\n\"completed\": [\n\"CS2040S\",\n\"CS4243\",\n\"CS3230\",\n\"CS3210\",\n\"ES2660\",\n\"CS2103T\",\n\"CS1231S\",\n\"IS1108\",\n\"CS1101S\",\n\"CS2106\",\n\"CS3219\",\n\"CS2109S\",\n\"CS2101\",\n\"CS2105\",\n\"ST2334\",\n\"MA1521\",\n\"MA1522\",\n\"CS2100\",\n\"CS2030S\",\n\"CS4277\"\n],\n\"must_take\": [\n\"CS2102\",\n\"CS3103\",\n\"CS3234\",\n\"CS4225\"\n],\n\"mc_max\": 12,\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3103\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3103\",\n\"b\": \"CS4225\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2102\",\n\"b\": \"CS4225\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3234\",\n\"b\": \"CS3103\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"late\",\n\"a\": \"CS2102\",\n\"b\": \"CS2102\",\n\"strength\": \"prefer\"\n}\n],\n\"unsupported\": [\n\"avoid modules with heavy group projects\",\n\"applying to have one module waived\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "completed": [
+   "CS2040S",
+   "CS4243",
+   "CS3230",
+   "CS3210",
+   "ES2660",
+   "CS2103T",
+   "CS1231S",
+   "IS1108",
+   "CS1101S",
+   "CS2106",
+   "CS3219",
+   "CS2109S",
+   "CS2101",
+   "CS2105",
+   "ST2334",
+   "MA1521",
+   "MA1522",
+   "CS2100",
+   "CS2030S",
+   "CS4277"
+  ],
+  "must_take": [
+   "CS2102",
+   "CS3103",
+   "CS3234",
+   "CS4225"
+  ],
+  "mc_max": 12,
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3103",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3103",
+    "b": "CS4225",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2102",
+    "b": "CS4225",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS3234",
+    "b": "CS3103",
+    "strength": "prefer"
+   },
+   {
+    "type": "late",
+    "a": "CS2102",
+    "b": "CS2102",
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "avoid modules with heavy group projects",
+   "applying to have one module waived"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [
+  "rules[4].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'"
+ ],
+ "answer": {
+  "status": "INVALID_SPEC",
+  "errors": [
+   "rules[4].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'"
+  ]
+ }
+}

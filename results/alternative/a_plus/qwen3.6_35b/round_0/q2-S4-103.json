@@ -1,0 +1,38 @@
+{
+ "id": "q2-S4-103",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 32.66,
+ "usage": {
+  "prompt_tokens": 12890,
+  "total_tokens": 14529,
+  "completion_tokens": 1639,
+  "finish_reason": "stop",
+  "request_seconds": 32.66,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"7\": [\"CS3227\", \"CS3263\", \"CS4226\"], \"8\": [\"CS3235\", \"CS4277\", \"CS3243\"]}, \"reasons\": [\"All prerequisites satisfied by completed courses. CS3235 placed in Sem 8 as required. CS3227 before CS4277 and CS3235. CS4277 before CS4226 preferred but blocked by CS3227 prerequisite for CS4277? No, CS4277 prereq is MA2001/MA1522... and CS2040... CS3227 prereq is CS2103... CS4226 prereq is CS2105... CS3243 prereq is CS2040... and CS1231... All met. CS3263 prereq CS2109S... met. CS3235 prereq CS2105, CS2106/CG2271, CS2107. CS2107 has no prereq listed? Wait, CS2107 prereq: YSC1212 or CS1010J... CS1010... Student has CS1101S, CS2030S, CS2040S. CS1101S is a valid prereq for CS2107. So CS2107 is effectively completed or can be taken? The student did NOT list CS2107 as completed. CS3235 requires CS2107. CS2107 is not in the 'must take' list. Rule 8: Add a course ONLY when it is a prerequisite needed by a planned course. CS2107 is a prerequisite for CS3235. So I must add CS2107. CS2107 is 4 MC. Sem 7 has CS3227(4), CS3263(4), CS4226(4) = 12 MC. Sem 8 has CS3235(4), CS4277(4), CS3243(4) = 12 MC. If I add CS2107 to Sem 7, it becomes 16 MC. Limit is 20. OK. If I add CS2107 to Sem 8, it becomes 16 MC. OK. CS2107 is offered Sem 1, Sem 2. So it can go in 7 or 8. CS3235 is in 8. CS2107 must be before or same as CS3235. So CS2107 can be in 7 or 8. To keep CS3227 and CS4226 apart, they are in 7 and 7? No, CS3227 is 7, CS4226 is 7. They are together. The wish is 'keep apart'. Can I move CS4226 to 8? CS4226 prereq: CS2105 (completed) and EE2012A/EE2012/MA2216... Student has MA1522. MA1522 is NOT MA2216. MA1522 is Linear Algebra for Computing. MA2216 is not in the completed list. Does the student have MA2216? No. Does the student have EE2012A? No. EE2012? No. So CS4226 prerequisite is NOT satisfied by completed courses. I must add a prerequisite for CS4226. Prereq: (CS2105 or EE3204 or EE3204E or EE4204) AND (EE2012A or EE2012 or MA2216 or ST2131 or ST2334 or MA2116 or MA2116T). Student has CS2105 (yes). Student has ST2334 (yes). So the second part is satisfied by ST2334. So CS4226 is eligible! My previous check was wrong. ST2334 is completed. So CS4226 is eligible. So CS3227 and CS4226 are both in Sem 7. They are together. Can I move one? CS3227 must be before CS4277 and CS3235. CS4226 has no such constraint. If I move CS4226 to Sem 8, they are apart. Sem 8 would have CS3235, CS4277, CS3243, CS4226. 16 MC. OK. This satisfies 'keep apart'. And 'CS4277 before CS4226' is violated if CS4226 is in 8 and CS4277 is in 8? No, same semester is not 'before'. Ideally take CS4277 before CS4226. If CS4277 is 7 and CS4226 is 8, then CS4277 is before CS4226. But CS3227 must be before CS4277. So CS3227 in 6? No, current is 7. So CS3227 in 7. CS4277 in 7. CS4226 in 8. Then CS4277 and CS3227 are in 7. CS4226 in 8. CS3227 and CS4226 are apart. CS4277 is before CS4226. This is better. So Plan: Sem 7: CS3227, CS3263, CS4277. Sem 8: CS3235, CS3243, CS4226. Check CS3235 prereq: CS2107. Must add CS2107. CS2107 in 7 or 8. If in 7, Sem 7 has 4 courses: CS3227, CS3263, CS4277, CS2107. 16 MC. OK. If in 8, Sem 8 has 4 courses: CS3235, CS3243, CS4226, CS2107. 16 MC. OK. CS2107 is offered Sem 1, 2. So 7 or 8. Let's put CS2107 in 7 to balance? Or 8? Doesn't matter for MC. Let's put CS2107 in 7. Sem 7: CS3227, CS3263, CS4277, CS2107. Sem 8: CS3235, CS3243, CS4226. CS3227 and CS4226 are apart (7 vs 8). CS4277 (7) before CS4226 (8). CS3235 in 8. All good.\", \"status\": \"PLAN\"}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "7": [
+    "CS3227",
+    "CS3263",
+    "CS4226"
+   ],
+   "8": [
+    "CS3235",
+    "CS4277",
+    "CS3243"
+   ]
+  }
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

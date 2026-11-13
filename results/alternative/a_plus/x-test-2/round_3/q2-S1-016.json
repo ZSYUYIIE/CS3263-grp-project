@@ -1,0 +1,59 @@
+{
+ "id": "q2-S1-016",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 65.03,
+ "usage": {
+  "prompt_tokens": 6178,
+  "total_tokens": 11853,
+  "completion_tokens": 5675,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 3584
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5497
+  },
+  "finish_reason": "stop",
+  "request_seconds": 65.03,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"1\":[\"CS1010\",\"CS1231\",\"MA1521\"],\"2\":[\"CS2101\",\"CS2040\",\"CS2107\"],\"3\":[\"CS4236\",\"CS2105\",\"ST2334\"],\"4\":[\"CS2030S\",\"CS4222\"]},\"reasons\":[\"Plan meets all hard constraints: CS4236 in sem3 before CS2030S in sem4, and CS4222 with CS2030S in sem4.\",\"CS2101 is placed as late as possible (sem2) and CS4222 as early as possible (sem4) under those constraints.\",\"The wishes for CS4222 or CS2030S before CS2101 cannot be met because CS2101 must precede CS4236, which must precede CS2030S.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1010",
+    "CS1231",
+    "MA1521"
+   ],
+   "2": [
+    "CS2101",
+    "CS2040",
+    "CS2107"
+   ],
+   "3": [
+    "CS4236",
+    "CS2105",
+    "ST2334"
+   ],
+   "4": [
+    "CS2030S",
+    "CS4222"
+   ]
+  },
+  "reasons": [
+   "Plan meets all hard constraints: CS4236 in sem3 before CS2030S in sem4, and CS4222 with CS2030S in sem4.",
+   "CS2101 is placed as late as possible (sem2) and CS4222 as early as possible (sem4) under those constraints.",
+   "The wishes for CS4222 or CS2030S before CS2101 cannot be met because CS2101 must precede CS4236, which must precede CS2030S."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

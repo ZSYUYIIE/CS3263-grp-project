@@ -1,0 +1,51 @@
+{
+ "id": "q2-S4-311",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 3,
+ "end": "cap",
+ "seconds": 147.4,
+ "usage": {
+  "prompt_tokens": 27507,
+  "total_tokens": 32625,
+  "completion_tokens": 5118,
+  "finish_reason": "stop",
+  "request_seconds": 147.4,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS2102\", \"CS2106\", \"CS2111\", \"CS2220\"], \"5\": [\"CS2109S\", \"CS3240\"], \"6\": [\"CS3223\", \"CS3230\", \"CS3268\"], \"7\": [\"CS4330\"]}, \"reasons\": [\"CS2220 is only offered in Sem 1, so it must be taken in Sem 4. CS4330 is only offered in Sem 2, so it must be taken in Sem 7 or later. CS3268 requires CS2109S, so CS2109S must precede it. CS3240 requires CS2111. CS3223 requires CS2102. All prerequisites are satisfied.\", \"This plan respects all offering constraints and prerequisite chains. CS2109S is taken in Sem 5 to allow CS3268 in Sem 6, satisfying the prerequisite order. CS3240 is taken in Sem 5, as early as possible after CS2111 in Sem 4.\", \"Total credits are minimized at 40 MC across 4 semesters. All 'must' courses are included.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2102",
+    "CS2106",
+    "CS2111",
+    "CS2220"
+   ],
+   "5": [
+    "CS2109S",
+    "CS3240"
+   ],
+   "6": [
+    "CS3223",
+    "CS3230",
+    "CS3268"
+   ],
+   "7": [
+    "CS4330"
+   ]
+  },
+  "reasons": [
+   "CS2220 is only offered in Sem 1, so it must be taken in Sem 4. CS4330 is only offered in Sem 2, so it must be taken in Sem 7 or later. CS3268 requires CS2109S, so CS2109S must precede it. CS3240 requires CS2111. CS3223 requires CS2102. All prerequisites are satisfied.",
+   "This plan respects all offering constraints and prerequisite chains. CS2109S is taken in Sem 5 to allow CS3268 in Sem 6, satisfying the prerequisite order. CS3240 is taken in Sem 5, as early as possible after CS2111 in Sem 4.",
+   "Total credits are minimized at 40 MC across 4 semesters. All 'must' courses are included."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

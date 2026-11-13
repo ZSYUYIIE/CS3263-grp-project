@@ -1,0 +1,49 @@
+{
+ "id": "q2-S1-062",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 54.21,
+ "usage": {
+  "prompt_tokens": 8898,
+  "total_tokens": 13484,
+  "completion_tokens": 4586,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 7296,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4467
+  },
+  "finish_reason": "stop",
+  "request_seconds": 54.21,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"4\":[\"CS2105\",\"CS3230\"],\"6\":[\"CS3244\"],\"7\":[\"CS4234\",\"CS3219\"]},\"reasons\":[\"CS3230 is added because it is a prerequisite for CS4234.\",\"CS4234 and CS3219 are both fixed in semester 7, so the preference to separate them cannot be met.\",\"CS2105 is before CS3219; CS4234 cannot be before CS2105 because CS4234 is fixed in semester 7.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2105",
+    "CS3230"
+   ],
+   "6": [
+    "CS3244"
+   ],
+   "7": [
+    "CS4234",
+    "CS3219"
+   ]
+  },
+  "reasons": [
+   "CS3230 is added because it is a prerequisite for CS4234.",
+   "CS4234 and CS3219 are both fixed in semester 7, so the preference to separate them cannot be met.",
+   "CS2105 is before CS3219; CS4234 cannot be before CS2105 because CS4234 is fixed in semester 7."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

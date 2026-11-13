@@ -1,0 +1,61 @@
+{
+ "id": "q2-S5-002",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 84.11,
+ "usage": {
+  "prompt_tokens": 8207,
+  "total_tokens": 16779,
+  "completion_tokens": 8572,
+  "prompt_tokens_details": {
+   "cached_tokens": 7936,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 8415
+  },
+  "finish_reason": "stop",
+  "request_seconds": 84.11,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"1\":[\"CS1010\",\"MA1511\",\"MA1512\"],\"2\":[\"CS2040\",\"ST2334\"],\"3\":[\"CG2271\"],\"5\":[\"CS3244\"],\"6\":[\"CS4262\"],\"8\":[\"IS1108\"]},\"reasons\":[\"CS3244 is fixed in Sem 5; CS4262 is in Sem 6, the latest possible before IS1108.\",\"Sem 7 is your exchange semester, so IS1108 is in Sem 8, the earliest after CS4262.\",\"CS3244 and CS4262 cannot share a semester because CS4262 requires CS3244 completed earlier; added courses are prerequisites.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1010",
+    "MA1511",
+    "MA1512"
+   ],
+   "2": [
+    "CS2040",
+    "ST2334"
+   ],
+   "3": [
+    "CG2271"
+   ],
+   "5": [
+    "CS3244"
+   ],
+   "6": [
+    "CS4262"
+   ],
+   "8": [
+    "IS1108"
+   ]
+  },
+  "reasons": [
+   "CS3244 is fixed in Sem 5; CS4262 is in Sem 6, the latest possible before IS1108.",
+   "Sem 7 is your exchange semester, so IS1108 is in Sem 8, the earliest after CS4262.",
+   "CS3244 and CS4262 cannot share a semester because CS4262 requires CS3244 completed earlier; added courses are prerequisites."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

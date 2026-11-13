@@ -1,0 +1,128 @@
+{
+ "id": "q2-S4-290",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 232.6,
+ "usage": {
+  "prompt_tokens": 16890,
+  "total_tokens": 32855,
+  "completion_tokens": 15965,
+  "prompt_tokens_details": {
+   "cached_tokens": 3072,
+   "created_cache_tokens": 13696
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 15720
+  },
+  "finish_reason": "stop",
+  "request_seconds": 232.6,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"NO_PLAN\",\"reasons\":[\"CS2105 must be in semester 2, but its prerequisite CS2040 is not completed and cannot be planned in a strictly earlier semester because semester 2 is the current semester.\",\"No valid plan can satisfy the must wish for CS2105 in semester 2 together with the prerequisite rule.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS2105 must be in semester 2, but its prerequisite CS2040 is not completed and cannot be planned in a strictly earlier semester because semester 2 is the current semester.",
+   "No valid plan can satisfy the must wish for CS2105 in semester 2 together with the prerequisite rule."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"2\":[\"CS2040\",\"CS2100\",\"ST2334\"],\"3\":[\"CS3231\",\"CS2109S\",\"MA1522\"],\"4\":[\"CS3263\",\"CS2106\",\"CS4277\"],\"5\":[\"CS4278\",\"CS3264\"],\"6\":[\"CS2105\"]},\"reasons\":[\"All required courses and prerequisites are planned within the 12 MC limit; semester 8 is exchange with 0 MC.\",\"CS4278 is in semester 5; CS2105 is in an even semester (6) and kept apart from CS2106 (4).\",\"Total credits are minimal at 48 MC; CS3231 is as early as possible in semester 3 and CS2106 in semester 4.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "2": [
+      "CS2040",
+      "CS2100",
+      "ST2334"
+     ],
+     "3": [
+      "CS3231",
+      "CS2109S",
+      "MA1522"
+     ],
+     "4": [
+      "CS3263",
+      "CS2106",
+      "CS4277"
+     ],
+     "5": [
+      "CS4278",
+      "CS3264"
+     ],
+     "6": [
+      "CS2105"
+     ]
+    },
+    "reasons": [
+     "All required courses and prerequisites are planned within the 12 MC limit; semester 8 is exchange with 0 MC.",
+     "CS4278 is in semester 5; CS2105 is in an even semester (6) and kept apart from CS2106 (4).",
+     "Total credits are minimal at 48 MC; CS3231 is as early as possible in semester 3 and CS2106 in semester 4."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 8333,
+    "total_tokens": 22291,
+    "completion_tokens": 13958,
+    "prompt_tokens_details": {
+     "cached_tokens": 1536,
+     "created_cache_tokens": 6784,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 13787
+    },
+    "finish_reason": "stop",
+    "request_seconds": 200.93,
+    "attempts": 1
+   },
+   "seconds": 200.93,
+   "violations": [
+    "R9 must rule not met: CS2105 in semester 2"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\":\"NO_PLAN\",\"reasons\":[\"CS2105 must be in semester 2, but its prerequisite CS2040 is not completed and cannot be planned in a strictly earlier semester because semester 2 is the current semester.\",\"No valid plan can satisfy the must wish for CS2105 in semester 2 together with the prerequisite rule.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS2105 must be in semester 2, but its prerequisite CS2040 is not completed and cannot be planned in a strictly earlier semester because semester 2 is the current semester.",
+     "No valid plan can satisfy the must wish for CS2105 in semester 2 together with the prerequisite rule."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 8557,
+    "total_tokens": 10564,
+    "completion_tokens": 2007,
+    "prompt_tokens_details": {
+     "cached_tokens": 1536,
+     "created_cache_tokens": 6912,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 1933
+    },
+    "finish_reason": "stop",
+    "request_seconds": 31.67,
+    "attempts": 1
+   },
+   "seconds": 31.67,
+   "violations": null
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "id": "q2-S1-125",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 5.66,
+ "usage": {
+  "prompt_tokens": 10045,
+  "total_tokens": 10307,
+  "completion_tokens": 262,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.66,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS3263\",\n      \"ST2334\"\n    ],\n    \"7\": [\n      \"CS4277\"\n    ],\n    \"8\": [\n      \"CS3233\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3263 prerequisites (CS2109S, CS2040S, MA1522, ST2334) are met by completed courses except ST2334, which is planned in Sem 6.\",\n    \"ST2334 prerequisite (MA1521) is completed. CS3263 is placed in Sem 6 as requested, with ST2334 in the same semester to satisfy its prerequisite.\",\n    \"CS4277 prerequisites (MA1522, CS2040S) are completed. CS3233 prerequisites (CS2030S, CS2040S) are completed. CS3233 is placed in Sem 8 as required.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS3263",
+    "ST2334"
+   ],
+   "7": [
+    "CS4277"
+   ],
+   "8": [
+    "CS3233"
+   ]
+  },
+  "reasons": [
+   "CS3263 prerequisites (CS2109S, CS2040S, MA1522, ST2334) are met by completed courses except ST2334, which is planned in Sem 6.",
+   "ST2334 prerequisite (MA1521) is completed. CS3263 is placed in Sem 6 as requested, with ST2334 in the same semester to satisfy its prerequisite.",
+   "CS4277 prerequisites (MA1522, CS2040S) are completed. CS3233 prerequisites (CS2030S, CS2040S) are completed. CS3233 is placed in Sem 8 as required."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

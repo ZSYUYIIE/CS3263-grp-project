@@ -1,0 +1,61 @@
+{
+ "id": "q2-S5-003",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 2,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 97.63,
+ "usage": {
+  "prompt_tokens": 8215,
+  "total_tokens": 17556,
+  "completion_tokens": 9341,
+  "prompt_tokens_details": {
+   "cached_tokens": 7936,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 9175
+  },
+  "finish_reason": "stop",
+  "request_seconds": 97.63,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"1\":[\"CS1010\",\"MA1511\",\"MA1512\"],\"2\":[\"CS2040\",\"ST2334\"],\"3\":[\"CG2271\"],\"5\":[\"CS3244\"],\"6\":[\"CS4262\"],\"8\":[\"IS1108\"]},\"reasons\":[\"CS3244 is fixed in semester 5. CS4262 cannot be in the same semester because its prerequisite must be completed earlier, so it is in semester 6 and IS1108 in semester 8.\",\"Semester 7 is the exchange semester, so it has no courses.\",\"Prerequisites are scheduled earlier: CS1010, MA1511, MA1512, CS2040, ST2334 and CG2271.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1010",
+    "MA1511",
+    "MA1512"
+   ],
+   "2": [
+    "CS2040",
+    "ST2334"
+   ],
+   "3": [
+    "CG2271"
+   ],
+   "5": [
+    "CS3244"
+   ],
+   "6": [
+    "CS4262"
+   ],
+   "8": [
+    "IS1108"
+   ]
+  },
+  "reasons": [
+   "CS3244 is fixed in semester 5. CS4262 cannot be in the same semester because its prerequisite must be completed earlier, so it is in semester 6 and IS1108 in semester 8.",
+   "Semester 7 is the exchange semester, so it has no courses.",
+   "Prerequisites are scheduled earlier: CS1010, MA1511, MA1512, CS2040, ST2334 and CG2271."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

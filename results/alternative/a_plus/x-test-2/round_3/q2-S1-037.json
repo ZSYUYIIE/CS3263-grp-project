@@ -1,0 +1,65 @@
+{
+ "id": "q2-S1-037",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 114.17,
+ "usage": {
+  "prompt_tokens": 6878,
+  "total_tokens": 17109,
+  "completion_tokens": 10231,
+  "prompt_tokens_details": {
+   "cached_tokens": 3840,
+   "created_cache_tokens": 2944
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 10048
+  },
+  "finish_reason": "stop",
+  "request_seconds": 114.17,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"1\":[\"CS1101S\",\"MA1521\",\"CS1231S\"],\"2\":[\"IS1108\",\"CS2040\",\"CS2030\"],\"3\":[\"CS2103T\",\"CS2105\",\"CS2109S\",\"CS2101\"],\"4\":[\"CS3219\"],\"7\":[\"CS3103\"],\"8\":[\"CS3213\"]},\"reasons\":[\"Planned all unique required courses; duplicate CS3219 counted once.\",\"Added only prerequisites CS2040, CS2030, CS2103T and CS2105; CS2103T avoids the CS2101 mutual exclusion with CS2103/CS2113.\",\"IS1108 is in semester 2; CS3103 is in latest possible semester 7, with CS3213 after it in semester 8.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1101S",
+    "MA1521",
+    "CS1231S"
+   ],
+   "2": [
+    "IS1108",
+    "CS2040",
+    "CS2030"
+   ],
+   "3": [
+    "CS2103T",
+    "CS2105",
+    "CS2109S",
+    "CS2101"
+   ],
+   "4": [
+    "CS3219"
+   ],
+   "7": [
+    "CS3103"
+   ],
+   "8": [
+    "CS3213"
+   ]
+  },
+  "reasons": [
+   "Planned all unique required courses; duplicate CS3219 counted once.",
+   "Added only prerequisites CS2040, CS2030, CS2103T and CS2105; CS2103T avoids the CS2101 mutual exclusion with CS2103/CS2113.",
+   "IS1108 is in semester 2; CS3103 is in latest possible semester 7, with CS3213 after it in semester 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

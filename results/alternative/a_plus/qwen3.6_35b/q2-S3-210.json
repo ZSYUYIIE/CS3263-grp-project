@@ -1,0 +1,157 @@
+{
+ "id": "q2-S3-210",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 2,
+ "end": "valid",
+ "seconds": 15.96,
+ "usage": {
+  "prompt_tokens": 25756,
+  "total_tokens": 26346,
+  "completion_tokens": 590,
+  "finish_reason": "stop",
+  "request_seconds": 15.96,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2105\",\n      \"CS2102\",\n      \"CS2107\"\n    ],\n    \"7\": [\n      \"CS4236\",\n      \"CS3219\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2107 is added in Y3S1 to satisfy the prerequisite for CS4236.\",\n    \"CS4236 is offered only in Sem 1, so it must be taken in Y4S1 (Sem 7).\",\n    \"CS3219 is taken in Y4S1 to minimize total credits, satisfying the late placement wish as much as possible within the same semester.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2105",
+    "CS2102",
+    "CS2107"
+   ],
+   "7": [
+    "CS4236",
+    "CS3219"
+   ]
+  },
+  "reasons": [
+   "CS2107 is added in Y3S1 to satisfy the prerequisite for CS4236.",
+   "CS4236 is offered only in Sem 1, so it must be taken in Y4S1 (Sem 7).",
+   "CS3219 is taken in Y4S1 to minimize total credits, satisfying the late placement wish as much as possible within the same semester."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2105\",\n      \"CS2102\"\n    ],\n    \"6\": [\n      \"CS4236\"\n    ],\n    \"7\": [\n      \"CS3219\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2105 and CS2102 are planned in Y3S2 to satisfy the soft wish for CS2105 timing and clear prerequisites for CS4236.\",\n    \"CS4236 is planned in Y4S1 as it requires CS2105, CS2102, and CS3230 (completed).\",\n    \"CS3219 is planned in Y4S2 to satisfy the soft wish for it to be as late as possible, requiring CS2103T (completed).\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2105",
+      "CS2102"
+     ],
+     "6": [
+      "CS4236"
+     ],
+     "7": [
+      "CS3219"
+     ]
+    },
+    "reasons": [
+     "CS2105 and CS2102 are planned in Y3S2 to satisfy the soft wish for CS2105 timing and clear prerequisites for CS4236.",
+     "CS4236 is planned in Y4S1 as it requires CS2105, CS2102, and CS3230 (completed).",
+     "CS3219 is planned in Y4S2 to satisfy the soft wish for it to be as late as possible, requiring CS2103T (completed)."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 8352,
+    "total_tokens": 8568,
+    "completion_tokens": 216,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.3,
+    "attempts": 1
+   },
+   "seconds": 4.3,
+   "violations": [
+    "R3 CS4236 not offered in Sem 2 (semester 6)",
+    "R4 CS4236 in semester 6: prerequisite not met ((YSC2229 or CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS) and CS2107 and (CS1231 or CS1231S or MA1100T or MA1100))"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2105\",\n      \"CS2102\"\n    ],\n    \"7\": [\n      \"CS4236\",\n      \"CS3219\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2105 and CS2102 are taken in Y3S1 to meet prerequisites for CS4236.\",\n    \"CS4236 is offered only in Sem 1, so it must be taken in Y4S1 (Sem 7).\",\n    \"CS3219 is taken in Y4S1 alongside CS4236 to minimize total credits, satisfying the late placement wish as much as possible within the same semester.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2105",
+      "CS2102"
+     ],
+     "7": [
+      "CS4236",
+      "CS3219"
+     ]
+    },
+    "reasons": [
+     "CS2105 and CS2102 are taken in Y3S1 to meet prerequisites for CS4236.",
+     "CS4236 is offered only in Sem 1, so it must be taken in Y4S1 (Sem 7).",
+     "CS3219 is taken in Y4S1 alongside CS4236 to minimize total credits, satisfying the late placement wish as much as possible within the same semester."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 8726,
+    "total_tokens": 8914,
+    "completion_tokens": 188,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.67,
+    "attempts": 1
+   },
+   "seconds": 3.67,
+   "violations": [
+    "R4 CS4236 in semester 7: prerequisite not met ((YSC2229 or CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS) and CS2107 and (CS1231 or CS1231S or MA1100T or MA1100))"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2105\",\n      \"CS2102\",\n      \"CS2107\"\n    ],\n    \"7\": [\n      \"CS4236\",\n      \"CS3219\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2107 is added in Y3S1 to satisfy the prerequisite for CS4236.\",\n    \"CS4236 is offered only in Sem 1, so it must be taken in Y4S1 (Sem 7).\",\n    \"CS3219 is taken in Y4S1 to minimize total credits, satisfying the late placement wish as much as possible within the same semester.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2105",
+      "CS2102",
+      "CS2107"
+     ],
+     "7": [
+      "CS4236",
+      "CS3219"
+     ]
+    },
+    "reasons": [
+     "CS2107 is added in Y3S1 to satisfy the prerequisite for CS4236.",
+     "CS4236 is offered only in Sem 1, so it must be taken in Y4S1 (Sem 7).",
+     "CS3219 is taken in Y4S1 to minimize total credits, satisfying the late placement wish as much as possible within the same semester."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 8678,
+    "total_tokens": 8864,
+    "completion_tokens": 186,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 7.99,
+    "attempts": 1
+   },
+   "seconds": 7.99,
+   "violations": []
+  }
+ ]
+}

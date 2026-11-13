@@ -1,0 +1,52 @@
+{
+ "id": "q2-S4-197",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 233.77,
+ "usage": {
+  "prompt_tokens": 26799,
+  "total_tokens": 30136,
+  "completion_tokens": 3337,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 51.65,
+  "attempts": 2
+ },
+ "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS2105 is required by the student ('I have to take... CS2105' and 'CS2105 must come before CS3230'), but its prerequisite is YSC2229 or CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS. The student has CS2040S, so CS2105 is eligible.\",\n\"CS4220 requires CS2220 or LSM2104 or LSM2241 or ZB2101. The student has completed none of these. CS2220 requires CS2040 (met), but CS2220 is not completed. LSM2104 and LSM2241 are not completed. ZB2101 requires LSM1301 (not completed). Thus, CS4220 cannot be taken because its prerequisite is not met and cannot be completed in time (CS2220 is Sem 1 only, current is Sem 4; LSM courses are not in the must-take list and would add significant MC/semesters not requested).\",\n\"CS4350 requires CS3247 or NM3216 or NM4260 or NM4260HM. None are completed. CS3247 requires CS3241. CS3241 requires CS2030S/CS2113 and CS2040. Student has CS2030S and CS2040S. So CS3241 is eligible. CS3247 is eligible after CS3241. CS4350 is eligible after CS3247. This chain is possible.\",\n\"However, CS4220 is impossible to take as it is a 'must' module for the student, but prerequisites are not met and cannot be satisfied by the completed courses or reasonable additions without violating the 'only add prerequisites' rule or extending the plan indefinitely with non-required courses. Specifically, ZB2101 requires LSM1301. Adding LSM1301, ZB2101, then CS4220 is possible but adds 3 modules. Is this allowed? Rule 8: 'Add a course... ONLY when it is a prerequisite needed by a planned course.' So we can add LSM1301, ZB2101, CS4220. But wait, ZB2101 is a prerequisite for CS4220. LSM1301 is a prerequisite for ZB2101. So we must plan LSM1301, ZB2101, CS4220.\",\n\"Let's re-plan with LSM1301, ZB2101, CS4220, CS2106, CS3230, CS2102, CS3219, CS3241, CS3247, CS4350, CS2105.\",\n\"Constraints: CS2102 and CS3219 together. CS2106 and CS3230 apart. CS2105 before CS3230. CS3219 as late as possible. CS2105 as late as possible. Finish ASAP.\",\n\"Sem 4: LSM1301 (Sem 1/2 ok), ZB2101 (Sem 1/2 ok), CS2105 (Sem 1/2 ok). 3 mods.\",\n\"Sem 5: CS4220 (prereq ZB2101 done), CS3230 (prereq CS2040S, CS1231S done), CS3241 (prereq CS2030S, CS2040S done). 3 mods. CS2105 is in Sem 4, CS3230 in Sem 5. CS2105 before CS3230 satisfied.\",\n\"Sem 6: CS2102, CS3219 (together), CS3247 (prereq CS3241 done), CS2106 (prereq CS2100 done). 4 mods. CS2106 (Sem 6) and CS3230 (Sem 5) are apart. Satisfied.\",\n\"Sem 7: CS4350 (prereq CS3247 done). 1 mod.\",\n\"CS3219 is in Sem 6. Can it be later? Sem 7 has CS4350. If we move CS4350 to Sem 8, CS3219 can be Sem 7? But we want ASAP. Sem 7 is later than Sem 6. So Sem 6 is better for ASAP.\",\n\"Is CS3219 eligible in Sem 6? Yes.\",\n\"Total semesters: 4, 5, 6, 7. Last semester 7.\",\n\"Check MC: Sem 4: 4+4+4=12. Sem 5: 4+4+4=12. Sem 6: 4+4+4+4=16. Sem 7: 4. All <= 20.\",\n\"Check 'CS2105 as late as possible'. It is in Sem 4. Can it be later? CS2105 prereq CS2040S (done). It can be taken anytime. But it must be before CS3230 (Sem 5). So it must be Sem 4 or earlier. Sem 4 is the latest possible before Sem 5. So CS2105 in Sem 4 is optimal for 'late as possible' while satisfying 'before CS3230'.\",\n\"Check 'CS3219 as late as possible'. It is in Sem 6. Can it be Sem 7? If CS3219 is Sem 7, CS4350 must be Sem 8 (since CS4350 prereq CS3247 in Sem 6). Last semester becomes 8. Current plan ends in 7. Rule 1: Finish ASAP is most important. So Sem 7 is better than Sem 8. Thus CS3219 in Sem 6 is correct.\",\n\"Check 'CS2102 and CS4220 in different semesters'. CS4220 in Sem 5, CS2102 in Sem 6. Different. Satisfied.\",\n\"Check 'CS2106 and CS3230 apart'. CS3230 in Sem 5, CS2106 in Sem 6. Apart. Satisfied.\",\n\"Check 'CS2102 and CS3219 together'. Both in Sem 6. Satisfied.\",\n\"Check 'CS2105 before CS3230'. CS2105 Sem 4, CS3230 Sem 5. Satisfied.\",\n\"Plan: Sem 4: LSM1301, ZB2101, CS2105. Sem 5: CS4220, CS3230, CS3241. Sem 6: CS2102, CS3219, CS3247, CS2106. Sem 7: CS4350.\"\n]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS2105 is required by the student ('I have to take... CS2105' and 'CS2105 must come before CS3230'), but its prerequisite is YSC2229 or CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS. The student has CS2040S, so CS2105 is eligible.",
+   "CS4220 requires CS2220 or LSM2104 or LSM2241 or ZB2101. The student has completed none of these. CS2220 requires CS2040 (met), but CS2220 is not completed. LSM2104 and LSM2241 are not completed. ZB2101 requires LSM1301 (not completed). Thus, CS4220 cannot be taken because its prerequisite is not met and cannot be completed in time (CS2220 is Sem 1 only, current is Sem 4; LSM courses are not in the must-take list and would add significant MC/semesters not requested).",
+   "CS4350 requires CS3247 or NM3216 or NM4260 or NM4260HM. None are completed. CS3247 requires CS3241. CS3241 requires CS2030S/CS2113 and CS2040. Student has CS2030S and CS2040S. So CS3241 is eligible. CS3247 is eligible after CS3241. CS4350 is eligible after CS3247. This chain is possible.",
+   "However, CS4220 is impossible to take as it is a 'must' module for the student, but prerequisites are not met and cannot be satisfied by the completed courses or reasonable additions without violating the 'only add prerequisites' rule or extending the plan indefinitely with non-required courses. Specifically, ZB2101 requires LSM1301. Adding LSM1301, ZB2101, then CS4220 is possible but adds 3 modules. Is this allowed? Rule 8: 'Add a course... ONLY when it is a prerequisite needed by a planned course.' So we can add LSM1301, ZB2101, CS4220. But wait, ZB2101 is a prerequisite for CS4220. LSM1301 is a prerequisite for ZB2101. So we must plan LSM1301, ZB2101, CS4220.",
+   "Let's re-plan with LSM1301, ZB2101, CS4220, CS2106, CS3230, CS2102, CS3219, CS3241, CS3247, CS4350, CS2105.",
+   "Constraints: CS2102 and CS3219 together. CS2106 and CS3230 apart. CS2105 before CS3230. CS3219 as late as possible. CS2105 as late as possible. Finish ASAP.",
+   "Sem 4: LSM1301 (Sem 1/2 ok), ZB2101 (Sem 1/2 ok), CS2105 (Sem 1/2 ok). 3 mods.",
+   "Sem 5: CS4220 (prereq ZB2101 done), CS3230 (prereq CS2040S, CS1231S done), CS3241 (prereq CS2030S, CS2040S done). 3 mods. CS2105 is in Sem 4, CS3230 in Sem 5. CS2105 before CS3230 satisfied.",
+   "Sem 6: CS2102, CS3219 (together), CS3247 (prereq CS3241 done), CS2106 (prereq CS2100 done). 4 mods. CS2106 (Sem 6) and CS3230 (Sem 5) are apart. Satisfied.",
+   "Sem 7: CS4350 (prereq CS3247 done). 1 mod.",
+   "CS3219 is in Sem 6. Can it be later? Sem 7 has CS4350. If we move CS4350 to Sem 8, CS3219 can be Sem 7? But we want ASAP. Sem 7 is later than Sem 6. So Sem 6 is better for ASAP.",
+   "Is CS3219 eligible in Sem 6? Yes.",
+   "Total semesters: 4, 5, 6, 7. Last semester 7.",
+   "Check MC: Sem 4: 4+4+4=12. Sem 5: 4+4+4=12. Sem 6: 4+4+4+4=16. Sem 7: 4. All <= 20.",
+   "Check 'CS2105 as late as possible'. It is in Sem 4. Can it be later? CS2105 prereq CS2040S (done). It can be taken anytime. But it must be before CS3230 (Sem 5). So it must be Sem 4 or earlier. Sem 4 is the latest possible before Sem 5. So CS2105 in Sem 4 is optimal for 'late as possible' while satisfying 'before CS3230'.",
+   "Check 'CS3219 as late as possible'. It is in Sem 6. Can it be Sem 7? If CS3219 is Sem 7, CS4350 must be Sem 8 (since CS4350 prereq CS3247 in Sem 6). Last semester becomes 8. Current plan ends in 7. Rule 1: Finish ASAP is most important. So Sem 7 is better than Sem 8. Thus CS3219 in Sem 6 is correct.",
+   "Check 'CS2102 and CS4220 in different semesters'. CS4220 in Sem 5, CS2102 in Sem 6. Different. Satisfied.",
+   "Check 'CS2106 and CS3230 apart'. CS3230 in Sem 5, CS2106 in Sem 6. Apart. Satisfied.",
+   "Check 'CS2102 and CS3219 together'. Both in Sem 6. Satisfied.",
+   "Check 'CS2105 before CS3230'. CS2105 Sem 4, CS3230 Sem 5. Satisfied.",
+   "Plan: Sem 4: LSM1301, ZB2101, CS2105. Sem 5: CS4220, CS3230, CS3241. Sem 6: CS2102, CS3219, CS3247, CS2106. Sem 7: CS4350."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

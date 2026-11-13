@@ -1,0 +1,51 @@
+{
+ "id": "q2-S3-189",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 4.59,
+ "usage": {
+  "prompt_tokens": 10080,
+  "total_tokens": 10299,
+  "completion_tokens": 219,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 4.59,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"2\": [\"CS2030S\", \"CS2040S\", \"MA1522\", \"CS2100\"], \"3\": [\"CS2103T\", \"CS3230\", \"IS1108\"], \"4\": [\"CS2101\", \"CS3227\"], \"5\": [\"CS4261\", \"CS3219\", \"CS3281\"]}, \"reasons\": [\"All required courses are planned with prerequisites satisfied in strictly earlier semesters.\", \"CS2100 is placed in Semester 2 as requested. CS4261 is placed in Semester 5 as requested.\", \"CS2109S is not required in the 'must' list, so it is omitted to keep total MC low. CS3227 is placed in Semester 4, which is as late as possible given its prerequisite CS2103T is in Semester 3.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "2": [
+    "CS2030S",
+    "CS2040S",
+    "MA1522",
+    "CS2100"
+   ],
+   "3": [
+    "CS2103T",
+    "CS3230",
+    "IS1108"
+   ],
+   "4": [
+    "CS2101",
+    "CS3227"
+   ],
+   "5": [
+    "CS4261",
+    "CS3219",
+    "CS3281"
+   ]
+  },
+  "reasons": [
+   "All required courses are planned with prerequisites satisfied in strictly earlier semesters.",
+   "CS2100 is placed in Semester 2 as requested. CS4261 is placed in Semester 5 as requested.",
+   "CS2109S is not required in the 'must' list, so it is omitted to keep total MC low. CS3227 is placed in Semester 4, which is as late as possible given its prerequisite CS2103T is in Semester 3."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

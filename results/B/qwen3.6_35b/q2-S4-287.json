@@ -1,0 +1,95 @@
+{
+ "id": "q2-S4-287",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 8.44,
+ "solver_seconds": 0.05,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3184,
+  "total_tokens": 3617,
+  "completion_tokens": 433,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 8.39,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 7,\n\"completed\": [\n\"MA1521\",\n\"CS1231S\",\n\"CS1101S\",\n\"MA1522\",\n\"CS3219\",\n\"ES2660\",\n\"CS2030S\",\n\"CS2040S\",\n\"ST2334\",\n\"CS4243\",\n\"CS2109S\",\n\"CS2102\",\n\"CS3213\",\n\"CS2103T\",\n\"CS3230\",\n\"CS2100\",\n\"IS1108\",\n\"CS2106\",\n\"CS2105\",\n\"CS2101\"\n],\n\"objective\": \"min_total_mc\",\n\"must_take\": [\n\"CS3210\",\n\"CS3235\",\n\"CS4211\",\n\"CS4247\"\n],\n\"mc_max\": 16,\n\"early\": [\n\"CS3210\"\n],\n\"late\": [\n\"CS3235\"\n],\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4211\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3235\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3210\",\n\"sem\": 7,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4211\",\n\"b\": \"CS4247\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "completed": [
+   "MA1521",
+   "CS1231S",
+   "CS1101S",
+   "MA1522",
+   "CS3219",
+   "ES2660",
+   "CS2030S",
+   "CS2040S",
+   "ST2334",
+   "CS4243",
+   "CS2109S",
+   "CS2102",
+   "CS3213",
+   "CS2103T",
+   "CS3230",
+   "CS2100",
+   "IS1108",
+   "CS2106",
+   "CS2105",
+   "CS2101"
+  ],
+  "objective": "min_total_mc",
+  "must_take": [
+   "CS3210",
+   "CS3235",
+   "CS4211",
+   "CS4247"
+  ],
+  "mc_max": 16,
+  "early": [
+   "CS3210"
+  ],
+  "late": [
+   "CS3235"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS4211",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3235",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3210",
+    "sem": 7,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS4211",
+    "b": "CS4247",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS3235 in semester 7; the prerequisites of CS3235"
+  ]
+ }
+}

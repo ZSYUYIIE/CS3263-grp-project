@@ -1,0 +1,99 @@
+{
+ "id": "q2-S4-273",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 4.88,
+ "solver_seconds": 0.165,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2796,
+  "total_tokens": 3360,
+  "completion_tokens": 564,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 332
+  },
+  "finish_reason": "stop",
+  "request_seconds": 4.72,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":3,\"completed\":[\"ES2660\",\"MA1522\",\"CS1231S\",\"CS2040S\",\"MA1521\",\"CS1101S\",\"IS1108\",\"CS2030S\"],\"must_take\":[\"CS2105\",\"CS2106\",\"ST2334\",\"CS4268\",\"CS4222\",\"CS3223\"],\"early\":[\"ST2334\"],\"rules\":[{\"type\":\"same_sem\",\"a\":\"CS4222\",\"b\":\"CS3223\",\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS2106\",\"b\":\"CS4222\",\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS4268\",\"b\":\"ST2334\",\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS2105\",\"b\":\"CS3223\",\"strength\":\"prefer\"},{\"type\":\"before\",\"a\":\"CS2106\",\"b\":\"CS2105\",\"strength\":\"prefer\"},{\"type\":\"before\",\"a\":\"CS2106\",\"b\":\"ST2334\",\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "completed": [
+   "ES2660",
+   "MA1522",
+   "CS1231S",
+   "CS2040S",
+   "MA1521",
+   "CS1101S",
+   "IS1108",
+   "CS2030S"
+  ],
+  "must_take": [
+   "CS2105",
+   "CS2106",
+   "ST2334",
+   "CS4268",
+   "CS4222",
+   "CS3223"
+  ],
+  "early": [
+   "ST2334"
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS4222",
+    "b": "CS3223",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2106",
+    "b": "CS4222",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4268",
+    "b": "ST2334",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2105",
+    "b": "CS3223",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS2106",
+    "b": "CS2105",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS2106",
+    "b": "ST2334",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS4268 before ST2334; the prerequisites of CS4268; the course exclusions (courses that cannot be taken together)"
+  ]
+ }
+}

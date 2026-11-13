@@ -1,0 +1,56 @@
+{
+ "id": "q2-S3-179",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 3,
+ "end": "switched to NO_PLAN",
+ "seconds": 145.85,
+ "usage": {
+  "prompt_tokens": 29689,
+  "total_tokens": 35738,
+  "completion_tokens": 6049,
+  "finish_reason": "stop",
+  "request_seconds": 145.83,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS2109S requires CS2040 (or equivalent) and MA1521 (or equivalent). CS2040 requires CS1101S. CS1101S must be taken in Sem 1. CS2040 can be taken in Sem 2. MA1521 can be taken in Sem 1. Thus CS2109S can be taken in Sem 2. However, CS2103T requires CS2030 and CS2040. CS2030 requires CS1101S. So CS2030 and CS2040 can be taken in Sem 2. CS2103T can be taken in Sem 3. CS3219 requires CS2103 or CS2103T. So CS3219 can be taken in Sem 4. CS3230 requires CS2040 and CS1231. CS1231 can be taken in Sem 1. CS3230 can be taken in Sem 2. CS2105 requires CS2040. Can be taken in Sem 2. CS2101 has no prereqs. Can be taken in Sem 1. ES2660 has no prereqs. Can be taken in Sem 1. IS1108 has no prereqs. Can be taken in Sem 1. ST2334 must be in Sem 8. MA1522 has no prereqs. Can be taken in Sem 1. The constraint is MC per semester (max 20). Sem 1: CS1101S(4), MA1521(4), CS1231(4), ES2660(4), IS1108(4), MA1522(4), CS2101(4). Total 28 MC. Exceeds 20. Need to spread. Sem 1: CS1101S, MA1521, CS1231, ES2660, IS1108 (20 MC). Sem 2: CS2040, CS2030, CS2109S, MA1522, CS2105 (20 MC). Sem 3: CS2103T, CS3230, CS2101 (12 MC). Sem 4: CS3219 (4 MC). Sem 6: NOC (0 MC). Sem 8: ST2334 (4 MC). This plan works. Why did the previous answer fail? The previous answer listed CS2109S in Sem 2. The error message said 'prerequisite not met'. Let's re-read the prereq for CS2109S. It requires (CS2040...) AND (MA1521...). In Sem 2, CS2040 is taken. MA1521 is taken in Sem 1. So prereqs are met. The error message might be interpreting 'prerequisite not met' as 'CS2040 is not completed before Sem 2'. But CS2040 is in Sem 2. Rule 4 says 'Prerequisites must be completed or planned in a STRICTLY earlier semester.' So CS2040 must be completed BEFORE Sem 2. It cannot be taken in Sem 2 if it is a prerequisite for a course in Sem 2. CS2040 is a prerequisite for CS2109S. So CS2040 must be in Sem 1 or earlier. But CS2040 requires CS1101S. CS1101S is in Sem 1. So CS2040 cannot be in Sem 1. Thus CS2040 cannot be completed before Sem 2. Thus CS2109S cannot be taken in Sem 2. CS2109S must be in Sem 3 or later. This makes the plan impossible to fit in 4 years? Let's check. CS2109S in Sem 3. Sem 3: CS2109S, CS2103T, CS3230, CS2105. 16 MC. Sem 4: CS3219. Sem 8: ST2334. This works. The previous plan failed because it put CS2109S in Sem 2 with CS2040 in Sem 2. CS2040 is a prereq for CS2109S. So CS2040 must be strictly earlier. So CS2109S cannot be in Sem 2. The plan is possible. I will generate the correct plan.\n\n{\"status\": \"PLAN\", \"plan\": {\"1\": [\"CS1101S\", \"MA1521\", \"CS1231\", \"ES2660\", \"IS1108\"], \"2\": [\"CS2040\", \"CS2030\", \"MA1522\", \"CS2105\"], \"3\": [\"CS2109S\", \"CS2103T\", \"CS3230\", \"CS2101\"], \"4\": [\"CS3219\"], \"8\": [\"ST2334\"]}, \"reasons\": [\"CS2040 is a prerequisite for CS2109S, so CS2040 must be in Sem 1 or earlier. Since CS2040 requires CS1101S (Sem 1), CS2040 must be in Sem 2. Thus CS2109S must be in Sem 3 or later. CS2103T requires CS2030 and CS2040. CS2030 requires CS1101S. So CS2030 and CS2040 in Sem 2 allows CS2103T in Sem 3. CS3219 requires CS2103T, so Sem 4. ST2334 in Sem 8. NOC in Sem 6 (empty). CS3230 and ES2660 separated.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1101S",
+    "MA1521",
+    "CS1231",
+    "ES2660",
+    "IS1108"
+   ],
+   "2": [
+    "CS2040",
+    "CS2030",
+    "MA1522",
+    "CS2105"
+   ],
+   "3": [
+    "CS2109S",
+    "CS2103T",
+    "CS3230",
+    "CS2101"
+   ],
+   "4": [
+    "CS3219"
+   ],
+   "8": [
+    "ST2334"
+   ]
+  },
+  "reasons": [
+   "CS2040 is a prerequisite for CS2109S, so CS2040 must be in Sem 1 or earlier. Since CS2040 requires CS1101S (Sem 1), CS2040 must be in Sem 2. Thus CS2109S must be in Sem 3 or later. CS2103T requires CS2030 and CS2040. CS2030 requires CS1101S. So CS2030 and CS2040 in Sem 2 allows CS2103T in Sem 3. CS3219 requires CS2103T, so Sem 4. ST2334 in Sem 8. NOC in Sem 6 (empty). CS3230 and ES2660 separated."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,208 @@
+{
+ "id": "q2-S1-099",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 2,
+ "end": "repeated plan",
+ "seconds": 157.0,
+ "usage": {
+  "prompt_tokens": 36060,
+  "total_tokens": 45357,
+  "completion_tokens": 9297,
+  "finish_reason": "stop",
+  "request_seconds": 156.99,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS3230\"\n    ],\n    \"5\": [\n      \"CS2103T\",\n      \"CS4243\"\n    ],\n    \"6\": [\n      \"CS3281\",\n      \"CS2102\",\n      \"CS3219\"\n    ],\n    \"7\": [\n      \"CS2105\",\n      \"CS3223\",\n      \"CS4218\"\n    ],\n    \"8\": [\n      \"CS4221\"\n    ]\n  },\n  \"reasons\": [\n    \"CS4243 prerequisites met: MA1522, MA1521, CS2030S, CS2040S completed; ST1131 added as prerequisite.\",\n    \"ST1131 is required for CS4243, so it is added in Sem 5.\",\n    \"CS3281 in Sem 6, CS2105 in Sem 7 satisfies CS3281 before CS2105. CS4221 in Sem 8 is latest possible.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS3230"
+   ],
+   "5": [
+    "CS2103T",
+    "CS4243"
+   ],
+   "6": [
+    "CS3281",
+    "CS2102",
+    "CS3219"
+   ],
+   "7": [
+    "CS2105",
+    "CS3223",
+    "CS4218"
+   ],
+   "8": [
+    "CS4221"
+   ]
+  },
+  "reasons": [
+   "CS4243 prerequisites met: MA1522, MA1521, CS2030S, CS2040S completed; ST1131 added as prerequisite.",
+   "ST1131 is required for CS4243, so it is added in Sem 5.",
+   "CS3281 in Sem 6, CS2105 in Sem 7 satisfies CS3281 before CS2105. CS4221 in Sem 8 is latest possible."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "\n\n{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS3230\"\n    ],\n    \"5\": [\n      \"CS2103T\",\n      \"CS4243\",\n      \"ST1131\"\n    ],\n    \"6\": [\n      \"CS3281\",\n      \"CS2102\",\n      \"CS3219\"\n    ],\n    \"7\": [\n      \"CS2105\",\n      \"CS3223\",\n      \"CS4218\"\n    ],\n    \"8\": [\n      \"CS4221\"\n    ]\n  },\n  \"reasons\": [\n    \"Prerequisites are satisfied by completed modules or strictly earlier planned modules.\",\n    \"CS3281 is in Sem 6 and CS2105 in Sem 7, satisfying CS3281 before CS2105.\",\n    \"CS4221 is in Sem 8 (latest possible) and CS2103T in Sem 5 (latest possible). CS3281 in Sem 8 is impossible due to CS2105 constraint.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS3230"
+     ],
+     "5": [
+      "CS2103T",
+      "CS4243",
+      "ST1131"
+     ],
+     "6": [
+      "CS3281",
+      "CS2102",
+      "CS3219"
+     ],
+     "7": [
+      "CS2105",
+      "CS3223",
+      "CS4218"
+     ],
+     "8": [
+      "CS4221"
+     ]
+    },
+    "reasons": [
+     "Prerequisites are satisfied by completed modules or strictly earlier planned modules.",
+     "CS3281 is in Sem 6 and CS2105 in Sem 7, satisfying CS3281 before CS2105.",
+     "CS4221 is in Sem 8 (latest possible) and CS2103T in Sem 5 (latest possible). CS3281 in Sem 8 is impossible due to CS2105 constraint."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11606,
+    "total_tokens": 20309,
+    "completion_tokens": 8703,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 143.56,
+    "attempts": 1
+   },
+   "seconds": 143.56,
+   "violations": [
+    "R4 CS4243 in semester 5: prerequisite not met ((YSC2232 or MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522) and (ST1131 or ST1131A or ST1232 or ST2131 or MA2116 or MA2116T or MA2216 or EE2012A or EE2012 or ST2334 or YSC2243) and (CS2030 or CS2030S or CS2030DE or CS2030HS or CS2113 or CS2113T) and (YSC2229 or CS2040 or CS2040S or CS2040DE or CS2040C or CS2040HS) and (MA1102R or MA2002 or YSC1216 or MA1505 or MA1521 or MA1507 or (MA1512 and MA1511)))",
+    "R10 ST1131 was added but no later planned course needs it"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS3230\"\n    ],\n    \"5\": [\n      \"CS2103T\",\n      \"CS4243\"\n    ],\n    \"6\": [\n      \"CS3281\",\n      \"CS2102\",\n      \"CS3219\"\n    ],\n    \"7\": [\n      \"CS2105\",\n      \"CS3223\",\n      \"CS4218\"\n    ],\n    \"8\": [\n      \"CS4221\"\n    ]\n  },\n  \"reasons\": [\n    \"CS4243 prerequisites met: MA1522, MA1521, CS2030S, CS2040S completed; ST1131 added as prerequisite.\",\n    \"ST1131 is required for CS4243, so it is added in Sem 5.\",\n    \"CS3281 in Sem 6, CS2105 in Sem 7 satisfies CS3281 before CS2105. CS4221 in Sem 8 is latest possible.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS3230"
+     ],
+     "5": [
+      "CS2103T",
+      "CS4243"
+     ],
+     "6": [
+      "CS3281",
+      "CS2102",
+      "CS3219"
+     ],
+     "7": [
+      "CS2105",
+      "CS3223",
+      "CS4218"
+     ],
+     "8": [
+      "CS4221"
+     ]
+    },
+    "reasons": [
+     "CS4243 prerequisites met: MA1522, MA1521, CS2030S, CS2040S completed; ST1131 added as prerequisite.",
+     "ST1131 is required for CS4243, so it is added in Sem 5.",
+     "CS3281 in Sem 6, CS2105 in Sem 7 satisfies CS3281 before CS2105. CS4221 in Sem 8 is latest possible."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12233,
+    "total_tokens": 12530,
+    "completion_tokens": 297,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 6.18,
+    "attempts": 1
+   },
+   "seconds": 6.19,
+   "violations": [
+    "R4 CS4243 in semester 5: prerequisite not met ((YSC2232 or MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522) and (ST1131 or ST1131A or ST1232 or ST2131 or MA2116 or MA2116T or MA2216 or EE2012A or EE2012 or ST2334 or YSC2243) and (CS2030 or CS2030S or CS2030DE or CS2030HS or CS2113 or CS2113T) and (YSC2229 or CS2040 or CS2040S or CS2040DE or CS2040C or CS2040HS) and (MA1102R or MA2002 or YSC1216 or MA1505 or MA1521 or MA1507 or (MA1512 and MA1511)))"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS3230\"\n    ],\n    \"5\": [\n      \"CS2103T\",\n      \"CS4243\"\n    ],\n    \"6\": [\n      \"CS3281\",\n      \"CS2102\",\n      \"CS3219\"\n    ],\n    \"7\": [\n      \"CS2105\",\n      \"CS3223\",\n      \"CS4218\"\n    ],\n    \"8\": [\n      \"CS4221\"\n    ]\n  },\n  \"reasons\": [\n    \"CS4243 prerequisites met: MA1522, MA1521, CS2030S, CS2040S completed; ST1131 added as prerequisite.\",\n    \"ST1131 is required for CS4243, so it is added in Sem 5.\",\n    \"CS3281 in Sem 6, CS2105 in Sem 7 satisfies CS3281 before CS2105. CS4221 in Sem 8 is latest possible.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS3230"
+     ],
+     "5": [
+      "CS2103T",
+      "CS4243"
+     ],
+     "6": [
+      "CS3281",
+      "CS2102",
+      "CS3219"
+     ],
+     "7": [
+      "CS2105",
+      "CS3223",
+      "CS4218"
+     ],
+     "8": [
+      "CS4221"
+     ]
+    },
+    "reasons": [
+     "CS4243 prerequisites met: MA1522, MA1521, CS2030S, CS2040S completed; ST1131 added as prerequisite.",
+     "ST1131 is required for CS4243, so it is added in Sem 5.",
+     "CS3281 in Sem 6, CS2105 in Sem 7 satisfies CS3281 before CS2105. CS4221 in Sem 8 is latest possible."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12221,
+    "total_tokens": 12518,
+    "completion_tokens": 297,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 7.25,
+    "attempts": 1
+   },
+   "seconds": 7.25,
+   "violations": [
+    "R4 CS4243 in semester 5: prerequisite not met ((YSC2232 or MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522) and (ST1131 or ST1131A or ST1232 or ST2131 or MA2116 or MA2116T or MA2216 or EE2012A or EE2012 or ST2334 or YSC2243) and (CS2030 or CS2030S or CS2030DE or CS2030HS or CS2113 or CS2113T) and (YSC2229 or CS2040 or CS2040S or CS2040DE or CS2040C or CS2040HS) and (MA1102R or MA2002 or YSC1216 or MA1505 or MA1521 or MA1507 or (MA1512 and MA1511)))"
+   ]
+  }
+ ]
+}

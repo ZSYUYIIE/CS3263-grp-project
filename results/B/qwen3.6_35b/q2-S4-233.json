@@ -1,0 +1,90 @@
+{
+ "id": "q2-S4-233",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.12,
+ "solver_seconds": 0.046,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3127,
+  "total_tokens": 3508,
+  "completion_tokens": 381,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.07,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 5,\n\"programme\": \"BComp CS Hons\",\n\"completed\": [\n\"CS2103T\",\n\"CS1101S\",\n\"IS1108\",\n\"ES2660\",\n\"MA1521\",\n\"MA1522\",\n\"CS1231S\",\n\"CS3230\",\n\"CS2101\",\n\"CS2030S\",\n\"CS2040S\",\n\"ST2334\",\n\"CS2106\",\n\"CS2100\",\n\"CS2109S\"\n],\n\"must_take\": [\n\"CS2102\",\n\"CS4234\",\n\"CS2105\"\n],\n\"mc_max\": 16,\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4234\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2102\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4234\",\n\"b\": \"CS2102\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2102\",\n\"sem\": 5,\n\"strength\": \"prefer\"\n}\n],\n\"early\": [\n\"CS2102\",\n\"CS2105\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "CS2103T",
+   "CS1101S",
+   "IS1108",
+   "ES2660",
+   "MA1521",
+   "MA1522",
+   "CS1231S",
+   "CS3230",
+   "CS2101",
+   "CS2030S",
+   "CS2040S",
+   "ST2334",
+   "CS2106",
+   "CS2100",
+   "CS2109S"
+  ],
+  "must_take": [
+   "CS2102",
+   "CS4234",
+   "CS2105"
+  ],
+  "mc_max": 16,
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS4234",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4234",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 5,
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS2102",
+   "CS2105"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS4234 in semester 5; your rule: CS2102 in semester 7; your rule: CS4234 and CS2102 in the same semester"
+  ]
+ }
+}

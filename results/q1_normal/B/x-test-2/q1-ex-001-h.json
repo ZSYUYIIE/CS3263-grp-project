@@ -1,0 +1,55 @@
+{
+ "id": "q1-ex-001-h",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 4.16,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2633,
+  "total_tokens": 2812,
+  "completion_tokens": 179,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 0,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 121
+  },
+  "finish_reason": "stop",
+  "request_seconds": 4.16,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"eligible\",\"target\":\"CS2100DE\",\"current_sem\":4,\"completed\":[\"ES1000\",\"MA1521\",\"CS1231S\",\"IS1108\",\"CG2028\",\"CS2040\",\"MA2311\",\"CS1101S\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS2100DE",
+  "current_sem": 4,
+  "completed": [
+   "ES1000",
+   "MA1521",
+   "CS1231S",
+   "IS1108",
+   "CG2028",
+   "CS2040",
+   "MA2311",
+   "CS1101S"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS2100DE",
+  "semester": 4,
+  "reasons": [
+   "precluded: already completed CG2028"
+  ],
+  "can_still_become_eligible": false,
+  "never_eligible_because": "CS2100DE is ruled out by completed CG2028"
+ }
+}

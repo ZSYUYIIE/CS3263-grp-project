@@ -1,0 +1,117 @@
+{
+ "id": "q2-S4-047",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 9.97,
+ "solver_seconds": 0.008,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3197,
+  "total_tokens": 3757,
+  "completion_tokens": 560,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 9.96,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 8,\n\"completed\": [\n\"CS2101\",\n\"CS2106\",\n\"CS1231S\",\n\"CS4225\",\n\"CS2109S\",\n\"MA1521\",\n\"CS3241\",\n\"CS2103T\",\n\"CS4234\",\n\"CS3230\",\n\"CS2030S\",\n\"CS2102\",\n\"CS3219\",\n\"CS3213\",\n\"ES2660\",\n\"MA1522\",\n\"CS1101S\",\n\"CS2040S\",\n\"CS2100\",\n\"IS1108\",\n\"CS2105\"\n],\n\"must_take\": [\n\"CS4247\",\n\"ST2334\",\n\"CS3281\",\n\"CS4215\"\n],\n\"mc_max\": 12,\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"same_sem\",\n\"a\": \"ST2334\",\n\"b\": \"CS4247\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3281\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"ST2334\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4215\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4215\",\n\"b\": \"CS3281\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4215\",\n\"b\": \"CS4247\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"ST2334\",\n\"b\": \"CS3281\",\n\"strength\": \"prefer\"\n}\n],\n\"early\": [\n\"CS4247\"\n],\n\"unsupported\": [\n\"rather not have classes on Fridays\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 8,
+  "completed": [
+   "CS2101",
+   "CS2106",
+   "CS1231S",
+   "CS4225",
+   "CS2109S",
+   "MA1521",
+   "CS3241",
+   "CS2103T",
+   "CS4234",
+   "CS3230",
+   "CS2030S",
+   "CS2102",
+   "CS3219",
+   "CS3213",
+   "ES2660",
+   "MA1522",
+   "CS1101S",
+   "CS2040S",
+   "CS2100",
+   "IS1108",
+   "CS2105"
+  ],
+  "must_take": [
+   "CS4247",
+   "ST2334",
+   "CS3281",
+   "CS4215"
+  ],
+  "mc_max": 12,
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "ST2334",
+    "b": "CS4247",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3281",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "ST2334",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4215",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4215",
+    "b": "CS3281",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS4215",
+    "b": "CS4247",
+    "strength": "prefer"
+   },
+   {
+    "type": "same_sem",
+    "a": "ST2334",
+    "b": "CS3281",
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS4247"
+  ],
+  "unsupported": [
+   "rather not have classes on Fridays"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "the required courses need 16 MC but the remaining semesters [8] allow at most 12 MC"
+  ],
+  "not_applied": [
+   "rather not have classes on Fridays"
+  ]
+ }
+}

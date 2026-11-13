@@ -1,0 +1,80 @@
+{
+ "id": "q2-S4-048",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 4.92,
+ "solver_seconds": 0.017,
+ "max_tokens": 49152,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 3070,
+  "total_tokens": 3360,
+  "completion_tokens": 290,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 4.91,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 3,\n\"completed\": [\n\"CS2030S\",\n\"MA1521\",\n\"CS2040S\",\n\"IS1108\",\n\"CS1231S\",\n\"MA1522\",\n\"CS1101S\"\n],\n\"must_take\": [\n\"CS3210\",\n\"CS2101\",\n\"CS3281\",\n\"CS2102\",\n\"CS3236\",\n\"ST2334\",\n\"CS2103T\"\n],\n\"mc_max\": 4,\n\"sem_caps\": {\n\"6\": 0\n},\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3210\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2103T\",\n\"b\": \"ST2334\",\n\"strength\": \"prefer\"\n}\n],\n\"unsupported\": [\n\"want at most two modules with final exams in a semester\",\n\"put CS2103T as late as possible\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "completed": [
+   "CS2030S",
+   "MA1521",
+   "CS2040S",
+   "IS1108",
+   "CS1231S",
+   "MA1522",
+   "CS1101S"
+  ],
+  "must_take": [
+   "CS3210",
+   "CS2101",
+   "CS3281",
+   "CS2102",
+   "CS3236",
+   "ST2334",
+   "CS2103T"
+  ],
+  "mc_max": 4,
+  "sem_caps": {
+   "6": 0
+  },
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3210",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2103T",
+    "b": "ST2334",
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "want at most two modules with final exams in a semester",
+   "put CS2103T as late as possible"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "the required courses need 28 MC but the remaining semesters [3, 4, 5, 7, 8] allow at most 20 MC"
+  ],
+  "not_applied": [
+   "want at most two modules with final exams in a semester",
+   "put CS2103T as late as possible"
+  ]
+ }
+}

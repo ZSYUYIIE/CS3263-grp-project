@@ -1,0 +1,52 @@
+{
+ "id": "q2-S3-268",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 3,
+ "end": "cap",
+ "seconds": 15.49,
+ "usage": {
+  "prompt_tokens": 37061,
+  "total_tokens": 38098,
+  "completion_tokens": 1037,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 15.49,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2105\",\n      \"CS2109S\",\n      \"CS2102\",\n      \"ST2334\"\n    ],\n    \"6\": [\n      \"CS3230\"\n    ],\n    \"7\": [\n      \"CS3103\"\n    ],\n    \"8\": [\n      \"CS3234\",\n      \"CS4226\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3234 is offered only in Sem 2, so it must be placed in Sem 8 (Y4S2) to satisfy the 'late as possible' wish and prerequisite constraints.\",\n    \"CS4226 is offered only in Sem 1, so it must be placed in Sem 7 (Y3S1) or later; Sem 8 is used for CS3234, so Sem 7 is the latest available Sem 1 slot.\",\n    \"CS3103 is offered only in Sem 1, so it is placed in Sem 7 (Y3S1) as Sem 5 is full with mandatory core courses.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2105",
+    "CS2109S",
+    "CS2102",
+    "ST2334"
+   ],
+   "6": [
+    "CS3230"
+   ],
+   "7": [
+    "CS3103"
+   ],
+   "8": [
+    "CS3234",
+    "CS4226"
+   ]
+  },
+  "reasons": [
+   "CS3234 is offered only in Sem 2, so it must be placed in Sem 8 (Y4S2) to satisfy the 'late as possible' wish and prerequisite constraints.",
+   "CS4226 is offered only in Sem 1, so it must be placed in Sem 7 (Y3S1) or later; Sem 8 is used for CS3234, so Sem 7 is the latest available Sem 1 slot.",
+   "CS3103 is offered only in Sem 1, so it is placed in Sem 7 (Y3S1) as Sem 5 is full with mandatory core courses."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

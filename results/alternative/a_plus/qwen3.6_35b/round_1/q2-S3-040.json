@@ -1,0 +1,57 @@
+{
+ "id": "q2-S3-040",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 3,
+ "end": "cap",
+ "seconds": 63.43,
+ "usage": {
+  "prompt_tokens": 34663,
+  "total_tokens": 38853,
+  "completion_tokens": 4190,
+  "finish_reason": "stop",
+  "request_seconds": 63.43,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"4\": [\n\"CS2105\",\n\"CS2106\",\n\"CS3210\",\n\"CS3219\"\n],\n\"5\": [\n\"CS2102\",\n\"CS2109S\",\n\"CS3230\",\n\"CS3231\"\n],\n\"6\": [\n\"CP3880\"\n],\n\"7\": [\n\"CS3240\",\n\"CS3243\",\n\"CS3281\",\n\"IS1108\"\n],\n\"8\": [\n\"CS3263\",\n\"CS3282\",\n\"CS4246\"\n]\n},\n\"reasons\": [\n\"CS3240 is offered in Sem 1 (odd semesters), so it is placed in Sem 7. Prerequisite CS2111 is not completed, but NM2207 is not completed either. Wait, CS2111 is not completed. NM2207 is not completed. CS3240 requires CS2111 or NM2207. Neither is completed. This is a problem. Let's re-read prerequisites. CS3240: prerequisite CS2111 or NM2207. Student has not completed CS2111 or NM2207. So CS3240 cannot be taken unless one of them is taken first. CS2111 requires CS1010A/E/X/1101S/1010S/UTC2851/1010HS/1010J/1010/NM2207. Student has CS1101S. So CS2111 can be taken in Sem 4 or later. NM2207 requires none, offered Sem 2. So NM2207 can be taken in Sem 4. To take CS3240, we need CS2111 or NM2207. NM2207 is 4 MC, offered Sem 2. CS2111 is 4 MC, offered Sem 2. If we take NM2207 in Sem 4, we can take CS3240 in Sem 5 (Sem 1). If we take CS2111 in Sem 4, we can take CS3240 in Sem 5. The student wants CS3240 as early as possible. Sem 5 is the earliest possible if we add a prerequisite in Sem 4. Sem 4 is current. So we can take NM2207 or CS2111 in Sem 4. Let's pick NM2207 as it has no prerequisites. Then CS3240 in Sem 5. But Sem 5 is full with CS2102, CS2109S, CS3230, CS3231. We need to shift. Let's put NM2207 in Sem 4. Then CS3240 in Sem 5. We need to move one of the Sem 5 courses to Sem 6 or 7. CS2102, CS2109S, CS3230, CS3231. CS2102 requires CS2030S, CS2040S. CS2109S requires CS2040S, Math. CS3230 requires CS2040S, Discrete. CS3231 requires CS2040S, Discrete. All can be delayed. Let's move CS3231 to Sem 6? No, Sem 6 is ATAP. ATAP allows max 8 MC other courses. CS3231 is 4 MC. OK. But CS3231 is offered Sem 1. Sem 6 is Sem 2. CS3231 is NOT offered in Sem 2. So CS3231 cannot be in Sem 6. CS3230 is offered Sem 1, 2. Can be in Sem 6. CS2102 offered Sem 1, 2. Can be in Sem 6. CS2109S offered Sem 1, 2. Can be in Sem 6. Let's move CS3231 to Sem 7 (Sem 1). CS3231 offered Sem 1. OK. So Sem 5: CS2102, CS2109S, CS3230, NM2207. Sem 6: CP3880, CS3240. Sem 7: CS3231, CS3243, CS3281, IS1108. Sem 8: CS3263, CS3282, CS4246. Check CS3243: offered Sem 2. Sem 7 is Sem 1. CS3243 NOT offered in Sem 1. So CS3243 cannot be in Sem 7. CS3243 offered Sem 2. So it must be in Sem 4, 6, 8. Sem 4 is full. Sem 6 is ATAP (max 8 MC other). CS3243 is 4 MC. OK. But CS3243 requires CS2109S and CS2040S. CS2109S is in Sem 5. So CS3243 cannot be in Sem 6. CS3243 must be in Sem 8. Sem 8 is Sem 2. OK. So CS3243 in Sem 8. Then CS3263 requires CS3243. CS3263 offered Sem 1, 2. Sem 8 is Sem 2. OK. But CS3263 requires CS3243. If CS3243 is in Sem 8, CS3263 must be in Sem 9? No, Sem 8 is last. So CS3263 cannot be taken if CS3243 is in Sem 8. We need CS3243 in Sem 6 or earlier to take CS3263 in Sem 8. But CS3243 requires CS2109S. CS2109S is in Sem 5. So CS3243 can be in Sem 6. Sem 6 is ATAP. Max 8 MC other. CS3243 is 4 MC. OK. So CS3243 in Sem 6. Then CS3263 in Sem 8. CS4246 requires CS3243 or CS3263. If CS3263 is in Sem 8, CS4246 can be in Sem 8? No, prerequisite must be completed or planned in same or earlier. CS3263 in Sem 8, CS4246 in Sem 8. OK. But CS4246 requires CS3243 or CS3263. If we have CS3263 in Sem 8, we satisfy CS4246. But CS3263 requires CS3243. So CS3243 must be before CS3263. CS3243 in Sem 6. CS3263 in Sem 8. CS4246 in Sem 8. This works. Let's re-plan. Sem 4: CS2105, CS2106, CS3210, CS3219. (Full). Sem 5: CS2102, CS2109S, CS3230, NM2207. (CS3240 needs NM2207 or CS2111. NM2207 in Sem 5. CS3240 offered Sem 1. Sem 6 is Sem 2. CS3240 not offered Sem 2. So CS3240 cannot be in Sem 6. CS3240 must be in Sem 7 (Sem 1). Sem 7: CS3231, CS3240, CS3281, IS1108. CS3281 offered Sem 2. Sem 7 is Sem 1. CS3281 NOT offered Sem 1. So CS3281 cannot be in Sem 7. CS3281 must be in Sem 8 (Sem 2) or Sem 6 (Sem 2). Sem 6 is ATAP. Max 8 MC other. CS3281 is 4 MC. OK. But CS3281 requires CS2103 or CS2103T or CS2103DE or CS2113. Student has CS2103T. So CS3281 can be in Sem 6. Then CS3282 requires CS3281. CS3282 offered Sem 2. Sem 8 is Sem 2. OK. So CS3282 in Sem 8. Sem 6: CP3880, CS3243, CS3281. (4+4=8 MC other). OK. Sem 7: CS3231, CS3240, IS1108. (3 courses). Sem 8: CS3263, CS3282, CS4246. (3 courses). Check CS3243 in Sem 6: Prereq CS2109S (Sem 5) and CS2040S (Completed). OK. CS3263 in Sem 8: Prereq CS3243 (Sem 6), CS2040S (Completed), Math (MA1522 Completed), EE2012A/EE2012/ST2131/MA2116/MA2116T/ST2334/MA2216. Student has ST2334. OK. CS4246 in Sem 8: Prereq (EE2012A/EE2012/ST2132/ST2334/((ST2131/MA2116/MA2116T/MA2216) and (ST1131/ST1232/DCS2008/ST1131A))) and (CS3243 or CS3263). Student has ST2334. CS3263 is in Sem 8. So CS4246 can be in Sem 8. OK. CS3231 in Sem 7: Prereq CS1231S (Completed) and CS2040S (Completed). OK. CS3240 in Sem 7: Prereq CS2111 or NM2207. NM2207 in Sem 5. OK. IS1108 in Sem 7: No prereq. OK. CS3281 in Sem 6: Prereq CS2103T (Completed). OK. CS3282 in Sem 8: Prereq CS3281 (Sem 6). OK. CS2102 in Sem 5: Prereq CS1231S (Completed) and CS2030S/CS2040S (Completed). OK. CS2109S in Sem 5: Prereq CS2040S (Completed) and Math (MA1521/MA1522 Completed). OK. CS3230 in Sem 5: Prereq CS2040S (Completed) and CS1231S (Completed). OK. NM2207 in Sem 5: No prereq. OK. CS2105, CS2106, CS3210, CS3219 in Sem 4: All prereqs met. OK. ATAP in Sem 6: CP3880. Other courses CS3243, CS3281. Total 8 MC. OK. CS3240 as early as possible: Sem 7. Can it be earlier? Sem 5 has NM2207. CS3240 offered Sem 1. Sem 6 is Sem 2. No. Sem 4 is full. So Sem 7 is earliest. CS4246 as early as possible: Sem 8. Can it be earlier? Sem 7 is Sem 1. CS4246 offered Sem 1, 2. Sem 7 is Sem 1. OK. But CS4246 requires CS3243 or CS3263. CS3243 is in Sem 6. CS3263 is in Sem 8. If we put CS3263 in Sem 7? CS3263 offered Sem 1, 2. Sem 7 is Sem 1. OK. But CS3263 requires CS3243. CS3243 is in Sem 6. So CS3263 can be in Sem 7. Then CS4246 can be in Sem 7. Sem 7: CS3231, CS3240, CS3263, CS4246. 4 courses. OK. But CS3281 is in Sem 6. CS3282 requires CS3281. CS3282 offered Sem 2. Sem 8 is Sem 2. OK. So CS3282 in Sem 8. IS1108 in Sem 7? Sem 7 is full with 4 courses. Move IS1108 to Sem 8? Sem 8: CS3282, IS1108. 2 courses. OK. So Sem 7: CS3231, CS3240, CS3263, CS4246. Sem 8: CS3282, IS1108. This puts CS4246 in Sem 7, which is earlier than Sem 8. Better. Check CS3263 in Sem 7: Prereq CS3243 (Sem 6). OK. CS4246 in Sem 7: Prereq ST2334 (Completed) and CS3263 (Sem 7). OK. CS3240 in Sem 7: Prereq NM2207 (Sem 5). OK. CS3231 in Sem 7: Prereq CS1231S, CS2040S. OK. Sem 6: CP3880, CS3243, CS3281. 8 MC other. OK. Sem 5: CS2102, CS2109S, CS3230, NM2207. 16 MC. OK. Sem 4: CS2105, CS2106, CS3210, CS3219. 16 MC. OK. Sem 8: CS3282, IS1108. 8 MC. OK. Total MC: 16+16+8+16+8 = 64 MC. Plus ATAP 12 MC = 76 MC. Is this minimal? We added NM2207 (4 MC). Without NM2207, we can't take CS3240. So it's necessary. CS3240 is 4 MC. CS3243 is 4 MC. CS3263 is 4 MC. CS4246 is 4 MC. CS3281 is 4 MC. CS3282 is 4 MC. CS2102 is 4 MC. CS2109S is 4 MC. CS3230 is 4 MC. CS3231 is 4 MC. CS2105 is 4 MC. CS2106 is 4 MC. CS3210 is 4 MC. CS3219 is 4 MC. IS1108 is 4 MC. NM2207 is 4 MC. Total 19 courses * 4 = 76 MC. ATAP 12 MC. Total 88 MC? No, ATAP is 12 MC, but doesn't count towards semester limit. The other courses are 19 * 4 = 76 MC. Total 88 MC. Can we reduce? No, all are required. So this is the plan.\"\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2105",
+    "CS2106",
+    "CS3210",
+    "CS3219"
+   ],
+   "5": [
+    "CS2102",
+    "CS2109S",
+    "CS3230",
+    "CS3231"
+   ],
+   "6": [
+    "CP3880"
+   ],
+   "7": [
+    "CS3240",
+    "CS3243",
+    "CS3281",
+    "IS1108"
+   ],
+   "8": [
+    "CS3263",
+    "CS3282",
+    "CS4246"
+   ]
+  }
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

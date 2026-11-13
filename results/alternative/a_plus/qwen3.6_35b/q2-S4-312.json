@@ -1,0 +1,109 @@
+{
+ "id": "q2-S4-312",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 5.37,
+ "usage": {
+  "prompt_tokens": 27173,
+  "total_tokens": 27373,
+  "completion_tokens": 200,
+  "finish_reason": "stop",
+  "request_seconds": 5.37,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS3242 requires CS3241 and physics/math modules not completed.\", \"CS4239 requires CS3235 which is not completed.\", \"CS4249 requires CS3240 or similar modules not completed.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3242 requires CS3241 and physics/math modules not completed.",
+   "CS4239 requires CS3235 which is not completed.",
+   "CS4249 requires CS3240 or similar modules not completed."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"5\": [\"CS2105\"], \"6\": [\"CS3242\"], \"7\": [\"CS3268\", \"CS4239\"], \"8\": [\"CS3219\", \"CS4249\"]}, \"reasons\": [\"All prerequisites satisfied by completed courses or earlier planned semesters.\", \"CS3268 placed in Sem 7 and CS3219 in Sem 8 as required.\", \"CS3242 placed in Sem 6 before CS3268 in Sem 7, respecting soft wish.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2105"
+     ],
+     "6": [
+      "CS3242"
+     ],
+     "7": [
+      "CS3268",
+      "CS4239"
+     ],
+     "8": [
+      "CS3219",
+      "CS4249"
+     ]
+    },
+    "reasons": [
+     "All prerequisites satisfied by completed courses or earlier planned semesters.",
+     "CS3268 placed in Sem 7 and CS3219 in Sem 8 as required.",
+     "CS3242 placed in Sem 6 before CS3268 in Sem 7, respecting soft wish."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 13383,
+    "total_tokens": 13516,
+    "completion_tokens": 133,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.47,
+    "attempts": 1
+   },
+   "seconds": 3.47,
+   "violations": [
+    "R4 CS3242 in semester 6: prerequisite not met ((PC1201 or PC1221 or PC1221X) and CS3241 and (MA1522 or MA1508E or MA1513 or MA1311 or MA2001 or MA1101R) and (MA1521 or MA2002 or MA1505 or MA1507 or MA1102R or (MA1511 and MA1512)))",
+    "R4 CS4239 in semester 7: prerequisite not met (CS3235 and (CS2103T or CS2103 or CS2103DE or CS2113 or CS2113T))",
+    "R4 CS4249 in semester 8: prerequisite not met (CS3240 or NM2216 or NM2213 or NM3243)"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS3242 requires CS3241 and physics/math modules not completed.\", \"CS4239 requires CS3235 which is not completed.\", \"CS4249 requires CS3240 or similar modules not completed.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3242 requires CS3241 and physics/math modules not completed.",
+     "CS4239 requires CS3235 which is not completed.",
+     "CS4249 requires CS3240 or similar modules not completed."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 13790,
+    "total_tokens": 13857,
+    "completion_tokens": 67,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 1.9,
+    "attempts": 1
+   },
+   "seconds": 1.9,
+   "violations": null
+  }
+ ]
+}

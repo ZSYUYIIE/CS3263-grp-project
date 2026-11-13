@@ -1,0 +1,64 @@
+{
+ "id": "q2-S3-189",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 76.67,
+ "usage": {
+  "prompt_tokens": 8107,
+  "total_tokens": 16336,
+  "completion_tokens": 8229,
+  "prompt_tokens_details": {
+   "cached_tokens": 7936,
+   "created_cache_tokens": 128
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 8033
+  },
+  "finish_reason": "stop",
+  "request_seconds": 76.67,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"2\":[\"CS2040\",\"CS2030S\",\"CS2100\",\"MA1522\",\"ST2334\"],\"3\":[\"CS2109S\",\"CS2103T\",\"CS2101\",\"IS1108\"],\"4\":[\"CS3230\",\"CS3219\",\"CS3281\"],\"5\":[\"CS4261\"],\"8\":[\"CS3227\"]},\"reasons\":[\"Added CS2040 and ST2334 only because they are prerequisites for CS2109S, CS3230, CS2103T and CS4261; total is 56 MC.\",\"CS2109S is in semester 3, the earliest possible after CS2040, and CS3230 follows in semester 4.\",\"CS2100 is in semester 2, CS4261 is in semester 5, and CS3227 is placed as late as possible in semester 8.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "2": [
+    "CS2040",
+    "CS2030S",
+    "CS2100",
+    "MA1522",
+    "ST2334"
+   ],
+   "3": [
+    "CS2109S",
+    "CS2103T",
+    "CS2101",
+    "IS1108"
+   ],
+   "4": [
+    "CS3230",
+    "CS3219",
+    "CS3281"
+   ],
+   "5": [
+    "CS4261"
+   ],
+   "8": [
+    "CS3227"
+   ]
+  },
+  "reasons": [
+   "Added CS2040 and ST2334 only because they are prerequisites for CS2109S, CS3230, CS2103T and CS4261; total is 56 MC.",
+   "CS2109S is in semester 3, the earliest possible after CS2040, and CS3230 follows in semester 4.",
+   "CS2100 is in semester 2, CS4261 is in semester 5, and CS3227 is placed as late as possible in semester 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

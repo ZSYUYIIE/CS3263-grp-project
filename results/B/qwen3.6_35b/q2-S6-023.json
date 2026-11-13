@@ -1,0 +1,68 @@
+{
+ "id": "q2-S6-023",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 22.28,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3050,
+  "total_tokens": 3277,
+  "completion_tokens": 227,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 22.28,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 5,\n\"must_take\": [\n\"CS3242\",\n\"CS4278\",\n\"CS2102\",\n\"CS2105\"\n],\n\"mc_max\": 16,\n\"objective\": \"min_total_mc\",\n\"early\": [\n\"CS4278\"\n],\n\"late\": [\n\"CS2105\"\n],\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS4278\",\n\"b\": \"CS2105\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2102\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS2102\",\n\"b\": \"CS2105\",\n\"strength\": \"must\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "must_take": [
+   "CS3242",
+   "CS4278",
+   "CS2102",
+   "CS2105"
+  ],
+  "mc_max": 16,
+  "objective": "min_total_mc",
+  "early": [
+   "CS4278"
+  ],
+  "late": [
+   "CS2105"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS4278",
+    "b": "CS2105",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS2102",
+    "b": "CS2105",
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "MISSING_INFO",
+  "missing": [
+   "completed"
+  ],
+  "message": "This cannot be answered yet. Please give: the courses you have already completed (say so if there are none)."
+ }
+}

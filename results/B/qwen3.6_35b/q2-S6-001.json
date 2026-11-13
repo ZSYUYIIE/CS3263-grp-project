@@ -1,0 +1,116 @@
+{
+ "id": "q2-S6-001",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 5.68,
+ "solver_seconds": 0.296,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3006,
+  "total_tokens": 3230,
+  "completion_tokens": 224,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.38,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 1,\n\"programme\": \"BComp CS Hons\",\n\"completed\": [],\n\"must_take\": [\n\"CS3268\",\n\"ST2334\",\n\"CS4220\"\n],\n\"sem_caps\": {\n\"5\": 0\n},\n\"early\": [\n\"ST2334\",\n\"CS3268\"\n],\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4220\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"ST2334\",\n\"b\": \"CS3268\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4220\",\n\"b\": \"ST2334\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "programme": "BComp CS Hons",
+  "completed": [],
+  "must_take": [
+   "CS3268",
+   "ST2334",
+   "CS4220"
+  ],
+  "sem_caps": {
+   "5": 0
+  },
+  "early": [
+   "ST2334",
+   "CS3268"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS4220",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "ST2334",
+    "b": "CS3268",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4220",
+    "b": "ST2334",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 8,
+  "plan": {
+   "1": [
+    "MA1521",
+    "UTC2851"
+   ],
+   "2": [
+    "CS2040",
+    "ST2334"
+   ],
+   "3": [
+    "CS2109S",
+    "CS2220"
+   ],
+   "4": [],
+   "5": [],
+   "6": [],
+   "7": [
+    "CS3268"
+   ],
+   "8": [
+    "CS4220"
+   ]
+  },
+  "mc_per_semester": {
+   "1": 8,
+   "2": 8,
+   "3": 8,
+   "4": 0,
+   "5": 0,
+   "6": 0,
+   "7": 4,
+   "8": 4
+  },
+  "preferences_met": [
+   "ST2334 as early as possible",
+   "CS3268 as early as possible"
+  ],
+  "preferences_not_met": [
+   "CS4220 before ST2334"
+  ],
+  "added_prerequisites": [
+   "CS2040",
+   "CS2109S",
+   "CS2220",
+   "MA1521",
+   "UTC2851"
+  ]
+ }
+}

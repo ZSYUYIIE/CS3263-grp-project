@@ -1,0 +1,40 @@
+{
+ "id": "q2-S5-020",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 80.3,
+ "usage": {
+  "prompt_tokens": 11916,
+  "total_tokens": 14946,
+  "completion_tokens": 3030,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 80.3,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4430 prerequisite is CS3231, which is not completed and not in the required list.\", \"CS3231 prerequisite is CS1231 or CS1231S and CS2040 or CS2040S etc. Student has CS1231S and CS2040S, so CS3231 is eligible. However, CS4430 requires CS3231. The student must take CS3231. CS3231 is offered in Sem 1 only. Semester 7 is Sem 1. So CS3231 can be taken in Sem 7. But CS4430 is offered in Sem 2 only. So CS4430 must be in Sem 8. CS2102 prerequisite is (CS1231/MA...) and (CS2030S/CS2030/CS2040/CS2040S/CS2040DE/CS2040HS). Student has CS2030S and CS1231S. So CS2102 is eligible. CS2102 is offered Sem 1 and Sem 2. CS3213 prerequisite is CS2103T or CS2103 or CS2103DE or CS2113T or CS2113. Student has CS2103T. So CS3213 is eligible. CS3213 is offered Sem 2 only. CS4243 prerequisite is complex. Let's check CS4243. Prereqs: (YSC2232 or MA2001...) and (ST1131...) and (CS2030/CS2113...) and (YSC2229/CS2040...) and (MA1102R...). Student has CS2030S (satisfies CS2030/CS2030S/CS2030DE/CS2030HS/CS2113/CS2113T? No, CS2113 is not CS2030. But CS2030S is in the list 'CS2030 or CS2030S or CS2030DE or CS2030HS or CS2113 or CS2113T'. Yes. Next: (YSC2229 or CS2040 or CS2040S or CS2040DE or CS2040C or CS2040HS). Student has CS2040S. Yes. Next: (MA1102R or MA2002 or YSC1216 or MA1505 or MA1521 or MA1507 or (MA1512 and MA1511)). Student has MA1521. Yes. Next: (ST1131 or ST1131A or ST1232 or ST2131 or MA2116 or MA2116T or MA2216 or EE2012A or EE2012 or ST2334 or YSC2243). Student has ST2334. Yes. Next: (YSC2232 or MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522). Student has MA1522. Yes. So CS4243 is eligible. CS4243 is offered Sem 1 and Sem 2. CS2102 is offered Sem 1 and Sem 2. CS3213 is offered Sem 2. CS4430 is offered Sem 2. CS3231 is offered Sem 1. Student is in Sem 7. Sem 7 is Sem 1. Sem 8 is Sem 2. Student must take CS3231, CS2102, CS3213, CS4430, CS4243. CS3231 must be in Sem 7 (Sem 1). CS3213, CS4430, CS4243, CS2102 can be in Sem 7 or 8. But CS3213, CS4430 are Sem 2 only, so they must be in Sem 8. CS2102 and CS4243 can be in Sem 7 or 8. Student wants CS2102 in Sem 7 if possible. Student wants CS2102 as late as possible. This is a conflict. \"Ideally I'd take CS4243 before CS3213\". CS4243 and CS3213 are both Sem 2 (Sem 8) or CS4243 Sem 7 and CS3213 Sem 8. If CS4243 is Sem 7, it is before CS3213 (Sem 8). Student wants CS2102 as late as possible. If CS2102 is Sem 8, it is late. But student also said \"If possible, I would like CS2102 in semester 7\". And \"put CS2102 as late as possible\". These are conflicting soft wishes. However, the hard constraint is \"CS4430 must come before CS2102\" was corrected to \"CS2102 must come before CS4430\". So CS2102 < CS4430. CS4430 is Sem 8. So CS2102 can be Sem 7 or Sem 8. If CS2102 is Sem 8, it is not strictly before CS4430 in time if they are in the same semester? \"Before\" usually means earlier semester. If they are in the same semester, is it \"before\"? Usually no. So CS2102 must be Sem 7. If CS2102 is Sem 7, then \"put CS2102 as late as possible\" is satisfied by putting it in Sem 7 (since Sem 8 is not allowed due to ordering with CS4430). Wait, if CS2102 is Sem 7 and CS4430 is Sem 8, CS2102 is before CS4430. This works. So CS2102 MUST be Sem 7. Then \"put CS2102 as late as possible\" is just a soft wish that is met by the hard constraint. \"Ideally I'd take CS4243 before CS3213\". CS3213 is Sem 8. CS4243 can be Sem 7 or Sem 8. If CS4243 is Sem 7, it is before CS3213. If CS4243 is Sem 8, it is same semester. \"Before\" usually implies earlier. So CS4243 should be Sem 7. So Sem 7: CS3231, CS2102, CS4243. Sem 8: CS3213, CS4430. Let's check MC. Sem 7: CS3231 (4) + CS2102 (4) + CS4243 (4) = 12 MC. Limit is 12. OK. Sem 8: CS3213 (4) + CS4430 (4) = 8 MC. Limit is 12. OK. Are there any other courses? Student said \"plan the rest of my degree\". Are there any other MUST courses? The student listed CS4243, CS3213, CS4430, CS2102 as needed. And CS3231 is needed for CS4430. Are there any other prerequisites for these? CS3231 prereq: CS1231S (done) and CS2040S (done). OK. CS2102 prereq: CS1231S (done) and CS2030S (done). OK. CS4243 prereqs checked. OK. CS3213 prereq: CS2103T (done). OK. CS4430 prereq: CS3231 (planned in Sem 7). OK. So the plan is valid. Why NO_PLAN? I thought there was a conflict. Let's re-read carefully. \"CS4430 must come before CS2102. Sorry, other way round: CS2102 must come before CS4430.\" So CS2102 < CS4430. CS4430 is Sem 8. CS2102 is Sem 7. This is fine. \"Ideally I'd take CS4243 before CS3213\". CS3213 is Sem 8. CS4243 is Sem 7. This is fine. \"If possible, I would like CS2102 in semester 7\". It is in Sem 7. \"Put CS2102 as late as possible\". It is in Sem 7, which is the latest possible given the constraint CS2102 < CS4430 (Sem 8). So this is fine. Is there any other course? Student completed: CS2105, CS2103T, CS1231S, MA1521, IS1108, MA1522, ST2334, CS2030S, CS3236, CS3219, CS3230, CS2106, CS2100, CS2040S, CS1101S, CS2109S, CS3210, CS2101. Remaining: CS3231, CS2102, CS4243, CS3213, CS4430. All accounted for. The plan seems valid. Wait, did I miss any \"must\" courses? The student said \"I need to take CS4243, CS3213 and CS4430... I almost forgot CS2102, I need that as well.\" And CS3231 is a prerequisite for CS4430, so it is implicitly required. Is CS3231 a \"must\" course? Yes, because CS4430 is a must. So the plan is: Sem 7: CS3231, CS2102, CS4243. Sem 8: CS3213, CS4430. This satisfies all constraints. So the status should be PLAN.\n\nLet's double check if CS4243 can be taken in Sem 7. CS4243 is offered Sem 1 and Sem 2. Sem 7 is Sem 1. Yes.\nLet's double check if CS2102 can be taken in Sem 7. CS2102 is offered Sem 1 and Sem 2. Yes.\nLet's double check if CS3231 can be taken in Sem 7. CS3231 is offered Sem 1. Yes.\nLet's double check if CS3213 can be taken in Sem 8. CS3213 is offered Sem 2. Yes.\nLet's double check if CS4430 can be taken in Sem 8. CS4430 is offered Sem 2. Yes.\n\nMC check:\nSem 7: 4+4+4=12. Limit 12. OK.\nSem 8: 4+4=8. Limit 12. OK.\n\nPrerequisites:\nCS3231: CS1231S (done), CS2040S (done). OK.\nCS2102: CS1231S (done), CS2030S (done). OK.\nCS4243: MA1522 (done), ST2334 (done), CS2030S (done), CS2040S (done), MA1521 (done). OK.\nCS3213: CS2103T (done). OK.\nCS4430: CS3231 (Sem 7). OK.\n\nOrdering:\nCS2102 (Sem 7) before CS4430 (Sem 8). OK.\nCS4243 (Sem 7) before CS3213 (Sem 8). OK.\n\nSoft wishes:\nCS2102 in Sem 7: Yes.\nCS2102 as late as possible: Yes (Sem 7 is the latest possible before Sem 8).\nCS4243 before CS3213: Yes.\n\nSo the plan is valid.\n\n{\"status\": \"PLAN\", \"plan\": {\"7\": [\"CS3231\", \"CS2102\", \"CS4243\"], \"8\": [\"CS3213\", \"CS4430\"]}, \"reasons\": [\"CS3231 is required for CS4430 and offered only in Sem 1.\", \"CS3213 and CS4430 are offered only in Sem 2.\", \"CS2102 must precede CS4430, so it is placed in Sem 7.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "7": [
+    "CS3231",
+    "CS2102",
+    "CS4243"
+   ],
+   "8": [
+    "CS3213",
+    "CS4430"
+   ]
+  },
+  "reasons": [
+   "CS3231 is required for CS4430 and offered only in Sem 1.",
+   "CS3213 and CS4430 are offered only in Sem 2.",
+   "CS2102 must precede CS4430, so it is placed in Sem 7."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

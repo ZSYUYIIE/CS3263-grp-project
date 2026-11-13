@@ -1,0 +1,58 @@
+{
+ "id": "q1-mp-005-p",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 4.22,
+ "solver_seconds": 0.008,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2547,
+  "total_tokens": 2808,
+  "completion_tokens": 261,
+  "prompt_tokens_details": {
+   "cached_tokens": 2432,
+   "created_cache_tokens": 0,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 172
+  },
+  "finish_reason": "stop",
+  "request_seconds": 4.21,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\": \"eligible\", \"target\": \"CS3211\", \"current_sem\": 6, \"completed\": [\"CS2309\", \"CS1231S\", \"CS3237\", \"ES2660\", \"CS2040C\", \"CS1101S\", \"CS2105\", \"MA1301X\", \"CS2103T\", \"CS2100\", \"CS2030S\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS3211",
+  "current_sem": 6,
+  "completed": [
+   "CS2309",
+   "CS1231S",
+   "CS3237",
+   "ES2660",
+   "CS2040C",
+   "CS1101S",
+   "CS2105",
+   "MA1301X",
+   "CS2103T",
+   "CS2100",
+   "CS2030S"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS3211",
+  "semester": 6,
+  "reasons": [
+   "missing prerequisite: CS2106 or CG2271"
+  ],
+  "can_still_become_eligible": true
+ }
+}

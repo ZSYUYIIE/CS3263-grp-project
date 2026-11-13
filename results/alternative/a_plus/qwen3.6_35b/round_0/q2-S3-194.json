@@ -1,0 +1,58 @@
+{
+ "id": "q2-S3-194",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 75.65,
+ "usage": {
+  "prompt_tokens": 14218,
+  "total_tokens": 18439,
+  "completion_tokens": 4221,
+  "finish_reason": "stop",
+  "request_seconds": 75.65,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS4261 requires MA1100 or MA1100T or CS1231S or CS1231 as a prerequisite. The student has completed CS1231S, so this prerequisite is satisfied.\",\n\"CS4261 requires (EE2012A or EE2012 or ST2131 or MA2216 or ST2334 or MA2116 or MA1116T) as a prerequisite. The student has not completed any of these courses, nor are they planned in the request. Without one of these, CS4261 cannot be taken in Semester 5.\",\n\"CS2109S requires (YSC2229 or CS2040S or CS2040C or CS2040HS or CS2040 or CS2040DE) and ((MA1511 and MA1512) or MA1521 or MA2002 or MA1102R or MA1312 or MA1507 or MA1505). The student has completed MA1521, satisfying the math part. However, the student has not completed or planned any of the data structures courses (CS2040S, CS2040C, CS2040HS, CS2040, CS2040DE, YSC2229). CS2040S requires CS1231S (completed) and a CS1010 variant (CS1101S completed). So CS2040S is eligible. But CS2109S also requires CS2040S (or equivalent) to be completed or planned. The student did not list CS2040S as a 'must take'. Rule 8 says we can only add courses if they are prerequisites needed by a planned course. CS2040S is a prerequisite for CS2109S. So we must add CS2040S. CS2040S is offered Sem 1 and Sem 2. It can be taken in Sem 2. Then CS2109S can be taken in Sem 3 or later. This seems possible. Let's re-read CS4261 prerequisites. It needs MA1100/MA1100T/CS1231S/CS1231 AND (EE2012A/EE2012/ST2131/MA2216/ST2334/MA2116/MA2116T). The student has CS1231S. But lacks the second group. None of EE2012, ST2131, ST2334, MA2116, MA2116T are in the student's 'must take' list. Rule 8 allows adding prerequisites. So we must add one of EE2012, ST2131, ST2334, MA2116, MA2116T. Let's pick MA2116. MA2116 requires MA1312 or MA1505 or MA1511 or MA1521 or MA2002. Student has MA1521. So MA2116 is eligible. MA2116 is offered Sem 1 and Sem 2. Can be taken in Sem 2. Then CS4261 can be taken in Sem 5. So this path is open. Let's check other constraints. CS3230 requires CS2040S (or equiv) and CS1231 (or equiv). Student has CS1231S. Needs CS2040S. CS2040S needs CS1101S (done) and CS1231S (done). So CS2040S is the key. CS2109S needs CS2040S. CS3230 needs CS2040S. CS2103T needs CS2030S (or equiv) and CS2040S (or equiv). CS3219 needs CS2103 (or equiv). CS3227 needs CS2103 (or equiv). CS3281 needs CS2103 (or equiv). CS2103T needs CS2030S and CS2040S. CS2030S needs CS1101S (done). So CS2030S is eligible Sem 2. CS2040S is eligible Sem 2. So Sem 2 can have CS2030S, CS2040S, CS2101 (ideal), CS2100 (must), MA2116 (added for CS4261), MA1522 (must). That's 6 courses. 24 MC. Limit 20. Too many. Need to spread. Sem 2: CS2100, CS2030S, CS2040S, CS2101. 16 MC. Sem 3: CS2103T, MA1522, MA2116, CS1101S is done. CS1101S is done. IS1108 (must). CS2109S needs CS2040S (Sem 2) and MA1521 (done). So CS2109S eligible Sem 3. CS3230 needs CS2040S (Sem 2) and CS1231S (done). Eligible Sem 3. CS2103T needs CS2030S (Sem 2) and CS2040S (Sem 2). Eligible Sem 3. So Sem 3: CS2103T, CS2109S, CS3230, IS1108, MA1522, MA2116. 6 courses. 24 MC. Too many. Sem 3: CS2103T, CS2109S, IS1108. 12 MC. Sem 4: CS3230, MA1522, MA2116. 12 MC. Sem 5: ATAP (CP3880), CS4261, CS3219, CS3227, CS3281. CS3219 needs CS2103T (Sem 3). OK. CS3227 needs CS2103T (Sem 3). OK. CS3281 needs CS2103T (Sem 3). OK. CS4261 needs MA2116 (Sem 4) and CS1231S (done). OK. ATAP needs IS2101 or CS2101 or ... and CS2103 or ... Student has CS2101 (Sem 2) and CS2103T (Sem 3). So ATAP eligible. ATAP is 12 MC. Other courses max 8 MC. CS4261 (4), CS3219 (4), CS3227 (4), CS3281 (4). Total 16 MC + 12 ATAP = 28 MC. Limit 20. Cannot take all in Sem 5. Must spread CS3219, CS3227, CS3281, CS4261. Sem 5: ATAP, CS4261. 4+12=16. OK. Sem 6: CS3219, CS3227, CS3281. 12 MC. OK. Sem 7: Empty? No, all courses done. Sem 8: Empty. So plan: Sem 2: CS2100, CS2030S, CS2040S, CS2101. Sem 3: CS2103T, CS2109S, IS1108. Sem 4: CS3230, MA1522, MA2116. Sem 5: CP3880, CS4261. Sem 6: CS3219, CS3227, CS3281. Check prerequisites again. CS2103T needs CS2030S and CS2040S. Done Sem 2. OK. CS2109S needs CS2040S and MA1521. Done. OK. CS3230 needs CS2040S and CS1231S. Done. OK. CS3219 needs CS2103T. Done Sem 3. OK. CS3227 needs CS2103T. Done Sem 3. OK. CS3281 needs CS2103T. Done Sem 3. OK. CS4261 needs MA2116 and CS1231S. MA2116 done Sem 4. OK. ATAP needs CS2101 and CS2103T. Done. OK. MC per semester: Sem 2: 4+4+4+4=16. Sem 3: 4+4+4=12. Sem 4: 4+4+4=12. Sem 5: 4+12=16. Sem 6: 4+4+4=12. All <= 20. ATAP rule: 12 MC doesn't count against limit. Other courses in Sem 5 is 4 MC <= 8. OK. \"Finish CS2109S before CS3230\". CS2109S Sem 3, CS3230 Sem 4. OK. \"CS4261 in Sem 5\". OK. \"CS2100 in Y1S2\". OK. \"CS2101 in Sem 2\". OK. \"IS1108 as early as possible\". Sem 3 is earliest possible after Sem 2 is full? Sem 2 had 4 courses. Could we fit IS1108 in Sem 2? Sem 2: CS2100, CS2030S, CS2040S, CS2101, IS1108. 20 MC. Yes. So IS1108 in Sem 2. Then Sem 3: CS2103T, CS2109S. 8 MC. Sem 4: CS3230, MA1522, MA2116. 12 MC. Sem 5: CP3880, CS4261. 16 MC. Sem 6: CS3219, CS3227, CS3281. 12 MC. This works and meets \"IS1108 as early as possible\". Total MC: 16+12+12+16+12 = 68 + 12 ATAP = 80. Is this minimal? We added MA2116. Is there a way to avoid MA2116? CS4261 needs one of EE2012, ST2131, ST2334, MA2116, MA2116T. All require MA1521 or similar. Student has MA1521. So any of these can be taken. MA2116 is 4 MC. ST2334 is 4 MC. EE2012 is 4 MC. ST2131 is 4 MC. MA2116T is 4 MC. All same MC. So adding one is necessary. So 80 MC is likely minimal. The plan is valid.\n\nWait, I missed one thing. CS2103T is mutually exclusive with CS2103, CS2103DE, CS2113, CS2113T, IS2101, ES2002, ES2007S, ES2007D, CG1413, EG1413, ES1601. Student is not taking these. OK.\nCS2101 is mutually exclusive with CS2103, CS2113, ES2002, ES2007D, IS2101, CS2101X. Student is not taking these. OK.\nCS2030S is mutually exclusive with CS2030, CS2030DE, CS2030HS. Student is not taking these. OK.\nCS2040S is mutually exclusive with CS2040, CS2040C, CS2040DE, CS2040HS. Student is not taking these. OK.\nCS1231S is mutually exclusive with CS1231, MA1100, MA1100T. Student is not taking these. OK.\nMA1521 is mutually exclusive with MA1312, MA1505, MA1511, MA2002. Student is not taking these. OK.\nMA1522 is mutually exclusive with MA1311, MA1508E, MA1513, MA2001. Student is not taking these. OK.\nMA2116 is mutually exclusive with EC2303, MA2116T, MA2301, ST2131, ST2334, YSC2243. Student is not taking these. OK.\nCS4261 is mutually exclusive with CS5461. Student is not taking this. OK.\nCS3219, CS3227, CS3281 have no mutual exclusions listed. OK.\nATAP (CP3880) has no mutual exclusions listed. OK.\n\nOne detail: CS2103T prerequisite is (CS2030 or CS2030S or CS2030DE or CS2030HS) and (CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS). Student takes CS2030S and CS2040S in Sem 2. So CS2103T in Sem 3 is valid.\n\nOne detail: CS2109S prerequisite is (YSC2229 or CS2040S or CS2040C or CS2040HS or CS2040 or CS2040DE) and ((MA1511 and MA1512) or MA1521 or MA2002 or MA1102R or MA1312 or MA1507 or MA1505). Student has MA1521. Student has CS2040S in Sem 2. So CS2109S in Sem 3 is valid.\n\nOne detail: CS3230 prerequisite is (YSC2229 or CS2040S or CS2040 or CS2040C or CS2040DE or CS2040HS) and (CS1231 or CS1231S or MA1100T or MA1100). Student has CS1231S and CS2040S. So CS3230 in Sem 4 is valid.\n\nOne detail: CS3219 prerequisite is YSC3232 or CS2103 or CS2103T or CS2103DE or CS2113T or CS2113. Student has CS2103T in Sem 3. So CS3219 in Sem 6 is valid.\n\nOne detail: CS3227 prerequisite is CS2103 or CS2103T or CS2113 or CS2103DE. Student has CS2103T in Sem 3. So CS3227 in Sem 6 is valid.\n\nOne detail: CS3281 prerequisite is CS2103 or CS2103T or CS2103DE or CS2113. Student has CS2103T in Sem 3. So CS3281 in Sem 6 is valid.\n\nOne detail: CS4261 prerequisite is (EE2012A or EE2012 or ST2131 or MA2216 or ST2334 or MA2116 or MA1116T) and (CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS) and (MA1100 or MA1100T or CS1231S or CS1231) and (MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522). Student has CS2040S, CS1231S, MA1522 (Sem 4), MA2116 (Sem 4). So CS4261 in Sem 5 is valid.\n\nOne detail: ATAP prerequisite is (IS2101 or CS2101 or ...) and (CS2103 or CS2103T or ...). Student has CS2101 (Sem 2) and CS2103T (Sem 3). So ATAP in Sem 5 is valid.\n\nThe plan is valid.\n\n{\"status\": \"PLAN\", \"plan\": {\"2\": [\"CS2100\", \"CS2030S\", \"CS2040S\", \"CS2101\", \"IS1108\"], \"3\": [\"CS2103T\", \"CS2109S\"], \"4\": [\"CS3230\", \"MA1522\", \"MA2116\"], \"5\": [\"CP3880\", \"CS4261\"], \"6\": [\"CS3219\", \"CS3227\", \"CS3281\"]}, \"reasons\": [\"Added MA2116 as prerequisite for CS4261.\", \"IS1108 placed in Sem 2 as early as possible.\", \"ATAP (CP3880) placed in Sem 5 as requested.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "2": [
+    "CS2100",
+    "CS2030S",
+    "CS2040S",
+    "CS2101",
+    "IS1108"
+   ],
+   "3": [
+    "CS2103T",
+    "CS2109S"
+   ],
+   "4": [
+    "CS3230",
+    "MA1522",
+    "MA2116"
+   ],
+   "5": [
+    "CP3880",
+    "CS4261"
+   ],
+   "6": [
+    "CS3219",
+    "CS3227",
+    "CS3281"
+   ]
+  },
+  "reasons": [
+   "Added MA2116 as prerequisite for CS4261.",
+   "IS1108 placed in Sem 2 as early as possible.",
+   "ATAP (CP3880) placed in Sem 5 as requested."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,48 @@
+{
+ "id": "q2-S3-022",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 3,
+ "end": "cap",
+ "seconds": 18.64,
+ "usage": {
+  "prompt_tokens": 42383,
+  "total_tokens": 43253,
+  "completion_tokens": 870,
+  "finish_reason": "stop",
+  "request_seconds": 18.63,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2102\",\n      \"CS3231\"\n    ],\n    \"6\": [\n      \"CS3219\",\n      \"CS2109S\"\n    ],\n    \"7\": [\n      \"CS3230\",\n      \"CS3264\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2102 and CS3231 are taken in Sem 5 as required.\",\n    \"CS2109S is taken in Sem 6 to allow CS3264 in Sem 7, satisfying the prerequisite chain.\",\n    \"CS3230 and CS2109S are in different semesters (7 and 6) as required.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS3231"
+   ],
+   "6": [
+    "CS3219",
+    "CS2109S"
+   ],
+   "7": [
+    "CS3230",
+    "CS3264"
+   ]
+  },
+  "reasons": [
+   "CS2102 and CS3231 are taken in Sem 5 as required.",
+   "CS2109S is taken in Sem 6 to allow CS3264 in Sem 7, satisfying the prerequisite chain.",
+   "CS3230 and CS2109S are in different semesters (7 and 6) as required."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

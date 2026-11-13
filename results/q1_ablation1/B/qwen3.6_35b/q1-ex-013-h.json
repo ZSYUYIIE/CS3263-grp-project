@@ -1,0 +1,58 @@
+{
+ "id": "q1-ex-013-h",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 2.36,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2857,
+  "total_tokens": 2981,
+  "completion_tokens": 124,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 2.35,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\": \"eligible\", \"target\": \"CS5246\", \"current_sem\": 7, \"completed\": [\"CS2030S\", \"CS1231S\", \"MA1521\", \"CS1101S\", \"IS1108\", \"MA1522\", \"CS2101\", \"CS2109S\", \"CS2103T\", \"CS4248\", \"MA1512\", \"CS2040S\", \"ST2334\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS5246",
+  "current_sem": 7,
+  "completed": [
+   "CS2030S",
+   "CS1231S",
+   "MA1521",
+   "CS1101S",
+   "IS1108",
+   "MA1522",
+   "CS2101",
+   "CS2109S",
+   "CS2103T",
+   "CS4248",
+   "MA1512",
+   "CS2040S",
+   "ST2334"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS5246",
+  "semester": 7,
+  "reasons": [
+   "not offered in semester 1 (offered: [2])",
+   "precluded: already completed CS4248"
+  ],
+  "can_still_become_eligible": false,
+  "never_eligible_because": "CS5246 is ruled out by completed CS4248"
+ }
+}

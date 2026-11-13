@@ -1,0 +1,143 @@
+{
+ "id": "q2-S1-167",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 7.03,
+ "solver_seconds": 0.009,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2869,
+  "total_tokens": 3782,
+  "completion_tokens": 913,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 601
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.02,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"programme\":\"BComp CS Hons\",\"current_sem\":7,\"completed\":[\"MA1521\",\"CS4222\",\"CS2100\",\"CS1101S\",\"ES2660\",\"MA1522\",\"ST2334\",\"CS3219\",\"CS2101\",\"CS3211\",\"CS2102\",\"CS3230\",\"CS1231S\",\"CS2109S\",\"CS2030S\",\"IS1108\",\"CS2105\",\"CS2040S\",\"CS2103T\",\"CS2106\"],\"must_take\":[\"CS4262\",\"CS4230\",\"CS4430\",\"CS4249\"],\"objective\":\"earliest_graduation\",\"rules\":[{\"type\":\"same_sem\",\"a\":\"CS4230\",\"b\":\"CS4430\",\"strength\":\"must\"},{\"type\":\"same_sem\",\"a\":\"CS4430\",\"b\":\"CS4249\",\"strength\":\"must\"},{\"type\":\"same_sem\",\"a\":\"CS4430\",\"b\":\"CS4262\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS4430\",\"sem\":8,\"strength\":\"prefer\"},{\"type\":\"apart\",\"a\":\"CS4230\",\"b\":\"CS4262\",\"strength\":\"prefer\"},{\"type\":\"in_sem\",\"course\":\"CS4230\",\"sem\":8,\"strength\":\"prefer\"},{\"type\":\"apart\",\"a\":\"CS4249\",\"b\":\"CS4262\",\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "programme": "BComp CS Hons",
+  "current_sem": 7,
+  "completed": [
+   "MA1521",
+   "CS4222",
+   "CS2100",
+   "CS1101S",
+   "ES2660",
+   "MA1522",
+   "ST2334",
+   "CS3219",
+   "CS2101",
+   "CS3211",
+   "CS2102",
+   "CS3230",
+   "CS1231S",
+   "CS2109S",
+   "CS2030S",
+   "IS1108",
+   "CS2105",
+   "CS2040S",
+   "CS2103T",
+   "CS2106"
+  ],
+  "must_take": [
+   "CS4262",
+   "CS4230",
+   "CS4430",
+   "CS4249"
+  ],
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS4230",
+    "b": "CS4430",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4430",
+    "b": "CS4249",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4430",
+    "b": "CS4262",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4430",
+    "sem": 8,
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS4230",
+    "b": "CS4262",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4230",
+    "sem": 8,
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS4249",
+    "b": "CS4262",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "earliest_graduation",
+  "last_semester": 8,
+  "plan": {
+   "7": [
+    "CS3231",
+    "CS3264",
+    "NM3243"
+   ],
+   "8": [
+    "CS4230",
+    "CS4249",
+    "CS4262",
+    "CS4430"
+   ]
+  },
+  "mc_per_semester": {
+   "7": 12,
+   "8": 16
+  },
+  "preferences_met": [
+   "CS4430 in semester 8",
+   "CS4230 in semester 8"
+  ],
+  "preferences_not_met": [
+   "CS4230 and CS4262 in different semesters",
+   "CS4249 and CS4262 in different semesters"
+  ],
+  "added_prerequisites": [
+   "CS3231",
+   "CS3264",
+   "NM3243"
+  ]
+ }
+}

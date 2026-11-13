@@ -1,0 +1,100 @@
+{
+ "id": "q2-S3-200",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.56,
+ "solver_seconds": 0.009,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3119,
+  "total_tokens": 3476,
+  "completion_tokens": 357,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 6.55,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 7,\n\"completed\": [\n\"CS3230\",\n\"CS3219\",\n\"CS3210\",\n\"CS4243\",\n\"MA1522\",\n\"CS2040S\",\n\"CS2100\",\n\"CS2103T\",\n\"CS4277\",\n\"CS1231S\",\n\"CS2101\",\n\"IS1108\",\n\"MA1521\",\n\"CS1101S\",\n\"CS2030S\",\n\"CS2105\",\n\"CS2109S\",\n\"CS2106\",\n\"ES2660\",\n\"ST2334\"\n],\n\"must_take\": [\n\"CS3103\",\n\"CS2102\",\n\"CS3234\",\n\"CS4225\"\n],\n\"mc_max\": 12,\n\"unsupported\": [\n\"avoid modules with heavy group projects\",\n\"applying to have one module waived\"\n],\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3103\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3103\",\n\"b\": \"CS4225\",\n\"strength\": \"must\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "completed": [
+   "CS3230",
+   "CS3219",
+   "CS3210",
+   "CS4243",
+   "MA1522",
+   "CS2040S",
+   "CS2100",
+   "CS2103T",
+   "CS4277",
+   "CS1231S",
+   "CS2101",
+   "IS1108",
+   "MA1521",
+   "CS1101S",
+   "CS2030S",
+   "CS2105",
+   "CS2109S",
+   "CS2106",
+   "ES2660",
+   "ST2334"
+  ],
+  "must_take": [
+   "CS3103",
+   "CS2102",
+   "CS3234",
+   "CS4225"
+  ],
+  "mc_max": 12,
+  "unsupported": [
+   "avoid modules with heavy group projects",
+   "applying to have one module waived"
+  ],
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3103",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3103",
+    "b": "CS4225",
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 8,
+  "plan": {
+   "7": [
+    "CS2102",
+    "CS3103"
+   ],
+   "8": [
+    "CS3234",
+    "CS4225"
+   ]
+  },
+  "mc_per_semester": {
+   "7": 8,
+   "8": 8
+  },
+  "preferences_met": [],
+  "preferences_not_met": [],
+  "not_applied": [
+   "avoid modules with heavy group projects",
+   "applying to have one module waived"
+  ]
+ }
+}

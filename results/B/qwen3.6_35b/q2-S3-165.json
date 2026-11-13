@@ -1,0 +1,138 @@
+{
+ "id": "q2-S3-165",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.76,
+ "solver_seconds": 0.032,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3150,
+  "total_tokens": 3605,
+  "completion_tokens": 455,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.73,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 5,\n\"completed\": [\n\"CS2103T\",\n\"CS3230\",\n\"CS2100\",\n\"CS2030S\",\n\"MA1521\",\n\"CS1101S\",\n\"IS1108\",\n\"CS1231S\",\n\"CS2106\",\n\"ST2334\",\n\"CS2040S\",\n\"CS2109S\",\n\"MA1522\"\n],\n\"must_take\": [\n\"ES2660\",\n\"CS2105\",\n\"CS4278\",\n\"CS3268\",\n\"CS4246\",\n\"CS3219\",\n\"CS2102\",\n\"CS3282\"\n],\n\"early\": [\n\"CS2102\"\n],\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS3268\",\n\"b\": \"CS3282\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4246\",\n\"b\": \"CS3268\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS2105\",\n\"b\": \"CS3268\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4246\",\n\"sem\": 6,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3268\",\n\"b\": \"CS2102\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"ES2660\",\n\"sem\": 6,\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "completed": [
+   "CS2103T",
+   "CS3230",
+   "CS2100",
+   "CS2030S",
+   "MA1521",
+   "CS1101S",
+   "IS1108",
+   "CS1231S",
+   "CS2106",
+   "ST2334",
+   "CS2040S",
+   "CS2109S",
+   "MA1522"
+  ],
+  "must_take": [
+   "ES2660",
+   "CS2105",
+   "CS4278",
+   "CS3268",
+   "CS4246",
+   "CS3219",
+   "CS2102",
+   "CS3282"
+  ],
+  "early": [
+   "CS2102"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3268",
+    "b": "CS3282",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4246",
+    "b": "CS3268",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS2105",
+    "b": "CS3268",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4246",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3268",
+    "b": "CS2102",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "ES2660",
+    "sem": 6,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 8,
+  "plan": {
+   "5": [
+    "CS2105",
+    "CS3219",
+    "CS3263"
+   ],
+   "6": [
+    "CS3281",
+    "CS4246",
+    "ES2660"
+   ],
+   "7": [
+    "CS3268",
+    "CS4278"
+   ],
+   "8": [
+    "CS2102",
+    "CS3282"
+   ]
+  },
+  "mc_per_semester": {
+   "5": 12,
+   "6": 12,
+   "7": 8,
+   "8": 8
+  },
+  "preferences_met": [
+   "CS3268 before CS2102",
+   "ES2660 in semester 6"
+  ],
+  "preferences_not_met": [
+   "CS2102 as early as possible"
+  ],
+  "added_prerequisites": [
+   "CS3263",
+   "CS3281"
+  ]
+ }
+}

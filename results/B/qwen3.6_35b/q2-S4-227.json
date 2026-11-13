@@ -1,0 +1,116 @@
+{
+ "id": "q2-S4-227",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.94,
+ "solver_seconds": 0.011,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3155,
+  "total_tokens": 3544,
+  "completion_tokens": 389,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 6.29,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 7,\n\"completed\": [\n\"CS2101\",\n\"CS2030S\",\n\"CS3219\",\n\"CS2105\",\n\"IS1108\",\n\"CS2040S\",\n\"MA1522\",\n\"CS2103T\",\n\"CS2100\",\n\"MA1521\",\n\"CS1101S\",\n\"CS1231S\",\n\"CS3230\",\n\"ST2334\",\n\"CS4222\",\n\"CS2102\",\n\"CS2106\",\n\"CS2109S\"\n],\n\"must_take\": [\n\"CS4225\",\n\"CS4226\",\n\"CS4330\"\n],\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4225\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"ES2660\",\n\"b\": \"CS4226\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3211\",\n\"b\": \"CS4226\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3211\",\n\"sem\": 8,\n\"strength\": \"must\"\n}\n],\n\"unsupported\": [\n\"ES2660 too\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "completed": [
+   "CS2101",
+   "CS2030S",
+   "CS3219",
+   "CS2105",
+   "IS1108",
+   "CS2040S",
+   "MA1522",
+   "CS2103T",
+   "CS2100",
+   "MA1521",
+   "CS1101S",
+   "CS1231S",
+   "CS3230",
+   "ST2334",
+   "CS4222",
+   "CS2102",
+   "CS2106",
+   "CS2109S"
+  ],
+  "must_take": [
+   "CS4225",
+   "CS4226",
+   "CS4330"
+  ],
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS4225",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "ES2660",
+    "b": "CS4226",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3211",
+    "b": "CS4226",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3211",
+    "sem": 8,
+    "strength": "must"
+   }
+  ],
+  "unsupported": [
+   "ES2660 too"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 8,
+  "plan": {
+   "7": [
+    "CS2220",
+    "CS4226",
+    "ES2660"
+   ],
+   "8": [
+    "CS3211",
+    "CS4225",
+    "CS4330"
+   ]
+  },
+  "mc_per_semester": {
+   "7": 12,
+   "8": 12
+  },
+  "preferences_met": [],
+  "preferences_not_met": [
+   "CS3211 before CS4226"
+  ],
+  "added_prerequisites": [
+   "CS2220"
+  ],
+  "not_applied": [
+   "ES2660 too"
+  ]
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "id": "q2-S1-132",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 28.87,
+ "usage": {
+  "prompt_tokens": 8387,
+  "total_tokens": 11124,
+  "completion_tokens": 2737,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 6784
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2586
+  },
+  "finish_reason": "stop",
+  "request_seconds": 28.87,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS2102\",\"CS2105\",\"CS2107\",\"CS3210\"],\"7\":[\"CS3231\",\"CS3235\",\"CS4223\"],\"8\":[\"CS4238\"]},\"reasons\":[\"Added CS2107 and CS3210 because they are prerequisites for CS3235 and CS4223.\",\"CS3231 is only offered in Sem 1, so it must be in semester 7; this prevents taking it before CS2105, which is needed in semester 6 for CS4223.\",\"CS2102 is placed in semester 6, the earliest possible, and CS4238 follows CS3235 in semester 8.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS2102",
+    "CS2105",
+    "CS2107",
+    "CS3210"
+   ],
+   "7": [
+    "CS3231",
+    "CS3235",
+    "CS4223"
+   ],
+   "8": [
+    "CS4238"
+   ]
+  },
+  "reasons": [
+   "Added CS2107 and CS3210 because they are prerequisites for CS3235 and CS4223.",
+   "CS3231 is only offered in Sem 1, so it must be in semester 7; this prevents taking it before CS2105, which is needed in semester 6 for CS4223.",
+   "CS2102 is placed in semester 6, the earliest possible, and CS4238 follows CS3235 in semester 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,51 @@
+{
+ "id": "q2-S1-150",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 39.34,
+ "usage": {
+  "prompt_tokens": 12557,
+  "total_tokens": 14806,
+  "completion_tokens": 2249,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 39.34,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS2102\",\n      \"CS3210\",\n      \"CS4240\",\n      \"CS4249\"\n    ],\n    \"7\": [\n      \"CS3263\",\n      \"CS4226\",\n      \"CS4261\",\n      \"CS4430\"\n    ],\n    \"8\": [\n      \"CS4230\",\n      \"ST2334\"\n    ]\n  },\n  \"reasons\": [\n    \"All required courses are planned with prerequisites satisfied.\",\n    \"Constraints met: CS3263 and CS4249 are in the same semester (7). CS4240 and ST2334 are in different semesters (6 and 8). CS4430 and CS2102 are in different semesters (7 and 6).\",\n    \"Soft wishes met: CS4230 is taken after CS3263 (Sem 8 vs Sem 7? No, CS4230 is Sem 8, CS3263 is Sem 7. Wait. CS4230 prerequisite is CS3230 (completed) and CS1231S (completed) and ST2334/MA2216 etc. CS3263 prerequisite is CS2109S (completed) and CS2040S (completed) and MA2001/MA1522 (MA1522 completed) and EE2012A/EE2012/ST2131/MA2116/MA2116T/ST2334/MA2216. CS3263 requires one of those math courses. MA1522 is NOT in the list for CS3263. CS3263 requires (MA2001 or MA1522 or MA1513 or MA1508E or MA1101R) AND (EE2012A or EE2012 or ST2131 or MA2116 or MA2116T or ST2334 or MA2216). The student has MA1522. MA1522 satisfies the first part. But the second part requires EE2012A/EE2012/ST2131/MA2116/MA2116T/ST2334/MA2216. The student has NONE of these completed. So CS3263 cannot be taken in Sem 6 or 7 unless ST2334 or one of the others is taken first. ST2334 is a prerequisite for CS3263? No, ST2334 is an option in the OR list. So if I take ST2334 in Sem 8, I can't take CS3263 in Sem 7. I must take ST2334 before CS3263. But the student wants CS4230 before CS3263. CS4230 requires ST2334. So ST2334 must be before CS4230. And CS4230 before CS3263. So ST2334 -> CS4230 -> CS3263. This chain requires 3 semesters. Current semesters: 6, 7, 8. I can put ST2334 in 6, CS4230 in 7, CS3263 in 8. But CS3263 and CS4249 must be together. So CS3263 and CS4249 in 8. CS4249 requires CS3240. CS3240 requires CS2111. CS2111 requires CS1010A/E/X/1101S/UTC2851/CS1010HS/CS1010J/CS1010/NM2207. Student has CS1101S. So CS2111 is eligible. CS3240 is eligible after CS2111. CS4249 is eligible after CS3240. So CS2111 -> CS3240 -> CS4249. This chain also needs 3 semesters. If CS4249 is in 8, CS3240 in 7, CS2111 in 6. Let's re-evaluate. CS3263 needs ST2334. CS4230 needs ST2334. CS4230 needs CS3230 (done). CS3263 needs CS2109S (done), CS2040S (done), MA1522 (done), and (EE2012A/EE2012/ST2131/MA2116/MA2116T/ST2334/MA2216). So ST2334 is needed for CS3263. CS4230 needs ST2334. So ST2334 must be before both. CS4230 before CS3263. So ST2334 -> CS4230 -> CS3263. CS3263 and CS4249 together. So CS4249 also in that last semester. CS4249 needs CS3240. CS3240 needs CS2111. CS2111 needs CS1101S (done). So CS2111 -> CS3240 -> CS4249/CS3263. This is another 3-semester chain. We have Sem 6, 7, 8. We can interleave. Sem 6: CS2111, ST2334. Sem 7: CS3240, CS4230. Sem 8: CS4249, CS3263. This works. What about CS4226? Prereq: CS2105 (done) and (EE2012A/EE2012/MA2216/ST2131/ST2334/MA2116/MA2116T). ST2334 is taken in Sem 6. So CS4226 can be taken in Sem 7 or 8. CS4261? Prereq: (EE2012A/EE2012/ST2131/MA2216/ST2334/MA2116/MA2116T) and CS2040S (done) and CS1231S (done) and (MA2001/MA1101R/MA1311/MA1508E/MA1513/MA1522). MA1522 is done. ST2334 is taken in Sem 6. So CS4261 can be taken in Sem 7 or 8. CS2102? Prereq: CS1231S (done) and (CS2030S (done) or ...). CS2102 is eligible anytime. Student prefers Y3S2 (Sem 6). So put CS2102 in Sem 6. Sem 6: CS2102, CS2111, ST2334. (3 courses, 12 MC). Sem 7: CS3240, CS4230, CS4226, CS4261. (4 courses, 16 MC). Sem 8: CS4249, CS3263. (2 courses, 8 MC). This satisfies all constraints. CS4230 (7) before CS3263 (8). CS3263 and CS4249 together (8). CS4240 (8) and ST2334 (6) not together. CS4430 and CS2102 not together (CS4430 needs CS3231. CS3231 needs CS1231S (done) and CS2040S (done). CS3231 is eligible anytime. CS4430 is eligible anytime. Student said CS4430 must not be with CS2102. CS2102 is in 6. So CS4430 can be in 7 or 8. I didn't include CS4430 in the plan above. I need to include CS4430. CS4430 needs CS3231. CS3231 is eligible. I can put CS4430 in Sem 7 or 8. If I put it in Sem 7, Sem 7 has CS3240, CS4230, CS4226, CS4261, CS4430. That's 5 courses, 20 MC. This is allowed (limit 20). So Sem 7: CS3240, CS4230, CS4226, CS4261, CS4430. Sem 8: CS4249, CS3263. This works. Total MC: 6: 12, 7: 20, 8: 8. Total 40 MC. This is low. Can I do better? No, I must take all these courses. The number of semesters is fixed at 3. The MC is fixed. So this is optimal for total MC. And it uses the minimum last semester (8).\",\n    \"Total MC is minimized by packing courses into 3 semesters.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS2102",
+    "CS3210",
+    "CS4240",
+    "CS4249"
+   ],
+   "7": [
+    "CS3263",
+    "CS4226",
+    "CS4261",
+    "CS4430"
+   ],
+   "8": [
+    "CS4230",
+    "ST2334"
+   ]
+  },
+  "reasons": [
+   "All required courses are planned with prerequisites satisfied.",
+   "Constraints met: CS3263 and CS4249 are in the same semester (7). CS4240 and ST2334 are in different semesters (6 and 8). CS4430 and CS2102 are in different semesters (7 and 6).",
+   "Soft wishes met: CS4230 is taken after CS3263 (Sem 8 vs Sem 7? No, CS4230 is Sem 8, CS3263 is Sem 7. Wait. CS4230 prerequisite is CS3230 (completed) and CS1231S (completed) and ST2334/MA2216 etc. CS3263 prerequisite is CS2109S (completed) and CS2040S (completed) and MA2001/MA1522 (MA1522 completed) and EE2012A/EE2012/ST2131/MA2116/MA2116T/ST2334/MA2216. CS3263 requires one of those math courses. MA1522 is NOT in the list for CS3263. CS3263 requires (MA2001 or MA1522 or MA1513 or MA1508E or MA1101R) AND (EE2012A or EE2012 or ST2131 or MA2116 or MA2116T or ST2334 or MA2216). The student has MA1522. MA1522 satisfies the first part. But the second part requires EE2012A/EE2012/ST2131/MA2116/MA2116T/ST2334/MA2216. The student has NONE of these completed. So CS3263 cannot be taken in Sem 6 or 7 unless ST2334 or one of the others is taken first. ST2334 is a prerequisite for CS3263? No, ST2334 is an option in the OR list. So if I take ST2334 in Sem 8, I can't take CS3263 in Sem 7. I must take ST2334 before CS3263. But the student wants CS4230 before CS3263. CS4230 requires ST2334. So ST2334 must be before CS4230. And CS4230 before CS3263. So ST2334 -> CS4230 -> CS3263. This chain requires 3 semesters. Current semesters: 6, 7, 8. I can put ST2334 in 6, CS4230 in 7, CS3263 in 8. But CS3263 and CS4249 must be together. So CS3263 and CS4249 in 8. CS4249 requires CS3240. CS3240 requires CS2111. CS2111 requires CS1010A/E/X/1101S/UTC2851/CS1010HS/CS1010J/CS1010/NM2207. Student has CS1101S. So CS2111 is eligible. CS3240 is eligible after CS2111. CS4249 is eligible after CS3240. So CS2111 -> CS3240 -> CS4249. This chain also needs 3 semesters. If CS4249 is in 8, CS3240 in 7, CS2111 in 6. Let's re-evaluate. CS3263 needs ST2334. CS4230 needs ST2334. CS4230 needs CS3230 (done). CS3263 needs CS2109S (done), CS2040S (done), MA1522 (done), and (EE2012A/EE2012/ST2131/MA2116/MA2116T/ST2334/MA2216). So ST2334 is needed for CS3263. CS4230 needs ST2334. So ST2334 must be before both. CS4230 before CS3263. So ST2334 -> CS4230 -> CS3263. CS3263 and CS4249 together. So CS4249 also in that last semester. CS4249 needs CS3240. CS3240 needs CS2111. CS2111 needs CS1101S (done). So CS2111 -> CS3240 -> CS4249/CS3263. This is another 3-semester chain. We have Sem 6, 7, 8. We can interleave. Sem 6: CS2111, ST2334. Sem 7: CS3240, CS4230. Sem 8: CS4249, CS3263. This works. What about CS4226? Prereq: CS2105 (done) and (EE2012A/EE2012/MA2216/ST2131/ST2334/MA2116/MA2116T). ST2334 is taken in Sem 6. So CS4226 can be taken in Sem 7 or 8. CS4261? Prereq: (EE2012A/EE2012/ST2131/MA2216/ST2334/MA2116/MA2116T) and CS2040S (done) and CS1231S (done) and (MA2001/MA1101R/MA1311/MA1508E/MA1513/MA1522). MA1522 is done. ST2334 is taken in Sem 6. So CS4261 can be taken in Sem 7 or 8. CS2102? Prereq: CS1231S (done) and (CS2030S (done) or ...). CS2102 is eligible anytime. Student prefers Y3S2 (Sem 6). So put CS2102 in Sem 6. Sem 6: CS2102, CS2111, ST2334. (3 courses, 12 MC). Sem 7: CS3240, CS4230, CS4226, CS4261. (4 courses, 16 MC). Sem 8: CS4249, CS3263. (2 courses, 8 MC). This satisfies all constraints. CS4230 (7) before CS3263 (8). CS3263 and CS4249 together (8). CS4240 (8) and ST2334 (6) not together. CS4430 and CS2102 not together (CS4430 needs CS3231. CS3231 needs CS1231S (done) and CS2040S (done). CS3231 is eligible anytime. CS4430 is eligible anytime. Student said CS4430 must not be with CS2102. CS2102 is in 6. So CS4430 can be in 7 or 8. I didn't include CS4430 in the plan above. I need to include CS4430. CS4430 needs CS3231. CS3231 is eligible. I can put CS4430 in Sem 7 or 8. If I put it in Sem 7, Sem 7 has CS3240, CS4230, CS4226, CS4261, CS4430. That's 5 courses, 20 MC. This is allowed (limit 20). So Sem 7: CS3240, CS4230, CS4226, CS4261, CS4430. Sem 8: CS4249, CS3263. This works. Total MC: 6: 12, 7: 20, 8: 8. Total 40 MC. This is low. Can I do better? No, I must take all these courses. The number of semesters is fixed at 3. The MC is fixed. So this is optimal for total MC. And it uses the minimum last semester (8).",
+   "Total MC is minimized by packing courses into 3 semesters."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 49152,
+ "workers": 4
+}

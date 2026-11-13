@@ -1,0 +1,110 @@
+{
+ "id": "q2-S4-060",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 7.05,
+ "usage": {
+  "prompt_tokens": 22199,
+  "total_tokens": 22595,
+  "completion_tokens": 396,
+  "finish_reason": "stop",
+  "request_seconds": 7.05,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4330 requires CS2220, LSM2104, LSM2241, or ZB2101 as a prerequisite. The student has not completed any of these, nor are they listed as must-take courses. Without one of these prerequisites, CS4330 cannot be taken.\", \"CS3264 requires EE2012A, EE2012, ST2131, MA2116, MA2116T, ST2334, or MA2216. The student has not completed any of these math/engineering prerequisites.\", \"CS4226 requires EE2012A, EE2012, MA2216, ST2131, ST2334, MA2116, or MA2116T. The student has not completed any of these prerequisites.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4330 requires CS2220, LSM2104, LSM2241, or ZB2101 as a prerequisite. The student has not completed any of these, nor are they listed as must-take courses. Without one of these prerequisites, CS4330 cannot be taken.",
+   "CS3264 requires EE2012A, EE2012, ST2131, MA2116, MA2116T, ST2334, or MA2216. The student has not completed any of these math/engineering prerequisites.",
+   "CS4226 requires EE2012A, EE2012, MA2216, ST2131, ST2334, MA2116, or MA2116T. The student has not completed any of these prerequisites."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"6\": [\"CS2102\", \"CS4330\"], \"7\": [\"CS3264\", \"CS3244\", \"CS4277\", \"CS4226\"]}, \"reasons\": [\"All prerequisites for planned courses are satisfied by completed courses or earlier semesters.\", \"CS2102 is placed in Sem 6 as required. CS4330 is placed in Sem 6 to satisfy the 'as early as possible' wish and the soft wish to take it with CS2102.\", \"CS3264, CS3244, CS4277, and CS4226 are scheduled in Sem 7, respecting the dependency CS4277 before CS4226 and the 'as early as possible' wishes.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS2102",
+      "CS4330"
+     ],
+     "7": [
+      "CS3264",
+      "CS3244",
+      "CS4277",
+      "CS4226"
+     ]
+    },
+    "reasons": [
+     "All prerequisites for planned courses are satisfied by completed courses or earlier semesters.",
+     "CS2102 is placed in Sem 6 as required. CS4330 is placed in Sem 6 to satisfy the 'as early as possible' wish and the soft wish to take it with CS2102.",
+     "CS3264, CS3244, CS4277, and CS4226 are scheduled in Sem 7, respecting the dependency CS4277 before CS4226 and the 'as early as possible' wishes."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10691,
+    "total_tokens": 10877,
+    "completion_tokens": 186,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.7,
+    "attempts": 1
+   },
+   "seconds": 3.7,
+   "violations": [
+    "R2 CS3244 is blocked by a completed course",
+    "R4 CS3244 in semester 7: prerequisite not met ((CS2040 or CS2040C or CS2040S or CS2040DE or CS2040HS or YSC2229) and (EE2012A or EE2012 or YSC2243 or ST2131 or ST2334 or MA2116 or MA2116T or MA2216) and ((MA1511 and MA1512) or ((MA2001 or MA1522 or MA1508E or MA1311 or MA1513 or MA1101R) and (MA2002 or MA1521 or MA1505 or MA1507 or MA1102R))))",
+    "R6 CS3244 and CS3264 exclude each other",
+    "R4 CS3264 in semester 7: prerequisite not met (CS2109S and (CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS) and (MA1101R or MA1311 or MA1513 or MA1508E or MA2001 or MA1522) and (EE2012A or EE2012 or ST2131 or MA2116 or MA2116T or ST2334 or MA2216))",
+    "R4 CS4226 in semester 7: prerequisite not met ((CS2105 or EE3204 or EE3204E or EE4204) and (EE2012A or EE2012 or MA2216 or ST2131 or ST2334 or MA2116 or MA2116T))",
+    "R3 CS4277 not offered in Sem 1 (semester 7)",
+    "R4 CS4330 in semester 6: prerequisite not met ((CS2040C or CS2040 or CS2040S or CS2040DE or CS2040HS) and (CS2220 or LSM2104 or LSM2241 or ZB2101))",
+    "R9 must rule not met: before CS4277 CS4226"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4330 requires CS2220, LSM2104, LSM2241, or ZB2101 as a prerequisite. The student has not completed any of these, nor are they listed as must-take courses. Without one of these prerequisites, CS4330 cannot be taken.\", \"CS3264 requires EE2012A, EE2012, ST2131, MA2116, MA2116T, ST2334, or MA2216. The student has not completed any of these math/engineering prerequisites.\", \"CS4226 requires EE2012A, EE2012, MA2216, ST2131, ST2334, MA2116, or MA2116T. The student has not completed any of these prerequisites.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4330 requires CS2220, LSM2104, LSM2241, or ZB2101 as a prerequisite. The student has not completed any of these, nor are they listed as must-take courses. Without one of these prerequisites, CS4330 cannot be taken.",
+     "CS3264 requires EE2012A, EE2012, ST2131, MA2116, MA2116T, ST2334, or MA2216. The student has not completed any of these math/engineering prerequisites.",
+     "CS4226 requires EE2012A, EE2012, MA2216, ST2131, ST2334, MA2116, or MA2116T. The student has not completed any of these prerequisites."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11508,
+    "total_tokens": 11718,
+    "completion_tokens": 210,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 3.35,
+    "attempts": 1
+   },
+   "seconds": 3.35,
+   "violations": null
+  }
+ ]
+}

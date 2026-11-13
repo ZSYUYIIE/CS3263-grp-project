@@ -1,0 +1,64 @@
+{
+ "id": "q2-S1-032",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 79.93,
+ "usage": {
+  "prompt_tokens": 8950,
+  "total_tokens": 15541,
+  "completion_tokens": 6591,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 7296
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 6402
+  },
+  "finish_reason": "stop",
+  "request_seconds": 79.93,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"1\":[\"CS1010\",\"CS1231\",\"MA1521\"],\"2\":[\"CS2030S\",\"CS2040S\",\"CS2100\",\"ST2334\"],\"3\":[\"CS2102\",\"CS2103\",\"CS2109S\",\"CS3241\"],\"4\":[\"CS3213\",\"CS4248\"],\"8\":[\"IS1108\"]},\"reasons\":[\"Plan places IS1108 in semester 8 and CS2030S in semester 2, the earliest possible after CS1010.\",\"Added only prerequisite courses: CS1010, CS1231, CS2040S, CS2103, CS2109S and ST2334.\",\"MA1521 is before CS2100 and separate from CS2102; CS4248 cannot share a semester with MA1521 because MA1521 is a prerequisite.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1010",
+    "CS1231",
+    "MA1521"
+   ],
+   "2": [
+    "CS2030S",
+    "CS2040S",
+    "CS2100",
+    "ST2334"
+   ],
+   "3": [
+    "CS2102",
+    "CS2103",
+    "CS2109S",
+    "CS3241"
+   ],
+   "4": [
+    "CS3213",
+    "CS4248"
+   ],
+   "8": [
+    "IS1108"
+   ]
+  },
+  "reasons": [
+   "Plan places IS1108 in semester 8 and CS2030S in semester 2, the earliest possible after CS1010.",
+   "Added only prerequisite courses: CS1010, CS1231, CS2040S, CS2103, CS2109S and ST2334.",
+   "MA1521 is before CS2100 and separate from CS2102; CS4248 cannot share a semester with MA1521 because MA1521 is a prerequisite."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

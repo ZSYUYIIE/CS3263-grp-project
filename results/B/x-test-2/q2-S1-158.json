@@ -1,0 +1,130 @@
+{
+ "id": "q2-S1-158",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 8.73,
+ "solver_seconds": 0.013,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2847,
+  "total_tokens": 4019,
+  "completion_tokens": 1172,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 909
+  },
+  "finish_reason": "stop",
+  "request_seconds": 8.72,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":7,\"completed\":[\"CS2040S\",\"MA1521\",\"CS2103T\",\"MA1522\",\"CS2102\",\"CS2101\",\"CS2109S\",\"ST2334\",\"CS1101S\",\"CS2105\",\"CS3230\",\"IS1108\",\"CS1231S\",\"CS2100\",\"ES2660\",\"CS3213\",\"CS2030S\",\"CS3219\",\"CS2106\"],\"must_take\":[\"CS3241\",\"CS4262\",\"CS3236\",\"CS4225\"],\"mc_max\":12,\"objective\":\"earliest_graduation\",\"late\":[\"CS3241\",\"CS4262\"],\"rules\":[{\"type\":\"before\",\"a\":\"CS3241\",\"b\":\"CS4262\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3236\",\"sem\":8,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS4225\",\"sem\":8,\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS3236\",\"b\":\"CS3241\",\"strength\":\"prefer\"},{\"type\":\"apart\",\"a\":\"CS4262\",\"b\":\"CS4225\",\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "completed": [
+   "CS2040S",
+   "MA1521",
+   "CS2103T",
+   "MA1522",
+   "CS2102",
+   "CS2101",
+   "CS2109S",
+   "ST2334",
+   "CS1101S",
+   "CS2105",
+   "CS3230",
+   "IS1108",
+   "CS1231S",
+   "CS2100",
+   "ES2660",
+   "CS3213",
+   "CS2030S",
+   "CS3219",
+   "CS2106"
+  ],
+  "must_take": [
+   "CS3241",
+   "CS4262",
+   "CS3236",
+   "CS4225"
+  ],
+  "mc_max": 12,
+  "objective": "earliest_graduation",
+  "late": [
+   "CS3241",
+   "CS4262"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3241",
+    "b": "CS4262",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3236",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4225",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3236",
+    "b": "CS3241",
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS4262",
+    "b": "CS4225",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "earliest_graduation",
+  "last_semester": 8,
+  "plan": {
+   "7": [
+    "CS3241",
+    "CS3264"
+   ],
+   "8": [
+    "CS3236",
+    "CS4225",
+    "CS4262"
+   ]
+  },
+  "mc_per_semester": {
+   "7": 8,
+   "8": 12
+  },
+  "preferences_met": [
+   "CS3241 as late as possible",
+   "CS4262 as late as possible"
+  ],
+  "preferences_not_met": [
+   "CS3236 before CS3241",
+   "CS4262 and CS4225 in different semesters"
+  ],
+  "added_prerequisites": [
+   "CS3264"
+  ]
+ }
+}

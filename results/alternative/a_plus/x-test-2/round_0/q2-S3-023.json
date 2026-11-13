@@ -1,0 +1,50 @@
+{
+ "id": "q2-S3-023",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 37.75,
+ "usage": {
+  "prompt_tokens": 8242,
+  "total_tokens": 11488,
+  "completion_tokens": 3246,
+  "prompt_tokens_details": {
+   "cached_tokens": 7936,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3095
+  },
+  "finish_reason": "stop",
+  "request_seconds": 37.75,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS2109S\"], \"5\": [\"CS2102\", \"CS3264\", \"CS3231\", \"CS3230\", \"CS3219\"]}, \"reasons\": [\"Earliest possible finish is semester 5: CS3264 needs CS2109S earlier, and CS3231/CS2102/CS3264 must share an odd semester.\", \"Semester 5 has the remaining five courses at 20 MC, within the limit; no extra courses are added.\", \"CS3231 and CS3264 cannot be separated because both must be with CS2102; putting CS2102 before CS3219 would delay graduation.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2109S"
+   ],
+   "5": [
+    "CS2102",
+    "CS3264",
+    "CS3231",
+    "CS3230",
+    "CS3219"
+   ]
+  },
+  "reasons": [
+   "Earliest possible finish is semester 5: CS3264 needs CS2109S earlier, and CS3231/CS2102/CS3264 must share an odd semester.",
+   "Semester 5 has the remaining five courses at 20 MC, within the limit; no extra courses are added.",
+   "CS3231 and CS3264 cannot be separated because both must be with CS2102; putting CS2102 before CS3219 would delay graduation."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

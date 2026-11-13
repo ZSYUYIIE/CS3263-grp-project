@@ -1,0 +1,89 @@
+{
+ "id": "q2-S4-294",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 8.59,
+ "solver_seconds": 0.112,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3121,
+  "total_tokens": 3516,
+  "completion_tokens": 395,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 8.48,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 5,\n\"completed\": [\n\"CS1101S\",\n\"ST2334\",\n\"ES2660\",\n\"CS2106\",\n\"CS2100\",\n\"CS3230\",\n\"MA1522\",\n\"IS1108\",\n\"CS2030S\",\n\"CS2101\",\n\"MA1521\",\n\"CS4268\",\n\"CS2103T\",\n\"CS1231S\",\n\"CS2040S\",\n\"CS2109S\"\n],\n\"must_take\": [\n\"CS2102\",\n\"CS4223\",\n\"CS3219\",\n\"CS4236\",\n\"CS3233\",\n\"CS4261\",\n\"CS2105\"\n],\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS3233\",\n\"b\": \"CS4223\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3219\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4236\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS2105\",\n\"b\": \"CS4261\",\n\"strength\": \"prefer\"\n}\n],\n\"late\": [\n\"CS4261\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "completed": [
+   "CS1101S",
+   "ST2334",
+   "ES2660",
+   "CS2106",
+   "CS2100",
+   "CS3230",
+   "MA1522",
+   "IS1108",
+   "CS2030S",
+   "CS2101",
+   "MA1521",
+   "CS4268",
+   "CS2103T",
+   "CS1231S",
+   "CS2040S",
+   "CS2109S"
+  ],
+  "must_take": [
+   "CS2102",
+   "CS4223",
+   "CS3219",
+   "CS4236",
+   "CS3233",
+   "CS4261",
+   "CS2105"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3233",
+    "b": "CS4223",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3219",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4236",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS2105",
+    "b": "CS4261",
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "CS4261"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS4236 in semester 5; the prerequisites of CS4236"
+  ]
+ }
+}

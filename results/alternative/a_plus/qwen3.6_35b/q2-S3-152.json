@@ -1,0 +1,102 @@
+{
+ "id": "q2-S3-152",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 7.09,
+ "usage": {
+  "prompt_tokens": 24156,
+  "total_tokens": 24484,
+  "completion_tokens": 328,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.09,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3247 requires CS3241 as a prerequisite, but CS3241 is not in the list of required modules and cannot be added as it is not a prerequisite for any other required course.\",\n    \"The student must take CS3247 but lacks the prerequisite CS3241, making it impossible to complete the degree requirements within the available semesters.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3247 requires CS3241 as a prerequisite, but CS3241 is not in the list of required modules and cannot be added as it is not a prerequisite for any other required course.",
+   "The student must take CS3247 but lacks the prerequisite CS3241, making it impossible to complete the degree requirements within the available semesters."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2105\",\n      \"ST2334\"\n    ],\n    \"6\": [\n      \"CS3219\",\n      \"CS2102\",\n      \"CS4248\",\n      \"CS3247\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2105 and ST2334 are taken in Y3S1 to satisfy the prerequisite order and take CS2105 as early as possible.\",\n    \"CS3219 is taken in Y3S2 as required. CS2102, CS4248, and CS3247 are taken in Y3S2 as their prerequisites are met by completed modules.\",\n    \"Y4S2 is reserved for exchange with 0 MC. All remaining required modules are completed by Y3S2.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2105",
+      "ST2334"
+     ],
+     "6": [
+      "CS3219",
+      "CS2102",
+      "CS4248",
+      "CS3247"
+     ]
+    },
+    "reasons": [
+     "CS2105 and ST2334 are taken in Y3S1 to satisfy the prerequisite order and take CS2105 as early as possible.",
+     "CS3219 is taken in Y3S2 as required. CS2102, CS4248, and CS3247 are taken in Y3S2 as their prerequisites are met by completed modules.",
+     "Y4S2 is reserved for exchange with 0 MC. All remaining required modules are completed by Y3S2."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11923,
+    "total_tokens": 12144,
+    "completion_tokens": 221,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 4.02,
+    "attempts": 1
+   },
+   "seconds": 4.02,
+   "violations": [
+    "R4 CS3247 in semester 6: prerequisite not met (CS3241)",
+    "R9 must rule not met: before CS2105 ST2334"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3247 requires CS3241 as a prerequisite, but CS3241 is not in the list of required modules and cannot be added as it is not a prerequisite for any other required course.\",\n    \"The student must take CS3247 but lacks the prerequisite CS3241, making it impossible to complete the degree requirements within the available semesters.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3247 requires CS3241 as a prerequisite, but CS3241 is not in the list of required modules and cannot be added as it is not a prerequisite for any other required course.",
+     "The student must take CS3247 but lacks the prerequisite CS3241, making it impossible to complete the degree requirements within the available semesters."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12233,
+    "total_tokens": 12340,
+    "completion_tokens": 107,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.07,
+    "attempts": 1
+   },
+   "seconds": 3.07,
+   "violations": null
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "id": "q2-S4-179",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 4.83,
+ "usage": {
+  "prompt_tokens": 10378,
+  "total_tokens": 10613,
+  "completion_tokens": 235,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 4.83,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS3219\",\n      \"CS2105\"\n    ],\n    \"6\": [\n      \"CS3281\",\n      \"CS3282\"\n    ],\n    \"7\": [\n      \"CS4239\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3219 is placed in Sem 5 as required.\",\n    \"CS3282 is taken in Sem 6, which is earlier than CS3219 (Sem 5) is not possible due to prerequisite CS3281, but CS3282 is as early as possible given the chain CS3281->CS3282 and CS3219 constraint.\",\n    \"CS2105 is taken in Sem 5 (as late as possible while allowing CS3282 in Sem 6 and CS4239 in Sem 7).\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS3219",
+    "CS2105"
+   ],
+   "6": [
+    "CS3281",
+    "CS3282"
+   ],
+   "7": [
+    "CS4239"
+   ]
+  },
+  "reasons": [
+   "CS3219 is placed in Sem 5 as required.",
+   "CS3282 is taken in Sem 6, which is earlier than CS3219 (Sem 5) is not possible due to prerequisite CS3281, but CS3282 is as early as possible given the chain CS3281->CS3282 and CS3219 constraint.",
+   "CS2105 is taken in Sem 5 (as late as possible while allowing CS3282 in Sem 6 and CS4239 in Sem 7)."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

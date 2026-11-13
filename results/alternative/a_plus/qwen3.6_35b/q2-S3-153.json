@@ -1,0 +1,168 @@
+{
+ "id": "q2-S3-153",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 2,
+ "end": "valid",
+ "seconds": 33.07,
+ "usage": {
+  "prompt_tokens": 37710,
+  "total_tokens": 39627,
+  "completion_tokens": 1917,
+  "finish_reason": "stop",
+  "request_seconds": 33.06,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2105\",\n\"CS3241\"\n],\n\"6\": [\n\"CS3219\",\n\"CS2102\",\n\"ST2334\",\n\"CS3247\"\n],\n\"7\": [\n\"CS4248\"\n]\n},\n\"reasons\": [\n\"Added CS3241 as it is a prerequisite for mandatory course CS3247.\",\n\"CS2105 taken in Sem 5 and ST2334 in Sem 6 to satisfy the 'finish before start' constraint.\",\n\"CS3247 taken in Sem 6 after CS3241 in Sem 5; CS4248 taken in Sem 7 after ST2334 in Sem 6.\"\n]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2105",
+    "CS3241"
+   ],
+   "6": [
+    "CS3219",
+    "CS2102",
+    "ST2334",
+    "CS3247"
+   ],
+   "7": [
+    "CS4248"
+   ]
+  },
+  "reasons": [
+   "Added CS3241 as it is a prerequisite for mandatory course CS3247.",
+   "CS2105 taken in Sem 5 and ST2334 in Sem 6 to satisfy the 'finish before start' constraint.",
+   "CS3247 taken in Sem 6 after CS3241 in Sem 5; CS4248 taken in Sem 7 after ST2334 in Sem 6."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2105\",\n\"ST2334\"\n],\n\"6\": [\n\"CS3219\",\n\"CS2102\",\n\"CS3247\"\n],\n\"7\": [\n\"CS4248\"\n]\n},\n\"reasons\": [\n\"Prerequisites for all planned courses are satisfied by completed modules.\",\n\"CS3219 is placed in Sem 6 as requested; CS2105 is taken in Sem 5 to satisfy the 'finish before ST2334' constraint early.\",\n\"Exchange in Sem 8 means no courses are planned there; CS4248 is scheduled in Sem 7.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2105",
+      "ST2334"
+     ],
+     "6": [
+      "CS3219",
+      "CS2102",
+      "CS3247"
+     ],
+     "7": [
+      "CS4248"
+     ]
+    },
+    "reasons": [
+     "Prerequisites for all planned courses are satisfied by completed modules.",
+     "CS3219 is placed in Sem 6 as requested; CS2105 is taken in Sem 5 to satisfy the 'finish before ST2334' constraint early.",
+     "Exchange in Sem 8 means no courses are planned there; CS4248 is scheduled in Sem 7."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11932,
+    "total_tokens": 12109,
+    "completion_tokens": 177,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.0,
+    "attempts": 1
+   },
+   "seconds": 4.0,
+   "violations": [
+    "R4 CS3247 in semester 6: prerequisite not met (CS3241)",
+    "R9 must rule not met: before CS2105 ST2334"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2105\",\n\"ST2334\"\n],\n\"6\": [\n\"CS3219\",\n\"CS2102\"\n],\n\"7\": [\n\"CS3247\",\n\"CS4248\"\n]\n},\n\"reasons\": [\n\"CS3247 requires CS3241 which is not completed; CS3241 is not in the mandatory list and cannot be added as it is not a prerequisite for any mandatory course.\",\n\"Wait, CS3247 prerequisite is CS3241. CS3241 is not completed. I cannot take CS3247. The student MUST take CS3247. This is impossible without CS3241.\",\n\"Let me re-read the rules. 'Add a course the student did not ask for ONLY when it is a prerequisite needed by a planned course.' CS3241 is a prerequisite for CS3247. So I MUST add CS3241.\",\n\"CS3241 prerequisite: (CS2030S or CS2030 or CS2030DE or CS2030HS or CS2113 or CS2113T) and (CS2040 or YSC2229 or CS2040S or CS2040C or CS2040DE or CS2040HS).\",\n\"Student has CS2030S and CS2040S. So CS3241 is eligible.\",\n\"CS3241 is offered Sem 1. Sem 5 is odd. So CS3241 can be taken in Sem 5.\",\n\"Revised Plan: Sem 5: CS2105, ST2334, CS3241. Sem 6: CS3219, CS2102, CS3247. Sem 7: CS4248.\",\n\"Check CS4248 prereqs: (CS2109S or ...) and (EE2012A or ...) and (MA1505 or ...).\",\n\"Student has CS2109S. Student has MA1521. Does MA1521 satisfy the third part? Prereq: (MA1505 or MA1507 or MA1521 or MA1102R or YSC1216 or MA2002 or (MA1511 and MA1512)). Yes, MA1521 is listed.\",\n\"Second part of CS4248: (EE2012A or EE2012 or ST2131 or MA2216 or MA2116 or MA2116T or ST2334 or YSC2243).\",\n\"Student has ST2334 (planned in Sem 5). So CS4248 is eligible in Sem 7.\",\n\"Check CS3219 prereq: YSC3232 or CS2103 or CS2103T or CS2103DE or CS2113T or CS2113.\",\n\"Student has CS2103T. Eligible.\",\n\"Check CS2102 prereq: (CS1231 or ...) and (CS2030S or ...).\",\n\"Student has CS1231S (mutually exclusive with CS1231? No, CS1231S is mutually exclusive with CS1231. But CS2102 prereq says CS1231 or MA1100... Does CS1231S count? Usually 'CS1231' refers to the code. Let's look at CS2102 record: 'prerequisite: (CS1231 or MA1100 or MA1100T or CS1231S)'. Yes, CS1231S is explicitly listed.\",\n\"Second part: CS2030S is listed. Eligible.\",\n\"Check CS2105 prereq: YSC2229 or CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS.\",\n\"Student has CS2040S. Eligible.\",\n\"Check ST2334 prereq: MA1312 or MA1505 or MA1511 or MA1521 or MA2002.\",\n\"Student has MA1521. Eligible.\",\n\"Constraint: CS2105 before ST2334. Both in Sem 5. 'Before' usually means strictly earlier semester. If they are in the same semester, is it 'before'? The prompt says 'finish CS2105 before I start ST2334'. This implies CS2105 must be in an earlier semester than ST2334.\",\n\"So ST2334 cannot be in Sem 5 if CS2105 is in Sem 5. ST2334 must be Sem 6 or later.\",\n\"CS3219 must be in Sem 6.\",\n\"CS3247 before CS4248.\",\n\"Plan: Sem 5: CS2105, CS3241. Sem 6: CS3219, CS2102, ST2334, CS3247. Sem 7: CS4248.\",\n\"Check MC: Sem 5: 4+4=8. Sem 6: 4+4+4+4=16. Sem 7: 4. All <= 20.\",\n\"Check CS3247 prereq: CS3241. CS3241 in Sem 5. CS3247 in Sem 6. OK.\",\n\"Check CS4248 prereq: ST2334 in Sem 6. CS4248 in Sem 7. OK.\",\n\"Check CS3219 in Sem 6. OK.\",\n\"Check CS2105 in Sem 5. ST2334 in Sem 6. OK.\",\n\"Exchange in Sem 8. OK.\",\n\"Fewest semesters: Graduation Sem 7.\",\n\"Soft wishes: CS3247 before CS4248 (Yes, 6 before 7). CS2105 as early as possible (Yes, Sem 5).\",\n\"Reasons: Added CS3241 as prerequisite for CS3247. CS2105 taken in Sem 5, ST2334 in Sem 6 to satisfy 'before' constraint.\"\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2105",
+      "ST2334"
+     ],
+     "6": [
+      "CS3219",
+      "CS2102"
+     ],
+     "7": [
+      "CS3247",
+      "CS4248"
+     ]
+    }
+   },
+   "repair": "cut_reasons",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12198,
+    "total_tokens": 13737,
+    "completion_tokens": 1539,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 25.17,
+    "attempts": 1
+   },
+   "seconds": 25.17,
+   "violations": [
+    "R3 CS3247 not offered in Sem 1 (semester 7)",
+    "R4 CS3247 in semester 7: prerequisite not met (CS3241)",
+    "R9 must rule not met: before CS2105 ST2334"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2105\",\n\"CS3241\"\n],\n\"6\": [\n\"CS3219\",\n\"CS2102\",\n\"ST2334\",\n\"CS3247\"\n],\n\"7\": [\n\"CS4248\"\n]\n},\n\"reasons\": [\n\"Added CS3241 as it is a prerequisite for mandatory course CS3247.\",\n\"CS2105 taken in Sem 5 and ST2334 in Sem 6 to satisfy the 'finish before start' constraint.\",\n\"CS3247 taken in Sem 6 after CS3241 in Sem 5; CS4248 taken in Sem 7 after ST2334 in Sem 6.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2105",
+      "CS3241"
+     ],
+     "6": [
+      "CS3219",
+      "CS2102",
+      "ST2334",
+      "CS3247"
+     ],
+     "7": [
+      "CS4248"
+     ]
+    },
+    "reasons": [
+     "Added CS3241 as it is a prerequisite for mandatory course CS3247.",
+     "CS2105 taken in Sem 5 and ST2334 in Sem 6 to satisfy the 'finish before start' constraint.",
+     "CS3247 taken in Sem 6 after CS3241 in Sem 5; CS4248 taken in Sem 7 after ST2334 in Sem 6."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 13580,
+    "total_tokens": 13781,
+    "completion_tokens": 201,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.89,
+    "attempts": 1
+   },
+   "seconds": 3.9,
+   "violations": []
+  }
+ ]
+}

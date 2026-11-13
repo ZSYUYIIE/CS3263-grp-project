@@ -1,0 +1,100 @@
+{
+ "id": "q2-S4-273",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 5.93,
+ "usage": {
+  "prompt_tokens": 21020,
+  "total_tokens": 21343,
+  "completion_tokens": 323,
+  "finish_reason": "stop",
+  "request_seconds": 5.93,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS2106 requires CS2100 (or equivalents) which is not completed and not in the mandatory list, making it impossible to take without adding unplanned courses.\",\n    \"CS3223 requires CS2102 (or IT2002) which is not completed and not in the mandatory list.\",\n    \"CS4268 requires CS3230 which is not completed and not in the mandatory list.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS2106 requires CS2100 (or equivalents) which is not completed and not in the mandatory list, making it impossible to take without adding unplanned courses.",
+   "CS3223 requires CS2102 (or IT2002) which is not completed and not in the mandatory list.",
+   "CS4268 requires CS3230 which is not completed and not in the mandatory list."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2106\",\n      \"CS2105\",\n      \"ST2334\"\n    ],\n    \"4\": [\n      \"CS3223\",\n      \"CS4222\",\n      \"CS4268\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2106, CS2105, and ST2334 are planned in Sem 3 to satisfy prerequisites for later courses and soft wishes.\",\n    \"CS3223, CS4222, and CS4268 are planned in Sem 4 to meet the constraint that CS3223 and CS4222 are taken together.\",\n    \"All prerequisites are satisfied by completed courses or earlier planned courses.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2106",
+      "CS2105",
+      "ST2334"
+     ],
+     "4": [
+      "CS3223",
+      "CS4222",
+      "CS4268"
+     ]
+    },
+    "reasons": [
+     "CS2106, CS2105, and ST2334 are planned in Sem 3 to satisfy prerequisites for later courses and soft wishes.",
+     "CS3223, CS4222, and CS4268 are planned in Sem 4 to meet the constraint that CS3223 and CS4222 are taken together.",
+     "All prerequisites are satisfied by completed courses or earlier planned courses."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10261,
+    "total_tokens": 10463,
+    "completion_tokens": 202,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.6,
+    "attempts": 1
+   },
+   "seconds": 3.6,
+   "violations": [
+    "R4 CS2106 in semester 3: prerequisite not met (CS2100 or CS2100DE or CS2100HS or EE2007 or EE2024 or EE2028)",
+    "R4 CS3223 in semester 4: prerequisite not met ((CS2040S or CS2040 or CS2040C or CS2040DE or CS2040HS) and (CS2102 or IT2002))",
+    "R4 CS4268 in semester 4: prerequisite not met (CS3230 and (EE2012A or EE2012 or ST2131 or MA2216 or ST2334 or MA2116 or MA2116T) and (MA1101R or MA1311 or MA1508E or MA1513 or MA1522 or MA2001))",
+    "R9 must rule not met: before CS4268 ST2334"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS2106 requires CS2100 (or equivalents) which is not completed and not in the mandatory list, making it impossible to take without adding unplanned courses.\",\n    \"CS3223 requires CS2102 (or IT2002) which is not completed and not in the mandatory list.\",\n    \"CS4268 requires CS3230 which is not completed and not in the mandatory list.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS2106 requires CS2100 (or equivalents) which is not completed and not in the mandatory list, making it impossible to take without adding unplanned courses.",
+     "CS3223 requires CS2102 (or IT2002) which is not completed and not in the mandatory list.",
+     "CS4268 requires CS3230 which is not completed and not in the mandatory list."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10759,
+    "total_tokens": 10880,
+    "completion_tokens": 121,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.33,
+    "attempts": 1
+   },
+   "seconds": 2.33,
+   "violations": null
+  }
+ ]
+}

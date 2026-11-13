@@ -1,0 +1,47 @@
+{
+ "id": "q2-S4-258",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 5.73,
+ "usage": {
+  "prompt_tokens": 8452,
+  "total_tokens": 8653,
+  "completion_tokens": 201,
+  "finish_reason": "stop",
+  "request_seconds": 5.73,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\"\n    ],\n    \"4\": [\n      \"CS3219\"\n    ],\n    \"5\": [\n      \"ST2334\",\n      \"CS4220\"\n    ],\n    \"6\": [\n      \"CS4221\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2100 prerequisite (CS1010S) is completed.\",\n    \"CS3219 prerequisite (CS2100) is completed in Sem 3.\",\n    \"CS4220 prerequisite (CS3219) is completed in Sem 4.\",\n    \"CS4221 prerequisite (CS4220) is completed in Sem 5.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100"
+   ],
+   "4": [
+    "CS3219"
+   ],
+   "5": [
+    "ST2334",
+    "CS4220"
+   ],
+   "6": [
+    "CS4221"
+   ]
+  },
+  "reasons": [
+   "CS2100 prerequisite (CS1010S) is completed.",
+   "CS3219 prerequisite (CS2100) is completed in Sem 3.",
+   "CS4220 prerequisite (CS3219) is completed in Sem 4.",
+   "CS4221 prerequisite (CS4220) is completed in Sem 5."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

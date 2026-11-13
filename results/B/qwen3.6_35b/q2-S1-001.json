@@ -1,0 +1,108 @@
+{
+ "id": "q2-S1-001",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 4.34,
+ "solver_seconds": 0.172,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2994,
+  "total_tokens": 3196,
+  "completion_tokens": 202,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 4.16,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 1,\n\"programme\": \"BComp CS Hons\",\n\"completed\": [],\n\"must_take\": [\n\"ES2660\",\n\"CS3230\",\n\"CS4430\"\n],\n\"early\": [\n\"CS3230\"\n],\n\"rules\": [\n{\n\"type\": \"apart\",\n\"a\": \"CS3230\",\n\"b\": \"ES2660\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4430\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4430\",\n\"b\": \"ES2660\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "programme": "BComp CS Hons",
+  "completed": [],
+  "must_take": [
+   "ES2660",
+   "CS3230",
+   "CS4430"
+  ],
+  "early": [
+   "CS3230"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS3230",
+    "b": "ES2660",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4430",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4430",
+    "b": "ES2660",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 8,
+  "plan": {
+   "1": [
+    "CS1101S",
+    "MA1100T"
+   ],
+   "2": [
+    "CS2040",
+    "ES2660"
+   ],
+   "3": [
+    "CS3230",
+    "CS3231"
+   ],
+   "4": [],
+   "5": [],
+   "6": [],
+   "7": [],
+   "8": [
+    "CS4430"
+   ]
+  },
+  "mc_per_semester": {
+   "1": 8,
+   "2": 8,
+   "3": 8,
+   "4": 0,
+   "5": 0,
+   "6": 0,
+   "7": 0,
+   "8": 4
+  },
+  "preferences_met": [
+   "CS3230 as early as possible"
+  ],
+  "preferences_not_met": [
+   "CS4430 before ES2660"
+  ],
+  "added_prerequisites": [
+   "CS1101S",
+   "CS2040",
+   "CS3231",
+   "MA1100T"
+  ]
+ }
+}

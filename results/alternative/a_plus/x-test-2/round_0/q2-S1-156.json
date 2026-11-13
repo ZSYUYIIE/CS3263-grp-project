@@ -1,0 +1,49 @@
+{
+ "id": "q2-S1-156",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 48.78,
+ "usage": {
+  "prompt_tokens": 7915,
+  "total_tokens": 12081,
+  "completion_tokens": 4166,
+  "prompt_tokens_details": {
+   "cached_tokens": 2816,
+   "created_cache_tokens": 4992
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4018
+  },
+  "finish_reason": "stop",
+  "request_seconds": 48.78,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"7\":[\"CS2220\",\"CS2105\",\"CS2107\"],\"8\":[\"CS4220\",\"CS3235\"]},\"reasons\":[\"CS4220 needs CS2220 first; CS2220 is only offered in Sem 1, so CS2220 is in semester 7 and CS4220 in semester 8.\",\"CS3235 needs CS2107, so CS2107 is added in semester 7; CS2105 is also in semester 7 because it cannot share semester 8 with CS4220.\",\"Semester 7 has 12 MC and semester 8 has 8 MC, within the 12 MC limit.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "7": [
+    "CS2220",
+    "CS2105",
+    "CS2107"
+   ],
+   "8": [
+    "CS4220",
+    "CS3235"
+   ]
+  },
+  "reasons": [
+   "CS4220 needs CS2220 first; CS2220 is only offered in Sem 1, so CS2220 is in semester 7 and CS4220 in semester 8.",
+   "CS3235 needs CS2107, so CS2107 is added in semester 7; CS2105 is also in semester 7 because it cannot share semester 8 with CS4220.",
+   "Semester 7 has 12 MC and semester 8 has 8 MC, within the 12 MC limit."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

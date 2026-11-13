@@ -1,0 +1,53 @@
+{
+ "id": "q2-S5-015",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 56.66,
+ "usage": {
+  "prompt_tokens": 6892,
+  "total_tokens": 12519,
+  "completion_tokens": 5627,
+  "prompt_tokens_details": {
+   "cached_tokens": 6528,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5512
+  },
+  "finish_reason": "stop",
+  "request_seconds": 56.66,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS2105\",\"CS2102\"],\"6\":[\"CS3233\"],\"7\":[\"CS3219\"],\"8\":[\"CS3223\"]},\"reasons\":[\"CS2102 is added because it is the prerequisite for CS3223.\",\"CS2105 is before CS3219, and CS3219 is in semester 7 before CS3223.\",\"CS2105 and CS3233 are kept apart; CS2105 is as late as possible under these constraints.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2105",
+    "CS2102"
+   ],
+   "6": [
+    "CS3233"
+   ],
+   "7": [
+    "CS3219"
+   ],
+   "8": [
+    "CS3223"
+   ]
+  },
+  "reasons": [
+   "CS2102 is added because it is the prerequisite for CS3223.",
+   "CS2105 is before CS3219, and CS3219 is in semester 7 before CS3223.",
+   "CS2105 and CS3233 are kept apart; CS2105 is as late as possible under these constraints."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

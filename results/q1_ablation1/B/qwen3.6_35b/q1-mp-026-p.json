@@ -1,0 +1,56 @@
+{
+ "id": "q1-mp-026-p",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 1.97,
+ "solver_seconds": 0.008,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2817,
+  "total_tokens": 2930,
+  "completion_tokens": 113,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 1.96,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\": \"eligible\", \"target\": \"CS5462\", \"current_sem\": 7, \"completed\": [\"MA1521\", \"CS1101S\", \"CS3237\", \"CS2106\", \"IS2101\", \"MA1522\", \"CS2107\", \"CS1231S\", \"ST2334\", \"MA1512\", \"CS2100\", \"ESP2111\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS5462",
+  "current_sem": 7,
+  "completed": [
+   "MA1521",
+   "CS1101S",
+   "CS3237",
+   "CS2106",
+   "IS2101",
+   "MA1522",
+   "CS2107",
+   "CS1231S",
+   "ST2334",
+   "MA1512",
+   "CS2100",
+   "ESP2111"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS5462",
+  "semester": 7,
+  "reasons": [
+   "not offered in semester 1 (offered: [2])",
+   "missing prerequisite: CS3244 or CS3264 or CG3201"
+  ],
+  "can_still_become_eligible": true
+ }
+}

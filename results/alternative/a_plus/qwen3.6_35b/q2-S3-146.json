@@ -1,0 +1,189 @@
+{
+ "id": "q2-S3-146",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 2,
+ "end": "valid",
+ "seconds": 30.74,
+ "usage": {
+  "prompt_tokens": 38571,
+  "total_tokens": 40481,
+  "completion_tokens": 1910,
+  "finish_reason": "stop",
+  "request_seconds": 30.74,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2105\",\n      \"CS2102\",\n      \"ST2334\",\n      \"CS3241\"\n    ],\n    \"6\": [\n      \"CS3219\",\n      \"CS2111\",\n      \"CS3247\"\n    ],\n    \"7\": [\n      \"CS3249\",\n      \"CS4248\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2111 is offered in Sem 2, so it is planned in Sem 6.\",\n    \"CS3241 is offered in Sem 1, so it is planned in Sem 5.\",\n    \"CS3247 requires CS3241, taken in Sem 5, so it is taken in Sem 6.\",\n    \"CS3249 requires CS2111, taken in Sem 6, so it is taken in Sem 7.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2105",
+    "CS2102",
+    "ST2334",
+    "CS3241"
+   ],
+   "6": [
+    "CS3219",
+    "CS2111",
+    "CS3247"
+   ],
+   "7": [
+    "CS3249",
+    "CS4248"
+   ]
+  },
+  "reasons": [
+   "CS2111 is offered in Sem 2, so it is planned in Sem 6.",
+   "CS3241 is offered in Sem 1, so it is planned in Sem 5.",
+   "CS3247 requires CS3241, taken in Sem 5, so it is taken in Sem 6.",
+   "CS3249 requires CS2111, taken in Sem 6, so it is taken in Sem 7."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2105\",\n      \"CS2102\",\n      \"ST2334\"\n    ],\n    \"6\": [\n      \"CS3219\",\n      \"CS3247\"\n    ],\n    \"7\": [\n      \"CS3249\",\n      \"CS4248\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2105 prerequisites (CS2040S) met; taken in Sem 5 as requested.\",\n    \"CS2102 prerequisites (CS1231S, CS2030S) met; taken in Sem 5.\",\n    \"ST2334 prerequisites (MA1521) met; taken in Sem 5.\",\n    \"CS3219 prerequisite (CS2103T) met; taken in Sem 6 before CS4248.\",\n    \"CS3247 prerequisite (CS3241) is NOT met. CS3241 requires CS2030S/CS2030/CS2030DE/CS2030HS/CS2113/CS2113T AND CS2040/YSC2229/CS2040S/CS2040C/CS2040DE/CS2040HS. Student has CS2030S and CS2040S. Thus CS3241 is eligible. CS3247 prerequisite is CS3241. So CS3241 must be taken before CS3247. CS3241 is offered Sem 1. Sem 6 is Sem 1 of Y3S2? No, Sem 6 is Y3S2. CS3241 is offered Sem 1 only. Wait. CS3241 is offered Sem 1. Sem 6 is even (Sem 2). CS3241 cannot be taken in Sem 6. CS3241 is offered Sem 1. Sem 5 is odd (Sem 1). Can CS3241 be taken in Sem 5? Prerequisites: CS2030S (met) and CS2040S (met). Yes. So CS3241 must be in Sem 5 or earlier. Sem 5 is current. So CS3241 must be in Sem 5. Then CS3247 (prereq CS3241) can be in Sem 6 or later. Sem 6 is Sem 2. CS3247 is offered Sem 2. So CS3247 in Sem 6 is valid. CS3219 prereq YSC3232 or CS2103/CS2103T/CS2103DE/CS2113T/CS2113. Student has CS2103T. So CS3219 eligible in Sem 5 or later. CS3219 offered Sem 1, Sem 2. Sem 6 is Sem 2. So CS3219 in Sem 6 is valid. CS4248 prereq CS2109S (met) and EE2012A/EE2012/ST2131/MA2216/MA2116/MA2116T/ST2334/YSC2243 and MA1505/MA1507/MA1521/MA1102R/YSC1216/MA2002/(MA1511 and MA1512). Student has CS2109S, ST2334 (planned Sem 5), MA1521. So CS4248 eligible after ST2334. CS4248 offered Sem 1, Sem 2. Sem 7 is Sem 1. So CS4248 in Sem 7 is valid. CS3249 prereq CS2111. Student has NOT completed CS2111. CS2111 prerequisite: CS1010A/E/X/1101S/1010S/UTC2851/1010HS/1010J/1010/NM2207. Student has CS1101S. So CS2111 is eligible. CS2111 offered Sem 2. Sem 7 is Sem 1. CS2111 cannot be taken in Sem 7. CS2111 must be taken in Sem 6 or earlier. Sem 6 is Sem 2. So CS2111 can be in Sem 6. Then CS3249 (prereq CS2111) can be in Sem 7 or later. Sem 7 is Sem 1. CS3249 offered Sem 1. So CS3249 in Sem 7 is valid. So CS2111 must be added to Sem 6. CS3219 and CS3247 and CS2111 in Sem 6? MC: 4+4+4=12. Limit 20. OK. CS3247 before CS4248? Yes (Sem 6 vs Sem 7). CS3219 before CS4248? Yes (Sem 6 vs Sem 7). CS2105 early? Yes (Sem 5). CS2102, ST2334 in Sem 5. CS3241 in Sem 5? MC: 4+4+4+4=16. OK. So Sem 5: CS2105, CS2102, ST2334, CS3241. Sem 6: CS3219, CS3247, CS2111. Sem 7: CS3249, CS4248. Sem 8: Exchange (0 MC). Min MC 8 per semester with modules. Sem 5: 16 >= 8. Sem 6: 12 >= 8. Sem 7: 8 >= 8. All good.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2105",
+      "CS2102",
+      "ST2334"
+     ],
+     "6": [
+      "CS3219",
+      "CS3247"
+     ],
+     "7": [
+      "CS3249",
+      "CS4248"
+     ]
+    },
+    "reasons": [
+     "CS2105 prerequisites (CS2040S) met; taken in Sem 5 as requested.",
+     "CS2102 prerequisites (CS1231S, CS2030S) met; taken in Sem 5.",
+     "ST2334 prerequisites (MA1521) met; taken in Sem 5.",
+     "CS3219 prerequisite (CS2103T) met; taken in Sem 6 before CS4248.",
+     "CS3247 prerequisite (CS3241) is NOT met. CS3241 requires CS2030S/CS2030/CS2030DE/CS2030HS/CS2113/CS2113T AND CS2040/YSC2229/CS2040S/CS2040C/CS2040DE/CS2040HS. Student has CS2030S and CS2040S. Thus CS3241 is eligible. CS3247 prerequisite is CS3241. So CS3241 must be taken before CS3247. CS3241 is offered Sem 1. Sem 6 is Sem 1 of Y3S2? No, Sem 6 is Y3S2. CS3241 is offered Sem 1 only. Wait. CS3241 is offered Sem 1. Sem 6 is even (Sem 2). CS3241 cannot be taken in Sem 6. CS3241 is offered Sem 1. Sem 5 is odd (Sem 1). Can CS3241 be taken in Sem 5? Prerequisites: CS2030S (met) and CS2040S (met). Yes. So CS3241 must be in Sem 5 or earlier. Sem 5 is current. So CS3241 must be in Sem 5. Then CS3247 (prereq CS3241) can be in Sem 6 or later. Sem 6 is Sem 2. CS3247 is offered Sem 2. So CS3247 in Sem 6 is valid. CS3219 prereq YSC3232 or CS2103/CS2103T/CS2103DE/CS2113T/CS2113. Student has CS2103T. So CS3219 eligible in Sem 5 or later. CS3219 offered Sem 1, Sem 2. Sem 6 is Sem 2. So CS3219 in Sem 6 is valid. CS4248 prereq CS2109S (met) and EE2012A/EE2012/ST2131/MA2216/MA2116/MA2116T/ST2334/YSC2243 and MA1505/MA1507/MA1521/MA1102R/YSC1216/MA2002/(MA1511 and MA1512). Student has CS2109S, ST2334 (planned Sem 5), MA1521. So CS4248 eligible after ST2334. CS4248 offered Sem 1, Sem 2. Sem 7 is Sem 1. So CS4248 in Sem 7 is valid. CS3249 prereq CS2111. Student has NOT completed CS2111. CS2111 prerequisite: CS1010A/E/X/1101S/1010S/UTC2851/1010HS/1010J/1010/NM2207. Student has CS1101S. So CS2111 is eligible. CS2111 offered Sem 2. Sem 7 is Sem 1. CS2111 cannot be taken in Sem 7. CS2111 must be taken in Sem 6 or earlier. Sem 6 is Sem 2. So CS2111 can be in Sem 6. Then CS3249 (prereq CS2111) can be in Sem 7 or later. Sem 7 is Sem 1. CS3249 offered Sem 1. So CS3249 in Sem 7 is valid. So CS2111 must be added to Sem 6. CS3219 and CS3247 and CS2111 in Sem 6? MC: 4+4+4=12. Limit 20. OK. CS3247 before CS4248? Yes (Sem 6 vs Sem 7). CS3219 before CS4248? Yes (Sem 6 vs Sem 7). CS2105 early? Yes (Sem 5). CS2102, ST2334 in Sem 5. CS3241 in Sem 5? MC: 4+4+4+4=16. OK. So Sem 5: CS2105, CS2102, ST2334, CS3241. Sem 6: CS3219, CS3247, CS2111. Sem 7: CS3249, CS4248. Sem 8: Exchange (0 MC). Min MC 8 per semester with modules. Sem 5: 16 >= 8. Sem 6: 12 >= 8. Sem 7: 8 >= 8. All good."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12250,
+    "total_tokens": 13669,
+    "completion_tokens": 1419,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 20.16,
+    "attempts": 1
+   },
+   "seconds": 20.16,
+   "violations": [
+    "R4 CS3247 in semester 6: prerequisite not met (CS3241)",
+    "R4 CS3249 in semester 7: prerequisite not met (CS2111)"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2105\",\n      \"CS2102\",\n      \"ST2334\",\n      \"CS3241\",\n      \"CS2111\"\n    ],\n    \"6\": [\n      \"CS3219\",\n      \"CS3247\"\n    ],\n    \"7\": [\n      \"CS3249\",\n      \"CS4248\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3241 (prereq for CS3247) and CS2111 (prereq for CS3249) are added to Sem 5 as they are offered in Sem 1 and prerequisites are met.\",\n    \"CS3247 is taken in Sem 6 after CS3241 in Sem 5.\",\n    \"CS3249 is taken in Sem 7 after CS2111 in Sem 5.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2105",
+      "CS2102",
+      "ST2334",
+      "CS3241",
+      "CS2111"
+     ],
+     "6": [
+      "CS3219",
+      "CS3247"
+     ],
+     "7": [
+      "CS3249",
+      "CS4248"
+     ]
+    },
+    "reasons": [
+     "CS3241 (prereq for CS3247) and CS2111 (prereq for CS3249) are added to Sem 5 as they are offered in Sem 1 and prerequisites are met.",
+     "CS3247 is taken in Sem 6 after CS3241 in Sem 5.",
+     "CS3249 is taken in Sem 7 after CS2111 in Sem 5."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 13762,
+    "total_tokens": 14006,
+    "completion_tokens": 244,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.47,
+    "attempts": 1
+   },
+   "seconds": 5.47,
+   "violations": [
+    "R3 CS2111 not offered in Sem 1 (semester 5)"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2105\",\n      \"CS2102\",\n      \"ST2334\",\n      \"CS3241\"\n    ],\n    \"6\": [\n      \"CS3219\",\n      \"CS2111\",\n      \"CS3247\"\n    ],\n    \"7\": [\n      \"CS3249\",\n      \"CS4248\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2111 is offered in Sem 2, so it is planned in Sem 6.\",\n    \"CS3241 is offered in Sem 1, so it is planned in Sem 5.\",\n    \"CS3247 requires CS3241, taken in Sem 5, so it is taken in Sem 6.\",\n    \"CS3249 requires CS2111, taken in Sem 6, so it is taken in Sem 7.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2105",
+      "CS2102",
+      "ST2334",
+      "CS3241"
+     ],
+     "6": [
+      "CS3219",
+      "CS2111",
+      "CS3247"
+     ],
+     "7": [
+      "CS3249",
+      "CS4248"
+     ]
+    },
+    "reasons": [
+     "CS2111 is offered in Sem 2, so it is planned in Sem 6.",
+     "CS3241 is offered in Sem 1, so it is planned in Sem 5.",
+     "CS3247 requires CS3241, taken in Sem 5, so it is taken in Sem 6.",
+     "CS3249 requires CS2111, taken in Sem 6, so it is taken in Sem 7."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12559,
+    "total_tokens": 12806,
+    "completion_tokens": 247,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 5.11,
+    "attempts": 1
+   },
+   "seconds": 5.11,
+   "violations": []
+  }
+ ]
+}

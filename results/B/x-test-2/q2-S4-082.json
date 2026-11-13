@@ -1,0 +1,113 @@
+{
+ "id": "q2-S4-082",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 10.52,
+ "solver_seconds": 0.005,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2881,
+  "total_tokens": 4192,
+  "completion_tokens": 1311,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1040
+  },
+  "finish_reason": "stop",
+  "request_seconds": 10.51,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":7,\"completed\":[\"CS1101S\",\"CS2102\",\"MA1522\",\"ES2660\",\"CS2109S\",\"CS2106\",\"CS2040S\",\"IS1108\",\"ST2334\",\"CS4222\",\"CS2103T\",\"MA1521\",\"CS2105\",\"CS2100\",\"CS3234\",\"CS4218\",\"CS2030S\",\"CS1231S\",\"CS3219\"],\"must_take\":[\"CS2101\",\"CS3227\",\"CS3244\",\"CS3235\",\"CS3264\",\"CS3230\",\"CS4248\"],\"mc_max\":16,\"objective\":\"min_total_mc\",\"early\":[\"CS3227\"],\"late\":[\"CS3235\",\"CS2101\"],\"rules\":[{\"type\":\"before\",\"a\":\"CS3227\",\"b\":\"CS3235\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3230\",\"sem\":7,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS4248\",\"sem\":7,\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS3230\",\"b\":\"CS2101\",\"strength\":\"prefer\"}],\"unsupported\":[\"no Friday classes\",\"take modules with friend\"]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "completed": [
+   "CS1101S",
+   "CS2102",
+   "MA1522",
+   "ES2660",
+   "CS2109S",
+   "CS2106",
+   "CS2040S",
+   "IS1108",
+   "ST2334",
+   "CS4222",
+   "CS2103T",
+   "MA1521",
+   "CS2105",
+   "CS2100",
+   "CS3234",
+   "CS4218",
+   "CS2030S",
+   "CS1231S",
+   "CS3219"
+  ],
+  "must_take": [
+   "CS2101",
+   "CS3227",
+   "CS3244",
+   "CS3235",
+   "CS3264",
+   "CS3230",
+   "CS4248"
+  ],
+  "mc_max": 16,
+  "objective": "min_total_mc",
+  "early": [
+   "CS3227"
+  ],
+  "late": [
+   "CS3235",
+   "CS2101"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3227",
+    "b": "CS3235",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3230",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4248",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3230",
+    "b": "CS2101",
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "no Friday classes",
+   "take modules with friend"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3244 is ruled out by completed CS2109S"
+  ],
+  "not_applied": [
+   "no Friday classes",
+   "take modules with friend"
+  ]
+ }
+}

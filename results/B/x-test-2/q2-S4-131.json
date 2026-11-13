@@ -1,0 +1,98 @@
+{
+ "id": "q2-S4-131",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 5.86,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2864,
+  "total_tokens": 3548,
+  "completion_tokens": 684,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 448
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.86,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"completed\":[\"CS2030S\",\"CS2106\",\"MA1521\",\"ST2334\",\"CS1101S\",\"CS3234\",\"CS2103T\",\"IS1108\",\"CS2109S\",\"CS2100\",\"CS1231S\",\"CS3230\",\"CS2040S\",\"CS2101\",\"ES2660\",\"MA1522\"],\"current_sem\":5,\"must_take\":[\"CS2102\",\"CS4211\",\"CS3219\",\"CS3235\",\"CS3263\",\"CS4218\",\"CS4262\",\"CS4248\"],\"mc_max\":16,\"sem_caps\":{\"5\":0,\"7\":0},\"objective\":\"min_total_mc\",\"late\":[\"CS4262\",\"CS4248\"],\"rules\":[{\"type\":\"same_sem\",\"a\":\"CS2102\",\"b\":\"CS3263\",\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS4262\",\"b\":\"CS3263\",\"strength\":\"prefer\"},{\"type\":\"in_sem\",\"course\":\"CS4248\",\"sem\":6,\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "completed": [
+   "CS2030S",
+   "CS2106",
+   "MA1521",
+   "ST2334",
+   "CS1101S",
+   "CS3234",
+   "CS2103T",
+   "IS1108",
+   "CS2109S",
+   "CS2100",
+   "CS1231S",
+   "CS3230",
+   "CS2040S",
+   "CS2101",
+   "ES2660",
+   "MA1522"
+  ],
+  "current_sem": 5,
+  "must_take": [
+   "CS2102",
+   "CS4211",
+   "CS3219",
+   "CS3235",
+   "CS3263",
+   "CS4218",
+   "CS4262",
+   "CS4248"
+  ],
+  "mc_max": 16,
+  "sem_caps": {
+   "5": 0,
+   "7": 0
+  },
+  "objective": "min_total_mc",
+  "late": [
+   "CS4262",
+   "CS4248"
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS2102",
+    "b": "CS3263",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4262",
+    "b": "CS3263",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4248",
+    "sem": 6,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4211 cannot be placed in any remaining semester (offered in terms [1]; semesters left [6, 8])"
+  ]
+ }
+}

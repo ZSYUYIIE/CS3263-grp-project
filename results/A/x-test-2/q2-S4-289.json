@@ -1,0 +1,67 @@
+{
+ "id": "q2-S4-289",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 98.44,
+ "usage": {
+  "prompt_tokens": 7326,
+  "total_tokens": 17599,
+  "completion_tokens": 10273,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 5760,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 10074
+  },
+  "finish_reason": "stop",
+  "request_seconds": 98.44,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"1\":[\"CS1010\",\"MA1521\",\"CS1231\"],\"2\":[\"CS2040\",\"CS2100\",\"CS2111\"],\"3\":[\"CS2106\",\"CS3240\",\"CS2102\"],\"4\":[\"CS4240\",\"CS3223\",\"CS3230\"],\"5\":[\"CS4224\",\"CS2109S\",\"CS2030\"],\"6\":[\"CS2103T\",\"CS2101\"]},\"reasons\":[\"Earliest graduation is semester 6 because CS2103T is fixed in semester 6.\",\"CS4224 is offered only in Sem 1, so it is placed in semester 5; it cannot be together with CS2103T in semester 6.\",\"CS2106 is earliest in semester 3; CS3230 precedes CS2109S, which is in an odd Semester 1 term in semester 5.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1010",
+    "MA1521",
+    "CS1231"
+   ],
+   "2": [
+    "CS2040",
+    "CS2100",
+    "CS2111"
+   ],
+   "3": [
+    "CS2106",
+    "CS3240",
+    "CS2102"
+   ],
+   "4": [
+    "CS4240",
+    "CS3223",
+    "CS3230"
+   ],
+   "5": [
+    "CS4224",
+    "CS2109S",
+    "CS2030"
+   ],
+   "6": [
+    "CS2103T",
+    "CS2101"
+   ]
+  },
+  "reasons": [
+   "Earliest graduation is semester 6 because CS2103T is fixed in semester 6.",
+   "CS4224 is offered only in Sem 1, so it is placed in semester 5; it cannot be together with CS2103T in semester 6.",
+   "CS2106 is earliest in semester 3; CS3230 precedes CS2109S, which is in an odd Semester 1 term in semester 5."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

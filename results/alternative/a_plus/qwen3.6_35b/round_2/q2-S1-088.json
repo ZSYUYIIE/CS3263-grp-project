@@ -1,0 +1,57 @@
+{
+ "id": "q2-S1-088",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 1,
+ "end": "repeated plan",
+ "seconds": 10.27,
+ "usage": {
+  "prompt_tokens": 20203,
+  "total_tokens": 20802,
+  "completion_tokens": 599,
+  "finish_reason": "stop",
+  "request_seconds": 10.27,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"3\": [\n\"CS2100\",\n\"CS2102\",\n\"CS2103\",\n\"CS2107\"\n],\n\"4\": [\n\"CS2106\",\n\"CS3230\"\n],\n\"5\": [\n\"CS3219\",\n\"CS4236\"\n],\n\"6\": [\n\"CS2105\",\n\"CS2109S\",\n\"CS3223\",\n\"IS1108\"\n],\n\"7\": [\n\"CS4221\"\n]\n},\n\"reasons\": [\n\"CS4221 is offered in Sem 2, which corresponds to Semester 7 (Y4S1 is Sem 1, Y4S2 is Sem 2? No, Sem 7 is Y4S1 (Odd), Sem 8 is Y4S2 (Even). Wait. Sem 1=Odd, Sem 2=Even. Sem 7=Odd. CS4221 is offered Sem 2 (Even). So Sem 7 is invalid for CS4221.\"\n]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS2102",
+    "CS2103",
+    "CS2107"
+   ],
+   "4": [
+    "CS2106",
+    "CS3230"
+   ],
+   "5": [
+    "CS3219",
+    "CS4236"
+   ],
+   "6": [
+    "CS2105",
+    "CS2109S",
+    "CS3223",
+    "IS1108"
+   ],
+   "7": [
+    "CS4221"
+   ]
+  },
+  "reasons": [
+   "CS4221 is offered in Sem 2, which corresponds to Semester 7 (Y4S1 is Sem 1, Y4S2 is Sem 2? No, Sem 7 is Y4S1 (Odd), Sem 8 is Y4S2 (Even). Wait. Sem 1=Odd, Sem 2=Even. Sem 7=Odd. CS4221 is offered Sem 2 (Even). So Sem 7 is invalid for CS4221."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

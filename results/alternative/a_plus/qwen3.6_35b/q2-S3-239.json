@@ -1,0 +1,106 @@
+{
+ "id": "q2-S3-239",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 16.57,
+ "usage": {
+  "prompt_tokens": 23726,
+  "total_tokens": 24399,
+  "completion_tokens": 673,
+  "finish_reason": "stop",
+  "request_seconds": 16.57,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4243 requires prerequisites (e.g., MA1522, CS2030S, CS2040S) which are completed, but also requires Statistics courses (e.g., ST1131, ST2131) and Linear Algebra (MA1522 is done, but ST/MA2001/MA1101R etc. are missing). Specifically, it needs a stats course like ST1131 or ST2131 which are not in the completed list nor the must-take list, and cannot be added as they are not prerequisites for any must-take course.\",\n    \"CS4218 requires CS3213 or CS3219. CS3219 is a must-take, so CS4218 can follow CS3219. However, CS4243 is a must-take but has unmet prerequisites (Statistics courses) that are not required by any other must-take course, making it impossible to take without adding non-required courses.\",\n    \"Even if prerequisites were met, CS3281 must be before CS2105. CS3281 requires CS2103 (or variants). CS2103T is taken. CS2105 requires CS2040 (or variants). CS2040S is completed. The ordering constraint is satisfiable, but the prerequisite gaps for CS4243 and the missing CS4221 prerequisite (CS3223) create insurmountable issues. CS4221 requires CS3223. CS3223 requires CS2040S (done) and CS2102 (must-take). So CS3223 must be after CS2102. CS4221 must be after CS3223. This chain is long. Combined with CS4243's missing stats prereqs, no valid plan exists.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4243 requires prerequisites (e.g., MA1522, CS2030S, CS2040S) which are completed, but also requires Statistics courses (e.g., ST1131, ST2131) and Linear Algebra (MA1522 is done, but ST/MA2001/MA1101R etc. are missing). Specifically, it needs a stats course like ST1131 or ST2131 which are not in the completed list nor the must-take list, and cannot be added as they are not prerequisites for any must-take course.",
+   "CS4218 requires CS3213 or CS3219. CS3219 is a must-take, so CS4218 can follow CS3219. However, CS4243 is a must-take but has unmet prerequisites (Statistics courses) that are not required by any other must-take course, making it impossible to take without adding non-required courses.",
+   "Even if prerequisites were met, CS3281 must be before CS2105. CS3281 requires CS2103 (or variants). CS2103T is taken. CS2105 requires CS2040 (or variants). CS2040S is completed. The ordering constraint is satisfiable, but the prerequisite gaps for CS4243 and the missing CS4221 prerequisite (CS3223) create insurmountable issues. CS4221 requires CS3223. CS3223 requires CS2040S (done) and CS2102 (must-take). So CS3223 must be after CS2102. CS4221 must be after CS3223. This chain is long. Combined with CS4243's missing stats prereqs, no valid plan exists."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS2103T\",\n      \"CS4243\"\n    ],\n    \"4\": [\n      \"CS2102\",\n      \"CS3219\",\n      \"CS3230\",\n      \"CS4218\"\n    ],\n    \"5\": [\n      \"CS3281\",\n      \"CS2105\"\n    ]\n  },\n  \"reasons\": [\n    \"All mandatory courses are scheduled respecting prerequisites and mutual exclusions.\",\n    \"CS2103T and CS4243 are taken together in Sem 3 as requested.\",\n    \"CS3281 is placed in Sem 5 to satisfy the constraint that it comes before CS2105, while minimizing total credits by avoiding unnecessary earlier semesters.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS2103T",
+      "CS4243"
+     ],
+     "4": [
+      "CS2102",
+      "CS3219",
+      "CS3230",
+      "CS4218"
+     ],
+     "5": [
+      "CS3281",
+      "CS2105"
+     ]
+    },
+    "reasons": [
+     "All mandatory courses are scheduled respecting prerequisites and mutual exclusions.",
+     "CS2103T and CS4243 are taken together in Sem 3 as requested.",
+     "CS3281 is placed in Sem 5 to satisfy the constraint that it comes before CS2105, while minimizing total credits by avoiding unnecessary earlier semesters."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11553,
+    "total_tokens": 11772,
+    "completion_tokens": 219,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 6.21,
+    "attempts": 1
+   },
+   "seconds": 6.21,
+   "violations": [
+    "R1 must-take CS4221 missing",
+    "R3 CS3281 not offered in Sem 1 (semester 5)",
+    "R4 CS4218 in semester 4: prerequisite not met (CS3213 or CS3219)",
+    "R4 CS4243 in semester 3: prerequisite not met ((YSC2232 or MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522) and (ST1131 or ST1131A or ST1232 or ST2131 or MA2116 or MA2116T or MA2216 or EE2012A or EE2012 or ST2334 or YSC2243) and (CS2030 or CS2030S or CS2030DE or CS2030HS or CS2113 or CS2113T) and (YSC2229 or CS2040 or CS2040S or CS2040DE or CS2040C or CS2040HS) and (MA1102R or MA2002 or YSC1216 or MA1505 or MA1521 or MA1507 or (MA1512 and MA1511)))",
+    "R9 must rule not met: before CS3281 CS2105"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4243 requires prerequisites (e.g., MA1522, CS2030S, CS2040S) which are completed, but also requires Statistics courses (e.g., ST1131, ST2131) and Linear Algebra (MA1522 is done, but ST/MA2001/MA1101R etc. are missing). Specifically, it needs a stats course like ST1131 or ST2131 which are not in the completed list nor the must-take list, and cannot be added as they are not prerequisites for any must-take course.\",\n    \"CS4218 requires CS3213 or CS3219. CS3219 is a must-take, so CS4218 can follow CS3219. However, CS4243 is a must-take but has unmet prerequisites (Statistics courses) that are not required by any other must-take course, making it impossible to take without adding non-required courses.\",\n    \"Even if prerequisites were met, CS3281 must be before CS2105. CS3281 requires CS2103 (or variants). CS2103T is taken. CS2105 requires CS2040 (or variants). CS2040S is completed. The ordering constraint is satisfiable, but the prerequisite gaps for CS4243 and the missing CS4221 prerequisite (CS3223) create insurmountable issues. CS4221 requires CS3223. CS3223 requires CS2040S (done) and CS2102 (must-take). So CS3223 must be after CS2102. CS4221 must be after CS3223. This chain is long. Combined with CS4243's missing stats prereqs, no valid plan exists.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4243 requires prerequisites (e.g., MA1522, CS2030S, CS2040S) which are completed, but also requires Statistics courses (e.g., ST1131, ST2131) and Linear Algebra (MA1522 is done, but ST/MA2001/MA1101R etc. are missing). Specifically, it needs a stats course like ST1131 or ST2131 which are not in the completed list nor the must-take list, and cannot be added as they are not prerequisites for any must-take course.",
+     "CS4218 requires CS3213 or CS3219. CS3219 is a must-take, so CS4218 can follow CS3219. However, CS4243 is a must-take but has unmet prerequisites (Statistics courses) that are not required by any other must-take course, making it impossible to take without adding non-required courses.",
+     "Even if prerequisites were met, CS3281 must be before CS2105. CS3281 requires CS2103 (or variants). CS2103T is taken. CS2105 requires CS2040 (or variants). CS2040S is completed. The ordering constraint is satisfiable, but the prerequisite gaps for CS4243 and the missing CS4221 prerequisite (CS3223) create insurmountable issues. CS4221 requires CS3223. CS3223 requires CS2040S (done) and CS2102 (must-take). So CS3223 must be after CS2102. CS4221 must be after CS3223. This chain is long. Combined with CS4243's missing stats prereqs, no valid plan exists."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12173,
+    "total_tokens": 12627,
+    "completion_tokens": 454,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 10.36,
+    "attempts": 1
+   },
+   "seconds": 10.36,
+   "violations": null
+  }
+ ]
+}

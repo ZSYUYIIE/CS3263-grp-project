@@ -1,0 +1,63 @@
+{
+ "id": "q2-S1-100",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 127.91,
+ "usage": {
+  "prompt_tokens": 29821,
+  "total_tokens": 38166,
+  "completion_tokens": 8345,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 127.91,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS3213 is offered only in Sem 2, but it requires CS2103T. CS2103T is required for CS3281 and CS4239. CS3281 is offered only in Sem 2. CS3282 requires CS3281. CS4239 requires CS3235 and CS2103T. CS3235 requires CS2105, CS2106, CS2107. CS2106 requires CS2100. CS2100 is offered Sem 1 and 2. CS2105 is offered Sem 1 and 2. CS2107 is offered Sem 1 and 2. CS2103T is offered Sem 1 and 2. CS3213 (Sem 2) needs CS2103T. CS3281 (Sem 2) needs CS2103T. CS3282 (Sem 2) needs CS3281. CS4239 (Sem 1 only) needs CS3235 and CS2103T. CS3235 needs CS2105, CS2106, CS2107. CS2106 needs CS2100. CS2100 needs CS1010... (CS1101S is done). CS2100 is Sem 1/2. CS2105 is Sem 1/2. CS2106 is Sem 1/2. CS2107 is Sem 1/2. CS2103T is Sem 1/2. CS3235 is Sem 1/2. CS4239 is Sem 1 only. To take CS4239 in Sem 1, prerequisites CS3235 and CS2103T must be completed in Sem 1 or earlier. But the student is in Sem 3. They cannot take Sem 1 courses in Sem 3 if they haven't been taken. The student has not completed CS2103T or CS3235. They must take them. CS2103T and CS3235 are offered Sem 1 and 2. The student is in Sem 3. They can take them in Sem 3? No, Sem 3 is Y2S1. Sem 1 is Y1S1. Sem 2 is Y1S2. Sem 3 is Y2S1. Courses offered in 'Sem 1' are offered in odd semesters (1, 3, 5, 7). Courses offered in 'Sem 2' are offered in even semesters (2, 4, 6, 8). Let's re-read the records. CS3213: 'offered: Sem 2'. This means it is offered in even semesters (2, 4, 6, 8). CS3281: 'offered: Sem 2'. Even semesters. CS3240: 'offered: Sem 1'. Odd semesters (1, 3, 5, 7). CS3241: 'offered: Sem 1'. Odd semesters. CS3281: 'offered: Sem 2'. Even semesters. CS4239: 'offered: Sem 1'. Odd semesters. My previous error was interpreting 'Sem 1' as odd and 'Sem 2' as even, but then placing them in the wrong semester numbers relative to the student's current semester. Student is in Sem 3 (Odd). Sem 3 is a 'Sem 1' type semester. Sem 4 is 'Sem 2' type. Sem 5 is 'Sem 1' type. Sem 6 is 'Sem 2' type. Sem 7 is 'Sem 1' type. Sem 8 is 'Sem 2' type. CS3213 (Sem 2) can be taken in 4, 6, 8. CS3281 (Sem 2) can be taken in 4, 6, 8. CS3240 (Sem 1) can be taken in 3, 5, 7. CS3241 (Sem 1) can be taken in 3, 5, 7. CS3281 (Sem 2) needs CS2103T. CS2103T (Sem 1/2) can be taken in 3, 4, 5, 6, 7, 8. CS3282 (Sem 2) needs CS3281. CS4239 (Sem 1) needs CS3235 and CS2103T. CS3235 (Sem 1/2) needs CS2105, CS2106, CS2107. CS2105 (Sem 1/2). CS2106 (Sem 1/2). CS2107 (Sem 1/2). CS2100 (Sem 1/2) needed for CS2106. CS2106 needs CS2100. CS2100 needs CS1010... (CS1101S done). CS2100 is Sem 1/2. CS2109S (Sem 1/2) in Sem 3. CS3264 (Sem 1/2) in Sem 5. CS3230 (Sem 1/2). CS3210 (Sem 1/2). CS4247 (Sem 2) needs CS3241. CS4240 (Sem 2) needs CS3240. Let's re-plan. Sem 3 (Odd): CS2109S (req). CS2100 (for CS2106). CS2107 (for CS3235). CS2103T (for CS3213, CS3281, CS4239, CS3282). CS3241 (for CS4247). CS3240 (for CS4240). CS3230. CS3210. Too many. Sem 3: CS2109S, CS2100, CS2107, CS2103T. (16 MC). Sem 4 (Even, NOC): 0 MC. Sem 5 (Odd): CS3264 (req). CS2106 (ideally Sem 5, needs CS2100 done). CS3240 (needs CS2111? No, CS3240 prereq CS2111. CS2111 not in list. Must add CS2111. CS2111 prereq CS1010A... CS1101S is prereq for CS2111? CS2111 prereq: CS1010A or ... or CS1101S. Yes. So CS2111 eligible. CS2111 in Sem 5? CS3240 needs CS2111. So CS2111 before CS3240. CS2111 in Sem 3 or 5. If Sem 3, Sem 3 has 5 courses. 20 MC. CS2109S, CS2100, CS2107, CS2103T, CS2111. (20 MC). Sem 5: CS3264, CS2106, CS3240. (12 MC). CS3241 (for CS4247) in Sem 5? CS3241 prereq CS2030S, CS2040S. Done. Sem 5: CS3264, CS2106, CS3240, CS3241. (16 MC). Sem 6 (Even): CS3213 (needs CS2103T done). CS3281 (needs CS2103T done). CS3235 (needs CS2105, CS2106, CS2107). CS2105 (late as possible). CS2106 done in Sem 5. CS2107 done in Sem 3. CS2105 can be Sem 6. CS3235 needs CS2105. So CS2105 in Sem 6, CS3235 in Sem 6? No, CS3235 needs CS2105 completed. So CS2105 in Sem 6, CS3235 in Sem 8? Or CS2105 in Sem 6, CS3235 in Sem 6? No, prereq must be completed or corequisite. CS2105 is not corequisite for CS3235. So CS2105 must be before CS3235. CS2105 in Sem 6, CS3235 in Sem 8. CS3213 in Sem 6. CS3281 in Sem 6. CS3230 in Sem 6? CS3230 prereq CS2040S, CS1231S. Done. Sem 6: CS3213, CS3281, CS3230, CS2105. (16 MC). Sem 7 (Odd): CS3210 (needs CS2100 done). CS4247 (needs CS3241 done). CS4240 (needs CS3240 done). CS3210 prereq CS2100. Done. CS4247 prereq CS3241. Done. CS4240 prereq CS3240. Done. Sem 7: CS3210, CS4247, CS4240. (12 MC). Sem 8 (Even): CS3235 (needs CS2105, CS2106, CS2107). All done. CS4239 (needs CS3235, CS2103T). CS3235 in Sem 8? No, CS4239 needs CS3235 completed. So CS3235 in Sem 8, CS4239 cannot be taken. CS3235 must be in Sem 6 or 7. If CS3235 in Sem 6, CS2105 must be before Sem 6. CS2105 in Sem 5? Sem 5 has CS3264, CS2106, CS3240, CS3241. Full. CS2105 in Sem 3? Sem 3 full. CS2105 in Sem 4? NOC. CS2105 in Sem 5? If we move CS3241 to Sem 7? Sem 7 has CS3210, CS4247, CS4240. Add CS3241? 16 MC. Sem 5: CS3264, CS2106, CS3240, CS2105. (16 MC). Sem 6: CS3213, CS3281, CS3230, CS3235. (16 MC). CS3235 needs CS2105 (Sem 5), CS2106 (Sem 5), CS2107 (Sem 3). OK. Sem 7: CS3210, CS4247, CS4240, CS3241. (16 MC). Sem 8: CS4239, CS3282. CS4239 needs CS3235 (Sem 6), CS2103T (Sem 3). OK. CS3282 needs CS3281 (Sem 6). OK. Sem 8: CS4239, CS3282. (8 MC). CS2105 in Sem 5. Is this 'as late as possible'? CS2105 needed for CS3235. CS3235 needed for CS4239. CS4239 must be in Sem 8 (only odd semester left after 7? No, Sem 8 is even. CS4239 is Sem 1 (Odd). So CS4239 must be in Sem 7 or 5 or 3. Sem 3 is current. Sem 5 is available. Sem 7 is available. If CS4239 in Sem 7, CS3235 must be before Sem 7. CS3235 in Sem 6. CS2105 before Sem 6. CS2105 in Sem 5. If CS4239 in Sem 5, CS3235 in Sem 4 (NOC, no). CS3235 in Sem 3? Sem 3 full. So CS4239 in Sem 7 is possible. If CS4239 in Sem 7, CS3235 in Sem 6. CS2105 in Sem 5. Same. Can CS2105 be Sem 6? No, CS3235 needs it. Can CS3235 be Sem 7? No, CS4239 needs it and CS4239 is Sem 1 (Odd). If CS3235 in Sem 7, CS4239 in Sem 7? No, prereq. CS4239 in Sem 9? No. So CS3235 must be Sem 6, CS4239 Sem 7. CS2105 must be before Sem 6. So Sem 5 is the latest for CS2105. So CS2105 in Sem 5 is optimal.\n\n{\"status\": \"PLAN\", \"plan\": {\"3\": [\"CS2109S\", \"CS2100\", \"CS2107\", \"CS2103T\", \"CS2111\"], \"5\": [\"CS3264\", \"CS2106\", \"CS3240\", \"CS2105\"], \"6\": [\"CS3213\", \"CS3281\", \"CS3230\", \"CS3235\"], \"7\": [\"CS3210\", \"CS4247\", \"CS4240\", \"CS3241\"], \"8\": [\"CS4239\", \"CS3282\"]}, \"reasons\": [\"Added CS2111 for CS3240 prereq. Added CS2100, CS2107, CS2103T for downstream prereqs. CS2105 in Sem 5 to allow CS3235 in Sem 6 and CS4239 in Sem 7. CS2106 in Sem 5 as preferred. NOC in Sem 4. CS3241 moved to Sem 7 to fit schedule.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2109S",
+    "CS2100",
+    "CS2107",
+    "CS2103T",
+    "CS2111"
+   ],
+   "5": [
+    "CS3264",
+    "CS2106",
+    "CS3240",
+    "CS2105"
+   ],
+   "6": [
+    "CS3213",
+    "CS3281",
+    "CS3230",
+    "CS3235"
+   ],
+   "7": [
+    "CS3210",
+    "CS4247",
+    "CS4240",
+    "CS3241"
+   ],
+   "8": [
+    "CS4239",
+    "CS3282"
+   ]
+  },
+  "reasons": [
+   "Added CS2111 for CS3240 prereq. Added CS2100, CS2107, CS2103T for downstream prereqs. CS2105 in Sem 5 to allow CS3235 in Sem 6 and CS4239 in Sem 7. CS2106 in Sem 5 as preferred. NOC in Sem 4. CS3241 moved to Sem 7 to fit schedule."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

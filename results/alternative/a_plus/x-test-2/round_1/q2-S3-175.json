@@ -1,0 +1,65 @@
+{
+ "id": "q2-S3-175",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 86.47,
+ "usage": {
+  "prompt_tokens": 6697,
+  "total_tokens": 14395,
+  "completion_tokens": 7698,
+  "prompt_tokens_details": {
+   "cached_tokens": 6528,
+   "created_cache_tokens": 128
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 7522
+  },
+  "finish_reason": "stop",
+  "request_seconds": 86.47,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"1\":[\"CS1101S\",\"MA1521\",\"CS1231\"],\"2\":[\"CS2030\",\"CS2040\",\"MA1522\"],\"3\":[\"CS2103T\",\"CS3230\",\"CS2109S\"],\"4\":[\"CS3219\",\"CS2105\",\"CS2101\"],\"8\":[\"ST2334\",\"ES2660\",\"IS1108\"]},\"reasons\":[\"Added CS2030, CS2040 and CS1231 as prerequisites needed by CS2103T and CS3230.\",\"ST2334 is in semester 8; CS3230 and ES2660 are in different semesters.\",\"CS2101 is before ES2660; each non-empty study semester has 3 modules, and semester 6 is the exchange semester.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1101S",
+    "MA1521",
+    "CS1231"
+   ],
+   "2": [
+    "CS2030",
+    "CS2040",
+    "MA1522"
+   ],
+   "3": [
+    "CS2103T",
+    "CS3230",
+    "CS2109S"
+   ],
+   "4": [
+    "CS3219",
+    "CS2105",
+    "CS2101"
+   ],
+   "8": [
+    "ST2334",
+    "ES2660",
+    "IS1108"
+   ]
+  },
+  "reasons": [
+   "Added CS2030, CS2040 and CS1231 as prerequisites needed by CS2103T and CS3230.",
+   "ST2334 is in semester 8; CS3230 and ES2660 are in different semesters.",
+   "CS2101 is before ES2660; each non-empty study semester has 3 modules, and semester 6 is the exchange semester."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

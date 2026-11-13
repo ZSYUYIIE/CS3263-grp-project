@@ -1,0 +1,92 @@
+{
+ "id": "q2-S3-030",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 35.96,
+ "usage": {
+  "prompt_tokens": 29252,
+  "total_tokens": 31767,
+  "completion_tokens": 2515,
+  "finish_reason": "stop",
+  "request_seconds": 35.96,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"ST2334 must be in Sem 8, but CS3219 must precede it, so CS3219 must be in Sem 7 or earlier. ATAP is in Sem 7. Sem 7 cannot host CS3219 if it is the last semester used, as ATAP cannot be in the last semester used (Rule 11). If Sem 8 is used for CS3230 and ST2334, Sem 7 is not the last semester. However, ATAP (12MC) + other courses in Sem 7 is limited to 8MC extra. CS3219 (4MC) fits. But CS3219 must be before ST2334. If ST2334 is in Sem 8, CS3219 can be in Sem 7. The conflict is that ATAP cannot be in the 'last semester used'. If Sem 8 has courses, Sem 7 is not the last. So ATAP in Sem 7 is allowed if Sem 8 has courses. Let's re-read Rule 11: 'Plan it... never in the last semester used (some course must be planned in a later semester)'. If Sem 8 has CS3230 and ST2334, Sem 7 is not the last. So ATAP in Sem 7 is valid. Why did the previous answer fail? 'R11 ATAP in semester 7, the last semester used'. This implies the previous plan had no courses in Sem 8. My revised plan has courses in Sem 8. Let's check prerequisites. CS3219 needs CS2103T (completed). CS3230 needs CS2040S (completed) and CS1231S (completed). ST2334 needs MA1521 (completed). CS2109S needs CS2040S (completed) and Math (MA1521 completed). CS2106 needs CS2100 (completed). CS2105 needs CS2040S (completed). CS2102 needs CS2030S (completed) and CS1231S (completed). All prerequisites met. Constraints: CS3219 before ST2334 (Sem 7 before Sem 8 - OK). CS2109S and ST2334 apart (Sem 6 and Sem 8 - OK). ST2334 in Sem 8 (OK). ATAP in Sem 7 (OK, Sem 8 has courses). CS2102 before CS2106 (Sem 4 before Sem 6 - OK). CS3219 as early as possible. Can CS3219 be in Sem 6? Sem 6 has CS2105, CS2106, CS2109S. That's 12MC. Limit 20MC. We can add CS3219 (4MC) to Sem 6. Total 16MC. This is earlier than Sem 7. So CS3219 should be in Sem 6. Then Sem 7 is ATAP + remaining courses? Remaining: CS3210, CS3230. CS3210 needs CS2100 (done). CS3230 needs CS2040S, CS1231S (done). Can we put CS3210 and CS3230 in Sem 7? ATAP (12MC) + CS3210 (4MC) + CS3230 (4MC) = 20MC total, but ATAP's 12MC doesn't count against the 20MC limit. The rule says: 'The other courses in the ATAP semester total at most 8 MC'. CS3210 (4) + CS3230 (4) = 8MC. This fits exactly. So Sem 7: CP3880, CS3210, CS3230. Sem 8: ST2334. Sem 6: CS2102, CS2105, CS2106, CS2109S, CS3219. Wait, CS2102 was planned in Sem 4 in previous attempt. Can CS2102 be in Sem 6? Yes. But CS2102 is 4MC. Sem 6 would have CS2105 (4), CS2106 (4), CS2109S (4), CS3219 (4), CS2102 (4) = 20MC. This fits. Is CS2102 needed before CS2106? Yes, 'Ideally'. It is in Sem 6, same semester? No, 'before' usually means earlier semester. 'CS2102 before CS2106'. If both in Sem 6, is that 'before'? Usually no. So CS2102 should be in Sem 4 or 5. Sem 5 is exchange (0 MC). So CS2102 in Sem 4. Sem 4: CS2102. Sem 6: CS2105, CS2106, CS2109S, CS3219. Sem 7: CP3880, CS3210, CS3230. Sem 8: ST2334. Check CS3219 before ST2334: Sem 6 before Sem 8. OK. Check CS2109S and ST2334 apart: Sem 6 and Sem 8. OK. Check ST2334 in Sem 8. OK. Check ATAP in Sem 7, not last (Sem 8 has ST2334). OK. Check ATAP other courses <= 8MC: CS3210 (4) + CS3230 (4) = 8MC. OK. Check Sem 6 MC: 20MC. OK. Check Sem 4 MC: 4MC. OK. This plan works.\", \"plan\": {\"4\": [\"CS2102\"], \"6\": [\"CS2105\", \"CS2106\", \"CS2109S\", \"CS3219\"], \"7\": [\"CP3880\", \"CS3210\", \"CS3230\"], \"8\": [\"ST2334\"]}, \"reasons\": [\"ST2334 in Sem 8 as required. CS3219 in Sem 6 (before ST2334). ATAP in Sem 7 with CS3210 and CS3230 (8MC total, within limit). CS2102 in Sem 4 (before CS2106 in Sem 6). CS2109S and ST2334 separated.\"]}",
+ "answer": {
+  "status": "NO_PLAN"
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS2102\"], \"6\": [\"CS2105\", \"CS2106\", \"CS2109S\", \"ST2334\"], \"7\": [\"CP3880\", \"CS3210\", \"CS3219\", \"CS3230\"], \"8\": []}, \"reasons\": [\"ATAP (CP3880) planned in Sem 7 as requested. Sem 5 is exchange (0 MC). CS3219 and CS3230 prerequisites met by completed courses. CS2109S and ST2334 not taken together. ST2334 taken in Sem 6, but student mandated Sem 8. Conflict detected? No, student said 'must take ST2334 in year 4 semester 2'. Wait, rule 7 says 'Every must/has to wish holds'. Student said 'I must take ST2334 in year 4 semester 2'. My plan puts it in Sem 6. This violates the 'must' wish. I must put ST2334 in Sem 8. Let's re-evaluate.\", \"Re-planning with ST2334 in Sem 8. Sem 6: CS2105, CS2106, CS2109S. Sem 7: CP3880, CS3210, CS3219, CS3230. Sem 8: ST2334. CS3219 before ST2334 holds. CS2102 before CS2106 holds (Sem 4 vs Sem 6). CS3219 as early as possible (Sem 7). Fewest semesters used is 8. Is it possible to finish earlier? No, Sem 8 is last. Can we move ST2334 to Sem 7? No, ATAP is Sem 7, and ST2334 is 4MC, ATAP other courses max 8MC. If we put ST2334 in Sem 7, we have CP3880 (12) + ST2334 (4) + others. Max 8MC for others. We have CS3210, CS3219, CS3230 left. That's 12MC. Too many. So Sem 7 must be ATAP + light load or just ATAP? Student didn't say ATAP must have other courses. But we have CS3210, CS3219, CS3230 to fit. They need prerequisites. CS3210 needs CS2100 (done). CS3219 needs CS2103T (done). CS3230 needs CS2040S (done) and CS1231S (done). So they can be in Sem 7. If Sem 7 is ATAP, we can take up to 8MC of other courses. CS3210 (4) + CS3219 (4) = 8MC. CS3230 (4) would be 12MC. So we can take CS3210 and CS3219 in Sem 7. CS3230 must go to Sem 8. But ST2334 must be in Sem 8. So Sem 8 has ST2334 and CS3230. Total 8MC. This works. So Plan: Sem 4: CS2102. Sem 6: CS2105, CS2106, CS2109S. Sem 7: CP3880, CS3210, CS3219. Sem 8: CS3230, ST2334. This satisfies all 'must' wishes. ST2334 in Sem 8. CS3219 before ST2334. CS2102 before CS2106. ATAP in Sem 7. Fewest semesters (8).\", \"Final Plan: Sem 4: CS2102. Sem 6: CS2105, CS2106, CS2109S. Sem 7: CP3880, CS3210, CS3219. Sem 8: CS3230, ST2334.\"}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "CS2102"
+     ],
+     "6": [
+      "CS2105",
+      "CS2106",
+      "CS2109S",
+      "ST2334"
+     ],
+     "7": [
+      "CP3880",
+      "CS3210",
+      "CS3219",
+      "CS3230"
+     ],
+     "8": []
+    }
+   },
+   "repair": "cut_reasons",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 14069,
+    "total_tokens": 15047,
+    "completion_tokens": 978,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 16.35,
+    "attempts": 1
+   },
+   "seconds": 16.35,
+   "violations": [
+    "R9 must rule not met: before CS3219 ST2334",
+    "R9 must rule not met: apart CS2109S ST2334",
+    "R9 must rule not met: ST2334 in semester 8",
+    "R11 ATAP in semester 7, the last semester used",
+    "R11 12 MC beside ATAP in semester 7"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"ST2334 must be in Sem 8, but CS3219 must precede it, so CS3219 must be in Sem 7 or earlier. ATAP is in Sem 7. Sem 7 cannot host CS3219 if it is the last semester used, as ATAP cannot be in the last semester used (Rule 11). If Sem 8 is used for CS3230 and ST2334, Sem 7 is not the last semester. However, ATAP (12MC) + other courses in Sem 7 is limited to 8MC extra. CS3219 (4MC) fits. But CS3219 must be before ST2334. If ST2334 is in Sem 8, CS3219 can be in Sem 7. The conflict is that ATAP cannot be in the 'last semester used'. If Sem 8 has courses, Sem 7 is not the last. So ATAP in Sem 7 is allowed if Sem 8 has courses. Let's re-read Rule 11: 'Plan it... never in the last semester used (some course must be planned in a later semester)'. If Sem 8 has CS3230 and ST2334, Sem 7 is not the last. So ATAP in Sem 7 is valid. Why did the previous answer fail? 'R11 ATAP in semester 7, the last semester used'. This implies the previous plan had no courses in Sem 8. My revised plan has courses in Sem 8. Let's check prerequisites. CS3219 needs CS2103T (completed). CS3230 needs CS2040S (completed) and CS1231S (completed). ST2334 needs MA1521 (completed). CS2109S needs CS2040S (completed) and Math (MA1521 completed). CS2106 needs CS2100 (completed). CS2105 needs CS2040S (completed). CS2102 needs CS2030S (completed) and CS1231S (completed). All prerequisites met. Constraints: CS3219 before ST2334 (Sem 7 before Sem 8 - OK). CS2109S and ST2334 apart (Sem 6 and Sem 8 - OK). ST2334 in Sem 8 (OK). ATAP in Sem 7 (OK, Sem 8 has courses). CS2102 before CS2106 (Sem 4 before Sem 6 - OK). CS3219 as early as possible. Can CS3219 be in Sem 6? Sem 6 has CS2105, CS2106, CS2109S. That's 12MC. Limit 20MC. We can add CS3219 (4MC) to Sem 6. Total 16MC. This is earlier than Sem 7. So CS3219 should be in Sem 6. Then Sem 7 is ATAP + remaining courses? Remaining: CS3210, CS3230. CS3210 needs CS2100 (done). CS3230 needs CS2040S, CS1231S (done). Can we put CS3210 and CS3230 in Sem 7? ATAP (12MC) + CS3210 (4MC) + CS3230 (4MC) = 20MC total, but ATAP's 12MC doesn't count against the 20MC limit. The rule says: 'The other courses in the ATAP semester total at most 8 MC'. CS3210 (4) + CS3230 (4) = 8MC. This fits exactly. So Sem 7: CP3880, CS3210, CS3230. Sem 8: ST2334. Sem 6: CS2102, CS2105, CS2106, CS2109S, CS3219. Wait, CS2102 was planned in Sem 4 in previous attempt. Can CS2102 be in Sem 6? Yes. But CS2102 is 4MC. Sem 6 would have CS2105 (4), CS2106 (4), CS2109S (4), CS3219 (4), CS2102 (4) = 20MC. This fits. Is CS2102 needed before CS2106? Yes, 'Ideally'. It is in Sem 6, same semester? No, 'before' usually means earlier semester. 'CS2102 before CS2106'. If both in Sem 6, is that 'before'? Usually no. So CS2102 should be in Sem 4 or 5. Sem 5 is exchange (0 MC). So CS2102 in Sem 4. Sem 4: CS2102. Sem 6: CS2105, CS2106, CS2109S, CS3219. Sem 7: CP3880, CS3210, CS3230. Sem 8: ST2334. Check CS3219 before ST2334: Sem 6 before Sem 8. OK. Check CS2109S and ST2334 apart: Sem 6 and Sem 8. OK. Check ST2334 in Sem 8. OK. Check ATAP in Sem 7, not last (Sem 8 has ST2334). OK. Check ATAP other courses <= 8MC: CS3210 (4) + CS3230 (4) = 8MC. OK. Check Sem 6 MC: 20MC. OK. Check Sem 4 MC: 4MC. OK. This plan works.\", \"plan\": {\"4\": [\"CS2102\"], \"6\": [\"CS2105\", \"CS2106\", \"CS2109S\", \"CS3219\"], \"7\": [\"CP3880\", \"CS3210\", \"CS3230\"], \"8\": [\"ST2334\"]}, \"reasons\": [\"ST2334 in Sem 8 as required. CS3219 in Sem 6 (before ST2334). ATAP in Sem 7 with CS3210 and CS3230 (8MC total, within limit). CS2102 in Sem 4 (before CS2106 in Sem 6). CS2109S and ST2334 separated.\"]}",
+   "answer": {
+    "status": "NO_PLAN"
+   },
+   "repair": "cut_reasons",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 15183,
+    "total_tokens": 16720,
+    "completion_tokens": 1537,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 19.61,
+    "attempts": 1
+   },
+   "seconds": 19.61,
+   "violations": null
+  }
+ ]
+}

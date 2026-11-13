@@ -1,0 +1,109 @@
+{
+ "id": "q2-S4-019",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 5.65,
+ "usage": {
+  "prompt_tokens": 25995,
+  "total_tokens": 26283,
+  "completion_tokens": 288,
+  "finish_reason": "stop",
+  "request_seconds": 5.65,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3249 requires CS2111 which is not completed and not in the mandatory list.\",\n    \"CS4246 requires CS3243 or CS3263 which are not completed and not in the mandatory list.\",\n    \"CS2109S requires MA1511 and MA1512 which are not completed and not in the mandatory list.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3249 requires CS2111 which is not completed and not in the mandatory list.",
+   "CS4246 requires CS3243 or CS3263 which are not completed and not in the mandatory list.",
+   "CS2109S requires MA1511 and MA1512 which are not completed and not in the mandatory list."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS2102\",\n      \"CS2109S\",\n      \"CS3230\"\n    ],\n    \"8\": [\n      \"CS2106\",\n      \"CS3249\",\n      \"CS4246\",\n      \"CS4248\"\n    ]\n  },\n  \"reasons\": [\n    \"Semester 7 is a leave of absence (0 MC).\",\n    \"CS2102 and CS2109S prerequisites are satisfied by completed modules.\",\n    \"CS4246 and CS4248 prerequisites are satisfied by planned modules in Sem 6.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS2102",
+      "CS2109S",
+      "CS3230"
+     ],
+     "8": [
+      "CS2106",
+      "CS3249",
+      "CS4246",
+      "CS4248"
+     ]
+    },
+    "reasons": [
+     "Semester 7 is a leave of absence (0 MC).",
+     "CS2102 and CS2109S prerequisites are satisfied by completed modules.",
+     "CS4246 and CS4248 prerequisites are satisfied by planned modules in Sem 6."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12780,
+    "total_tokens": 12957,
+    "completion_tokens": 177,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.33,
+    "attempts": 1
+   },
+   "seconds": 3.33,
+   "violations": [
+    "R3 CS3249 not offered in Sem 2 (semester 8)",
+    "R4 CS3249 in semester 8: prerequisite not met (CS2111)",
+    "R4 CS4246 in semester 8: prerequisite not met ((EE2012A or EE2012 or ST2132 or ST2334 or ((ST2131 or MA2116 or MA2116T or MA2216) and (ST1131 or ST1232 or DCS2008 or ST1131A))) and (CS3243 or CS3263))",
+    "R7 semester 8 has 16 MC, limit 12",
+    "R9 must rule not met: before CS3249 CS4246",
+    "R9 must rule not met: apart CS2102 CS2109S"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3249 requires CS2111 which is not completed and not in the mandatory list.\",\n    \"CS4246 requires CS3243 or CS3263 which are not completed and not in the mandatory list.\",\n    \"CS2109S requires MA1511 and MA1512 which are not completed and not in the mandatory list.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3249 requires CS2111 which is not completed and not in the mandatory list.",
+     "CS4246 requires CS3243 or CS3263 which are not completed and not in the mandatory list.",
+     "CS2109S requires MA1511 and MA1512 which are not completed and not in the mandatory list."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 13215,
+    "total_tokens": 13326,
+    "completion_tokens": 111,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 2.32,
+    "attempts": 1
+   },
+   "seconds": 2.32,
+   "violations": null
+  }
+ ]
+}

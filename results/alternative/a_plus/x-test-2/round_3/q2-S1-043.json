@@ -1,0 +1,68 @@
+{
+ "id": "q2-S1-043",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 106.7,
+ "usage": {
+  "prompt_tokens": 10268,
+  "total_tokens": 19479,
+  "completion_tokens": 9211,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 8704
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 9012
+  },
+  "finish_reason": "stop",
+  "request_seconds": 106.7,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"1\":[\"CS1010\",\"CS1231\",\"MA1521\",\"MA1522\"],\"2\":[\"IS1108\",\"CS2030\",\"CS2100\"],\"4\":[\"CS2040S\",\"ST2334\",\"CS2106\"],\"5\":[\"CS2105\",\"CS3244\",\"CS2102\"],\"6\":[\"CS4262\",\"CS4243\"],\"7\":[\"CS2101\"]},\"reasons\":[\"Semester 3 is left empty for the LOA; all prerequisites are completed in strictly earlier semesters.\",\"ST2334 is in semester 4 and CS2101 in semester 7 as preferred; MA1522 is before CS2106.\",\"CS2105 cannot precede CS2040S because CS2105 requires CS2040S; CS4262 and CS2102 are in different semesters; final-exam data is not in the records.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1010",
+    "CS1231",
+    "MA1521",
+    "MA1522"
+   ],
+   "2": [
+    "IS1108",
+    "CS2030",
+    "CS2100"
+   ],
+   "4": [
+    "CS2040S",
+    "ST2334",
+    "CS2106"
+   ],
+   "5": [
+    "CS2105",
+    "CS3244",
+    "CS2102"
+   ],
+   "6": [
+    "CS4262",
+    "CS4243"
+   ],
+   "7": [
+    "CS2101"
+   ]
+  },
+  "reasons": [
+   "Semester 3 is left empty for the LOA; all prerequisites are completed in strictly earlier semesters.",
+   "ST2334 is in semester 4 and CS2101 in semester 7 as preferred; MA1522 is before CS2106.",
+   "CS2105 cannot precede CS2040S because CS2105 requires CS2040S; CS4262 and CS2102 are in different semesters; final-exam data is not in the records."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,111 @@
+{
+ "id": "q2-S3-242",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 10.39,
+ "usage": {
+  "prompt_tokens": 23809,
+  "total_tokens": 24255,
+  "completion_tokens": 446,
+  "finish_reason": "stop",
+  "request_seconds": 10.39,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4243 requires MA1522 (completed) and CS2030S (completed), but also requires a Statistics course (e.g., ST1131, ST2131, MA2116) which is not in the student's completed list nor in the required list. Without a Statistics course, CS4243 cannot be taken.\",\n    \"CS4221 requires CS3223, which is not in the student's required list. CS3223 requires CS2102 and CS2040S. Even if CS2102 is taken, CS3223 is missing from the plan, making CS4221 impossible.\",\n    \"CS4218 requires CS3213 or CS3219. CS3219 requires CS2103T (planned). CS3213 requires CS2103T (planned). However, CS4221 is impossible due to missing CS3223, and CS4243 is impossible due to missing Statistics prerequisite.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4243 requires MA1522 (completed) and CS2030S (completed), but also requires a Statistics course (e.g., ST1131, ST2131, MA2116) which is not in the student's completed list nor in the required list. Without a Statistics course, CS4243 cannot be taken.",
+   "CS4221 requires CS3223, which is not in the student's required list. CS3223 requires CS2102 and CS2040S. Even if CS2102 is taken, CS3223 is missing from the plan, making CS4221 impossible.",
+   "CS4218 requires CS3213 or CS3219. CS3219 requires CS2103T (planned). CS3213 requires CS2103T (planned). However, CS4221 is impossible due to missing CS3223, and CS4243 is impossible due to missing Statistics prerequisite."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"3\": [\"CS2100\", \"CS3230\"], \"4\": [\"CS2103T\", \"CS4243\"], \"5\": [\"CS2102\", \"CS3281\"], \"6\": [\"CS4218\", \"CS2105\", \"CS3219\"], \"7\": [\"CS4221\"]}, \"reasons\": [\"All prerequisites satisfied by completed or earlier planned courses.\", \"Soft wishes met: CS3230 in Y2S1, CS4243 in Y4S1 (closest to Y4S2 given dependencies), CS2102 before CS2103T.\", \"Total MC minimized by taking 4 MC modules per semester where possible, avoiding unnecessary load.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS3230"
+     ],
+     "4": [
+      "CS2103T",
+      "CS4243"
+     ],
+     "5": [
+      "CS2102",
+      "CS3281"
+     ],
+     "6": [
+      "CS4218",
+      "CS2105",
+      "CS3219"
+     ],
+     "7": [
+      "CS4221"
+     ]
+    },
+    "reasons": [
+     "All prerequisites satisfied by completed or earlier planned courses.",
+     "Soft wishes met: CS3230 in Y2S1, CS4243 in Y4S1 (closest to Y4S2 given dependencies), CS2102 before CS2103T.",
+     "Total MC minimized by taking 4 MC modules per semester where possible, avoiding unnecessary load."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11608,
+    "total_tokens": 11789,
+    "completion_tokens": 181,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.37,
+    "attempts": 1
+   },
+   "seconds": 4.37,
+   "violations": [
+    "R3 CS3281 not offered in Sem 1 (semester 5)",
+    "R4 CS4218 in semester 6: prerequisite not met (CS3213 or CS3219)",
+    "R3 CS4221 not offered in Sem 1 (semester 7)",
+    "R4 CS4221 in semester 7: prerequisite not met (CS3223)",
+    "R4 CS4243 in semester 4: prerequisite not met ((YSC2232 or MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522) and (ST1131 or ST1131A or ST1232 or ST2131 or MA2116 or MA2116T or MA2216 or EE2012A or EE2012 or ST2334 or YSC2243) and (CS2030 or CS2030S or CS2030DE or CS2030HS or CS2113 or CS2113T) and (YSC2229 or CS2040 or CS2040S or CS2040DE or CS2040C or CS2040HS) and (MA1102R or MA2002 or YSC1216 or MA1505 or MA1521 or MA1507 or (MA1512 and MA1511)))"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4243 requires MA1522 (completed) and CS2030S (completed), but also requires a Statistics course (e.g., ST1131, ST2131, MA2116) which is not in the student's completed list nor in the required list. Without a Statistics course, CS4243 cannot be taken.\",\n    \"CS4221 requires CS3223, which is not in the student's required list. CS3223 requires CS2102 and CS2040S. Even if CS2102 is taken, CS3223 is missing from the plan, making CS4221 impossible.\",\n    \"CS4218 requires CS3213 or CS3219. CS3219 requires CS2103T (planned). CS3213 requires CS2103T (planned). However, CS4221 is impossible due to missing CS3223, and CS4243 is impossible due to missing Statistics prerequisite.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4243 requires MA1522 (completed) and CS2030S (completed), but also requires a Statistics course (e.g., ST1131, ST2131, MA2116) which is not in the student's completed list nor in the required list. Without a Statistics course, CS4243 cannot be taken.",
+     "CS4221 requires CS3223, which is not in the student's required list. CS3223 requires CS2102 and CS2040S. Even if CS2102 is taken, CS3223 is missing from the plan, making CS4221 impossible.",
+     "CS4218 requires CS3213 or CS3219. CS3219 requires CS2103T (planned). CS3213 requires CS2103T (planned). However, CS4221 is impossible due to missing CS3223, and CS4243 is impossible due to missing Statistics prerequisite."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12201,
+    "total_tokens": 12466,
+    "completion_tokens": 265,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 6.02,
+    "attempts": 1
+   },
+   "seconds": 6.02,
+   "violations": null
+  }
+ ]
+}

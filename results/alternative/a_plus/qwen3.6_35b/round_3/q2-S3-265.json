@@ -1,0 +1,52 @@
+{
+ "id": "q2-S3-265",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 60.79,
+ "usage": {
+  "prompt_tokens": 8946,
+  "total_tokens": 12238,
+  "completion_tokens": 3292,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 60.79,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4226 requires EE2012A or EE2012 or ST2334 or ESP2107 as prerequisite. The student has not completed any of these, and none are in the list of mandatory courses to be taken. EE2012A is not offered in AY2026/27. EE2012 requires MA1511 and MA1512, which the student has not completed. ST2334 is a mandatory course but cannot serve as its own prerequisite for CS4226 in the same semester if CS4226 is also required, and even if taken earlier, CS4226 is offered only in Sem 1. The student is in Sem 4. To take CS4226 in Sem 5 (Y3S1), ST2334 must be completed by Sem 4. However, CS4226 is also offered in Sem 7 (Y4S1). If the student takes CS4226 in Sem 7, they need ST2334 (or EE2012/ESP2107) completed by Sem 6. ST2334 is offered in Sem 1 and Sem 2. The student can take ST2334 in Sem 5 or Sem 6. But wait, CS4226 is offered in Sem 1 and Sem 7. The student is in Sem 4. They can take CS4226 in Sem 5? No, Sem 5 is Y3S1, which is Sem 1 of the academic year. CS4226 is offered in Sem 1. So Sem 5 is valid for CS4226. Prerequisite for CS4226 is (CS2105 or EE3204 or EE3204E or EE4204) AND (EE2012A or EE2012 or MA2216 or ST2131 or ST2334 or MA2116 or MA2116T). The student must take CS2105. CS2105 is offered in Sem 1 and Sem 2. Sem 5 is Sem 1. So CS2105 can be taken in Sem 5. Prerequisite for CS2105 is YSC2229 or CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS. Student has CS2040S. So CS2105 is eligible in Sem 5. For CS4226 in Sem 5, the student needs the second part of the prerequisite: (EE2012A or EE2012 or MA2216 or ST2131 or ST2334 or MA2116 or MA2116T). The student has not completed any of these. They must take one of them. ST2334 is a mandatory course. If they take ST2334 in Sem 5, it is a corequisite? No, prerequisites must be completed or planned in a strictly earlier semester. Corequisites in the same or earlier. The record for CS4226 does not list corequisites. So ST2334 must be completed before Sem 5. But the student is in Sem 4. They can take ST2334 in Sem 4? ST2334 is offered in Sem 1 and Sem 2. Sem 4 is Sem 2. So ST2334 can be taken in Sem 4. If ST2334 is taken in Sem 4, it is completed before Sem 5. So CS4226 can be taken in Sem 5. Let's re-verify. Sem 4: Take ST2334. Sem 5: Take CS2105 and CS4226. Is CS2105 eligible in Sem 5? Yes. Is CS4226 eligible in Sem 5? Yes, if ST2334 is completed in Sem 4. But wait, CS4226 is offered in Sem 1. Sem 5 is Sem 1 of Y3. So yes. What about CS3103? Prerequisite: CS2105 or EE3204 or EE3204E or EE4204. CS3103 is offered in Sem 1. Sem 5 is Sem 1. So CS3103 can be taken in Sem 5. But it requires CS2105. If CS2105 is taken in Sem 5, CS3103 cannot be taken in Sem 5 because CS2105 is not completed before Sem 5. CS3103 must be taken in a later semester where CS2105 is completed. CS3103 is offered only in Sem 1. Sem 7 is Sem 1 of Y4. So CS3103 can be taken in Sem 7. Prerequisite CS2105 must be completed by Sem 6. CS2105 can be taken in Sem 5. So Sem 5: CS2105, CS4226, ST2334? No, ST2334 in Sem 4. Sem 5: CS2105, CS4226. Sem 6: Empty? Or other courses. Sem 7: CS3103. What about CS3230 and CS3234? CS3234 is offered in Sem 2. Sem 6 is Sem 2. CS3230 is offered in Sem 1 and Sem 2. Sem 5 is Sem 1. Sem 6 is Sem 2. Prerequisite for CS3230: (YSC2229 or CS2040S or CS2040 or CS2040C or CS2040DE or CS2040HS) and (CS1231 or CS1231S or MA1100T or MA1100). Student has CS2040S and CS1231S. So CS3230 is eligible in Sem 5. Prerequisite for CS3234: CS1231 or CS1231S or MA1100T or MA1100. Student has CS1231S. So CS3234 is eligible in Sem 6. Constraint: CS2109S must come before CS3234. CS2109S is offered in Sem 1 and Sem 2. Student must take CS2109S in Y3S1 (Sem 5). So CS2109S in Sem 5. CS3234 in Sem 6. This satisfies \"CS2109S before CS3234\". What about CS2102? Prerequisite: (CS1231 or MA1100 or MA1100T or CS1231S) and (CS2030S or CS2030DE or CS2030HS or YSC2229 or CS2040 or CS2040C or CS2040S or CS2040DE or CS2040HS). Student has CS1231S and CS2040S. So CS2102 is eligible. Offered Sem 1 and Sem 2. Can be taken in Sem 5 or Sem 6. What about MC limits? Sem 4: ST2334 (4 MC). Sem 5: CS2105 (4), CS4226 (4), CS2109S (4), CS3230 (4), CS2102 (4). Total 20 MC. Sem 6: CS3234 (4). Sem 7: CS3103 (4). This looks like a valid plan. Why did I think NO_PLAN? Let's re-read CS4226 prerequisite. (CS2105 or EE3204 or EE3204E or EE4204) AND (EE2012A or EE2012 or MA2216 or ST2131 or ST2334 or MA2116 or MA2116T). Student takes ST2334 in Sem 4. So ST2334 is completed before Sem 5. CS2105 is taken in Sem 5. Is CS2105 a prerequisite for CS4226? Yes. Is it completed before Sem 5? No, it is taken in Sem 5. Prerequisites must be completed or planned in a STRICTLY earlier semester. Corequisites in the same or earlier. CS4226 does not list CS2105 as a corequisite. So CS2105 must be completed before Sem 5. But CS2105 is offered in Sem 1 and Sem 2. Sem 4 is Sem 2. So CS2105 can be taken in Sem 4. If CS2105 is taken in Sem 4, then CS4226 can be taken in Sem 5. Let's check Sem 4 load. Sem 4: ST2334 (4), CS2105 (4). Total 8 MC. Sem 5: CS4226 (4), CS2109S (4), CS3230 (4), CS2102 (4). Total 16 MC. Sem 6: CS3234 (4). Sem 7: CS3103 (4). This works. Is there any other constraint? CS2109S must be in Y3S1 (Sem 5). Yes. CS2109S before CS3234. CS3234 in Sem 6. Yes. CS3103 in Sem 7. Yes. CS4226 in Sem 5. Yes. CS3230 in Sem 5. Yes. CS2102 in Sem 5. Yes. ST2334 in Sem 4. Yes. All mandatory courses are planned. No added courses. MC limits respected. Graduation in Sem 7. Is it possible to graduate in Sem 6? CS3103 is only offered in Sem 1. Sem 6 is Sem 2. So CS3103 cannot be taken in Sem 6. Must be Sem 7 or later. So Sem 7 is the earliest. So the plan is valid. Status should be PLAN.\n\nLet's double check CS4226 prerequisite again. \"prerequisite: (CS2105 or EE3204 or EE3204E or EE4204) and (EE2012A or EE2012 or MA2216 or ST2131 or ST2334 or MA2116 or MA2116T)\".\nIf CS2105 is taken in Sem 4, it is completed before Sem 5.\nIf ST2334 is taken in Sem 4, it is completed before Sem 5.\nSo CS4226 is eligible in Sem 5.\n\nSem 4: CS2105, ST2334.\nSem 5: CS4226, CS2109S, CS3230, CS2102.\nSem 6: CS3234.\nSem 7: CS3103.\n\nCheck CS3230 prerequisite: (YSC2229 or CS2040S or CS2040 or CS2040C or CS2040DE or CS2040HS) and (CS1231 or CS1231S or MA1100T or MA1100).\nStudent has CS2040S and CS1231S. Eligible.\n\nCheck CS2102 prerequisite: (CS1231 or MA1100 or MA1100T or CS1231S) and (CS2030S or CS2030DE or CS2030HS or YSC2229 or CS2040 or CS2040C or CS2040S or CS2040DE or CS2040HS).\nStudent has CS1231S and CS2040S. Eligible.\n\nCheck CS2109S prerequisite: (YSC2229 or CS2040S or CS2040C or CS2040HS or CS2040 or CS2040DE) and ((MA1511 and MA1512) or MA1521 or MA2002 or MA1102R or MA1312 or MA1507 or MA1505).\nStudent has CS2040S. Student has MA1521. Eligible.\n\nCheck CS3234 prerequisite: CS1231 or CS1231S or MA1100T or MA1100.\nStudent has CS1231S. Eligible.\n\nCheck CS3103 prerequisite: CS2105 or EE3204 or EE3204E or EE4204.\nStudent takes CS2105 in Sem 4. Completed before Sem 7. Eligible.\n\nCheck CS4226 prerequisite: (CS2105 or ...) and (... ST2334 ...).\nCS2105 taken in Sem 4. ST2334 taken in Sem 4. Both completed before Sem 5. Eligible.\n\nAll constraints satisfied.\n\n{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS2105\", \"ST2334\"], \"5\": [\"CS4226\", \"CS2109S\", \"CS3230\", \"CS2102\"], \"6\": [\"CS3234\"], \"7\": [\"CS3103\"]}, \"reasons\": [\"CS4226 requires CS2105 and ST2334 as prerequisites, which are completed in Sem 4.\", \"CS3103 is only offered in Sem 1, so it must be taken in Sem 7 after CS2105 is completed.\", \"CS2109S is taken in Sem 5 as required, before CS3234 in Sem 6.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2105",
+    "ST2334"
+   ],
+   "5": [
+    "CS4226",
+    "CS2109S",
+    "CS3230",
+    "CS2102"
+   ],
+   "6": [
+    "CS3234"
+   ],
+   "7": [
+    "CS3103"
+   ]
+  },
+  "reasons": [
+   "CS4226 requires CS2105 and ST2334 as prerequisites, which are completed in Sem 4.",
+   "CS3103 is only offered in Sem 1, so it must be taken in Sem 7 after CS2105 is completed.",
+   "CS2109S is taken in Sem 5 as required, before CS3234 in Sem 6."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

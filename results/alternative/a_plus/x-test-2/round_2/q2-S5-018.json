@@ -1,0 +1,55 @@
+{
+ "id": "q2-S5-018",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 2,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 35.74,
+ "usage": {
+  "prompt_tokens": 11061,
+  "total_tokens": 13759,
+  "completion_tokens": 2698,
+  "prompt_tokens_details": {
+   "cached_tokens": 10752,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2565
+  },
+  "finish_reason": "stop",
+  "request_seconds": 35.74,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"ES2660\",\"CS4222\",\"CS4218\",\"CS2107\"],\"7\":[\"CS2102\",\"CS3235\",\"CS4243\"],\"8\":[\"CS4231\",\"CS3211\"]},\"reasons\":[\"Added CS2107 because it is a prerequisite for CS3235.\",\"ES2660 is before CS2102 in Y4S1; CS4218 and CS2107 are before CS3235.\",\"CS4222 is as early as possible and is not with CS4231; CS3211 and CS4218 are apart.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "ES2660",
+    "CS4222",
+    "CS4218",
+    "CS2107"
+   ],
+   "7": [
+    "CS2102",
+    "CS3235",
+    "CS4243"
+   ],
+   "8": [
+    "CS4231",
+    "CS3211"
+   ]
+  },
+  "reasons": [
+   "Added CS2107 because it is a prerequisite for CS3235.",
+   "ES2660 is before CS2102 in Y4S1; CS4218 and CS2107 are before CS3235.",
+   "CS4222 is as early as possible and is not with CS4231; CS3211 and CS4218 are apart."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

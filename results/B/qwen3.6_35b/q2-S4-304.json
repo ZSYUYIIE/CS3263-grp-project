@@ -1,0 +1,104 @@
+{
+ "id": "q2-S4-304",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 18.68,
+ "solver_seconds": 0.062,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3186,
+  "total_tokens": 3687,
+  "completion_tokens": 501,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 18.62,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 6,\n\"programme\": \"BComp CS Hons\",\n\"completed\": [\n\"CS2040S\",\n\"CS2103T\",\n\"CS3230\",\n\"CS1101S\",\n\"CS2106\",\n\"ST2334\",\n\"CS2030S\",\n\"IS1108\",\n\"MA1522\",\n\"ES2660\",\n\"CS3213\",\n\"CS2109S\",\n\"CS2100\",\n\"CS2101\",\n\"CS3219\",\n\"MA1521\",\n\"CS1231S\"\n],\n\"must_take\": [\n\"CS4220\",\n\"CS2102\",\n\"CS2105\",\n\"CS4225\",\n\"CS3240\",\n\"CS3242\",\n\"CS4249\"\n],\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4225\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2102\",\n\"b\": \"CS3242\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4220\",\n\"sem\": 6,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4220\",\n\"b\": \"CS2102\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4249\",\n\"b\": \"CS3242\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2105\",\n\"b\": \"CS3240\",\n\"strength\": \"prefer\"\n}\n],\n\"early\": [\n\"CS2102\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 6,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "CS2040S",
+   "CS2103T",
+   "CS3230",
+   "CS1101S",
+   "CS2106",
+   "ST2334",
+   "CS2030S",
+   "IS1108",
+   "MA1522",
+   "ES2660",
+   "CS3213",
+   "CS2109S",
+   "CS2100",
+   "CS2101",
+   "CS3219",
+   "MA1521",
+   "CS1231S"
+  ],
+  "must_take": [
+   "CS4220",
+   "CS2102",
+   "CS2105",
+   "CS4225",
+   "CS3240",
+   "CS3242",
+   "CS4249"
+  ],
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS4225",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2102",
+    "b": "CS3242",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4220",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4220",
+    "b": "CS2102",
+    "strength": "prefer"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4249",
+    "b": "CS3242",
+    "strength": "prefer"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2105",
+    "b": "CS3240",
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS2102"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS4220 in semester 6; the prerequisites of CS4220"
+  ]
+ }
+}

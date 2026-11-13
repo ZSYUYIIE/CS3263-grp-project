@@ -1,0 +1,119 @@
+{
+ "id": "q2-S3-190",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 12.32,
+ "usage": {
+  "prompt_tokens": 21136,
+  "total_tokens": 21842,
+  "completion_tokens": 706,
+  "finish_reason": "stop",
+  "request_seconds": 12.32,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS2103T requires CS2040 (or equivalent) which is not in the required list and has prerequisites (CS1010 etc) not yet completed or planned. CS2040S requires CS1231 which is not completed. Without CS2040/CS2040S, CS2103T, CS3219, CS3227, CS3230, CS3281, CS2109S, and CS4261 cannot be taken as their prerequisites depend on Data Structures/Algorithms modules not listed as required or completed.\", \"CS4261 requires CS2040 (or equivalent) and a probability course (EE2012/ST2131/MA2116 etc) which are not in the required list. CS2109S requires CS2040 (or equivalent). These core prerequisites are missing from the student's plan.\", \"The student's required list omits the foundational Data Structures and Algorithms module (e.g., CS2040, CS2040S) and Probability module required for the advanced electives listed (CS2109S, CS3230, CS4261). Without these, the plan is impossible.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS2103T requires CS2040 (or equivalent) which is not in the required list and has prerequisites (CS1010 etc) not yet completed or planned. CS2040S requires CS1231 which is not completed. Without CS2040/CS2040S, CS2103T, CS3219, CS3227, CS3230, CS3281, CS2109S, and CS4261 cannot be taken as their prerequisites depend on Data Structures/Algorithms modules not listed as required or completed.",
+   "CS4261 requires CS2040 (or equivalent) and a probability course (EE2012/ST2131/MA2116 etc) which are not in the required list. CS2109S requires CS2040 (or equivalent). These core prerequisites are missing from the student's plan.",
+   "The student's required list omits the foundational Data Structures and Algorithms module (e.g., CS2040, CS2040S) and Probability module required for the advanced electives listed (CS2109S, CS3230, CS4261). Without these, the plan is impossible."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"2\": [\"CS2030S\", \"CS2100\", \"CS1231\", \"IS1108\"], \"3\": [\"CS2101\", \"CS2103T\", \"MA1522\"], \"4\": [\"CS2109S\", \"CS3219\", \"CS3227\"], \"5\": [\"CS4261\", \"CS3230\", \"CS3281\"]}, \"reasons\": [\"Prerequisites satisfied: CS2030S requires CS1101S; CS2100 requires CS1101S; CS2103T requires CS2030S and CS2100; CS2109S requires CS2030S and MA1521; CS3219 requires CS2103T; CS3227 requires CS2103T; CS3230 requires CS2030S and CS1231S; CS3281 requires CS2103T; CS4261 requires CS2030S, CS1231S, MA1521, MA1522.\", \"Constraints met: CS2100 in Sem 2; CS4261 in Sem 5; CS2109S before CS3230; CS2101 before CS3219; CS2109S as early as possible (Sem 4); CS3227 as late as possible (Sem 4, constrained by CS3219 in Sem 4 and no later slots without delaying graduation).\", \"Fewest total credits achieved by completing all required modules in 4 semesters (Sem 2-5) with no unnecessary additions.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "2": [
+      "CS2030S",
+      "CS2100",
+      "CS1231",
+      "IS1108"
+     ],
+     "3": [
+      "CS2101",
+      "CS2103T",
+      "MA1522"
+     ],
+     "4": [
+      "CS2109S",
+      "CS3219",
+      "CS3227"
+     ],
+     "5": [
+      "CS4261",
+      "CS3230",
+      "CS3281"
+     ]
+    },
+    "reasons": [
+     "Prerequisites satisfied: CS2030S requires CS1101S; CS2100 requires CS1101S; CS2103T requires CS2030S and CS2100; CS2109S requires CS2030S and MA1521; CS3219 requires CS2103T; CS3227 requires CS2103T; CS3230 requires CS2030S and CS1231S; CS3281 requires CS2103T; CS4261 requires CS2030S, CS1231S, MA1521, MA1522.",
+     "Constraints met: CS2100 in Sem 2; CS4261 in Sem 5; CS2109S before CS3230; CS2101 before CS3219; CS2109S as early as possible (Sem 4); CS3227 as late as possible (Sem 4, constrained by CS3219 in Sem 4 and no later slots without delaying graduation).",
+     "Fewest total credits achieved by completing all required modules in 4 semesters (Sem 2-5) with no unnecessary additions."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10099,
+    "total_tokens": 10510,
+    "completion_tokens": 411,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 8.29,
+    "attempts": 1
+   },
+   "seconds": 8.29,
+   "violations": [
+    "R2 CS1231 is blocked by a completed course",
+    "R4 CS2103T in semester 3: prerequisite not met ((CS2030 or CS2030S or CS2030DE or CS2030HS) and (CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS))",
+    "R4 CS2109S in semester 4: prerequisite not met ((YSC2229 or CS2040S or CS2040C or CS2040HS or CS2040 or CS2040DE) and ((MA1511 and MA1512) or MA1521 or MA2002 or MA1102R or MA1312 or MA1507 or MA1505))",
+    "R4 CS3230 in semester 5: prerequisite not met ((YSC2229 or CS2040S or CS2040 or CS2040C or CS2040DE or CS2040HS) and (CS1231 or CS1231S or MA1100T or MA1100))",
+    "R3 CS3281 not offered in Sem 1 (semester 5)",
+    "R4 CS4261 in semester 5: prerequisite not met ((EE2012A or EE2012 or ST2131 or MA2216 or ST2334 or MA2116 or MA2116T) and (CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS) and (MA1100 or MA1100T or CS1231S or CS1231) and (MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522))"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS2103T requires CS2040 (or equivalent) which is not in the required list and has prerequisites (CS1010 etc) not yet completed or planned. CS2040S requires CS1231 which is not completed. Without CS2040/CS2040S, CS2103T, CS3219, CS3227, CS3230, CS3281, CS2109S, and CS4261 cannot be taken as their prerequisites depend on Data Structures/Algorithms modules not listed as required or completed.\", \"CS4261 requires CS2040 (or equivalent) and a probability course (EE2012/ST2131/MA2116 etc) which are not in the required list. CS2109S requires CS2040 (or equivalent). These core prerequisites are missing from the student's plan.\", \"The student's required list omits the foundational Data Structures and Algorithms module (e.g., CS2040, CS2040S) and Probability module required for the advanced electives listed (CS2109S, CS3230, CS4261). Without these, the plan is impossible.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS2103T requires CS2040 (or equivalent) which is not in the required list and has prerequisites (CS1010 etc) not yet completed or planned. CS2040S requires CS1231 which is not completed. Without CS2040/CS2040S, CS2103T, CS3219, CS3227, CS3230, CS3281, CS2109S, and CS4261 cannot be taken as their prerequisites depend on Data Structures/Algorithms modules not listed as required or completed.",
+     "CS4261 requires CS2040 (or equivalent) and a probability course (EE2012/ST2131/MA2116 etc) which are not in the required list. CS2109S requires CS2040 (or equivalent). These core prerequisites are missing from the student's plan.",
+     "The student's required list omits the foundational Data Structures and Algorithms module (e.g., CS2040, CS2040S) and Probability module required for the advanced electives listed (CS2109S, CS3230, CS4261). Without these, the plan is impossible."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11037,
+    "total_tokens": 11332,
+    "completion_tokens": 295,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 4.03,
+    "attempts": 1
+   },
+   "seconds": 4.03,
+   "violations": null
+  }
+ ]
+}

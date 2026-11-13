@@ -1,0 +1,44 @@
+{
+ "id": "q2-S3-160",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 3,
+ "end": "cap",
+ "seconds": 61.36,
+ "usage": {
+  "prompt_tokens": 26469,
+  "total_tokens": 30379,
+  "completion_tokens": 3910,
+  "finish_reason": "stop",
+  "request_seconds": 61.36,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"5\": [\"CS2102\", \"CS2105\", \"CS3263\", \"CS3281\"], \"6\": [\"CS3268\", \"CS4278\", \"CS3282\", \"ES2660\"], \"7\": [\"CS3219\", \"CS4246\"]}, \"reasons\": [\"CS3268 is offered in Sem 1, so it cannot be in Sem 6. It must be in Sem 5 or 7. CS4278 is offered in Sem 1, so it cannot be in Sem 6. It must be in Sem 5 or 7. CS3282 is offered in Sem 2, so Sem 6 is valid. CS4246 is offered in Sem 1 and 2, so Sem 7 is valid. CS3219 is offered in Sem 1 and 2, so Sem 7 is valid. CS2102 is offered in Sem 1 and 2, so Sem 5 is valid. CS2105 is offered in Sem 1 and 2, so Sem 5 is valid. ES2660 is offered in Sem 1 and 2, so Sem 6 is valid. CS3263 is offered in Sem 1 and 2, so Sem 5 is valid. CS3281 is offered in Sem 2, so Sem 5 is valid. Prerequisites: CS3263 (Sem 5) enables CS4278 (Sem 7) and CS4246 (Sem 7, needs ES2660 from Sem 6). CS3281 (Sem 5) enables CS3282 (Sem 6). CS2103T (completed) enables CS3219 (Sem 7). CS2109S (completed) and ST2334 (completed) enable CS3268 (Sem 5 or 7). CS1231S and CS2030S/CS2040S (completed) enable CS2102 (Sem 5). CS2040S (completed) enables CS2105 (Sem 5). ES2660 (Sem 6) enables CS4246 and CS3219 (Sem 7). CS4278 (Sem 7) is not required for CS3219, but CS3219 requires CS2103T which is completed. The constraint 'finish CS4278 before CS3219' is satisfied if CS4278 is Sem 7 and CS3219 is Sem 7? No, 'before' usually means strictly earlier. If so, CS4278 must be Sem 6 and CS3219 Sem 7. But CS4278 is not offered in Sem 6. So CS4278 must be Sem 5 or 7. If CS4278 is Sem 5, CS3219 can be Sem 6 or 7. But CS3219 needs ES2660 finished. ES2660 is in Sem 6. So CS3219 must be Sem 7 or later. If CS4278 is Sem 5, CS3219 Sem 7 satisfies 'before'. Let's try: Sem 5: CS2102, CS2105, CS3263, CS3281, CS4278. MC=20. Sem 6: CS3268, CS3282, ES2660. MC=12. Sem 7: CS3219, CS4246. MC=8. This works. CS4278 Sem 5, CS3219 Sem 7. 'Before' satisfied. CS3268 Sem 6 (invalid, not offered). CS3268 must be Sem 5 or 7. If Sem 5, MC=24 (too high). If Sem 7, MC=12. Sem 5: CS2102, CS2105, CS3263, CS3281, CS4278. Sem 6: CS3282, ES2660. Sem 7: CS3219, CS4246, CS3268. This works. MC: 5:20, 6:8, 7:12. All >=8. Total MC 40. Earlier than previous. CS2102 Sem 5 (earliest). ES2660 Sem 6. CS3268 Sem 7. Wish 'CS3268 before CS2102' not met. CS3219 after CS4278 (Sem 5 vs Sem 7) met. CS4246 after ES2660 (Sem 6 vs Sem 7) met.\"}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS2105",
+    "CS3263",
+    "CS3281"
+   ],
+   "6": [
+    "CS3268",
+    "CS4278",
+    "CS3282",
+    "ES2660"
+   ],
+   "7": [
+    "CS3219",
+    "CS4246"
+   ]
+  }
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

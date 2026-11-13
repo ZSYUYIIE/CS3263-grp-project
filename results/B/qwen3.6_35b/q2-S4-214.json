@@ -1,0 +1,142 @@
+{
+ "id": "q2-S4-214",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 18.11,
+ "solver_seconds": 0.019,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3139,
+  "total_tokens": 3730,
+  "completion_tokens": 591,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 18.09,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"current_sem\": 4,\n  \"completed\": [\n    \"CS2040S\",\n    \"CS2030S\",\n    \"MA1522\",\n    \"CS2100\",\n    \"ES2660\",\n    \"CS2103T\",\n    \"CS2101\",\n    \"CS1101S\",\n    \"ST2334\",\n    \"MA1521\",\n    \"IS1108\",\n    \"CS1231S\"\n  ],\n  \"must_take\": [\n    \"CS3230\",\n    \"CS4247\",\n    \"CS2105\",\n    \"CS4234\",\n    \"CS4230\",\n    \"CS3247\"\n  ],\n  \"mc_max\": 16,\n  \"objective\": \"earliest_graduation\",\n  \"rules\": [\n    {\n      \"type\": \"before\",\n      \"a\": \"CS3230\",\n      \"b\": \"CS2105\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS4234\",\n      \"b\": \"CS4230\",\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS3230\",\n      \"sem\": 6,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS4234\",\n      \"b\": \"CS3247\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS4234\",\n      \"sem\": 7,\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS4230\",\n      \"sem\": 7,\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS3247\",\n      \"sem\": 7,\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS2105\",\n      \"sem\": 7,\n      \"strength\": \"prefer\"\n    }\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "CS2040S",
+   "CS2030S",
+   "MA1522",
+   "CS2100",
+   "ES2660",
+   "CS2103T",
+   "CS2101",
+   "CS1101S",
+   "ST2334",
+   "MA1521",
+   "IS1108",
+   "CS1231S"
+  ],
+  "must_take": [
+   "CS3230",
+   "CS4247",
+   "CS2105",
+   "CS4234",
+   "CS4230",
+   "CS3247"
+  ],
+  "mc_max": 16,
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3230",
+    "b": "CS2105",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS4234",
+    "b": "CS4230",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3230",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4234",
+    "b": "CS3247",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4234",
+    "sem": 7,
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4230",
+    "sem": 7,
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3247",
+    "sem": 7,
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2105",
+    "sem": 7,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "earliest_graduation",
+  "last_semester": 8,
+  "plan": {
+   "4": [],
+   "5": [],
+   "6": [
+    "CS3230"
+   ],
+   "7": [
+    "CS2105",
+    "CS3241",
+    "CS4234"
+   ],
+   "8": [
+    "CS3247",
+    "CS4230",
+    "CS4247"
+   ]
+  },
+  "mc_per_semester": {
+   "4": 0,
+   "5": 0,
+   "6": 4,
+   "7": 12,
+   "8": 12
+  },
+  "preferences_met": [
+   "CS4234 and CS4230 in different semesters",
+   "CS4234 in semester 7",
+   "CS2105 in semester 7"
+  ],
+  "preferences_not_met": [
+   "CS4230 in semester 7",
+   "CS3247 in semester 7"
+  ],
+  "added_prerequisites": [
+   "CS3241"
+  ]
+ }
+}

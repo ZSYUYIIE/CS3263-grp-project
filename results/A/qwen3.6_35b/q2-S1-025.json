@@ -1,0 +1,56 @@
+{
+ "id": "q2-S1-025",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 5.38,
+ "usage": {
+  "prompt_tokens": 6897,
+  "total_tokens": 7260,
+  "completion_tokens": 363,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 5.38,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"1\": [\n      \"CS1010\",\n      \"CS1231\"\n    ],\n    \"2\": [\n      \"CS2030S\",\n      \"CS2040S\"\n    ],\n    \"3\": [\n      \"CS2101\",\n      \"CS2103T\"\n    ],\n    \"4\": [\n      \"CS3281\",\n      \"CS3230\"\n    ],\n    \"5\": [\n      \"CS3213\"\n    ],\n    \"6\": [\n      \"CS3219\"\n    ]\n  },\n  \"reasons\": [\n    \"Prerequisites for CS2030S and CS2040S (CS1010) are completed in Sem 1.\",\n    \"CS2103T requires CS2030S and CS2040S, completed in Sem 2.\",\n    \"CS3230 requires CS2040S and CS1231, both completed by Sem 2.\",\n    \"CS3281 requires CS2103T, completed in Sem 3.\",\n    \"CS3213 requires CS2103T, CS3281, CS2030S, and CS2101, all completed by Sem 3.\",\n    \"CS3219 requires CS2103T and CS3213, completed by Sem 5.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1010",
+    "CS1231"
+   ],
+   "2": [
+    "CS2030S",
+    "CS2040S"
+   ],
+   "3": [
+    "CS2101",
+    "CS2103T"
+   ],
+   "4": [
+    "CS3281",
+    "CS3230"
+   ],
+   "5": [
+    "CS3213"
+   ],
+   "6": [
+    "CS3219"
+   ]
+  },
+  "reasons": [
+   "Prerequisites for CS2030S and CS2040S (CS1010) are completed in Sem 1.",
+   "CS2103T requires CS2030S and CS2040S, completed in Sem 2.",
+   "CS3230 requires CS2040S and CS1231, both completed by Sem 2.",
+   "CS3281 requires CS2103T, completed in Sem 3.",
+   "CS3213 requires CS2103T, CS3281, CS2030S, and CS2101, all completed by Sem 3.",
+   "CS3219 requires CS2103T and CS3213, completed by Sem 5."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

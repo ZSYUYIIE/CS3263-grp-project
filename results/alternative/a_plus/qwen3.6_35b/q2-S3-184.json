@@ -1,0 +1,223 @@
+{
+ "id": "q2-S3-184",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 2,
+ "end": "repeated plan",
+ "seconds": 16.67,
+ "usage": {
+  "prompt_tokens": 31383,
+  "total_tokens": 32196,
+  "completion_tokens": 813,
+  "finish_reason": "stop",
+  "request_seconds": 16.67,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"2\": [\n      \"CS2030S\",\n      \"CS2101\",\n      \"CS2100\",\n      \"MA1522\"\n    ],\n    \"3\": [\n      \"CS2040S\",\n      \"CS2103T\",\n      \"IS1108\"\n    ],\n    \"4\": [\n      \"CS3219\",\n      \"CS3230\",\n      \"CS3281\",\n      \"CS3227\"\n    ],\n    \"5\": [\n      \"CS2109S\",\n      \"CS4261\"\n    ]\n  },\n  \"reasons\": [\n    \"Plan minimizes total credits by graduating in Semester 5.\",\n    \"CS2101 and CS3219 are taken together in Semester 4 as required.\",\n    \"CS2101 is taken in Semester 2 (Sem 2) as preferred.\",\n    \"IS1108 is taken in Semester 3 as early as possible given prerequisites.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "2": [
+    "CS2030S",
+    "CS2101",
+    "CS2100",
+    "MA1522"
+   ],
+   "3": [
+    "CS2040S",
+    "CS2103T",
+    "IS1108"
+   ],
+   "4": [
+    "CS3219",
+    "CS3230",
+    "CS3281",
+    "CS3227"
+   ],
+   "5": [
+    "CS2109S",
+    "CS4261"
+   ]
+  },
+  "reasons": [
+   "Plan minimizes total credits by graduating in Semester 5.",
+   "CS2101 and CS3219 are taken together in Semester 4 as required.",
+   "CS2101 is taken in Semester 2 (Sem 2) as preferred.",
+   "IS1108 is taken in Semester 3 as early as possible given prerequisites."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"2\": [\n      \"CS2030S\",\n      \"CS2101\",\n      \"CS2100\",\n      \"MA1522\"\n    ],\n    \"3\": [\n      \"CS2040S\",\n      \"CS2103T\",\n      \"CS3227\",\n      \"IS1108\"\n    ],\n    \"4\": [\n      \"CS3219\",\n      \"CS3230\",\n      \"CS3281\"\n    ],\n    \"5\": [\n      \"CS2109S\",\n      \"CS4261\"\n    ]\n  },\n  \"reasons\": [\n    \"Plan minimizes total credits by graduating in Semester 5.\",\n    \"CS2101 and CS3219 are taken together in Semester 4 as requested.\",\n    \"CS2101 is taken in Semester 2 (Sem 2) as preferred.\",\n    \"IS1108 is taken in Semester 3 as early as possible given prerequisites for other modules.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "2": [
+      "CS2030S",
+      "CS2101",
+      "CS2100",
+      "MA1522"
+     ],
+     "3": [
+      "CS2040S",
+      "CS2103T",
+      "CS3227",
+      "IS1108"
+     ],
+     "4": [
+      "CS3219",
+      "CS3230",
+      "CS3281"
+     ],
+     "5": [
+      "CS2109S",
+      "CS4261"
+     ]
+    },
+    "reasons": [
+     "Plan minimizes total credits by graduating in Semester 5.",
+     "CS2101 and CS3219 are taken together in Semester 4 as requested.",
+     "CS2101 is taken in Semester 2 (Sem 2) as preferred.",
+     "IS1108 is taken in Semester 3 as early as possible given prerequisites for other modules."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10056,
+    "total_tokens": 10329,
+    "completion_tokens": 273,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 6.55,
+    "attempts": 1
+   },
+   "seconds": 6.55,
+   "violations": [
+    "R4 CS2103T in semester 3: prerequisite not met ((CS2030 or CS2030S or CS2030DE or CS2030HS) and (CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS))",
+    "R4 CS3227 in semester 3: prerequisite not met (CS2103 or CS2103T or CS2113 or CS2103DE)",
+    "R4 CS4261 in semester 5: prerequisite not met ((EE2012A or EE2012 or ST2131 or MA2216 or ST2334 or MA2116 or MA2116T) and (CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS) and (MA1100 or MA1100T or CS1231S or CS1231) and (MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522))",
+    "R9 must rule not met: same_sem CS2101 CS3219"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"2\": [\n      \"CS2030S\",\n      \"CS2101\",\n      \"CS2100\",\n      \"MA1522\"\n    ],\n    \"3\": [\n      \"CS2040S\",\n      \"CS2103T\",\n      \"IS1108\"\n    ],\n    \"4\": [\n      \"CS3219\",\n      \"CS3230\",\n      \"CS3281\",\n      \"CS3227\"\n    ],\n    \"5\": [\n      \"CS2109S\",\n      \"CS4261\"\n    ]\n  },\n  \"reasons\": [\n    \"Plan minimizes total credits by graduating in Semester 5.\",\n    \"CS2101 and CS3219 are taken together in Semester 4 as required.\",\n    \"CS2101 is taken in Semester 2 (Sem 2) as preferred.\",\n    \"IS1108 is taken in Semester 3 as early as possible given prerequisites.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "2": [
+      "CS2030S",
+      "CS2101",
+      "CS2100",
+      "MA1522"
+     ],
+     "3": [
+      "CS2040S",
+      "CS2103T",
+      "IS1108"
+     ],
+     "4": [
+      "CS3219",
+      "CS3230",
+      "CS3281",
+      "CS3227"
+     ],
+     "5": [
+      "CS2109S",
+      "CS4261"
+     ]
+    },
+    "reasons": [
+     "Plan minimizes total credits by graduating in Semester 5.",
+     "CS2101 and CS3219 are taken together in Semester 4 as required.",
+     "CS2101 is taken in Semester 2 (Sem 2) as preferred.",
+     "IS1108 is taken in Semester 3 as early as possible given prerequisites."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10687,
+    "total_tokens": 10957,
+    "completion_tokens": 270,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.09,
+    "attempts": 1
+   },
+   "seconds": 4.09,
+   "violations": [
+    "R4 CS2103T in semester 3: prerequisite not met ((CS2030 or CS2030S or CS2030DE or CS2030HS) and (CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS))",
+    "R4 CS4261 in semester 5: prerequisite not met ((EE2012A or EE2012 or ST2131 or MA2216 or ST2334 or MA2116 or MA2116T) and (CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS) and (MA1100 or MA1100T or CS1231S or CS1231) and (MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522))",
+    "R9 must rule not met: same_sem CS2101 CS3219"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"2\": [\n      \"CS2030S\",\n      \"CS2101\",\n      \"CS2100\",\n      \"MA1522\"\n    ],\n    \"3\": [\n      \"CS2040S\",\n      \"CS2103T\",\n      \"IS1108\"\n    ],\n    \"4\": [\n      \"CS3219\",\n      \"CS3230\",\n      \"CS3281\",\n      \"CS3227\"\n    ],\n    \"5\": [\n      \"CS2109S\",\n      \"CS4261\"\n    ]\n  },\n  \"reasons\": [\n    \"Plan minimizes total credits by graduating in Semester 5.\",\n    \"CS2101 and CS3219 are taken together in Semester 4 as required.\",\n    \"CS2101 is taken in Semester 2 (Sem 2) as preferred.\",\n    \"IS1108 is taken in Semester 3 as early as possible given prerequisites.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "2": [
+      "CS2030S",
+      "CS2101",
+      "CS2100",
+      "MA1522"
+     ],
+     "3": [
+      "CS2040S",
+      "CS2103T",
+      "IS1108"
+     ],
+     "4": [
+      "CS3219",
+      "CS3230",
+      "CS3281",
+      "CS3227"
+     ],
+     "5": [
+      "CS2109S",
+      "CS4261"
+     ]
+    },
+    "reasons": [
+     "Plan minimizes total credits by graduating in Semester 5.",
+     "CS2101 and CS3219 are taken together in Semester 4 as required.",
+     "CS2101 is taken in Semester 2 (Sem 2) as preferred.",
+     "IS1108 is taken in Semester 3 as early as possible given prerequisites."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10640,
+    "total_tokens": 10910,
+    "completion_tokens": 270,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 6.03,
+    "attempts": 1
+   },
+   "seconds": 6.03,
+   "violations": [
+    "R4 CS2103T in semester 3: prerequisite not met ((CS2030 or CS2030S or CS2030DE or CS2030HS) and (CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS))",
+    "R4 CS4261 in semester 5: prerequisite not met ((EE2012A or EE2012 or ST2131 or MA2216 or ST2334 or MA2116 or MA2116T) and (CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS) and (MA1100 or MA1100T or CS1231S or CS1231) and (MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522))",
+    "R9 must rule not met: same_sem CS2101 CS3219"
+   ]
+  }
+ ]
+}

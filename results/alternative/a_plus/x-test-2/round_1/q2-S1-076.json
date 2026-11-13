@@ -1,0 +1,54 @@
+{
+ "id": "q2-S1-076",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 41.15,
+ "usage": {
+  "prompt_tokens": 8227,
+  "total_tokens": 11736,
+  "completion_tokens": 3509,
+  "prompt_tokens_details": {
+   "cached_tokens": 7936,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3361
+  },
+  "finish_reason": "stop",
+  "request_seconds": 41.15,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS2109S\"], \"5\": [\"CS3231\", \"CS2102\", \"CS3264\"], \"6\": [\"CS3219\"], \"8\": [\"CS3230\"]}, \"reasons\": [\"CS3231, CS2102 and CS3264 are forced into the same semester by the stated constraints, so keeping CS3231 and CS3264 apart is impossible.\", \"CS2109S is placed in semester 4 so CS3264's prerequisite is met before the semester 5 cluster.\", \"CS2102 precedes CS3219, and CS3230 is placed in semester 8, the latest possible term.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2109S"
+   ],
+   "5": [
+    "CS3231",
+    "CS2102",
+    "CS3264"
+   ],
+   "6": [
+    "CS3219"
+   ],
+   "8": [
+    "CS3230"
+   ]
+  },
+  "reasons": [
+   "CS3231, CS2102 and CS3264 are forced into the same semester by the stated constraints, so keeping CS3231 and CS3264 apart is impossible.",
+   "CS2109S is placed in semester 4 so CS3264's prerequisite is met before the semester 5 cluster.",
+   "CS2102 precedes CS3219, and CS3230 is placed in semester 8, the latest possible term."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

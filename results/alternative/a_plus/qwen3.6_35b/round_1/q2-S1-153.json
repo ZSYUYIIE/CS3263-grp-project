@@ -1,0 +1,52 @@
+{
+ "id": "q2-S1-153",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 8.85,
+ "usage": {
+  "prompt_tokens": 22180,
+  "total_tokens": 22690,
+  "completion_tokens": 510,
+  "finish_reason": "stop",
+  "request_seconds": 8.85,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2101\",\n      \"CS3219\",\n      \"CS2105\"\n    ],\n    \"6\": [\n      \"CS3211\",\n      \"CS2102\",\n      \"ES2660\"\n    ],\n    \"7\": [\n      \"CS3235\",\n      \"CS3241\"\n    ],\n    \"8\": [\n      \"CS4239\",\n      \"CS4247\",\n      \"CS3281\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3282 requires CS3281; CS3281 is only offered in Sem 2, so CS3281 is planned in Sem 8.\",\n    \"CS4247 requires CS3241; CS3241 is only offered in Sem 1, so CS3241 is planned in Sem 7.\",\n    \"CS4239 requires CS3235 and CS4247; both are completed by Sem 8, satisfying the Y4S1 requirement.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2101",
+    "CS3219",
+    "CS2105"
+   ],
+   "6": [
+    "CS3211",
+    "CS2102",
+    "ES2660"
+   ],
+   "7": [
+    "CS3235",
+    "CS3241"
+   ],
+   "8": [
+    "CS4239",
+    "CS4247",
+    "CS3281"
+   ]
+  },
+  "reasons": [
+   "CS3282 requires CS3281; CS3281 is only offered in Sem 2, so CS3281 is planned in Sem 8.",
+   "CS4247 requires CS3241; CS3241 is only offered in Sem 1, so CS3241 is planned in Sem 7.",
+   "CS4239 requires CS3235 and CS4247; both are completed by Sem 8, satisfying the Y4S1 requirement."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

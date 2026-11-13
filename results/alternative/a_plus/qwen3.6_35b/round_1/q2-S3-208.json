@@ -1,0 +1,44 @@
+{
+ "id": "q2-S3-208",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "valid",
+ "seconds": 7.5,
+ "usage": {
+  "prompt_tokens": 18592,
+  "total_tokens": 18991,
+  "completion_tokens": 399,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.5,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"7\": [\n      \"CS3103\",\n      \"CS2102\"\n    ],\n    \"8\": [\n      \"CS3234\",\n      \"CS4225\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3103 is placed in Sem 7 as requested.\",\n    \"CS2102 is placed in Sem 7 to satisfy the prerequisite for CS4225.\",\n    \"CS4225 is placed in Sem 8 to satisfy the constraint that CS3103 must come before CS4225 and to meet the soft wish for CS3234 in Sem 8.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "7": [
+    "CS3103",
+    "CS2102"
+   ],
+   "8": [
+    "CS3234",
+    "CS4225"
+   ]
+  },
+  "reasons": [
+   "CS3103 is placed in Sem 7 as requested.",
+   "CS2102 is placed in Sem 7 to satisfy the prerequisite for CS4225.",
+   "CS4225 is placed in Sem 8 to satisfy the constraint that CS3103 must come before CS4225 and to meet the soft wish for CS3234 in Sem 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,51 @@
+{
+ "id": "q2-S2-002",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 47.16,
+ "usage": {
+  "prompt_tokens": 9035,
+  "total_tokens": 12971,
+  "completion_tokens": 3936,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 7424,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3788
+  },
+  "finish_reason": "stop",
+  "request_seconds": 47.16,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS3227\",\"CS3281\"],\"7\":[\"CS2102\",\"CS4218\",\"CS3103\"],\"8\":[\"CS3282\",\"CS3210\"]},\"reasons\":[\"Plan finishes in semester 8 because CS3282 requires CS3281, which must be taken in semester 6 before CS3282 in semester 8.\",\"Semester 7 holds CS2102 and CS4218 together plus CS3103, exactly 3 modules and 12 MC.\",\"CS3227 precedes CS3103, CS4218 precedes CS3282, and CS3210 is placed as late as possible in semester 8.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS3227",
+    "CS3281"
+   ],
+   "7": [
+    "CS2102",
+    "CS4218",
+    "CS3103"
+   ],
+   "8": [
+    "CS3282",
+    "CS3210"
+   ]
+  },
+  "reasons": [
+   "Plan finishes in semester 8 because CS3282 requires CS3281, which must be taken in semester 6 before CS3282 in semester 8.",
+   "Semester 7 holds CS2102 and CS4218 together plus CS3103, exactly 3 modules and 12 MC.",
+   "CS3227 precedes CS3103, CS4218 precedes CS3282, and CS3210 is placed as late as possible in semester 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

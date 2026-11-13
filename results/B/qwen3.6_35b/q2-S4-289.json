@@ -1,0 +1,86 @@
+{
+ "id": "q2-S4-289",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.8,
+ "solver_seconds": 0.645,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3119,
+  "total_tokens": 3481,
+  "completion_tokens": 362,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 7.15,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 1,\n\"completed\": [],\n\"must_take\": [\n\"CS2101\",\n\"CS4224\",\n\"CS4240\",\n\"CS2109S\",\n\"CS2103T\",\n\"CS2106\",\n\"CS3230\"\n],\n\"mc_max\": 12,\n\"objective\": \"earliest_graduation\",\n\"early\": [\n\"CS2106\"\n],\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS3230\",\n\"b\": \"CS2109S\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2109S\",\n\"sem\": 1,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4240\",\n\"b\": \"CS2103T\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS2106\",\n\"b\": \"CS2101\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4224\",\n\"b\": \"CS2103T\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2103T\",\n\"sem\": 6,\n\"strength\": \"must\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "completed": [],
+  "must_take": [
+   "CS2101",
+   "CS4224",
+   "CS4240",
+   "CS2109S",
+   "CS2103T",
+   "CS2106",
+   "CS3230"
+  ],
+  "mc_max": 12,
+  "objective": "earliest_graduation",
+  "early": [
+   "CS2106"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3230",
+    "b": "CS2109S",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2109S",
+    "sem": 1,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4240",
+    "b": "CS2103T",
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS2106",
+    "b": "CS2101",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4224",
+    "b": "CS2103T",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2103T",
+    "sem": 6,
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS2109S in semester 1; the prerequisites of CS2109S"
+  ]
+ }
+}

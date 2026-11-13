@@ -1,0 +1,77 @@
+{
+ "id": "q2-S6-030",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 23.71,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3047,
+  "total_tokens": 3339,
+  "completion_tokens": 292,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 23.71,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 2,\n\"programme\": \"BComp CS Hons\",\n\"must_take\": [\n\"CS4218\",\n\"CS3282\",\n\"CS2030S\",\n\"CS3235\"\n],\n\"mc_max\": 16,\n\"early\": [\n\"CS3235\"\n],\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS3235\",\n\"b\": \"CS2030S\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3282\",\n\"b\": \"CS2030S\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS3235\",\n\"b\": \"CS4218\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2030S\",\n\"sem\": 6,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3235\",\n\"sem\": 7,\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 2,
+  "programme": "BComp CS Hons",
+  "must_take": [
+   "CS4218",
+   "CS3282",
+   "CS2030S",
+   "CS3235"
+  ],
+  "mc_max": 16,
+  "early": [
+   "CS3235"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3235",
+    "b": "CS2030S",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3282",
+    "b": "CS2030S",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3235",
+    "b": "CS4218",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2030S",
+    "sem": 6,
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3235",
+    "sem": 7,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "MISSING_INFO",
+  "missing": [
+   "completed"
+  ],
+  "message": "This cannot be answered yet. Please give: the courses you have already completed (say so if there are none)."
+ }
+}

@@ -1,0 +1,61 @@
+{
+ "id": "q1-el-014-x",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 2.68,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2549,
+  "total_tokens": 2801,
+  "completion_tokens": 252,
+  "prompt_tokens_details": {
+   "cached_tokens": 2432,
+   "created_cache_tokens": 0,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 173
+  },
+  "finish_reason": "stop",
+  "request_seconds": 2.68,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\":\"eligible\",\"target\":\"CG2271\",\"current_sem\":6,\"completed\":[\"CS1101S\",\"MA1522\",\"CS2100\",\"CS2106\",\"CS3230\",\"MA2116\",\"CS2101\",\"IS1108\",\"CS4261\",\"CS2109S\",\"MA1521\",\"CS1231S\",\"CS2040S\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CG2271",
+  "current_sem": 6,
+  "completed": [
+   "CS1101S",
+   "MA1522",
+   "CS2100",
+   "CS2106",
+   "CS3230",
+   "MA2116",
+   "CS2101",
+   "IS1108",
+   "CS4261",
+   "CS2109S",
+   "MA1521",
+   "CS1231S",
+   "CS2040S"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CG2271",
+  "semester": 6,
+  "reasons": [
+   "precluded: already completed CS2106"
+  ],
+  "can_still_become_eligible": false,
+  "never_eligible_because": "CG2271 is ruled out by completed CS2106"
+ }
+}

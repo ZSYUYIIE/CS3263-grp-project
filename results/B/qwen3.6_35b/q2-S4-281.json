@@ -1,0 +1,79 @@
+{
+ "id": "q2-S4-281",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 5.86,
+ "solver_seconds": 0.32,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3043,
+  "total_tokens": 3329,
+  "completion_tokens": 286,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.54,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 2,\n\"completed\": [\n\"CS1231S\",\n\"CS1101S\",\n\"MA1521\"\n],\n\"must_take\": [\n\"CS4430\",\n\"IS1108\",\n\"CS3241\",\n\"CS3244\",\n\"CS3230\"\n],\n\"mc_max\": 16,\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3244\",\n\"sem\": 4,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3230\",\n\"sem\": 4,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4430\",\n\"sem\": 2,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3244\",\n\"b\": \"CS3230\",\n\"strength\": \"prefer\"\n}\n],\n\"late\": [\n\"IS1108\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 2,
+  "completed": [
+   "CS1231S",
+   "CS1101S",
+   "MA1521"
+  ],
+  "must_take": [
+   "CS4430",
+   "IS1108",
+   "CS3241",
+   "CS3244",
+   "CS3230"
+  ],
+  "mc_max": 16,
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3244",
+    "sem": 4,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3230",
+    "sem": 4,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4430",
+    "sem": 2,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3244",
+    "b": "CS3230",
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "IS1108"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS4430 in semester 2; the prerequisites of CS4430"
+  ]
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "id": "q2-S4-271",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 4.44,
+ "solver_seconds": 0.637,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3032,
+  "total_tokens": 3286,
+  "completion_tokens": 254,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 3.8,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 1,\n\"completed\": [],\n\"must_take\": [\n\"CS2030S\",\n\"CS3235\",\n\"CS3230\",\n\"CS4249\"\n],\n\"sem_caps\": {\n\"8\": 0\n},\n\"early\": [\n\"CS2030S\"\n],\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3235\",\n\"sem\": 1,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2030S\",\n\"b\": \"CS3230\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2030S\",\n\"b\": \"CS4277\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3230\",\n\"b\": \"CS3235\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "completed": [],
+  "must_take": [
+   "CS2030S",
+   "CS3235",
+   "CS3230",
+   "CS4249"
+  ],
+  "sem_caps": {
+   "8": 0
+  },
+  "early": [
+   "CS2030S"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3235",
+    "sem": 1,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2030S",
+    "b": "CS3230",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2030S",
+    "b": "CS4277",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS3230",
+    "b": "CS3235",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS3235 in semester 1; the prerequisites of CS3235"
+  ]
+ }
+}

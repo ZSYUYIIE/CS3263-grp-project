@@ -1,0 +1,42 @@
+{
+ "id": "q2-S4-205",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 2,
+ "end": "valid",
+ "seconds": 16.36,
+ "usage": {
+  "prompt_tokens": 21901,
+  "total_tokens": 22813,
+  "completion_tokens": 912,
+  "finish_reason": "stop",
+  "request_seconds": 16.36,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"5\": [\"CS2102\", \"CS2105\"], \"6\": [\"CS3223\", \"CS4226\"], \"7\": [\"CS2107\"], \"8\": [\"CS3235\"]}, \"reasons\": [\"CS2102 and CS2105 are taken in Sem 5 to satisfy prerequisites for later courses. CS3223 requires CS2102, so it is planned in Sem 6. CS4226 requires ST2334 (completed) and CS2105 (Sem 5), so it is eligible in Sem 6. CS2107 is taken in Sem 7 as it has no prerequisites but is needed for CS3235. CS3235 requires CS2105, CS2106, and CS2107; all are completed by Sem 8, satisfying the constraint to take it in Sem 8. CS2102 is taken as early as possible (Sem 5) to allow CS3223 in Sem 6, which is the earliest possible for CS3223. The wish for CS2102 'as late as possible' conflicts with CS3223 'as early as possible'; prioritizing CS3223's early placement forces CS2102 to Sem 5.\"}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS2105"
+   ],
+   "6": [
+    "CS3223",
+    "CS4226"
+   ],
+   "7": [
+    "CS2107"
+   ],
+   "8": [
+    "CS3235"
+   ]
+  }
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

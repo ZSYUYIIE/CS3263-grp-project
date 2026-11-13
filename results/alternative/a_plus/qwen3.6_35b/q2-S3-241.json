@@ -1,0 +1,280 @@
+{
+ "id": "q2-S3-241",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 3,
+ "end": "switched to NO_PLAN",
+ "seconds": 102.32,
+ "usage": {
+  "prompt_tokens": 51208,
+  "total_tokens": 57355,
+  "completion_tokens": 6147,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 102.32,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3281 is offered only in Sem 2 (even semesters). The student is in Sem 3 (odd). CS3281 can only be taken in Sem 4, 6, or 8.\",\n    \"The student requires CS4243 and CS2103T to be taken together. CS4243 prerequisites include ST1131. CS2102 must be taken after CS4243 is finished. Thus CS2102 must be in a later semester than the one containing CS4243/CS2103T.\",\n    \"CS2105 must be taken after CS3281. CS3281 is in an even semester (e.g., 4, 6, 8). So CS2105 is in a later even semester or odd semester after that. CS2105 has no specific offering restriction (Sem 1, 2).\",\n    \"CS3223 is required for CS4221. CS3223 prereqs are CS2040S (completed) and CS2102. So CS3223 must be after CS2102. CS4221 must be after CS3223.\",\n    \"Let's try to fit: CS4243/CS2103T in Sem 4. Then CS2102 in Sem 5 (or later). CS3281 in Sem 6 (after CS2102? No, CS3281 before CS2105. CS3281 prereq CS2103/CS2103T/CS2103DE/CS2113. CS2103T is in Sem 4. So CS3281 can be Sem 6. Then CS2105 in Sem 7 or 8. CS2102 in Sem 5. CS3223 in Sem 6 or 7. CS4221 in Sem 7 or 8. CS3219 prereq CS2103T (Sem 4). CS3219 can be Sem 5. CS4218 prereq CS3219. CS4218 can be Sem 6. CS3230 as early as possible. Sem 3. CS2100 Sem 3. ST1131 Sem 3 (for CS4243).\",\n    \"Plan attempt: Sem 3: CS2100, CS3230, ST1131. Sem 4: CS2103T, CS4243, CS3219. Sem 5: CS2102. Sem 6: CS3281, CS3223, CS4218. Sem 7: CS2105, CS4221. Check constraints: CS4243 (Sem 4) finished before CS2102 (Sem 5). OK. CS3281 (Sem 6) finished before CS2105 (Sem 7). OK. CS2103T and CS4243 together. OK. CS3230 in Sem 3 (earliest). OK. CS2102 before CS2103T? Wish. CS2102 is Sem 5, CS2103T is Sem 4. Wish not met. But hard rules met?\",\n    \"Check CS3281 offering: Sem 2 only. Sem 6 is Sem 2 of AY2028/29. OK. Check CS2105 offering: Sem 1, 2. Sem 7 is Sem 1 of AY2029/30. OK. Check CS4221 offering: Sem 2 only. Sem 7 is Sem 1. CS4221 is NOT offered in Sem 1. So CS4221 cannot be in Sem 7. It must be in Sem 8.\",\n    \"If CS4221 is Sem 8, CS3223 must be Sem 7 or earlier. CS3223 prereq CS2102. CS2102 is Sem 5. CS3223 can be Sem 6. CS4221 Sem 8. CS2105 Sem 7. CS3281 Sem 6. CS4218 Sem 6. CS3219 Sem 5. CS2102 Sem 5. CS2103T/CS4243 Sem 4. CS2100/CS3230/ST1131 Sem 3.\",\n    \"Check MC: Sem 3: 12. Sem 4: 16. Sem 5: 8. Sem 6: 16. Sem 7: 4. Sem 8: 4. All <= 20.\",\n    \"Check CS3219 prereq: CS2103T (Sem 4). CS3219 in Sem 5. OK.\",\n    \"Check CS4218 prereq: CS3219 (Sem 5). CS4218 in Sem 6. OK.\",\n    \"Check CS3223 prereq: CS2040S (completed), CS2102 (Sem 5). CS3223 in Sem 6. OK.\",\n    \"Check CS4221 prereq: CS3223 (Sem 6). CS4221 in Sem 8. OK.\",\n    \"Check CS2105 prereq: CS2040S (completed). CS2105 in Sem 7. OK.\",\n    \"Check CS3281 prereq: CS2103T (Sem 4). CS3281 in Sem 6. OK.\",\n    \"Check CS4243 prereq: Math (MA1521, MA1522 completed), Stats (ST1131 Sem 3), CS2030S (completed), CS2040S (completed). CS4243 in Sem 4. OK.\",\n    \"Check CS2103T prereq: CS2030S (completed), CS2040S (completed). CS2103T in Sem 4. OK.\",\n    \"Check CS2102 prereq: CS1231S (completed), CS2030S (completed). CS2102 in Sem 5. OK.\",\n    \"Check CS2100 prereq: CS1101S (completed). CS2100 in Sem 3. OK.\",\n    \"Check CS3230 prereq: CS2040S (completed), CS1231S (completed). CS3230 in Sem 3. OK.\",\n    \"Check ST1131 prereq: none. ST1131 in Sem 3. OK.\",\n    \"Check 'finish CS4243 before start CS2102': CS4243 Sem 4, CS2102 Sem 5. OK.\",\n    \"Check 'finish CS3281 before start CS2105': CS3281 Sem 6, CS2105 Sem 7. OK.\",\n    \"Check 'CS4243 and CS2103T together': Both Sem 4. OK.\",\n    \"Check 'CS2103T before CS4218': CS2103T Sem 4, CS4218 Sem 6. OK.\",\n    \"Check 'CS3230 as early as possible': Sem 3. OK.\",\n    \"Check 'CS2102 before CS2103T': Wish. CS2102 Sem 5, CS2103T Sem 4. Not met. But hard rules satisfied.\",\n    \"Is there a plan where CS2102 is before CS2103T? CS2102 prereqs met. CS2102 can be Sem 3? If CS2102 Sem 3, then CS4243 must be before CS2102? No, 'finish CS4243 before start CS2102'. So CS4243 must be before CS2102. If CS2102 is Sem 3, CS4243 must be Sem 1 or 2. But student is in Sem 3. So CS4243 cannot be before CS2102 if CS2102 is Sem 3. So CS2102 cannot be Sem 3. CS2102 must be after CS4243. CS4243 is with CS2103T. So CS2102 is after CS2103T. So 'CS2102 before CS2103T' is impossible to satisfy with 'CS4243 before CS2102' and 'CS4243 with CS2103T'.\",\n    \"Thus, the plan is valid.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3281 is offered only in Sem 2 (even semesters). The student is in Sem 3 (odd). CS3281 can only be taken in Sem 4, 6, or 8.",
+   "The student requires CS4243 and CS2103T to be taken together. CS4243 prerequisites include ST1131. CS2102 must be taken after CS4243 is finished. Thus CS2102 must be in a later semester than the one containing CS4243/CS2103T.",
+   "CS2105 must be taken after CS3281. CS3281 is in an even semester (e.g., 4, 6, 8). So CS2105 is in a later even semester or odd semester after that. CS2105 has no specific offering restriction (Sem 1, 2).",
+   "CS3223 is required for CS4221. CS3223 prereqs are CS2040S (completed) and CS2102. So CS3223 must be after CS2102. CS4221 must be after CS3223.",
+   "Let's try to fit: CS4243/CS2103T in Sem 4. Then CS2102 in Sem 5 (or later). CS3281 in Sem 6 (after CS2102? No, CS3281 before CS2105. CS3281 prereq CS2103/CS2103T/CS2103DE/CS2113. CS2103T is in Sem 4. So CS3281 can be Sem 6. Then CS2105 in Sem 7 or 8. CS2102 in Sem 5. CS3223 in Sem 6 or 7. CS4221 in Sem 7 or 8. CS3219 prereq CS2103T (Sem 4). CS3219 can be Sem 5. CS4218 prereq CS3219. CS4218 can be Sem 6. CS3230 as early as possible. Sem 3. CS2100 Sem 3. ST1131 Sem 3 (for CS4243).",
+   "Plan attempt: Sem 3: CS2100, CS3230, ST1131. Sem 4: CS2103T, CS4243, CS3219. Sem 5: CS2102. Sem 6: CS3281, CS3223, CS4218. Sem 7: CS2105, CS4221. Check constraints: CS4243 (Sem 4) finished before CS2102 (Sem 5). OK. CS3281 (Sem 6) finished before CS2105 (Sem 7). OK. CS2103T and CS4243 together. OK. CS3230 in Sem 3 (earliest). OK. CS2102 before CS2103T? Wish. CS2102 is Sem 5, CS2103T is Sem 4. Wish not met. But hard rules met?",
+   "Check CS3281 offering: Sem 2 only. Sem 6 is Sem 2 of AY2028/29. OK. Check CS2105 offering: Sem 1, 2. Sem 7 is Sem 1 of AY2029/30. OK. Check CS4221 offering: Sem 2 only. Sem 7 is Sem 1. CS4221 is NOT offered in Sem 1. So CS4221 cannot be in Sem 7. It must be in Sem 8.",
+   "If CS4221 is Sem 8, CS3223 must be Sem 7 or earlier. CS3223 prereq CS2102. CS2102 is Sem 5. CS3223 can be Sem 6. CS4221 Sem 8. CS2105 Sem 7. CS3281 Sem 6. CS4218 Sem 6. CS3219 Sem 5. CS2102 Sem 5. CS2103T/CS4243 Sem 4. CS2100/CS3230/ST1131 Sem 3.",
+   "Check MC: Sem 3: 12. Sem 4: 16. Sem 5: 8. Sem 6: 16. Sem 7: 4. Sem 8: 4. All <= 20.",
+   "Check CS3219 prereq: CS2103T (Sem 4). CS3219 in Sem 5. OK.",
+   "Check CS4218 prereq: CS3219 (Sem 5). CS4218 in Sem 6. OK.",
+   "Check CS3223 prereq: CS2040S (completed), CS2102 (Sem 5). CS3223 in Sem 6. OK.",
+   "Check CS4221 prereq: CS3223 (Sem 6). CS4221 in Sem 8. OK.",
+   "Check CS2105 prereq: CS2040S (completed). CS2105 in Sem 7. OK.",
+   "Check CS3281 prereq: CS2103T (Sem 4). CS3281 in Sem 6. OK.",
+   "Check CS4243 prereq: Math (MA1521, MA1522 completed), Stats (ST1131 Sem 3), CS2030S (completed), CS2040S (completed). CS4243 in Sem 4. OK.",
+   "Check CS2103T prereq: CS2030S (completed), CS2040S (completed). CS2103T in Sem 4. OK.",
+   "Check CS2102 prereq: CS1231S (completed), CS2030S (completed). CS2102 in Sem 5. OK.",
+   "Check CS2100 prereq: CS1101S (completed). CS2100 in Sem 3. OK.",
+   "Check CS3230 prereq: CS2040S (completed), CS1231S (completed). CS3230 in Sem 3. OK.",
+   "Check ST1131 prereq: none. ST1131 in Sem 3. OK.",
+   "Check 'finish CS4243 before start CS2102': CS4243 Sem 4, CS2102 Sem 5. OK.",
+   "Check 'finish CS3281 before start CS2105': CS3281 Sem 6, CS2105 Sem 7. OK.",
+   "Check 'CS4243 and CS2103T together': Both Sem 4. OK.",
+   "Check 'CS2103T before CS4218': CS2103T Sem 4, CS4218 Sem 6. OK.",
+   "Check 'CS3230 as early as possible': Sem 3. OK.",
+   "Check 'CS2102 before CS2103T': Wish. CS2102 Sem 5, CS2103T Sem 4. Not met. But hard rules satisfied.",
+   "Is there a plan where CS2102 is before CS2103T? CS2102 prereqs met. CS2102 can be Sem 3? If CS2102 Sem 3, then CS4243 must be before CS2102? No, 'finish CS4243 before start CS2102'. So CS4243 must be before CS2102. If CS2102 is Sem 3, CS4243 must be Sem 1 or 2. But student is in Sem 3. So CS4243 cannot be before CS2102 if CS2102 is Sem 3. So CS2102 cannot be Sem 3. CS2102 must be after CS4243. CS4243 is with CS2103T. So CS2102 is after CS2103T. So 'CS2102 before CS2103T' is impossible to satisfy with 'CS4243 before CS2102' and 'CS4243 with CS2103T'.",
+   "Thus, the plan is valid."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS3230\",\n      \"CS2103T\",\n      \"CS4243\"\n    ],\n    \"4\": [\n      \"CS2102\",\n      \"CS2105\",\n      \"CS3219\",\n      \"CS3281\"\n    ],\n    \"5\": [\n      \"CS4218\",\n      \"CS4221\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2103T and CS4243 are taken together in Sem 3 as required.\",\n    \"CS3230 is scheduled in Sem 3 to satisfy the 'as early as possible' wish.\",\n    \"CS2102 is taken in Sem 4, before CS2103T is completed, which conflicts with the wish 'rather do CS2102 before CS2103T'. However, CS2102 requires CS2040S (completed) and CS2030S (completed) and CS1231S (completed), so it is eligible in Sem 3. But CS2103T is a prerequisite for CS3219 and CS3281. CS2105 requires CS2040S. CS4218 requires CS3219 or CS3213. CS4221 requires CS3223. Wait, let's re-verify prerequisites.\",\n    \"CS2102 prereq: (CS1231 or ... CS1231S) AND (CS2030S or ...). Student has CS1231S and CS2030S. Eligible Sem 3. Wish: CS2102 before CS2103T. CS2103T is in Sem 3. Cannot take CS2102 before Sem 3 if CS2103T is in Sem 3. If CS2103T is in Sem 4, CS2102 can be in Sem 3. But CS2103T must be with CS4243. CS4243 prereqs are heavy. Let's check CS4243 prereqs: (YSC2232 or MA2001...) AND (ST1131...) AND (CS2030 or ... CS2113) AND (YSC2229 or CS2040...) AND (MA1102R...). Student has CS2040S (counts for CS2040). Student has CS2030S (counts for CS2030). Student has MA1521, MA1522. MA1522 is Linear Algebra for Computing. CS4243 needs MA2001 or MA1508E or MA1513 or MA1522. Student has MA1522. So that part is met. ST1131? Student has not completed ST1131. CS4243 requires ST1131 or ST1131A or ST1232 or ST2131 or MA2116 or MA2116T or MA2216 or EE2012A or EE2012 or ST2334 or YSC2243. Student has none of these. So CS4243 is NOT ELIGIBLE yet. Student must take a stats/prob course first. ST1131 is offered Sem 1, Sem 2. Student is in Sem 3. ST1131 is available. So CS4243 can be taken in Sem 3 if ST1131 is taken in Sem 3? No, ST1131 is a prerequisite. So ST1131 must be in Sem 3 or earlier. Student is in Sem 3. So ST1131 must be in Sem 3. Then CS4243 can be in Sem 3 (coreq) or Sem 4. But CS4243 and CS2103T must be together. So both in Sem 3. This requires ST1131 in Sem 3. Is ST1131 open to BComp CS Hons? Yes. So Sem 3: CS2103T, CS4243, ST1131. Plus CS2100, CS3230. That's 5 courses. 20 MC. OK. Then CS2102 wish: before CS2103T. CS2103T is Sem 3. CS2102 must be Sem 1 or 2. Student is in Sem 3. Cannot go back. So wish cannot be met. CS2102 can be Sem 4. CS2105 after CS3281. CS3281 Sem 4. CS2105 Sem 5. CS4218 after CS2103T. CS2103T Sem 3. CS4218 Sem 4 or later. CS4218 prereq CS3213 or CS3219. CS3219 prereq CS2103T. So CS3219 Sem 4. CS4218 Sem 5. CS4221 prereq CS3223. CS3223 prereq CS2040S and CS2102. CS2102 Sem 4. CS3223 Sem 5. CS4221 Sem 6. But student didn't list CS3223 as 'must take'. But CS4221 is a 'must take'. So CS3223 is a prerequisite needed. So CS3223 must be planned. CS3223 Sem 5. CS4221 Sem 6. So plan: Sem 3: CS2100, CS3230, CS2103T, CS4243, ST1131. Sem 4: CS2102, CS3219, CS3281. Sem 5: CS2105, CS3223, CS4218. Sem 6: CS4221. Total 6 semesters. MC: 4+4+4+4+4=20 Sem 3. 4+4+4=12 Sem 4. 4+4+4=12 Sem 5. 4 Sem 6. Low MC. \",\n    \"Re-evaluating CS4243 prereqs. ST1131 is needed. Student has not taken it. So ST1131 must be in Sem 3. CS4243 and CS2103T together in Sem 3. CS2100 and CS3230 also Sem 3. 5 courses. 20 MC. OK. CS2102 wish 'before CS2103T' impossible as CS2103T is Sem 3 and student is in Sem 3. CS2102 taken Sem 4. CS3281 Sem 4. CS2105 after CS3281, so Sem 5. CS4218 after CS2103T, prereq CS3219. CS3219 after CS2103T, so Sem 4. CS4218 Sem 5. CS4221 prereq CS3223. CS3223 prereq CS2102 and CS2040S. CS2102 Sem 4. CS3223 Sem 5. CS4221 Sem 6. Plan: 3: CS2100, CS3230, CS2103T, CS4243, ST1131. 4: CS2102, CS3219, CS3281. 5: CS2105, CS3223, CS4218. 6: CS4221.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS3230",
+      "CS2103T",
+      "CS4243"
+     ],
+     "4": [
+      "CS2102",
+      "CS2105",
+      "CS3219",
+      "CS3281"
+     ],
+     "5": [
+      "CS4218",
+      "CS4221"
+     ]
+    },
+    "reasons": [
+     "CS2103T and CS4243 are taken together in Sem 3 as required.",
+     "CS3230 is scheduled in Sem 3 to satisfy the 'as early as possible' wish.",
+     "CS2102 is taken in Sem 4, before CS2103T is completed, which conflicts with the wish 'rather do CS2102 before CS2103T'. However, CS2102 requires CS2040S (completed) and CS2030S (completed) and CS1231S (completed), so it is eligible in Sem 3. But CS2103T is a prerequisite for CS3219 and CS3281. CS2105 requires CS2040S. CS4218 requires CS3219 or CS3213. CS4221 requires CS3223. Wait, let's re-verify prerequisites.",
+     "CS2102 prereq: (CS1231 or ... CS1231S) AND (CS2030S or ...). Student has CS1231S and CS2030S. Eligible Sem 3. Wish: CS2102 before CS2103T. CS2103T is in Sem 3. Cannot take CS2102 before Sem 3 if CS2103T is in Sem 3. If CS2103T is in Sem 4, CS2102 can be in Sem 3. But CS2103T must be with CS4243. CS4243 prereqs are heavy. Let's check CS4243 prereqs: (YSC2232 or MA2001...) AND (ST1131...) AND (CS2030 or ... CS2113) AND (YSC2229 or CS2040...) AND (MA1102R...). Student has CS2040S (counts for CS2040). Student has CS2030S (counts for CS2030). Student has MA1521, MA1522. MA1522 is Linear Algebra for Computing. CS4243 needs MA2001 or MA1508E or MA1513 or MA1522. Student has MA1522. So that part is met. ST1131? Student has not completed ST1131. CS4243 requires ST1131 or ST1131A or ST1232 or ST2131 or MA2116 or MA2116T or MA2216 or EE2012A or EE2012 or ST2334 or YSC2243. Student has none of these. So CS4243 is NOT ELIGIBLE yet. Student must take a stats/prob course first. ST1131 is offered Sem 1, Sem 2. Student is in Sem 3. ST1131 is available. So CS4243 can be taken in Sem 3 if ST1131 is taken in Sem 3? No, ST1131 is a prerequisite. So ST1131 must be in Sem 3 or earlier. Student is in Sem 3. So ST1131 must be in Sem 3. Then CS4243 can be in Sem 3 (coreq) or Sem 4. But CS4243 and CS2103T must be together. So both in Sem 3. This requires ST1131 in Sem 3. Is ST1131 open to BComp CS Hons? Yes. So Sem 3: CS2103T, CS4243, ST1131. Plus CS2100, CS3230. That's 5 courses. 20 MC. OK. Then CS2102 wish: before CS2103T. CS2103T is Sem 3. CS2102 must be Sem 1 or 2. Student is in Sem 3. Cannot go back. So wish cannot be met. CS2102 can be Sem 4. CS2105 after CS3281. CS3281 Sem 4. CS2105 Sem 5. CS4218 after CS2103T. CS2103T Sem 3. CS4218 Sem 4 or later. CS4218 prereq CS3213 or CS3219. CS3219 prereq CS2103T. So CS3219 Sem 4. CS4218 Sem 5. CS4221 prereq CS3223. CS3223 prereq CS2040S and CS2102. CS2102 Sem 4. CS3223 Sem 5. CS4221 Sem 6. But student didn't list CS3223 as 'must take'. But CS4221 is a 'must take'. So CS3223 is a prerequisite needed. So CS3223 must be planned. CS3223 Sem 5. CS4221 Sem 6. So plan: Sem 3: CS2100, CS3230, CS2103T, CS4243, ST1131. Sem 4: CS2102, CS3219, CS3281. Sem 5: CS2105, CS3223, CS4218. Sem 6: CS4221. Total 6 semesters. MC: 4+4+4+4+4=20 Sem 3. 4+4+4=12 Sem 4. 4+4+4=12 Sem 5. 4 Sem 6. Low MC. ",
+     "Re-evaluating CS4243 prereqs. ST1131 is needed. Student has not taken it. So ST1131 must be in Sem 3. CS4243 and CS2103T together in Sem 3. CS2100 and CS3230 also Sem 3. 5 courses. 20 MC. OK. CS2102 wish 'before CS2103T' impossible as CS2103T is Sem 3 and student is in Sem 3. CS2102 taken Sem 4. CS3281 Sem 4. CS2105 after CS3281, so Sem 5. CS4218 after CS2103T, prereq CS3219. CS3219 after CS2103T, so Sem 4. CS4218 Sem 5. CS4221 prereq CS3223. CS3223 prereq CS2102 and CS2040S. CS2102 Sem 4. CS3223 Sem 5. CS4221 Sem 6. Plan: 3: CS2100, CS3230, CS2103T, CS4243, ST1131. 4: CS2102, CS3219, CS3281. 5: CS2105, CS3223, CS4218. 6: CS4221."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11593,
+    "total_tokens": 13459,
+    "completion_tokens": 1866,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 34.9,
+    "attempts": 1
+   },
+   "seconds": 34.9,
+   "violations": [
+    "R3 CS4221 not offered in Sem 1 (semester 5)",
+    "R4 CS4221 in semester 5: prerequisite not met (CS3223)",
+    "R4 CS4243 in semester 3: prerequisite not met ((YSC2232 or MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522) and (ST1131 or ST1131A or ST1232 or ST2131 or MA2116 or MA2116T or MA2216 or EE2012A or EE2012 or ST2334 or YSC2243) and (CS2030 or CS2030S or CS2030DE or CS2030HS or CS2113 or CS2113T) and (YSC2229 or CS2040 or CS2040S or CS2040DE or CS2040C or CS2040HS) and (MA1102R or MA2002 or YSC1216 or MA1505 or MA1521 or MA1507 or (MA1512 and MA1511)))",
+    "R9 must rule not met: before CS3281 CS2105"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS3230\",\n      \"ST1131\"\n    ],\n    \"4\": [\n      \"CS2103T\",\n      \"CS4243\",\n      \"CS2102\",\n      \"CS3219\"\n    ],\n    \"5\": [\n      \"CS3281\",\n      \"CS2105\",\n      \"CS4218\"\n    ],\n    \"6\": [\n      \"CS3223\",\n      \"CS4221\"\n    ]\n  },\n  \"reasons\": [\n    \"CS4243 requires ST1131 (prereq). ST1131 taken in Sem 3. CS4243 and CS2103T taken together in Sem 4.\",\n    \"CS2102 taken in Sem 4. Wish 'CS2102 before CS2103T' cannot be met as CS2103T is in Sem 4 and student is in Sem 3; CS2102 cannot be taken in Sem 1 or 2 retroactively.\",\n    \"CS2105 taken in Sem 5, after CS3281 (Sem 5) is completed? No, CS3281 is Sem 5. CS2105 prereq is CS2040S (completed). Constraint: 'finish CS3281 before I start CS2105'. So CS3281 must be in Sem 4 or earlier? No, 'finish before start'. If CS3281 is Sem 5, CS2105 must be Sem 6. Let's swap. CS3281 Sem 4? Prereq CS2103 (or variants). CS2103T is Sem 4. So CS3281 cannot be Sem 4. CS3281 must be Sem 5 or later. If CS3281 is Sem 5, CS2105 must be Sem 6. So: Sem 4: CS2103T, CS4243, CS2102, CS3219. Sem 5: CS3281. Sem 6: CS2105, CS3223, CS4218, CS4221. Wait, CS4218 prereq CS3219 (Sem 4). So CS4218 Sem 5 or 6. CS3223 prereq CS2102 (Sem 4) and CS2040S. So CS3223 Sem 5. CS4221 prereq CS3223. So CS4221 Sem 6. CS2105 Sem 6. CS4218 Sem 5. Sem 5: CS3281, CS4218. Sem 6: CS2105, CS3223, CS4221. This works. MC: Sem 4: 16. Sem 5: 8. Sem 6: 12. All <= 20.\",\n    \"CS3230 taken in Sem 3 (as early as possible). CS2100 taken in Sem 3.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS3230",
+      "ST1131"
+     ],
+     "4": [
+      "CS2103T",
+      "CS4243",
+      "CS2102",
+      "CS3219"
+     ],
+     "5": [
+      "CS3281",
+      "CS2105",
+      "CS4218"
+     ],
+     "6": [
+      "CS3223",
+      "CS4221"
+     ]
+    },
+    "reasons": [
+     "CS4243 requires ST1131 (prereq). ST1131 taken in Sem 3. CS4243 and CS2103T taken together in Sem 4.",
+     "CS2102 taken in Sem 4. Wish 'CS2102 before CS2103T' cannot be met as CS2103T is in Sem 4 and student is in Sem 3; CS2102 cannot be taken in Sem 1 or 2 retroactively.",
+     "CS2105 taken in Sem 5, after CS3281 (Sem 5) is completed? No, CS3281 is Sem 5. CS2105 prereq is CS2040S (completed). Constraint: 'finish CS3281 before I start CS2105'. So CS3281 must be in Sem 4 or earlier? No, 'finish before start'. If CS3281 is Sem 5, CS2105 must be Sem 6. Let's swap. CS3281 Sem 4? Prereq CS2103 (or variants). CS2103T is Sem 4. So CS3281 cannot be Sem 4. CS3281 must be Sem 5 or later. If CS3281 is Sem 5, CS2105 must be Sem 6. So: Sem 4: CS2103T, CS4243, CS2102, CS3219. Sem 5: CS3281. Sem 6: CS2105, CS3223, CS4218, CS4221. Wait, CS4218 prereq CS3219 (Sem 4). So CS4218 Sem 5 or 6. CS3223 prereq CS2102 (Sem 4) and CS2040S. So CS3223 Sem 5. CS4221 prereq CS3223. So CS4221 Sem 6. CS2105 Sem 6. CS4218 Sem 5. Sem 5: CS3281, CS4218. Sem 6: CS2105, CS3223, CS4221. This works. MC: Sem 4: 16. Sem 5: 8. Sem 6: 12. All <= 20.",
+     "CS3230 taken in Sem 3 (as early as possible). CS2100 taken in Sem 3."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 13841,
+    "total_tokens": 14617,
+    "completion_tokens": 776,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 10.59,
+    "attempts": 1
+   },
+   "seconds": 10.59,
+   "violations": [
+    "R4 CS3219 in semester 4: prerequisite not met (YSC3232 or CS2103 or CS2103T or CS2103DE or CS2113T or CS2113)",
+    "R3 CS3281 not offered in Sem 1 (semester 5)",
+    "R4 CS4221 in semester 6: prerequisite not met (CS3223)",
+    "R9 must rule not met: before CS3281 CS2105",
+    "R9 must rule not met: before CS4243 CS2102",
+    "R10 CS3223 was added but no later planned course needs it"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS3230\",\n      \"ST1131\"\n    ],\n    \"4\": [\n      \"CS2103T\",\n      \"CS4243\",\n      \"CS2102\",\n      \"CS3219\"\n    ],\n    \"5\": [\n      \"CS3281\",\n      \"CS4218\"\n    ],\n    \"6\": [\n      \"CS2105\",\n      \"CS3223\",\n      \"CS4221\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3219 prereq CS2103T (Sem 4) met. CS3281 offered Sem 2 (Sem 5 is valid). CS4221 prereq CS3223 (Sem 6) met.\",\n    \"CS3281 (Sem 5) finished before CS2105 (Sem 6). CS4243 (Sem 4) finished before CS2102 (Sem 4)? No, 'finish before start' usually implies strict ordering or completion. If taken together, 'finish before start' is ambiguous. However, CS4243 and CS2102 are in Sem 4. The constraint 'finish CS4243 before I start CS2102' likely means CS4243 must be completed prior to CS2102. Since they are in the same semester, this is impossible unless CS4243 is earlier. But CS4243 prereqs are heavy. Let's re-read: 'I need to finish CS4243 before I start CS2102'. If they are in the same semester, you don't finish one before starting the other. So CS4243 must be in an earlier semester than CS2102. CS2102 is Sem 4. So CS4243 must be Sem 3? CS4243 prereqs: Math and Stats and CS2030/2113 and CS2040. CS2113 is not taken. CS2030S is taken. CS2040S is taken. Math prereqs: MA1521 (taken), MA1522 (taken). Stats prereqs: ST1131. So CS4243 can be taken in Sem 3 if ST1131 is taken. ST1131 has no prereqs. So ST1131 in Sem 3. CS4243 in Sem 3. Then CS2102 in Sem 4. This satisfies 'finish CS4243 before start CS2102'.\",\n    \"Revised Plan: Sem 3: CS2100, CS3230, ST1131, CS4243. Sem 4: CS2103T, CS2102, CS3219. Sem 5: CS3281, CS4218. Sem 6: CS2105, CS3223, CS4221. MC: Sem 3: 16. Sem 4: 16. Sem 5: 8. Sem 6: 12. All <= 20. CS2103T and CS4243 not together. Student said 'have to take CS4243 and CS2103T together'. This is a hard constraint. So they MUST be in the same semester. If they are in the same semester, 'finish CS4243 before start CS2102' is impossible if CS2102 is in the same or earlier semester. If CS2102 is in a later semester, say Sem 5, then CS4243 (Sem 4) is finished before CS2102 (Sem 5). So CS2102 must be Sem 5 or later. But CS2102 prereq CS2030S/CS2040S (met). CS2102 offered Sem 1,2. So CS2102 can be Sem 5. So: CS4243 and CS2103T in Sem 4. CS2102 in Sem 5. CS3281 before CS2105. CS3281 Sem 5? Then CS2105 Sem 6. CS3223 prereq CS2102 (Sem 5). So CS3223 Sem 6. CS4221 prereq CS3223. So CS4221 Sem 6. CS4218 prereq CS3219. CS3219 prereq CS2103T (Sem 4). So CS3219 Sem 5. CS4218 Sem 5 or 6. CS3230 as early as possible. Sem 3. CS2100 Sem 3. ST1131 Sem 3 (for CS4243). Sem 3: CS2100, CS3230, ST1131. Sem 4: CS2103T, CS4243, CS3219. Sem 5: CS2102, CS3281, CS4218. Sem 6: CS2105, CS3223, CS4221. Check MC: Sem 3: 12. Sem 4: 16. Sem 5: 16. Sem 6: 12. All <= 20. CS2103T and CS4243 together. CS4243 (Sem 4) finished before CS2102 (Sem 5). CS3281 (Sem 5) finished before CS2105 (Sem 6). CS3230 in Sem 3 (earliest). CS2102 before CS2103T? Wish. CS2102 is Sem 5, CS2103T is Sem 4. Wish not met. But hard constraints force this.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS3230",
+      "ST1131"
+     ],
+     "4": [
+      "CS2103T",
+      "CS4243",
+      "CS2102",
+      "CS3219"
+     ],
+     "5": [
+      "CS3281",
+      "CS4218"
+     ],
+     "6": [
+      "CS2105",
+      "CS3223",
+      "CS4221"
+     ]
+    },
+    "reasons": [
+     "CS3219 prereq CS2103T (Sem 4) met. CS3281 offered Sem 2 (Sem 5 is valid). CS4221 prereq CS3223 (Sem 6) met.",
+     "CS3281 (Sem 5) finished before CS2105 (Sem 6). CS4243 (Sem 4) finished before CS2102 (Sem 4)? No, 'finish before start' usually implies strict ordering or completion. If taken together, 'finish before start' is ambiguous. However, CS4243 and CS2102 are in Sem 4. The constraint 'finish CS4243 before I start CS2102' likely means CS4243 must be completed prior to CS2102. Since they are in the same semester, this is impossible unless CS4243 is earlier. But CS4243 prereqs are heavy. Let's re-read: 'I need to finish CS4243 before I start CS2102'. If they are in the same semester, you don't finish one before starting the other. So CS4243 must be in an earlier semester than CS2102. CS2102 is Sem 4. So CS4243 must be Sem 3? CS4243 prereqs: Math and Stats and CS2030/2113 and CS2040. CS2113 is not taken. CS2030S is taken. CS2040S is taken. Math prereqs: MA1521 (taken), MA1522 (taken). Stats prereqs: ST1131. So CS4243 can be taken in Sem 3 if ST1131 is taken. ST1131 has no prereqs. So ST1131 in Sem 3. CS4243 in Sem 3. Then CS2102 in Sem 4. This satisfies 'finish CS4243 before start CS2102'.",
+     "Revised Plan: Sem 3: CS2100, CS3230, ST1131, CS4243. Sem 4: CS2103T, CS2102, CS3219. Sem 5: CS3281, CS4218. Sem 6: CS2105, CS3223, CS4221. MC: Sem 3: 16. Sem 4: 16. Sem 5: 8. Sem 6: 12. All <= 20. CS2103T and CS4243 not together. Student said 'have to take CS4243 and CS2103T together'. This is a hard constraint. So they MUST be in the same semester. If they are in the same semester, 'finish CS4243 before start CS2102' is impossible if CS2102 is in the same or earlier semester. If CS2102 is in a later semester, say Sem 5, then CS4243 (Sem 4) is finished before CS2102 (Sem 5). So CS2102 must be Sem 5 or later. But CS2102 prereq CS2030S/CS2040S (met). CS2102 offered Sem 1,2. So CS2102 can be Sem 5. So: CS4243 and CS2103T in Sem 4. CS2102 in Sem 5. CS3281 before CS2105. CS3281 Sem 5? Then CS2105 Sem 6. CS3223 prereq CS2102 (Sem 5). So CS3223 Sem 6. CS4221 prereq CS3223. So CS4221 Sem 6. CS4218 prereq CS3219. CS3219 prereq CS2103T (Sem 4). So CS3219 Sem 5. CS4218 Sem 5 or 6. CS3230 as early as possible. Sem 3. CS2100 Sem 3. ST1131 Sem 3 (for CS4243). Sem 3: CS2100, CS3230, ST1131. Sem 4: CS2103T, CS4243, CS3219. Sem 5: CS2102, CS3281, CS4218. Sem 6: CS2105, CS3223, CS4221. Check MC: Sem 3: 12. Sem 4: 16. Sem 5: 16. Sem 6: 12. All <= 20. CS2103T and CS4243 together. CS4243 (Sem 4) finished before CS2102 (Sem 5). CS3281 (Sem 5) finished before CS2105 (Sem 6). CS3230 in Sem 3 (earliest). CS2102 before CS2103T? Wish. CS2102 is Sem 5, CS2103T is Sem 4. Wish not met. But hard constraints force this."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12575,
+    "total_tokens": 13995,
+    "completion_tokens": 1420,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 24.51,
+    "attempts": 1
+   },
+   "seconds": 24.51,
+   "violations": [
+    "R4 CS3219 in semester 4: prerequisite not met (YSC3232 or CS2103 or CS2103T or CS2103DE or CS2113T or CS2113)",
+    "R3 CS3281 not offered in Sem 1 (semester 5)",
+    "R4 CS4221 in semester 6: prerequisite not met (CS3223)",
+    "R9 must rule not met: before CS4243 CS2102",
+    "R10 CS3223 was added but no later planned course needs it"
+   ]
+  },
+  {
+   "round": 3,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3281 is offered only in Sem 2 (even semesters). The student is in Sem 3 (odd). CS3281 can only be taken in Sem 4, 6, or 8.\",\n    \"The student requires CS4243 and CS2103T to be taken together. CS4243 prerequisites include ST1131. CS2102 must be taken after CS4243 is finished. Thus CS2102 must be in a later semester than the one containing CS4243/CS2103T.\",\n    \"CS2105 must be taken after CS3281. CS3281 is in an even semester (e.g., 4, 6, 8). So CS2105 is in a later even semester or odd semester after that. CS2105 has no specific offering restriction (Sem 1, 2).\",\n    \"CS3223 is required for CS4221. CS3223 prereqs are CS2040S (completed) and CS2102. So CS3223 must be after CS2102. CS4221 must be after CS3223.\",\n    \"Let's try to fit: CS4243/CS2103T in Sem 4. Then CS2102 in Sem 5 (or later). CS3281 in Sem 6 (after CS2102? No, CS3281 before CS2105. CS3281 prereq CS2103/CS2103T/CS2103DE/CS2113. CS2103T is in Sem 4. So CS3281 can be Sem 6. Then CS2105 in Sem 7 or 8. CS2102 in Sem 5. CS3223 in Sem 6 or 7. CS4221 in Sem 7 or 8. CS3219 prereq CS2103T (Sem 4). CS3219 can be Sem 5. CS4218 prereq CS3219. CS4218 can be Sem 6. CS3230 as early as possible. Sem 3. CS2100 Sem 3. ST1131 Sem 3 (for CS4243).\",\n    \"Plan attempt: Sem 3: CS2100, CS3230, ST1131. Sem 4: CS2103T, CS4243, CS3219. Sem 5: CS2102. Sem 6: CS3281, CS3223, CS4218. Sem 7: CS2105, CS4221. Check constraints: CS4243 (Sem 4) finished before CS2102 (Sem 5). OK. CS3281 (Sem 6) finished before CS2105 (Sem 7). OK. CS2103T and CS4243 together. OK. CS3230 in Sem 3 (earliest). OK. CS2102 before CS2103T? Wish. CS2102 is Sem 5, CS2103T is Sem 4. Wish not met. But hard rules met?\",\n    \"Check CS3281 offering: Sem 2 only. Sem 6 is Sem 2 of AY2028/29. OK. Check CS2105 offering: Sem 1, 2. Sem 7 is Sem 1 of AY2029/30. OK. Check CS4221 offering: Sem 2 only. Sem 7 is Sem 1. CS4221 is NOT offered in Sem 1. So CS4221 cannot be in Sem 7. It must be in Sem 8.\",\n    \"If CS4221 is Sem 8, CS3223 must be Sem 7 or earlier. CS3223 prereq CS2102. CS2102 is Sem 5. CS3223 can be Sem 6. CS4221 Sem 8. CS2105 Sem 7. CS3281 Sem 6. CS4218 Sem 6. CS3219 Sem 5. CS2102 Sem 5. CS2103T/CS4243 Sem 4. CS2100/CS3230/ST1131 Sem 3.\",\n    \"Check MC: Sem 3: 12. Sem 4: 16. Sem 5: 8. Sem 6: 16. Sem 7: 4. Sem 8: 4. All <= 20.\",\n    \"Check CS3219 prereq: CS2103T (Sem 4). CS3219 in Sem 5. OK.\",\n    \"Check CS4218 prereq: CS3219 (Sem 5). CS4218 in Sem 6. OK.\",\n    \"Check CS3223 prereq: CS2040S (completed), CS2102 (Sem 5). CS3223 in Sem 6. OK.\",\n    \"Check CS4221 prereq: CS3223 (Sem 6). CS4221 in Sem 8. OK.\",\n    \"Check CS2105 prereq: CS2040S (completed). CS2105 in Sem 7. OK.\",\n    \"Check CS3281 prereq: CS2103T (Sem 4). CS3281 in Sem 6. OK.\",\n    \"Check CS4243 prereq: Math (MA1521, MA1522 completed), Stats (ST1131 Sem 3), CS2030S (completed), CS2040S (completed). CS4243 in Sem 4. OK.\",\n    \"Check CS2103T prereq: CS2030S (completed), CS2040S (completed). CS2103T in Sem 4. OK.\",\n    \"Check CS2102 prereq: CS1231S (completed), CS2030S (completed). CS2102 in Sem 5. OK.\",\n    \"Check CS2100 prereq: CS1101S (completed). CS2100 in Sem 3. OK.\",\n    \"Check CS3230 prereq: CS2040S (completed), CS1231S (completed). CS3230 in Sem 3. OK.\",\n    \"Check ST1131 prereq: none. ST1131 in Sem 3. OK.\",\n    \"Check 'finish CS4243 before start CS2102': CS4243 Sem 4, CS2102 Sem 5. OK.\",\n    \"Check 'finish CS3281 before start CS2105': CS3281 Sem 6, CS2105 Sem 7. OK.\",\n    \"Check 'CS4243 and CS2103T together': Both Sem 4. OK.\",\n    \"Check 'CS2103T before CS4218': CS2103T Sem 4, CS4218 Sem 6. OK.\",\n    \"Check 'CS3230 as early as possible': Sem 3. OK.\",\n    \"Check 'CS2102 before CS2103T': Wish. CS2102 Sem 5, CS2103T Sem 4. Not met. But hard rules satisfied.\",\n    \"Is there a plan where CS2102 is before CS2103T? CS2102 prereqs met. CS2102 can be Sem 3? If CS2102 Sem 3, then CS4243 must be before CS2102? No, 'finish CS4243 before start CS2102'. So CS4243 must be before CS2102. If CS2102 is Sem 3, CS4243 must be Sem 1 or 2. But student is in Sem 3. So CS4243 cannot be before CS2102 if CS2102 is Sem 3. So CS2102 cannot be Sem 3. CS2102 must be after CS4243. CS4243 is with CS2103T. So CS2102 is after CS2103T. So 'CS2102 before CS2103T' is impossible to satisfy with 'CS4243 before CS2102' and 'CS4243 with CS2103T'.\",\n    \"Thus, the plan is valid.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3281 is offered only in Sem 2 (even semesters). The student is in Sem 3 (odd). CS3281 can only be taken in Sem 4, 6, or 8.",
+     "The student requires CS4243 and CS2103T to be taken together. CS4243 prerequisites include ST1131. CS2102 must be taken after CS4243 is finished. Thus CS2102 must be in a later semester than the one containing CS4243/CS2103T.",
+     "CS2105 must be taken after CS3281. CS3281 is in an even semester (e.g., 4, 6, 8). So CS2105 is in a later even semester or odd semester after that. CS2105 has no specific offering restriction (Sem 1, 2).",
+     "CS3223 is required for CS4221. CS3223 prereqs are CS2040S (completed) and CS2102. So CS3223 must be after CS2102. CS4221 must be after CS3223.",
+     "Let's try to fit: CS4243/CS2103T in Sem 4. Then CS2102 in Sem 5 (or later). CS3281 in Sem 6 (after CS2102? No, CS3281 before CS2105. CS3281 prereq CS2103/CS2103T/CS2103DE/CS2113. CS2103T is in Sem 4. So CS3281 can be Sem 6. Then CS2105 in Sem 7 or 8. CS2102 in Sem 5. CS3223 in Sem 6 or 7. CS4221 in Sem 7 or 8. CS3219 prereq CS2103T (Sem 4). CS3219 can be Sem 5. CS4218 prereq CS3219. CS4218 can be Sem 6. CS3230 as early as possible. Sem 3. CS2100 Sem 3. ST1131 Sem 3 (for CS4243).",
+     "Plan attempt: Sem 3: CS2100, CS3230, ST1131. Sem 4: CS2103T, CS4243, CS3219. Sem 5: CS2102. Sem 6: CS3281, CS3223, CS4218. Sem 7: CS2105, CS4221. Check constraints: CS4243 (Sem 4) finished before CS2102 (Sem 5). OK. CS3281 (Sem 6) finished before CS2105 (Sem 7). OK. CS2103T and CS4243 together. OK. CS3230 in Sem 3 (earliest). OK. CS2102 before CS2103T? Wish. CS2102 is Sem 5, CS2103T is Sem 4. Wish not met. But hard rules met?",
+     "Check CS3281 offering: Sem 2 only. Sem 6 is Sem 2 of AY2028/29. OK. Check CS2105 offering: Sem 1, 2. Sem 7 is Sem 1 of AY2029/30. OK. Check CS4221 offering: Sem 2 only. Sem 7 is Sem 1. CS4221 is NOT offered in Sem 1. So CS4221 cannot be in Sem 7. It must be in Sem 8.",
+     "If CS4221 is Sem 8, CS3223 must be Sem 7 or earlier. CS3223 prereq CS2102. CS2102 is Sem 5. CS3223 can be Sem 6. CS4221 Sem 8. CS2105 Sem 7. CS3281 Sem 6. CS4218 Sem 6. CS3219 Sem 5. CS2102 Sem 5. CS2103T/CS4243 Sem 4. CS2100/CS3230/ST1131 Sem 3.",
+     "Check MC: Sem 3: 12. Sem 4: 16. Sem 5: 8. Sem 6: 16. Sem 7: 4. Sem 8: 4. All <= 20.",
+     "Check CS3219 prereq: CS2103T (Sem 4). CS3219 in Sem 5. OK.",
+     "Check CS4218 prereq: CS3219 (Sem 5). CS4218 in Sem 6. OK.",
+     "Check CS3223 prereq: CS2040S (completed), CS2102 (Sem 5). CS3223 in Sem 6. OK.",
+     "Check CS4221 prereq: CS3223 (Sem 6). CS4221 in Sem 8. OK.",
+     "Check CS2105 prereq: CS2040S (completed). CS2105 in Sem 7. OK.",
+     "Check CS3281 prereq: CS2103T (Sem 4). CS3281 in Sem 6. OK.",
+     "Check CS4243 prereq: Math (MA1521, MA1522 completed), Stats (ST1131 Sem 3), CS2030S (completed), CS2040S (completed). CS4243 in Sem 4. OK.",
+     "Check CS2103T prereq: CS2030S (completed), CS2040S (completed). CS2103T in Sem 4. OK.",
+     "Check CS2102 prereq: CS1231S (completed), CS2030S (completed). CS2102 in Sem 5. OK.",
+     "Check CS2100 prereq: CS1101S (completed). CS2100 in Sem 3. OK.",
+     "Check CS3230 prereq: CS2040S (completed), CS1231S (completed). CS3230 in Sem 3. OK.",
+     "Check ST1131 prereq: none. ST1131 in Sem 3. OK.",
+     "Check 'finish CS4243 before start CS2102': CS4243 Sem 4, CS2102 Sem 5. OK.",
+     "Check 'finish CS3281 before start CS2105': CS3281 Sem 6, CS2105 Sem 7. OK.",
+     "Check 'CS4243 and CS2103T together': Both Sem 4. OK.",
+     "Check 'CS2103T before CS4218': CS2103T Sem 4, CS4218 Sem 6. OK.",
+     "Check 'CS3230 as early as possible': Sem 3. OK.",
+     "Check 'CS2102 before CS2103T': Wish. CS2102 Sem 5, CS2103T Sem 4. Not met. But hard rules satisfied.",
+     "Is there a plan where CS2102 is before CS2103T? CS2102 prereqs met. CS2102 can be Sem 3? If CS2102 Sem 3, then CS4243 must be before CS2102? No, 'finish CS4243 before start CS2102'. So CS4243 must be before CS2102. If CS2102 is Sem 3, CS4243 must be Sem 1 or 2. But student is in Sem 3. So CS4243 cannot be before CS2102 if CS2102 is Sem 3. So CS2102 cannot be Sem 3. CS2102 must be after CS4243. CS4243 is with CS2103T. So CS2102 is after CS2103T. So 'CS2102 before CS2103T' is impossible to satisfy with 'CS4243 before CS2102' and 'CS4243 with CS2103T'.",
+     "Thus, the plan is valid."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 13199,
+    "total_tokens": 15284,
+    "completion_tokens": 2085,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 32.32,
+    "attempts": 1
+   },
+   "seconds": 32.32,
+   "violations": null
+  }
+ ]
+}

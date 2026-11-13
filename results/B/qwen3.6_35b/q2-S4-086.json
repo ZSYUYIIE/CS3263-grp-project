@@ -1,0 +1,70 @@
+{
+ "id": "q2-S4-086",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 4.59,
+ "solver_seconds": 0.211,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3093,
+  "total_tokens": 3349,
+  "completion_tokens": 256,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 4.38,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 2,\n\"completed\": [\n\"CS1101S\",\n\"MA1521\",\n\"ES2660\",\n\"CS1231S\"\n],\n\"must_take\": [\n\"CS3227\",\n\"CS2102\",\n\"CS3244\",\n\"MA1522\",\n\"CS3264\",\n\"CS4236\",\n\"CS2103T\",\n\"ST2334\"\n],\n\"sem_caps\": {\n\"3\": 0\n},\n\"early\": [\n\"ST2334\",\n\"CS2103T\"\n],\n\"rules\": [\n{\n\"type\": \"same_sem\",\n\"a\": \"CS3227\",\n\"b\": \"ST2334\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2102\",\n\"b\": \"ST2334\",\n\"strength\": \"must\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 2,
+  "completed": [
+   "CS1101S",
+   "MA1521",
+   "ES2660",
+   "CS1231S"
+  ],
+  "must_take": [
+   "CS3227",
+   "CS2102",
+   "CS3244",
+   "MA1522",
+   "CS3264",
+   "CS4236",
+   "CS2103T",
+   "ST2334"
+  ],
+  "sem_caps": {
+   "3": 0
+  },
+  "early": [
+   "ST2334",
+   "CS2103T"
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS3227",
+    "b": "ST2334",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2102",
+    "b": "ST2334",
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the course exclusions (courses that cannot be taken together)"
+  ]
+ }
+}

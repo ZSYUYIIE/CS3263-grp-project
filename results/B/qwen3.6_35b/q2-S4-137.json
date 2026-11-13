@@ -1,0 +1,83 @@
+{
+ "id": "q2-S4-137",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 21.84,
+ "solver_seconds": 0.002,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3127,
+  "total_tokens": 3488,
+  "completion_tokens": 361,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 21.83,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 5,\n\"completed\": [\n\"CS4277\",\n\"IS1108\",\n\"CS2100\",\n\"ES2660\",\n\"CS2030S\",\n\"CS3230\",\n\"MA1522\",\n\"CS2106\",\n\"CS1231S\",\n\"CS2101\",\n\"CS1101S\",\n\"CS2109S\",\n\"ST2334\",\n\"CS2040S\",\n\"CS2103T\",\n\"MA1521\"\n],\n\"must_take\": [\n\"CS2102\",\n\"CS4248\",\n\"CS3219\",\n\"CS3236\",\n\"CS3241\",\n\"CS4218\",\n\"CS4243\",\n\"CS2105\"\n],\n\"sem_caps\": {\n\"6\": 0,\n\"8\": 0\n},\n\"objective\": \"min_total_mc\",\n\"late\": [\n\"CS2102\"\n],\n\"rules\": [\n{\n\"type\": \"apart\",\n\"a\": \"CS2102\",\n\"b\": \"CS2105\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2105\",\n\"b\": \"CS3241\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "completed": [
+   "CS4277",
+   "IS1108",
+   "CS2100",
+   "ES2660",
+   "CS2030S",
+   "CS3230",
+   "MA1522",
+   "CS2106",
+   "CS1231S",
+   "CS2101",
+   "CS1101S",
+   "CS2109S",
+   "ST2334",
+   "CS2040S",
+   "CS2103T",
+   "MA1521"
+  ],
+  "must_take": [
+   "CS2102",
+   "CS4248",
+   "CS3219",
+   "CS3236",
+   "CS3241",
+   "CS4218",
+   "CS4243",
+   "CS2105"
+  ],
+  "sem_caps": {
+   "6": 0,
+   "8": 0
+  },
+  "objective": "min_total_mc",
+  "late": [
+   "CS2102"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS2102",
+    "b": "CS2105",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2105",
+    "b": "CS3241",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3236 cannot be placed in any remaining semester (offered in terms [2]; semesters left [5, 7])"
+  ]
+ }
+}

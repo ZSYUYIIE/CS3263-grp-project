@@ -1,0 +1,107 @@
+{
+ "id": "q2-S3-106",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.45,
+ "solver_seconds": 0.016,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3116,
+  "total_tokens": 3470,
+  "completion_tokens": 354,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.44,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 6,\n\"completed\": [\n\"ES2660\",\n\"CS3233\",\n\"CS2105\",\n\"CS2106\",\n\"CS3219\",\n\"CS2103T\",\n\"CS1101S\",\n\"CS3230\",\n\"CS1231S\",\n\"CS2109S\",\n\"CS2100\",\n\"CS2040S\",\n\"MA1521\",\n\"CS2101\",\n\"CS2030S\",\n\"MA1522\",\n\"IS1108\"\n],\n\"must_take\": [\n\"ST2334\",\n\"CS3231\",\n\"CS3237\",\n\"CS2102\"\n],\n\"mc_min\": 8,\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS3237\",\n\"b\": \"ST2334\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS3237\",\n\"b\": \"CS3231\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS2102\",\n\"b\": \"ST2334\",\n\"strength\": \"prefer\"\n}\n],\n\"late\": [\n\"ST2334\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 6,
+  "completed": [
+   "ES2660",
+   "CS3233",
+   "CS2105",
+   "CS2106",
+   "CS3219",
+   "CS2103T",
+   "CS1101S",
+   "CS3230",
+   "CS1231S",
+   "CS2109S",
+   "CS2100",
+   "CS2040S",
+   "MA1521",
+   "CS2101",
+   "CS2030S",
+   "MA1522",
+   "IS1108"
+  ],
+  "must_take": [
+   "ST2334",
+   "CS3231",
+   "CS3237",
+   "CS2102"
+  ],
+  "mc_min": 8,
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3237",
+    "b": "ST2334",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3237",
+    "b": "CS3231",
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS2102",
+    "b": "ST2334",
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "ST2334"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 8,
+  "plan": {
+   "6": [],
+   "7": [
+    "CS3231",
+    "CS3237"
+   ],
+   "8": [
+    "CS2102",
+    "ST2334"
+   ]
+  },
+  "mc_per_semester": {
+   "6": 0,
+   "7": 8,
+   "8": 8
+  },
+  "preferences_met": [
+   "CS3237 and CS3231 in the same semester",
+   "ST2334 as late as possible"
+  ],
+  "preferences_not_met": [
+   "CS2102 and ST2334 in different semesters"
+  ]
+ }
+}

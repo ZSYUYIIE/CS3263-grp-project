@@ -1,0 +1,57 @@
+{
+ "id": "q2-S3-124",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 133.07,
+ "usage": {
+  "prompt_tokens": 8148,
+  "total_tokens": 21134,
+  "completion_tokens": 12986,
+  "prompt_tokens_details": {
+   "cached_tokens": 7936,
+   "created_cache_tokens": 128
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 12829
+  },
+  "finish_reason": "stop",
+  "request_seconds": 133.07,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"4\":[\"ST2334\",\"CS3230\",\"CS2107\",\"CS2105\"],\"5\":[\"CS4236\",\"CS2104\",\"CS2109S\"],\"8\":[\"CS4212\",\"CS4222\",\"CS3219\",\"CS3233\"]},\"reasons\":[\"Total 44 MC: all requested courses plus CS2107 for CS4236 and CS2104 for CS4212.\",\"CS3230 is in semester 4, the earliest possible. CS3219 cannot be in semester 7 because CS4222 is Sem 2 only and must be taken together.\",\"Every non-empty semester has at least 3 modules; CS4212 is in semester 8.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "ST2334",
+    "CS3230",
+    "CS2107",
+    "CS2105"
+   ],
+   "5": [
+    "CS4236",
+    "CS2104",
+    "CS2109S"
+   ],
+   "8": [
+    "CS4212",
+    "CS4222",
+    "CS3219",
+    "CS3233"
+   ]
+  },
+  "reasons": [
+   "Total 44 MC: all requested courses plus CS2107 for CS4236 and CS2104 for CS4212.",
+   "CS3230 is in semester 4, the earliest possible. CS3219 cannot be in semester 7 because CS4222 is Sem 2 only and must be taken together.",
+   "Every non-empty semester has at least 3 modules; CS4212 is in semester 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,219 @@
+{
+ "id": "q2-S4-127",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 3,
+ "end": "valid",
+ "seconds": 18.24,
+ "usage": {
+  "prompt_tokens": 45863,
+  "total_tokens": 46840,
+  "completion_tokens": 977,
+  "finish_reason": "stop",
+  "request_seconds": 18.24,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2102\",\n\"CS3219\",\n\"CS2105\"\n],\n\"7\": [\n\"CS4234\",\n\"CS4218\"\n],\n\"8\": [\n\"CS3233\",\n\"CS4230\"\n]\n},\n\"reasons\": [\n\"CS3233 is offered only in Sem 2, so it must be in Sem 7 or 8.\",\n\"CS4234 is offered only in Sem 1, so it must be in Sem 5, 7, or 8.\",\n\"CS4230 requires CS3230 (completed) and ST2334 (completed), so it can be taken in Sem 8.\"\n]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS3219",
+    "CS2105"
+   ],
+   "7": [
+    "CS4234",
+    "CS4218"
+   ],
+   "8": [
+    "CS3233",
+    "CS4230"
+   ]
+  },
+  "reasons": [
+   "CS3233 is offered only in Sem 2, so it must be in Sem 7 or 8.",
+   "CS4234 is offered only in Sem 1, so it must be in Sem 5, 7, or 8.",
+   "CS4230 requires CS3230 (completed) and ST2334 (completed), so it can be taken in Sem 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2102\",\n\"CS2105\",\n\"CS3233\",\n\"CS3219\"\n],\n\"7\": [\n\"CS4234\",\n\"CS4218\"\n],\n\"8\": [\n\"CS4230\"\n]\n},\n\"reasons\": [\n\"CS2102 is placed in Sem 5 as requested, satisfying its prerequisites (CS1231S, CS2030S) which are completed.\",\n\"CS2105 is taken in Sem 5 before CS4218 in Sem 7, meeting the soft wish.\",\n\"CS4234 is taken in Sem 7 before CS4230 in Sem 8, meeting the soft wish and allowing CS4230 to be as late as possible.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2102",
+      "CS2105",
+      "CS3233",
+      "CS3219"
+     ],
+     "7": [
+      "CS4234",
+      "CS4218"
+     ],
+     "8": [
+      "CS4230"
+     ]
+    },
+    "reasons": [
+     "CS2102 is placed in Sem 5 as requested, satisfying its prerequisites (CS1231S, CS2030S) which are completed.",
+     "CS2105 is taken in Sem 5 before CS4218 in Sem 7, meeting the soft wish.",
+     "CS4234 is taken in Sem 7 before CS4230 in Sem 8, meeting the soft wish and allowing CS4230 to be as late as possible."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11215,
+    "total_tokens": 11427,
+    "completion_tokens": 212,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.73,
+    "attempts": 1
+   },
+   "seconds": 4.73,
+   "violations": [
+    "R3 CS3233 not offered in Sem 1 (semester 5)"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2102\",\n\"CS3219\",\n\"CS3230\"\n],\n\"6\": [\n\"CS2105\"\n],\n\"7\": [\n\"CS3233\",\n\"CS4234\",\n\"CS4218\"\n],\n\"8\": [\n\"CS4230\"\n]\n},\n\"reasons\": [\n\"CS3233 is offered in Sem 2, so it is moved to Sem 7 to satisfy the prerequisite and soft wish.\",\n\"CS2105 is taken in Sem 6 (exchange semester is Sem 6? No, Y3S2 is Sem 6. Wait. Y3S1=5, Y3S2=6. Student is away on exchange in Y3S2. So Sem 6 is empty/exchange. CS2105 must be in Sem 5 or 7. Sem 5 is full with 3 modules? No, limit is 4. Let's re-evaluate Sem 5 capacity.\",\n\"Re-evaluating Sem 5: CS2102 (req met), CS3219 (req met), CS3230 (req met). That's 3 modules. CS2105 req is CS2040S (completed). CS2105 can be in Sem 5. If I put CS2105 in Sem 5, I have 4 modules. Then Sem 6 is exchange (empty). Sem 7 has CS3233, CS4234, CS4218. Sem 8 has CS4230. This works better and puts CS2105 earlier.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2102",
+      "CS3219",
+      "CS3230"
+     ],
+     "6": [
+      "CS2105"
+     ],
+     "7": [
+      "CS3233",
+      "CS4234",
+      "CS4218"
+     ],
+     "8": [
+      "CS4230"
+     ]
+    },
+    "reasons": [
+     "CS3233 is offered in Sem 2, so it is moved to Sem 7 to satisfy the prerequisite and soft wish.",
+     "CS2105 is taken in Sem 6 (exchange semester is Sem 6? No, Y3S2 is Sem 6. Wait. Y3S1=5, Y3S2=6. Student is away on exchange in Y3S2. So Sem 6 is empty/exchange. CS2105 must be in Sem 5 or 7. Sem 5 is full with 3 modules? No, limit is 4. Let's re-evaluate Sem 5 capacity.",
+     "Re-evaluating Sem 5: CS2102 (req met), CS3219 (req met), CS3230 (req met). That's 3 modules. CS2105 req is CS2040S (completed). CS2105 can be in Sem 5. If I put CS2105 in Sem 5, I have 4 modules. Then Sem 6 is exchange (empty). Sem 7 has CS3233, CS4234, CS4218. Sem 8 has CS4230. This works better and puts CS2105 earlier."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11492,
+    "total_tokens": 11893,
+    "completion_tokens": 401,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.65,
+    "attempts": 1
+   },
+   "seconds": 5.65,
+   "violations": [
+    "R1 CS3230 is already completed",
+    "R3 CS3233 not offered in Sem 1 (semester 7)",
+    "R7 semester 6 has 4 MC, limit 0"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2102\",\n\"CS3219\",\n\"CS2105\"\n],\n\"7\": [\n\"CS3233\",\n\"CS4234\",\n\"CS4218\"\n],\n\"8\": [\n\"CS4230\"\n]\n},\n\"reasons\": [\n\"CS3230 is completed, so it is removed from the plan.\",\n\"CS3233 is offered only in Sem 2, so it is placed in Sem 7.\",\n\"Semester 6 is an exchange semester with 0 MC limit, so no courses are planned there.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2102",
+      "CS3219",
+      "CS2105"
+     ],
+     "7": [
+      "CS3233",
+      "CS4234",
+      "CS4218"
+     ],
+     "8": [
+      "CS4230"
+     ]
+    },
+    "reasons": [
+     "CS3230 is completed, so it is removed from the plan.",
+     "CS3233 is offered only in Sem 2, so it is placed in Sem 7.",
+     "Semester 6 is an exchange semester with 0 MC limit, so no courses are planned there."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11708,
+    "total_tokens": 11876,
+    "completion_tokens": 168,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.57,
+    "attempts": 1
+   },
+   "seconds": 3.57,
+   "violations": [
+    "R3 CS3233 not offered in Sem 1 (semester 7)"
+   ]
+  },
+  {
+   "round": 3,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2102\",\n\"CS3219\",\n\"CS2105\"\n],\n\"7\": [\n\"CS4234\",\n\"CS4218\"\n],\n\"8\": [\n\"CS3233\",\n\"CS4230\"\n]\n},\n\"reasons\": [\n\"CS3233 is offered only in Sem 2, so it must be in Sem 7 or 8.\",\n\"CS4234 is offered only in Sem 1, so it must be in Sem 5, 7, or 8.\",\n\"CS4230 requires CS3230 (completed) and ST2334 (completed), so it can be taken in Sem 8.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2102",
+      "CS3219",
+      "CS2105"
+     ],
+     "7": [
+      "CS4234",
+      "CS4218"
+     ],
+     "8": [
+      "CS3233",
+      "CS4230"
+     ]
+    },
+    "reasons": [
+     "CS3233 is offered only in Sem 2, so it must be in Sem 7 or 8.",
+     "CS4234 is offered only in Sem 1, so it must be in Sem 5, 7, or 8.",
+     "CS4230 requires CS3230 (completed) and ST2334 (completed), so it can be taken in Sem 8."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11448,
+    "total_tokens": 11644,
+    "completion_tokens": 196,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.29,
+    "attempts": 1
+   },
+   "seconds": 4.29,
+   "violations": []
+  }
+ ]
+}

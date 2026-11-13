@@ -1,0 +1,53 @@
+{
+ "id": "q2-S1-150",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 3,
+ "end": "switched to NO_PLAN",
+ "seconds": 53.04,
+ "usage": {
+  "prompt_tokens": 41095,
+  "total_tokens": 44121,
+  "completion_tokens": 3026,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 53.04,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS2102\",\n      \"CS2111\",\n      \"ST2334\"\n    ],\n    \"7\": [\n      \"CS3240\",\n      \"CS4249\"\n    ],\n    \"8\": [\n      \"CS3210\",\n      \"CS3263\",\n      \"CS4226\",\n      \"CS4230\",\n      \"CS4240\",\n      \"CS4430\"\n    ]\n  },\n  \"reasons\": [\n    \"Prerequisites satisfied: CS2111 (Sem 6) enables CS3240 (Sem 7) which enables CS4240/CS4249 (Sem 8). ST2334 (Sem 6) enables CS4230/CS4226/CS3263. CS3230 (completed) enables CS4430 (Sem 8).\",\n    \"Constraints met: CS3263 and CS4249 are together in Sem 8. CS4240 (Sem 8) and ST2334 (Sem 6) are separate. CS4430 (Sem 8) and CS2102 (Sem 6) are separate.\",\n    \"Soft wishes met: CS4230 (Sem 8) is before CS3263 (Sem 8) is not possible as they are in the same semester, but CS4230 is taken in the final semester. CS2102 is in Y3S2 (Sem 6).\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS2102",
+    "CS2111",
+    "ST2334"
+   ],
+   "7": [
+    "CS3240",
+    "CS4249"
+   ],
+   "8": [
+    "CS3210",
+    "CS3263",
+    "CS4226",
+    "CS4230",
+    "CS4240",
+    "CS4430"
+   ]
+  },
+  "reasons": [
+   "Prerequisites satisfied: CS2111 (Sem 6) enables CS3240 (Sem 7) which enables CS4240/CS4249 (Sem 8). ST2334 (Sem 6) enables CS4230/CS4226/CS3263. CS3230 (completed) enables CS4430 (Sem 8).",
+   "Constraints met: CS3263 and CS4249 are together in Sem 8. CS4240 (Sem 8) and ST2334 (Sem 6) are separate. CS4430 (Sem 8) and CS2102 (Sem 6) are separate.",
+   "Soft wishes met: CS4230 (Sem 8) is before CS3263 (Sem 8) is not possible as they are in the same semester, but CS4230 is taken in the final semester. CS2102 is in Y3S2 (Sem 6)."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

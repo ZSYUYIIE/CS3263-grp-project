@@ -1,0 +1,89 @@
+{
+ "id": "q2-S4-050",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.15,
+ "solver_seconds": 0.008,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3124,
+  "total_tokens": 3510,
+  "completion_tokens": 386,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 7.01,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 4,\n\"completed\": [\n\"CS2103T\",\n\"MA1522\",\n\"CS2100\",\n\"IS1108\",\n\"ES2660\",\n\"CS1231S\",\n\"MA1521\",\n\"ST2334\",\n\"CS2030S\",\n\"CS2101\",\n\"CS2040S\",\n\"CS1101S\"\n],\n\"must_take\": [\n\"CS4211\",\n\"CS2102\",\n\"CS4212\",\n\"CS2109S\",\n\"CS3230\",\n\"CS3211\"\n],\n\"mc_max\": 4,\n\"objective\": \"earliest_graduation\",\n\"unsupported\": [\n\"chance I fail one module this semester and have to retake it\"\n],\n\"rules\": [\n{\n\"type\": \"apart\",\n\"a\": \"CS2109S\",\n\"b\": \"CS2102\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS4211\",\n\"b\": \"CS2102\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3211\",\n\"sem\": 6,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4211\",\n\"b\": \"CS3230\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "CS2103T",
+   "MA1522",
+   "CS2100",
+   "IS1108",
+   "ES2660",
+   "CS1231S",
+   "MA1521",
+   "ST2334",
+   "CS2030S",
+   "CS2101",
+   "CS2040S",
+   "CS1101S"
+  ],
+  "must_take": [
+   "CS4211",
+   "CS2102",
+   "CS4212",
+   "CS2109S",
+   "CS3230",
+   "CS3211"
+  ],
+  "mc_max": 4,
+  "objective": "earliest_graduation",
+  "unsupported": [
+   "chance I fail one module this semester and have to retake it"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS2109S",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS4211",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3211",
+    "sem": 6,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS4211",
+    "b": "CS3230",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "the required courses need 24 MC but the remaining semesters [4, 5, 6, 7, 8] allow at most 20 MC"
+  ],
+  "not_applied": [
+   "chance I fail one module this semester and have to retake it"
+  ]
+ }
+}

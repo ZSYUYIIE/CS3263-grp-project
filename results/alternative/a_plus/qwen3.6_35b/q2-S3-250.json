@@ -1,0 +1,100 @@
+{
+ "id": "q2-S3-250",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 7.6,
+ "usage": {
+  "prompt_tokens": 17738,
+  "total_tokens": 18070,
+  "completion_tokens": 332,
+  "finish_reason": "stop",
+  "request_seconds": 7.6,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS3235 is required in Semester 8 but its prerequisites (CS2106 or YSC3217 or CG2271) are not in the mandatory list and cannot be added as they are not required by any other mandatory course.\",\n\"CS2106, YSC3217, and CG2271 are not listed as mandatory courses, and adding them solely for CS3235 violates the rule against adding courses not needed by planned courses.\"\n]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3235 is required in Semester 8 but its prerequisites (CS2106 or YSC3217 or CG2271) are not in the mandatory list and cannot be added as they are not required by any other mandatory course.",
+   "CS2106, YSC3217, and CG2271 are not listed as mandatory courses, and adding them solely for CS3235 violates the rule against adding courses not needed by planned courses."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"3\": [\n\"CS2100\",\n\"CS2101\",\n\"CS2105\",\n\"ST2334\"\n],\n\"4\": [\n\"CS2109S\",\n\"CS3230\"\n],\n\"5\": [],\n\"6\": [\n\"CS3235\"\n]\n},\n\"reasons\": [\n\"Planned CS2100, CS2101, CS2105, ST2334 in Sem 3 as prerequisites for later courses are met.\",\n\"Planned CS2109S and CS3230 in Sem 4, satisfying their prerequisites from Sem 3.\",\n\"Planned CS3235 in Sem 6 to satisfy Sem 8 constraint and prerequisites from Sem 3/4.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS2101",
+      "CS2105",
+      "ST2334"
+     ],
+     "4": [
+      "CS2109S",
+      "CS3230"
+     ],
+     "5": [],
+     "6": [
+      "CS3235"
+     ]
+    },
+    "reasons": [
+     "Planned CS2100, CS2101, CS2105, ST2334 in Sem 3 as prerequisites for later courses are met.",
+     "Planned CS2109S and CS3230 in Sem 4, satisfying their prerequisites from Sem 3.",
+     "Planned CS3235 in Sem 6 to satisfy Sem 8 constraint and prerequisites from Sem 3/4."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 8703,
+    "total_tokens": 8908,
+    "completion_tokens": 205,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.14,
+    "attempts": 1
+   },
+   "seconds": 5.14,
+   "violations": [
+    "R4 CS3235 in semester 6: prerequisite not met ((CS2105 or EE3204 or EE4204) and (CS2106 or YSC3217 or CG2271) and CS2107)",
+    "R9 must rule not met: CS3235 in semester 8"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS3235 is required in Semester 8 but its prerequisites (CS2106 or YSC3217 or CG2271) are not in the mandatory list and cannot be added as they are not required by any other mandatory course.\",\n\"CS2106, YSC3217, and CG2271 are not listed as mandatory courses, and adding them solely for CS3235 violates the rule against adding courses not needed by planned courses.\"\n]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3235 is required in Semester 8 but its prerequisites (CS2106 or YSC3217 or CG2271) are not in the mandatory list and cannot be added as they are not required by any other mandatory course.",
+     "CS2106, YSC3217, and CG2271 are not listed as mandatory courses, and adding them solely for CS3235 violates the rule against adding courses not needed by planned courses."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9035,
+    "total_tokens": 9162,
+    "completion_tokens": 127,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.46,
+    "attempts": 1
+   },
+   "seconds": 2.46,
+   "violations": null
+  }
+ ]
+}

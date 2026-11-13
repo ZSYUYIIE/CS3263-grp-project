@@ -1,0 +1,42 @@
+{
+ "id": "q2-S6-007",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 0,
+ "end": "no checker spec",
+ "seconds": 57.08,
+ "usage": {
+  "prompt_tokens": 9024,
+  "total_tokens": 11267,
+  "completion_tokens": 2243,
+  "finish_reason": "stop",
+  "request_seconds": 57.08,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"ST2334\"\n    ],\n    \"4\": [\n      \"CS2100\",\n      \"CS2101\"\n    ],\n    \"5\": [\n      \"CS3103\",\n      \"CS2103T\"\n    ],\n    \"6\": [\n      \"CS4268\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2103T requires CS2030S and CS2040S, both completed. It is planned in Sem 5 to satisfy the preference of taking it before CS3103, which is fixed in Sem 5.\",\n    \"CS3103 requires CS2105 or equivalent. Since CS2105 is not in the required list and has no prerequisites other than CS2040 variants (completed), we must check if CS2105 is needed. Wait, CS3103 prerequisite is CS2105 or EE3204 etc. The student did not list CS2105 as required. However, CS3103 cannot be taken without its prerequisite. The student said 'I need to take... CS3103'. This implies they must satisfy its prereq. CS2105 is not in the 'need' list. Is CS2105 a 'must'? The prompt says 'Every course the student must take (and has not completed) is in the plan.' It does not say prerequisites of must-take courses are automatically must-take unless they are needed. Rule 8: 'Add a course... ONLY when it is a prerequisite needed by a planned course.' So CS2105 must be added if CS3103 is planned. CS2105 requires CS2040/CS2040S etc. CS2040S is completed. So CS2105 can be taken. When? Before CS3103 (Sem 5). So CS2105 must be in Sem 3 or 4. Sem 3 has ST2334. Sem 4 has CS2100, CS2101. Can we fit CS2105 in Sem 4? Sem 4 MC would be 4+4+4=12. OK. But wait, CS2101 and CS2100 should be apart. If CS2105 is in Sem 4, it doesn't affect the CS2101/CS2100 separation directly, but let's look at Sem 3. Sem 3 has ST2334. Can we put CS2105 in Sem 3? Sem 3 MC: 4+4=8. OK. If CS2105 is in Sem 3, then Sem 4 has CS2100, CS2101. This keeps CS2100 and CS2101 together, which violates 'keep apart'. So CS2105 should be in Sem 4? If CS2105 is in Sem 4, CS2100 and CS2101 are in Sem 4. They are together. To keep them apart, one must be in Sem 3 or 5. Sem 3 is full with ST2334 and potentially CS2105? If CS2105 is in Sem 3, Sem 3 has ST2334, CS2105. Sem 4 has CS2100, CS2101. Still together. If CS2100 is in Sem 3? Prereq: CS1010S (completed). OK. If CS2100 is in Sem 3, Sem 3 has ST2334, CS2100. Sem 4 has CS2101, CS2105. CS2101 and CS2100 are apart. This works. CS2103T in Sem 5. CS3103 in Sem 5. CS4268 in Sem 6. Prereq for CS4268: CS3230 and others. CS3230 is not in the 'need' list. But CS4268 requires CS3230. So CS3230 must be added. CS3230 prereq: CS2040S (completed) and CS1231S (completed). So CS3230 can be taken. When? Before CS4268 (Sem 6). So Sem 3, 4, or 5. Sem 5 has CS3103, CS2103T. MC 8. Can add CS3230? 12 MC. OK. But CS2103T and CS3103 are in Sem 5. If we add CS3230, Sem 5 has 3 courses. 12 MC. OK. But we need to check if CS3230 conflicts with anything. No. So CS3230 in Sem 5? Or Sem 4? Sem 4 has CS2101, CS2105. 8 MC. Add CS3230? 12 MC. OK. Let's re-evaluate the 'keep apart' constraint. CS2101 ideally in Y4S1 (Sem 7). But we have limited slots? No, we can push things. But CS3103 is fixed in Sem 5. CS2103T before CS3103, so Sem 3 or 4. CS4268 needs CS3230. CS3230 needs to be before CS4268. Let's try to put CS2101 in Sem 7. Then CS2100 in Sem 4? CS2105 in Sem 3? Sem 3: ST2334, CS2105. Sem 4: CS2100, CS2103T? No, CS2103T needs CS2030S/CS2040S. OK. But CS2103T before CS3103. If CS2103T is Sem 4, CS3103 Sem 5. OK. CS3230? Needs to be before CS4268. If CS4268 is Sem 6, CS3230 can be Sem 5? Sem 5: CS3103, CS3230. 8 MC. OK. CS2101 in Sem 7. CS2100 in Sem 4. CS2101 and CS2100 are apart (Sem 4 vs 7). CS2101 is in Y4S1. This meets all soft wishes. Let's check MC. Sem 3: ST2334 (4), CS2105 (4) = 8. Sem 4: CS2100 (4), CS2103T (4) = 8. Sem 5: CS3103 (4), CS3230 (4) = 8. Sem 6: CS4268 (4). Sem 7: CS2101 (4). This works. Is CS2105 required? Yes, for CS3103. Is CS3230 required? Yes, for CS4268. Are there any other prereqs? CS4268 also needs (EE2012A or ... or MA2116). Student has MA1522, MA1521. MA1522 is Linear Algebra. MA2116 requires MA1521 or MA2002. Student has MA1521. So MA2116 is available. But student didn't list MA2116 as required. However, CS4268 requires CS3230 AND (one of the math/EE courses). The student said 'I need to take... CS4268'. This implies they must satisfy ALL prerequisites. So MA2116 (or equivalent) must be added. MA2116 prereq: MA1521 (completed). So MA2116 must be added. When? Before CS4268. Sem 3, 4, 5, 6. Sem 3: ST2334, CS2105. Full? 8 MC. Can add MA2116? 12 MC. OK. Sem 4: CS2100, CS2103T. 8 MC. Can add MA2116? 12 MC. OK. Sem 5: CS3103, CS3230. 8 MC. Can add MA2116? 12 MC. OK. Let's put MA2116 in Sem 3? Sem 3: ST2334, CS2105, MA2116. 12 MC. OK. Then Sem 4: CS2100, CS2103T. Sem 5: CS3103, CS3230. Sem 6: CS4268. Sem 7: CS2101. This works. CS2101 in Y4S1. CS2100 in Sem 4. Apart. CS2103T (Sem 4) before CS3103 (Sem 5). ST2334 in Sem 3. CS3103 in Sem 5. All good.\n\n    \"CS2105 and CS3230 and MA2116 are added as prerequisites for CS3103, CS4268 respectively. CS2101 is placed in Sem 7 to meet the 'ideally in Y4S1' wish and keep it apart from CS2100 in Sem 4.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "ST2334"
+   ],
+   "4": [
+    "CS2100",
+    "CS2101"
+   ],
+   "5": [
+    "CS3103",
+    "CS2103T"
+   ],
+   "6": [
+    "CS4268"
+   ]
+  }
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

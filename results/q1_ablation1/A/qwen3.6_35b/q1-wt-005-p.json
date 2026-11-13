@@ -1,0 +1,28 @@
+{
+ "id": "q1-wt-005-p",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 3.66,
+ "usage": {
+  "prompt_tokens": 6448,
+  "total_tokens": 6684,
+  "completion_tokens": 236,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 3.66,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"ELIGIBLE\", \"reasons\": [\"Prerequisites for CS3241 are satisfied by completed courses CS2030S and CS2040S.\", \"CS3241 is open to BComp CS Hons students.\", \"CS3241 is offered in Sem 1, but the student asked about Year 4 Sem 2. Wait, CS3241 is offered: Sem 1 only. The student asks to take it in Year 4, Semester 2. CS3241 is NOT offered in Sem 2. Therefore, the student cannot take it in that specific semester.\"]}\n\nCorrection: CS3241 is offered only in Sem 1. The student asks if they can take it in Year 4, Semester 2. Since it is not offered in Sem 2, the answer is NOT_ELIGIBLE for that specific semester.\n\n{\"status\": \"NOT_ELIGIBLE\", \"reasons\": [\"CS3241 is only offered in Sem 1, so it cannot be taken in Year 4, Semester 2.\"]}",
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "reasons": [
+   "CS3241 is only offered in Sem 1, so it cannot be taken in Year 4, Semester 2."
+  ]
+ },
+ "fenced": true,
+ "repair": "last_of_several",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 4,
+ "ablation": 1
+}

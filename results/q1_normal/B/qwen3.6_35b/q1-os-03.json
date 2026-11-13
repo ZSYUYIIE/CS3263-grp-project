@@ -1,0 +1,51 @@
+{
+ "id": "q1-os-03",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 4.67,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2941,
+  "total_tokens": 3071,
+  "completion_tokens": 130,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 4.67,
+  "attempts": 1
+ },
+ "raw": "{\"query\": \"eligible\", \"target\": \"ST2132\", \"current_sem\": 8, \"completed\": [\"CS2101\", \"IS1108\", \"CS2040DE\", \"CS1010X\", \"ST2334\", \"MA1522\", \"ST3248\", \"MA1100\", \"MA1521\", \"CS2030S\", \"MA2108S\", \"CS2100HS\", \"MA3252\"], \"programme\": \"Computer Engineering\"}",
+ "spec": {
+  "query": "eligible",
+  "target": "ST2132",
+  "current_sem": 8,
+  "completed": [
+   "CS2101",
+   "IS1108",
+   "CS2040DE",
+   "CS1010X",
+   "ST2334",
+   "MA1522",
+   "ST3248",
+   "MA1100",
+   "MA1521",
+   "CS2030S",
+   "MA2108S",
+   "CS2100HS",
+   "MA3252"
+  ],
+  "programme": "Computer Engineering"
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "OUT_OF_SCOPE",
+  "reasons": [
+   "programme 'Computer Engineering' is not BComp (CS) Hons"
+  ],
+  "message": "I can only plan for BComp (CS) Hons single-major students under AY2026/2027 rules, and this request is outside that (programme 'Computer Engineering' is not BComp (CS) Hons). Course rules differ by programme and aren't in my data for your case, so please check with your faculty or academic advisor."
+ }
+}

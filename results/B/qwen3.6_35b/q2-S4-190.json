@@ -1,0 +1,82 @@
+{
+ "id": "q2-S4-190",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.62,
+ "solver_seconds": 0.257,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3090,
+  "total_tokens": 3431,
+  "completion_tokens": 341,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 6.36,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 4,\n\"completed\": [\n\"MA1521\",\n\"CS1101S\",\n\"ES2660\",\n\"IS1108\",\n\"CS1231S\",\n\"MA1522\",\n\"ST2334\",\n\"CS2030S\",\n\"CS2100\",\n\"CS2101\",\n\"CS2103T\",\n\"CS2040S\"\n],\n\"must_take\": [\n\"CS2102\",\n\"CS4240\",\n\"CS3244\",\n\"CS4238\",\n\"CS2105\",\n\"CS4430\"\n],\n\"mc_max\": 12,\n\"sem_caps\": {\n\"7\": 0\n},\n\"early\": [\n\"CS2102\"\n],\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4238\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2105\",\n\"b\": \"CS2102\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4240\",\n\"b\": \"CS2105\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "MA1521",
+   "CS1101S",
+   "ES2660",
+   "IS1108",
+   "CS1231S",
+   "MA1522",
+   "ST2334",
+   "CS2030S",
+   "CS2100",
+   "CS2101",
+   "CS2103T",
+   "CS2040S"
+  ],
+  "must_take": [
+   "CS2102",
+   "CS4240",
+   "CS3244",
+   "CS4238",
+   "CS2105",
+   "CS4430"
+  ],
+  "mc_max": 12,
+  "sem_caps": {
+   "7": 0
+  },
+  "early": [
+   "CS2102"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS4238",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2105",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4240",
+    "b": "CS2105",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS2105 and CS2102 in the same semester; the prerequisites of CS3235; the prerequisites of CS3240; the prerequisites of CS4238; the prerequisites of CS4240; the prerequisites of CS4430; the MC limits (at most 12 MC per semester; semesters 7 blocked); the semesters in which the courses are offered"
+  ]
+ }
+}

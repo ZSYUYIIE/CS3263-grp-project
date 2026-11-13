@@ -1,0 +1,55 @@
+{
+ "id": "q2-S3-065",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 10.8,
+ "usage": {
+  "prompt_tokens": 20551,
+  "total_tokens": 21096,
+  "completion_tokens": 545,
+  "finish_reason": "stop",
+  "request_seconds": 10.8,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2100\",\n\"CS2109S\",\n\"CS2103T\",\n\"CS2105\"\n],\n\"6\": [\n\"CS2102\",\n\"CS3230\",\n\"ST2334\"\n],\n\"7\": [\n\"CS2101\",\n\"CS2106\",\n\"CS3219\",\n\"CS3241\"\n],\n\"8\": [\n\"CS3247\",\n\"CS4430\"\n]\n},\n\"reasons\": [\n\"Plan satisfies all prerequisites, mutual exclusions, and hard constraints (CS3230 before CS2106/CS2101, CS2109S with CS2103T).\",\n\"ST2334 is included in Semester 6 to satisfy the must-take requirement.\",\n\"CS3247 and CS4430 are placed in Semester 8 because their prerequisites (CS3241 and CS3231 respectively) are only completed in Semester 7.\",\n\"Graduation in Semester 8 is the earliest possible given the prerequisite chains and module load limits.\"\n]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2100",
+    "CS2109S",
+    "CS2103T",
+    "CS2105"
+   ],
+   "6": [
+    "CS2102",
+    "CS3230",
+    "ST2334"
+   ],
+   "7": [
+    "CS2101",
+    "CS2106",
+    "CS3219",
+    "CS3241"
+   ],
+   "8": [
+    "CS3247",
+    "CS4430"
+   ]
+  },
+  "reasons": [
+   "Plan satisfies all prerequisites, mutual exclusions, and hard constraints (CS3230 before CS2106/CS2101, CS2109S with CS2103T).",
+   "ST2334 is included in Semester 6 to satisfy the must-take requirement.",
+   "CS3247 and CS4430 are placed in Semester 8 because their prerequisites (CS3241 and CS3231 respectively) are only completed in Semester 7.",
+   "Graduation in Semester 8 is the earliest possible given the prerequisite chains and module load limits."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,121 @@
+{
+ "id": "q2-S4-056",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 12.13,
+ "usage": {
+  "prompt_tokens": 26425,
+  "total_tokens": 27129,
+  "completion_tokens": 704,
+  "finish_reason": "stop",
+  "request_seconds": 12.13,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4212 requires CS2104 or CS3212, neither of which is in the student's required list or completed courses. CS2104 requires CS2030/CS2030S/CS2030DE/CS2030HS/CS2113/CS2113T. CS3212 is not in the records. Thus CS4212 cannot be taken.\",\n    \"CS3247 requires CS3241, which is not in the student's required list or completed courses. CS3241 requires CS2030/CS2030S/CS2030DE/CS2030HS/CS2113/CS2113T and CS2040/YSC2229/CS2040S/CS2040C/CS2040DE/CS2040HS. While prereqs for CS3241 are met, CS3241 itself is not planned, so CS3247 cannot be taken.\",\n    \"CS3282 requires CS3281, which is not in the student's required list or completed courses. Thus CS3282 cannot be taken.\",\n    \"CS4236 requires CS2107, which is not in the student's required list or completed courses. Thus CS4236 cannot be taken.\",\n    \"CS4262 requires (CS2106 or CG2271) and (CS3244 or CS3264 or CG3201). None of these prerequisites are in the student's required list or completed courses. Thus CS4262 cannot be taken.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4212 requires CS2104 or CS3212, neither of which is in the student's required list or completed courses. CS2104 requires CS2030/CS2030S/CS2030DE/CS2030HS/CS2113/CS2113T. CS3212 is not in the records. Thus CS4212 cannot be taken.",
+   "CS3247 requires CS3241, which is not in the student's required list or completed courses. CS3241 requires CS2030/CS2030S/CS2030DE/CS2030HS/CS2113/CS2113T and CS2040/YSC2229/CS2040S/CS2040C/CS2040DE/CS2040HS. While prereqs for CS3241 are met, CS3241 itself is not planned, so CS3247 cannot be taken.",
+   "CS3282 requires CS3281, which is not in the student's required list or completed courses. Thus CS3282 cannot be taken.",
+   "CS4236 requires CS2107, which is not in the student's required list or completed courses. Thus CS4236 cannot be taken.",
+   "CS4262 requires (CS2106 or CG2271) and (CS3244 or CS3264 or CG3201). None of these prerequisites are in the student's required list or completed courses. Thus CS4262 cannot be taken."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2109S\",\n      \"CS2102\",\n      \"CS3219\",\n      \"CS4212\"\n    ],\n    \"4\": [\n      \"CS3243\",\n      \"CS4236\",\n      \"CS3282\"\n    ],\n    \"6\": [\n      \"CS3247\",\n      \"CS4262\"\n    ]\n  },\n  \"reasons\": [\n    \"Semester 5 is a leave of absence (0 MC).\",\n    \"Prerequisites for all planned courses are satisfied by completed courses or earlier planned courses.\",\n    \"CS4212 and CS4236 are in different semesters (3 and 4). CS3282 (4) is before CS4262 (6). CS4212 (3) is before CS3247 (6).\",\n    \"Soft wishes: CS4212 is in Sem 3 (earliest possible due to prereqs), CS3282 is in Sem 4 (as late as possible while allowing CS4262 in Sem 6).\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2109S",
+      "CS2102",
+      "CS3219",
+      "CS4212"
+     ],
+     "4": [
+      "CS3243",
+      "CS4236",
+      "CS3282"
+     ],
+     "6": [
+      "CS3247",
+      "CS4262"
+     ]
+    },
+    "reasons": [
+     "Semester 5 is a leave of absence (0 MC).",
+     "Prerequisites for all planned courses are satisfied by completed courses or earlier planned courses.",
+     "CS4212 and CS4236 are in different semesters (3 and 4). CS3282 (4) is before CS4262 (6). CS4212 (3) is before CS3247 (6).",
+     "Soft wishes: CS4212 is in Sem 3 (earliest possible due to prereqs), CS3282 is in Sem 4 (as late as possible while allowing CS4262 in Sem 6)."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12876,
+    "total_tokens": 13166,
+    "completion_tokens": 290,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.95,
+    "attempts": 1
+   },
+   "seconds": 5.95,
+   "violations": [
+    "R6 CS2109S and CS3243 exclude each other",
+    "R4 CS3219 in semester 3: prerequisite not met (YSC3232 or CS2103 or CS2103T or CS2103DE or CS2113T or CS2113)",
+    "R4 CS3247 in semester 6: prerequisite not met (CS3241)",
+    "R4 CS3282 in semester 4: prerequisite not met (CS3281)",
+    "R3 CS4212 not offered in Sem 1 (semester 3)",
+    "R4 CS4212 in semester 3: prerequisite not met (CS2104 or CS3212)",
+    "R3 CS4236 not offered in Sem 2 (semester 4)",
+    "R4 CS4236 in semester 4: prerequisite not met ((YSC2229 or CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS) and CS2107 and (CS1231 or CS1231S or MA1100T or MA1100))",
+    "R4 CS4262 in semester 6: prerequisite not met ((CS2106 or CG2271) and (CS3244 or CS3264 or CG3201))"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4212 requires CS2104 or CS3212, neither of which is in the student's required list or completed courses. CS2104 requires CS2030/CS2030S/CS2030DE/CS2030HS/CS2113/CS2113T. CS3212 is not in the records. Thus CS4212 cannot be taken.\",\n    \"CS3247 requires CS3241, which is not in the student's required list or completed courses. CS3241 requires CS2030/CS2030S/CS2030DE/CS2030HS/CS2113/CS2113T and CS2040/YSC2229/CS2040S/CS2040C/CS2040DE/CS2040HS. While prereqs for CS3241 are met, CS3241 itself is not planned, so CS3247 cannot be taken.\",\n    \"CS3282 requires CS3281, which is not in the student's required list or completed courses. Thus CS3282 cannot be taken.\",\n    \"CS4236 requires CS2107, which is not in the student's required list or completed courses. Thus CS4236 cannot be taken.\",\n    \"CS4262 requires (CS2106 or CG2271) and (CS3244 or CS3264 or CG3201). None of these prerequisites are in the student's required list or completed courses. Thus CS4262 cannot be taken.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4212 requires CS2104 or CS3212, neither of which is in the student's required list or completed courses. CS2104 requires CS2030/CS2030S/CS2030DE/CS2030HS/CS2113/CS2113T. CS3212 is not in the records. Thus CS4212 cannot be taken.",
+     "CS3247 requires CS3241, which is not in the student's required list or completed courses. CS3241 requires CS2030/CS2030S/CS2030DE/CS2030HS/CS2113/CS2113T and CS2040/YSC2229/CS2040S/CS2040C/CS2040DE/CS2040HS. While prereqs for CS3241 are met, CS3241 itself is not planned, so CS3247 cannot be taken.",
+     "CS3282 requires CS3281, which is not in the student's required list or completed courses. Thus CS3282 cannot be taken.",
+     "CS4236 requires CS2107, which is not in the student's required list or completed courses. Thus CS4236 cannot be taken.",
+     "CS4262 requires (CS2106 or CG2271) and (CS3244 or CS3264 or CG3201). None of these prerequisites are in the student's required list or completed courses. Thus CS4262 cannot be taken."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 13549,
+    "total_tokens": 13963,
+    "completion_tokens": 414,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 6.18,
+    "attempts": 1
+   },
+   "seconds": 6.18,
+   "violations": null
+  }
+ ]
+}

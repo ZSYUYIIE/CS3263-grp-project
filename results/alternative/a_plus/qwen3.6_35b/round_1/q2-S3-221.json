@@ -1,0 +1,44 @@
+{
+ "id": "q2-S3-221",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 7.3,
+ "usage": {
+  "prompt_tokens": 17190,
+  "total_tokens": 17579,
+  "completion_tokens": 389,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.3,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS2102\",\n\"CS2105\",\n\"CS3219\"\n],\n\"7\": [\n\"CS4236\"\n]\n},\n\"reasons\": [\n\"CS2105, CS3219, and CS2102 are taken in Sem 5 to satisfy prerequisites for CS4236.\",\n\"CS4236 is taken in Sem 7 as required, with all prerequisites (CS2105, CS2102, CS1231S) met.\",\n\"CS3219 and CS4236 are in the same semester (Sem 7) to satisfy the hard constraint, and CS2105 is also in Sem 7 to satisfy the same-semester constraint with CS4236.\"\n]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS2105",
+    "CS3219"
+   ],
+   "7": [
+    "CS4236"
+   ]
+  },
+  "reasons": [
+   "CS2105, CS3219, and CS2102 are taken in Sem 5 to satisfy prerequisites for CS4236.",
+   "CS4236 is taken in Sem 7 as required, with all prerequisites (CS2105, CS2102, CS1231S) met.",
+   "CS3219 and CS4236 are in the same semester (Sem 7) to satisfy the hard constraint, and CS2105 is also in Sem 7 to satisfy the same-semester constraint with CS4236."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

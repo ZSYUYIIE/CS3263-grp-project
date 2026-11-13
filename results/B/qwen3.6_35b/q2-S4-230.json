@@ -1,0 +1,85 @@
+{
+ "id": "q2-S4-230",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 4.68,
+ "solver_seconds": 0.15,
+ "max_tokens": 49152,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 3080,
+  "total_tokens": 3412,
+  "completion_tokens": 332,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 4.53,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 3,\n\"completed\": [\n\"MA1522\",\n\"IS1108\",\n\"CS1231S\",\n\"CS1101S\",\n\"MA1521\",\n\"CS2040S\",\n\"CS2030S\"\n],\n\"must_take\": [\n\"CS4249\",\n\"CS3249\",\n\"CS3230\",\n\"CS4353\",\n\"CS3240\",\n\"CS3219\"\n],\n\"early\": [\n\"CS4353\"\n],\n\"late\": [\n\"CS3249\"\n],\n\"rules\": [\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4249\",\n\"b\": \"CS3230\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3240\",\n\"b\": \"CS4353\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4353\",\n\"b\": \"CS3240\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3249\",\n\"b\": \"CS4249\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "completed": [
+   "MA1522",
+   "IS1108",
+   "CS1231S",
+   "CS1101S",
+   "MA1521",
+   "CS2040S",
+   "CS2030S"
+  ],
+  "must_take": [
+   "CS4249",
+   "CS3249",
+   "CS3230",
+   "CS4353",
+   "CS3240",
+   "CS3219"
+  ],
+  "early": [
+   "CS4353"
+  ],
+  "late": [
+   "CS3249"
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS4249",
+    "b": "CS3230",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3240",
+    "b": "CS4353",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4353",
+    "b": "CS3240",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3249",
+    "b": "CS4249",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS4353 before CS3240; the prerequisites of CS4353"
+  ]
+ }
+}

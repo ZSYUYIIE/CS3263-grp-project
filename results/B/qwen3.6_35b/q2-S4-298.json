@@ -1,0 +1,83 @@
+{
+ "id": "q2-S4-298",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 4.07,
+ "solver_seconds": 0.0,
+ "max_tokens": 49152,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 3050,
+  "total_tokens": 3348,
+  "completion_tokens": 298,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 4.07,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 1,\n\"completed\": [],\n\"must_take\": [\n\"CS3240\",\n\"ES2660\",\n\"CS4230\",\n\"CS4238\",\n\"CS2103T\",\n\"IS1108\"\n],\n\"mc_max\": 16,\n\"sem_caps\": {\n\"2\": 0\n},\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2103T\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4230\",\n\"sem\": 4,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS3240\",\n\"b\": \"CS2103T\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"ES2660\",\n\"sem\": 8,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"late\",\n\"course\": \"IS1108\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "completed": [],
+  "must_take": [
+   "CS3240",
+   "ES2660",
+   "CS4230",
+   "CS4238",
+   "CS2103T",
+   "IS1108"
+  ],
+  "mc_max": 16,
+  "sem_caps": {
+   "2": 0
+  },
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS2103T",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4230",
+    "sem": 4,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3240",
+    "b": "CS2103T",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "ES2660",
+    "sem": 8,
+    "strength": "prefer"
+   },
+   {
+    "type": "late",
+    "course": "IS1108",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [
+  "rules[4].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'"
+ ],
+ "answer": {
+  "status": "INVALID_SPEC",
+  "errors": [
+   "rules[4].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'"
+  ]
+ }
+}

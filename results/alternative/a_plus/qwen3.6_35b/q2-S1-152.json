@@ -1,0 +1,198 @@
+{
+ "id": "q2-S1-152",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 2,
+ "end": "valid",
+ "seconds": 74.32,
+ "usage": {
+  "prompt_tokens": 47076,
+  "total_tokens": 52587,
+  "completion_tokens": 5511,
+  "finish_reason": "stop",
+  "request_seconds": 74.32,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS2102 is a required course. Its prerequisite is (CS1231 or MA1100 or MA1100T or CS1231S) AND (CS2030S or CS2030 or CS2030DE or CS2030HS or YSC2229 or CS2040 or CS2040C or CS2040S or CS2040DE or CS2040HS). The student has completed CS1231S and CS2040S, so the prerequisite is satisfied. However, CS2102 is offered Sem 1 and Sem 2. The student is in Sem 6. CS2102 can be taken in Sem 6, 7, or 8. The previous plan failed to include CS2102. Additionally, CS3243 is blocked by completed course CS2109S? No, CS3243 cannot take if completed CS2109S. The student has completed CS2109S. Therefore, CS3243 cannot be taken. CS4246 requires CS3243 or CS3263. Since CS3243 is blocked, CS4246 requires CS3263. CS3263 requires CS2109S (completed), CS2040/CS2040S (completed), MA2001/MA1522 etc. (MA1522 completed), and EE2012A/EE2012/ST2132/ST2334/MA2116 etc. (ST2334 completed). So CS3263 is eligible. CS3263 is offered Sem 1 and Sem 2. So CS3263 can be taken in Sem 6, 7, or 8. CS4246 requires CS3263. So CS3263 must be before CS4246. CS4246 is offered Sem 1 and Sem 2. CS2101 is offered Sem 1 and Sem 2. CS4246 must be before CS2101. CS3213 is offered Sem 2 only. CS4234 is offered Sem 1 only. CS3213 must be before CS4234. CS4238 is fixed in Sem 8. CS3235 must be before CS4238. CS3235 requires CS2107. CS2107 is offered Sem 1 and Sem 2. CS4430 requires CS3231. CS3231 is offered Sem 1 only. CS4247 requires CS3241. CS3241 is offered Sem 1 only. Let's re-plan. Sem 6 (Y3S2): CS3213 (Sem 2), CS2107 (Sem 1/2), CS4231 (Sem 2), CS2102 (Sem 1/2). MC 16. Sem 7 (Y4S1): CS3235 (Sem 1/2), CS3231 (Sem 1), CS3241 (Sem 1), CS3263 (Sem 1/2), CS4234 (Sem 1). MC 20. Sem 8 (Y4S2): CS4238 (Sem 1/2), CS4430 (Sem 2), CS4247 (Sem 2), CS4246 (Sem 1/2), CS2101 (Sem 1/2). MC 20. Check constraints: CS4238 in Sem 8. Yes. CS4246 before CS2101. CS4246 in Sem 8, CS2101 in Sem 8. 'Before' usually means strictly earlier semester. If 'before' means strictly earlier, this fails. If 'before' means earlier or same, it passes. The prompt says 'CS4246 must come before CS2101'. In academic planning, 'before' typically implies a prerequisite relationship or strictly earlier semester. Given the strict rule 'Prerequisites must be completed or planned in a STRICTLY earlier semester', 'before' likely implies strictly earlier. If so, CS4246 and CS2101 cannot be in the same semester. CS4246 must be Sem 7 or earlier. CS2101 must be Sem 8 or later. But Sem 8 is the last semester. So CS2101 must be Sem 8. CS4246 must be Sem 7. CS3263 must be before CS4246. So CS3263 must be Sem 6. CS3213 before CS4234. CS3213 Sem 2. CS4234 Sem 1. CS3213 must be Sem 6. CS4234 must be Sem 7. CS3235 before CS4238. CS3235 Sem 1/2. CS4238 Sem 8. CS3235 can be Sem 6 or 7. CS2107 before CS3235. CS2107 Sem 1/2. CS2107 can be Sem 6. CS4231 Sem 2. CS4231 can be Sem 6. CS2102 Sem 1/2. CS2102 can be Sem 6. Sem 6: CS3213, CS2107, CS4231, CS2102, CS3263. MC 20. Sem 7: CS3235, CS3231, CS3241, CS4234, CS4246. MC 20. Sem 8: CS4238, CS4430, CS4247, CS2101. MC 16. Check prerequisites: CS3263 requires CS2109S (done), CS2040S (done), MA1522 (done), ST2334 (done). OK. CS4246 requires CS3263 (Sem 6). OK. CS3235 requires CS2105 (done), CS2106 (done), CS2107 (Sem 6). OK. CS3231 requires CS1231S (done), CS2040S (done). OK. CS3241 requires CS2030S (done), CS2040S (done). OK. CS4234 requires CS3230 (done). OK. CS4430 requires CS3231 (Sem 7). OK. CS4247 requires CS3241 (Sem 7). OK. CS2101 none. OK. CS3213 requires CS2030T/CS2030DE/CS2113T/CS2113. Student has CS2030S and CS2103T. CS2103T requires CS2030S and CS2040S. CS2103T is completed. CS3213 prerequisite is CS2103T or CS2103 or CS2103DE or CS2113T or CS2113. Student has CS2103T. OK. CS2102 requires CS1231S and CS2040S. OK. CS4231 requires CS3230. OK. All constraints met. CS4246 (Sem 7) is strictly before CS2101 (Sem 8). CS3213 (Sem 6) is strictly before CS4234 (Sem 7). CS3235 (Sem 7) is strictly before CS4238 (Sem 8). CS4238 is in Sem 8. CS3243 is not used (blocked). CS3263 is used.\n\n{\"status\": \"PLAN\", \"plan\": {\"6\": [\"CS3213\", \"CS2107\", \"CS4231\", \"CS2102\", \"CS3263\"], \"7\": [\"CS3235\", \"CS3231\", \"CS3241\", \"CS4234\", \"CS4246\"], \"8\": [\"CS4238\", \"CS4430\", \"CS4247\", \"CS2101\"]}, \"reasons\": [\"CS3243 is blocked by completed CS2109S, so CS3263 is used for CS4246. CS2102 is included. All prerequisites are satisfied. CS4246 (Sem 7) is before CS2101 (Sem 8). CS3213 (Sem 6) is before CS4234 (Sem 7). CS3235 (Sem 7) is before CS4238 (Sem 8). CS4238 is in Sem 8.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS3213",
+    "CS2107",
+    "CS4231",
+    "CS2102",
+    "CS3263"
+   ],
+   "7": [
+    "CS3235",
+    "CS3231",
+    "CS3241",
+    "CS4234",
+    "CS4246"
+   ],
+   "8": [
+    "CS4238",
+    "CS4430",
+    "CS4247",
+    "CS2101"
+   ]
+  },
+  "reasons": [
+   "CS3243 is blocked by completed CS2109S, so CS3263 is used for CS4246. CS2102 is included. All prerequisites are satisfied. CS4246 (Sem 7) is before CS2101 (Sem 8). CS3213 (Sem 6) is before CS4234 (Sem 7). CS3235 (Sem 7) is before CS4238 (Sem 8). CS4238 is in Sem 8."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"6\": [\"CS2102\", \"CS3235\", \"CS2101\"], \"7\": [\"CS4238\", \"CS4231\", \"CS4430\", \"CS4247\", \"CS4234\", \"CS4246\"], \"8\": [\"CS3213\"]}, \"reasons\": [\"All prerequisites are satisfied by completed modules or earlier planned modules. CS4238 is placed in Sem 8 as required. CS4246 is before CS2101. CS3235 is before CS4238. CS3213 is before CS4234. The plan finishes in Sem 8, which is the earliest possible given the constraints and course availability.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS2102",
+      "CS3235",
+      "CS2101"
+     ],
+     "7": [
+      "CS4238",
+      "CS4231",
+      "CS4430",
+      "CS4247",
+      "CS4234",
+      "CS4246"
+     ],
+     "8": [
+      "CS3213"
+     ]
+    },
+    "reasons": [
+     "All prerequisites are satisfied by completed modules or earlier planned modules. CS4238 is placed in Sem 8 as required. CS4246 is before CS2101. CS3235 is before CS4238. CS3213 is before CS4234. The plan finishes in Sem 8, which is the earliest possible given the constraints and course availability."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 14398,
+    "total_tokens": 14579,
+    "completion_tokens": 181,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.41,
+    "attempts": 1
+   },
+   "seconds": 3.41,
+   "violations": [
+    "R4 CS3235 in semester 6: prerequisite not met ((CS2105 or EE3204 or EE4204) and (CS2106 or YSC3217 or CG2271) and CS2107)",
+    "R3 CS4231 not offered in Sem 1 (semester 7)",
+    "R4 CS4246 in semester 7: prerequisite not met ((EE2012A or EE2012 or ST2132 or ST2334 or ((ST2131 or MA2116 or MA2116T or MA2216) and (ST1131 or ST1232 or DCS2008 or ST1131A))) and (CS3243 or CS3263))",
+    "R3 CS4247 not offered in Sem 1 (semester 7)",
+    "R4 CS4247 in semester 7: prerequisite not met (CS3241)",
+    "R3 CS4430 not offered in Sem 1 (semester 7)",
+    "R4 CS4430 in semester 7: prerequisite not met (CS3231)",
+    "R7 semester 7 has 24 MC, limit 20",
+    "R9 must rule not met: CS4238 in semester 8",
+    "R9 must rule not met: before CS4246 CS2101",
+    "R9 must rule not met: before CS3213 CS4234"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4238 requires CS3235, which requires CS2107. CS2107 is not completed and not in the required list, so it must be added. CS2107 has no prerequisites and is offered Sem 1/2. However, CS4238 is fixed in Sem 8. CS3235 must be in Sem 7 or earlier. CS2107 must be before CS3235. CS4231 requires CS3210 or CS3230. CS3230 is completed. CS4231 is offered Sem 2 only. CS4430 requires CS3231. CS3231 is not completed and not in the required list. CS3231 requires CS1231/MA1100 and CS2040/CS2040S. CS1231S is completed. CS2040S is completed. So CS3231 can be taken. CS3231 is offered Sem 1 only. CS4430 is offered Sem 2 only. CS4247 requires CS3241. CS3241 is not completed and not in the required list. CS3241 requires CS2030/CS2113 and CS2040. CS2030S is completed. CS2040S is completed. CS3241 is offered Sem 1 only. CS4247 is offered Sem 2 only. CS4246 requires CS3243 or CS3263. Neither is completed or in the required list. CS3243 requires CS2040 and CS1231. Both completed. CS3243 is offered Sem 2 only. CS3263 requires CS2109S (completed) and CS2040 (completed) and MA2001/MA1522 etc. MA1522 is completed. CS3263 is offered Sem 1/2. CS4246 is offered Sem 1/2. CS2101 is offered Sem 1/2. CS3213 is offered Sem 2 only. CS4234 is offered Sem 1 only. The constraints are: CS4238 in Sem 8. CS4246 before CS2101. CS3235 before CS4238. CS3213 before CS4234. Ideally CS4238 before CS3213 (impossible if CS4238 is Sem 8 and CS3213 is Sem 2, unless CS3213 is Sem 8? No, CS3213 is Sem 2 only. So CS3213 must be Sem 2. CS4238 is Sem 8. So CS4238 is after CS3213. The 'ideally' wish is violated, but hard rules allow it. Wait, 'CS4238 before CS3213' is a soft wish ('Ideally'). The hard rules are: CS4238 in Sem 8. CS4246 before CS2101. CS3235 before CS4238. CS3213 before CS4234. CS3213 is Sem 2 only. So CS3213 must be in Sem 2 (Sem 6 or 8? Sem 6 is Y3S2, Sem 8 is Y4S2. Student is in Y3S2 now, so current semester is 6. Plan starts at 6. CS3213 is offered Sem 2. So it can be in Sem 6 or 8. CS4234 is offered Sem 1. So CS4234 must be in Sem 7. CS3213 must be before CS4234. So CS3213 must be in Sem 6. So Sem 6 has CS3213. CS4238 is in Sem 8. CS3235 must be before CS4238. CS3235 is offered Sem 1/2. So CS3235 can be Sem 6 or 7. CS3235 requires CS2105 (completed), CS2106 (completed), CS2107 (not completed). So CS2107 must be taken before CS3235. CS2107 is offered Sem 1/2. So CS2107 can be Sem 6 or 7. If CS2107 is Sem 6, it conflicts with CS3213? No, mutually exclusive? No. But MC limit 20. CS3213 (4) + CS2107 (4) = 8. OK. CS3235 can be Sem 7. CS4238 is Sem 8. CS4231 requires CS3230 (completed). CS4231 is Sem 2 only. So CS4231 must be Sem 6 or 8. CS4430 requires CS3231. CS3231 is Sem 1 only. So CS3231 must be Sem 7. CS4430 must be Sem 8 (since it's Sem 2 and after CS3231). CS4247 requires CS3241. CS3241 is Sem 1 only. So CS3241 must be Sem 7. CS4247 must be Sem 8 (Sem 2). CS4246 requires CS3243 or CS3263. CS3243 is Sem 2. CS3263 is Sem 1/2. CS4246 is Sem 1/2. CS4246 must be before CS2101. CS2101 is Sem 1/2. CS2101 is not in the 'must take' list? Yes it is. CS2101 is in the list. CS4246 before CS2101. CS2101 can be Sem 7 or 8. If CS2101 is Sem 7, CS4246 must be Sem 6. If CS2101 is Sem 8, CS4246 can be Sem 6 or 7. Let's check MCs. Sem 6: CS3213 (4). CS2107 (4). CS4231 (4). Total 12. Can add more. CS3235 (4) in Sem 6? If CS3235 in Sem 6, CS2107 must be before. So CS2107 in Sem 6? No, prerequisite. So CS2107 in Sem 6, CS3235 in Sem 7. Sem 6: CS3213, CS2107, CS4231. MC 12. Sem 7: CS3235 (4), CS3231 (4), CS3241 (4). MC 12. Sem 8: CS4238 (4), CS4430 (4), CS4247 (4). MC 12. CS4246 and CS2101 remain. CS4246 before CS2101. CS4246 requires CS3243 or CS3263. CS3243 is Sem 2. CS3263 is Sem 1/2. CS3243 requires CS2040 (completed) and CS1231 (completed). So CS3243 can be taken. CS3243 is Sem 2. So CS3243 can be Sem 6, 7, or 8. If CS3243 is Sem 6, CS4246 can be Sem 7 or 8. If CS3243 is Sem 7, CS4246 can be Sem 8. CS2101 is Sem 1/2. CS2101 can be Sem 7 or 8. CS4246 before CS2101. If CS4246 is Sem 7, CS2101 is Sem 8. If CS4246 is Sem 8, CS2101 must be after? No, CS2101 is Sem 7 or 8. If CS4246 is Sem 8, CS2101 must be after Sem 8? Impossible. So CS4246 must be Sem 7 or earlier. CS2101 must be Sem 8. So CS4246 in Sem 7. CS3243 in Sem 6 or 7. If CS3243 in Sem 6, CS4246 in Sem 7. Sem 6: CS3213, CS2107, CS4231, CS3243. MC 16. Sem 7: CS3235, CS3231, CS3241, CS4246. MC 16. Sem 8: CS4238, CS4430, CS4247, CS2101. MC 16. All constraints met? CS4238 in Sem 8. Yes. CS4246 before CS2101 (Sem 7 before Sem 8). Yes. CS3235 before CS4238 (Sem 7 before Sem 8). Yes. CS3213 before CS4234? CS4234 is not in the plan? The student said \"I need to take ... CS4234\". So CS4234 must be in the plan. CS4234 is Sem 1 only. So CS4234 must be Sem 7. But Sem 7 is full with CS3235, CS3231, CS3241, CS4246. MC 16. Can we add CS4234? 16+4=20. Yes. But CS3213 before CS4234. CS3213 is Sem 6. CS4234 is Sem 7. Yes. So Sem 7: CS3235, CS3231, CS3241, CS4246, CS4234. MC 20. Sem 8: CS4238, CS4430, CS4247, CS2101. MC 16. Sem 6: CS3213, CS2107, CS4231, CS3243. MC 16. Is CS3243 required? CS4246 requires CS3243 or CS3263. I used CS3243. CS3243 is Sem 2. So CS3243 in Sem 6 is valid. CS3231 is Sem 1. So CS3231 in Sem 7 is valid. CS3241 is Sem 1. So CS3241 in Sem 7 is valid. CS4234 is Sem 1. So CS4234 in Sem 7 is valid. CS4246 is Sem 1/2. So CS4246 in Sem 7 is valid. CS3235 is Sem 1/2. So CS3235 in Sem 7 is valid. CS4238 is Sem 1/2. So CS4238 in Sem 8 is valid. CS4430 is Sem 2. So CS4430 in Sem 8 is valid. CS4247 is Sem 2. So CS4247 in Sem 8 is valid. CS2101 is Sem 1/2. So CS2101 in Sem 8 is valid. CS3213 is Sem 2. So CS3213 in Sem 6 is valid. CS2107 is Sem 1/2. So CS2107 in Sem 6 is valid. CS4231 is Sem 2. So CS4231 in Sem 6 is valid. All prerequisites met? CS3235: CS2105 (done), CS2106 (done), CS2107 (Sem 6). Yes. CS4430: CS3231 (Sem 7). Yes. CS4247: CS3241 (Sem 7). Yes. CS4246: CS3243 (Sem 6). Yes. CS4234: CS3230 (done). Yes. CS2101: none. Yes. CS3213: CS2103T (done). Yes. CS2107: none. Yes. CS4231: CS3230 (done). Yes. CS3243: CS2040S (done), CS1231S (done). Yes. All good.\n\n{\"status\": \"PLAN\", \"plan\": {\"6\": [\"CS3213\", \"CS2107\", \"CS4231\", \"CS3243\"], \"7\": [\"CS3235\", \"CS3231\", \"CS3241\", \"CS4246\", \"CS4234\"], \"8\": [\"CS4238\", \"CS4430\", \"CS4247\", \"CS2101\"]}, \"reasons\": [\"All prerequisites are satisfied. CS4238 is in Sem 8. CS4246 (Sem 7) is before CS2101 (Sem 8). CS3235 (Sem 7) is before CS4238 (Sem 8). CS3213 (Sem 6) is before CS4234 (Sem 7). CS4238 is after CS3213, violating the ideal wish, but this is unavoidable as CS4238 is fixed in Sem 8 and CS3213 is Sem 2 only.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS3213",
+      "CS2107",
+      "CS4231",
+      "CS3243"
+     ],
+     "7": [
+      "CS3235",
+      "CS3231",
+      "CS3241",
+      "CS4246",
+      "CS4234"
+     ],
+     "8": [
+      "CS4238",
+      "CS4430",
+      "CS4247",
+      "CS2101"
+     ]
+    },
+    "reasons": [
+     "All prerequisites are satisfied. CS4238 is in Sem 8. CS4246 (Sem 7) is before CS2101 (Sem 8). CS3235 (Sem 7) is before CS4238 (Sem 8). CS3213 (Sem 6) is before CS4234 (Sem 7). CS4238 is after CS3213, violating the ideal wish, but this is unavoidable as CS4238 is fixed in Sem 8 and CS3213 is Sem 2 only."
+    ]
+   },
+   "repair": "extra_text",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 14982,
+    "total_tokens": 18207,
+    "completion_tokens": 3225,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 42.69,
+    "attempts": 1
+   },
+   "seconds": 42.69,
+   "violations": [
+    "R1 must-take CS2102 missing",
+    "R2 CS3243 is blocked by a completed course"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS2102 is a required course. Its prerequisite is (CS1231 or MA1100 or MA1100T or CS1231S) AND (CS2030S or CS2030 or CS2030DE or CS2030HS or YSC2229 or CS2040 or CS2040C or CS2040S or CS2040DE or CS2040HS). The student has completed CS1231S and CS2040S, so the prerequisite is satisfied. However, CS2102 is offered Sem 1 and Sem 2. The student is in Sem 6. CS2102 can be taken in Sem 6, 7, or 8. The previous plan failed to include CS2102. Additionally, CS3243 is blocked by completed course CS2109S? No, CS3243 cannot take if completed CS2109S. The student has completed CS2109S. Therefore, CS3243 cannot be taken. CS4246 requires CS3243 or CS3263. Since CS3243 is blocked, CS4246 requires CS3263. CS3263 requires CS2109S (completed), CS2040/CS2040S (completed), MA2001/MA1522 etc. (MA1522 completed), and EE2012A/EE2012/ST2132/ST2334/MA2116 etc. (ST2334 completed). So CS3263 is eligible. CS3263 is offered Sem 1 and Sem 2. So CS3263 can be taken in Sem 6, 7, or 8. CS4246 requires CS3263. So CS3263 must be before CS4246. CS4246 is offered Sem 1 and Sem 2. CS2101 is offered Sem 1 and Sem 2. CS4246 must be before CS2101. CS3213 is offered Sem 2 only. CS4234 is offered Sem 1 only. CS3213 must be before CS4234. CS4238 is fixed in Sem 8. CS3235 must be before CS4238. CS3235 requires CS2107. CS2107 is offered Sem 1 and Sem 2. CS4430 requires CS3231. CS3231 is offered Sem 1 only. CS4247 requires CS3241. CS3241 is offered Sem 1 only. Let's re-plan. Sem 6 (Y3S2): CS3213 (Sem 2), CS2107 (Sem 1/2), CS4231 (Sem 2), CS2102 (Sem 1/2). MC 16. Sem 7 (Y4S1): CS3235 (Sem 1/2), CS3231 (Sem 1), CS3241 (Sem 1), CS3263 (Sem 1/2), CS4234 (Sem 1). MC 20. Sem 8 (Y4S2): CS4238 (Sem 1/2), CS4430 (Sem 2), CS4247 (Sem 2), CS4246 (Sem 1/2), CS2101 (Sem 1/2). MC 20. Check constraints: CS4238 in Sem 8. Yes. CS4246 before CS2101. CS4246 in Sem 8, CS2101 in Sem 8. 'Before' usually means strictly earlier semester. If 'before' means strictly earlier, this fails. If 'before' means earlier or same, it passes. The prompt says 'CS4246 must come before CS2101'. In academic planning, 'before' typically implies a prerequisite relationship or strictly earlier semester. Given the strict rule 'Prerequisites must be completed or planned in a STRICTLY earlier semester', 'before' likely implies strictly earlier. If so, CS4246 and CS2101 cannot be in the same semester. CS4246 must be Sem 7 or earlier. CS2101 must be Sem 8 or later. But Sem 8 is the last semester. So CS2101 must be Sem 8. CS4246 must be Sem 7. CS3263 must be before CS4246. So CS3263 must be Sem 6. CS3213 before CS4234. CS3213 Sem 2. CS4234 Sem 1. CS3213 must be Sem 6. CS4234 must be Sem 7. CS3235 before CS4238. CS3235 Sem 1/2. CS4238 Sem 8. CS3235 can be Sem 6 or 7. CS2107 before CS3235. CS2107 Sem 1/2. CS2107 can be Sem 6. CS4231 Sem 2. CS4231 can be Sem 6. CS2102 Sem 1/2. CS2102 can be Sem 6. Sem 6: CS3213, CS2107, CS4231, CS2102, CS3263. MC 20. Sem 7: CS3235, CS3231, CS3241, CS4234, CS4246. MC 20. Sem 8: CS4238, CS4430, CS4247, CS2101. MC 16. Check prerequisites: CS3263 requires CS2109S (done), CS2040S (done), MA1522 (done), ST2334 (done). OK. CS4246 requires CS3263 (Sem 6). OK. CS3235 requires CS2105 (done), CS2106 (done), CS2107 (Sem 6). OK. CS3231 requires CS1231S (done), CS2040S (done). OK. CS3241 requires CS2030S (done), CS2040S (done). OK. CS4234 requires CS3230 (done). OK. CS4430 requires CS3231 (Sem 7). OK. CS4247 requires CS3241 (Sem 7). OK. CS2101 none. OK. CS3213 requires CS2030T/CS2030DE/CS2113T/CS2113. Student has CS2030S and CS2103T. CS2103T requires CS2030S and CS2040S. CS2103T is completed. CS3213 prerequisite is CS2103T or CS2103 or CS2103DE or CS2113T or CS2113. Student has CS2103T. OK. CS2102 requires CS1231S and CS2040S. OK. CS4231 requires CS3230. OK. All constraints met. CS4246 (Sem 7) is strictly before CS2101 (Sem 8). CS3213 (Sem 6) is strictly before CS4234 (Sem 7). CS3235 (Sem 7) is strictly before CS4238 (Sem 8). CS4238 is in Sem 8. CS3243 is not used (blocked). CS3263 is used.\n\n{\"status\": \"PLAN\", \"plan\": {\"6\": [\"CS3213\", \"CS2107\", \"CS4231\", \"CS2102\", \"CS3263\"], \"7\": [\"CS3235\", \"CS3231\", \"CS3241\", \"CS4234\", \"CS4246\"], \"8\": [\"CS4238\", \"CS4430\", \"CS4247\", \"CS2101\"]}, \"reasons\": [\"CS3243 is blocked by completed CS2109S, so CS3263 is used for CS4246. CS2102 is included. All prerequisites are satisfied. CS4246 (Sem 7) is before CS2101 (Sem 8). CS3213 (Sem 6) is before CS4234 (Sem 7). CS3235 (Sem 7) is before CS4238 (Sem 8). CS4238 is in Sem 8.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS3213",
+      "CS2107",
+      "CS4231",
+      "CS2102",
+      "CS3263"
+     ],
+     "7": [
+      "CS3235",
+      "CS3231",
+      "CS3241",
+      "CS4234",
+      "CS4246"
+     ],
+     "8": [
+      "CS4238",
+      "CS4430",
+      "CS4247",
+      "CS2101"
+     ]
+    },
+    "reasons": [
+     "CS3243 is blocked by completed CS2109S, so CS3263 is used for CS4246. CS2102 is included. All prerequisites are satisfied. CS4246 (Sem 7) is before CS2101 (Sem 8). CS3213 (Sem 6) is before CS4234 (Sem 7). CS3235 (Sem 7) is before CS4238 (Sem 8). CS4238 is in Sem 8."
+    ]
+   },
+   "repair": "extra_text",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 17696,
+    "total_tokens": 19801,
+    "completion_tokens": 2105,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 28.22,
+    "attempts": 1
+   },
+   "seconds": 28.22,
+   "violations": []
+  }
+ ]
+}

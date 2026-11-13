@@ -1,0 +1,95 @@
+{
+ "id": "q2-S4-089",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.36,
+ "solver_seconds": 0.05,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3123,
+  "total_tokens": 3548,
+  "completion_tokens": 425,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 6.31,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"programme\": \"BComp CS Hons\",\n\"current_sem\": 4,\n\"completed\": [\n\"ST2334\",\n\"CS2040S\",\n\"CS1231S\",\n\"MA1522\",\n\"CS2100\",\n\"ES2660\",\n\"CS2030S\",\n\"CS1101S\",\n\"CS2101\",\n\"IS1108\",\n\"MA1521\",\n\"CS2103T\"\n],\n\"must_take\": [\n\"CS2109S\",\n\"CS2102\",\n\"CS3230\",\n\"CS2105\",\n\"CS3244\",\n\"CS4268\",\n\"CS3234\"\n],\n\"sem_caps\": {\n\"6\": 0\n},\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4268\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3234\",\n\"sem\": 4,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2105\",\n\"b\": \"CS3230\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2102\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS2102\",\n\"b\": \"CS2105\",\n\"strength\": \"prefer\"\n}\n],\n\"early\": [\n\"CS3230\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "programme": "BComp CS Hons",
+  "current_sem": 4,
+  "completed": [
+   "ST2334",
+   "CS2040S",
+   "CS1231S",
+   "MA1522",
+   "CS2100",
+   "ES2660",
+   "CS2030S",
+   "CS1101S",
+   "CS2101",
+   "IS1108",
+   "MA1521",
+   "CS2103T"
+  ],
+  "must_take": [
+   "CS2109S",
+   "CS2102",
+   "CS3230",
+   "CS2105",
+   "CS3244",
+   "CS4268",
+   "CS3234"
+  ],
+  "sem_caps": {
+   "6": 0
+  },
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS4268",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3234",
+    "sem": 4,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2105",
+    "b": "CS3230",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS2102",
+    "b": "CS2105",
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS3230"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the course exclusions (courses that cannot be taken together)"
+  ]
+ }
+}

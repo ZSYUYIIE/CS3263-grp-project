@@ -1,0 +1,55 @@
+{
+ "id": "q2-S2-017",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 55.83,
+ "usage": {
+  "prompt_tokens": 8893,
+  "total_tokens": 14389,
+  "completion_tokens": 5496,
+  "prompt_tokens_details": {
+   "cached_tokens": 8576,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5358
+  },
+  "finish_reason": "stop",
+  "request_seconds": 55.83,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"4\":[\"CS2106\"],\"5\":[\"CS3230\",\"CS3219\"],\"6\":[\"CS4231\",\"CS2105\"],\"7\":[\"CS4226\",\"CS2109S\"]},\"reasons\":[\"Earliest graduation is semester 7; CS3230 is added because it is a prerequisite for CS4231.\",\"CS2106 is before CS4231, and CS3219 and CS2105 are before CS4226.\",\"CS4226 and CS2109S are together in semester 7, with CS2109S as late as possible without delaying graduation.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2106"
+   ],
+   "5": [
+    "CS3230",
+    "CS3219"
+   ],
+   "6": [
+    "CS4231",
+    "CS2105"
+   ],
+   "7": [
+    "CS4226",
+    "CS2109S"
+   ]
+  },
+  "reasons": [
+   "Earliest graduation is semester 7; CS3230 is added because it is a prerequisite for CS4231.",
+   "CS2106 is before CS4231, and CS3219 and CS2105 are before CS4226.",
+   "CS4226 and CS2109S are together in semester 7, with CS2109S as late as possible without delaying graduation."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

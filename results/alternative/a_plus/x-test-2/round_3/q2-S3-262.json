@@ -1,0 +1,54 @@
+{
+ "id": "q2-S3-262",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 38.9,
+ "usage": {
+  "prompt_tokens": 7249,
+  "total_tokens": 11084,
+  "completion_tokens": 3835,
+  "prompt_tokens_details": {
+   "cached_tokens": 7040,
+   "created_cache_tokens": 128
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3698
+  },
+  "finish_reason": "stop",
+  "request_seconds": 38.9,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"4\":[\"CS2102\",\"CS2105\",\"ST2334\",\"CS3230\",\"CS2109S\"],\"5\":[\"CS3103\",\"CS4226\"],\"6\":[\"CS3234\"]},\"reasons\":[\"Earliest possible finish is semester 6 because CS3234 is Sem 2 only and must follow CS2102.\",\"ST2334 is in semester 4 because CS4226 needs it earlier and CS4226 must be in semester 5 to finish by semester 6.\",\"CS3230 is placed before CS3234 as preferred; all prerequisites are satisfied.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2102",
+    "CS2105",
+    "ST2334",
+    "CS3230",
+    "CS2109S"
+   ],
+   "5": [
+    "CS3103",
+    "CS4226"
+   ],
+   "6": [
+    "CS3234"
+   ]
+  },
+  "reasons": [
+   "Earliest possible finish is semester 6 because CS3234 is Sem 2 only and must follow CS2102.",
+   "ST2334 is in semester 4 because CS4226 needs it earlier and CS4226 must be in semester 5 to finish by semester 6.",
+   "CS3230 is placed before CS3234 as preferred; all prerequisites are satisfied."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,46 @@
+{
+ "id": "q2-S3-199",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 16.35,
+ "usage": {
+  "prompt_tokens": 7385,
+  "total_tokens": 9156,
+  "completion_tokens": 1771,
+  "prompt_tokens_details": {
+   "cached_tokens": 7040,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1635
+  },
+  "finish_reason": "stop",
+  "request_seconds": 16.35,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"7\":[\"CS2102\",\"CS3103\"],\"8\":[\"CS3234\",\"CS4225\"]},\"reasons\":[\"CS2102 must be in semester 7, and CS3103 is offered only in Sem 1, so both go in semester 7.\",\"CS3234 is offered only in Sem 2, and CS4225 needs CS2102 earlier, so both go in semester 8.\",\"The preferences for CS3234 or CS4225 before CS2102 and for CS2102 and CS3103 in different semesters cannot be met with the hard constraints.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "7": [
+    "CS2102",
+    "CS3103"
+   ],
+   "8": [
+    "CS3234",
+    "CS4225"
+   ]
+  },
+  "reasons": [
+   "CS2102 must be in semester 7, and CS3103 is offered only in Sem 1, so both go in semester 7.",
+   "CS3234 is offered only in Sem 2, and CS4225 needs CS2102 earlier, so both go in semester 8.",
+   "The preferences for CS3234 or CS4225 before CS2102 and for CS2102 and CS3103 in different semesters cannot be met with the hard constraints."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

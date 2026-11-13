@@ -1,0 +1,58 @@
+{
+ "id": "q1-mp-050-p",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 2.52,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2545,
+  "total_tokens": 2773,
+  "completion_tokens": 228,
+  "prompt_tokens_details": {
+   "cached_tokens": 2432,
+   "created_cache_tokens": 0,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 156
+  },
+  "finish_reason": "stop",
+  "request_seconds": 2.52,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\":\"eligible\",\"target\":\"CS4353\",\"current_sem\":7,\"completed\":[\"CS2102\",\"ST2334\",\"CS2105\",\"CS1010S\",\"CS1101S\",\"CS2040S\",\"CS1231S\",\"CS2111\",\"CS2030S\",\"CS3240\",\"MA1505\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS4353",
+  "current_sem": 7,
+  "completed": [
+   "CS2102",
+   "ST2334",
+   "CS2105",
+   "CS1010S",
+   "CS1101S",
+   "CS2040S",
+   "CS1231S",
+   "CS2111",
+   "CS2030S",
+   "CS3240",
+   "MA1505"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS4353",
+  "semester": 7,
+  "reasons": [
+   "missing prerequisite: ((CS2103DE or CS2103 or CS2103T or CS2113) and CS3240) or (NM2207 and (NM3243 or NM4259 or (ID2116 and ID3131)))"
+  ],
+  "can_still_become_eligible": true
+ }
+}

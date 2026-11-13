@@ -1,0 +1,93 @@
+{
+ "id": "q2-S4-159",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 30.77,
+ "solver_seconds": 0.136,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3136,
+  "total_tokens": 3532,
+  "completion_tokens": 396,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 30.63,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 5,\n\"completed\": [\n\"CS2109S\",\n\"ST2334\",\n\"MA1521\",\n\"MA1522\",\n\"CS2103T\",\n\"CS1101S\",\n\"CS2101\",\n\"CS1231S\",\n\"CS2040S\",\n\"CS2106\",\n\"CS2030S\",\n\"CS2100\",\n\"ES2660\"\n],\n\"must_take\": [\n\"CS4330\",\n\"IS1108\",\n\"CS3247\",\n\"CS2105\",\n\"CS4249\",\n\"CS3230\",\n\"CS4222\"\n],\n\"sem_caps\": {\n\"6\": 0\n},\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4330\",\n\"b\": \"CS2105\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2105\",\n\"b\": \"CS3230\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4249\",\n\"sem\": 8,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"IS1108\",\n\"b\": \"CS4249\",\n\"strength\": \"prefer\"\n}\n],\n\"unsupported\": [\n\"S/U option\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "completed": [
+   "CS2109S",
+   "ST2334",
+   "MA1521",
+   "MA1522",
+   "CS2103T",
+   "CS1101S",
+   "CS2101",
+   "CS1231S",
+   "CS2040S",
+   "CS2106",
+   "CS2030S",
+   "CS2100",
+   "ES2660"
+  ],
+  "must_take": [
+   "CS4330",
+   "IS1108",
+   "CS3247",
+   "CS2105",
+   "CS4249",
+   "CS3230",
+   "CS4222"
+  ],
+  "sem_caps": {
+   "6": 0
+  },
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS4330",
+    "b": "CS2105",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2105",
+    "b": "CS3230",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4249",
+    "sem": 8,
+    "strength": "prefer"
+   },
+   {
+    "type": "same_sem",
+    "a": "IS1108",
+    "b": "CS4249",
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "S/U option"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS4330 and CS2105 in the same semester; the prerequisites of CS4222; the MC limits (at most 20 MC per semester; semesters 6 blocked); the semesters in which the courses are offered; the course exclusions (courses that cannot be taken together)"
+  ],
+  "not_applied": [
+   "S/U option"
+  ]
+ }
+}

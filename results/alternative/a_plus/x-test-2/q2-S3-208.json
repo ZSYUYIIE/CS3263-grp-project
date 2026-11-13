@@ -1,0 +1,92 @@
+{
+ "id": "q2-S3-208",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 30.05,
+ "usage": {
+  "prompt_tokens": 7389,
+  "total_tokens": 10366,
+  "completion_tokens": 2977,
+  "prompt_tokens_details": {
+   "cached_tokens": 7040,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2833
+  },
+  "finish_reason": "stop",
+  "request_seconds": 30.05,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"7\":[\"CS3103\",\"CS2102\"],\"8\":[\"CS3234\",\"CS4225\"]},\"reasons\":[\"CS3103 is fixed in semester 7 and must precede CS4225, so CS4225 is in semester 8.\",\"CS2102 is in semester 7 to satisfy CS4225's prerequisite and keep each used semester at 8 MC.\",\"CS3234 is only offered in Semester 2, so it is in semester 8; the waiver request is not actionable and the soft wishes to separate CS2102/CS3103 or put CS3234 before CS2102 cannot be met.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "7": [
+    "CS3103",
+    "CS2102"
+   ],
+   "8": [
+    "CS3234",
+    "CS4225"
+   ]
+  },
+  "reasons": [
+   "CS3103 is fixed in semester 7 and must precede CS4225, so CS4225 is in semester 8.",
+   "CS2102 is in semester 7 to satisfy CS4225's prerequisite and keep each used semester at 8 MC.",
+   "CS3234 is only offered in Semester 2, so it is in semester 8; the waiver request is not actionable and the soft wishes to separate CS2102/CS3103 or put CS3234 before CS2102 cannot be met."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\":\"PLAN\",\"plan\":{\"7\":[\"CS3103\",\"CS2102\"],\"8\":[\"CS3234\",\"CS4225\"]},\"reasons\":[\"CS3103 is fixed in semester 7 and must precede CS4225, so CS4225 is in semester 8.\",\"CS2102 is in semester 7 to satisfy CS4225's prerequisite and keep each used semester at 8 MC.\",\"CS3234 is only offered in Semester 2, so it is in semester 8; the waiver request is not actionable and the soft wishes to separate CS2102/CS3103 or put CS3234 before CS2102 cannot be met.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "7": [
+      "CS3103",
+      "CS2102"
+     ],
+     "8": [
+      "CS3234",
+      "CS4225"
+     ]
+    },
+    "reasons": [
+     "CS3103 is fixed in semester 7 and must precede CS4225, so CS4225 is in semester 8.",
+     "CS2102 is in semester 7 to satisfy CS4225's prerequisite and keep each used semester at 8 MC.",
+     "CS3234 is only offered in Semester 2, so it is in semester 8; the waiver request is not actionable and the soft wishes to separate CS2102/CS3103 or put CS3234 before CS2102 cannot be met."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 7389,
+    "total_tokens": 10366,
+    "completion_tokens": 2977,
+    "prompt_tokens_details": {
+     "cached_tokens": 7040,
+     "created_cache_tokens": 256,
+     "multimodal_tokens": null
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 2833
+    },
+    "finish_reason": "stop",
+    "request_seconds": 30.05,
+    "attempts": 1
+   },
+   "seconds": 30.05,
+   "violations": []
+  }
+ ]
+}

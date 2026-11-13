@@ -1,0 +1,54 @@
+{
+ "id": "q2-S3-077",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 78.45,
+ "usage": {
+  "prompt_tokens": 12103,
+  "total_tokens": 20158,
+  "completion_tokens": 8055,
+  "prompt_tokens_details": {
+   "cached_tokens": 11776,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 7880
+  },
+  "finish_reason": "stop",
+  "request_seconds": 78.45,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"4\": [\"CS2105\", \"CS2106\", \"CS3219\", \"CS3230\"],\n    \"5\": [\"CP3880\"],\n    \"6\": [\"CS4231\"],\n    \"7\": [\"CS4226\", \"CS2109S\"]\n  },\n  \"reasons\": [\n    \"Plan finishes in semester 7, the earliest possible because CS4231 must precede CS2109S and CS4231 is only offered in even semesters.\",\n    \"CS3230 is added as the prerequisite for CS4231; all other courses are your listed remaining modules.\",\n    \"ATAP is CP3880 in semester 5; CS4226 and CS2109S are together in semester 7, satisfying your soft wishes.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2105",
+    "CS2106",
+    "CS3219",
+    "CS3230"
+   ],
+   "5": [
+    "CP3880"
+   ],
+   "6": [
+    "CS4231"
+   ],
+   "7": [
+    "CS4226",
+    "CS2109S"
+   ]
+  },
+  "reasons": [
+   "Plan finishes in semester 7, the earliest possible because CS4231 must precede CS2109S and CS4231 is only offered in even semesters.",
+   "CS3230 is added as the prerequisite for CS4231; all other courses are your listed remaining modules.",
+   "ATAP is CP3880 in semester 5; CS4226 and CS2109S are together in semester 7, satisfying your soft wishes."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

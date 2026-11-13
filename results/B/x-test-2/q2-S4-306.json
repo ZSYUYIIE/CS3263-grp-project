@@ -1,0 +1,111 @@
+{
+ "id": "q2-S4-306",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 15.43,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2869,
+  "total_tokens": 4440,
+  "completion_tokens": 1571,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1291
+  },
+  "finish_reason": "stop",
+  "request_seconds": 15.43,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"completed\":[\"CS2105\",\"MA1521\",\"CS2101\",\"CS2040S\",\"CS2102\",\"CS3219\",\"CS2100\",\"CS1101S\",\"CS4230\",\"CS3230\",\"CS2109S\",\"IS1108\",\"CS2030S\",\"ES2660\",\"CS4226\",\"CS2103T\",\"CS1231S\",\"CS2106\",\"CS3211\",\"ST2334\",\"MA1522\"],\"current_sem\":7,\"programme\":\"BComp CS Hons\",\"must_take\":[\"CS3235\",\"CS4212\",\"CS3247\"],\"mc_max\":12,\"early\":[\"CS3235\"],\"rules\":[{\"type\":\"in_sem\",\"course\":\"CS4212\",\"sem\":8,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3235\",\"sem\":7,\"strength\":\"must\"},{\"type\":\"same_sem\",\"a\":\"CS4212\",\"b\":\"CS3235\",\"strength\":\"prefer\"},{\"type\":\"same_sem\",\"a\":\"CS4212\",\"b\":\"CS3247\",\"strength\":\"prefer\"},{\"type\":\"same_sem\",\"a\":\"CS3247\",\"b\":\"CS3235\",\"strength\":\"prefer\"}],\"unsupported\":[\"modules taught by favourite lecturer\"]}",
+ "spec": {
+  "query": "plan",
+  "completed": [
+   "CS2105",
+   "MA1521",
+   "CS2101",
+   "CS2040S",
+   "CS2102",
+   "CS3219",
+   "CS2100",
+   "CS1101S",
+   "CS4230",
+   "CS3230",
+   "CS2109S",
+   "IS1108",
+   "CS2030S",
+   "ES2660",
+   "CS4226",
+   "CS2103T",
+   "CS1231S",
+   "CS2106",
+   "CS3211",
+   "ST2334",
+   "MA1522"
+  ],
+  "current_sem": 7,
+  "programme": "BComp CS Hons",
+  "must_take": [
+   "CS3235",
+   "CS4212",
+   "CS3247"
+  ],
+  "mc_max": 12,
+  "early": [
+   "CS3235"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS4212",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3235",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4212",
+    "b": "CS3235",
+    "strength": "prefer"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4212",
+    "b": "CS3247",
+    "strength": "prefer"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3247",
+    "b": "CS3235",
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "modules taught by favourite lecturer"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS3235 in semester 7; the prerequisites of CS3235"
+  ],
+  "not_applied": [
+   "modules taught by favourite lecturer"
+  ]
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "id": "q2-S3-224",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 3.5,
+ "usage": {
+  "prompt_tokens": 9921,
+  "total_tokens": 10100,
+  "completion_tokens": 179,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 3.5,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"ST2334\",\n      \"CS2105\"\n    ],\n    \"6\": [\n      \"CS3219\",\n      \"CS3237\"\n    ],\n    \"7\": [\n      \"IS1108\",\n      \"CS4212\"\n    ]\n  },\n  \"reasons\": [\n    \"All requested courses are planned satisfying prerequisites and constraints.\",\n    \"ST2334 taken in Sem 5 (earliest possible).\",\n    \"IS1108 in Sem 7 as required; CS4212 in Sem 7 (late as possible given Sem 8 is empty).\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "ST2334",
+    "CS2105"
+   ],
+   "6": [
+    "CS3219",
+    "CS3237"
+   ],
+   "7": [
+    "IS1108",
+    "CS4212"
+   ]
+  },
+  "reasons": [
+   "All requested courses are planned satisfying prerequisites and constraints.",
+   "ST2334 taken in Sem 5 (earliest possible).",
+   "IS1108 in Sem 7 as required; CS4212 in Sem 7 (late as possible given Sem 8 is empty)."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

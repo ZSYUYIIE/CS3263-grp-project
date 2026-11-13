@@ -1,0 +1,49 @@
+{
+ "id": "q2-S1-117",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 38.63,
+ "usage": {
+  "prompt_tokens": 8642,
+  "total_tokens": 12275,
+  "completion_tokens": 3633,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 7040,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3518
+  },
+  "finish_reason": "stop",
+  "request_seconds": 38.62,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS2102\",\"CS2105\"],\"6\":[\"CS3281\"],\"8\":[\"CS3211\",\"CS4222\"]},\"reasons\":[\"CS2105 is added because it is a prerequisite for CS4222.\",\"CS4222 is in semester 8 so CS3281 in semester 6 comes before it.\",\"CS3211 and CS2102 cannot share a semester because CS3211 is fixed in semester 8 and CS2102 in semester 5.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS2105"
+   ],
+   "6": [
+    "CS3281"
+   ],
+   "8": [
+    "CS3211",
+    "CS4222"
+   ]
+  },
+  "reasons": [
+   "CS2105 is added because it is a prerequisite for CS4222.",
+   "CS4222 is in semester 8 so CS3281 in semester 6 comes before it.",
+   "CS3211 and CS2102 cannot share a semester because CS3211 is fixed in semester 8 and CS2102 in semester 5."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

@@ -1,0 +1,24 @@
+{
+ "id": "q2-S2-053",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 21.84,
+ "usage": {
+  "prompt_tokens": 9935,
+  "total_tokens": 11062,
+  "completion_tokens": 1127,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 21.84,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"The student's per-semester MC limit is 8, but the required courses CS3219 (4 MC), CS2105 (4 MC), CS4212 (4 MC), ST2334 (4 MC), and CS3237 (4 MC) cannot all be scheduled within the remaining semesters (Y3S2, Y4S1, Y4S2) without exceeding the 8 MC limit in at least one semester or violating the prerequisite/sequence constraints. Specifically, CS3237 requires CS2100 (completed) and CS1101S (completed), so it can be taken in Y3S2. However, CS4212 requires CS2104, which is not in the 'must take' list and has a prerequisite of CS2030/CS2030S/etc. (CS2030S is completed). The student did not list CS2104 as a required course, but it is a prerequisite for CS4212. Adding CS2104 (4 MC) creates a 5-course load. Even with CS2104, fitting 5 courses of 4 MC each (20 MC total) into 3 semesters with an 8 MC limit is impossible (max 24 MC, but 3 semesters * 8 = 24, so it fits exactly if perfectly packed, but prerequisites and mutual exclusions might block this. Let's re-evaluate. CS2104 is offered Sem 1. Y3S2 is Sem 6 (Sem 2). CS2104 is NOT offered in Sem 2. So CS2104 must be taken in Y4S1 (Sem 7). CS4212 is offered Sem 2. So CS4212 must be taken in Y4S2 (Sem 8). CS3237 is offered Sem 1. So it must be taken in Y3S2 (Sem 6) or Y4S1 (Sem 7). CS3219 is offered Sem 1, Sem 2. CS2105 is offered Sem 1, Sem 2. ST2334 is offered Sem 1, Sem 2. IS1108 is offered Sem 1, Sem 2. The student MUST take IS1108 in Y3S2 (Sem 6). So Sem 6 has IS1108 (4 MC). Remaining capacity in Sem 6: 4 MC. CS3237 is 4 MC. Can we take CS3237 in Sem 6? Yes. So Sem 6: IS1108, CS3237. Sem 7 (Y4S1): Must take CS2104 (prereq for CS4212). CS2104 is 4 MC. Can we take other courses? CS3219 (4 MC), CS2105 (4 MC), ST2334 (4 MC). If we take CS2104 + one other, that's 8 MC. Say CS2104 + CS3219. Sem 8 (Y4S2): Must take CS4212 (4 MC). Remaining: CS2105, ST2334. Both are 4 MC. Total 8 MC. So Sem 8: CS4212, CS2105, ST2334? No, 4+4+4=12 > 8. So we need to spread them. Sem 7: CS2104 (4 MC). Sem 8: CS4212 (4 MC). We still have CS3219, CS2105, ST2334 left. They must be taken in Sem 6, 7, or 8. Sem 6 is full with IS1108 + CS3237 (8 MC). So CS3219, CS2105, ST2334 must be in Sem 7 and 8. Sem 7 has CS2104 (4 MC). Capacity 4 MC. Can take one of CS3219/CS2105/ST2334. Sem 8 has CS4212 (4 MC). Capacity 4 MC. Can take one of the remaining two. One course is left over with no semester. Thus, no plan exists.\", \"reasons\": [\"The student has 6 mandatory courses (CS3219, IS1108, CS2105, CS4212, ST2334, CS3237) plus the hidden prerequisite CS2104 for CS4212. Total 7 courses x 4 MC = 28 MC. The remaining semesters are Y3S2, Y4S1, Y4S2 (3 semesters). Max MC per semester is 8. Total capacity 24 MC. 28 > 24, so it is impossible to fit all courses within the MC limit.\"]}",
+ "answer": {
+  "status": "NO_PLAN"
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

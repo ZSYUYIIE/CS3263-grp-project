@@ -1,0 +1,62 @@
+{
+ "id": "q1-os-05",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 3.19,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2577,
+  "total_tokens": 2923,
+  "completion_tokens": 346,
+  "prompt_tokens_details": {
+   "cached_tokens": 2432,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 239
+  },
+  "finish_reason": "stop",
+  "request_seconds": 3.19,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\":\"eligible\",\"target\":\"MA2108\",\"current_sem\":6,\"completed\":[\"IS1108\",\"MA2116\",\"CS1231S\",\"MA1521\",\"CS1101S\",\"CS2100DE\",\"CS3236\",\"CS2101\",\"CS3216\",\"CS4277\",\"CS2030DE\",\"CS2040C\",\"CS2103T\",\"ESP1111\",\"MA1522\",\"ES1000\"],\"programme\":\"BComp CS Hons with a minor in Economics\"}",
+ "spec": {
+  "query": "eligible",
+  "target": "MA2108",
+  "current_sem": 6,
+  "completed": [
+   "IS1108",
+   "MA2116",
+   "CS1231S",
+   "MA1521",
+   "CS1101S",
+   "CS2100DE",
+   "CS3236",
+   "CS2101",
+   "CS3216",
+   "CS4277",
+   "CS2030DE",
+   "CS2040C",
+   "CS2103T",
+   "ESP1111",
+   "MA1522",
+   "ES1000"
+  ],
+  "programme": "BComp CS Hons with a minor in Economics"
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "OUT_OF_SCOPE",
+  "reasons": [
+   "programme 'BComp CS Hons with a minor in Economics' is not BComp (CS) Hons"
+  ],
+  "message": "I can only plan for BComp (CS) Hons single-major students under AY2026/2027 rules, and this request is outside that (programme 'BComp CS Hons with a minor in Economics' is not BComp (CS) Hons). Course rules differ by programme and aren't in my data for your case, so please check with your faculty or academic advisor."
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "id": "q2-S1-122",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "valid",
+ "seconds": 12.34,
+ "usage": {
+  "prompt_tokens": 16270,
+  "total_tokens": 16728,
+  "completion_tokens": 458,
+  "finish_reason": "stop",
+  "request_seconds": 12.34,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2101\",\n      \"CS3219\"\n    ],\n    \"6\": [\n      \"CS2105\",\n      \"CS3234\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3219 is a prerequisite for CS2105. Since CS2105 must be taken in Sem 6, CS3219 must be completed by the end of Sem 5.\",\n    \"CS3219 is taken in Sem 5. Its prerequisite CS2103T is already completed.\",\n    \"CS2105 and CS3234 are taken in Sem 6 as required. CS2101 is taken in Sem 5 as early as possible.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2101",
+    "CS3219"
+   ],
+   "6": [
+    "CS2105",
+    "CS3234"
+   ]
+  },
+  "reasons": [
+   "CS3219 is a prerequisite for CS2105. Since CS2105 must be taken in Sem 6, CS3219 must be completed by the end of Sem 5.",
+   "CS3219 is taken in Sem 5. Its prerequisite CS2103T is already completed.",
+   "CS2105 and CS3234 are taken in Sem 6 as required. CS2101 is taken in Sem 5 as early as possible."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

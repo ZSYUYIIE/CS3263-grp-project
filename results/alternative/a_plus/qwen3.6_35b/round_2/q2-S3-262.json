@@ -1,0 +1,50 @@
+{
+ "id": "q2-S3-262",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 3,
+ "end": "valid",
+ "seconds": 13.68,
+ "usage": {
+  "prompt_tokens": 27599,
+  "total_tokens": 28351,
+  "completion_tokens": 752,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 13.68,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2102\",\n      \"CS2105\",\n      \"ST2334\"\n    ],\n    \"6\": [\n      \"CS3230\",\n      \"CS2109S\"\n    ],\n    \"8\": [\n      \"CS3103\",\n      \"CS3234\",\n      \"CS4226\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3103 is offered only in Sem 1, so it must be in an odd semester (7 or 8).\",\n    \"CS3234 is offered only in Sem 2, so it must be in an even semester (6 or 8).\",\n    \"CS4226 requires CS2105 and a math module, satisfied in Sem 5. Placing CS3103 in Sem 8 allows CS3234 in Sem 8 as well, satisfying the soft wish to put CS4226 late.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS2105",
+    "ST2334"
+   ],
+   "6": [
+    "CS3230",
+    "CS2109S"
+   ],
+   "8": [
+    "CS3103",
+    "CS3234",
+    "CS4226"
+   ]
+  },
+  "reasons": [
+   "CS3103 is offered only in Sem 1, so it must be in an odd semester (7 or 8).",
+   "CS3234 is offered only in Sem 2, so it must be in an even semester (6 or 8).",
+   "CS4226 requires CS2105 and a math module, satisfied in Sem 5. Placing CS3103 in Sem 8 allows CS3234 in Sem 8 as well, satisfying the soft wish to put CS4226 late."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

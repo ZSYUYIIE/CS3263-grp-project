@@ -1,0 +1,29 @@
+{
+ "id": "q2-S4-045",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 21.38,
+ "usage": {
+  "prompt_tokens": 22001,
+  "total_tokens": 23292,
+  "completion_tokens": 1291,
+  "finish_reason": "stop",
+  "request_seconds": 21.38,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4277 is only offered in Sem 2. The student requires CS3281 in Sem 6 (Sem 2). The student prefers CS4277 before CS3281, which would require CS4277 in Sem 6 or earlier. However, Sem 6 is already full with CS2102 and CS3281 (max 2 modules). CS4277 cannot be taken in Sem 6. Taking CS4277 in Sem 7 (Sem 1) is after CS3281, violating the preference. Since the preference is a soft wish, this is allowed, BUT the previous plan put CS4277 in Sem 7. The error message claims CS4277 is not offered in Sem 1. Let's check the record: CS4277 is 'offered: Sem 2'. Sem 7 is Y4S1, which is Sem 1. Therefore, CS4277 CANNOT be taken in Sem 7. It can only be taken in Sem 2, 4, 6, 8. Sem 6 is full. Sem 8 is the last semester. Can CS4277 be in Sem 8? Yes. Is Sem 8 allowed? Yes. So the plan should be Sem 6: CS2102, CS3281. Sem 8: CS3263, CS4277. Sem 7 is empty. This satisfies all hard rules. CS3263 is offered Sem 1/2, so Sem 8 is fine. CS4277 is offered Sem 2, so Sem 8 is fine. Prerequisites for CS3263: CS2109S (done), CS2040S (done), MA2001/MA1522 (MA1522 done), EE2012A/EE2012/ST2131/MA2116/MA2116T/ST2334/MA2216 (ST2334 done). Prerequisites for CS4277: MA2001/MA1522/MA1101R/MA1311/MA1506/MA1508E (MA1522 done), CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS (CS2040S done). All good. The previous plan failed because it put CS4277 in Sem 7. The correct plan puts it in Sem 8.\"]",
+ "answer": {
+  "status": "NO_PLAN"
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

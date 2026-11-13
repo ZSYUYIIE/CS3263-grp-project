@@ -1,0 +1,46 @@
+{
+ "id": "q2-S3-001",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 2,
+ "end": "repeated plan",
+ "seconds": 16.54,
+ "usage": {
+  "prompt_tokens": 30614,
+  "total_tokens": 31423,
+  "completion_tokens": 809,
+  "finish_reason": "stop",
+  "request_seconds": 16.54,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CP3880\",\n      \"CS2102\",\n      \"CS3103\"\n    ],\n    \"7\": [\n      \"CS3227\",\n      \"CS3281\",\n      \"CS3282\",\n      \"CS4218\",\n      \"CS3210\"\n    ]\n  },\n  \"reasons\": [\n    \"ATAP (CP3880) placed in Sem 6 with 8 MC of other courses to allow graduation in Sem 7.\",\n    \"CS3103 placed in Sem 6 as it is only offered in Sem 1.\",\n    \"CS3282 requires CS3281; CS3281 placed in Sem 7 before CS3282.\",\n    \"CS3210 placed in Sem 7 to satisfy 'late as possible' wish.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CP3880",
+    "CS2102",
+    "CS3103"
+   ],
+   "7": [
+    "CS3227",
+    "CS3281",
+    "CS3282",
+    "CS4218",
+    "CS3210"
+   ]
+  },
+  "reasons": [
+   "ATAP (CP3880) placed in Sem 6 with 8 MC of other courses to allow graduation in Sem 7.",
+   "CS3103 placed in Sem 6 as it is only offered in Sem 1.",
+   "CS3282 requires CS3281; CS3281 placed in Sem 7 before CS3282.",
+   "CS3210 placed in Sem 7 to satisfy 'late as possible' wish."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

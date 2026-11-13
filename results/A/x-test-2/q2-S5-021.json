@@ -1,0 +1,47 @@
+{
+ "id": "q2-S5-021",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 20.58,
+ "usage": {
+  "prompt_tokens": 9529,
+  "total_tokens": 11730,
+  "completion_tokens": 2201,
+  "prompt_tokens_details": {
+   "cached_tokens": 9216,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2074
+  },
+  "finish_reason": "stop",
+  "request_seconds": 20.58,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"7\":[\"CS2102\",\"CS3231\",\"CS4243\"],\"8\":[\"CS3213\",\"CS4430\"]},\"reasons\":[\"CS2102 is in semester 7 because CS3213 is only offered in semester 8 and cannot be taken with CS2102; this also puts CS2102 before CS4430.\",\"CS3231 is added as the prerequisite for CS4430 and is offered in semester 7.\",\"CS4243 is placed before CS3213, and both semesters stay within the 12 MC limit.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "7": [
+    "CS2102",
+    "CS3231",
+    "CS4243"
+   ],
+   "8": [
+    "CS3213",
+    "CS4430"
+   ]
+  },
+  "reasons": [
+   "CS2102 is in semester 7 because CS3213 is only offered in semester 8 and cannot be taken with CS2102; this also puts CS2102 before CS4430.",
+   "CS3231 is added as the prerequisite for CS4430 and is offered in semester 7.",
+   "CS4243 is placed before CS3213, and both semesters stay within the 12 MC limit."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

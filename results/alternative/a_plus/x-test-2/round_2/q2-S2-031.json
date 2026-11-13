@@ -1,0 +1,53 @@
+{
+ "id": "q2-S2-031",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 2,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 72.42,
+ "usage": {
+  "prompt_tokens": 9026,
+  "total_tokens": 16407,
+  "completion_tokens": 7381,
+  "prompt_tokens_details": {
+   "cached_tokens": 8704,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 7241
+  },
+  "finish_reason": "stop",
+  "request_seconds": 72.42,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS2101\",\"CS3210\",\"CS4222\"],\"7\":[\"CS2102\",\"CS4223\",\"CS3237\"],\"8\":[\"ES2660\"]},\"reasons\":[\"CS2101 is placed in semester 6, the earliest remaining term, and before CS4223 in semester 7.\",\"CS3210 is added in semester 6 as the prerequisite for CS4223; CS3237 is in Y4S1 as preferred.\",\"CS2102 is in semester 7, the latest possible because ES2660 must be in semester 8 and they cannot be together.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS2101",
+    "CS3210",
+    "CS4222"
+   ],
+   "7": [
+    "CS2102",
+    "CS4223",
+    "CS3237"
+   ],
+   "8": [
+    "ES2660"
+   ]
+  },
+  "reasons": [
+   "CS2101 is placed in semester 6, the earliest remaining term, and before CS4223 in semester 7.",
+   "CS3210 is added in semester 6 as the prerequisite for CS4223; CS3237 is in Y4S1 as preferred.",
+   "CS2102 is in semester 7, the latest possible because ES2660 must be in semester 8 and they cannot be together."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,54 @@
+{
+ "id": "q2-S3-258",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "not a plan",
+ "seconds": 19.24,
+ "usage": {
+  "prompt_tokens": 6788,
+  "total_tokens": 7849,
+  "completion_tokens": 1061,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 19.24,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"Cannot satisfy the requirement to take CS2105 and CS3230 together in one semester because CS3230 requires CS2040S (completed) and CS1231/CS1231S (completed), but CS2105 requires CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS. While CS2040S is completed, CS3230 also requires CS1231 or CS1231S which is completed. However, the main blocker is that CS2109S requires MA1511+MA1512 or MA1521 or MA2002 etc. The student has MA1521. But CS2109S also requires YSC2229 or CS2040S... which is met. Wait, let's re-read carefully. CS2109S prereq: (YSC2229 or CS2040S...) AND ((MA1511 and MA1512) or MA1521...). Student has MA1521. So CS2109S is eligible. CS2101 is eligible. CS2105 is eligible (prereq CS2040S completed). CS2100 is eligible (prereq CS1101S completed). ST2334 is eligible (prereq MA1521 completed). CS3230 is eligible (prereq CS2040S and CS1231S completed). The constraint is 'CS2105 and CS3230 together'. They can be taken in Sem 7 or 8. CS2109S and CS2101 cannot be together. CS2101 as early as possible. Sem 5 is LOA. Sem 6 is Y2S2. Sem 7 is Y3S1. Sem 8 is Y3S2. Remaining courses: CS2109S, CS2101, CS2105, CS2100, ST2334, CS3230. Total 24 MC. Limit 16 MC/sem. Sem 6: Can take CS2101 (4), CS2100 (4), ST2334 (4) = 12 MC. Or CS2101, CS2100, CS2109S? CS2109S and CS2101 mutually exclusive? No, 'definitely can't have... together' is a hard constraint from student. So they must be in different semesters. CS2101 as early as possible -> Sem 6. Sem 6: CS2101 (4), CS2100 (4), ST2334 (4) = 12 MC. Remaining: CS2109S, CS2105, CS3230. Sem 7: CS2109S (4), CS2105 (4), CS3230 (4) = 12 MC. But CS2105 and CS3230 must be together. They are. Is CS2109S allowed with them? Yes. Total MC 12. Sem 8: Empty. Total credits 24. This works. Why NO_PLAN? Ah, CS2109S prerequisite includes MA1511+MA1512 OR MA1521. Student has MA1521. OK. CS2105 prereq CS2040S. OK. CS3230 prereq CS2040S and CS1231S. OK. CS2100 prereq CS1101S. OK. CS2101 prereq none. OK. ST2334 prereq MA1521. OK. All eligible. Plan: Sem 6: CS2101, CS2100, ST2334. Sem 7: CS2109S, CS2105, CS3230. Sem 8: None. Total 24 MC. Fewest total credits? Yes. CS2101 as early as possible? Yes (Sem 6). CS2105/CS3230 together? Yes (Sem 7). CS2109S/CS2101 apart? Yes (Sem 7 vs Sem 6). ST2334/CS2109S apart? Yes (Sem 6 vs Sem 7). This plan satisfies all constraints. So status should be PLAN.\"]",
+ "answer": {
+  "status": "NO_PLAN"
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"Cannot satisfy the requirement to take CS2105 and CS3230 together in one semester because CS3230 requires CS2040S (completed) and CS1231/CS1231S (completed), but CS2105 requires CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS. While CS2040S is completed, CS3230 also requires CS1231 or CS1231S which is completed. However, the main blocker is that CS2109S requires MA1511+MA1512 or MA1521 or MA2002 etc. The student has MA1521. But CS2109S also requires YSC2229 or CS2040S... which is met. Wait, let's re-read carefully. CS2109S prereq: (YSC2229 or CS2040S...) AND ((MA1511 and MA1512) or MA1521...). Student has MA1521. So CS2109S is eligible. CS2101 is eligible. CS2105 is eligible (prereq CS2040S completed). CS2100 is eligible (prereq CS1101S completed). ST2334 is eligible (prereq MA1521 completed). CS3230 is eligible (prereq CS2040S and CS1231S completed). The constraint is 'CS2105 and CS3230 together'. They can be taken in Sem 7 or 8. CS2109S and CS2101 cannot be together. CS2101 as early as possible. Sem 5 is LOA. Sem 6 is Y2S2. Sem 7 is Y3S1. Sem 8 is Y3S2. Remaining courses: CS2109S, CS2101, CS2105, CS2100, ST2334, CS3230. Total 24 MC. Limit 16 MC/sem. Sem 6: Can take CS2101 (4), CS2100 (4), ST2334 (4) = 12 MC. Or CS2101, CS2100, CS2109S? CS2109S and CS2101 mutually exclusive? No, 'definitely can't have... together' is a hard constraint from student. So they must be in different semesters. CS2101 as early as possible -> Sem 6. Sem 6: CS2101 (4), CS2100 (4), ST2334 (4) = 12 MC. Remaining: CS2109S, CS2105, CS3230. Sem 7: CS2109S (4), CS2105 (4), CS3230 (4) = 12 MC. But CS2105 and CS3230 must be together. They are. Is CS2109S allowed with them? Yes. Total MC 12. Sem 8: Empty. Total credits 24. This works. Why NO_PLAN? Ah, CS2109S prerequisite includes MA1511+MA1512 OR MA1521. Student has MA1521. OK. CS2105 prereq CS2040S. OK. CS3230 prereq CS2040S and CS1231S. OK. CS2100 prereq CS1101S. OK. CS2101 prereq none. OK. ST2334 prereq MA1521. OK. All eligible. Plan: Sem 6: CS2101, CS2100, ST2334. Sem 7: CS2109S, CS2105, CS3230. Sem 8: None. Total 24 MC. Fewest total credits? Yes. CS2101 as early as possible? Yes (Sem 6). CS2105/CS3230 together? Yes (Sem 7). CS2109S/CS2101 apart? Yes (Sem 7 vs Sem 6). ST2334/CS2109S apart? Yes (Sem 6 vs Sem 7). This plan satisfies all constraints. So status should be PLAN.\"]",
+   "answer": {
+    "status": "NO_PLAN"
+   },
+   "repair": "cut_reasons",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 6788,
+    "total_tokens": 7849,
+    "completion_tokens": 1061,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 19.24,
+    "attempts": 1
+   },
+   "seconds": 19.24,
+   "violations": null
+  }
+ ]
+}

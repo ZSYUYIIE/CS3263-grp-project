@@ -1,0 +1,103 @@
+{
+ "id": "q2-S3-183",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 11.41,
+ "solver_seconds": 0.13,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3043,
+  "total_tokens": 3277,
+  "completion_tokens": 234,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 11.19,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 2,\n\"completed\": [\n\"ES2660\",\n\"CS1101S\",\n\"MA1521\",\n\"CS1231S\"\n],\n\"must_take\": [\n\"IS1108\",\n\"CS4261\",\n\"MA1522\",\n\"CS3230\",\n\"CS2100\",\n\"CS3227\",\n\"CS2030S\",\n\"CS3219\",\n\"CS3281\",\n\"CS2101\",\n\"CS2103T\",\n\"CS2109S\"\n],\n\"objective\": \"min_total_mc\",\n\"early\": [\n\"IS1108\"\n],\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2101\",\n\"sem\": 2,\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 2,
+  "completed": [
+   "ES2660",
+   "CS1101S",
+   "MA1521",
+   "CS1231S"
+  ],
+  "must_take": [
+   "IS1108",
+   "CS4261",
+   "MA1522",
+   "CS3230",
+   "CS2100",
+   "CS3227",
+   "CS2030S",
+   "CS3219",
+   "CS3281",
+   "CS2101",
+   "CS2103T",
+   "CS2109S"
+  ],
+  "objective": "min_total_mc",
+  "early": [
+   "IS1108"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS2101",
+    "sem": 2,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 5,
+  "plan": {
+   "2": [
+    "CS2030S",
+    "CS2040S",
+    "CS2100",
+    "CS2101",
+    "IS1108"
+   ],
+   "3": [
+    "CS2103T",
+    "CS2109S",
+    "CS3230",
+    "MA1522",
+    "MA2116"
+   ],
+   "4": [
+    "CS3281"
+   ],
+   "5": [
+    "CS3219",
+    "CS3227",
+    "CS4261"
+   ]
+  },
+  "mc_per_semester": {
+   "2": 20,
+   "3": 20,
+   "4": 4,
+   "5": 12
+  },
+  "preferences_met": [
+   "CS2101 in semester 2",
+   "IS1108 as early as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS2040S",
+   "MA2116"
+  ]
+ }
+}

@@ -1,0 +1,99 @@
+{
+ "id": "q2-S3-137",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 8.04,
+ "solver_seconds": 0.082,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3194,
+  "total_tokens": 3629,
+  "completion_tokens": 435,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 7.95,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 6,\n\"completed\": [\n\"MA1521\",\n\"CS3219\",\n\"CS2103T\",\n\"CS2106\",\n\"CS4243\",\n\"CS1231S\",\n\"CS2109S\",\n\"CS3230\",\n\"IS1108\",\n\"MA1522\",\n\"CS2030S\",\n\"CS1101S\",\n\"ST2334\",\n\"CS2105\",\n\"CS2040S\",\n\"CS2100\"\n],\n\"must_take\": [\n\"CS3237\",\n\"ES2660\",\n\"CS2102\",\n\"CS4222\",\n\"CS2101\",\n\"CS4223\"\n],\n\"mc_max\": 16,\n\"sem_caps\": {\n\"6\": 0\n},\n\"early\": [],\n\"late\": [\n\"CS4222\"\n],\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS2101\",\n\"b\": \"CS4223\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"ES2660\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"ES2660\",\n\"b\": \"CS2102\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS3237\",\n\"b\": \"CS4222\",\n\"strength\": \"prefer\"\n}\n],\n\"unsupported\": [\n\"at least 2 modules per semester\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 6,
+  "completed": [
+   "MA1521",
+   "CS3219",
+   "CS2103T",
+   "CS2106",
+   "CS4243",
+   "CS1231S",
+   "CS2109S",
+   "CS3230",
+   "IS1108",
+   "MA1522",
+   "CS2030S",
+   "CS1101S",
+   "ST2334",
+   "CS2105",
+   "CS2040S",
+   "CS2100"
+  ],
+  "must_take": [
+   "CS3237",
+   "ES2660",
+   "CS2102",
+   "CS4222",
+   "CS2101",
+   "CS4223"
+  ],
+  "mc_max": 16,
+  "sem_caps": {
+   "6": 0
+  },
+  "early": [],
+  "late": [
+   "CS4222"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2101",
+    "b": "CS4223",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "ES2660",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "ES2660",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3237",
+    "b": "CS4222",
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "at least 2 modules per semester"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the prerequisites of CS4223; the MC limits (at most 16 MC per semester; semesters 6 blocked); the semesters in which the courses are offered"
+  ],
+  "not_applied": [
+   "at least 2 modules per semester"
+  ]
+ }
+}

@@ -1,0 +1,96 @@
+{
+ "id": "q2-S4-279",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.49,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3135,
+  "total_tokens": 3545,
+  "completion_tokens": 410,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.49,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 7,\n\"completed\": [\n\"CS3219\",\n\"MA1522\",\n\"CS2109S\",\n\"ES2660\",\n\"MA1521\",\n\"CS3210\",\n\"ST2334\",\n\"CS1101S\",\n\"CS2103T\",\n\"CS2030S\",\n\"CS1231S\",\n\"CS2040S\",\n\"CS2106\",\n\"CS3230\",\n\"CS2102\",\n\"CS2105\",\n\"CS2100\"\n],\n\"must_take\": [\n\"CS2101\",\n\"CS4246\",\n\"IS1108\",\n\"CS3231\"\n],\n\"mc_max\": 16,\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS3231\",\n\"b\": \"CS2101\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"IS1108\",\n\"b\": \"CS3231\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4246\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2101\",\n\"sem\": 8,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"late\",\n\"course\": \"CS2101\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "completed": [
+   "CS3219",
+   "MA1522",
+   "CS2109S",
+   "ES2660",
+   "MA1521",
+   "CS3210",
+   "ST2334",
+   "CS1101S",
+   "CS2103T",
+   "CS2030S",
+   "CS1231S",
+   "CS2040S",
+   "CS2106",
+   "CS3230",
+   "CS2102",
+   "CS2105",
+   "CS2100"
+  ],
+  "must_take": [
+   "CS2101",
+   "CS4246",
+   "IS1108",
+   "CS3231"
+  ],
+  "mc_max": 16,
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3231",
+    "b": "CS2101",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "IS1108",
+    "b": "CS3231",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4246",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2101",
+    "sem": 8,
+    "strength": "prefer"
+   },
+   {
+    "type": "late",
+    "course": "CS2101",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [
+  "rules[4].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'"
+ ],
+ "answer": {
+  "status": "INVALID_SPEC",
+  "errors": [
+   "rules[4].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'"
+  ]
+ }
+}

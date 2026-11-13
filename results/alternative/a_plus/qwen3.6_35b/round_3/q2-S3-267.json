@@ -1,0 +1,54 @@
+{
+ "id": "q2-S3-267",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 2,
+ "end": "repeated plan",
+ "seconds": 14.32,
+ "usage": {
+  "prompt_tokens": 27701,
+  "total_tokens": 28516,
+  "completion_tokens": 815,
+  "finish_reason": "stop",
+  "request_seconds": 14.32,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2109S\",\n      \"CS2105\",\n      \"CS2102\"\n    ],\n    \"6\": [\n      \"CS3103\",\n      \"CS3230\",\n      \"ST2334\"\n    ],\n    \"7\": [\n      \"CS3234\"\n    ],\n    \"8\": [\n      \"CS4226\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2109S is fixed in Sem 5 as requested.\",\n    \"CS2105 is taken in Sem 5 to satisfy prerequisites for CS3103 and CS4226.\",\n    \"CS3103 is offered in Sem 1, so it is placed in Sem 6.\",\n    \"CS3234 is offered in Sem 2, so it is placed in Sem 7 (late as possible).\",\n    \"CS4226 is offered in Sem 1, so it is placed in Sem 8 (late as possible).\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2109S",
+    "CS2105",
+    "CS2102"
+   ],
+   "6": [
+    "CS3103",
+    "CS3230",
+    "ST2334"
+   ],
+   "7": [
+    "CS3234"
+   ],
+   "8": [
+    "CS4226"
+   ]
+  },
+  "reasons": [
+   "CS2109S is fixed in Sem 5 as requested.",
+   "CS2105 is taken in Sem 5 to satisfy prerequisites for CS3103 and CS4226.",
+   "CS3103 is offered in Sem 1, so it is placed in Sem 6.",
+   "CS3234 is offered in Sem 2, so it is placed in Sem 7 (late as possible).",
+   "CS4226 is offered in Sem 1, so it is placed in Sem 8 (late as possible)."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

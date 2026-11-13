@@ -1,0 +1,95 @@
+{
+ "id": "q2-S4-009",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.67,
+ "solver_seconds": 0.067,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3130,
+  "total_tokens": 3543,
+  "completion_tokens": 413,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.6,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 3,\n\"programme\": \"BComp CS Hons\",\n\"completed\": [\n\"CS2030S\",\n\"MA1521\",\n\"IS1108\",\n\"ES2660\",\n\"MA1522\",\n\"CS1101S\",\n\"CS1231S\",\n\"CS2040S\"\n],\n\"must_take\": [\n\"CS2102\",\n\"CS4223\",\n\"CS3219\",\n\"CS3281\",\n\"CS3210\",\n\"CS3230\",\n\"CS2109S\",\n\"CS3237\",\n\"CS4268\"\n],\n\"mc_max\": 4,\n\"objective\": \"min_total_mc\",\n\"early\": [\n\"CS3219\"\n],\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS3230\",\n\"b\": \"CS3210\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4268\",\n\"b\": \"CS3210\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3219\",\n\"b\": \"CS3210\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4268\",\n\"b\": \"CS3219\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4268\",\n\"sem\": 6,\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "CS2030S",
+   "MA1521",
+   "IS1108",
+   "ES2660",
+   "MA1522",
+   "CS1101S",
+   "CS1231S",
+   "CS2040S"
+  ],
+  "must_take": [
+   "CS2102",
+   "CS4223",
+   "CS3219",
+   "CS3281",
+   "CS3210",
+   "CS3230",
+   "CS2109S",
+   "CS3237",
+   "CS4268"
+  ],
+  "mc_max": 4,
+  "objective": "min_total_mc",
+  "early": [
+   "CS3219"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3230",
+    "b": "CS3210",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4268",
+    "b": "CS3210",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3219",
+    "b": "CS3210",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4268",
+    "b": "CS3219",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4268",
+    "sem": 6,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "the required courses need 36 MC but the remaining semesters [3, 4, 5, 6, 7, 8] allow at most 24 MC"
+  ]
+ }
+}

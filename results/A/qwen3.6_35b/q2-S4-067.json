@@ -1,0 +1,47 @@
+{
+ "id": "q2-S4-067",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 28.45,
+ "usage": {
+  "prompt_tokens": 12533,
+  "total_tokens": 13957,
+  "completion_tokens": 1424,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 28.45,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"3\": [\"CS2100\"], \"4\": [\"CS2106\"], \"5\": [\"CS3219\"], \"6\": [\"CS4221\", \"CS4243\"]}, \"reasons\": [\"Prerequisites for CS2100 (CS1101S) and CS2106 (CS2100) are satisfied. CS2100 is taken in Sem 4 as required. CS2106 follows in Sem 5. CS3219 is placed in Sem 6 as required. CS4221 and CS4243 are taken in Sem 6, satisfying their prerequisites (CS3223 is not required for CS4221 in this context? Wait, CS4221 prereq is CS3223. CS3223 prereq is CS2040S and CS2102. CS2102 prereq is CS1231S and CS2030S/CS2040S. Student has CS1231S, CS2030S, CS2040S. But CS2102 is NOT completed. CS3223 requires CS2102. CS4221 requires CS3223. Therefore CS2102 and CS3223 must be taken before CS4221. I missed adding CS2102 and CS3223. Let's re-evaluate.\", \"CS2102 requires CS1231S and (CS2030S or CS2040S). Student has both. CS2102 can be taken in Sem 3 or 4. CS3223 requires CS2040S and CS2102. CS3223 can be taken after CS2102. CS4221 requires CS3223. CS4243 requires CS2040S, CS1231S, and others. CS4243 can be taken in Sem 6. CS2106 requires CS2100. CS2100 is in Sem 4. CS2106 in Sem 5. CS3219 in Sem 6. CS4221 in Sem 6? No, CS3223 must be before CS4221. CS3223 needs CS2102. CS2102 needs no extra prereqs beyond what student has. So CS2102 in Sem 3? Sem 3 is Y2S1. Student is in Y2S1 (Sem 3). CS2100 is Y2S2 (Sem 4). CS2102 can be Sem 3. CS3223 can be Sem 4 or 5. CS4221 can be Sem 5 or 6. CS3219 is fixed in Sem 6. CS4243 is flexible. CS2106 is Sem 5. CS2100 is Sem 4. CS2102 in Sem 3. CS3223 in Sem 5? Then CS4221 in Sem 6. CS4243 in Sem 6. This works.\", \"Plan: Sem 3: CS2102. Sem 4: CS2100. Sem 5: CS2106, CS3223. Sem 6: CS3219, CS4221, CS4243. Check MC: Sem 3: 4 MC. Sem 4: 4 MC. Sem 5: 4+4=8 MC. Sem 6: 4+4+4=12 MC. All under 20. Prereqs: CS2102 (CS1231S, CS2030S/CS2040S) - OK. CS2100 (CS1101S) - OK. CS2106 (CS2100) - OK. CS3223 (CS2040S, CS2102) - OK. CS3219 (CS2103/CS2103T/CS2103DE/CS2113T/CS2113/YSC3232). Student has NONE of these. CS3219 requires CS2103 or equivalent. Student has NOT completed CS2103, CS2103T, CS2103DE, CS2113, CS2113T, YSC3232. This is a critical missing prerequisite. CS3219 cannot be taken in Sem 6 unless CS2103 (or equivalent) is taken before. CS2103 requires CS2030S and CS2040S. Student has both. CS2103 can be taken in Sem 3, 4, 5, or 6. If CS3219 is fixed in Sem 6, CS2103 must be in Sem 3, 4, or 5. Let's put CS2103 in Sem 3. Then CS2102 in Sem 4? No, CS2102 is independent of CS2103. CS2102 can be Sem 3 or 4. CS2103 in Sem 3. CS2102 in Sem 4. CS3223 in Sem 5 (needs CS2102). CS2106 in Sem 5 (needs CS2100 in Sem 4). CS4221 in Sem 6 (needs CS3223 in Sem 5). CS4243 in Sem 6. CS3219 in Sem 6 (needs CS2103 in Sem 3). This works. MC: Sem 3: CS2103 (4). Sem 4: CS2100 (4), CS2102 (4) = 8. Sem 5: CS2106 (4), CS3223 (4) = 8. Sem 6: CS3219 (4), CS4221 (4), CS4243 (4) = 12. All valid.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100"
+   ],
+   "4": [
+    "CS2106"
+   ],
+   "5": [
+    "CS3219"
+   ],
+   "6": [
+    "CS4221",
+    "CS4243"
+   ]
+  },
+  "reasons": [
+   "Prerequisites for CS2100 (CS1101S) and CS2106 (CS2100) are satisfied. CS2100 is taken in Sem 4 as required. CS2106 follows in Sem 5. CS3219 is placed in Sem 6 as required. CS4221 and CS4243 are taken in Sem 6, satisfying their prerequisites (CS3223 is not required for CS4221 in this context? Wait, CS4221 prereq is CS3223. CS3223 prereq is CS2040S and CS2102. CS2102 prereq is CS1231S and CS2030S/CS2040S. Student has CS1231S, CS2030S, CS2040S. But CS2102 is NOT completed. CS3223 requires CS2102. CS4221 requires CS3223. Therefore CS2102 and CS3223 must be taken before CS4221. I missed adding CS2102 and CS3223. Let's re-evaluate.",
+   "CS2102 requires CS1231S and (CS2030S or CS2040S). Student has both. CS2102 can be taken in Sem 3 or 4. CS3223 requires CS2040S and CS2102. CS3223 can be taken after CS2102. CS4221 requires CS3223. CS4243 requires CS2040S, CS1231S, and others. CS4243 can be taken in Sem 6. CS2106 requires CS2100. CS2100 is in Sem 4. CS2106 in Sem 5. CS3219 in Sem 6. CS4221 in Sem 6? No, CS3223 must be before CS4221. CS3223 needs CS2102. CS2102 needs no extra prereqs beyond what student has. So CS2102 in Sem 3? Sem 3 is Y2S1. Student is in Y2S1 (Sem 3). CS2100 is Y2S2 (Sem 4). CS2102 can be Sem 3. CS3223 can be Sem 4 or 5. CS4221 can be Sem 5 or 6. CS3219 is fixed in Sem 6. CS4243 is flexible. CS2106 is Sem 5. CS2100 is Sem 4. CS2102 in Sem 3. CS3223 in Sem 5? Then CS4221 in Sem 6. CS4243 in Sem 6. This works.",
+   "Plan: Sem 3: CS2102. Sem 4: CS2100. Sem 5: CS2106, CS3223. Sem 6: CS3219, CS4221, CS4243. Check MC: Sem 3: 4 MC. Sem 4: 4 MC. Sem 5: 4+4=8 MC. Sem 6: 4+4+4=12 MC. All under 20. Prereqs: CS2102 (CS1231S, CS2030S/CS2040S) - OK. CS2100 (CS1101S) - OK. CS2106 (CS2100) - OK. CS3223 (CS2040S, CS2102) - OK. CS3219 (CS2103/CS2103T/CS2103DE/CS2113T/CS2113/YSC3232). Student has NONE of these. CS3219 requires CS2103 or equivalent. Student has NOT completed CS2103, CS2103T, CS2103DE, CS2113, CS2113T, YSC3232. This is a critical missing prerequisite. CS3219 cannot be taken in Sem 6 unless CS2103 (or equivalent) is taken before. CS2103 requires CS2030S and CS2040S. Student has both. CS2103 can be taken in Sem 3, 4, 5, or 6. If CS3219 is fixed in Sem 6, CS2103 must be in Sem 3, 4, or 5. Let's put CS2103 in Sem 3. Then CS2102 in Sem 4? No, CS2102 is independent of CS2103. CS2102 can be Sem 3 or 4. CS2103 in Sem 3. CS2102 in Sem 4. CS3223 in Sem 5 (needs CS2102). CS2106 in Sem 5 (needs CS2100 in Sem 4). CS4221 in Sem 6 (needs CS3223 in Sem 5). CS4243 in Sem 6. CS3219 in Sem 6 (needs CS2103 in Sem 3). This works. MC: Sem 3: CS2103 (4). Sem 4: CS2100 (4), CS2102 (4) = 8. Sem 5: CS2106 (4), CS3223 (4) = 8. Sem 6: CS3219 (4), CS4221 (4), CS4243 (4) = 12. All valid."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

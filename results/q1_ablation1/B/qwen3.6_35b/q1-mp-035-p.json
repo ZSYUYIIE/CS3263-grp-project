@@ -1,0 +1,55 @@
+{
+ "id": "q1-mp-035-p",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 2.05,
+ "solver_seconds": 0.003,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2813,
+  "total_tokens": 2921,
+  "completion_tokens": 108,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 2.04,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\": \"eligible\", \"target\": \"EE4802\", \"current_sem\": 5, \"completed\": [\"IS1108\", \"CS2030S\", \"CS1231S\", \"CS1010E\", \"CS3230\", \"CS2040\", \"ES1000\", \"CS2111\", \"CS2100DE\", \"CS3210\", \"CS3241\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "EE4802",
+  "current_sem": 5,
+  "completed": [
+   "IS1108",
+   "CS2030S",
+   "CS1231S",
+   "CS1010E",
+   "CS3230",
+   "CS2040",
+   "ES1000",
+   "CS2111",
+   "CS2100DE",
+   "CS3210",
+   "CS3241"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "EE4802",
+  "semester": 5,
+  "reasons": [
+   "not offered in semester 1 (offered: [2])",
+   "missing prerequisite: EE2012 or EE2012A or ST2334 or ST1131 or ST2131 or CE2407 or CE2407A or BN2102"
+  ],
+  "can_still_become_eligible": true
+ }
+}

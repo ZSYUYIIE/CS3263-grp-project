@@ -1,0 +1,54 @@
+{
+ "id": "q2-S4-284",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 98.86,
+ "usage": {
+  "prompt_tokens": 13638,
+  "total_tokens": 17609,
+  "completion_tokens": 3971,
+  "finish_reason": "stop",
+  "request_seconds": 98.86,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4243 requires CS2113 (or CS2113T), but the student has completed CS2103T which is mutually exclusive with CS2113. CS2113 requires CS2040C/S/DE/HS, which the student has not completed (they have CS2040S, which is mutually exclusive with CS2040C/S/DE/HS). Thus, the prerequisite for CS4243 cannot be satisfied.\", \"CS4278 requires CS3263 or CS3243. CS3243 requires CS1231 or CS1231S (satisfied) and CS2040/C/S/DE/HS/YSC2229. The student has CS2040S, but CS3243 is mutually exclusive with CS2109S. The student must take CS2109S. CS3263 requires CS2109S (satisfied) and CS2040/C/S/DE/HS (satisfied by CS2040S) and MA2001/MA1522/MA1101R/MA1508E/MA1101R. The student has MA1522. So CS3263 is possible. However, CS4243 is the blocker.\", \"The student must take CS4243 in Y2S2 (Semester 4). The prerequisites for CS4243 are: (1) Math (MA2001/MA1102R/MA1505/MA1521/MA1507/(MA1512+MA1511)), (2) Stats/EE (ST1131/ST1232/ST2131/MA2116/MA2116T/MA2216/EE2012A/EE2012/ST2334/YSC2243), (3) Programming II (CS2030/CS2030S/CS2030DE/CS2030HS/CS2113/CS2113T), (4) Data Structures (CS2040/CS2040S/CS2040DE/CS2040C/CS2040HS), (5) Calculus (MA1102R/MA2002/YSC1216/MA1505/MA1521/MA1507/(MA1512+MA1511)). The student has MA1521, ST2334, CS2030S, CS2040S. They lack the Calculus component (MA1102R/MA2002/YSC1216/MA1505/MA1507/(MA1512+MA1511)). They have MA1512 but not MA1511. They have MA1521. The prerequisite is (MA1102R or MA2002 or YSC1216 or MA1505 or MA1521 or MA1507 or (MA1512 and MA1511)). The student has MA1521, so the math prerequisite is satisfied. The stats prerequisite is satisfied by ST2334. The programming prerequisite is satisfied by CS2030S. The DS prerequisite is satisfied by CS2040S. So CS4243 is eligible in Sem 4 if the student hasn't taken a mutually exclusive course. CS4243 is mutually exclusive with EE4212, EE4704, TEE4704. The student has not taken these. So CS4243 is eligible. Wait, I missed the CS2113/CS2113T requirement in my first pass. Let's re-read CS4243 prereqs: '(CS2030 or CS2030S or CS2030DE or CS2030HS or CS2113 or CS2113T)'. The student has CS2030S. So that part is satisfied. The other parts: Math (MA1102R or MA2002 or YSC1216 or MA1505 or MA1521 or MA1507 or (MA1512 and MA1511)). Student has MA1521. Satisfied. Stats (ST1131 or ST1232 or ST2131 or MA2116 or MA2116T or MA2216 or EE2012A or EE2012 or ST2334 or YSC2243). Student has ST2334. Satisfied. DS (CS2040 or CS2040S or CS2040DE or CS2040C or CS2040HS). Student has CS2040S. Satisfied. So CS4243 is eligible in Sem 4. My previous analysis about CS2113 was wrong because CS2030S satisfies the programming prereq. So CS4243 is fine. Let's re-evaluate CS4278. CS4278 prereqs: (CS3263 or CS3243) and (MA2001 or MA1522 or MA1101R or MA1311 or MA1508E or MA1513) and (EE2012 or EE2012A or ST2131 or ST2334 or MA2116 or MA2116T or MA2216) and (MA2002 or MA1102R or MA1505 or MA1507 or MA1521 or (MA1512 and MA1511)). Student has MA1522 (satisfies 2nd group). Student has ST2334 (satisfies 3rd group). Student has MA1521 (satisfies 4th group). Student must take CS3263 or CS3243. CS3243 requires CS2109S/HS and CS1231/S/MA1100T/MA1100. Student has CS1231S. Student must take CS2109S. CS3243 is mutually exclusive with CS2109S. So student cannot take CS3243 if they take CS2109S. Student must take CS2109S. So student must take CS3263. CS3263 requires CS2109S (satisfied), CS2040/C/S/DE/HS (satisfied by CS2040S), MA2001/MA1522/MA1101R/MA1508E/MA1101R (satisfied by MA1522), EE2012/EE2012A/ST2131/ST2334/MA2116/MA2116T/MA2216 (satisfied by ST2334). So CS3263 is eligible. CS4278 requires CS3263. So CS4278 is eligible after CS3263. CS4220 requires CS2220 or LSM2104 or LSM2241 or ZB2101. Student has none of these. CS2220 requires CS2040/C/S/DE/HS. Student has CS2040S. So CS2220 is eligible. CS4220 is eligible after CS2220. CS4238 requires CS3235. CS3235 requires (CS2105 or EE3204 or EE4204) and (CS2106 or YSC3217 or CG2271) and CS2107. Student has none of these. CS2105 requires CS2040/C/S/DE/HS/YSC2229. Student has CS2040S. So CS2105 is eligible. CS2106 requires CS2100/DE/HS/EE2007/EE2024/EE2028. Student has CS2100. So CS2106 is eligible. CS2107 requires YSC1212/CS1010J/CS1101S/CS1010/CS1010E/CS1010S/CS1010X/CS1010A/CS1010HS/UTC2851. Student has CS1101S. So CS2107 is eligible. So CS3235 is eligible after CS2105, CS2106, CS2107. CS4238 is eligible after CS3235. So the chain is: CS2105, CS2106, CS2107 -> CS3235 -> CS4238. CS2220 -> CS4220. CS2109S -> CS3263 -> CS4278. CS4243 in Sem 4. Student must take CS2109S, CS4278, CS4220, CS4238. CS2109S before CS4220. CS4278 in Y3S1 (Sem 5). CS4243 in Y2S2 (Sem 4). CS4220 ideally Y4S2 (Sem 8). CS4238 ideally Y4S2 (Sem 8). CS4220 before CS4243? No, CS4243 is Sem 4. CS4220 is after CS2220. CS2220 is Sem 1 or 2. So CS4220 can be Sem 3 or later. CS4243 is Sem 4. So CS4220 after CS4243 is possible. But student says \"I'd rather do CS4220 before CS4243\". This is a soft wish. CS4243 is fixed in Sem 4. So CS4220 must be Sem 1, 2, or 3. But CS4220 requires CS2220. CS2220 requires CS2040S (done). So CS2220 can be Sem 1, 2, or 3. If CS2220 is Sem 3, CS4220 can be Sem 4? No, CS4243 is Sem 4. Can take two courses in Sem 4? Yes. But CS4220 before CS4243 means CS4220 in Sem 1, 2, or 3. If CS2220 is Sem 2, CS4220 can be Sem 3. This satisfies \"CS4220 before CS4243\". So CS2220 in Sem 2, CS4220 in Sem 3. CS4243 in Sem 4. CS4278 in Sem 5. CS4278 requires CS3263. CS3263 requires CS2109S. CS2109S must be before CS4220 (Sem 3). So CS2109S in Sem 1 or 2. CS2109S requires CS2040S (done) and MA1521/MA1511+MA1512/MA1505/MA2002/MA1102R/MA1312/MA1507. Student has MA1521. So CS2109S is eligible in Sem 1 or 2. Let's put CS2109S in Sem 1. Then CS3263 in Sem 2 or 3. CS4278 in Sem 5. So CS3263 must be in Sem 2, 3, or 4. CS4238 requires CS3235. CS3235 requires CS2105, CS2106, CS2107. CS2105 requires CS2040S (done). CS2106 requires CS2100 (done). CS2107 requires CS1101S (done). So CS2105, CS2106, CS2107 are eligible in Sem 1. CS3235 in Sem 2. CS4238 in Sem 3 or later. Ideally Sem 8. So plan: Sem 1: CS2109S, CS2105, CS2106, CS2107. Sem 2: CS3263, CS3235, CS2220. Sem 3: CS4220. Sem 4: CS4243. Sem 5: CS4278. Sem 6,7,8: CS4238. This works. But wait, CS2109S is 4 MC. CS2105 is 4 MC. CS2106 is 4 MC. CS2107 is 4 MC. Total 16 MC. OK. Sem 2: CS3263 (4), CS3235 (4), CS2220 (4). Total 12 MC. OK. Sem 3: CS4220 (4). OK. Sem 4: CS4243 (4). OK. Sem 5: CS4278 (4). OK. Sem 8: CS4238 (4). OK. This plan satisfies all hard constraints. CS4220 in Sem 3, CS4243 in Sem 4. CS4220 before CS4243. Soft wish met. CS4238 in Sem 8. Soft wish met. CS4278 in Sem 5. Hard wish met. CS4243 in Sem 4. Hard wish met. CS2109S before CS4220. Hard wish met. So why NO_PLAN? Let's check prerequisites again. CS2109S: (CS2040S or ...) and (MA1521 or ...). Student has CS2040S and MA1521. OK. CS3263: (CS2109S) and (CS2040S) and (MA1522) and (ST2334). Student has all. OK. CS4278: (CS3263) and (MA1522) and (ST2334) and (MA1521). Student has all. OK. CS2220: (CS2040S). Student has. OK. CS4220: (CS2220). Student has. OK. CS2105: (CS2040S). Student has. OK. CS2106: (CS2100). Student has. OK. CS2107: (CS1101S). Student has. OK. CS3235: (CS2105) and (CS2106) and (CS2107). Student has all. OK. CS4238: (CS3235). Student has. OK. CS4243: (MA1521) and (ST2334) and (CS2030S) and (CS2040S). Student has all. OK. So a plan exists. Why did I think NO_PLAN? I made a mistake in the initial thought process. Let's construct the plan. Sem 1: CS2109S, CS2105, CS2106, CS2107. Sem 2: CS3263, CS3235, CS2220. Sem 3: CS4220. Sem 4: CS4243. Sem 5: CS4278. Sem 8: CS4238. This is a valid plan. Status: PLAN.\n\n{\"status\": \"PLAN\", \"plan\": {\"1\": [\"CS2109S\", \"CS2105\", \"CS2106\", \"CS2107\"], \"2\": [\"CS3263\", \"CS3235\", \"CS2220\"], \"3\": [\"CS4220\"], \"4\": [\"CS4243\"], \"5\": [\"CS4278\"], \"8\": [\"CS4238\"]}, \"reasons\": [\"Plan satisfies all hard constraints: CS4243 in Sem 4, CS4278 in Sem 5, CS2109S before CS4220. Soft wishes met: CS4220 before CS4243 (Sem 3 vs 4), CS4238 in Sem 8. Prerequisites verified for all courses.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS2109S",
+    "CS2105",
+    "CS2106",
+    "CS2107"
+   ],
+   "2": [
+    "CS3263",
+    "CS3235",
+    "CS2220"
+   ],
+   "3": [
+    "CS4220"
+   ],
+   "4": [
+    "CS4243"
+   ],
+   "5": [
+    "CS4278"
+   ],
+   "8": [
+    "CS4238"
+   ]
+  },
+  "reasons": [
+   "Plan satisfies all hard constraints: CS4243 in Sem 4, CS4278 in Sem 5, CS2109S before CS4220. Soft wishes met: CS4220 before CS4243 (Sem 3 vs 4), CS4238 in Sem 8. Prerequisites verified for all courses."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

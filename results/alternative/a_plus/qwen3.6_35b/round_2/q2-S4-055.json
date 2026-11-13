@@ -1,0 +1,50 @@
+{
+ "id": "q2-S4-055",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 3,
+ "end": "cap",
+ "seconds": 85.24,
+ "usage": {
+  "prompt_tokens": 29014,
+  "total_tokens": 34042,
+  "completion_tokens": 5028,
+  "finish_reason": "stop",
+  "request_seconds": 85.23,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"2\": [\"CS2040\", \"MA1522\", \"ST2334\"], \"3\": [\"CS4261\", \"CS3230\"], \"4\": [\"CS3243\"], \"5\": [\"CS2105\", \"CS4263\"]}, \"reasons\": [\"CS4263 is mutually exclusive with CS3243, so they cannot be taken in the same semester. CS4263 is offered only in Sem 1, so it must be placed in an odd semester (3 or 5). Sem 3 is occupied by CS4261 (required) and CS3230. Placing CS4263 in Sem 5 satisfies all constraints. CS2105 is fixed in Sem 5. ST2334 is taken in Sem 2 (earliest). MA1522 is in Sem 2 (before CS4261).\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "2": [
+    "CS2040",
+    "MA1522",
+    "ST2334"
+   ],
+   "3": [
+    "CS4261",
+    "CS3230"
+   ],
+   "4": [
+    "CS3243"
+   ],
+   "5": [
+    "CS2105",
+    "CS4263"
+   ]
+  },
+  "reasons": [
+   "CS4263 is mutually exclusive with CS3243, so they cannot be taken in the same semester. CS4263 is offered only in Sem 1, so it must be placed in an odd semester (3 or 5). Sem 3 is occupied by CS4261 (required) and CS3230. Placing CS4263 in Sem 5 satisfies all constraints. CS2105 is fixed in Sem 5. ST2334 is taken in Sem 2 (earliest). MA1522 is in Sem 2 (before CS4261)."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

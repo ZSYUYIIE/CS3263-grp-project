@@ -1,0 +1,50 @@
+{
+ "id": "q2-S3-119",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 3,
+ "end": "switched to NO_PLAN",
+ "seconds": 4.85,
+ "usage": {
+  "prompt_tokens": 10106,
+  "total_tokens": 10368,
+  "completion_tokens": 262,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 4.85,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"4\": [\n      \"ST2334\",\n      \"CS2105\",\n      \"CS3230\"\n    ],\n    \"5\": [\n      \"CS3219\",\n      \"CS2109S\",\n      \"CS4236\"\n    ],\n    \"6\": [\n      \"CS3233\",\n      \"CS4222\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3230 is taken in Y2S2 to satisfy prerequisites for later courses and meet the 3-module minimum.\",\n    \"CS3219, CS2109S, and CS4236 are grouped in Y3S1 as their prerequisites are met by Y2S2 completions.\",\n    \"CS3233 and CS4222 are placed in Y3S2; CS3233 requires CS2030S/CS2040S grades which are assumed met, and CS4222 requires CS2105.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "ST2334",
+    "CS2105",
+    "CS3230"
+   ],
+   "5": [
+    "CS3219",
+    "CS2109S",
+    "CS4236"
+   ],
+   "6": [
+    "CS3233",
+    "CS4222"
+   ]
+  },
+  "reasons": [
+   "CS3230 is taken in Y2S2 to satisfy prerequisites for later courses and meet the 3-module minimum.",
+   "CS3219, CS2109S, and CS4236 are grouped in Y3S1 as their prerequisites are met by Y2S2 completions.",
+   "CS3233 and CS4222 are placed in Y3S2; CS3233 requires CS2030S/CS2040S grades which are assumed met, and CS4222 requires CS2105."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

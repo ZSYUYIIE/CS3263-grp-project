@@ -1,0 +1,38 @@
+{
+ "id": "q2-S3-142",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 41.69,
+ "usage": {
+  "prompt_tokens": 16872,
+  "total_tokens": 18959,
+  "completion_tokens": 2087,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 41.69,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"6\": [\"CS2101\", \"CS2102\"], \"7\": [\"CP3880\", \"CS4223\"], \"8\": [\"CS4222\", \"ES2660\"]}, \"reasons\": [\"CS2101 and CS2102 prerequisites are satisfied by completed courses. CS4223 requires CS2101. CS4222 requires CS2105 (completed). ES2660 is required in Sem 8. ATAP (CP3880) is planned in Sem 7 with max 8 MC other courses, but no other eligible courses fit without violating constraints or wishes. CS3237 is not taken as it conflicts with the tight schedule and student's 'late' wish for CS2102 is secondary to fitting mandatory courses. Actually, CS3237 is not in the final plan because the student said 'If possible', and fitting it would displace CS2102 or CS4223 which are mandatory. Wait, CS3237 is mandatory? 'I need to take CS4222, CS3237 and CS3268.' Then scratch CS3268. So CS3237 IS mandatory. I must include CS3237. Let's re-evaluate.\", \"Re-planning with CS3237 mandatory. CS3237 prereq: (EE2028 or EE2024 or CG2028 or CS2100 or CS2100DE or CS2100HS) AND (CS1010...). Student has CS2100. So CS3237 is eligible. CS3237 is offered Sem 1. Student is in Y3S2 (Sem 6). CS3237 is NOT offered in Sem 2 (even semesters). So CS3237 cannot be taken in Sem 6, 8. It must be taken in Sem 7? No, Sem 7 is Y4S1 (Odd). Yes. So CS3237 can be in Sem 7. But Sem 7 is ATAP. ATAP allows max 8 MC other courses. CS3237 is 4 MC. So CS3237 can be in Sem 7 with ATAP. CS4223 is offered Sem 1. So CS4223 can be in Sem 7. CS2101 is offered Sem 1,2. Can be in Sem 6. CS2102 is offered Sem 1,2. Can be in Sem 6. CS4222 is offered Sem 2. Must be in Sem 8. ES2660 is offered Sem 1,2. Must be in Sem 8. So Sem 6: CS2101, CS2102 (8 MC). Sem 7: CP3880, CS3237, CS4223 (12+4+4=20 MC total, but CP3880 doesn't count towards limit. Other courses 8 MC <= 16 limit. OK). Sem 8: CS4222, ES2660 (8 MC). This works.\", \"Final Plan: Sem 6: CS2101, CS2102. Sem 7: CP3880, CS3237, CS4223. Sem 8: CS4222, ES2660. CS2101 is as early as possible (Sem 6). CS2102 is as late as possible? It's in Sem 6. Could it be later? Sem 7 is full with ATAP/CS3237/CS4223. If we move CS2102 to Sem 8, we have CS4222, ES2660, CS2102 (12 MC). But CS2101 must be before CS4223. CS4223 is in Sem 7. So CS2101 must be before Sem 7. Sem 6 is fine. CS2102 doesn't have a prereq dependency on CS4223. But CS2102 is needed? No, CS2102 is not a prereq for CS4223 or CS4222. CS4222 prereq: CS2105. CS4223 prereq: CS2106, CS3210/CG3207/CS3220. Student has CS2106. Does student have CS3210/CG3207/CS3220? No. CS3220 is not offered. CS3210 prereq: CS2100 (completed). So CS3210 is eligible. CS3210 is offered Sem 1,2. So CS3210 can be in Sem 7. If CS3210 is in Sem 7, then CS4223 can be in Sem 7. Wait, CS4223 prereq is (CS2106 or CG2271) AND (CS3210 or CS3220 or CG3207). Student has CS2106. So CS4223 needs CS3210 or CG3207 or CS3220. CS3220 not offered. CG3207 prereq: EE2026 and (CG2028 or EE2028). Student has neither. So CG3207 is not eligible. CS3210 is eligible. So CS4223 requires CS3210. CS3210 must be taken before CS4223. CS3210 is offered Sem 1,2. So CS3210 can be in Sem 6 or 7. If CS3210 is in Sem 6, CS4223 can be in Sem 7. If CS3210 is in Sem 7, CS4223 can be in Sem 8? No, CS4223 is offered Sem 1. So CS4223 must be in an odd semester. Sem 7 is the last odd semester. So CS4223 MUST be in Sem 7. Therefore CS3210 MUST be in Sem 6 or earlier. Sem 6 is the current semester. So CS3210 must be in Sem 6. So Sem 6 must contain CS3210. Sem 6 also needs CS2101 (as early as possible). CS2101 is eligible. CS2102 is eligible. Sem 6 limit 16 MC. CS3210 (4) + CS2101 (4) + CS2102 (4) = 12 MC. This fits. So Sem 6: CS3210, CS2101, CS2102. Sem 7: CP3880, CS4223, CS3237. (CS4223 4 MC, CS3237 4 MC. Total 8 MC other than ATAP. Fits). Sem 8: CS4222, ES2660. (CS4222 4 MC, ES2660 4 MC. Total 8 MC. Fits). This plan satisfies all constraints. CS2101 is in Sem 6 (earliest possible as it's the current semester). CS2102 is in Sem 6. Student wanted CS2102 as late as possible. Can CS2102 be later? Sem 7 is full with ATAP, CS4223, CS3237. If we drop CS3237? No, CS3237 is mandatory. If we drop CS4223? No, mandatory. So Sem 7 is full. Sem 8 has CS4222 and ES2660. Can we add CS2102 to Sem 8? 4+4+4=12 MC. Fits. But CS2102 has no prereq blocking it from Sem 8. However, CS2101 must be before CS4223. CS4223 is in Sem 7. CS2101 is in Sem 6. OK. Is there a reason CS2102 must be in Sem 6? No. But if we move CS2102 to Sem 8, Sem 6 has CS3210, CS2101 (8 MC). Sem 8 has CS4222, ES2660, CS2102 (12 MC). This satisfies 'CS2102 as late as possible'. Does it satisfy 'CS2101 as early as possible'? Yes, Sem 6 is the earliest. So this is better for soft wish. Let's check if CS2102 can be in Sem 8. Yes. So Plan: Sem 6: CS3210, CS2101. Sem 7: CP3880, CS4223, CS3237. Sem 8: CS4222, ES2660, CS2102.\"}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS2101",
+    "CS2102"
+   ],
+   "7": [
+    "CP3880",
+    "CS4223"
+   ],
+   "8": [
+    "CS4222",
+    "ES2660"
+   ]
+  }
+ },
+ "fenced": true,
+ "repair": "cut_reasons",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

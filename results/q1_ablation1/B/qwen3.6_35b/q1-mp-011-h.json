@@ -1,0 +1,45 @@
+{
+ "id": "q1-mp-011-h",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 1.46,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2777,
+  "total_tokens": 2840,
+  "completion_tokens": 63,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 1.46,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\": \"eligible\", \"target\": \"MA3252\", \"current_sem\": 4, \"completed\": [\"MA1521\", \"CS1010X\", \"CS1231\", \"ST2334\", \"MA2104\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "MA3252",
+  "current_sem": 4,
+  "completed": [
+   "MA1521",
+   "CS1010X",
+   "CS1231",
+   "ST2334",
+   "MA2104"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "MA3252",
+  "semester": 4,
+  "reasons": [
+   "missing prerequisite: MA1311 or MA2001 or MA1508E or MA1513 or MA1522"
+  ],
+  "can_still_become_eligible": true
+ }
+}

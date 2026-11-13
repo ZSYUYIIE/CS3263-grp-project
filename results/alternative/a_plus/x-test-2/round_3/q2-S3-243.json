@@ -1,0 +1,64 @@
+{
+ "id": "q2-S3-243",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 73.58,
+ "usage": {
+  "prompt_tokens": 9322,
+  "total_tokens": 16080,
+  "completion_tokens": 6758,
+  "prompt_tokens_details": {
+   "cached_tokens": 9088,
+   "created_cache_tokens": 128
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 6570
+  },
+  "finish_reason": "stop",
+  "request_seconds": 73.58,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"ST1131\",\"CS2100\"],\"4\":[\"CS3230\"],\"5\":[\"CS4243\",\"CS2103T\"],\"6\":[\"CS2102\",\"CS3219\",\"CS3281\"],\"7\":[\"CS3223\",\"CS4218\",\"CS2105\"],\"8\":[\"CS4221\"]},\"reasons\":[\"Added ST1131 for CS4243 and CS3223 for CS4221; all other listed courses are included.\",\"CS4243 and CS2103T are together in semester 5; CS4243 precedes CS2102, and CS2103T precedes CS3219, CS3281 and CS4218.\",\"CS3281 is in semester 6 so CS2105 can follow in semester 7; CS4221 is as late as possible in semester 8.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "ST1131",
+    "CS2100"
+   ],
+   "4": [
+    "CS3230"
+   ],
+   "5": [
+    "CS4243",
+    "CS2103T"
+   ],
+   "6": [
+    "CS2102",
+    "CS3219",
+    "CS3281"
+   ],
+   "7": [
+    "CS3223",
+    "CS4218",
+    "CS2105"
+   ],
+   "8": [
+    "CS4221"
+   ]
+  },
+  "reasons": [
+   "Added ST1131 for CS4243 and CS3223 for CS4221; all other listed courses are included.",
+   "CS4243 and CS2103T are together in semester 5; CS4243 precedes CS2102, and CS2103T precedes CS3219, CS3281 and CS4218.",
+   "CS3281 is in semester 6 so CS2105 can follow in semester 7; CS4221 is as late as possible in semester 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

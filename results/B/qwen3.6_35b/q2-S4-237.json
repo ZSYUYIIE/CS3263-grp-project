@@ -1,0 +1,84 @@
+{
+ "id": "q2-S4-237",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.05,
+ "solver_seconds": 0.886,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3126,
+  "total_tokens": 3474,
+  "completion_tokens": 348,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 6.17,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 1,\n\"completed\": [],\n\"programme\": \"BComp CS Hons\",\n\"must_take\": [\n\"CS1231S\",\n\"CS4268\",\n\"CS4238\",\n\"CS4261\",\n\"CS3230\",\n\"CS4215\",\n\"CS2101\"\n],\n\"objective\": \"earliest_graduation\",\n\"early\": [\n\"CS4238\",\n\"CS4215\"\n],\n\"late\": [\n\"CS1231S\"\n],\n\"rules\": [\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4238\",\n\"b\": \"CS4215\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3230\",\n\"sem\": 4,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS3230\",\n\"b\": \"CS4215\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS4238\",\n\"b\": \"CS4215\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS4268\",\n\"b\": \"CS2101\",\n\"strength\": \"must\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 1,
+  "completed": [],
+  "programme": "BComp CS Hons",
+  "must_take": [
+   "CS1231S",
+   "CS4268",
+   "CS4238",
+   "CS4261",
+   "CS3230",
+   "CS4215",
+   "CS2101"
+  ],
+  "objective": "earliest_graduation",
+  "early": [
+   "CS4238",
+   "CS4215"
+  ],
+  "late": [
+   "CS1231S"
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS4238",
+    "b": "CS4215",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3230",
+    "sem": 4,
+    "strength": "prefer"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3230",
+    "b": "CS4215",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS4238",
+    "b": "CS4215",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS4268",
+    "b": "CS2101",
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS4238 and CS4215 in the same semester; your rule: CS4238 and CS4215 in different semesters"
+  ]
+ }
+}

@@ -1,0 +1,99 @@
+{
+ "id": "q2-S4-160",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 5.66,
+ "solver_seconds": 0.032,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2840,
+  "total_tokens": 3555,
+  "completion_tokens": 715,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 473
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.63,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":6,\"programme\":\"BComp CS Hons\",\"completed\":[\"ES2660\",\"CS2105\",\"CS3230\",\"CS3219\",\"CS2101\",\"CS2100\",\"CS2109S\",\"CS1101S\",\"CS2040S\",\"MA1521\",\"CS2106\",\"CS2030S\",\"CS2103T\",\"MA1522\",\"CS1231S\"],\"must_take\":[\"CS4226\",\"IS1108\",\"ST2334\",\"CS2102\",\"CS3234\",\"CS4211\"],\"sem_caps\":{\"6\":0},\"objective\":\"min_total_mc\",\"late\":[\"CS4211\"],\"rules\":[{\"type\":\"apart\",\"a\":\"ST2334\",\"b\":\"IS1108\",\"strength\":\"must\"},{\"type\":\"apart\",\"a\":\"CS4211\",\"b\":\"ST2334\",\"strength\":\"must\"},{\"type\":\"apart\",\"a\":\"CS4211\",\"b\":\"CS2102\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3234\",\"sem\":8,\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 6,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "ES2660",
+   "CS2105",
+   "CS3230",
+   "CS3219",
+   "CS2101",
+   "CS2100",
+   "CS2109S",
+   "CS1101S",
+   "CS2040S",
+   "MA1521",
+   "CS2106",
+   "CS2030S",
+   "CS2103T",
+   "MA1522",
+   "CS1231S"
+  ],
+  "must_take": [
+   "CS4226",
+   "IS1108",
+   "ST2334",
+   "CS2102",
+   "CS3234",
+   "CS4211"
+  ],
+  "sem_caps": {
+   "6": 0
+  },
+  "objective": "min_total_mc",
+  "late": [
+   "CS4211"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "ST2334",
+    "b": "IS1108",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS4211",
+    "b": "ST2334",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS4211",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3234",
+    "sem": 8,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the prerequisites of CS4226; the MC limits (at most 20 MC per semester; semesters 6 blocked); the semesters in which the courses are offered"
+  ]
+ }
+}

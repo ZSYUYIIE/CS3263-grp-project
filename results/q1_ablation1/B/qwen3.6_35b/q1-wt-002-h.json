@@ -1,0 +1,50 @@
+{
+ "id": "q1-wt-002-h",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 1.64,
+ "solver_seconds": 0.001,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2811,
+  "total_tokens": 2910,
+  "completion_tokens": 99,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 1.64,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\": \"eligible\", \"target\": \"CS4220\", \"current_sem\": 5, \"completed\": [\"MA2108\", \"MA1505\", \"ES1000\", \"CS2220\", \"CS2040\", \"CS1101S\", \"CS1231S\", \"ES2660\", \"CS2100\", \"CS2107\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS4220",
+  "current_sem": 5,
+  "completed": [
+   "MA2108",
+   "MA1505",
+   "ES1000",
+   "CS2220",
+   "CS2040",
+   "CS1101S",
+   "CS1231S",
+   "ES2660",
+   "CS2100",
+   "CS2107"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS4220",
+  "semester": 5,
+  "reasons": [
+   "not offered in semester 1 (offered: [2])"
+  ],
+  "can_still_become_eligible": true
+ }
+}

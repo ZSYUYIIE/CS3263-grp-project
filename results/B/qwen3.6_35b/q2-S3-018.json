@@ -1,0 +1,101 @@
+{
+ "id": "q2-S3-018",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.12,
+ "solver_seconds": 0.028,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3089,
+  "total_tokens": 3409,
+  "completion_tokens": 320,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 6.09,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 4,\n\"completed\": [\n\"CS2103T\",\n\"CS2040S\",\n\"IS1108\",\n\"ST2334\",\n\"MA1521\",\n\"CS1101S\",\n\"CS2030S\",\n\"MA1522\",\n\"CS2100\",\n\"CS1231S\",\n\"CS2101\",\n\"ES2660\"\n],\n\"must_take\": [\n\"CS3264\",\n\"CS3219\",\n\"CS3230\",\n\"CS3231\",\n\"CS2102\",\n\"CS2109S\"\n],\n\"atap_sems\": [\n6\n],\n\"rules\": [\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2102\",\n\"b\": \"CS3264\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS3231\",\n\"b\": \"CS2102\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS3230\",\n\"b\": \"CS2109S\",\n\"strength\": \"must\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "CS2103T",
+   "CS2040S",
+   "IS1108",
+   "ST2334",
+   "MA1521",
+   "CS1101S",
+   "CS2030S",
+   "MA1522",
+   "CS2100",
+   "CS1231S",
+   "CS2101",
+   "ES2660"
+  ],
+  "must_take": [
+   "CS3264",
+   "CS3219",
+   "CS3230",
+   "CS3231",
+   "CS2102",
+   "CS2109S"
+  ],
+  "atap_sems": [
+   6
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS2102",
+    "b": "CS3264",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3231",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3230",
+    "b": "CS2109S",
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 7,
+  "plan": {
+   "4": [
+    "CS2109S"
+   ],
+   "5": [],
+   "6": [
+    "CP3880",
+    "CS3230"
+   ],
+   "7": [
+    "CS2102",
+    "CS3219",
+    "CS3231",
+    "CS3264"
+   ]
+  },
+  "mc_per_semester": {
+   "4": 4,
+   "5": 0,
+   "6": 16,
+   "7": 16
+  },
+  "preferences_met": [],
+  "preferences_not_met": []
+ }
+}

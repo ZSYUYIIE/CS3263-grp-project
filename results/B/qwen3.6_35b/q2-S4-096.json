@@ -1,0 +1,78 @@
+{
+ "id": "q2-S4-096",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 5.53,
+ "solver_seconds": 0.399,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3081,
+  "total_tokens": 3394,
+  "completion_tokens": 313,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 5.13,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 2,\n\"completed\": [\n\"CS1231S\",\n\"MA1521\",\n\"ES2660\",\n\"CS1101S\"\n],\n\"must_take\": [\n\"CS4353\",\n\"ST2334\",\n\"CS3230\",\n\"CS3263\",\n\"CS4263\",\n\"CS2100\",\n\"CS2103T\",\n\"CS4239\"\n],\n\"mc_max\": 16,\n\"objective\": \"min_total_mc\",\n\"early\": [\n\"CS4353\",\n\"ST2334\"\n],\n\"late\": [\n\"CS2103T\"\n],\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS2103T\",\n\"b\": \"CS3230\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"ST2334\",\n\"b\": \"CS4239\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"ST2334\",\n\"b\": \"CS2103T\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 2,
+  "completed": [
+   "CS1231S",
+   "MA1521",
+   "ES2660",
+   "CS1101S"
+  ],
+  "must_take": [
+   "CS4353",
+   "ST2334",
+   "CS3230",
+   "CS3263",
+   "CS4263",
+   "CS2100",
+   "CS2103T",
+   "CS4239"
+  ],
+  "mc_max": 16,
+  "objective": "min_total_mc",
+  "early": [
+   "CS4353",
+   "ST2334"
+  ],
+  "late": [
+   "CS2103T"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2103T",
+    "b": "CS3230",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "ST2334",
+    "b": "CS4239",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "ST2334",
+    "b": "CS2103T",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the course exclusions (courses that cannot be taken together)"
+  ]
+ }
+}

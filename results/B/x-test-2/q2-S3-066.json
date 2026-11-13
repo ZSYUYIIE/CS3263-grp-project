@@ -1,0 +1,118 @@
+{
+ "id": "q2-S3-066",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 5.31,
+ "solver_seconds": 0.035,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2801,
+  "total_tokens": 3452,
+  "completion_tokens": 651,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 481
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.27,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":4,\"completed\":[\"CS1231S\",\"CS2103T\",\"CS1101S\",\"CS2040S\",\"MA1521\",\"IS1108\",\"ES2660\",\"MA1522\",\"ST2334\",\"CS2030S\",\"CS2101\",\"CS2100\"],\"must_take\":[\"CS2106\",\"CS4231\",\"CS2105\",\"CS2109S\",\"CS3219\",\"CS4226\"],\"atap_sems\":[7],\"objective\":\"earliest_graduation\",\"late\":[\"CS2109S\"],\"rules\":[{\"type\":\"same_sem\",\"a\":\"CS4226\",\"b\":\"CS2109S\",\"strength\":\"prefer\"}],\"unsupported\":[\"might fail a module this semester and retake it\"]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "CS1231S",
+   "CS2103T",
+   "CS1101S",
+   "CS2040S",
+   "MA1521",
+   "IS1108",
+   "ES2660",
+   "MA1522",
+   "ST2334",
+   "CS2030S",
+   "CS2101",
+   "CS2100"
+  ],
+  "must_take": [
+   "CS2106",
+   "CS4231",
+   "CS2105",
+   "CS2109S",
+   "CS3219",
+   "CS4226"
+  ],
+  "atap_sems": [
+   7
+  ],
+  "objective": "earliest_graduation",
+  "late": [
+   "CS2109S"
+  ],
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS4226",
+    "b": "CS2109S",
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "might fail a module this semester and retake it"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "earliest_graduation",
+  "last_semester": 8,
+  "plan": {
+   "4": [
+    "CS2105"
+   ],
+   "5": [
+    "CS3230",
+    "CS4226"
+   ],
+   "6": [
+    "CS4231"
+   ],
+   "7": [
+    "CP3880"
+   ],
+   "8": [
+    "CS2106",
+    "CS2109S",
+    "CS3219"
+   ]
+  },
+  "mc_per_semester": {
+   "4": 4,
+   "5": 8,
+   "6": 4,
+   "7": 12,
+   "8": 12
+  },
+  "preferences_met": [
+   "CS2109S as late as possible"
+  ],
+  "preferences_not_met": [
+   "CS4226 and CS2109S in the same semester"
+  ],
+  "added_prerequisites": [
+   "CS3230"
+  ],
+  "not_applied": [
+   "might fail a module this semester and retake it"
+  ]
+ }
+}

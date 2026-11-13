@@ -1,0 +1,150 @@
+{
+ "id": "q2-S1-133",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 7.99,
+ "solver_seconds": 0.03,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2851,
+  "total_tokens": 3761,
+  "completion_tokens": 910,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 613
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.95,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":5,\"completed\":[\"CS2040S\",\"CS2100\",\"IS1108\",\"CS2109S\",\"ST2334\",\"CS3230\",\"CS3219\",\"CS1231S\",\"CS2101\",\"CS2030S\",\"MA1521\",\"CS1101S\",\"MA1522\",\"CS2103T\",\"CS2106\"],\"must_take\":[\"CS3227\",\"CS2102\",\"ES2660\",\"CS4248\",\"CS2105\",\"CS4224\"],\"unsupported\":[\"module waiver\",\"light last semester\"],\"early\":[\"CS3227\"],\"rules\":[{\"type\":\"before\",\"a\":\"CS4248\",\"b\":\"CS4224\",\"strength\":\"must\"},{\"type\":\"same_sem\",\"a\":\"CS2102\",\"b\":\"CS4248\",\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS3227\",\"b\":\"CS4224\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS2105\",\"sem\":5,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3227\",\"sem\":6,\"strength\":\"prefer\"},{\"type\":\"apart\",\"a\":\"ES2660\",\"b\":\"CS2102\",\"strength\":\"prefer\"},{\"type\":\"before\",\"a\":\"CS3227\",\"b\":\"CS4248\",\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "completed": [
+   "CS2040S",
+   "CS2100",
+   "IS1108",
+   "CS2109S",
+   "ST2334",
+   "CS3230",
+   "CS3219",
+   "CS1231S",
+   "CS2101",
+   "CS2030S",
+   "MA1521",
+   "CS1101S",
+   "MA1522",
+   "CS2103T",
+   "CS2106"
+  ],
+  "must_take": [
+   "CS3227",
+   "CS2102",
+   "ES2660",
+   "CS4248",
+   "CS2105",
+   "CS4224"
+  ],
+  "unsupported": [
+   "module waiver",
+   "light last semester"
+  ],
+  "early": [
+   "CS3227"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS4248",
+    "b": "CS4224",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2102",
+    "b": "CS4248",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3227",
+    "b": "CS4224",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2105",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3227",
+    "sem": 6,
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "ES2660",
+    "b": "CS2102",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS3227",
+    "b": "CS4248",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 7,
+  "plan": {
+   "5": [
+    "CS2102",
+    "CS2105",
+    "CS3227",
+    "CS4248"
+   ],
+   "6": [
+    "CS3223"
+   ],
+   "7": [
+    "CS4224",
+    "ES2660"
+   ]
+  },
+  "mc_per_semester": {
+   "5": 16,
+   "6": 4,
+   "7": 8
+  },
+  "preferences_met": [
+   "ES2660 and CS2102 in different semesters",
+   "CS3227 as early as possible"
+  ],
+  "preferences_not_met": [
+   "CS3227 in semester 6",
+   "CS3227 before CS4248"
+  ],
+  "added_prerequisites": [
+   "CS3223"
+  ],
+  "not_applied": [
+   "module waiver",
+   "light last semester"
+  ]
+ }
+}

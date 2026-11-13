@@ -1,0 +1,27 @@
+{
+ "id": "q1-mp-049-h",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 9.53,
+ "usage": {
+  "prompt_tokens": 8150,
+  "total_tokens": 8678,
+  "completion_tokens": 528,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 9.53,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"ELIGIBLE\", \"reasons\": [\"CS3264 is open to BComp CS Hons and offered in Sem 2.\", \"Prerequisites are satisfied by completed courses: CS2109S is not required (CS2105/CS2040S covers the algo part, but wait, CS3264 requires CS2109S specifically). Let's re-read carefully.\", \"CS3264 Prereq: CS2109S AND (CS2040 or ...) AND (MA...) AND (EE/ST/MA...).\", \"Student has completed CS2040S, MA1521, ST2334. But does student have CS2109S? The list of completed courses is: CS1101S, ST2132, CS3210, CS2100HS, MA1521, IS1108, CS5477, CS2102, MA1522, CS1231S, CS2040S, CS2105.\", \"CS2109S is NOT in the completed list.\", \"Therefore, the student has NOT completed the prerequisite CS2109S.\", \"Thus, the student is NOT eligible.\"]}\n\nWait, let me double check the \"cannot take if completed\" and \"mutually exclusive\" for CS2109S.\nCS2109S is not in the completed list.\nIs CS2109S a prerequisite? Yes.\nDoes the student have it? No.\nSo the student is NOT ELIGIBLE.\n\nLet me re-read the student's completed list to ensure I didn't miss CS2109S.\n\"completed CS1101S, ST2132, CS3210, CS2100HS, MA1521, IS1108 and ST2334. On top of that I cleared CS5477, CS2102, MA1522, CS1231S, CS2040S and CS2105.\"\nNone of these is CS2109S.\n\nTherefore, the answer is NOT_ELIGIBLE.\n\n{\"status\": \"NOT_ELIGIBLE\", \"reasons\": [\"Prerequisite CS2109S is not completed.\"]}",
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "reasons": [
+   "Prerequisite CS2109S is not completed."
+  ]
+ },
+ "fenced": true,
+ "repair": "last_of_several",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 4
+}

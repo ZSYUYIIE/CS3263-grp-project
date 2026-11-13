@@ -1,0 +1,61 @@
+{
+ "id": "q2-S5-001",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 91.0,
+ "usage": {
+  "prompt_tokens": 8188,
+  "total_tokens": 16869,
+  "completion_tokens": 8681,
+  "prompt_tokens_details": {
+   "cached_tokens": 1664,
+   "created_cache_tokens": 6400
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 8514
+  },
+  "finish_reason": "stop",
+  "request_seconds": 91.0,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"1\":[\"CS1010\",\"MA1511\",\"MA1512\"],\"2\":[\"CS2040\",\"ST2334\"],\"3\":[\"CG2271\"],\"5\":[\"CS3244\"],\"6\":[\"CS4262\"],\"8\":[\"IS1108\"]},\"reasons\":[\"CS3244 is fixed in semester 5; CS1010, MA1511, MA1512, CS2040 and ST2334 are planned earlier as its prerequisites.\",\"CG2271 is the minimal added prerequisite for CS4262; CS4262 is in semester 6, before IS1108 in semester 8.\",\"Semester 7 is the exchange semester with no courses; every used semester has at most 3 modules.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1010",
+    "MA1511",
+    "MA1512"
+   ],
+   "2": [
+    "CS2040",
+    "ST2334"
+   ],
+   "3": [
+    "CG2271"
+   ],
+   "5": [
+    "CS3244"
+   ],
+   "6": [
+    "CS4262"
+   ],
+   "8": [
+    "IS1108"
+   ]
+  },
+  "reasons": [
+   "CS3244 is fixed in semester 5; CS1010, MA1511, MA1512, CS2040 and ST2334 are planned earlier as its prerequisites.",
+   "CG2271 is the minimal added prerequisite for CS4262; CS4262 is in semester 6, before IS1108 in semester 8.",
+   "Semester 7 is the exchange semester with no courses; every used semester has at most 3 modules."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,145 @@
+{
+ "id": "q2-S3-270",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "valid",
+ "seconds": 8.03,
+ "usage": {
+  "prompt_tokens": 18291,
+  "total_tokens": 18741,
+  "completion_tokens": 450,
+  "finish_reason": "stop",
+  "request_seconds": 8.03,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"4\": [\n      \"ST2334\"\n    ],\n    \"5\": [\n      \"CS2102\",\n      \"CS2105\",\n      \"CS2109S\"\n    ],\n    \"6\": [\n      \"CS3230\",\n      \"CS3234\"\n    ],\n    \"7\": [\n      \"CS3103\",\n      \"CS4226\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3103 is offered only in Sem 1, so it must be placed in Sem 7.\",\n    \"CS2109S is in Sem 5 as requested, with ST2334 in Sem 4 as its prerequisite.\",\n    \"CS3230 is taken in Sem 6 before CS3234 to satisfy the preference.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "ST2334"
+   ],
+   "5": [
+    "CS2102",
+    "CS2105",
+    "CS2109S"
+   ],
+   "6": [
+    "CS3230",
+    "CS3234"
+   ],
+   "7": [
+    "CS3103",
+    "CS4226"
+   ]
+  },
+  "reasons": [
+   "CS3103 is offered only in Sem 1, so it must be placed in Sem 7.",
+   "CS2109S is in Sem 5 as requested, with ST2334 in Sem 4 as its prerequisite.",
+   "CS3230 is taken in Sem 6 before CS3234 to satisfy the preference."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"4\": [\n      \"ST2334\"\n    ],\n    \"5\": [\n      \"CS2102\",\n      \"CS2105\",\n      \"CS2109S\"\n    ],\n    \"6\": [\n      \"CS3103\",\n      \"CS3230\",\n      \"CS3234\"\n    ],\n    \"7\": [\n      \"CS4226\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2109S is placed in Sem 5 as requested.\",\n    \"CS3230 is taken in Sem 6 before CS3234 to satisfy the preference.\",\n    \"ST2334 is placed in Sem 4 (earliest possible) because it is a prerequisite for CS2109S which is fixed in Sem 5; it cannot be delayed further.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "ST2334"
+     ],
+     "5": [
+      "CS2102",
+      "CS2105",
+      "CS2109S"
+     ],
+     "6": [
+      "CS3103",
+      "CS3230",
+      "CS3234"
+     ],
+     "7": [
+      "CS4226"
+     ]
+    },
+    "reasons": [
+     "CS2109S is placed in Sem 5 as requested.",
+     "CS3230 is taken in Sem 6 before CS3234 to satisfy the preference.",
+     "ST2334 is placed in Sem 4 (earliest possible) because it is a prerequisite for CS2109S which is fixed in Sem 5; it cannot be delayed further."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 8999,
+    "total_tokens": 9227,
+    "completion_tokens": 228,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.97,
+    "attempts": 1
+   },
+   "seconds": 4.97,
+   "violations": [
+    "R3 CS3103 not offered in Sem 2 (semester 6)"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"4\": [\n      \"ST2334\"\n    ],\n    \"5\": [\n      \"CS2102\",\n      \"CS2105\",\n      \"CS2109S\"\n    ],\n    \"6\": [\n      \"CS3230\",\n      \"CS3234\"\n    ],\n    \"7\": [\n      \"CS3103\",\n      \"CS4226\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3103 is offered only in Sem 1, so it must be placed in Sem 7.\",\n    \"CS2109S is in Sem 5 as requested, with ST2334 in Sem 4 as its prerequisite.\",\n    \"CS3230 is taken in Sem 6 before CS3234 to satisfy the preference.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "4": [
+      "ST2334"
+     ],
+     "5": [
+      "CS2102",
+      "CS2105",
+      "CS2109S"
+     ],
+     "6": [
+      "CS3230",
+      "CS3234"
+     ],
+     "7": [
+      "CS3103",
+      "CS4226"
+     ]
+    },
+    "reasons": [
+     "CS3103 is offered only in Sem 1, so it must be placed in Sem 7.",
+     "CS2109S is in Sem 5 as requested, with ST2334 in Sem 4 as its prerequisite.",
+     "CS3230 is taken in Sem 6 before CS3234 to satisfy the preference."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9292,
+    "total_tokens": 9514,
+    "completion_tokens": 222,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 3.06,
+    "attempts": 1
+   },
+   "seconds": 3.06,
+   "violations": []
+  }
+ ]
+}

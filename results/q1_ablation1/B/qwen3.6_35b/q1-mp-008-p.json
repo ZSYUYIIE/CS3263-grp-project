@@ -1,0 +1,54 @@
+{
+ "id": "q1-mp-008-p",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 2.5,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2830,
+  "total_tokens": 2953,
+  "completion_tokens": 123,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 2.5,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\": \"eligible\", \"target\": \"CS3281\", \"current_sem\": 7, \"completed\": [\"CS2106\", \"ST1131\", \"CS1101S\", \"IS1108\", \"CS2030S\", \"CS2100DE\", \"CS3241\", \"CS2105\", \"CS2040S\", \"CS1231S\", \"CS2101\", \"ESP2111\", \"MA1512\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS3281",
+  "current_sem": 7,
+  "completed": [
+   "CS2106",
+   "ST1131",
+   "CS1101S",
+   "IS1108",
+   "CS2030S",
+   "CS2100DE",
+   "CS3241",
+   "CS2105",
+   "CS2040S",
+   "CS1231S",
+   "CS2101",
+   "ESP2111",
+   "MA1512"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS3281",
+  "semester": 7,
+  "reasons": [
+   "not offered in semester 1 (offered: [2])",
+   "missing prerequisite: CS2103 or CS2103T or CS2103DE or CS2113"
+  ],
+  "can_still_become_eligible": true
+ }
+}

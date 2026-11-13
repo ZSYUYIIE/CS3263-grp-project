@@ -1,0 +1,97 @@
+{
+ "id": "q2-S4-312",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 5.83,
+ "solver_seconds": 0.074,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2828,
+  "total_tokens": 3517,
+  "completion_tokens": 689,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 453
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.76,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"current_sem\":5,\"programme\":\"BComp CS Hons\",\"completed\":[\"CS3230\",\"MA1522\",\"CS2101\",\"CS2100\",\"CS1231S\",\"CS1101S\",\"CS2106\",\"CS2040S\",\"MA1521\",\"CS2030S\",\"IS1108\",\"CS2103T\",\"CS2109S\",\"ST2334\",\"CS4243\"],\"must_take\":[\"CS2105\",\"CS3242\",\"CS4239\",\"CS3219\",\"CS4249\",\"CS3268\"],\"mc_max\":12,\"objective\":\"earliest_graduation\",\"late\":[\"CS2105\"],\"rules\":[{\"type\":\"in_sem\",\"course\":\"CS3268\",\"sem\":7,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3219\",\"sem\":8,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3242\",\"sem\":6,\"strength\":\"must\"},{\"type\":\"before\",\"a\":\"CS3242\",\"b\":\"CS3268\",\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "CS3230",
+   "MA1522",
+   "CS2101",
+   "CS2100",
+   "CS1231S",
+   "CS1101S",
+   "CS2106",
+   "CS2040S",
+   "MA1521",
+   "CS2030S",
+   "IS1108",
+   "CS2103T",
+   "CS2109S",
+   "ST2334",
+   "CS4243"
+  ],
+  "must_take": [
+   "CS2105",
+   "CS3242",
+   "CS4239",
+   "CS3219",
+   "CS4249",
+   "CS3268"
+  ],
+  "mc_max": 12,
+  "objective": "earliest_graduation",
+  "late": [
+   "CS2105"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3268",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3219",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3242",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3242",
+    "b": "CS3268",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS3242 in semester 6; the prerequisites of CS3235; the prerequisites of CS3242; the prerequisites of CS4239; the MC limits (at most 12 MC per semester); the semesters in which the courses are offered"
+  ]
+ }
+}

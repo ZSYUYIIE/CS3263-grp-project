@@ -1,0 +1,146 @@
+{
+ "id": "q2-S4-117",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 2,
+ "end": "switched to NO_PLAN",
+ "seconds": 15.67,
+ "usage": {
+  "prompt_tokens": 34004,
+  "total_tokens": 34764,
+  "completion_tokens": 760,
+  "finish_reason": "stop",
+  "request_seconds": 15.65,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3237 is offered only in Sem 1 (odd semesters). The student is starting Sem 6 (even) and has already passed Sem 5. It cannot be taken in Sem 6, 7, or 8.\",\n    \"CS3103 is offered only in Sem 1 (odd semesters). It cannot be taken in Sem 6, 7, or 8.\",\n    \"The student must take CS3237 and CS3103, but neither is available in any remaining semester (6, 7, or 8).\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3237 is offered only in Sem 1 (odd semesters). The student is starting Sem 6 (even) and has already passed Sem 5. It cannot be taken in Sem 6, 7, or 8.",
+   "CS3103 is offered only in Sem 1 (odd semesters). It cannot be taken in Sem 6, 7, or 8.",
+   "The student must take CS3237 and CS3103, but neither is available in any remaining semester (6, 7, or 8)."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS2102\",\n      \"CS3237\"\n    ],\n    \"8\": [\n      \"CS3264\",\n      \"CS3103\"\n    ]\n  },\n  \"reasons\": [\n    \"Semester 6: CS2102 and CS3237 are taken together. Prerequisites for CS2102 (CS1231S, CS2040S) and CS3237 (CS2100, CS1101S) are completed. They are not mutually exclusive.\",\n    \"Semester 7 is exchange (0 MC). CS3103 requires CS2105 (completed). CS3264 requires CS2102 (completed in S6) and CS2040S (completed).\",\n    \"Semester 8: CS3264 and CS3237 are not in the same semester. CS3264 is taken as early as possible (S8) given S7 is exchange. CS3103 is also taken in S8.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS2102",
+      "CS3237"
+     ],
+     "8": [
+      "CS3264",
+      "CS3103"
+     ]
+    },
+    "reasons": [
+     "Semester 6: CS2102 and CS3237 are taken together. Prerequisites for CS2102 (CS1231S, CS2040S) and CS3237 (CS2100, CS1101S) are completed. They are not mutually exclusive.",
+     "Semester 7 is exchange (0 MC). CS3103 requires CS2105 (completed). CS3264 requires CS2102 (completed in S6) and CS2040S (completed).",
+     "Semester 8: CS3264 and CS3237 are not in the same semester. CS3264 is taken as early as possible (S8) given S7 is exchange. CS3103 is also taken in S8."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11057,
+    "total_tokens": 11331,
+    "completion_tokens": 274,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 6.86,
+    "attempts": 1
+   },
+   "seconds": 6.87,
+   "violations": [
+    "R3 CS3103 not offered in Sem 2 (semester 8)",
+    "R3 CS3237 not offered in Sem 2 (semester 6)",
+    "R9 must rule not met: apart CS2102 CS3237"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"6\": [\n      \"CS2102\"\n    ],\n    \"7\": [\n      \"CP3880\"\n    ],\n    \"8\": [\n      \"CS3237\",\n      \"CS3103\",\n      \"CS3264\"\n    ]\n  },\n  \"reasons\": [\n    \"Sem 6: CS2102 is taken. Prerequisites (CS1231S, CS2040S) are met. CS3237 is offered in Sem 1 only, so it cannot be taken in Sem 6.\",\n    \"Sem 7: Exchange semester with ATAP (CP3880). No academic courses planned to respect the exchange nature, though ATAP is allowed.\",\n    \"Sem 8: CS3237 (Sem 1 only) cannot be taken here. It must be taken in Sem 5 or 6. Since Sem 6 is full with CS2102 (and CS3237 is mutually exclusive with nothing but time/offerings), CS3237 must be taken in Sem 5? No, student is starting Sem 6. CS3237 is offered Sem 1. It cannot be taken in Sem 6 (Sem 2) or Sem 8 (Sem 2). The student missed the offering in Sem 5. Thus CS3237 cannot be planned.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS2102"
+     ],
+     "7": [
+      "CP3880"
+     ],
+     "8": [
+      "CS3237",
+      "CS3103",
+      "CS3264"
+     ]
+    },
+    "reasons": [
+     "Sem 6: CS2102 is taken. Prerequisites (CS1231S, CS2040S) are met. CS3237 is offered in Sem 1 only, so it cannot be taken in Sem 6.",
+     "Sem 7: Exchange semester with ATAP (CP3880). No academic courses planned to respect the exchange nature, though ATAP is allowed.",
+     "Sem 8: CS3237 (Sem 1 only) cannot be taken here. It must be taken in Sem 5 or 6. Since Sem 6 is full with CS2102 (and CS3237 is mutually exclusive with nothing but time/offerings), CS3237 must be taken in Sem 5? No, student is starting Sem 6. CS3237 is offered Sem 1. It cannot be taken in Sem 6 (Sem 2) or Sem 8 (Sem 2). The student missed the offering in Sem 5. Thus CS3237 cannot be planned."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11436,
+    "total_tokens": 11772,
+    "completion_tokens": 336,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 5.4,
+    "attempts": 1
+   },
+   "seconds": 5.41,
+   "violations": [
+    "R3 CS3103 not offered in Sem 2 (semester 8)",
+    "R3 CS3237 not offered in Sem 2 (semester 8)",
+    "R7 semester 7 has 0 MC, limit 0",
+    "R11 ATAP in semester 7, not an allowed ATAP semester"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3237 is offered only in Sem 1 (odd semesters). The student is starting Sem 6 (even) and has already passed Sem 5. It cannot be taken in Sem 6, 7, or 8.\",\n    \"CS3103 is offered only in Sem 1 (odd semesters). It cannot be taken in Sem 6, 7, or 8.\",\n    \"The student must take CS3237 and CS3103, but neither is available in any remaining semester (6, 7, or 8).\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3237 is offered only in Sem 1 (odd semesters). The student is starting Sem 6 (even) and has already passed Sem 5. It cannot be taken in Sem 6, 7, or 8.",
+     "CS3103 is offered only in Sem 1 (odd semesters). It cannot be taken in Sem 6, 7, or 8.",
+     "The student must take CS3237 and CS3103, but neither is available in any remaining semester (6, 7, or 8)."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11511,
+    "total_tokens": 11661,
+    "completion_tokens": 150,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.39,
+    "attempts": 1
+   },
+   "seconds": 3.39,
+   "violations": null
+  }
+ ]
+}

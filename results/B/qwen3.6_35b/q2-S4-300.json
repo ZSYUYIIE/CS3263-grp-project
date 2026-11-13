@@ -1,0 +1,80 @@
+{
+ "id": "q2-S4-300",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.36,
+ "solver_seconds": 0.307,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3095,
+  "total_tokens": 3402,
+  "completion_tokens": 307,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.05,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 3,\n\"completed\": [\n\"CS2040S\",\n\"ES2660\",\n\"IS1108\",\n\"CS2030S\",\n\"CS1101S\",\n\"MA1522\",\n\"MA1521\",\n\"CS1231S\"\n],\n\"must_take\": [\n\"CS4231\",\n\"CS3103\",\n\"CS3219\",\n\"CS2101\",\n\"CS3230\",\n\"CS2105\",\n\"CS2103T\"\n],\n\"sem_caps\": {\n\"8\": 0\n},\n\"objective\": \"earliest_graduation\",\n\"early\": [\n\"CS3230\",\n\"CS2103T\"\n],\n\"late\": [\n\"CS3219\"\n],\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS3230\",\n\"b\": \"CS2105\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS3219\",\n\"b\": \"CS2103T\",\n\"strength\": \"must\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "completed": [
+   "CS2040S",
+   "ES2660",
+   "IS1108",
+   "CS2030S",
+   "CS1101S",
+   "MA1522",
+   "MA1521",
+   "CS1231S"
+  ],
+  "must_take": [
+   "CS4231",
+   "CS3103",
+   "CS3219",
+   "CS2101",
+   "CS3230",
+   "CS2105",
+   "CS2103T"
+  ],
+  "sem_caps": {
+   "8": 0
+  },
+  "objective": "earliest_graduation",
+  "early": [
+   "CS3230",
+   "CS2103T"
+  ],
+  "late": [
+   "CS3219"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3230",
+    "b": "CS2105",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS3219",
+    "b": "CS2103T",
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS3219 and CS2103T in the same semester; the prerequisites of CS3219; the course exclusions (courses that cannot be taken together)"
+  ]
+ }
+}

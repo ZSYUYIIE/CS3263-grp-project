@@ -1,0 +1,67 @@
+{
+ "id": "q2-S3-056",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 102.87,
+ "usage": {
+  "prompt_tokens": 11319,
+  "total_tokens": 21589,
+  "completion_tokens": 10270,
+  "prompt_tokens_details": {
+   "cached_tokens": 11008,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 10049
+  },
+  "finish_reason": "stop",
+  "request_seconds": 102.87,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CS2102\",\"CS2105\",\"CS2101\"],\"4\":[\"ST2334\",\"CS2103T\",\"CS3230\"],\"5\":[\"CS2100\",\"CS2109S\",\"CS3241\",\"CS3231\"],\"6\":[\"CS3219\",\"CS2106\",\"CS3247\"],\"7\":[\"CP3880\"],\"8\":[\"CS4430\"]},\"reasons\":[\"Plan uses semesters 3-8; CP3880 ATAP is in semester 7 and CS4430 is in semester 8 so ATAP is not the last semester used.\",\"CS2102 is in semester 3, CS3219 is in semester 6, and CS2101 is before ST2334.\",\"CS2100 and CS2109S are together in semester 5; CS2105 is in semester 3 and CS2106 is in the first possible semester after CS2100. CS3241 and CS3231 are added as required prerequisites.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2102",
+    "CS2105",
+    "CS2101"
+   ],
+   "4": [
+    "ST2334",
+    "CS2103T",
+    "CS3230"
+   ],
+   "5": [
+    "CS2100",
+    "CS2109S",
+    "CS3241",
+    "CS3231"
+   ],
+   "6": [
+    "CS3219",
+    "CS2106",
+    "CS3247"
+   ],
+   "7": [
+    "CP3880"
+   ],
+   "8": [
+    "CS4430"
+   ]
+  },
+  "reasons": [
+   "Plan uses semesters 3-8; CP3880 ATAP is in semester 7 and CS4430 is in semester 8 so ATAP is not the last semester used.",
+   "CS2102 is in semester 3, CS3219 is in semester 6, and CS2101 is before ST2334.",
+   "CS2100 and CS2109S are together in semester 5; CS2105 is in semester 3 and CS2106 is in the first possible semester after CS2100. CS3241 and CS3231 are added as required prerequisites."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

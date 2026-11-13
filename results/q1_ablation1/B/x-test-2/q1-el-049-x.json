@@ -1,0 +1,63 @@
+{
+ "id": "q1-el-049-x",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 7.34,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2555,
+  "total_tokens": 3202,
+  "completion_tokens": 647,
+  "prompt_tokens_details": {
+   "cached_tokens": 2432,
+   "created_cache_tokens": 0,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 559
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.34,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\":\"eligible\",\"target\":\"CS3264\",\"current_sem\":8,\"completed\":[\"CS2100HS\",\"ST2132\",\"CS1101S\",\"CS2040S\",\"CS3210\",\"CS2109S\",\"IS1108\",\"CS2105\",\"MA1522\",\"CS2102\",\"MA1521\",\"CS1231S\",\"CS3244\",\"CS5477\",\"ST2334\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS3264",
+  "current_sem": 8,
+  "completed": [
+   "CS2100HS",
+   "ST2132",
+   "CS1101S",
+   "CS2040S",
+   "CS3210",
+   "CS2109S",
+   "IS1108",
+   "CS2105",
+   "MA1522",
+   "CS2102",
+   "MA1521",
+   "CS1231S",
+   "CS3244",
+   "CS5477",
+   "ST2334"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS3264",
+  "semester": 8,
+  "reasons": [
+   "precluded: already completed CS3244"
+  ],
+  "can_still_become_eligible": false,
+  "never_eligible_because": "CS3264 is ruled out by completed CS3244"
+ }
+}

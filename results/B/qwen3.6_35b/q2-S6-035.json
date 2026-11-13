@@ -1,0 +1,97 @@
+{
+ "id": "q2-S6-035",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 11.04,
+ "solver_seconds": 0.001,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3102,
+  "total_tokens": 3577,
+  "completion_tokens": 475,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 11.04,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"programme\": \"Data Science and Analytics\",\n  \"completed\": [\n    \"ES2660\",\n    \"CS2040S\",\n    \"CS1101S\",\n    \"CS2030S\",\n    \"MA1521\",\n    \"CS1231S\",\n    \"MA1522\"\n  ],\n  \"current_sem\": 5,\n  \"must_take\": [\n    \"CS3219\",\n    \"CS4211\",\n    \"CS4246\"\n  ],\n  \"objective\": \"earliest_graduation\",\n  \"rules\": [\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS4211\",\n      \"b\": \"CS3219\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS4211\",\n      \"sem\": 7,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS4246\",\n      \"sem\": 5,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS3219\",\n      \"sem\": 6,\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS4246\",\n      \"b\": \"CS3219\",\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS4211\",\n      \"b\": \"CS4246\",\n      \"strength\": \"prefer\"\n    }\n  ],\n  \"late\": [\n    \"CS3219\"\n  ],\n  \"unsupported\": [\n    \"at most two modules with final exams in a semester\"\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "programme": "Data Science and Analytics",
+  "completed": [
+   "ES2660",
+   "CS2040S",
+   "CS1101S",
+   "CS2030S",
+   "MA1521",
+   "CS1231S",
+   "MA1522"
+  ],
+  "current_sem": 5,
+  "must_take": [
+   "CS3219",
+   "CS4211",
+   "CS4246"
+  ],
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS4211",
+    "b": "CS3219",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4211",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4246",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3219",
+    "sem": 6,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS4246",
+    "b": "CS3219",
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS4211",
+    "b": "CS4246",
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "CS3219"
+  ],
+  "unsupported": [
+   "at most two modules with final exams in a semester"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "OUT_OF_SCOPE",
+  "reasons": [
+   "programme 'Data Science and Analytics' is not BComp (CS) Hons"
+  ],
+  "message": "I can only plan for BComp (CS) Hons single-major students under AY2026/2027 rules, and this request is outside that (programme 'Data Science and Analytics' is not BComp (CS) Hons). Course rules differ by programme and aren't in my data for your case, so please check with your faculty or academic advisor."
+ }
+}

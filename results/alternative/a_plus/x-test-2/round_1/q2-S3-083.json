@@ -1,0 +1,52 @@
+{
+ "id": "q2-S3-083",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 29.1,
+ "usage": {
+  "prompt_tokens": 11208,
+  "total_tokens": 14229,
+  "completion_tokens": 3021,
+  "prompt_tokens_details": {
+   "cached_tokens": 11008,
+   "created_cache_tokens": 128
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2879
+  },
+  "finish_reason": "stop",
+  "request_seconds": 29.1,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"5\":[\"CS3219\",\"CS2105\",\"CS3210\"],\"6\":[\"CP3880\",\"CS2102\"],\"7\":[\"CS4223\"]},\"reasons\":[\"CS3210 is added because CS4223 requires CS3210, CS3220 or CG3207; only CS3210 is feasible with completed courses.\",\"CS3219 and CS2105 are in semester 5, so CS2102 and CS4223 have their required earlier completions.\",\"ATAP is CP3880 in semester 6 with only CS2102 (4 MC) alongside; total planned MC is 32.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS3219",
+    "CS2105",
+    "CS3210"
+   ],
+   "6": [
+    "CP3880",
+    "CS2102"
+   ],
+   "7": [
+    "CS4223"
+   ]
+  },
+  "reasons": [
+   "CS3210 is added because CS4223 requires CS3210, CS3220 or CG3207; only CS3210 is feasible with completed courses.",
+   "CS3219 and CS2105 are in semester 5, so CS2102 and CS4223 have their required earlier completions.",
+   "ATAP is CP3880 in semester 6 with only CS2102 (4 MC) alongside; total planned MC is 32."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

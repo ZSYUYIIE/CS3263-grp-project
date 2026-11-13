@@ -1,0 +1,56 @@
+{
+ "id": "q2-S1-026",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 34.9,
+ "usage": {
+  "prompt_tokens": 5961,
+  "total_tokens": 9479,
+  "completion_tokens": 3518,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 3328
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3340
+  },
+  "finish_reason": "stop",
+  "request_seconds": 34.9,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"2\":[\"CS2030\",\"MA1522\",\"CS2100\"],\"3\":[\"CS2102\",\"CS2104\"],\"4\":[\"CS4212\",\"ST2334\"],\"7\":[\"CS2101\"]},\"reasons\":[\"Added CS2030 and CS2104 as prerequisites: CS2102 needs a CS2030/CS2040-type course and CS4212 needs CS2104.\",\"MA1522 and CS2030 are in semester 2, so CS2102 and CS2104 can be in semester 3; ST2334 follows CS2102 in semester 4.\",\"CS4212 is in semester 4, its earliest possible term; CS2100 is before CS2101, which is fixed in semester 7; semester 8 exchange is empty.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "2": [
+    "CS2030",
+    "MA1522",
+    "CS2100"
+   ],
+   "3": [
+    "CS2102",
+    "CS2104"
+   ],
+   "4": [
+    "CS4212",
+    "ST2334"
+   ],
+   "7": [
+    "CS2101"
+   ]
+  },
+  "reasons": [
+   "Added CS2030 and CS2104 as prerequisites: CS2102 needs a CS2030/CS2040-type course and CS4212 needs CS2104.",
+   "MA1522 and CS2030 are in semester 2, so CS2102 and CS2104 can be in semester 3; ST2334 follows CS2102 in semester 4.",
+   "CS4212 is in semester 4, its earliest possible term; CS2100 is before CS2101, which is fixed in semester 7; semester 8 exchange is empty."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

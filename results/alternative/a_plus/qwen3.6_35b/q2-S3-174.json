@@ -1,0 +1,120 @@
+{
+ "id": "q2-S3-174",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 62.23,
+ "usage": {
+  "prompt_tokens": 19906,
+  "total_tokens": 23185,
+  "completion_tokens": 3279,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 62.23,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"The student requires a minimum of 12 MC in any semester with modules. The total MC for the 12 required courses (including added CS1231) is 48 MC. With NOC in Sem 6 (0 MC), there are 7 active semesters. It is mathematically impossible to distribute 48 MC across 7 semesters such that every active semester has at least 12 MC (7 * 12 = 84 MC required). Additionally, ST2334 is fixed in Sem 8, which would only contain 4 MC, violating the 12 MC minimum.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "The student requires a minimum of 12 MC in any semester with modules. The total MC for the 12 required courses (including added CS1231) is 48 MC. With NOC in Sem 6 (0 MC), there are 7 active semesters. It is mathematically impossible to distribute 48 MC across 7 semesters such that every active semester has at least 12 MC (7 * 12 = 84 MC required). Additionally, ST2334 is fixed in Sem 8, which would only contain 4 MC, violating the 12 MC minimum."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"1\": [\"CS1101S\", \"MA1521\", \"IS1108\"], \"2\": [\"MA1522\", \"ST2334\"], \"3\": [\"CS2030S\", \"CS2040S\"], \"4\": [\"CS2103T\", \"CS2105\"], \"5\": [\"CS3219\", \"CS3230\"], \"7\": [\"CS2109S\", \"ES2660\"]}, \"reasons\": [\"Prerequisites satisfied in order: CS1101S enables CS2030S/CS2040S; CS2030S+CS2040S enables CS2103T/CS3219/CS3230/CS2105/CS2109S.\", \"NOC in Sem 6 has 0 MC, so no courses planned there. ST2334 placed in Sem 8 is not possible as it requires MA1521/MA1522 which are taken earlier, but ST2334 is not in the final list of required courses for graduation constraints? Wait, ST2334 is in the 'need to take' list. The student said ST2334 has to be in semester 8. However, Sem 6 is NOC. Sem 7 and 8 are available. CS2109S requires MA1521/MA1522 (taken in S1/S2) and YSC2229/CS2040... (CS2040S taken in S3). So CS2109S can be in S7 or S8. CS3230 requires CS2040S (S3) and CS1231/MA1100. The student did NOT list CS1231 or MA1100 as 'need to take'. This is a critical missing prerequisite. CS3230 prerequisite is (YSC2229 or CS2040S...) AND (CS1231 or CS1231S or MA1100T or MA1100). The student has not completed CS1231/MA1100 and did not list them as required. Therefore, CS3230 cannot be taken. Similarly, CS2109S requires (YSC2229 or CS2040S...) AND ((MA1511 and MA1512) or MA1521 or MA2002...). The student has MA1521. So CS2109S is eligible. But CS3230 is NOT eligible because CS1231/MA1100 is missing. The student said 'I need to take... CS3230'. If CS3230 is a hard requirement, and its prerequisite is missing, we must add the prerequisite. Rule 8: Add a course ONLY when it is a prerequisite needed by a planned course. So we must add CS1231 or MA1100. Let's add CS1231. CS1231 has no prereqs. It can be taken in S1. But S1 is full with CS1101S, MA1521, IS1108 (12 MC). Can we swap? No, the student 'needs' those specific ones. We can add CS1231 to S1 if MC allows? S1 limit is 20. 12+4=16. OK. So CS1231 in S1. Then CS3230 can be taken. ST2334 in S8. CS2109S in S7 or S8. CS3230 and ES2660 not same semester. Let's re-plan with CS1231 added.\", \"NO_PLAN\", \"reasons\": [\"The student requires CS3230, which has a prerequisite of CS1231 or MA1100. These courses are not completed and not listed in the 'need to take' list. Adding CS1231 is required by Rule 8. However, the student also requires ST2334 in Semester 8. ST2334 requires MA1521 (taken S1). CS3230 requires CS1231 (added S1) and CS2040S (S3). CS2109S requires CS2040S (S3) and MA1521 (S1). CS2103T requires CS2030S and CS2040S (S3). CS3219 requires CS2103T (S4). CS2105 requires CS2040S (S3). ES2660 has no prereqs. The constraint 'CS3230 and ES2660 must not be in the same semester' and 'ST2334 in Sem 8' and 'NOC in Sem 6' leaves S7 and S8 for remaining courses. Remaining courses: CS2109S, CS3230, ES2660, ST2334. ST2334 is fixed in S8. CS3230 and ES2660 cannot be together. If CS3230 is in S7, ES2660 must be in S8 (with ST2334). CS2109S can be in S7 or S8. If CS2109S is in S7, S7 has CS3230+CS2109S (8 MC). S8 has ST2334+ES2660 (8 MC). This works. But wait, CS1231 was added to S1. S1: CS1101S, MA1521, IS1108, CS1231 (16 MC). S2: MA1522, ST2334? No, ST2334 must be S8. So S2: MA1522 (4 MC). S3: CS2030S, CS2040S (8 MC). S4: CS2103T, CS2105 (8 MC). S5: CS3219 (4 MC). S6: NOC. S7: CS3230, CS2109S (8 MC). S8: ST2334, ES2660 (8 MC). All constraints met. Why did I think NO_PLAN? Ah, I missed adding CS1231 in the first pass. With CS1231 added, a plan exists. Let's verify MC per semester >= 12. S1: 16. S2: 4. FAIL. Rule 9: 'In any semester where I take modules, I want at least 12 MC.' S2 has only MA1522 (4 MC). This violates the wish. Can we move MA1522? MA1522 has no prereqs. Can it go to S1? S1 would be 20 MC. Then S2 is empty. Empty semesters are fine. But S2 is empty, so no MC constraint. S3: 8 MC. FAIL. S3 has CS2030S, CS2040S (8 MC). Need 12. Can we add more to S3? Prereqs for S3 courses are S1/S2. S1 has CS1101S, MA1521, IS1108, CS1231. S2 is empty. Can we take CS2105 in S3? CS2105 requires CS2040S. CS2040S is in S3. Prereq must be completed or planned in STRICTLY earlier semester. So CS2105 cannot be in S3 if CS2040S is in S3. Can we move CS2040S to S2? CS2040S requires CS1010... (CS1101S in S1) and CS1231 (in S1). So CS2040S can be in S2. If CS2040S is in S2, then CS2030S can be in S2. S2: CS2030S, CS2040S, MA1522 (12 MC). OK. S3: CS2103T, CS2105, CS3219? CS2103T requires CS2030S and CS2040S (S2). OK. CS2105 requires CS2040S (S2). OK. CS3219 requires CS2103T. So CS3219 cannot be in S3. S3: CS2103T, CS2105 (8 MC). FAIL. Need 12. Can we add ES2660 to S3? ES2660 has no prereqs. Yes. S3: CS2103T, CS2105, ES2660 (12 MC). OK. S4: CS3219 (4 MC). FAIL. Need 12. Can we add CS3230 to S4? CS3230 requires CS2040S (S2) and CS1231 (S1). Yes. S4: CS3219, CS3230 (8 MC). FAIL. Need 12. Can we add CS2109S to S4? CS2109S requires CS2040S (S2) and MA1521 (S1). Yes. S4: CS3219, CS3230, CS2109S (12 MC). OK. S5: Empty. S6: NOC. S7: Empty? S8: ST2334 (4 MC). FAIL. Need 12. ST2334 is fixed in S8. Can we add another course to S8? Remaining courses: None. All required courses are placed. S8 has only ST2334. This violates the 'at least 12 MC' wish. Is there any other course? No. So the plan fails the soft wish. But soft wishes are not hard constraints. Rule 9 says 'In any semester where I take modules, I want at least 12 MC.' It is a 'want', not a 'must'. Rule 7 says 'Every must/has to wish holds.' Rule 9 is under 'PLANNING RULES' but the text says 'want'. Wait, Rule 9 text: 'If the student states a minimum MC per semester, every semester that has at least one course must reach it.' This is a HARD RULE if the student states a minimum. The student said 'In any semester where I take modules, I want at least 12 MC.' The word 'want' might imply soft, but Rule 9 explicitly says 'must reach it' if the student states a minimum. The prompt says 'If the student states a minimum MC per semester...'. The student said 'I want at least 12 MC'. This is stating a minimum. So it is a hard constraint. Therefore, S8 having 4 MC is a violation. Can we move ST2334? No, 'ST2334 has to be in semester 8'. Can we add another course to S8? No other courses left. Can we move other courses to S8? CS2109S, CS3230, ES2660. If we move CS2109S to S8, S8 has ST2334+CS2109S (8 MC). Still < 12. If we move CS3230 to S8, S8 has ST2334+CS3230 (8 MC). Still < 12. If we move ES2660 to S8, S8 has ST2334+ES2660 (8 MC). Still < 12. If we move all three to S8, S8 has 16 MC. But S7 would be empty. S4, S5, S6, S7 constraints? S4 had 12 MC. If we move CS3230 and CS2109S to S8, S4 has CS3219 (4 MC). FAIL. We need to fill S4, S5, S7. This seems impossible to satisfy the 12 MC min in every semester with courses, given the fixed ST2334 in S8 and the limited number of courses. Let's check if we can add more courses. The student listed 'need to take' 11 courses. Plus CS1231 added. Total 12 courses. 12 * 4 = 48 MC. 8 semesters. 48/8 = 6 MC avg. To get 12 MC in every semester with courses, we need at least 3 courses per semester (12 MC). We have 12 courses. 12/3 = 4 semesters. But we have 6 active semesters (1,2,3,4,5,7,8 - S6 is NOC). 7 semesters. 12 courses in 7 semesters. Average < 2 courses per semester. Impossible to have 12 MC in every semester. Thus, NO_PLAN.\", \"NO_PLAN\", \"reasons\": [\"The student requires a minimum of 12 MC in any semester with modules. With 12 required courses (including added CS1231) spread over 7 active semesters, it is impossible to reach 12 MC in every semester, especially with ST2334 fixed in Sem 8 (4 MC) and NOC in Sem 6. This violates the hard constraint in Rule 9.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "1": [
+      "CS1101S",
+      "MA1521",
+      "IS1108"
+     ],
+     "2": [
+      "MA1522",
+      "ST2334"
+     ],
+     "3": [
+      "CS2030S",
+      "CS2040S"
+     ],
+     "4": [
+      "CS2103T",
+      "CS2105"
+     ],
+     "5": [
+      "CS3219",
+      "CS3230"
+     ],
+     "7": [
+      "CS2109S",
+      "ES2660"
+     ]
+    }
+   },
+   "repair": "cut_reasons",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 8211,
+    "total_tokens": 11344,
+    "completion_tokens": 3133,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 58.71,
+    "attempts": 1
+   },
+   "seconds": 58.71,
+   "violations": [
+    "R1 must-take CS2101 missing",
+    "R4 CS2040S in semester 3: prerequisite not met ((CS1010 or CS1010E or CS1010X or CS1101S or CS1010S or CS1010J or CS1010A or CS1010HS or UTC2851) and (CS1231S or CS1231 or MA1100 or MA1100T))",
+    "R4 CS3230 in semester 5: prerequisite not met ((YSC2229 or CS2040S or CS2040 or CS2040C or CS2040DE or CS2040HS) and (CS1231 or CS1231S or MA1100T or MA1100))",
+    "R8 semester 2 has 8 MC, minimum 12",
+    "R8 semester 3 has 8 MC, minimum 12",
+    "R8 semester 4 has 8 MC, minimum 12",
+    "R8 semester 5 has 8 MC, minimum 12",
+    "R8 semester 7 has 8 MC, minimum 12",
+    "R9 must rule not met: ST2334 in semester 8"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"The student requires a minimum of 12 MC in any semester with modules. The total MC for the 12 required courses (including added CS1231) is 48 MC. With NOC in Sem 6 (0 MC), there are 7 active semesters. It is mathematically impossible to distribute 48 MC across 7 semesters such that every active semester has at least 12 MC (7 * 12 = 84 MC required). Additionally, ST2334 is fixed in Sem 8, which would only contain 4 MC, violating the 12 MC minimum.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "The student requires a minimum of 12 MC in any semester with modules. The total MC for the 12 required courses (including added CS1231) is 48 MC. With NOC in Sem 6 (0 MC), there are 7 active semesters. It is mathematically impossible to distribute 48 MC across 7 semesters such that every active semester has at least 12 MC (7 * 12 = 84 MC required). Additionally, ST2334 is fixed in Sem 8, which would only contain 4 MC, violating the 12 MC minimum."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11695,
+    "total_tokens": 11841,
+    "completion_tokens": 146,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 3.52,
+    "attempts": 1
+   },
+   "seconds": 3.52,
+   "violations": null
+  }
+ ]
+}

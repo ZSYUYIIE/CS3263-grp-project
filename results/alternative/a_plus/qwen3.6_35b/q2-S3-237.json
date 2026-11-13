@@ -1,0 +1,110 @@
+{
+ "id": "q2-S3-237",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 11.47,
+ "usage": {
+  "prompt_tokens": 23780,
+  "total_tokens": 24307,
+  "completion_tokens": 527,
+  "finish_reason": "stop",
+  "request_seconds": 11.47,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4221 requires CS3223, which is not in the student's list of remaining required modules.\",\n    \"CS4243 requires ST1131 (or similar stats course) and YSC2232/MA2001/MA1508E/MA1513/MA1522 (linear algebra) and CS2030S (programming II) and CS2040S (data structures). The student has completed CS2030S and CS2040S and MA1522, but has not completed ST1131 or any other qualifying statistics course (ST1131A, ST1232, ST2131, MA2116, etc.).\",\n    \"Without CS3223 and a qualifying statistics course, the prerequisites for CS4221 and CS4243 cannot be met with the given completed and required modules.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4221 requires CS3223, which is not in the student's list of remaining required modules.",
+   "CS4243 requires ST1131 (or similar stats course) and YSC2232/MA2001/MA1508E/MA1513/MA1522 (linear algebra) and CS2030S (programming II) and CS2040S (data structures). The student has completed CS2030S and CS2040S and MA1522, but has not completed ST1131 or any other qualifying statistics course (ST1131A, ST1232, ST2131, MA2116, etc.).",
+   "Without CS3223 and a qualifying statistics course, the prerequisites for CS4221 and CS4243 cannot be met with the given completed and required modules."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS2103T\",\n      \"CS2105\"\n    ],\n    \"4\": [\n      \"CS3219\",\n      \"CS3230\",\n      \"CS3281\"\n    ],\n    \"5\": [\n      \"CS2102\",\n      \"CS3213\"\n    ],\n    \"6\": [\n      \"CS4218\",\n      \"CS4221\"\n    ],\n    \"7\": [\n      \"CS4243\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2100 is taken in Sem 3 to satisfy the prerequisite for CS3281.\",\n    \"CS3219 is taken in Sem 4 to satisfy the prerequisite for CS2102 in Sem 5.\",\n    \"CS3281 is placed in Sem 4 to allow CS2103T (Sem 3) and CS2100 (Sem 3) prerequisites to be met, while keeping CS2103T as late as possible relative to its prerequisites.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS2103T",
+      "CS2105"
+     ],
+     "4": [
+      "CS3219",
+      "CS3230",
+      "CS3281"
+     ],
+     "5": [
+      "CS2102",
+      "CS3213"
+     ],
+     "6": [
+      "CS4218",
+      "CS4221"
+     ],
+     "7": [
+      "CS4243"
+     ]
+    },
+    "reasons": [
+     "CS2100 is taken in Sem 3 to satisfy the prerequisite for CS3281.",
+     "CS3219 is taken in Sem 4 to satisfy the prerequisite for CS2102 in Sem 5.",
+     "CS3281 is placed in Sem 4 to allow CS2103T (Sem 3) and CS2100 (Sem 3) prerequisites to be met, while keeping CS2103T as late as possible relative to its prerequisites."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11564,
+    "total_tokens": 11854,
+    "completion_tokens": 290,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 6.46,
+    "attempts": 1
+   },
+   "seconds": 6.46,
+   "violations": [
+    "R3 CS3213 not offered in Sem 1 (semester 5)",
+    "R4 CS4221 in semester 6: prerequisite not met (CS3223)",
+    "R4 CS4243 in semester 7: prerequisite not met ((YSC2232 or MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522) and (ST1131 or ST1131A or ST1232 or ST2131 or MA2116 or MA2116T or MA2216 or EE2012A or EE2012 or ST2334 or YSC2243) and (CS2030 or CS2030S or CS2030DE or CS2030HS or CS2113 or CS2113T) and (YSC2229 or CS2040 or CS2040S or CS2040DE or CS2040C or CS2040HS) and (MA1102R or MA2002 or YSC1216 or MA1505 or MA1521 or MA1507 or (MA1512 and MA1511)))"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4221 requires CS3223, which is not in the student's list of remaining required modules.\",\n    \"CS4243 requires ST1131 (or similar stats course) and YSC2232/MA2001/MA1508E/MA1513/MA1522 (linear algebra) and CS2030S (programming II) and CS2040S (data structures). The student has completed CS2030S and CS2040S and MA1522, but has not completed ST1131 or any other qualifying statistics course (ST1131A, ST1232, ST2131, MA2116, etc.).\",\n    \"Without CS3223 and a qualifying statistics course, the prerequisites for CS4221 and CS4243 cannot be met with the given completed and required modules.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4221 requires CS3223, which is not in the student's list of remaining required modules.",
+     "CS4243 requires ST1131 (or similar stats course) and YSC2232/MA2001/MA1508E/MA1513/MA1522 (linear algebra) and CS2030S (programming II) and CS2040S (data structures). The student has completed CS2030S and CS2040S and MA1522, but has not completed ST1131 or any other qualifying statistics course (ST1131A, ST1232, ST2131, MA2116, etc.).",
+     "Without CS3223 and a qualifying statistics course, the prerequisites for CS4221 and CS4243 cannot be met with the given completed and required modules."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12216,
+    "total_tokens": 12453,
+    "completion_tokens": 237,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.01,
+    "attempts": 1
+   },
+   "seconds": 5.01,
+   "violations": null
+  }
+ ]
+}

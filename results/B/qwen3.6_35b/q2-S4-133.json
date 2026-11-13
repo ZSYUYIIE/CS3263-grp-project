@@ -1,0 +1,97 @@
+{
+ "id": "q2-S4-133",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.79,
+ "solver_seconds": 0.002,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3165,
+  "total_tokens": 3685,
+  "completion_tokens": 520,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 6.79,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"completed\": [\n    \"ES2660\",\n    \"CS1231S\",\n    \"CS2109S\",\n    \"CS1101S\",\n    \"MA1521\",\n    \"CS3230\",\n    \"MA1522\",\n    \"CS2103T\",\n    \"CS2100\",\n    \"CS2101\",\n    \"CS3219\",\n    \"CS2030S\",\n    \"CS3213\",\n    \"CS2106\",\n    \"CS2040S\",\n    \"ST2334\"\n  ],\n  \"current_sem\": 6,\n  \"must_take\": [\n    \"CS2105\",\n    \"CS3268\",\n    \"IS1108\",\n    \"CS2102\",\n    \"CS4212\"\n  ],\n  \"sem_caps\": {\n    \"7\": 0\n  },\n  \"objective\": \"earliest_graduation\",\n  \"rules\": [\n    {\n      \"type\": \"same_sem\",\n      \"a\": \"CS2105\",\n      \"b\": \"IS1108\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS2102\",\n      \"b\": \"IS1108\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS4212\",\n      \"b\": \"IS1108\",\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS2105\",\n      \"b\": \"CS4212\",\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS4212\",\n      \"sem\": 8,\n      \"strength\": \"prefer\"\n    }\n  ],\n  \"late\": [\n    \"CS2102\"\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "completed": [
+   "ES2660",
+   "CS1231S",
+   "CS2109S",
+   "CS1101S",
+   "MA1521",
+   "CS3230",
+   "MA1522",
+   "CS2103T",
+   "CS2100",
+   "CS2101",
+   "CS3219",
+   "CS2030S",
+   "CS3213",
+   "CS2106",
+   "CS2040S",
+   "ST2334"
+  ],
+  "current_sem": 6,
+  "must_take": [
+   "CS2105",
+   "CS3268",
+   "IS1108",
+   "CS2102",
+   "CS4212"
+  ],
+  "sem_caps": {
+   "7": 0
+  },
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS2105",
+    "b": "IS1108",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2102",
+    "b": "IS1108",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS4212",
+    "b": "IS1108",
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS2105",
+    "b": "CS4212",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4212",
+    "sem": 8,
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "CS2102"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3268 cannot be placed in any remaining semester (offered in terms [1]; semesters left [6, 8])"
+  ]
+ }
+}

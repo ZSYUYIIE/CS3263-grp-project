@@ -1,0 +1,51 @@
+{
+ "id": "q2-S2-062",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 6.71,
+ "usage": {
+  "prompt_tokens": 9017,
+  "total_tokens": 9365,
+  "completion_tokens": 348,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 6.71,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2109S\",\n      \"CS3230\",\n      \"CS2102\",\n      \"CS2105\"\n    ],\n    \"6\": [\n      \"CS3234\",\n      \"CS3103\",\n      \"ST2334\"\n    ],\n    \"7\": [\n      \"CS4226\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2109S is fixed in Sem 5 as requested.\",\n    \"CS3230 is taken in Sem 5 to satisfy the preference of taking it before CS3234.\",\n    \"CS3234 requires CS2109S (Sem 5) and CS3230 (Sem 5), so it can be taken in Sem 6.\",\n    \"CS3103 requires CS2105 (Sem 5), so it can be taken in Sem 6.\",\n    \"CS4226 requires CS2105 (Sem 5) and ST2334. ST2334 is taken in Sem 6 to allow CS4226 in Sem 7.\",\n    \"ST2334 is placed in Sem 6 (as late as possible while allowing CS4226 in Sem 7, given Sem 8 limit of 1 module and no further courses needed after CS4226).\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2109S",
+    "CS3230",
+    "CS2102",
+    "CS2105"
+   ],
+   "6": [
+    "CS3234",
+    "CS3103",
+    "ST2334"
+   ],
+   "7": [
+    "CS4226"
+   ]
+  },
+  "reasons": [
+   "CS2109S is fixed in Sem 5 as requested.",
+   "CS3230 is taken in Sem 5 to satisfy the preference of taking it before CS3234.",
+   "CS3234 requires CS2109S (Sem 5) and CS3230 (Sem 5), so it can be taken in Sem 6.",
+   "CS3103 requires CS2105 (Sem 5), so it can be taken in Sem 6.",
+   "CS4226 requires CS2105 (Sem 5) and ST2334. ST2334 is taken in Sem 6 to allow CS4226 in Sem 7.",
+   "ST2334 is placed in Sem 6 (as late as possible while allowing CS4226 in Sem 7, given Sem 8 limit of 1 module and no further courses needed after CS4226)."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

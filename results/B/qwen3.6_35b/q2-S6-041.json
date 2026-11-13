@@ -1,0 +1,88 @@
+{
+ "id": "q2-S6-041",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 9.68,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3135,
+  "total_tokens": 3571,
+  "completion_tokens": 436,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 9.68,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"current_sem\": 5,\n  \"programme\": \"BComp CS Hons with minor in Economics\",\n  \"completed\": [\n    \"CS2040S\",\n    \"MA1521\",\n    \"CS2030S\",\n    \"CS4268\",\n    \"CS1231S\",\n    \"CS2101\",\n    \"CS2103T\",\n    \"IS1108\",\n    \"CS3230\",\n    \"CS2106\",\n    \"CS1101S\",\n    \"CS2100\",\n    \"MA1522\",\n    \"ST2334\",\n    \"CS2109S\"\n  ],\n  \"must_take\": [\n    \"CS2105\",\n    \"CS2102\",\n    \"CS3282\",\n    \"ES2660\",\n    \"CS4224\",\n    \"CS3219\"\n  ],\n  \"mc_max\": 16,\n  \"rules\": [\n    {\n      \"type\": \"same_sem\",\n      \"a\": \"CS3282\",\n      \"b\": \"CS3219\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS2105\",\n      \"b\": \"CS4224\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"ES2660\",\n      \"b\": \"CS2105\",\n      \"strength\": \"prefer\"\n    }\n  ],\n  \"late\": [\n    \"CS3219\",\n    \"CS2102\"\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "programme": "BComp CS Hons with minor in Economics",
+  "completed": [
+   "CS2040S",
+   "MA1521",
+   "CS2030S",
+   "CS4268",
+   "CS1231S",
+   "CS2101",
+   "CS2103T",
+   "IS1108",
+   "CS3230",
+   "CS2106",
+   "CS1101S",
+   "CS2100",
+   "MA1522",
+   "ST2334",
+   "CS2109S"
+  ],
+  "must_take": [
+   "CS2105",
+   "CS2102",
+   "CS3282",
+   "ES2660",
+   "CS4224",
+   "CS3219"
+  ],
+  "mc_max": 16,
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS3282",
+    "b": "CS3219",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2105",
+    "b": "CS4224",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "ES2660",
+    "b": "CS2105",
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "CS3219",
+   "CS2102"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "OUT_OF_SCOPE",
+  "reasons": [
+   "programme 'BComp CS Hons with minor in Economics' is not BComp (CS) Hons"
+  ],
+  "message": "I can only plan for BComp (CS) Hons single-major students under AY2026/2027 rules, and this request is outside that (programme 'BComp CS Hons with minor in Economics' is not BComp (CS) Hons). Course rules differ by programme and aren't in my data for your case, so please check with your faculty or academic advisor."
+ }
+}

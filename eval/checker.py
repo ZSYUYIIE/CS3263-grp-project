@@ -166,7 +166,7 @@ def check_plan(spec: dict, plan) -> list[str]:
     v += check_atap(spec, plan, sem_of, done)
     required = required_courses(spec)
     for c, s in sem_of.items():
-        if c in required or c not in C:
+        if c in required or c not in C or c == ATAP:
             continue
         needed = any(c in (C[d]["prereq"].get("courses") or []) and t > s
                      or c in (C[d]["coreq"].get("courses") or []) and t >= s
@@ -203,7 +203,7 @@ def measures(spec, plan) -> dict:
     required = required_courses(spec) | set(spec.get("completed") or [])
     return {"last_semester": max(used) if used else None,
             "total_mc": sum((C[c]["mc"] or 0) for c in codes if c in C),
-            "added": sorted(c for c in codes if c not in required)}
+            "added": sorted(c for c in codes if c not in required and c != ATAP)}
 
 
 def preferences_met(spec, plan, gold_plan) -> int:

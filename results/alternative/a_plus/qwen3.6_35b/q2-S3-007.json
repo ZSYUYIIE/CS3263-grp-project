@@ -1,0 +1,109 @@
+{
+ "id": "q2-S3-007",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 8.46,
+ "usage": {
+  "prompt_tokens": 30387,
+  "total_tokens": 30794,
+  "completion_tokens": 407,
+  "finish_reason": "stop",
+  "request_seconds": 8.46,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"ATAP (CP3880) cannot be placed in the last semester used (Sem 8) as it requires a later semester for other courses, but no semesters remain after 8.\",\n\"CS3282 is a must-take course but its prerequisite CS3281 is not in the student's completed list, must-take list, or available courses, making it impossible to plan.\",\n\"CS3103 prerequisite CS2105 is completed, but CS3227 prerequisite CS2103/CS2103T/CS2113/CS2103DE is not met (CS2103T is completed, so CS3227 is eligible), however the ATAP and CS3282 issues make a valid plan impossible.\"\n]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "ATAP (CP3880) cannot be placed in the last semester used (Sem 8) as it requires a later semester for other courses, but no semesters remain after 8.",
+   "CS3282 is a must-take course but its prerequisite CS3281 is not in the student's completed list, must-take list, or available courses, making it impossible to plan.",
+   "CS3103 prerequisite CS2105 is completed, but CS3227 prerequisite CS2103/CS2103T/CS2113/CS2103DE is not met (CS2103T is completed, so CS3227 is eligible), however the ATAP and CS3282 issues make a valid plan impossible."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"6\": [\n\"CS2102\",\n\"CS3210\"\n],\n\"7\": [\n\"CS2102\",\n\"CS4218\",\n\"CS3227\",\n\"CS3103\"\n],\n\"8\": [\n\"CP3880\"\n]\n},\n\"reasons\": [\n\"CS2102 and CS4218 are taken together in Sem 7 as requested, with CS2102 also in Sem 6 to satisfy the Sem 7 constraint.\",\n\"CS3227 is taken in Sem 7 before CS3103 in Sem 7 to satisfy the ordering constraint.\",\n\"ATAP (CP3880) is planned for Sem 8, the last semester, with 0 other courses to maximize its 12 MC without exceeding limits.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS2102",
+      "CS3210"
+     ],
+     "7": [
+      "CS2102",
+      "CS4218",
+      "CS3227",
+      "CS3103"
+     ],
+     "8": [
+      "CP3880"
+     ]
+    },
+    "reasons": [
+     "CS2102 and CS4218 are taken together in Sem 7 as requested, with CS2102 also in Sem 6 to satisfy the Sem 7 constraint.",
+     "CS3227 is taken in Sem 7 before CS3103 in Sem 7 to satisfy the ordering constraint.",
+     "ATAP (CP3880) is planned for Sem 8, the last semester, with 0 other courses to maximize its 12 MC without exceeding limits."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 15035,
+    "total_tokens": 15247,
+    "completion_tokens": 212,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.7,
+    "attempts": 1
+   },
+   "seconds": 4.7,
+   "violations": [
+    "R1 CS2102 planned twice",
+    "R1 must-take CS3282 missing",
+    "R9 must rule not met: before CS3227 CS3103",
+    "R11 ATAP in semester 8, the last semester used"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"ATAP (CP3880) cannot be placed in the last semester used (Sem 8) as it requires a later semester for other courses, but no semesters remain after 8.\",\n\"CS3282 is a must-take course but its prerequisite CS3281 is not in the student's completed list, must-take list, or available courses, making it impossible to plan.\",\n\"CS3103 prerequisite CS2105 is completed, but CS3227 prerequisite CS2103/CS2103T/CS2113/CS2103DE is not met (CS2103T is completed, so CS3227 is eligible), however the ATAP and CS3282 issues make a valid plan impossible.\"\n]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "ATAP (CP3880) cannot be placed in the last semester used (Sem 8) as it requires a later semester for other courses, but no semesters remain after 8.",
+     "CS3282 is a must-take course but its prerequisite CS3281 is not in the student's completed list, must-take list, or available courses, making it impossible to plan.",
+     "CS3103 prerequisite CS2105 is completed, but CS3227 prerequisite CS2103/CS2103T/CS2113/CS2103DE is not met (CS2103T is completed, so CS3227 is eligible), however the ATAP and CS3282 issues make a valid plan impossible."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 15352,
+    "total_tokens": 15547,
+    "completion_tokens": 195,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 3.76,
+    "attempts": 1
+   },
+   "seconds": 3.76,
+   "violations": null
+  }
+ ]
+}

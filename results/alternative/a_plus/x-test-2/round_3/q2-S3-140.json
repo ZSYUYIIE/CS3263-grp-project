@@ -1,0 +1,53 @@
+{
+ "id": "q2-S3-140",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 78.06,
+ "usage": {
+  "prompt_tokens": 9026,
+  "total_tokens": 16601,
+  "completion_tokens": 7575,
+  "prompt_tokens_details": {
+   "cached_tokens": 8704,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 7428
+  },
+  "finish_reason": "stop",
+  "request_seconds": 78.06,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS2101\",\"CS3210\",\"CS4222\"],\"7\":[\"CS2102\",\"CS4223\",\"CS3237\"],\"8\":[\"ES2660\"]},\"reasons\":[\"CS2101 is placed in semester 6, before CS4223, and CS3210 is added there as the prerequisite for CS4223.\",\"CS4223 and CS3237 are Sem 1 only, so they are in semester 7; CS2102 is also there as late as possible without sharing with ES2660.\",\"ES2660 is fixed in semester 8; all semesters stay within the 16 MC limit.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS2101",
+    "CS3210",
+    "CS4222"
+   ],
+   "7": [
+    "CS2102",
+    "CS4223",
+    "CS3237"
+   ],
+   "8": [
+    "ES2660"
+   ]
+  },
+  "reasons": [
+   "CS2101 is placed in semester 6, before CS4223, and CS3210 is added there as the prerequisite for CS4223.",
+   "CS4223 and CS3237 are Sem 1 only, so they are in semester 7; CS2102 is also there as late as possible without sharing with ES2660.",
+   "ES2660 is fixed in semester 8; all semesters stay within the 16 MC limit."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,50 @@
+{
+ "id": "q2-S4-188",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 64.6,
+ "usage": {
+  "prompt_tokens": 7429,
+  "total_tokens": 11868,
+  "completion_tokens": 4439,
+  "prompt_tokens_details": {
+   "cached_tokens": 7168,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4281
+  },
+  "finish_reason": "stop",
+  "request_seconds": 64.6,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"4\":[\"CS2101\",\"CS2102\"],\"5\":[\"CS3223\",\"CS4261\",\"ES2660\"],\"6\":[\"CS4221\"]},\"reasons\":[\"CS4221 is only available in Sem 2 and Y4S2 is exchange, so it must be semester 6; this forces CS3223 to semester 5 and CS2102/CS2101 to semester 4.\",\"CS4261 is fixed in semester 5, and ES2660 can join it, meeting the ES2660-with-CS4261 preference.\",\"CS2101 is as late as possible because it must share with CS2102, which is a prerequisite for CS3223.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2101",
+    "CS2102"
+   ],
+   "5": [
+    "CS3223",
+    "CS4261",
+    "ES2660"
+   ],
+   "6": [
+    "CS4221"
+   ]
+  },
+  "reasons": [
+   "CS4221 is only available in Sem 2 and Y4S2 is exchange, so it must be semester 6; this forces CS3223 to semester 5 and CS2102/CS2101 to semester 4.",
+   "CS4261 is fixed in semester 5, and ES2660 can join it, meeting the ES2660-with-CS4261 preference.",
+   "CS2101 is as late as possible because it must share with CS2102, which is a prerequisite for CS3223."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

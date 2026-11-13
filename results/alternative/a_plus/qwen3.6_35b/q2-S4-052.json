@@ -1,0 +1,56 @@
+{
+ "id": "q2-S4-052",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 0,
+ "end": "not a plan",
+ "seconds": 11.24,
+ "usage": {
+  "prompt_tokens": 11845,
+  "total_tokens": 12556,
+  "completion_tokens": 711,
+  "finish_reason": "stop",
+  "request_seconds": 11.24,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4223 prerequisite (CS3210 or CS3220 or CG3207) is not satisfied by completed courses and cannot be completed by Semester 7 given the 4 MC limit and other mandatory courses.\", \"CS4223 is required in Semester 7, but its prerequisites (CS3210/CS3220/CG3207) require CS2100/CS2100DE/CS2100HS/CG2007/EE2028/CG2028/EE2024. While CS2100 is completed, CS3210/CG3207/CS3220 are not. CS3210 requires CS2100 (met) but is 4 MC. Taking CS3210 in Sem 6 (current) and CS4223 in Sem 7 is possible for those two, but CS4223 also requires CS2106 or CG2271. CS2106 is completed. So CS4223 is eligible in Sem 7 if CS3210/CG3207/CS3220 is taken in Sem 6. However, CS4330 requires CS2220. CS2220 requires CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS. CS2040S is completed. So CS2220 is eligible. CS2220 is offered Sem 1. Sem 6 is Sem 2. CS2220 is NOT offered in Sem 2. Thus CS2220 cannot be taken in Sem 6. It must be taken in Sem 5 (past) or Sem 7 (Sem 1). If taken in Sem 7, CS4330 (Sem 2) cannot follow in Sem 8? No, Sem 8 is Sem 2. CS4330 is offered Sem 2. So CS2220 in Sem 7 (Sem 1) allows CS4330 in Sem 8 (Sem 2). But CS4223 is in Sem 7. Sem 7 limit is 4 MC. CS4223 is 4 MC. CS2220 is 4 MC. Cannot take both in Sem 7. If CS2220 in Sem 5 (past), it's not completed. Student didn't say they completed it. So it must be planned. If planned in Sem 7, conflicts with CS4223. If planned in Sem 6, CS2220 is not offered in Sem 2. So CS2220 cannot be taken in Sem 6. It must be taken in Sem 7 or earlier. Since Sem 5 is past and not completed, and Sem 6 doesn't offer it, it must be Sem 7. But Sem 7 has CS4223 (4 MC) and limit 4 MC. So CS2220 cannot be taken. Thus CS4330 cannot be taken. Therefore no plan.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4223 prerequisite (CS3210 or CS3220 or CG3207) is not satisfied by completed courses and cannot be completed by Semester 7 given the 4 MC limit and other mandatory courses.",
+   "CS4223 is required in Semester 7, but its prerequisites (CS3210/CS3220/CG3207) require CS2100/CS2100DE/CS2100HS/CG2007/EE2028/CG2028/EE2024. While CS2100 is completed, CS3210/CG3207/CS3220 are not. CS3210 requires CS2100 (met) but is 4 MC. Taking CS3210 in Sem 6 (current) and CS4223 in Sem 7 is possible for those two, but CS4223 also requires CS2106 or CG2271. CS2106 is completed. So CS4223 is eligible in Sem 7 if CS3210/CG3207/CS3220 is taken in Sem 6. However, CS4330 requires CS2220. CS2220 requires CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS. CS2040S is completed. So CS2220 is eligible. CS2220 is offered Sem 1. Sem 6 is Sem 2. CS2220 is NOT offered in Sem 2. Thus CS2220 cannot be taken in Sem 6. It must be taken in Sem 5 (past) or Sem 7 (Sem 1). If taken in Sem 7, CS4330 (Sem 2) cannot follow in Sem 8? No, Sem 8 is Sem 2. CS4330 is offered Sem 2. So CS2220 in Sem 7 (Sem 1) allows CS4330 in Sem 8 (Sem 2). But CS4223 is in Sem 7. Sem 7 limit is 4 MC. CS4223 is 4 MC. CS2220 is 4 MC. Cannot take both in Sem 7. If CS2220 in Sem 5 (past), it's not completed. Student didn't say they completed it. So it must be planned. If planned in Sem 7, conflicts with CS4223. If planned in Sem 6, CS2220 is not offered in Sem 2. So CS2220 cannot be taken in Sem 6. It must be taken in Sem 7 or earlier. Since Sem 5 is past and not completed, and Sem 6 doesn't offer it, it must be Sem 7. But Sem 7 has CS4223 (4 MC) and limit 4 MC. So CS2220 cannot be taken. Thus CS4330 cannot be taken. Therefore no plan."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4223 prerequisite (CS3210 or CS3220 or CG3207) is not satisfied by completed courses and cannot be completed by Semester 7 given the 4 MC limit and other mandatory courses.\", \"CS4223 is required in Semester 7, but its prerequisites (CS3210/CS3220/CG3207) require CS2100/CS2100DE/CS2100HS/CG2007/EE2028/CG2028/EE2024. While CS2100 is completed, CS3210/CG3207/CS3220 are not. CS3210 requires CS2100 (met) but is 4 MC. Taking CS3210 in Sem 6 (current) and CS4223 in Sem 7 is possible for those two, but CS4223 also requires CS2106 or CG2271. CS2106 is completed. So CS4223 is eligible in Sem 7 if CS3210/CG3207/CS3220 is taken in Sem 6. However, CS4330 requires CS2220. CS2220 requires CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS. CS2040S is completed. So CS2220 is eligible. CS2220 is offered Sem 1. Sem 6 is Sem 2. CS2220 is NOT offered in Sem 2. Thus CS2220 cannot be taken in Sem 6. It must be taken in Sem 5 (past) or Sem 7 (Sem 1). If taken in Sem 7, CS4330 (Sem 2) cannot follow in Sem 8? No, Sem 8 is Sem 2. CS4330 is offered Sem 2. So CS2220 in Sem 7 (Sem 1) allows CS4330 in Sem 8 (Sem 2). But CS4223 is in Sem 7. Sem 7 limit is 4 MC. CS4223 is 4 MC. CS2220 is 4 MC. Cannot take both in Sem 7. If CS2220 in Sem 5 (past), it's not completed. Student didn't say they completed it. So it must be planned. If planned in Sem 7, conflicts with CS4223. If planned in Sem 6, CS2220 is not offered in Sem 2. So CS2220 cannot be taken in Sem 6. It must be taken in Sem 7 or earlier. Since Sem 5 is past and not completed, and Sem 6 doesn't offer it, it must be Sem 7. But Sem 7 has CS4223 (4 MC) and limit 4 MC. So CS2220 cannot be taken. Thus CS4330 cannot be taken. Therefore no plan.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4223 prerequisite (CS3210 or CS3220 or CG3207) is not satisfied by completed courses and cannot be completed by Semester 7 given the 4 MC limit and other mandatory courses.",
+     "CS4223 is required in Semester 7, but its prerequisites (CS3210/CS3220/CG3207) require CS2100/CS2100DE/CS2100HS/CG2007/EE2028/CG2028/EE2024. While CS2100 is completed, CS3210/CG3207/CS3220 are not. CS3210 requires CS2100 (met) but is 4 MC. Taking CS3210 in Sem 6 (current) and CS4223 in Sem 7 is possible for those two, but CS4223 also requires CS2106 or CG2271. CS2106 is completed. So CS4223 is eligible in Sem 7 if CS3210/CG3207/CS3220 is taken in Sem 6. However, CS4330 requires CS2220. CS2220 requires CS2040/CS2040S/CS2040C/CS2040DE/CS2040HS. CS2040S is completed. So CS2220 is eligible. CS2220 is offered Sem 1. Sem 6 is Sem 2. CS2220 is NOT offered in Sem 2. Thus CS2220 cannot be taken in Sem 6. It must be taken in Sem 5 (past) or Sem 7 (Sem 1). If taken in Sem 7, CS4330 (Sem 2) cannot follow in Sem 8? No, Sem 8 is Sem 2. CS4330 is offered Sem 2. So CS2220 in Sem 7 (Sem 1) allows CS4330 in Sem 8 (Sem 2). But CS4223 is in Sem 7. Sem 7 limit is 4 MC. CS4223 is 4 MC. CS2220 is 4 MC. Cannot take both in Sem 7. If CS2220 in Sem 5 (past), it's not completed. Student didn't say they completed it. So it must be planned. If planned in Sem 7, conflicts with CS4223. If planned in Sem 6, CS2220 is not offered in Sem 2. So CS2220 cannot be taken in Sem 6. It must be taken in Sem 7 or earlier. Since Sem 5 is past and not completed, and Sem 6 doesn't offer it, it must be Sem 7. But Sem 7 has CS4223 (4 MC) and limit 4 MC. So CS2220 cannot be taken. Thus CS4330 cannot be taken. Therefore no plan."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11845,
+    "total_tokens": 12556,
+    "completion_tokens": 711,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 11.24,
+    "attempts": 1
+   },
+   "seconds": 11.24,
+   "violations": null
+  }
+ ]
+}

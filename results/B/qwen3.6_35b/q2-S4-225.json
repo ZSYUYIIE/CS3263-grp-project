@@ -1,0 +1,98 @@
+{
+ "id": "q2-S4-225",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 9.34,
+ "solver_seconds": 0.031,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3141,
+  "total_tokens": 3643,
+  "completion_tokens": 502,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 8.83,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"current_sem\": 6,\n  \"completed\": [\n    \"CS1231S\",\n    \"MA1521\",\n    \"ES2660\",\n    \"CS2103T\",\n    \"CS3230\",\n    \"CS3219\",\n    \"CS2109S\",\n    \"ST2334\",\n    \"CS2105\",\n    \"IS1108\",\n    \"CS2106\",\n    \"CS1101S\",\n    \"CS2030S\",\n    \"CS2040S\",\n    \"MA1522\",\n    \"CS2100\",\n    \"CS2101\",\n    \"CS4211\"\n  ],\n  \"must_take\": [\n    \"CS4212\",\n    \"CS4218\",\n    \"CS2102\",\n    \"CS3103\"\n  ],\n  \"objective\": \"earliest_graduation\",\n  \"unsupported\": [\n    \"light last semester\"\n  ],\n  \"rules\": [\n    {\n      \"type\": \"before\",\n      \"a\": \"CS3103\",\n      \"b\": \"CS2102\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS3103\",\n      \"sem\": 7,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS2102\",\n      \"sem\": 6,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS4212\",\n      \"b\": \"CS3103\",\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS4218\",\n      \"sem\": 7,\n      \"strength\": \"prefer\"\n    }\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 6,
+  "completed": [
+   "CS1231S",
+   "MA1521",
+   "ES2660",
+   "CS2103T",
+   "CS3230",
+   "CS3219",
+   "CS2109S",
+   "ST2334",
+   "CS2105",
+   "IS1108",
+   "CS2106",
+   "CS1101S",
+   "CS2030S",
+   "CS2040S",
+   "MA1522",
+   "CS2100",
+   "CS2101",
+   "CS4211"
+  ],
+  "must_take": [
+   "CS4212",
+   "CS4218",
+   "CS2102",
+   "CS3103"
+  ],
+  "objective": "earliest_graduation",
+  "unsupported": [
+   "light last semester"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3103",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3103",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS4212",
+    "b": "CS3103",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4218",
+    "sem": 7,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS3103 before CS2102; your rule: CS2102 in semester 6"
+  ],
+  "not_applied": [
+   "light last semester"
+  ]
+ }
+}

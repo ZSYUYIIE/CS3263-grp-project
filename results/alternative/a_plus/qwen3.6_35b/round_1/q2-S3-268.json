@@ -1,0 +1,50 @@
+{
+ "id": "q2-S3-268",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 3,
+ "end": "cap",
+ "seconds": 7.74,
+ "usage": {
+  "prompt_tokens": 18415,
+  "total_tokens": 18879,
+  "completion_tokens": 464,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.74,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2105\",\n      \"CS2109S\",\n      \"CS2102\",\n      \"ST2334\"\n    ],\n    \"6\": [\n      \"CS3230\",\n      \"CS3103\",\n      \"CS3234\"\n    ],\n    \"7\": [\n      \"CS4226\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2105 is taken in Sem 5 to satisfy prerequisites for CS3103, CS4226, and CS2109S.\",\n    \"CS3103 is offered in Sem 1 (Sem 5), satisfying its prerequisite CS2105.\",\n    \"CS4226 is placed in Sem 7 (latest possible) as requested, with prerequisites CS2105 (Sem 5) and ST2334 (Sem 5) met.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2105",
+    "CS2109S",
+    "CS2102",
+    "ST2334"
+   ],
+   "6": [
+    "CS3230",
+    "CS3103",
+    "CS3234"
+   ],
+   "7": [
+    "CS4226"
+   ]
+  },
+  "reasons": [
+   "CS2105 is taken in Sem 5 to satisfy prerequisites for CS3103, CS4226, and CS2109S.",
+   "CS3103 is offered in Sem 1 (Sem 5), satisfying its prerequisite CS2105.",
+   "CS4226 is placed in Sem 7 (latest possible) as requested, with prerequisites CS2105 (Sem 5) and ST2334 (Sem 5) met."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

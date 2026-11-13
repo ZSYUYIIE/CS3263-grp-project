@@ -1,0 +1,51 @@
+{
+ "id": "q1-mp-006-h",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 1.65,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2856,
+  "total_tokens": 2963,
+  "completion_tokens": 107,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 1.65,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\": \"eligible\", \"target\": \"CS4238\", \"current_sem\": 8, \"completed\": [\"CS2030S\", \"CS2105\", \"CS2040DE\", \"CS2107\", \"MA1100\", \"CS2101\", \"ESP2111\", \"CS2106\", \"CS1101S\", \"IS1108\", \"CS2100\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS4238",
+  "current_sem": 8,
+  "completed": [
+   "CS2030S",
+   "CS2105",
+   "CS2040DE",
+   "CS2107",
+   "MA1100",
+   "CS2101",
+   "ESP2111",
+   "CS2106",
+   "CS1101S",
+   "IS1108",
+   "CS2100"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS4238",
+  "semester": 8,
+  "reasons": [
+   "missing prerequisite: CS3235"
+  ],
+  "can_still_become_eligible": true
+ }
+}

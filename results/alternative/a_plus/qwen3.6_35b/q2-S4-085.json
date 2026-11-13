@@ -1,0 +1,111 @@
+{
+ "id": "q2-S4-085",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 7.69,
+ "usage": {
+  "prompt_tokens": 17459,
+  "total_tokens": 17952,
+  "completion_tokens": 493,
+  "finish_reason": "stop",
+  "request_seconds": 7.68,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"Missing prerequisites: CS2030/CS2040 require CS1010/CS1101S (CS1101S is a target module, not a prerequisite for itself). CS2109S requires Calculus (MA15xx/MA2002) which is not in the target list.\",\n    \"Missing prerequisites: CS4236 requires CS2107 (not in target list) and Discrete Math (CS1231/MA1100 not in target list). ST2334 requires Calculus (not in target list).\",\n    \"Mutual exclusion: CS2109S and CS3243 are mutually exclusive, so they cannot both be taken.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "Missing prerequisites: CS2030/CS2040 require CS1010/CS1101S (CS1101S is a target module, not a prerequisite for itself). CS2109S requires Calculus (MA15xx/MA2002) which is not in the target list.",
+   "Missing prerequisites: CS4236 requires CS2107 (not in target list) and Discrete Math (CS1231/MA1100 not in target list). ST2334 requires Calculus (not in target list).",
+   "Mutual exclusion: CS2109S and CS3243 are mutually exclusive, so they cannot both be taken."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"1\": [\n      \"CS1101S\",\n      \"CS1231\",\n      \"CS2030\",\n      \"CS2040\"\n    ],\n    \"2\": [\n      \"CS2103T\",\n      \"CS2105\",\n      \"CS2109S\",\n      \"CS2102\"\n    ],\n    \"4\": [\n      \"CS3219\",\n      \"CS3243\",\n      \"CS4236\",\n      \"ST2334\"\n    ]\n  },\n  \"reasons\": [\n    \"Prerequisites satisfied: CS2102 requires CS2030/CS2040 (taken in Sem 1). ST2334 requires CS2102 (taken in Sem 2).\",\n    \"CS2103T prerequisites (CS2030, CS2040) met in Sem 1, allowing placement in Sem 2 as requested.\",\n    \"Exchange in Sem 3 (Y2S1) respected. CS3219 placed in Sem 4 (Y2S2) as late as possible while satisfying its prerequisite CS2103T.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "1": [
+      "CS1101S",
+      "CS1231",
+      "CS2030",
+      "CS2040"
+     ],
+     "2": [
+      "CS2103T",
+      "CS2105",
+      "CS2109S",
+      "CS2102"
+     ],
+     "4": [
+      "CS3219",
+      "CS3243",
+      "CS4236",
+      "ST2334"
+     ]
+    },
+    "reasons": [
+     "Prerequisites satisfied: CS2102 requires CS2030/CS2040 (taken in Sem 1). ST2334 requires CS2102 (taken in Sem 2).",
+     "CS2103T prerequisites (CS2030, CS2040) met in Sem 1, allowing placement in Sem 2 as requested.",
+     "Exchange in Sem 3 (Y2S1) respected. CS3219 placed in Sem 4 (Y2S2) as late as possible while satisfying its prerequisite CS2103T."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 8330,
+    "total_tokens": 8634,
+    "completion_tokens": 304,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.23,
+    "attempts": 1
+   },
+   "seconds": 4.24,
+   "violations": [
+    "R4 CS2030 in semester 1: prerequisite not met (CS1010 or CS1010E or CS1010X or CS1101S or CS1010S or CS1010J or CS1010A or CS1010HS or UTC2851)",
+    "R4 CS2040 in semester 1: prerequisite not met (CS1010 or CS1010E or CS1010X or CS1101S or CS1010S or CS1010J or CS1010A or CS1010HS or UTC2851)",
+    "R4 CS2109S in semester 2: prerequisite not met ((YSC2229 or CS2040S or CS2040C or CS2040HS or CS2040 or CS2040DE) and ((MA1511 and MA1512) or MA1521 or MA2002 or MA1102R or MA1312 or MA1507 or MA1505))",
+    "R6 CS2109S and CS3243 exclude each other",
+    "R3 CS4236 not offered in Sem 2 (semester 4)",
+    "R4 CS4236 in semester 4: prerequisite not met ((YSC2229 or CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS) and CS2107 and (CS1231 or CS1231S or MA1100T or MA1100))",
+    "R4 ST2334 in semester 4: prerequisite not met (MA1312 or MA1505 or MA1511 or MA1521 or MA2002)"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"Missing prerequisites: CS2030/CS2040 require CS1010/CS1101S (CS1101S is a target module, not a prerequisite for itself). CS2109S requires Calculus (MA15xx/MA2002) which is not in the target list.\",\n    \"Missing prerequisites: CS4236 requires CS2107 (not in target list) and Discrete Math (CS1231/MA1100 not in target list). ST2334 requires Calculus (not in target list).\",\n    \"Mutual exclusion: CS2109S and CS3243 are mutually exclusive, so they cannot both be taken.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "Missing prerequisites: CS2030/CS2040 require CS1010/CS1101S (CS1101S is a target module, not a prerequisite for itself). CS2109S requires Calculus (MA15xx/MA2002) which is not in the target list.",
+     "Missing prerequisites: CS4236 requires CS2107 (not in target list) and Discrete Math (CS1231/MA1100 not in target list). ST2334 requires Calculus (not in target list).",
+     "Mutual exclusion: CS2109S and CS3243 are mutually exclusive, so they cannot both be taken."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 9129,
+    "total_tokens": 9318,
+    "completion_tokens": 189,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.45,
+    "attempts": 1
+   },
+   "seconds": 3.45,
+   "violations": null
+  }
+ ]
+}

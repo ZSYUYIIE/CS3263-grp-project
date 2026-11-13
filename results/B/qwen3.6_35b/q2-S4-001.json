@@ -1,0 +1,80 @@
+{
+ "id": "q2-S4-001",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.89,
+ "solver_seconds": 0.016,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3082,
+  "total_tokens": 3444,
+  "completion_tokens": 362,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 6.87,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"current_sem\": 3,\n  \"completed\": [\n    \"MA1522\",\n    \"CS2040S\",\n    \"CS1101S\",\n    \"MA1521\",\n    \"IS1108\",\n    \"CS2030S\",\n    \"CS1231S\"\n  ],\n  \"must_take\": [\n    \"CS3237\",\n    \"CS4221\",\n    \"CS2103T\",\n    \"CS3230\",\n    \"CS4247\",\n    \"CS2105\",\n    \"CS3241\"\n  ],\n  \"mc_max\": 4,\n  \"rules\": [\n    {\n      \"type\": \"before\",\n      \"a\": \"CS2103T\",\n      \"b\": \"CS3241\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS3237\",\n      \"b\": \"CS3241\",\n      \"strength\": \"prefer\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"CS2103T\",\n      \"b\": \"CS2105\",\n      \"strength\": \"prefer\"\n    }\n  ],\n  \"unsupported\": [\n    \"at most two modules with final exams in a semester\",\n    \"avoid modules with heavy group projects\"\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "completed": [
+   "MA1522",
+   "CS2040S",
+   "CS1101S",
+   "MA1521",
+   "IS1108",
+   "CS2030S",
+   "CS1231S"
+  ],
+  "must_take": [
+   "CS3237",
+   "CS4221",
+   "CS2103T",
+   "CS3230",
+   "CS4247",
+   "CS2105",
+   "CS3241"
+  ],
+  "mc_max": 4,
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS2103T",
+    "b": "CS3241",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3237",
+    "b": "CS3241",
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS2103T",
+    "b": "CS2105",
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "at most two modules with final exams in a semester",
+   "avoid modules with heavy group projects"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "the required courses need 28 MC but the remaining semesters [3, 4, 5, 6, 7, 8] allow at most 24 MC"
+  ],
+  "not_applied": [
+   "at most two modules with final exams in a semester",
+   "avoid modules with heavy group projects"
+  ]
+ }
+}

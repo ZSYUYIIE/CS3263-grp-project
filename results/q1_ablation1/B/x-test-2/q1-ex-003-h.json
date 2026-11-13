@@ -1,0 +1,63 @@
+{
+ "id": "q1-ex-003-h",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 7.67,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2573,
+  "total_tokens": 2938,
+  "completion_tokens": 365,
+  "prompt_tokens_details": {
+   "cached_tokens": 2432,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 277
+  },
+  "finish_reason": "stop",
+  "request_seconds": 7.67,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\":\"eligible\",\"target\":\"ST2132\",\"current_sem\":8,\"completed\":[\"ST2334\",\"CS2105\",\"CS1101S\",\"EC2303\",\"CS2040C\",\"IS1108\",\"MA1522\",\"CS2100DE\",\"IS2101\",\"MA1521\",\"ES1000\",\"CS2030S\",\"CS2109S\",\"ESP2107\",\"MA1512\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "ST2132",
+  "current_sem": 8,
+  "completed": [
+   "ST2334",
+   "CS2105",
+   "CS1101S",
+   "EC2303",
+   "CS2040C",
+   "IS1108",
+   "MA1522",
+   "CS2100DE",
+   "IS2101",
+   "MA1521",
+   "ES1000",
+   "CS2030S",
+   "CS2109S",
+   "ESP2107",
+   "MA1512"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "ST2132",
+  "semester": 8,
+  "reasons": [
+   "mutually exclusive with completed EC2303 (listed on their page)"
+  ],
+  "can_still_become_eligible": false,
+  "never_eligible_because": "ST2132 is ruled out by completed EC2303"
+ }
+}

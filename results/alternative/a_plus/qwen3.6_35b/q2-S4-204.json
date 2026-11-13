@@ -1,0 +1,106 @@
+{
+ "id": "q2-S4-204",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 6.57,
+ "usage": {
+  "prompt_tokens": 21482,
+  "total_tokens": 21778,
+  "completion_tokens": 296,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 6.57,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3235 requires CS2107, which is not completed and not in the mandatory list.\",\n    \"CS4226 is offered only in Sem 1, but the student requires it in Sem 8 (Sem 2).\",\n    \"Cannot satisfy all constraints simultaneously.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3235 requires CS2107, which is not completed and not in the mandatory list.",
+   "CS4226 is offered only in Sem 1, but the student requires it in Sem 8 (Sem 2).",
+   "Cannot satisfy all constraints simultaneously."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2102\",\n      \"CS2105\"\n    ],\n    \"6\": [\n      \"CS3223\"\n    ],\n    \"7\": [],\n    \"8\": [\n      \"CS3235\",\n      \"CS4226\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2102 and CS2105 prerequisites are satisfied by completed courses.\",\n    \"CS3223 requires CS2102 and CS2040S; planned in Sem 6 after CS2102 in Sem 5.\",\n    \"CS3235 and CS4226 prerequisites satisfied; CS3235 fixed in Sem 8, CS4226 placed in Sem 8.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2102",
+      "CS2105"
+     ],
+     "6": [
+      "CS3223"
+     ],
+     "7": [],
+     "8": [
+      "CS3235",
+      "CS4226"
+     ]
+    },
+    "reasons": [
+     "CS2102 and CS2105 prerequisites are satisfied by completed courses.",
+     "CS3223 requires CS2102 and CS2040S; planned in Sem 6 after CS2102 in Sem 5.",
+     "CS3235 and CS4226 prerequisites satisfied; CS3235 fixed in Sem 8, CS4226 placed in Sem 8."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10573,
+    "total_tokens": 10780,
+    "completion_tokens": 207,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 4.5,
+    "attempts": 1
+   },
+   "seconds": 4.5,
+   "violations": [
+    "R4 CS3235 in semester 8: prerequisite not met ((CS2105 or EE3204 or EE4204) and (CS2106 or YSC3217 or CG2271) and CS2107)",
+    "R3 CS4226 not offered in Sem 2 (semester 8)"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS3235 requires CS2107, which is not completed and not in the mandatory list.\",\n    \"CS4226 is offered only in Sem 1, but the student requires it in Sem 8 (Sem 2).\",\n    \"Cannot satisfy all constraints simultaneously.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS3235 requires CS2107, which is not completed and not in the mandatory list.",
+     "CS4226 is offered only in Sem 1, but the student requires it in Sem 8 (Sem 2).",
+     "Cannot satisfy all constraints simultaneously."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 10909,
+    "total_tokens": 10998,
+    "completion_tokens": 89,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.07,
+    "attempts": 1
+   },
+   "seconds": 2.07,
+   "violations": null
+  }
+ ]
+}

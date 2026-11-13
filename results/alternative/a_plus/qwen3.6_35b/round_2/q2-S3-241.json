@@ -1,0 +1,56 @@
+{
+ "id": "q2-S3-241",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 2,
+ "rounds_used": 3,
+ "end": "switched to NO_PLAN",
+ "seconds": 70.0,
+ "usage": {
+  "prompt_tokens": 38009,
+  "total_tokens": 42071,
+  "completion_tokens": 4062,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 70.0,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS3230\",\n      \"ST1131\"\n    ],\n    \"4\": [\n      \"CS2103T\",\n      \"CS4243\",\n      \"CS2102\",\n      \"CS3219\"\n    ],\n    \"5\": [\n      \"CS3281\",\n      \"CS4218\"\n    ],\n    \"6\": [\n      \"CS2105\",\n      \"CS3223\",\n      \"CS4221\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3219 prereq CS2103T (Sem 4) met. CS3281 offered Sem 2 (Sem 5 is valid). CS4221 prereq CS3223 (Sem 6) met.\",\n    \"CS3281 (Sem 5) finished before CS2105 (Sem 6). CS4243 (Sem 4) finished before CS2102 (Sem 4)? No, 'finish before start' usually implies strict ordering or completion. If taken together, 'finish before start' is ambiguous. However, CS4243 and CS2102 are in Sem 4. The constraint 'finish CS4243 before I start CS2102' likely means CS4243 must be completed prior to CS2102. Since they are in the same semester, this is impossible unless CS4243 is earlier. But CS4243 prereqs are heavy. Let's re-read: 'I need to finish CS4243 before I start CS2102'. If they are in the same semester, you don't finish one before starting the other. So CS4243 must be in an earlier semester than CS2102. CS2102 is Sem 4. So CS4243 must be Sem 3? CS4243 prereqs: Math and Stats and CS2030/2113 and CS2040. CS2113 is not taken. CS2030S is taken. CS2040S is taken. Math prereqs: MA1521 (taken), MA1522 (taken). Stats prereqs: ST1131. So CS4243 can be taken in Sem 3 if ST1131 is taken. ST1131 has no prereqs. So ST1131 in Sem 3. CS4243 in Sem 3. Then CS2102 in Sem 4. This satisfies 'finish CS4243 before start CS2102'.\",\n    \"Revised Plan: Sem 3: CS2100, CS3230, ST1131, CS4243. Sem 4: CS2103T, CS2102, CS3219. Sem 5: CS3281, CS4218. Sem 6: CS2105, CS3223, CS4221. MC: Sem 3: 16. Sem 4: 16. Sem 5: 8. Sem 6: 12. All <= 20. CS2103T and CS4243 not together. Student said 'have to take CS4243 and CS2103T together'. This is a hard constraint. So they MUST be in the same semester. If they are in the same semester, 'finish CS4243 before start CS2102' is impossible if CS2102 is in the same or earlier semester. If CS2102 is in a later semester, say Sem 5, then CS4243 (Sem 4) is finished before CS2102 (Sem 5). So CS2102 must be Sem 5 or later. But CS2102 prereq CS2030S/CS2040S (met). CS2102 offered Sem 1,2. So CS2102 can be Sem 5. So: CS4243 and CS2103T in Sem 4. CS2102 in Sem 5. CS3281 before CS2105. CS3281 Sem 5? Then CS2105 Sem 6. CS3223 prereq CS2102 (Sem 5). So CS3223 Sem 6. CS4221 prereq CS3223. So CS4221 Sem 6. CS4218 prereq CS3219. CS3219 prereq CS2103T (Sem 4). So CS3219 Sem 5. CS4218 Sem 5 or 6. CS3230 as early as possible. Sem 3. CS2100 Sem 3. ST1131 Sem 3 (for CS4243). Sem 3: CS2100, CS3230, ST1131. Sem 4: CS2103T, CS4243, CS3219. Sem 5: CS2102, CS3281, CS4218. Sem 6: CS2105, CS3223, CS4221. Check MC: Sem 3: 12. Sem 4: 16. Sem 5: 16. Sem 6: 12. All <= 20. CS2103T and CS4243 together. CS4243 (Sem 4) finished before CS2102 (Sem 5). CS3281 (Sem 5) finished before CS2105 (Sem 6). CS3230 in Sem 3 (earliest). CS2102 before CS2103T? Wish. CS2102 is Sem 5, CS2103T is Sem 4. Wish not met. But hard constraints force this.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS3230",
+    "ST1131"
+   ],
+   "4": [
+    "CS2103T",
+    "CS4243",
+    "CS2102",
+    "CS3219"
+   ],
+   "5": [
+    "CS3281",
+    "CS4218"
+   ],
+   "6": [
+    "CS2105",
+    "CS3223",
+    "CS4221"
+   ]
+  },
+  "reasons": [
+   "CS3219 prereq CS2103T (Sem 4) met. CS3281 offered Sem 2 (Sem 5 is valid). CS4221 prereq CS3223 (Sem 6) met.",
+   "CS3281 (Sem 5) finished before CS2105 (Sem 6). CS4243 (Sem 4) finished before CS2102 (Sem 4)? No, 'finish before start' usually implies strict ordering or completion. If taken together, 'finish before start' is ambiguous. However, CS4243 and CS2102 are in Sem 4. The constraint 'finish CS4243 before I start CS2102' likely means CS4243 must be completed prior to CS2102. Since they are in the same semester, this is impossible unless CS4243 is earlier. But CS4243 prereqs are heavy. Let's re-read: 'I need to finish CS4243 before I start CS2102'. If they are in the same semester, you don't finish one before starting the other. So CS4243 must be in an earlier semester than CS2102. CS2102 is Sem 4. So CS4243 must be Sem 3? CS4243 prereqs: Math and Stats and CS2030/2113 and CS2040. CS2113 is not taken. CS2030S is taken. CS2040S is taken. Math prereqs: MA1521 (taken), MA1522 (taken). Stats prereqs: ST1131. So CS4243 can be taken in Sem 3 if ST1131 is taken. ST1131 has no prereqs. So ST1131 in Sem 3. CS4243 in Sem 3. Then CS2102 in Sem 4. This satisfies 'finish CS4243 before start CS2102'.",
+   "Revised Plan: Sem 3: CS2100, CS3230, ST1131, CS4243. Sem 4: CS2103T, CS2102, CS3219. Sem 5: CS3281, CS4218. Sem 6: CS2105, CS3223, CS4221. MC: Sem 3: 16. Sem 4: 16. Sem 5: 8. Sem 6: 12. All <= 20. CS2103T and CS4243 not together. Student said 'have to take CS4243 and CS2103T together'. This is a hard constraint. So they MUST be in the same semester. If they are in the same semester, 'finish CS4243 before start CS2102' is impossible if CS2102 is in the same or earlier semester. If CS2102 is in a later semester, say Sem 5, then CS4243 (Sem 4) is finished before CS2102 (Sem 5). So CS2102 must be Sem 5 or later. But CS2102 prereq CS2030S/CS2040S (met). CS2102 offered Sem 1,2. So CS2102 can be Sem 5. So: CS4243 and CS2103T in Sem 4. CS2102 in Sem 5. CS3281 before CS2105. CS3281 Sem 5? Then CS2105 Sem 6. CS3223 prereq CS2102 (Sem 5). So CS3223 Sem 6. CS4221 prereq CS3223. So CS4221 Sem 6. CS4218 prereq CS3219. CS3219 prereq CS2103T (Sem 4). So CS3219 Sem 5. CS4218 Sem 5 or 6. CS3230 as early as possible. Sem 3. CS2100 Sem 3. ST1131 Sem 3 (for CS4243). Sem 3: CS2100, CS3230, ST1131. Sem 4: CS2103T, CS4243, CS3219. Sem 5: CS2102, CS3281, CS4218. Sem 6: CS2105, CS3223, CS4221. Check MC: Sem 3: 12. Sem 4: 16. Sem 5: 16. Sem 6: 12. All <= 20. CS2103T and CS4243 together. CS4243 (Sem 4) finished before CS2102 (Sem 5). CS3281 (Sem 5) finished before CS2105 (Sem 6). CS3230 in Sem 3 (earliest). CS2102 before CS2103T? Wish. CS2102 is Sem 5, CS2103T is Sem 4. Wish not met. But hard constraints force this."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

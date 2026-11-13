@@ -1,0 +1,49 @@
+{
+ "id": "q2-S4-085",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 4.24,
+ "usage": {
+  "prompt_tokens": 8330,
+  "total_tokens": 8634,
+  "completion_tokens": 304,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 4.23,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"1\": [\n      \"CS1101S\",\n      \"CS1231\",\n      \"CS2030\",\n      \"CS2040\"\n    ],\n    \"2\": [\n      \"CS2103T\",\n      \"CS2105\",\n      \"CS2109S\",\n      \"CS2102\"\n    ],\n    \"4\": [\n      \"CS3219\",\n      \"CS3243\",\n      \"CS4236\",\n      \"ST2334\"\n    ]\n  },\n  \"reasons\": [\n    \"Prerequisites satisfied: CS2102 requires CS2030/CS2040 (taken in Sem 1). ST2334 requires CS2102 (taken in Sem 2).\",\n    \"CS2103T prerequisites (CS2030, CS2040) met in Sem 1, allowing placement in Sem 2 as requested.\",\n    \"Exchange in Sem 3 (Y2S1) respected. CS3219 placed in Sem 4 (Y2S2) as late as possible while satisfying its prerequisite CS2103T.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1101S",
+    "CS1231",
+    "CS2030",
+    "CS2040"
+   ],
+   "2": [
+    "CS2103T",
+    "CS2105",
+    "CS2109S",
+    "CS2102"
+   ],
+   "4": [
+    "CS3219",
+    "CS3243",
+    "CS4236",
+    "ST2334"
+   ]
+  },
+  "reasons": [
+   "Prerequisites satisfied: CS2102 requires CS2030/CS2040 (taken in Sem 1). ST2334 requires CS2102 (taken in Sem 2).",
+   "CS2103T prerequisites (CS2030, CS2040) met in Sem 1, allowing placement in Sem 2 as requested.",
+   "Exchange in Sem 3 (Y2S1) respected. CS3219 placed in Sem 4 (Y2S2) as late as possible while satisfying its prerequisite CS2103T."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

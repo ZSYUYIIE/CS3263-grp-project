@@ -1,0 +1,79 @@
+{
+ "id": "q2-S4-164",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 22.0,
+ "solver_seconds": 0.071,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3169,
+  "total_tokens": 3495,
+  "completion_tokens": 326,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 21.93,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 4,\n\"completed\": [\n\"CS2100\",\n\"CS2101\",\n\"CS1101S\",\n\"CS2030S\",\n\"MA1521\",\n\"CS2040S\",\n\"IS1108\",\n\"CS2103T\",\n\"MA1522\",\n\"CS1231S\",\n\"ST2334\",\n\"ES2660\"\n],\n\"must_take\": [\n\"CS3230\",\n\"CS2105\",\n\"CS2102\",\n\"CS4238\",\n\"CS3219\"\n],\n\"programme\": \"BComp CS Hons\",\n\"sem_caps\": {\n\"5\": 0,\n\"6\": 0,\n\"7\": 0\n},\n\"early\": [\n\"CS3230\",\n\"CS2105\",\n\"CS3219\"\n],\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2102\",\n\"sem\": 4,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3219\",\n\"b\": \"CS3230\",\n\"strength\": \"must\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "CS2100",
+   "CS2101",
+   "CS1101S",
+   "CS2030S",
+   "MA1521",
+   "CS2040S",
+   "IS1108",
+   "CS2103T",
+   "MA1522",
+   "CS1231S",
+   "ST2334",
+   "ES2660"
+  ],
+  "must_take": [
+   "CS3230",
+   "CS2105",
+   "CS2102",
+   "CS4238",
+   "CS3219"
+  ],
+  "programme": "BComp CS Hons",
+  "sem_caps": {
+   "5": 0,
+   "6": 0,
+   "7": 0
+  },
+  "early": [
+   "CS3230",
+   "CS2105",
+   "CS3219"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 4,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3219",
+    "b": "CS3230",
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: the prerequisites of CS3235; the prerequisites of CS4238; the MC limits (at most 20 MC per semester; semesters 5, 6, 7 blocked)"
+  ]
+ }
+}

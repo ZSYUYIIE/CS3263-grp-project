@@ -1,0 +1,97 @@
+{
+ "id": "q2-S4-139",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.27,
+ "solver_seconds": 0.001,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3154,
+  "total_tokens": 3607,
+  "completion_tokens": 453,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 6.27,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 7,\n\"programme\": \"BComp CS Hons\",\n\"completed\": [\n\"CS2100\",\n\"CS3219\",\n\"CS2106\",\n\"CS2103T\",\n\"MA1522\",\n\"CS1101S\",\n\"CS2109S\",\n\"ST2334\",\n\"CS3230\",\n\"CS2102\",\n\"IS1108\",\n\"CS1231S\",\n\"ES2660\",\n\"CS2105\",\n\"CS2040S\",\n\"CS2030S\",\n\"CS3234\",\n\"MA1521\"\n],\n\"must_take\": [\n\"CS4212\",\n\"CS3241\",\n\"CS2101\",\n\"CS4330\"\n],\n\"mc_max\": 16,\n\"sem_caps\": {\n\"7\": 0\n},\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2101\",\n\"b\": \"CS4212\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4212\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4330\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4330\",\n\"b\": \"CS2101\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2101\",\n\"sem\": 7,\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "CS2100",
+   "CS3219",
+   "CS2106",
+   "CS2103T",
+   "MA1522",
+   "CS1101S",
+   "CS2109S",
+   "ST2334",
+   "CS3230",
+   "CS2102",
+   "IS1108",
+   "CS1231S",
+   "ES2660",
+   "CS2105",
+   "CS2040S",
+   "CS2030S",
+   "CS3234",
+   "MA1521"
+  ],
+  "must_take": [
+   "CS4212",
+   "CS3241",
+   "CS2101",
+   "CS4330"
+  ],
+  "mc_max": 16,
+  "sem_caps": {
+   "7": 0
+  },
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS2101",
+    "b": "CS4212",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4212",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4330",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4330",
+    "b": "CS2101",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2101",
+    "sem": 7,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS3241 cannot be placed in any remaining semester (offered in terms [1]; semesters left [8])"
+  ]
+ }
+}

@@ -1,0 +1,114 @@
+{
+ "id": "q2-S4-049",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 5.37,
+ "solver_seconds": 0.067,
+ "max_tokens": 49152,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 3066,
+  "total_tokens": 3355,
+  "completion_tokens": 289,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.3,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 3,\n\"completed\": [\n\"CS2040S\",\n\"CS1101S\",\n\"CS1231S\",\n\"MA1522\",\n\"MA1521\",\n\"CS2030S\",\n\"IS1108\"\n],\n\"must_take\": [\n\"CS2102\",\n\"CS2101\",\n\"CS2103T\",\n\"CS3210\",\n\"CS3236\",\n\"CS3281\",\n\"ST2334\"\n],\n\"mc_max\": 8,\n\"sem_caps\": {\n\"6\": 0\n},\n\"rules\": [\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3210\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2103T\",\n\"b\": \"ST2334\",\n\"strength\": \"prefer\"\n}\n],\n\"unsupported\": [\n\"at most two modules with final exams in a semester\",\n\"put CS2103T as late as possible\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "completed": [
+   "CS2040S",
+   "CS1101S",
+   "CS1231S",
+   "MA1522",
+   "MA1521",
+   "CS2030S",
+   "IS1108"
+  ],
+  "must_take": [
+   "CS2102",
+   "CS2101",
+   "CS2103T",
+   "CS3210",
+   "CS3236",
+   "CS3281",
+   "ST2334"
+  ],
+  "mc_max": 8,
+  "sem_caps": {
+   "6": 0
+  },
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS3210",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS2103T",
+    "b": "ST2334",
+    "strength": "prefer"
+   }
+  ],
+  "unsupported": [
+   "at most two modules with final exams in a semester",
+   "put CS2103T as late as possible"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "none",
+  "last_semester": 8,
+  "plan": {
+   "3": [
+    "CS2101",
+    "CS2103T"
+   ],
+   "4": [
+    "CS2100DE",
+    "ST2334"
+   ],
+   "5": [
+    "CS2102",
+    "CS3210"
+   ],
+   "6": [],
+   "7": [],
+   "8": [
+    "CS3236",
+    "CS3281"
+   ]
+  },
+  "mc_per_semester": {
+   "3": 8,
+   "4": 8,
+   "5": 8,
+   "6": 0,
+   "7": 0,
+   "8": 8
+  },
+  "preferences_met": [
+   "CS2103T before ST2334"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS2100DE"
+  ],
+  "not_applied": [
+   "at most two modules with final exams in a semester",
+   "put CS2103T as late as possible"
+  ]
+ }
+}

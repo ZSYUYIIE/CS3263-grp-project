@@ -1,0 +1,94 @@
+{
+ "id": "q2-S4-128",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 8.19,
+ "usage": {
+  "prompt_tokens": 25458,
+  "total_tokens": 25757,
+  "completion_tokens": 299,
+  "finish_reason": "stop",
+  "request_seconds": 8.19,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4262 requires CS3244, CS3264, or CG3201, none of which are completed or planned. CS3213 requires CS2103T (completed) but is only offered in Sem 2 (even semesters), while the student is in Sem 5 (odd) and has a leave in Sem 6. CS4262 is only offered in Sem 2. The student cannot take these courses in Sem 5 (odd) or Sem 6 (leave). Sem 7 is odd, so Sem 2 courses cannot be taken. Sem 8 is exchange (0 MC). Thus, CS3213 and CS4262 cannot be scheduled.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4262 requires CS3244, CS3264, or CG3201, none of which are completed or planned. CS3213 requires CS2103T (completed) but is only offered in Sem 2 (even semesters), while the student is in Sem 5 (odd) and has a leave in Sem 6. CS4262 is only offered in Sem 2. The student cannot take these courses in Sem 5 (odd) or Sem 6 (leave). Sem 7 is odd, so Sem 2 courses cannot be taken. Sem 8 is exchange (0 MC). Thus, CS3213 and CS4262 cannot be scheduled."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"PLAN\", \"plan\": {\"5\": [\"CS2102\", \"CS2101\", \"CS2105\"], \"7\": [\"CS4262\", \"CS3213\"]}, \"reasons\": [\"All required courses planned with prerequisites satisfied. CS2102 taken in Sem 5 before CS2105. CS2101 and CS2105 taken together in Sem 5. CS4262 and CS3213 taken in Sem 7. Sem 6 is leave, Sem 8 is exchange.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CS2102",
+      "CS2101",
+      "CS2105"
+     ],
+     "7": [
+      "CS4262",
+      "CS3213"
+     ]
+    },
+    "reasons": [
+     "All required courses planned with prerequisites satisfied. CS2102 taken in Sem 5 before CS2105. CS2101 and CS2105 taken together in Sem 5. CS4262 and CS3213 taken in Sem 7. Sem 6 is leave, Sem 8 is exchange."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12580,
+    "total_tokens": 12710,
+    "completion_tokens": 130,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.15,
+    "attempts": 1
+   },
+   "seconds": 3.15,
+   "violations": [
+    "R1 semester 5 is outside 6..8",
+    "R3 CS3213 not offered in Sem 1 (semester 7)",
+    "R3 CS4262 not offered in Sem 1 (semester 7)",
+    "R4 CS4262 in semester 7: prerequisite not met ((CS2106 or CG2271) and (CS3244 or CS3264 or CG3201))",
+    "R9 must rule not met: before CS2102 CS2105"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS4262 requires CS3244, CS3264, or CG3201, none of which are completed or planned. CS3213 requires CS2103T (completed) but is only offered in Sem 2 (even semesters), while the student is in Sem 5 (odd) and has a leave in Sem 6. CS4262 is only offered in Sem 2. The student cannot take these courses in Sem 5 (odd) or Sem 6 (leave). Sem 7 is odd, so Sem 2 courses cannot be taken. Sem 8 is exchange (0 MC). Thus, CS3213 and CS4262 cannot be scheduled.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4262 requires CS3244, CS3264, or CG3201, none of which are completed or planned. CS3213 requires CS2103T (completed) but is only offered in Sem 2 (even semesters), while the student is in Sem 5 (odd) and has a leave in Sem 6. CS4262 is only offered in Sem 2. The student cannot take these courses in Sem 5 (odd) or Sem 6 (leave). Sem 7 is odd, so Sem 2 courses cannot be taken. Sem 8 is exchange (0 MC). Thus, CS3213 and CS4262 cannot be scheduled."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12878,
+    "total_tokens": 13047,
+    "completion_tokens": 169,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.04,
+    "attempts": 1
+   },
+   "seconds": 5.04,
+   "violations": null
+  }
+ ]
+}

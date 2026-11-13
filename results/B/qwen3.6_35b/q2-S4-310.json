@@ -1,0 +1,78 @@
+{
+ "id": "q2-S4-310",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 16.32,
+ "solver_seconds": 0.342,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3082,
+  "total_tokens": 3404,
+  "completion_tokens": 322,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 15.98,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 3,\n\"programme\": \"BComp CS Hons\",\n\"completed\": [\n\"CS1101S\",\n\"CS1231S\",\n\"MA1522\",\n\"IS1108\",\n\"MA1521\",\n\"CS2040S\",\n\"CS2030S\"\n],\n\"must_take\": [\n\"CS2109S\",\n\"CS3210\",\n\"CS3211\",\n\"CS4238\",\n\"CS2106\",\n\"CS4249\"\n],\n\"objective\": \"earliest_graduation\",\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS4249\",\n\"b\": \"CS2106\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4249\",\n\"b\": \"CS3210\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3211\",\n\"sem\": 4,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS4238\",\n\"b\": \"CS4249\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 3,
+  "programme": "BComp CS Hons",
+  "completed": [
+   "CS1101S",
+   "CS1231S",
+   "MA1522",
+   "IS1108",
+   "MA1521",
+   "CS2040S",
+   "CS2030S"
+  ],
+  "must_take": [
+   "CS2109S",
+   "CS3210",
+   "CS3211",
+   "CS4238",
+   "CS2106",
+   "CS4249"
+  ],
+  "objective": "earliest_graduation",
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS4249",
+    "b": "CS2106",
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4249",
+    "b": "CS3210",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3211",
+    "sem": 4,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS4238",
+    "b": "CS4249",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS3211 in semester 4; the prerequisites of CS2106; the prerequisites of CS3211; the course exclusions (courses that cannot be taken together)"
+  ]
+ }
+}

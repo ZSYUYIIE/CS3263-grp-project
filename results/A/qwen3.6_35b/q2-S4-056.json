@@ -1,0 +1,47 @@
+{
+ "id": "q2-S4-056",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 5.95,
+ "usage": {
+  "prompt_tokens": 12876,
+  "total_tokens": 13166,
+  "completion_tokens": 290,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 5.95,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2109S\",\n      \"CS2102\",\n      \"CS3219\",\n      \"CS4212\"\n    ],\n    \"4\": [\n      \"CS3243\",\n      \"CS4236\",\n      \"CS3282\"\n    ],\n    \"6\": [\n      \"CS3247\",\n      \"CS4262\"\n    ]\n  },\n  \"reasons\": [\n    \"Semester 5 is a leave of absence (0 MC).\",\n    \"Prerequisites for all planned courses are satisfied by completed courses or earlier planned courses.\",\n    \"CS4212 and CS4236 are in different semesters (3 and 4). CS3282 (4) is before CS4262 (6). CS4212 (3) is before CS3247 (6).\",\n    \"Soft wishes: CS4212 is in Sem 3 (earliest possible due to prereqs), CS3282 is in Sem 4 (as late as possible while allowing CS4262 in Sem 6).\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2109S",
+    "CS2102",
+    "CS3219",
+    "CS4212"
+   ],
+   "4": [
+    "CS3243",
+    "CS4236",
+    "CS3282"
+   ],
+   "6": [
+    "CS3247",
+    "CS4262"
+   ]
+  },
+  "reasons": [
+   "Semester 5 is a leave of absence (0 MC).",
+   "Prerequisites for all planned courses are satisfied by completed courses or earlier planned courses.",
+   "CS4212 and CS4236 are in different semesters (3 and 4). CS3282 (4) is before CS4262 (6). CS4212 (3) is before CS3247 (6).",
+   "Soft wishes: CS4212 is in Sem 3 (earliest possible due to prereqs), CS3282 is in Sem 4 (as late as possible while allowing CS4262 in Sem 6)."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

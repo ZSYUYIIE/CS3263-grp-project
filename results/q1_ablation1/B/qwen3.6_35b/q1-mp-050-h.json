@@ -1,0 +1,51 @@
+{
+ "id": "q1-mp-050-h",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 2.21,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2820,
+  "total_tokens": 2929,
+  "completion_tokens": 109,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 2.21,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\": \"eligible\", \"target\": \"CS4353\", \"current_sem\": 7, \"completed\": [\"CS1101S\", \"CS2102\", \"CS1010S\", \"CS3240\", \"CS1231S\", \"CS2105\", \"CS2030S\", \"ST2334\", \"CS2111\", \"CS2040S\", \"MA1505\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS4353",
+  "current_sem": 7,
+  "completed": [
+   "CS1101S",
+   "CS2102",
+   "CS1010S",
+   "CS3240",
+   "CS1231S",
+   "CS2105",
+   "CS2030S",
+   "ST2334",
+   "CS2111",
+   "CS2040S",
+   "MA1505"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS4353",
+  "semester": 7,
+  "reasons": [
+   "missing prerequisite: ((CS2103DE or CS2103 or CS2103T or CS2113) and CS3240) or (NM2207 and (NM3243 or NM4259 or (ID2116 and ID3131)))"
+  ],
+  "can_still_become_eligible": true
+ }
+}

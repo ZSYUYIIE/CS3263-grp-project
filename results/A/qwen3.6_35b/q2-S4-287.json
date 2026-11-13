@@ -1,0 +1,36 @@
+{
+ "id": "q2-S4-287",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 10.94,
+ "usage": {
+  "prompt_tokens": 11306,
+  "total_tokens": 11893,
+  "completion_tokens": 587,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 10.94,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"7\": [\"CS3210\", \"CS4211\"], \"8\": [\"CS3235\"]}, \"reasons\": [\"Prerequisites for CS3210 (CS2100) and CS4211 (CS2103T) are completed. CS3235 prerequisites (CS2105, CS2106, CS2107) are met as CS2105 and CS2106 are completed; CS2107 has no prerequisite listed and is open to BComp CS Hons, so it can be taken in Sem 7 or 8. To minimize total MC, we only include required courses. CS2107 is a prerequisite for CS3235, so it must be planned. Placing CS2107 in Sem 7 allows CS3235 in Sem 8. CS3210 is placed in Sem 7 as requested (early as possible, but constrained by Sem 7 start). CS4211 is in Sem 7 as required. CS3235 is in Sem 8 (Year 4 Sem 1) as required. CS2107 is added as a prerequisite for CS3235. Total MC is minimized by excluding non-required courses. Soft wishes: CS3210 in Sem 7 (met), CS3235 as late as possible (Sem 8 is the only option given the constraint to take it in Y4S1, which is Sem 7? Wait. Y4S1 is Sem 7. Y4S2 is Sem 8. The student said 'CS3235 in year 4 semester 1'. Y4S1 is Sem 7. So CS3235 MUST be in Sem 7. Let's re-read carefully. 'I must take CS3235 in year 4 semester 1.' Y4S1 = Sem 7. 'I would like CS3235 as late as possible.' This is a soft wish conflicting with the hard constraint if 'late as possible' meant Sem 8. But the hard constraint fixes it to Sem 7. 'CS4211 has to be in semester 7'. 'CS3210 as early as possible' and 'CS3210 in semester 7'. So Sem 7 has CS3210, CS4211, CS3235. That's 12 MC. Plus CS2107 (4 MC) = 16 MC. This fits the 16 MC limit. Sem 8 is empty. This minimizes total MC (only required courses).\"]}}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "7": [
+    "CS3210",
+    "CS4211"
+   ],
+   "8": [
+    "CS3235"
+   ]
+  },
+  "reasons": [
+   "Prerequisites for CS3210 (CS2100) and CS4211 (CS2103T) are completed. CS3235 prerequisites (CS2105, CS2106, CS2107) are met as CS2105 and CS2106 are completed; CS2107 has no prerequisite listed and is open to BComp CS Hons, so it can be taken in Sem 7 or 8. To minimize total MC, we only include required courses. CS2107 is a prerequisite for CS3235, so it must be planned. Placing CS2107 in Sem 7 allows CS3235 in Sem 8. CS3210 is placed in Sem 7 as requested (early as possible, but constrained by Sem 7 start). CS4211 is in Sem 7 as required. CS3235 is in Sem 8 (Year 4 Sem 1) as required. CS2107 is added as a prerequisite for CS3235. Total MC is minimized by excluding non-required courses. Soft wishes: CS3210 in Sem 7 (met), CS3235 as late as possible (Sem 8 is the only option given the constraint to take it in Y4S1, which is Sem 7? Wait. Y4S1 is Sem 7. Y4S2 is Sem 8. The student said 'CS3235 in year 4 semester 1'. Y4S1 is Sem 7. So CS3235 MUST be in Sem 7. Let's re-read carefully. 'I must take CS3235 in year 4 semester 1.' Y4S1 = Sem 7. 'I would like CS3235 as late as possible.' This is a soft wish conflicting with the hard constraint if 'late as possible' meant Sem 8. But the hard constraint fixes it to Sem 7. 'CS4211 has to be in semester 7'. 'CS3210 as early as possible' and 'CS3210 in semester 7'. So Sem 7 has CS3210, CS4211, CS3235. That's 12 MC. Plus CS2107 (4 MC) = 16 MC. This fits the 16 MC limit. Sem 8 is empty. This minimizes total MC (only required courses)."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

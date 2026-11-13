@@ -1,0 +1,48 @@
+{
+ "id": "q2-S3-269",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 4.2,
+ "usage": {
+  "prompt_tokens": 8981,
+  "total_tokens": 9186,
+  "completion_tokens": 205,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 4.2,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2109S\",\n      \"CS2105\",\n      \"CS3103\"\n    ],\n    \"6\": [\n      \"CS3230\",\n      \"CS2102\",\n      \"CS3234\"\n    ],\n    \"7\": [\n      \"CS4226\",\n      \"ST2334\"\n    ]\n  },\n  \"reasons\": [\n    \"All mandatory courses are scheduled respecting prerequisites and mutual exclusions.\",\n    \"CS2109S is placed in Sem 5 as requested, preceding CS3234 in Sem 6.\",\n    \"CS4226 and ST2334 are deferred to Sem 7 to satisfy 'as late as possible' wishes.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2109S",
+    "CS2105",
+    "CS3103"
+   ],
+   "6": [
+    "CS3230",
+    "CS2102",
+    "CS3234"
+   ],
+   "7": [
+    "CS4226",
+    "ST2334"
+   ]
+  },
+  "reasons": [
+   "All mandatory courses are scheduled respecting prerequisites and mutual exclusions.",
+   "CS2109S is placed in Sem 5 as requested, preceding CS3234 in Sem 6.",
+   "CS4226 and ST2334 are deferred to Sem 7 to satisfy 'as late as possible' wishes."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

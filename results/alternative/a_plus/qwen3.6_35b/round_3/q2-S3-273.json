@@ -1,0 +1,54 @@
+{
+ "id": "q2-S3-273",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 1,
+ "end": "valid",
+ "seconds": 134.89,
+ "usage": {
+  "prompt_tokens": 24862,
+  "total_tokens": 32024,
+  "completion_tokens": 7162,
+  "finish_reason": "stop",
+  "request_seconds": 134.89,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"4\": [\n      \"CS2105\",\n      \"CS2102\"\n    ],\n    \"5\": [\n      \"CS2109S\",\n      \"CS3230\"\n    ],\n    \"6\": [\n      \"CS3234\",\n      \"ST2334\"\n    ],\n    \"7\": [\n      \"CS4226\",\n      \"CS3103\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2109S is placed in Sem 5 as requested. It is offered in Sem 1 and Sem 2; Sem 5 is Sem 1 of Y3, so it is valid.\",\n    \"CS3234 is placed in Sem 6. It is offered in Sem 2; Sem 6 is Sem 2 of Y3, so it is valid. It requires CS2109S (Sem 5), which is strictly earlier.\",\n    \"CS3230 is placed in Sem 5, strictly before CS3234 in Sem 6. It is offered in Sem 1 and Sem 2; Sem 5 is valid.\",\n    \"ST2334 is placed in Sem 6 to be as late as possible, allowing CS4226 (Sem 7) to be as late as possible. ST2334 is offered in Sem 1 and Sem 2; Sem 6 is valid.\",\n    \"CS4226 requires ST2334 (Sem 6) and is offered in Sem 1; Sem 7 is valid. CS3103 requires CS2105 (Sem 4) and is offered in Sem 1; Sem 7 is valid.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2105",
+    "CS2102"
+   ],
+   "5": [
+    "CS2109S",
+    "CS3230"
+   ],
+   "6": [
+    "CS3234",
+    "ST2334"
+   ],
+   "7": [
+    "CS4226",
+    "CS3103"
+   ]
+  },
+  "reasons": [
+   "CS2109S is placed in Sem 5 as requested. It is offered in Sem 1 and Sem 2; Sem 5 is Sem 1 of Y3, so it is valid.",
+   "CS3234 is placed in Sem 6. It is offered in Sem 2; Sem 6 is Sem 2 of Y3, so it is valid. It requires CS2109S (Sem 5), which is strictly earlier.",
+   "CS3230 is placed in Sem 5, strictly before CS3234 in Sem 6. It is offered in Sem 1 and Sem 2; Sem 5 is valid.",
+   "ST2334 is placed in Sem 6 to be as late as possible, allowing CS4226 (Sem 7) to be as late as possible. ST2334 is offered in Sem 1 and Sem 2; Sem 6 is valid.",
+   "CS4226 requires ST2334 (Sem 6) and is offered in Sem 1; Sem 7 is valid. CS3103 requires CS2105 (Sem 4) and is offered in Sem 1; Sem 7 is valid."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

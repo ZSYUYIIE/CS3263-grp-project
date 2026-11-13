@@ -1,0 +1,48 @@
+{
+ "id": "q2-S3-239",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 6.21,
+ "usage": {
+  "prompt_tokens": 11553,
+  "total_tokens": 11772,
+  "completion_tokens": 219,
+  "finish_reason": "stop",
+  "request_seconds": 6.21,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS2103T\",\n      \"CS4243\"\n    ],\n    \"4\": [\n      \"CS2102\",\n      \"CS3219\",\n      \"CS3230\",\n      \"CS4218\"\n    ],\n    \"5\": [\n      \"CS3281\",\n      \"CS2105\"\n    ]\n  },\n  \"reasons\": [\n    \"All mandatory courses are scheduled respecting prerequisites and mutual exclusions.\",\n    \"CS2103T and CS4243 are taken together in Sem 3 as requested.\",\n    \"CS3281 is placed in Sem 5 to satisfy the constraint that it comes before CS2105, while minimizing total credits by avoiding unnecessary earlier semesters.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS2103T",
+    "CS4243"
+   ],
+   "4": [
+    "CS2102",
+    "CS3219",
+    "CS3230",
+    "CS4218"
+   ],
+   "5": [
+    "CS3281",
+    "CS2105"
+   ]
+  },
+  "reasons": [
+   "All mandatory courses are scheduled respecting prerequisites and mutual exclusions.",
+   "CS2103T and CS4243 are taken together in Sem 3 as requested.",
+   "CS3281 is placed in Sem 5 to satisfy the constraint that it comes before CS2105, while minimizing total credits by avoiding unnecessary earlier semesters."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

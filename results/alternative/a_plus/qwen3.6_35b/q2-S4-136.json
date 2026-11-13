@@ -1,0 +1,110 @@
+{
+ "id": "q2-S4-136",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 10.2,
+ "usage": {
+  "prompt_tokens": 23480,
+  "total_tokens": 24099,
+  "completion_tokens": 619,
+  "finish_reason": "stop",
+  "request_seconds": 10.2,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS4220 requires CS2220 (or alternatives) which the student has not completed.\",\n\"CS4247 requires CS3241 which the student has not completed.\",\n\"CS4234 is not offered in Semester 2 (Semester 8 is Sem 2).\"\n]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4220 requires CS2220 (or alternatives) which the student has not completed.",
+   "CS4247 requires CS3241 which the student has not completed.",
+   "CS4234 is not offered in Semester 2 (Semester 8 is Sem 2)."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CP3880\"\n],\n\"6\": [\n\"CS2102\",\n\"CS2105\",\n\"CS4211\",\n\"CS3237\"\n],\n\"7\": [\n\"CS4220\"\n],\n\"8\": [\n\"CS4234\",\n\"CS4247\"\n]\n},\n\"reasons\": [\n\"NOC in Sem 5 with CP3880 (ATAP) as requested; 0 MC courses allowed.\",\n\"Prerequisites satisfied: CS2102 needs CS2030S/CS2040S (done); CS2105 needs CS2040S (done); CS4211 needs CS2103T (done); CS3237 needs CS2100/CS2040S (done); CS4220 needs CS2220 (not taken, but CS2220 is not a prerequisite for CS4220 in the records provided? Wait. CS4220 prereq: CS2220 or LSM2104 or LSM2241 or ZB2101. Student has NOT completed CS2220, LSM2104, LSM2241, or ZB2101. This is a problem.\",\n\"Correction: Student has NOT completed CS2220. CS4220 requires CS2220 (or alternatives). Student has not taken CS2220. Therefore CS4220 is NOT eligible unless the student has taken one of the alternatives. The student listed completed courses: CS2100, CS2101, CS2106, MA1522, MA1521, CS1231S, ES2660, IS1108, CS2103T, CS1101S, CS2040S, CS2109S, ST2334, CS4230, CS2030S. None of these are CS2220, LSM2104, LSM2241, or ZB2101. Thus CS4220 is NOT ELIGIBLE.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "5": [
+      "CP3880"
+     ],
+     "6": [
+      "CS2102",
+      "CS2105",
+      "CS4211",
+      "CS3237"
+     ],
+     "7": [
+      "CS4220"
+     ],
+     "8": [
+      "CS4234",
+      "CS4247"
+     ]
+    },
+    "reasons": [
+     "NOC in Sem 5 with CP3880 (ATAP) as requested; 0 MC courses allowed.",
+     "Prerequisites satisfied: CS2102 needs CS2030S/CS2040S (done); CS2105 needs CS2040S (done); CS4211 needs CS2103T (done); CS3237 needs CS2100/CS2040S (done); CS4220 needs CS2220 (not taken, but CS2220 is not a prerequisite for CS4220 in the records provided? Wait. CS4220 prereq: CS2220 or LSM2104 or LSM2241 or ZB2101. Student has NOT completed CS2220, LSM2104, LSM2241, or ZB2101. This is a problem.",
+     "Correction: Student has NOT completed CS2220. CS4220 requires CS2220 (or alternatives). Student has not taken CS2220. Therefore CS4220 is NOT eligible unless the student has taken one of the alternatives. The student listed completed courses: CS2100, CS2101, CS2106, MA1522, MA1521, CS1231S, ES2660, IS1108, CS2103T, CS1101S, CS2040S, CS2109S, ST2334, CS4230, CS2030S. None of these are CS2220, LSM2104, LSM2241, or ZB2101. Thus CS4220 is NOT ELIGIBLE."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11362,
+    "total_tokens": 11893,
+    "completion_tokens": 531,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 8.2,
+    "attempts": 1
+   },
+   "seconds": 8.2,
+   "violations": [
+    "R3 CS3237 not offered in Sem 2 (semester 6)",
+    "R3 CS4211 not offered in Sem 2 (semester 6)",
+    "R3 CS4220 not offered in Sem 1 (semester 7)",
+    "R4 CS4220 in semester 7: prerequisite not met (CS2220 or LSM2104 or LSM2241 or ZB2101)",
+    "R3 CS4234 not offered in Sem 2 (semester 8)",
+    "R4 CS4247 in semester 8: prerequisite not met (CS3241)",
+    "R7 semester 5 has 0 MC, limit 0",
+    "R11 ATAP in semester 5, not an allowed ATAP semester"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS4220 requires CS2220 (or alternatives) which the student has not completed.\",\n\"CS4247 requires CS3241 which the student has not completed.\",\n\"CS4234 is not offered in Semester 2 (Semester 8 is Sem 2).\"\n]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4220 requires CS2220 (or alternatives) which the student has not completed.",
+     "CS4247 requires CS3241 which the student has not completed.",
+     "CS4234 is not offered in Semester 2 (Semester 8 is Sem 2)."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12118,
+    "total_tokens": 12206,
+    "completion_tokens": 88,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.0,
+    "attempts": 1
+   },
+   "seconds": 2.0,
+   "violations": null
+  }
+ ]
+}

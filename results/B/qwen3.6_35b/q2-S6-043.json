@@ -1,0 +1,103 @@
+{
+ "id": "q2-S6-043",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.05,
+ "solver_seconds": 0.0,
+ "max_tokens": 49152,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 3170,
+  "total_tokens": 3643,
+  "completion_tokens": 473,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 6.05,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 7,\n\"programme\": \"BComp CS Hons with minor in Management\",\n\"completed\": [\n\"CS3219\",\n\"ST2334\",\n\"CS1231S\",\n\"CS2030S\",\n\"CS2040S\",\n\"MA1522\",\n\"CS2103T\",\n\"CS2106\",\n\"CS3231\",\n\"CS4268\",\n\"MA1521\",\n\"CS2109S\",\n\"CS2100\",\n\"CS1101S\",\n\"ES2660\",\n\"CS3230\",\n\"CS3211\",\n\"CS2101\",\n\"CS2102\",\n\"IS1108\"\n],\n\"must_take\": [\n\"CS4221\",\n\"CS4330\",\n\"CS3237\",\n\"CS4243\"\n],\n\"mc_max\": 12,\n\"objective\": \"min_total_mc\",\n\"rules\": [\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4221\",\n\"b\": \"CS4330\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4221\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3237\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4243\",\n\"sem\": 8,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS4221\",\n\"b\": \"CS4243\",\n\"strength\": \"prefer\"\n}\n],\n\"late\": [\n\"CS4330\"\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 7,
+  "programme": "BComp CS Hons with minor in Management",
+  "completed": [
+   "CS3219",
+   "ST2334",
+   "CS1231S",
+   "CS2030S",
+   "CS2040S",
+   "MA1522",
+   "CS2103T",
+   "CS2106",
+   "CS3231",
+   "CS4268",
+   "MA1521",
+   "CS2109S",
+   "CS2100",
+   "CS1101S",
+   "ES2660",
+   "CS3230",
+   "CS3211",
+   "CS2101",
+   "CS2102",
+   "IS1108"
+  ],
+  "must_take": [
+   "CS4221",
+   "CS4330",
+   "CS3237",
+   "CS4243"
+  ],
+  "mc_max": 12,
+  "objective": "min_total_mc",
+  "rules": [
+   {
+    "type": "same_sem",
+    "a": "CS4221",
+    "b": "CS4330",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4221",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3237",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4243",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS4221",
+    "b": "CS4243",
+    "strength": "prefer"
+   }
+  ],
+  "late": [
+   "CS4330"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "OUT_OF_SCOPE",
+  "reasons": [
+   "programme 'BComp CS Hons with minor in Management' is not BComp (CS) Hons"
+  ],
+  "message": "I can only plan for BComp (CS) Hons single-major students under AY2026/2027 rules, and this request is outside that (programme 'BComp CS Hons with minor in Management' is not BComp (CS) Hons). Course rules differ by programme and aren't in my data for your case, so please check with your faculty or academic advisor."
+ }
+}

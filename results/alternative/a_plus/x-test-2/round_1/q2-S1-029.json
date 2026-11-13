@@ -1,0 +1,66 @@
+{
+ "id": "q2-S1-029",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 137.86,
+ "usage": {
+  "prompt_tokens": 9706,
+  "total_tokens": 22216,
+  "completion_tokens": 12510,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 8064
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 12269
+  },
+  "finish_reason": "stop",
+  "request_seconds": 137.86,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"2\":[\"CS2040S\",\"CS2030S\",\"ST2334\"],\"3\":[\"MA1513\",\"CS2101\",\"CS2105\"],\"4\":[\"CS2103DE\",\"CS3233\",\"CS3230\"],\"5\":[\"CS3219\",\"CS4243\"],\"6\":[\"CS4268\",\"CS2109S\"],\"7\":[\"CS3268\"]},\"reasons\":[\"Plan uses semesters 2 to 7, the minimum possible: CS2103DE is Sem 2 only and must follow CS2030S/CS2040S, then CS3219, CS2109S, and CS3268 (Sem 1 only) form a chain.\",\"Added only prerequisite courses: CS2030S, CS2103DE, ST2334, MA1513, CS3230.\",\"CS4268 is in semester 6; CS3219 precedes CS2109S and CS3268; CS2105 is kept apart from CS3219. CS2040S cannot share semester 6 with CS4268 because it is needed earlier.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "2": [
+    "CS2040S",
+    "CS2030S",
+    "ST2334"
+   ],
+   "3": [
+    "MA1513",
+    "CS2101",
+    "CS2105"
+   ],
+   "4": [
+    "CS2103DE",
+    "CS3233",
+    "CS3230"
+   ],
+   "5": [
+    "CS3219",
+    "CS4243"
+   ],
+   "6": [
+    "CS4268",
+    "CS2109S"
+   ],
+   "7": [
+    "CS3268"
+   ]
+  },
+  "reasons": [
+   "Plan uses semesters 2 to 7, the minimum possible: CS2103DE is Sem 2 only and must follow CS2030S/CS2040S, then CS3219, CS2109S, and CS3268 (Sem 1 only) form a chain.",
+   "Added only prerequisite courses: CS2030S, CS2103DE, ST2334, MA1513, CS3230.",
+   "CS4268 is in semester 6; CS3219 precedes CS2109S and CS3268; CS2105 is kept apart from CS3219. CS2040S cannot share semester 6 with CS4268 because it is needed earlier."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

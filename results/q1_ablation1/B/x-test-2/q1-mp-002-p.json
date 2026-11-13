@@ -1,0 +1,59 @@
+{
+ "id": "q1-mp-002-p",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 2.97,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2536,
+  "total_tokens": 2763,
+  "completion_tokens": 227,
+  "prompt_tokens_details": {
+   "cached_tokens": 2432,
+   "created_cache_tokens": 0,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 153
+  },
+  "finish_reason": "stop",
+  "request_seconds": 2.97,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\":\"eligible\",\"target\":\"CS2220\",\"current_sem\":7,\"completed\":[\"MA1521\",\"CS2030S\",\"CS3234\",\"IS2101\",\"ST2334\",\"ESP2111\",\"CS1231S\",\"IS1108\",\"CS1101S\",\"ES2660\",\"CS3236\",\"MA2311\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS2220",
+  "current_sem": 7,
+  "completed": [
+   "MA1521",
+   "CS2030S",
+   "CS3234",
+   "IS2101",
+   "ST2334",
+   "ESP2111",
+   "CS1231S",
+   "IS1108",
+   "CS1101S",
+   "ES2660",
+   "CS3236",
+   "MA2311"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS2220",
+  "semester": 7,
+  "reasons": [
+   "missing prerequisite: CS2040 or CS2040S or CS2040C or CS2040DE or CS2040HS"
+  ],
+  "can_still_become_eligible": true
+ }
+}

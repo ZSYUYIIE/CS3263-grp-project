@@ -1,0 +1,53 @@
+{
+ "id": "q2-S3-236",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 5.49,
+ "usage": {
+  "prompt_tokens": 11547,
+  "total_tokens": 11818,
+  "completion_tokens": 271,
+  "finish_reason": "stop",
+  "request_seconds": 5.49,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS2105\",\n      \"CS3230\"\n    ],\n    \"4\": [\n      \"CS2103T\",\n      \"CS3219\"\n    ],\n    \"5\": [\n      \"CS2102\",\n      \"CS3281\"\n    ],\n    \"6\": [\n      \"CS4218\",\n      \"CS4221\"\n    ],\n    \"7\": [\n      \"CS4243\"\n    ]\n  },\n  \"reasons\": [\n    \"All required courses are planned with prerequisites satisfied in strictly earlier semesters.\",\n    \"CS3219 is placed in Sem 4, before CS2102 in Sem 5 as requested.\",\n    \"CS2103T is placed in Sem 4 (as early as possible to enable downstream courses), CS3281 in Sem 5, and CS4221 in Sem 6 to satisfy 'late as possible' constraints where feasible within dependency chains.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS2105",
+    "CS3230"
+   ],
+   "4": [
+    "CS2103T",
+    "CS3219"
+   ],
+   "5": [
+    "CS2102",
+    "CS3281"
+   ],
+   "6": [
+    "CS4218",
+    "CS4221"
+   ],
+   "7": [
+    "CS4243"
+   ]
+  },
+  "reasons": [
+   "All required courses are planned with prerequisites satisfied in strictly earlier semesters.",
+   "CS3219 is placed in Sem 4, before CS2102 in Sem 5 as requested.",
+   "CS2103T is placed in Sem 4 (as early as possible to enable downstream courses), CS3281 in Sem 5, and CS4221 in Sem 6 to satisfy 'late as possible' constraints where feasible within dependency chains."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,64 @@
+{
+ "id": "q1-el-018-x",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 2.89,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2562,
+  "total_tokens": 2777,
+  "completion_tokens": 215,
+  "prompt_tokens_details": {
+   "cached_tokens": 2432,
+   "created_cache_tokens": 128,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 125
+  },
+  "finish_reason": "stop",
+  "request_seconds": 2.89,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\":\"eligible\",\"target\":\"CS2106\",\"current_sem\":6,\"completed\":[\"CS3230\",\"CS4236\",\"CS1101S\",\"ES2660\",\"MA1100T\",\"CS2030\",\"CS2100\",\"MA1522\",\"ESP2111\",\"CS3210\",\"CS2105\",\"CS2107\",\"IS1108\",\"MA1521\",\"CS2040S\",\"CG2271\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS2106",
+  "current_sem": 6,
+  "completed": [
+   "CS3230",
+   "CS4236",
+   "CS1101S",
+   "ES2660",
+   "MA1100T",
+   "CS2030",
+   "CS2100",
+   "MA1522",
+   "ESP2111",
+   "CS3210",
+   "CS2105",
+   "CS2107",
+   "IS1108",
+   "MA1521",
+   "CS2040S",
+   "CG2271"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS2106",
+  "semester": 6,
+  "reasons": [
+   "precluded: already completed CG2271"
+  ],
+  "can_still_become_eligible": false,
+  "never_eligible_because": "CS2106 is ruled out by completed CG2271"
+ }
+}

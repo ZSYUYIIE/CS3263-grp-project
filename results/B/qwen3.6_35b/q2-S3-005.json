@@ -1,0 +1,92 @@
+{
+ "id": "q2-S3-005",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 6.3,
+ "solver_seconds": 0.077,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3181,
+  "total_tokens": 3596,
+  "completion_tokens": 415,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 6.22,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 6,\n\"completed\": [\n\"CS3263\",\n\"CS2109S\",\n\"CS2105\",\n\"CS3219\",\n\"CS3230\",\n\"MA1521\",\n\"CS2040S\",\n\"ES2660\",\n\"CS2101\",\n\"CS2103T\",\n\"CS2100\",\n\"CS2106\",\n\"MA1522\",\n\"IS1108\",\n\"CS1231S\",\n\"ST2334\",\n\"CS1101S\",\n\"CS2030S\"\n],\n\"must_take\": [\n\"CS2102\",\n\"CS4218\",\n\"CS3282\",\n\"CS3210\",\n\"CS3227\",\n\"CS3103\"\n],\n\"objective\": \"earliest_graduation\",\n\"atap_sems\": [\n7,\n8\n],\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS3227\",\n\"b\": \"CS3103\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS2102\",\n\"sem\": 7,\n\"strength\": \"must\"\n},\n{\n\"type\": \"same_sem\",\n\"a\": \"CS2102\",\n\"b\": \"CS4218\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS2102\",\n\"b\": \"CS3210\",\n\"strength\": \"must\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 6,
+  "completed": [
+   "CS3263",
+   "CS2109S",
+   "CS2105",
+   "CS3219",
+   "CS3230",
+   "MA1521",
+   "CS2040S",
+   "ES2660",
+   "CS2101",
+   "CS2103T",
+   "CS2100",
+   "CS2106",
+   "MA1522",
+   "IS1108",
+   "CS1231S",
+   "ST2334",
+   "CS1101S",
+   "CS2030S"
+  ],
+  "must_take": [
+   "CS2102",
+   "CS4218",
+   "CS3282",
+   "CS3210",
+   "CS3227",
+   "CS3103"
+  ],
+  "objective": "earliest_graduation",
+  "atap_sems": [
+   7,
+   8
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS3227",
+    "b": "CS3103",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2102",
+    "b": "CS4218",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS2102",
+    "b": "CS3210",
+    "strength": "must"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS2102 in semester 7; your rule: CS2102 and CS4218 in the same semester; the semesters in which the courses are offered; the ATAP rules (allowed semesters, not the last semester, at most 8 MC beside it)"
+  ]
+ }
+}

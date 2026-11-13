@@ -1,0 +1,48 @@
+{
+ "id": "q2-S4-097",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 23.18,
+ "usage": {
+  "prompt_tokens": 13247,
+  "total_tokens": 14466,
+  "completion_tokens": 1219,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 23.18,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"2\": [\"CS2100\", \"ST2334\"], \"3\": [\"CS2040\", \"CS2103T\"], \"4\": [\"CS3230\", \"CS4239\"], \"5\": [\"CS4263\", \"CS4353\"]}, \"reasons\": [\"All prerequisites satisfied by completed modules or earlier planned courses.\", \"CS2103T planned in Sem 3 to allow CS3230 in Sem 4 as required.\", \"CS4353 planned in Sem 5 after CS2103T and CS3240 (prerequisite for CS4353 is CS2103T+CS3240 or NM path; CS3240 requires CS2111 which is not in list. Wait. CS4353 prerequisite: ((CS2103DE or CS2103 or CS2103T or CS2113) and CS3240) or (NM2207 and ...). I have CS2103T. I need CS3240. CS3240 prerequisite: CS2111 or NM2207. I have neither. I must add CS2111 or NM2207. CS2111 prerequisite: CS1010A or ... or CS1101S. I have CS1101S. So CS2111 is eligible. CS2111 is 4 MC. CS3240 is 4 MC. CS4353 is 4 MC. CS4353 needs CS3240. CS3240 needs CS2111. CS2111 needs CS1101S (completed). So I must plan CS2111 and CS3240. CS2111 offered Sem 2. CS3240 offered Sem 1. CS4353 offered Sem 1. To get CS4353 as early as possible, I need CS3240 in Sem 2 or earlier? No, CS3240 is Sem 1 only. So CS3240 must be in Sem 1 or 3 or 5 or 7. I am in Sem 2. So CS3240 can be in Sem 3. CS2111 can be in Sem 2. So: Sem 2: CS2100, ST2334, CS2111. Sem 3: CS2040, CS2103T, CS3240. Sem 4: CS3230, CS4239, CS4353. Check MC: Sem 2: 4+4+4=12 <= 16. Sem 3: 4+4+4=12 <= 16. Sem 4: 4+4+4=12 <= 16. This works. CS4263 needs CS2040 and CS1231. CS2040 in Sem 3. CS1231S completed. So CS4263 can be Sem 4 or later. Sem 4 has 12 MC. Can add CS4263? 12+4=16. Yes. So Sem 4: CS3230, CS4239, CS4353, CS4263? 16 MC. Yes. This finishes earlier. Sem 4 is last used. Total MC: 4+4+4+4+4+4+4+4+4+4+4+4 = 48? No. CS2100(4)+ST2334(4)+CS2111(4)+CS2040(4)+CS2103T(4)+CS3240(4)+CS3230(4)+CS4239(4)+CS4353(4)+CS4263(4) = 40 MC. Previous plan was 40 MC too? Previous: CS2100, ST2334, CS2040, CS2103T, CS3230, CS4239, CS4263, CS4353. 8 courses * 4 = 32 MC. Wait. CS4353 needs CS3240. CS3240 needs CS2111. So 10 courses. 40 MC. My previous manual trace missed CS2111/CS3240. Correct plan must include them. Sem 2: CS2100, ST2334, CS2111. Sem 3: CS2040, CS2103T, CS3240. Sem 4: CS3230, CS4239, CS4263, CS4353. All 16 MC. Last semester 4. This is optimal for earliest graduation and fewest credits (only required courses).\", \"Soft wishes: ST2334 in Sem 2 (early), CS2103T in Sem 3 (late relative to Sem 2, but constrained by CS3230 in Sem 4), CS4353 in Sem 4 (as early as possible given prerequisites).\"]}}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "2": [
+    "CS2100",
+    "ST2334"
+   ],
+   "3": [
+    "CS2040",
+    "CS2103T"
+   ],
+   "4": [
+    "CS3230",
+    "CS4239"
+   ],
+   "5": [
+    "CS4263",
+    "CS4353"
+   ]
+  },
+  "reasons": [
+   "All prerequisites satisfied by completed modules or earlier planned courses.",
+   "CS2103T planned in Sem 3 to allow CS3230 in Sem 4 as required.",
+   "CS4353 planned in Sem 5 after CS2103T and CS3240 (prerequisite for CS4353 is CS2103T+CS3240 or NM path; CS3240 requires CS2111 which is not in list. Wait. CS4353 prerequisite: ((CS2103DE or CS2103 or CS2103T or CS2113) and CS3240) or (NM2207 and ...). I have CS2103T. I need CS3240. CS3240 prerequisite: CS2111 or NM2207. I have neither. I must add CS2111 or NM2207. CS2111 prerequisite: CS1010A or ... or CS1101S. I have CS1101S. So CS2111 is eligible. CS2111 is 4 MC. CS3240 is 4 MC. CS4353 is 4 MC. CS4353 needs CS3240. CS3240 needs CS2111. CS2111 needs CS1101S (completed). So I must plan CS2111 and CS3240. CS2111 offered Sem 2. CS3240 offered Sem 1. CS4353 offered Sem 1. To get CS4353 as early as possible, I need CS3240 in Sem 2 or earlier? No, CS3240 is Sem 1 only. So CS3240 must be in Sem 1 or 3 or 5 or 7. I am in Sem 2. So CS3240 can be in Sem 3. CS2111 can be in Sem 2. So: Sem 2: CS2100, ST2334, CS2111. Sem 3: CS2040, CS2103T, CS3240. Sem 4: CS3230, CS4239, CS4353. Check MC: Sem 2: 4+4+4=12 <= 16. Sem 3: 4+4+4=12 <= 16. Sem 4: 4+4+4=12 <= 16. This works. CS4263 needs CS2040 and CS1231. CS2040 in Sem 3. CS1231S completed. So CS4263 can be Sem 4 or later. Sem 4 has 12 MC. Can add CS4263? 12+4=16. Yes. So Sem 4: CS3230, CS4239, CS4353, CS4263? 16 MC. Yes. This finishes earlier. Sem 4 is last used. Total MC: 4+4+4+4+4+4+4+4+4+4+4+4 = 48? No. CS2100(4)+ST2334(4)+CS2111(4)+CS2040(4)+CS2103T(4)+CS3240(4)+CS3230(4)+CS4239(4)+CS4353(4)+CS4263(4) = 40 MC. Previous plan was 40 MC too? Previous: CS2100, ST2334, CS2040, CS2103T, CS3230, CS4239, CS4263, CS4353. 8 courses * 4 = 32 MC. Wait. CS4353 needs CS3240. CS3240 needs CS2111. So 10 courses. 40 MC. My previous manual trace missed CS2111/CS3240. Correct plan must include them. Sem 2: CS2100, ST2334, CS2111. Sem 3: CS2040, CS2103T, CS3240. Sem 4: CS3230, CS4239, CS4263, CS4353. All 16 MC. Last semester 4. This is optimal for earliest graduation and fewest credits (only required courses).",
+   "Soft wishes: ST2334 in Sem 2 (early), CS2103T in Sem 3 (late relative to Sem 2, but constrained by CS3230 in Sem 4), CS4353 in Sem 4 (as early as possible given prerequisites)."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

@@ -1,0 +1,59 @@
+{
+ "id": "q2-S1-087",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 1,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 60.33,
+ "usage": {
+  "prompt_tokens": 8122,
+  "total_tokens": 13039,
+  "completion_tokens": 4917,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 6528
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4757
+  },
+  "finish_reason": "stop",
+  "request_seconds": 60.33,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"4\":[\"ST2334\",\"CS3233\",\"CS2107\",\"CS2109S\",\"CS3230\"],\"5\":[\"CS4236\",\"CS2104\",\"CS2105\"],\"6\":[\"CS4222\",\"CS3219\"],\"8\":[\"CS4212\"]},\"reasons\":[\"Added CS2107 as the prerequisite for CS4236 and CS2104 as the prerequisite for CS4212.\",\"CS4222 and CS3219 are together in semester 6; ST2334 is in semester 4 and CS2105 is earlier.\",\"CS3233 is before CS2105; CS4212 before CS3233 is impossible because CS4212 must be in semester 8.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "ST2334",
+    "CS3233",
+    "CS2107",
+    "CS2109S",
+    "CS3230"
+   ],
+   "5": [
+    "CS4236",
+    "CS2104",
+    "CS2105"
+   ],
+   "6": [
+    "CS4222",
+    "CS3219"
+   ],
+   "8": [
+    "CS4212"
+   ]
+  },
+  "reasons": [
+   "Added CS2107 as the prerequisite for CS4236 and CS2104 as the prerequisite for CS4212.",
+   "CS4222 and CS3219 are together in semester 6; ST2334 is in semester 4 and CS2105 is earlier.",
+   "CS3233 is before CS2105; CS4212 before CS3233 is impossible because CS4212 must be in semester 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

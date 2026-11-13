@@ -1,0 +1,52 @@
+{
+ "id": "q2-S3-241",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 34.9,
+ "usage": {
+  "prompt_tokens": 11593,
+  "total_tokens": 13459,
+  "completion_tokens": 1866,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 34.9,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS3230\",\n      \"CS2103T\",\n      \"CS4243\"\n    ],\n    \"4\": [\n      \"CS2102\",\n      \"CS2105\",\n      \"CS3219\",\n      \"CS3281\"\n    ],\n    \"5\": [\n      \"CS4218\",\n      \"CS4221\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2103T and CS4243 are taken together in Sem 3 as required.\",\n    \"CS3230 is scheduled in Sem 3 to satisfy the 'as early as possible' wish.\",\n    \"CS2102 is taken in Sem 4, before CS2103T is completed, which conflicts with the wish 'rather do CS2102 before CS2103T'. However, CS2102 requires CS2040S (completed) and CS2030S (completed) and CS1231S (completed), so it is eligible in Sem 3. But CS2103T is a prerequisite for CS3219 and CS3281. CS2105 requires CS2040S. CS4218 requires CS3219 or CS3213. CS4221 requires CS3223. Wait, let's re-verify prerequisites.\",\n    \"CS2102 prereq: (CS1231 or ... CS1231S) AND (CS2030S or ...). Student has CS1231S and CS2030S. Eligible Sem 3. Wish: CS2102 before CS2103T. CS2103T is in Sem 3. Cannot take CS2102 before Sem 3 if CS2103T is in Sem 3. If CS2103T is in Sem 4, CS2102 can be in Sem 3. But CS2103T must be with CS4243. CS4243 prereqs are heavy. Let's check CS4243 prereqs: (YSC2232 or MA2001...) AND (ST1131...) AND (CS2030 or ... CS2113) AND (YSC2229 or CS2040...) AND (MA1102R...). Student has CS2040S (counts for CS2040). Student has CS2030S (counts for CS2030). Student has MA1521, MA1522. MA1522 is Linear Algebra for Computing. CS4243 needs MA2001 or MA1508E or MA1513 or MA1522. Student has MA1522. So that part is met. ST1131? Student has not completed ST1131. CS4243 requires ST1131 or ST1131A or ST1232 or ST2131 or MA2116 or MA2116T or MA2216 or EE2012A or EE2012 or ST2334 or YSC2243. Student has none of these. So CS4243 is NOT ELIGIBLE yet. Student must take a stats/prob course first. ST1131 is offered Sem 1, Sem 2. Student is in Sem 3. ST1131 is available. So CS4243 can be taken in Sem 3 if ST1131 is taken in Sem 3? No, ST1131 is a prerequisite. So ST1131 must be in Sem 3 or earlier. Student is in Sem 3. So ST1131 must be in Sem 3. Then CS4243 can be in Sem 3 (coreq) or Sem 4. But CS4243 and CS2103T must be together. So both in Sem 3. This requires ST1131 in Sem 3. Is ST1131 open to BComp CS Hons? Yes. So Sem 3: CS2103T, CS4243, ST1131. Plus CS2100, CS3230. That's 5 courses. 20 MC. OK. Then CS2102 wish: before CS2103T. CS2103T is Sem 3. CS2102 must be Sem 1 or 2. Student is in Sem 3. Cannot go back. So wish cannot be met. CS2102 can be Sem 4. CS2105 after CS3281. CS3281 Sem 4. CS2105 Sem 5. CS4218 after CS2103T. CS2103T Sem 3. CS4218 Sem 4 or later. CS4218 prereq CS3213 or CS3219. CS3219 prereq CS2103T. So CS3219 Sem 4. CS4218 Sem 5. CS4221 prereq CS3223. CS3223 prereq CS2040S and CS2102. CS2102 Sem 4. CS3223 Sem 5. CS4221 Sem 6. But student didn't list CS3223 as 'must take'. But CS4221 is a 'must take'. So CS3223 is a prerequisite needed. So CS3223 must be planned. CS3223 Sem 5. CS4221 Sem 6. So plan: Sem 3: CS2100, CS3230, CS2103T, CS4243, ST1131. Sem 4: CS2102, CS3219, CS3281. Sem 5: CS2105, CS3223, CS4218. Sem 6: CS4221. Total 6 semesters. MC: 4+4+4+4+4=20 Sem 3. 4+4+4=12 Sem 4. 4+4+4=12 Sem 5. 4 Sem 6. Low MC. \",\n    \"Re-evaluating CS4243 prereqs. ST1131 is needed. Student has not taken it. So ST1131 must be in Sem 3. CS4243 and CS2103T together in Sem 3. CS2100 and CS3230 also Sem 3. 5 courses. 20 MC. OK. CS2102 wish 'before CS2103T' impossible as CS2103T is Sem 3 and student is in Sem 3. CS2102 taken Sem 4. CS3281 Sem 4. CS2105 after CS3281, so Sem 5. CS4218 after CS2103T, prereq CS3219. CS3219 after CS2103T, so Sem 4. CS4218 Sem 5. CS4221 prereq CS3223. CS3223 prereq CS2102 and CS2040S. CS2102 Sem 4. CS3223 Sem 5. CS4221 Sem 6. Plan: 3: CS2100, CS3230, CS2103T, CS4243, ST1131. 4: CS2102, CS3219, CS3281. 5: CS2105, CS3223, CS4218. 6: CS4221.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS3230",
+    "CS2103T",
+    "CS4243"
+   ],
+   "4": [
+    "CS2102",
+    "CS2105",
+    "CS3219",
+    "CS3281"
+   ],
+   "5": [
+    "CS4218",
+    "CS4221"
+   ]
+  },
+  "reasons": [
+   "CS2103T and CS4243 are taken together in Sem 3 as required.",
+   "CS3230 is scheduled in Sem 3 to satisfy the 'as early as possible' wish.",
+   "CS2102 is taken in Sem 4, before CS2103T is completed, which conflicts with the wish 'rather do CS2102 before CS2103T'. However, CS2102 requires CS2040S (completed) and CS2030S (completed) and CS1231S (completed), so it is eligible in Sem 3. But CS2103T is a prerequisite for CS3219 and CS3281. CS2105 requires CS2040S. CS4218 requires CS3219 or CS3213. CS4221 requires CS3223. Wait, let's re-verify prerequisites.",
+   "CS2102 prereq: (CS1231 or ... CS1231S) AND (CS2030S or ...). Student has CS1231S and CS2030S. Eligible Sem 3. Wish: CS2102 before CS2103T. CS2103T is in Sem 3. Cannot take CS2102 before Sem 3 if CS2103T is in Sem 3. If CS2103T is in Sem 4, CS2102 can be in Sem 3. But CS2103T must be with CS4243. CS4243 prereqs are heavy. Let's check CS4243 prereqs: (YSC2232 or MA2001...) AND (ST1131...) AND (CS2030 or ... CS2113) AND (YSC2229 or CS2040...) AND (MA1102R...). Student has CS2040S (counts for CS2040). Student has CS2030S (counts for CS2030). Student has MA1521, MA1522. MA1522 is Linear Algebra for Computing. CS4243 needs MA2001 or MA1508E or MA1513 or MA1522. Student has MA1522. So that part is met. ST1131? Student has not completed ST1131. CS4243 requires ST1131 or ST1131A or ST1232 or ST2131 or MA2116 or MA2116T or MA2216 or EE2012A or EE2012 or ST2334 or YSC2243. Student has none of these. So CS4243 is NOT ELIGIBLE yet. Student must take a stats/prob course first. ST1131 is offered Sem 1, Sem 2. Student is in Sem 3. ST1131 is available. So CS4243 can be taken in Sem 3 if ST1131 is taken in Sem 3? No, ST1131 is a prerequisite. So ST1131 must be in Sem 3 or earlier. Student is in Sem 3. So ST1131 must be in Sem 3. Then CS4243 can be in Sem 3 (coreq) or Sem 4. But CS4243 and CS2103T must be together. So both in Sem 3. This requires ST1131 in Sem 3. Is ST1131 open to BComp CS Hons? Yes. So Sem 3: CS2103T, CS4243, ST1131. Plus CS2100, CS3230. That's 5 courses. 20 MC. OK. Then CS2102 wish: before CS2103T. CS2103T is Sem 3. CS2102 must be Sem 1 or 2. Student is in Sem 3. Cannot go back. So wish cannot be met. CS2102 can be Sem 4. CS2105 after CS3281. CS3281 Sem 4. CS2105 Sem 5. CS4218 after CS2103T. CS2103T Sem 3. CS4218 Sem 4 or later. CS4218 prereq CS3213 or CS3219. CS3219 prereq CS2103T. So CS3219 Sem 4. CS4218 Sem 5. CS4221 prereq CS3223. CS3223 prereq CS2040S and CS2102. CS2102 Sem 4. CS3223 Sem 5. CS4221 Sem 6. But student didn't list CS3223 as 'must take'. But CS4221 is a 'must take'. So CS3223 is a prerequisite needed. So CS3223 must be planned. CS3223 Sem 5. CS4221 Sem 6. So plan: Sem 3: CS2100, CS3230, CS2103T, CS4243, ST1131. Sem 4: CS2102, CS3219, CS3281. Sem 5: CS2105, CS3223, CS4218. Sem 6: CS4221. Total 6 semesters. MC: 4+4+4+4+4=20 Sem 3. 4+4+4=12 Sem 4. 4+4+4=12 Sem 5. 4 Sem 6. Low MC. ",
+   "Re-evaluating CS4243 prereqs. ST1131 is needed. Student has not taken it. So ST1131 must be in Sem 3. CS4243 and CS2103T together in Sem 3. CS2100 and CS3230 also Sem 3. 5 courses. 20 MC. OK. CS2102 wish 'before CS2103T' impossible as CS2103T is Sem 3 and student is in Sem 3. CS2102 taken Sem 4. CS3281 Sem 4. CS2105 after CS3281, so Sem 5. CS4218 after CS2103T, prereq CS3219. CS3219 after CS2103T, so Sem 4. CS4218 Sem 5. CS4221 prereq CS3223. CS3223 prereq CS2102 and CS2040S. CS2102 Sem 4. CS3223 Sem 5. CS4221 Sem 6. Plan: 3: CS2100, CS3230, CS2103T, CS4243, ST1131. 4: CS2102, CS3219, CS3281. 5: CS2105, CS3223, CS4218. 6: CS4221."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

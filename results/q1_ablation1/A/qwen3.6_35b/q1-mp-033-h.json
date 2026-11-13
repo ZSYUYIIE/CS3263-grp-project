@@ -1,0 +1,43 @@
+{
+ "id": "q1-mp-033-h",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 7.31,
+ "usage": {
+  "prompt_tokens": 7336,
+  "total_tokens": 7808,
+  "completion_tokens": 472,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 7.31,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"ELIGIBLE\",\n\"reasons\": [\n\"EE2028 is open to BComp CS Hons and offered in Sem 2.\",\n\"Prerequisites are satisfied: CG1111A is not required (EE1111B is an alternative, but EE2111A is blocked by completion; however, the student stated they have NOT completed EE2111A. Wait, let's re-read carefully.\",\n\"Student completed: CS1010R, ES2660, MA1508E, MA1521, IS2101, MA1512, MA2116, CS1231, MA2108S.\",\n\"Student explicitly said: 'ignore EE2111A; I have not done that one.'\",\n\"EE2028 Prereq: (CG1111A or EE1111B or EE2111A) AND (CS1010 or ... or CS1010R ...).\",\n\"Student has CS1010R, so the second part of the AND is satisfied.\",\n\"Student has NOT completed CG1111A, EE1111B, or EE2111A.\",\n\"Therefore, the first part of the AND (CG1111A or EE1111B or EE2111A) is NOT satisfied.\",\n\"Wait, if the student hasn't completed any of the engineering principles courses, they cannot take EE2028.\",\n\"Let's check if there are other prerequisites. No.\",\n\"Is EE2028 open to BComp CS Hons? Yes.\",\n\"Did the student complete CG1111A? No.\",\n\"Did the student complete EE1111B? No.\",\n\"Did the student complete EE2111A? No.\",\n\"Thus, the prerequisite (CG1111A or EE1111B or EE2111A) is NOT met.\",\n\"Status should be NOT_ELIGIBLE.\"\n]\n}",
+ "answer": {
+  "status": "ELIGIBLE",
+  "reasons": [
+   "EE2028 is open to BComp CS Hons and offered in Sem 2.",
+   "Prerequisites are satisfied: CG1111A is not required (EE1111B is an alternative, but EE2111A is blocked by completion; however, the student stated they have NOT completed EE2111A. Wait, let's re-read carefully.",
+   "Student completed: CS1010R, ES2660, MA1508E, MA1521, IS2101, MA1512, MA2116, CS1231, MA2108S.",
+   "Student explicitly said: 'ignore EE2111A; I have not done that one.'",
+   "EE2028 Prereq: (CG1111A or EE1111B or EE2111A) AND (CS1010 or ... or CS1010R ...).",
+   "Student has CS1010R, so the second part of the AND is satisfied.",
+   "Student has NOT completed CG1111A, EE1111B, or EE2111A.",
+   "Therefore, the first part of the AND (CG1111A or EE1111B or EE2111A) is NOT satisfied.",
+   "Wait, if the student hasn't completed any of the engineering principles courses, they cannot take EE2028.",
+   "Let's check if there are other prerequisites. No.",
+   "Is EE2028 open to BComp CS Hons? Yes.",
+   "Did the student complete CG1111A? No.",
+   "Did the student complete EE1111B? No.",
+   "Did the student complete EE2111A? No.",
+   "Thus, the prerequisite (CG1111A or EE1111B or EE2111A) is NOT met.",
+   "Status should be NOT_ELIGIBLE."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 4,
+ "ablation": 1
+}

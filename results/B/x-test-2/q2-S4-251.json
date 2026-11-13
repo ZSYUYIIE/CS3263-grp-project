@@ -1,0 +1,100 @@
+{
+ "id": "q2-S4-251",
+ "pipeline": "B",
+ "model": "x-test-2",
+ "seconds": 9.7,
+ "solver_seconds": 0.022,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 2847,
+  "total_tokens": 3852,
+  "completion_tokens": 1005,
+  "prompt_tokens_details": {
+   "cached_tokens": 2560,
+   "created_cache_tokens": 256,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 760
+  },
+  "finish_reason": "stop",
+  "request_seconds": 9.54,
+  "attempts": 1
+ },
+ "raw": "{\"query\":\"plan\",\"completed\":[\"CS2040S\",\"CS2103T\",\"ST2334\",\"CS2100\",\"IS1108\",\"CS2109S\",\"CS3230\",\"MA1522\",\"CS2030S\",\"CS2101\",\"CS2106\",\"CS1101S\",\"CS1231S\",\"ES2660\",\"MA1521\"],\"current_sem\":5,\"programme\":\"BComp CS Hons\",\"must_take\":[\"CS3211\",\"CS3219\",\"CS3268\",\"CS2102\"],\"mc_max\":16,\"late\":[\"CS3211\"],\"rules\":[{\"type\":\"in_sem\",\"course\":\"CS2102\",\"sem\":8,\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3211\",\"sem\":6,\"strength\":\"must\"},{\"type\":\"same_sem\",\"a\":\"CS2102\",\"b\":\"CS3211\",\"strength\":\"must\"},{\"type\":\"in_sem\",\"course\":\"CS3219\",\"sem\":5,\"strength\":\"prefer\"},{\"type\":\"before\",\"a\":\"CS3211\",\"b\":\"CS2102\",\"strength\":\"prefer\"}]}",
+ "spec": {
+  "query": "plan",
+  "completed": [
+   "CS2040S",
+   "CS2103T",
+   "ST2334",
+   "CS2100",
+   "IS1108",
+   "CS2109S",
+   "CS3230",
+   "MA1522",
+   "CS2030S",
+   "CS2101",
+   "CS2106",
+   "CS1101S",
+   "CS1231S",
+   "ES2660",
+   "MA1521"
+  ],
+  "current_sem": 5,
+  "programme": "BComp CS Hons",
+  "must_take": [
+   "CS3211",
+   "CS3219",
+   "CS3268",
+   "CS2102"
+  ],
+  "mc_max": 16,
+  "late": [
+   "CS3211"
+  ],
+  "rules": [
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 8,
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3211",
+    "sem": 6,
+    "strength": "must"
+   },
+   {
+    "type": "same_sem",
+    "a": "CS2102",
+    "b": "CS3211",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3219",
+    "sem": 5,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS3211",
+    "b": "CS2102",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS2102 in semester 8; your rule: CS3211 in semester 6; your rule: CS2102 and CS3211 in the same semester"
+  ]
+ }
+}

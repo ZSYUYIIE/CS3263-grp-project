@@ -1,0 +1,84 @@
+{
+ "id": "q2-S6-004",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 13.96,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3064,
+  "total_tokens": 3400,
+  "completion_tokens": 336,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 13.96,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"completed\": [\n\"MA1521\",\n\"ES2660\",\n\"CS1231S\",\n\"CS1101S\"\n],\n\"must_take\": [\n\"CS3223\",\n\"CS4240\",\n\"CS4248\",\n\"CS2109S\",\n\"CS4278\",\n\"CS4238\",\n\"CS4246\",\n\"CS2040S\"\n],\n\"unsupported\": [\n\"Keep my Fridays free\"\n],\n\"rules\": [\n{\n\"type\": \"before\",\n\"a\": \"CS4248\",\n\"b\": \"CS4246\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS4238\",\n\"b\": \"CS4248\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4278\",\n\"sem\": 7,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS2109S\",\n\"b\": \"CS2040S\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS3223\",\n\"sem\": 6,\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "completed": [
+   "MA1521",
+   "ES2660",
+   "CS1231S",
+   "CS1101S"
+  ],
+  "must_take": [
+   "CS3223",
+   "CS4240",
+   "CS4248",
+   "CS2109S",
+   "CS4278",
+   "CS4238",
+   "CS4246",
+   "CS2040S"
+  ],
+  "unsupported": [
+   "Keep my Fridays free"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS4248",
+    "b": "CS4246",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS4238",
+    "b": "CS4248",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4278",
+    "sem": 7,
+    "strength": "prefer"
+   },
+   {
+    "type": "before",
+    "a": "CS2109S",
+    "b": "CS2040S",
+    "strength": "prefer"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS3223",
+    "sem": 6,
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "MISSING_INFO",
+  "missing": [
+   "current_sem"
+  ],
+  "message": "This cannot be answered yet. Please give: the semester you are in now (1 to 8)."
+ }
+}

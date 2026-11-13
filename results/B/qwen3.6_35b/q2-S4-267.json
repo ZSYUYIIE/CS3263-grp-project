@@ -1,0 +1,88 @@
+{
+ "id": "q2-S4-267",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.5,
+ "solver_seconds": 0.058,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3129,
+  "total_tokens": 3521,
+  "completion_tokens": 392,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 7.44,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 5,\n\"completed\": [\n\"CS2040S\",\n\"CS1101S\",\n\"MA1521\",\n\"CS2100\",\n\"IS1108\",\n\"CS2103T\",\n\"CS2109S\",\n\"ES2660\",\n\"ST2334\",\n\"MA1522\",\n\"CS1231S\",\n\"CS2106\",\n\"CS4243\",\n\"CS2101\",\n\"CS2030S\"\n],\n\"must_take\": [\n\"CS4223\",\n\"CS2105\",\n\"CS3219\",\n\"CS4240\",\n\"CS2102\"\n],\n\"mc_max\": 16,\n\"objective\": \"min_total_mc\",\n\"early\": [\n\"CS3219\"\n],\n\"rules\": [\n{\n\"type\": \"apart\",\n\"a\": \"CS3219\",\n\"b\": \"CS2102\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4223\",\n\"sem\": 5,\n\"strength\": \"must\"\n},\n{\n\"type\": \"before\",\n\"a\": \"CS3219\",\n\"b\": \"CS4223\",\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"apart\",\n\"a\": \"CS4223\",\n\"b\": \"CS2105\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 5,
+  "completed": [
+   "CS2040S",
+   "CS1101S",
+   "MA1521",
+   "CS2100",
+   "IS1108",
+   "CS2103T",
+   "CS2109S",
+   "ES2660",
+   "ST2334",
+   "MA1522",
+   "CS1231S",
+   "CS2106",
+   "CS4243",
+   "CS2101",
+   "CS2030S"
+  ],
+  "must_take": [
+   "CS4223",
+   "CS2105",
+   "CS3219",
+   "CS4240",
+   "CS2102"
+  ],
+  "mc_max": 16,
+  "objective": "min_total_mc",
+  "early": [
+   "CS3219"
+  ],
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS3219",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4223",
+    "sem": 5,
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "CS3219",
+    "b": "CS4223",
+    "strength": "prefer"
+   },
+   {
+    "type": "apart",
+    "a": "CS4223",
+    "b": "CS2105",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "these cannot all hold together with the courses you must take: your rule: CS4223 in semester 5; the prerequisites of CS4223"
+  ]
+ }
+}

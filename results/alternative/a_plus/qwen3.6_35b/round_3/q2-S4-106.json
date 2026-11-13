@@ -1,0 +1,49 @@
+{
+ "id": "q2-S4-106",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 1,
+ "end": "valid",
+ "seconds": 6.77,
+ "usage": {
+  "prompt_tokens": 16513,
+  "total_tokens": 16884,
+  "completion_tokens": 371,
+  "finish_reason": "stop",
+  "request_seconds": 6.77,
+  "attempts": 1,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  }
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"5\": [\n      \"CS2102\",\n      \"IS1108\"\n    ],\n    \"6\": [],\n    \"7\": [\n      \"CS3230\",\n      \"CS2105\"\n    ],\n    \"8\": [\n      \"CS3219\",\n      \"CS3281\"\n    ]\n  },\n  \"reasons\": [\n    \"CS3281 is only offered in Sem 2, so it must be in semester 8.\",\n    \"CS3219 prerequisite CS2103T is completed, allowing it in semester 8.\",\n    \"CS3230 and CS2105 prerequisites are satisfied; placed in semester 7 to allow CS3281 in semester 8.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS2102",
+    "IS1108"
+   ],
+   "6": [],
+   "7": [
+    "CS3230",
+    "CS2105"
+   ],
+   "8": [
+    "CS3219",
+    "CS3281"
+   ]
+  },
+  "reasons": [
+   "CS3281 is only offered in Sem 2, so it must be in semester 8.",
+   "CS3219 prerequisite CS2103T is completed, allowing it in semester 8.",
+   "CS3230 and CS2105 prerequisites are satisfied; placed in semester 7 to allow CS3281 in semester 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,135 @@
+{
+ "id": "q2-S5-018",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 7.3,
+ "solver_seconds": 0.028,
+ "max_tokens": 49152,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 3194,
+  "total_tokens": 3769,
+  "completion_tokens": 575,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 7.27,
+  "attempts": 1
+ },
+ "raw": "{\n  \"query\": \"plan\",\n  \"completed\": [\n    \"CS2100\",\n    \"CS1231S\",\n    \"CS2106\",\n    \"CS3210\",\n    \"CS4230\",\n    \"ST2334\",\n    \"CS3219\",\n    \"IS1108\",\n    \"MA1521\",\n    \"MA1522\",\n    \"CS2103T\",\n    \"CS2040S\",\n    \"CS1101S\",\n    \"CS2101\",\n    \"CS3230\",\n    \"CS2105\",\n    \"CS2030S\",\n    \"CS2109S\"\n  ],\n  \"current_sem\": 6,\n  \"must_take\": [\n    \"CS4231\",\n    \"CS2102\",\n    \"CS4222\",\n    \"ES2660\",\n    \"CS3235\",\n    \"CS3211\",\n    \"CS4243\",\n    \"CS4218\"\n  ],\n  \"mc_max\": 16,\n  \"objective\": \"min_total_mc\",\n  \"unsupported\": [\n    \"avoid modules with heavy group projects\"\n  ],\n  \"rules\": [\n    {\n      \"type\": \"before\",\n      \"a\": \"CS4218\",\n      \"b\": \"CS3235\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"in_sem\",\n      \"course\": \"CS2102\",\n      \"sem\": 7,\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS4222\",\n      \"b\": \"CS4231\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"before\",\n      \"a\": \"ES2660\",\n      \"b\": \"CS2102\",\n      \"strength\": \"must\"\n    },\n    {\n      \"type\": \"apart\",\n      \"a\": \"CS3211\",\n      \"b\": \"CS4218\",\n      \"strength\": \"prefer\"\n    }\n  ],\n  \"early\": [\n    \"CS4222\"\n  ]\n}",
+ "spec": {
+  "query": "plan",
+  "completed": [
+   "CS2100",
+   "CS1231S",
+   "CS2106",
+   "CS3210",
+   "CS4230",
+   "ST2334",
+   "CS3219",
+   "IS1108",
+   "MA1521",
+   "MA1522",
+   "CS2103T",
+   "CS2040S",
+   "CS1101S",
+   "CS2101",
+   "CS3230",
+   "CS2105",
+   "CS2030S",
+   "CS2109S"
+  ],
+  "current_sem": 6,
+  "must_take": [
+   "CS4231",
+   "CS2102",
+   "CS4222",
+   "ES2660",
+   "CS3235",
+   "CS3211",
+   "CS4243",
+   "CS4218"
+  ],
+  "mc_max": 16,
+  "objective": "min_total_mc",
+  "unsupported": [
+   "avoid modules with heavy group projects"
+  ],
+  "rules": [
+   {
+    "type": "before",
+    "a": "CS4218",
+    "b": "CS3235",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS2102",
+    "sem": 7,
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS4222",
+    "b": "CS4231",
+    "strength": "must"
+   },
+   {
+    "type": "before",
+    "a": "ES2660",
+    "b": "CS2102",
+    "strength": "must"
+   },
+   {
+    "type": "apart",
+    "a": "CS3211",
+    "b": "CS4218",
+    "strength": "prefer"
+   }
+  ],
+  "early": [
+   "CS4222"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "PLAN",
+  "objective": "min_total_mc",
+  "last_semester": 8,
+  "plan": {
+   "6": [
+    "CS4222",
+    "ES2660"
+   ],
+   "7": [
+    "CS2102",
+    "CS2107",
+    "CS4218"
+   ],
+   "8": [
+    "CS3211",
+    "CS3235",
+    "CS4231",
+    "CS4243"
+   ]
+  },
+  "mc_per_semester": {
+   "6": 8,
+   "7": 12,
+   "8": 16
+  },
+  "preferences_met": [
+   "CS3211 and CS4218 in different semesters",
+   "CS4222 as early as possible"
+  ],
+  "preferences_not_met": [],
+  "added_prerequisites": [
+   "CS2107"
+  ],
+  "not_applied": [
+   "avoid modules with heavy group projects"
+  ]
+ }
+}

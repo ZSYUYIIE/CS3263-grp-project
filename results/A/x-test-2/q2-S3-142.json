@@ -1,0 +1,52 @@
+{
+ "id": "q2-S3-142",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 45.61,
+ "usage": {
+  "prompt_tokens": 13354,
+  "total_tokens": 17774,
+  "completion_tokens": 4420,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 11776,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4247
+  },
+  "finish_reason": "stop",
+  "request_seconds": 45.61,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"6\":[\"CS2101\",\"CS2102\",\"CS3210\"],\"7\":[\"CP3880\",\"CS3237\",\"CS4223\"],\"8\":[\"ES2660\",\"CS4222\"]},\"reasons\":[\"CS2101 is placed in semester 6, the earliest possible, so it precedes CS4223 and satisfies the CP3880 communication prerequisite.\",\"CS3210 is added in semester 6 because it is a required prerequisite for CS4223; CS4223 and CS3237 can only fit in semester 7 as Sem 1 courses.\",\"CS2102 is in semester 6 because semester 7 is capped at 8 MC of non-ATAP courses and semester 8 must contain ES2660, which cannot be with CS2102.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "6": [
+    "CS2101",
+    "CS2102",
+    "CS3210"
+   ],
+   "7": [
+    "CP3880",
+    "CS3237",
+    "CS4223"
+   ],
+   "8": [
+    "ES2660",
+    "CS4222"
+   ]
+  },
+  "reasons": [
+   "CS2101 is placed in semester 6, the earliest possible, so it precedes CS4223 and satisfies the CP3880 communication prerequisite.",
+   "CS3210 is added in semester 6 because it is a required prerequisite for CS4223; CS4223 and CS3237 can only fit in semester 7 as Sem 1 courses.",
+   "CS2102 is in semester 6 because semester 7 is capped at 8 MC of non-ATAP courses and semester 8 must contain ES2660, which cannot be with CS2102."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

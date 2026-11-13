@@ -1,0 +1,80 @@
+{
+ "id": "q2-S4-158",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 5.59,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 8,
+ "usage": {
+  "prompt_tokens": 3073,
+  "total_tokens": 3364,
+  "completion_tokens": 291,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.59,
+  "attempts": 1
+ },
+ "raw": "{\n\"query\": \"plan\",\n\"current_sem\": 4,\n\"completed\": [\n\"MA1522\",\n\"ES2660\",\n\"ST2334\",\n\"CS1101S\",\n\"CS2100\",\n\"CS1231S\",\n\"CS2101\",\n\"MA1521\",\n\"CS2103T\",\n\"CS2030S\",\n\"CS2040S\"\n],\n\"must_take\": [\n\"CS3247\",\n\"CS4243\",\n\"CS3230\",\n\"CS4240\",\n\"CS4249\"\n],\n\"sem_caps\": {\n\"4\": 0\n},\n\"rules\": [\n{\n\"type\": \"apart\",\n\"a\": \"CS3247\",\n\"b\": \"CS4243\",\n\"strength\": \"must\"\n},\n{\n\"type\": \"in_sem\",\n\"course\": \"CS4249\",\n\"sem\": 8,\n\"strength\": \"prefer\"\n},\n{\n\"type\": \"late\",\n\"course\": \"CS4243\",\n\"strength\": \"prefer\"\n}\n]\n}",
+ "spec": {
+  "query": "plan",
+  "current_sem": 4,
+  "completed": [
+   "MA1522",
+   "ES2660",
+   "ST2334",
+   "CS1101S",
+   "CS2100",
+   "CS1231S",
+   "CS2101",
+   "MA1521",
+   "CS2103T",
+   "CS2030S",
+   "CS2040S"
+  ],
+  "must_take": [
+   "CS3247",
+   "CS4243",
+   "CS3230",
+   "CS4240",
+   "CS4249"
+  ],
+  "sem_caps": {
+   "4": 0
+  },
+  "rules": [
+   {
+    "type": "apart",
+    "a": "CS3247",
+    "b": "CS4243",
+    "strength": "must"
+   },
+   {
+    "type": "in_sem",
+    "course": "CS4249",
+    "sem": 8,
+    "strength": "prefer"
+   },
+   {
+    "type": "late",
+    "course": "CS4243",
+    "strength": "prefer"
+   }
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [
+  "rules[2].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'"
+ ],
+ "answer": {
+  "status": "INVALID_SPEC",
+  "errors": [
+   "rules[2].type must be one of ['before', 'in_sem', 'apart', 'same_sem'], got 'late'"
+  ]
+ }
+}

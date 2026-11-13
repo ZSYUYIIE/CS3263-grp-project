@@ -1,0 +1,55 @@
+{
+ "id": "q2-S3-272",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 3,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 57.05,
+ "usage": {
+  "prompt_tokens": 11058,
+  "total_tokens": 15994,
+  "completion_tokens": 4936,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 9472
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4772
+  },
+  "finish_reason": "stop",
+  "request_seconds": 57.05,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"4\":[\"CS2105\",\"ST2334\",\"CP3880\"],\"5\":[\"CS2109S\",\"CS3103\",\"CS4226\",\"CS2102\",\"CS3230\"],\"6\":[\"CS3234\"]},\"reasons\":[\"Earliest finish is semester 6 because CS3234 is Sem 2 only and must follow CS2109S in semester 5.\",\"ATAP is in semester 4 with exactly 8 MC of other courses; CS2105 and ST2334 must precede semester 5.\",\"CS3103 and CS4226 are Sem 1 only, so both are in semester 5; this forces ST2334 into semester 4 and CS3230 precedes CS3234.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2105",
+    "ST2334",
+    "CP3880"
+   ],
+   "5": [
+    "CS2109S",
+    "CS3103",
+    "CS4226",
+    "CS2102",
+    "CS3230"
+   ],
+   "6": [
+    "CS3234"
+   ]
+  },
+  "reasons": [
+   "Earliest finish is semester 6 because CS3234 is Sem 2 only and must follow CS2109S in semester 5.",
+   "ATAP is in semester 4 with exactly 8 MC of other courses; CS2105 and ST2334 must precede semester 5.",
+   "CS3103 and CS4226 are Sem 1 only, so both are in semester 5; this forces ST2334 into semester 4 and CS3230 precedes CS3234."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

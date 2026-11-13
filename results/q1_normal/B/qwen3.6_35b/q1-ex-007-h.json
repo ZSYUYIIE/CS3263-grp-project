@@ -1,0 +1,53 @@
+{
+ "id": "q1-ex-007-h",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 2.84,
+ "solver_seconds": 0.0,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2936,
+  "total_tokens": 3057,
+  "completion_tokens": 121,
+  "prompt_tokens_details": null,
+  "finish_reason": "stop",
+  "request_seconds": 2.84,
+  "attempts": 1
+ },
+ "raw": "{\"query\": \"eligible\", \"target\": \"CS2103\", \"current_sem\": 6, \"completed\": [\"CS3233\", \"CS2040\", \"MA1511\", \"ST1131\", \"CS1101S\", \"ES2660\", \"MA3270\", \"ST2334\", \"MA1513\", \"CS2113\", \"CS2107\", \"CS2030S\", \"CS2100DE\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS2103",
+  "current_sem": 6,
+  "completed": [
+   "CS3233",
+   "CS2040",
+   "MA1511",
+   "ST1131",
+   "CS1101S",
+   "ES2660",
+   "MA3270",
+   "ST2334",
+   "MA1513",
+   "CS2113",
+   "CS2107",
+   "CS2030S",
+   "CS2100DE"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "target": "CS2103",
+  "semester": 6,
+  "reasons": [
+   "precluded: already completed CS2113"
+  ],
+  "can_still_become_eligible": false,
+  "never_eligible_because": "CS2103 is ruled out by completed CS2113"
+ }
+}

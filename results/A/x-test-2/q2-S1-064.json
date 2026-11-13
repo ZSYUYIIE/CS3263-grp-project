@@ -1,0 +1,56 @@
+{
+ "id": "q2-S1-064",
+ "pipeline": "A",
+ "model": "x-test-2",
+ "seconds": 132.81,
+ "usage": {
+  "prompt_tokens": 7470,
+  "total_tokens": 18199,
+  "completion_tokens": 10729,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 5888,
+   "multimodal_tokens": null
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 10558
+  },
+  "finish_reason": "stop",
+  "request_seconds": 132.81,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"3\":[\"CG2271\",\"CS2102\",\"CS2105\",\"CS2107\"],\"4\":[\"CS3223\",\"CS3235\"],\"5\":[\"CS3103\",\"CS4224\",\"CS4238\"],\"8\":[\"CS2100\"]},\"reasons\":[\"CS4238 is in semester 5; CS3235 and its prerequisites are completed in semesters 3 and 4.\",\"CS3103 is in semester 5 and CS2100 is placed as late as possible in semester 8, after CS3103; Y4S1 exchange is empty.\",\"CS4224 cannot be before CS3103 because both are Sem 1 only and CS3103 cannot be earlier than semester 5; both are in semester 5.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CG2271",
+    "CS2102",
+    "CS2105",
+    "CS2107"
+   ],
+   "4": [
+    "CS3223",
+    "CS3235"
+   ],
+   "5": [
+    "CS3103",
+    "CS4224",
+    "CS4238"
+   ],
+   "8": [
+    "CS2100"
+   ]
+  },
+  "reasons": [
+   "CS4238 is in semester 5; CS3235 and its prerequisites are completed in semesters 3 and 4.",
+   "CS3103 is in semester 5 and CS2100 is placed as late as possible in semester 8, after CS3103; Y4S1 exchange is empty.",
+   "CS4224 cannot be before CS3103 because both are Sem 1 only and CS3103 cannot be earlier than semester 5; both are in semester 5."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 8
+}

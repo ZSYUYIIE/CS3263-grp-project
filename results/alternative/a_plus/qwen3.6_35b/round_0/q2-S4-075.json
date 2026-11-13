@@ -1,0 +1,61 @@
+{
+ "id": "q2-S4-075",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 3,
+ "end": "switched to NO_PLAN",
+ "seconds": 5.98,
+ "usage": {
+  "prompt_tokens": 8593,
+  "total_tokens": 8880,
+  "completion_tokens": 287,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 5.98,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"1\": [\n      \"CS1010\",\n      \"CS1231\",\n      \"CS2040S\",\n      \"CS2101\"\n    ],\n    \"2\": [\n      \"CS2030S\",\n      \"CS2102\"\n    ],\n    \"3\": [\n      \"CS2100\",\n      \"CS3219\"\n    ],\n    \"4\": [\n      \"CS2106\",\n      \"CS3230\"\n    ],\n    \"5\": [\n      \"CS4263\"\n    ],\n    \"6\": [\n      \"CS2220\",\n      \"CS4220\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2040S requires CS1231, so both are taken in Sem 1.\",\n    \"CS2102 requires CS2030S and CS2040S, placed in Sem 2.\",\n    \"CS3219 requires CS2102, placed in Sem 3 after CS2102 is completed.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1010",
+    "CS1231",
+    "CS2040S",
+    "CS2101"
+   ],
+   "2": [
+    "CS2030S",
+    "CS2102"
+   ],
+   "3": [
+    "CS2100",
+    "CS3219"
+   ],
+   "4": [
+    "CS2106",
+    "CS3230"
+   ],
+   "5": [
+    "CS4263"
+   ],
+   "6": [
+    "CS2220",
+    "CS4220"
+   ]
+  },
+  "reasons": [
+   "CS2040S requires CS1231, so both are taken in Sem 1.",
+   "CS2102 requires CS2030S and CS2040S, placed in Sem 2.",
+   "CS3219 requires CS2102, placed in Sem 3 after CS2102 is completed."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

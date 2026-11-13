@@ -1,0 +1,64 @@
+{
+ "id": "q2-S1-027",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 2,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 89.36,
+ "usage": {
+  "prompt_tokens": 5354,
+  "total_tokens": 13853,
+  "completion_tokens": 8499,
+  "prompt_tokens_details": {
+   "cached_tokens": 1536,
+   "created_cache_tokens": 3712
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 8313
+  },
+  "finish_reason": "stop",
+  "request_seconds": 89.36,
+  "attempts": 1
+ },
+ "raw": "{\"status\":\"PLAN\",\"plan\":{\"1\":[\"CS1010\",\"CS1231\"],\"3\":[\"CS2040S\"],\"4\":[\"CS2102\",\"CS2111\"],\"5\":[\"CS3231\",\"CS3240\"],\"6\":[\"CS4225\",\"CS4430\",\"MA1521\"],\"8\":[\"CS3230\",\"CS4240\"]},\"reasons\":[\"All required courses are planned with only necessary prerequisites, and no semester exceeds 3 modules.\",\"Semester 2 is left empty for the leave of absence; CS4225 is in semester 6 and CS4240 is not with CS4225 or CS2040S.\",\"MA1521 is with CS4430 in semester 6, so it cannot precede CS4225 or CS2040S; CS3230 is placed as late as possible in semester 8.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "1": [
+    "CS1010",
+    "CS1231"
+   ],
+   "3": [
+    "CS2040S"
+   ],
+   "4": [
+    "CS2102",
+    "CS2111"
+   ],
+   "5": [
+    "CS3231",
+    "CS3240"
+   ],
+   "6": [
+    "CS4225",
+    "CS4430",
+    "MA1521"
+   ],
+   "8": [
+    "CS3230",
+    "CS4240"
+   ]
+  },
+  "reasons": [
+   "All required courses are planned with only necessary prerequisites, and no semester exceeds 3 modules.",
+   "Semester 2 is left empty for the leave of absence; CS4225 is in semester 6 and CS4240 is not with CS4225 or CS2040S.",
+   "MA1521 is with CS4430 in semester 6, so it cannot precede CS4225 or CS2040S; CS3230 is placed as late as possible in semester 8."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

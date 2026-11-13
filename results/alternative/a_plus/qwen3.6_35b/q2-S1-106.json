@@ -1,0 +1,248 @@
+{
+ "id": "q2-S1-106",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 3,
+ "rounds_used": 3,
+ "end": "valid",
+ "seconds": 24.93,
+ "usage": {
+  "prompt_tokens": 46952,
+  "total_tokens": 47988,
+  "completion_tokens": 1036,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 24.92,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS2105\",\n      \"CS2109S\",\n      \"CS3230\"\n    ],\n    \"4\": [\n      \"CS2102\",\n      \"CS2103T\",\n      \"ST2334\"\n    ],\n    \"5\": [\n      \"CS3219\",\n      \"CS4261\",\n      \"IS1108\",\n      \"CS2101\",\n      \"CS2106\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2103T placed in Sem 4 as required.\",\n    \"CS3219 prerequisite (CS2103T) met in Sem 4, so CS3219 moved to Sem 5.\",\n    \"Soft wishes met: ST2334 in Y3S1, CS4261 before CS2101, CS2106 as late as possible.\"\n  ]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "3": [
+    "CS2100",
+    "CS2105",
+    "CS2109S",
+    "CS3230"
+   ],
+   "4": [
+    "CS2102",
+    "CS2103T",
+    "ST2334"
+   ],
+   "5": [
+    "CS3219",
+    "CS4261",
+    "IS1108",
+    "CS2101",
+    "CS2106"
+   ]
+  },
+  "reasons": [
+   "CS2103T placed in Sem 4 as required.",
+   "CS3219 prerequisite (CS2103T) met in Sem 4, so CS3219 moved to Sem 5.",
+   "Soft wishes met: ST2334 in Y3S1, CS4261 before CS2101, CS2106 as late as possible."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS2103T\",\n      \"CS2105\",\n      \"CS2106\",\n      \"CS2109S\",\n      \"CS3230\"\n    ],\n    \"4\": [\n      \"CS2102\",\n      \"CS3219\",\n      \"ST2334\"\n    ],\n    \"5\": [\n      \"CS4261\",\n      \"IS1108\",\n      \"CS2101\"\n    ]\n  },\n  \"reasons\": [\n    \"All prerequisites satisfied by completed modules or earlier planned semesters.\",\n    \"CS2103T placed in Sem 4 as required. CS2106 and CS2105 separated.\",\n    \"Soft wishes met: CS4261 before CS2101, ST2334 in Y3S1, CS2105/CS2106 as late as possible within constraints.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS2103T",
+      "CS2105",
+      "CS2106",
+      "CS2109S",
+      "CS3230"
+     ],
+     "4": [
+      "CS2102",
+      "CS3219",
+      "ST2334"
+     ],
+     "5": [
+      "CS4261",
+      "IS1108",
+      "CS2101"
+     ]
+    },
+    "reasons": [
+     "All prerequisites satisfied by completed modules or earlier planned semesters.",
+     "CS2103T placed in Sem 4 as required. CS2106 and CS2105 separated.",
+     "Soft wishes met: CS4261 before CS2101, ST2334 in Y3S1, CS2105/CS2106 as late as possible within constraints."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11463,
+    "total_tokens": 11724,
+    "completion_tokens": 261,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "finish_reason": "stop",
+    "request_seconds": 6.46,
+    "attempts": 1
+   },
+   "seconds": 6.46,
+   "violations": [
+    "R4 CS2106 in semester 3: prerequisite not met (CS2100 or CS2100DE or CS2100HS or EE2007 or EE2024 or EE2028)",
+    "R7 semester 3 has 24 MC, limit 20",
+    "R9 must rule not met: CS2103T in semester 4",
+    "R9 must rule not met: apart CS2106 CS2105"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS2103T\",\n      \"CS2105\",\n      \"CS2109S\",\n      \"CS3230\"\n    ],\n    \"4\": [\n      \"CS2102\",\n      \"CS3219\",\n      \"ST2334\"\n    ],\n    \"5\": [\n      \"CS4261\",\n      \"IS1108\",\n      \"CS2101\",\n      \"CS2106\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2100 taken in Sem 3 to satisfy CS2106 prerequisite.\",\n    \"CS2103T in Sem 4 as required. CS2106 and CS2105 separated.\",\n    \"Soft wishes met: ST2334 in Y3S1, CS4261 before CS2101, CS2106/CS2105 as late as possible.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS2103T",
+      "CS2105",
+      "CS2109S",
+      "CS3230"
+     ],
+     "4": [
+      "CS2102",
+      "CS3219",
+      "ST2334"
+     ],
+     "5": [
+      "CS4261",
+      "IS1108",
+      "CS2101",
+      "CS2106"
+     ]
+    },
+    "reasons": [
+     "CS2100 taken in Sem 3 to satisfy CS2106 prerequisite.",
+     "CS2103T in Sem 4 as required. CS2106 and CS2105 separated.",
+     "Soft wishes met: ST2334 in Y3S1, CS4261 before CS2101, CS2106/CS2105 as late as possible."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11881,
+    "total_tokens": 12146,
+    "completion_tokens": 265,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.53,
+    "attempts": 1
+   },
+   "seconds": 5.54,
+   "violations": [
+    "R9 must rule not met: CS2103T in semester 4"
+   ]
+  },
+  {
+   "round": 2,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS2105\",\n      \"CS2109S\",\n      \"CS3230\"\n    ],\n    \"4\": [\n      \"CS2102\",\n      \"CS2103T\",\n      \"CS3219\",\n      \"ST2334\"\n    ],\n    \"5\": [\n      \"CS4261\",\n      \"IS1108\",\n      \"CS2101\",\n      \"CS2106\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2103T placed in Sem 4 as required.\",\n    \"CS2106 and CS2105 separated across Sem 5 and Sem 3 respectively.\",\n    \"Soft wishes met: ST2334 in Y3S1, CS4261 before CS2101, CS2106 as late as possible.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS2105",
+      "CS2109S",
+      "CS3230"
+     ],
+     "4": [
+      "CS2102",
+      "CS2103T",
+      "CS3219",
+      "ST2334"
+     ],
+     "5": [
+      "CS4261",
+      "IS1108",
+      "CS2101",
+      "CS2106"
+     ]
+    },
+    "reasons": [
+     "CS2103T placed in Sem 4 as required.",
+     "CS2106 and CS2105 separated across Sem 5 and Sem 3 respectively.",
+     "Soft wishes met: ST2334 in Y3S1, CS4261 before CS2101, CS2106 as late as possible."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11792,
+    "total_tokens": 12042,
+    "completion_tokens": 250,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 7.57,
+    "attempts": 1
+   },
+   "seconds": 7.57,
+   "violations": [
+    "R4 CS3219 in semester 4: prerequisite not met (YSC3232 or CS2103 or CS2103T or CS2103DE or CS2113T or CS2113)"
+   ]
+  },
+  {
+   "round": 3,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS2105\",\n      \"CS2109S\",\n      \"CS3230\"\n    ],\n    \"4\": [\n      \"CS2102\",\n      \"CS2103T\",\n      \"ST2334\"\n    ],\n    \"5\": [\n      \"CS3219\",\n      \"CS4261\",\n      \"IS1108\",\n      \"CS2101\",\n      \"CS2106\"\n    ]\n  },\n  \"reasons\": [\n    \"CS2103T placed in Sem 4 as required.\",\n    \"CS3219 prerequisite (CS2103T) met in Sem 4, so CS3219 moved to Sem 5.\",\n    \"Soft wishes met: ST2334 in Y3S1, CS4261 before CS2101, CS2106 as late as possible.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS2105",
+      "CS2109S",
+      "CS3230"
+     ],
+     "4": [
+      "CS2102",
+      "CS2103T",
+      "ST2334"
+     ],
+     "5": [
+      "CS3219",
+      "CS4261",
+      "IS1108",
+      "CS2101",
+      "CS2106"
+     ]
+    },
+    "reasons": [
+     "CS2103T placed in Sem 4 as required.",
+     "CS3219 prerequisite (CS2103T) met in Sem 4, so CS3219 moved to Sem 5.",
+     "Soft wishes met: ST2334 in Y3S1, CS4261 before CS2101, CS2106 as late as possible."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11816,
+    "total_tokens": 12076,
+    "completion_tokens": 260,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.36,
+    "attempts": 1
+   },
+   "seconds": 5.36,
+   "violations": []
+  }
+ ]
+}

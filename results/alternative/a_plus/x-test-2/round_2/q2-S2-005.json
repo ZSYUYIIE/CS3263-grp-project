@@ -1,0 +1,54 @@
+{
+ "id": "q2-S2-005",
+ "pipeline": "A+",
+ "model": "x-test-2",
+ "round": 2,
+ "rounds_used": 0,
+ "end": "valid",
+ "seconds": 114.66,
+ "usage": {
+  "prompt_tokens": 8267,
+  "total_tokens": 18121,
+  "completion_tokens": 9854,
+  "prompt_tokens_details": {
+   "cached_tokens": 7936,
+   "created_cache_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 9683
+  },
+  "finish_reason": "stop",
+  "request_seconds": 114.66,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"PLAN\", \"plan\": {\"4\": [\"CS2109S\"], \"6\": [\"CS3230\"], \"7\": [\"CS2102\", \"CS3231\", \"CS3264\"], \"8\": [\"CS3219\"]}, \"reasons\": [\"CS3231 is offered only in Sem 1, so CS2102, CS3231 and CS3264 must all be in semester 7; semester 5 is NOC.\", \"CS2109S is in semester 4 to precede CS3264; CS3230 is in semester 6, the latest slot left after placing CS3219 after CS2102 in semester 8.\", \"CS2102 precedes CS3219; CS3231 and CS3264 cannot be kept apart because the hard constraints force them together.\"]}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "4": [
+    "CS2109S"
+   ],
+   "6": [
+    "CS3230"
+   ],
+   "7": [
+    "CS2102",
+    "CS3231",
+    "CS3264"
+   ],
+   "8": [
+    "CS3219"
+   ]
+  },
+  "reasons": [
+   "CS3231 is offered only in Sem 1, so CS2102, CS3231 and CS3264 must all be in semester 7; semester 5 is NOC.",
+   "CS2109S is in semester 4 to precede CS3264; CS3230 is in semester 6, the latest slot left after placing CS3219 after CS2102 in semester 8.",
+   "CS2102 precedes CS3219; CS3231 and CS3264 cannot be kept apart because the hard constraints force them together."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}

@@ -1,0 +1,110 @@
+{
+ "id": "q2-S3-236",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 10.19,
+ "usage": {
+  "prompt_tokens": 23785,
+  "total_tokens": 24262,
+  "completion_tokens": 477,
+  "finish_reason": "stop",
+  "request_seconds": 10.19,
+  "attempts": 1
+ },
+ "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4243 requires prerequisites not in the student's completed list or the required set of courses (specifically Statistics courses like ST1131/ST2131 and Linear Algebra like MA1508E/MA1522 which are mutually exclusive with completed MA1522, and no other valid Linear Algebra/Stats combo is available or completed).\",\n    \"CS4221 requires CS3223, which is not in the student's list of required courses to take.\",\n    \"CS3281 is offered only in Sem 2, but the student requested it in Y4S2 (Sem 8) which is Sem 2, however CS3281 prerequisite CS2103T is satisfied, but the main blocker is CS4243 and CS4221 prerequisites.\"\n  ]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4243 requires prerequisites not in the student's completed list or the required set of courses (specifically Statistics courses like ST1131/ST2131 and Linear Algebra like MA1508E/MA1522 which are mutually exclusive with completed MA1522, and no other valid Linear Algebra/Stats combo is available or completed).",
+   "CS4221 requires CS3223, which is not in the student's list of required courses to take.",
+   "CS3281 is offered only in Sem 2, but the student requested it in Y4S2 (Sem 8) which is Sem 2, however CS3281 prerequisite CS2103T is satisfied, but the main blocker is CS4243 and CS4221 prerequisites."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n  \"status\": \"PLAN\",\n  \"plan\": {\n    \"3\": [\n      \"CS2100\",\n      \"CS2105\",\n      \"CS3230\"\n    ],\n    \"4\": [\n      \"CS2103T\",\n      \"CS3219\"\n    ],\n    \"5\": [\n      \"CS2102\",\n      \"CS3281\"\n    ],\n    \"6\": [\n      \"CS4218\",\n      \"CS4221\"\n    ],\n    \"7\": [\n      \"CS4243\"\n    ]\n  },\n  \"reasons\": [\n    \"All required courses are planned with prerequisites satisfied in strictly earlier semesters.\",\n    \"CS3219 is placed in Sem 4, before CS2102 in Sem 5 as requested.\",\n    \"CS2103T is placed in Sem 4 (as early as possible to enable downstream courses), CS3281 in Sem 5, and CS4221 in Sem 6 to satisfy 'late as possible' constraints where feasible within dependency chains.\"\n  ]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "3": [
+      "CS2100",
+      "CS2105",
+      "CS3230"
+     ],
+     "4": [
+      "CS2103T",
+      "CS3219"
+     ],
+     "5": [
+      "CS2102",
+      "CS3281"
+     ],
+     "6": [
+      "CS4218",
+      "CS4221"
+     ],
+     "7": [
+      "CS4243"
+     ]
+    },
+    "reasons": [
+     "All required courses are planned with prerequisites satisfied in strictly earlier semesters.",
+     "CS3219 is placed in Sem 4, before CS2102 in Sem 5 as requested.",
+     "CS2103T is placed in Sem 4 (as early as possible to enable downstream courses), CS3281 in Sem 5, and CS4221 in Sem 6 to satisfy 'late as possible' constraints where feasible within dependency chains."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 11547,
+    "total_tokens": 11818,
+    "completion_tokens": 271,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.49,
+    "attempts": 1
+   },
+   "seconds": 5.49,
+   "violations": [
+    "R4 CS3219 in semester 4: prerequisite not met (YSC3232 or CS2103 or CS2103T or CS2103DE or CS2113T or CS2113)",
+    "R3 CS3281 not offered in Sem 1 (semester 5)",
+    "R4 CS4221 in semester 6: prerequisite not met (CS3223)",
+    "R4 CS4243 in semester 7: prerequisite not met ((YSC2232 or MA2001 or MA1101R or MA1311 or MA1508E or MA1513 or MA1522) and (ST1131 or ST1131A or ST1232 or ST2131 or MA2116 or MA2116T or MA2216 or EE2012A or EE2012 or ST2334 or YSC2243) and (CS2030 or CS2030S or CS2030DE or CS2030HS or CS2113 or CS2113T) and (YSC2229 or CS2040 or CS2040S or CS2040DE or CS2040C or CS2040HS) and (MA1102R or MA2002 or YSC1216 or MA1505 or MA1521 or MA1507 or (MA1512 and MA1511)))"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n  \"status\": \"NO_PLAN\",\n  \"reasons\": [\n    \"CS4243 requires prerequisites not in the student's completed list or the required set of courses (specifically Statistics courses like ST1131/ST2131 and Linear Algebra like MA1508E/MA1522 which are mutually exclusive with completed MA1522, and no other valid Linear Algebra/Stats combo is available or completed).\",\n    \"CS4221 requires CS3223, which is not in the student's list of required courses to take.\",\n    \"CS3281 is offered only in Sem 2, but the student requested it in Y4S2 (Sem 8) which is Sem 2, however CS3281 prerequisite CS2103T is satisfied, but the main blocker is CS4243 and CS4221 prerequisites.\"\n  ]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4243 requires prerequisites not in the student's completed list or the required set of courses (specifically Statistics courses like ST1131/ST2131 and Linear Algebra like MA1508E/MA1522 which are mutually exclusive with completed MA1522, and no other valid Linear Algebra/Stats combo is available or completed).",
+     "CS4221 requires CS3223, which is not in the student's list of required courses to take.",
+     "CS3281 is offered only in Sem 2, but the student requested it in Y4S2 (Sem 8) which is Sem 2, however CS3281 prerequisite CS2103T is satisfied, but the main blocker is CS4243 and CS4221 prerequisites."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 12238,
+    "total_tokens": 12444,
+    "completion_tokens": 206,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 4.7,
+    "attempts": 1
+   },
+   "seconds": 4.7,
+   "violations": null
+  }
+ ]
+}

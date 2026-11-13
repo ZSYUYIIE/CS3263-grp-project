@@ -1,0 +1,92 @@
+{
+ "id": "q2-S3-207",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 47.78,
+ "usage": {
+  "prompt_tokens": 30357,
+  "total_tokens": 32868,
+  "completion_tokens": 2511,
+  "finish_reason": "stop",
+  "request_seconds": 47.78,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"The student is in Semester 7. CS3103 is required in Semester 7. CS4225 requires CS2102 and must be taken after CS3103, so CS4225 must be in Semester 8. This requires CS2102 to be completed before Semester 8. However, the student is already in Semester 7, and no earlier semesters (1-6) are available to plan courses. CS2102 cannot be taken in Semester 7 because the student wants to keep CS2102 and CS3103 apart (CS3103 is in Sem 7), and even if they were together, CS2102 would need to be completed before CS4225 in Sem 8, which is possible, but the 'apart' constraint forces CS2102 to be in Sem 6 or earlier, which is impossible. Thus, no valid plan exists.\"]}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "The student is in Semester 7. CS3103 is required in Semester 7. CS4225 requires CS2102 and must be taken after CS3103, so CS4225 must be in Semester 8. This requires CS2102 to be completed before Semester 8. However, the student is already in Semester 7, and no earlier semesters (1-6) are available to plan courses. CS2102 cannot be taken in Semester 7 because the student wants to keep CS2102 and CS3103 apart (CS3103 is in Sem 7), and even if they were together, CS2102 would need to be completed before CS4225 in Sem 8, which is possible, but the 'apart' constraint forces CS2102 to be in Sem 6 or earlier, which is impossible. Thus, no valid plan exists."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"CS3103 prerequisite is CS2105, which is completed, but CS3103 is only offered in Sem 1. Semester 7 is Sem 1 of AY2028/29, so this is valid. However, CS4225 requires CS2102. The student wants CS3103 in Sem 7 and CS4225 before CS2102 is impossible because CS4225 depends on CS2102. The wish 'CS4225 before CS2102' contradicts the prerequisite 'CS4225 requires CS2102'. Since prerequisites are hard constraints, CS4225 cannot be taken before CS2102. The student's hard constraint 'finish CS3103 before CS4225' combined with 'CS4225 before CS2102' (interpreted as a wish) is not a hard constraint, but the prerequisite makes CS4225 after CS2102 mandatory. The student also says 'I need to finish CS3103 before I start CS4225'. This is a hard constraint. CS3103 is in Sem 7. So CS4225 must be in Sem 8. CS4225 requires CS2102. So CS2102 must be in Sem 7 or earlier. CS3234 is desired in Sem 8. CS3234 requires CS1231S (completed). CS3234 is offered Sem 2. Sem 8 is Sem 2. So CS3234 can be in Sem 8. CS2102 requires CS2030S (completed) and CS2040S (completed) and CS1231S (completed). So CS2102 is eligible. CS2102 is offered Sem 1 and Sem 2. CS2102 can be in Sem 7 or 8. If CS2102 is in Sem 7, it conflicts with ATAP (CP3880) in Sem 7? No, ATAP allows up to 8 MC of other courses. CS2102 is 4 MC. So CS2102 can be in Sem 7 with ATAP. Then CS4225 can be in Sem 8. CS3234 can be in Sem 8. Sem 8 would have CS4225 and CS3234. This is 2 modules. Limit is 3. This seems possible. Why NO_PLAN? Let's re-read carefully. 'I need to finish CS3103 before I start CS4225'. CS3103 in Sem 7. CS4225 in Sem 8. 'CS4225 before CS2102' is a wish. 'Keep CS2102 and CS3103 apart'. If CS2102 is in Sem 7, it is with CS3103. So they are not apart. So CS2102 must be in Sem 6 or earlier. If CS2102 is in Sem 6, CS4225 can be in Sem 7 or 8. But CS3103 is in Sem 7. CS4225 must be after CS3103, so Sem 8. So CS4225 in Sem 8. CS2102 in Sem 6. CS3234 in Sem 8. Sem 8 has CS4225 and CS3234. Sem 7 has ATAP and CS3103. Sem 6 has CS2102. This works. Is there a reason to refuse? 'I'm also applying to have one module waived.' This is a wish, not a fact. We cannot assume a waiver. 'Ideally I'd take CS3234 before CS2102'. CS3234 in Sem 8, CS2102 in Sem 6. This wish is not met. 'If possible, keep CS2102 and CS3103 apart'. Met by Sem 6 vs Sem 7. 'I'd rather do CS4225 before CS2102'. This is impossible due to prereq. So this wish is ignored. 'Keep my total MC as low as possible'. This is a soft wish? No, 'keep my total MC as low as possible' is listed under 'What to optimise' step 1? No, step 1 is 'graduate as early as possible' or 'fewest total credits'. The student says 'keep my total MC as low as possible'. This maps to 'fewest total credits'. So we must minimize total MC. The modules to take are CS3234, CS4225, CS2102, CS3103. All are 4 MC. Total 16 MC. ATAP is 12 MC. Total 28 MC. This is fixed. The plan is valid. Why did I think NO_PLAN? I might have misread 'CS4225 before CS2102' as a hard constraint. It is 'I'd rather...'. So it's a soft wish. The hard constraints are: CS3103 in Sem 7. CS3103 before CS4225. CS2102 and CS3103 apart. CS3234 in Sem 8 (soft). CS3234 before CS2102 (soft). CS4225 before CS2102 (soft). ATAP in Sem 7. Max 3 modules per semester. CS3103 in Sem 7. ATAP in Sem 7. CS2102 cannot be in Sem 7 (apart from CS3103). So CS2102 in Sem 6 or earlier. CS4225 must be after CS3103 (Sem 7), so Sem 8. CS4225 requires CS2102. CS2102 in Sem 6 satisfies this. CS3234 in Sem 8 (soft). Sem 8: CS4225, CS3234. Sem 7: ATAP, CS3103. Sem 6: CS2102. This is a valid plan. Total MC: 4+4+4+4+12 = 28. Is there a way to have fewer MC? No, these are the required modules. So PLAN is the answer.\n\nWait, check CS3103 prerequisite: CS2105. Completed. OK.\nCheck CS4225 prerequisite: CS2102. Planned in Sem 6. OK.\nCheck CS2102 prerequisite: CS1231S (completed), CS2030S (completed), CS2040S (completed). OK.\nCheck CS3234 prerequisite: CS1231S (completed). OK.\nCheck ATAP prerequisite: IS2101 or ... or CS2103 or ... or BT3103. Student has CS2103T. Is CS2103T in the list? The list for ATAP is: (IS2101 or CS2101 or ES1601 ... or CS2103 or CS2103T or IS3106 or BT3103 or IS2108). Yes, CS2103T is in the list. OK.\nCheck ATAP other courses limit: Max 8 MC. CS3103 is 4 MC. OK.\nCheck Sem 7 limit: Max 3 modules. ATAP is not a module in the count? 'Two courses that are mutually exclusive...'. 'MC per semester at most the student's limit (20 MC if none is stated)'. 'An exchange/NOC semester has 0 MC'. 'ATAP... 12 MC... do not count against the per-semester limits'. So Sem 7 has CS3103 (4 MC). Limit 20. OK.\nCheck Sem 8 limit: CS4225 (4 MC), CS3234 (4 MC). Total 8 MC. OK.\nCheck Sem 6 limit: CS2102 (4 MC). OK.\n\nSo the plan is:\nSem 6: CS2102\nSem 7: CP3880, CS3103\nSem 8: CS4225, CS3234\n\nReasons:\n1. CS3103 is fixed in Sem 7.\n2. CS4225 must be after CS3103, so Sem 8.\n3. CS2102 must be before CS4225, and apart from CS3103, so Sem 6.\n4. CS3234 is placed in Sem 8 as requested.\n5. ATAP is in Sem 7 with CS3103.\n\nThis satisfies all hard constraints. Soft wishes:\n- Avoid heavy group projects: Cannot act on.\n- At most 3 modules: Met.\n- Keep total MC low: Met (minimal set).\n- CS3234 in Sem 8: Met.\n- CS3234 before CS2102: Not met (Sem 8 vs Sem 6).\n- CS2102 and CS3103 apart: Met.\n- CS4225 before CS2102: Not met (Sem 8 vs Sem 6).\n\nThe plan is valid.\n\n{\"status\": \"PLAN\", \"plan\": {\"6\": [\"CS2102\"], \"7\": [\"CP3880\", \"CS3103\"], \"8\": [\"CS4225\", \"CS3234\"]}, \"reasons\": [\"CS3103 is fixed in Sem 7. CS4225 must follow CS3103, so it is in Sem 8. CS2102 is required for CS4225 and must be apart from CS3103, so it is in Sem 6. CS3234 is placed in Sem 8 as requested. ATAP is in Sem 7 with CS3103.\"]}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "6": [
+      "CS2102"
+     ],
+     "7": [
+      "CP3880",
+      "CS3103"
+     ],
+     "8": [
+      "CS4225",
+      "CS3234"
+     ]
+    },
+    "reasons": [
+     "CS3103 is fixed in Sem 7. CS4225 must follow CS3103, so it is in Sem 8. CS2102 is required for CS4225 and must be apart from CS3103, so it is in Sem 6. CS3234 is placed in Sem 8 as requested. ATAP is in Sem 7 with CS3103."
+    ]
+   },
+   "repair": "extra_text",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 14003,
+    "total_tokens": 16296,
+    "completion_tokens": 2293,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 43.93,
+    "attempts": 1
+   },
+   "seconds": 43.93,
+   "violations": [
+    "R1 semester 6 is outside 7..8"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\"status\": \"NO_PLAN\", \"reasons\": [\"The student is in Semester 7. CS3103 is required in Semester 7. CS4225 requires CS2102 and must be taken after CS3103, so CS4225 must be in Semester 8. This requires CS2102 to be completed before Semester 8. However, the student is already in Semester 7, and no earlier semesters (1-6) are available to plan courses. CS2102 cannot be taken in Semester 7 because the student wants to keep CS2102 and CS3103 apart (CS3103 is in Sem 7), and even if they were together, CS2102 would need to be completed before CS4225 in Sem 8, which is possible, but the 'apart' constraint forces CS2102 to be in Sem 6 or earlier, which is impossible. Thus, no valid plan exists.\"]}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "The student is in Semester 7. CS3103 is required in Semester 7. CS4225 requires CS2102 and must be taken after CS3103, so CS4225 must be in Semester 8. This requires CS2102 to be completed before Semester 8. However, the student is already in Semester 7, and no earlier semesters (1-6) are available to plan courses. CS2102 cannot be taken in Semester 7 because the student wants to keep CS2102 and CS3103 apart (CS3103 is in Sem 7), and even if they were together, CS2102 would need to be completed before CS4225 in Sem 8, which is possible, but the 'apart' constraint forces CS2102 to be in Sem 6 or earlier, which is impossible. Thus, no valid plan exists."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 16354,
+    "total_tokens": 16572,
+    "completion_tokens": 218,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 3.85,
+    "attempts": 1
+   },
+   "seconds": 3.85,
+   "violations": null
+  }
+ ]
+}

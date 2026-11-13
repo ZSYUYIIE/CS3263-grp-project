@@ -1,0 +1,56 @@
+{
+ "id": "q1-os-02",
+ "pipeline": "B",
+ "model": "qwen3.6:35b",
+ "seconds": 2.05,
+ "solver_seconds": 0.001,
+ "max_tokens": 24576,
+ "workers": 4,
+ "usage": {
+  "prompt_tokens": 2839,
+  "total_tokens": 2973,
+  "completion_tokens": 134,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 2.05,
+  "attempts": 1
+ },
+ "ablation": 1,
+ "raw": "{\"query\": \"eligible\", \"target\": \"CS4330\", \"current_sem\": 7, \"programme\": \"Information Systems\", \"completed\": [\"ES2660\", \"MA1521\", \"IS1108\", \"CS2100\", \"CS1101S\", \"CS3210\", \"CS2220\", \"ST1131\", \"ESP2107\", \"MA2116\", \"CS2107\", \"CS2106\", \"CS2113\", \"CS2040DE\"]}",
+ "spec": {
+  "query": "eligible",
+  "target": "CS4330",
+  "current_sem": 7,
+  "programme": "Information Systems",
+  "completed": [
+   "ES2660",
+   "MA1521",
+   "IS1108",
+   "CS2100",
+   "CS1101S",
+   "CS3210",
+   "CS2220",
+   "ST1131",
+   "ESP2107",
+   "MA2116",
+   "CS2107",
+   "CS2106",
+   "CS2113",
+   "CS2040DE"
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "schema_errors": [],
+ "answer": {
+  "status": "OUT_OF_SCOPE",
+  "reasons": [
+   "programme 'Information Systems' is not BComp (CS) Hons"
+  ],
+  "message": "I can only plan for BComp (CS) Hons single-major students under AY2026/2027 rules, and this request is outside that (programme 'Information Systems' is not BComp (CS) Hons). Course rules differ by programme and aren't in my data for your case, so please check with your faculty or academic advisor."
+ }
+}

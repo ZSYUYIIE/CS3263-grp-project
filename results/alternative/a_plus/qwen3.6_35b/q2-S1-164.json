@@ -1,0 +1,98 @@
+{
+ "id": "q2-S1-164",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 1,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 7.99,
+ "usage": {
+  "prompt_tokens": 27052,
+  "total_tokens": 27376,
+  "completion_tokens": 324,
+  "finish_reason": "stop",
+  "request_seconds": 7.99,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS4262 requires CS3244, CS3264, or CG3201, none of which are in the student's completed or remaining required list.\",\n\"CS3281 is offered only in Sem 2, so it cannot be taken in Y4S1 (Sem 7).\",\n\"Missing prerequisites for remaining required modules make the plan impossible.\"\n]\n}",
+ "answer": {
+  "status": "NO_PLAN",
+  "reasons": [
+   "CS4262 requires CS3244, CS3264, or CG3201, none of which are in the student's completed or remaining required list.",
+   "CS3281 is offered only in Sem 2, so it cannot be taken in Y4S1 (Sem 7).",
+   "Missing prerequisites for remaining required modules make the plan impossible."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3,
+ "rounds": [
+  {
+   "round": 0,
+   "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"7\": [\n\"CS3241\",\n\"CS2105\",\n\"CS3281\"\n],\n\"8\": [\n\"CS4231\",\n\"CS4262\",\n\"CS4215\"\n]\n},\n\"reasons\": [\n\"Prerequisites for CS3241, CS3281, CS2105, CS4231, CS4262, and CS4215 are satisfied by completed courses.\",\n\"CS4262 and CS4215 are scheduled in Sem 8 as requested. CS3281 is taken in Sem 7 before CS2105 to meet the soft wish.\",\n\"CS2105 and CS4231 are taken as early as possible (Sem 7 and 8 respectively) given prerequisite constraints and the fixed Sem 8 courses.\"\n]\n}",
+   "answer": {
+    "status": "PLAN",
+    "plan": {
+     "7": [
+      "CS3241",
+      "CS2105",
+      "CS3281"
+     ],
+     "8": [
+      "CS4231",
+      "CS4262",
+      "CS4215"
+     ]
+    },
+    "reasons": [
+     "Prerequisites for CS3241, CS3281, CS2105, CS4231, CS4262, and CS4215 are satisfied by completed courses.",
+     "CS4262 and CS4215 are scheduled in Sem 8 as requested. CS3281 is taken in Sem 7 before CS2105 to meet the soft wish.",
+     "CS2105 and CS4231 are taken as early as possible (Sem 7 and 8 respectively) given prerequisite constraints and the fixed Sem 8 courses."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 13359,
+    "total_tokens": 13578,
+    "completion_tokens": 219,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 5.15,
+    "attempts": 1
+   },
+   "seconds": 5.15,
+   "violations": [
+    "R3 CS3281 not offered in Sem 1 (semester 7)",
+    "R4 CS4262 in semester 8: prerequisite not met ((CS2106 or CG2271) and (CS3244 or CS3264 or CG3201))"
+   ]
+  },
+  {
+   "round": 1,
+   "raw": "{\n\"status\": \"NO_PLAN\",\n\"reasons\": [\n\"CS4262 requires CS3244, CS3264, or CG3201, none of which are in the student's completed or remaining required list.\",\n\"CS3281 is offered only in Sem 2, so it cannot be taken in Y4S1 (Sem 7).\",\n\"Missing prerequisites for remaining required modules make the plan impossible.\"\n]\n}",
+   "answer": {
+    "status": "NO_PLAN",
+    "reasons": [
+     "CS4262 requires CS3244, CS3264, or CG3201, none of which are in the student's completed or remaining required list.",
+     "CS3281 is offered only in Sem 2, so it cannot be taken in Y4S1 (Sem 7).",
+     "Missing prerequisites for remaining required modules make the plan impossible."
+    ]
+   },
+   "repair": "clean",
+   "parse_error": null,
+   "usage": {
+    "prompt_tokens": 13693,
+    "total_tokens": 13798,
+    "completion_tokens": 105,
+    "prompt_tokens_details": null,
+    "finish_reason": "stop",
+    "request_seconds": 2.84,
+    "attempts": 1
+   },
+   "seconds": 2.84,
+   "violations": null
+  }
+ ]
+}

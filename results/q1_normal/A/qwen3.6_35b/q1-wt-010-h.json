@@ -1,0 +1,30 @@
+{
+ "id": "q1-wt-010-h",
+ "pipeline": "A",
+ "model": "qwen3.6:35b",
+ "seconds": 13.67,
+ "usage": {
+  "prompt_tokens": 6736,
+  "total_tokens": 7671,
+  "completion_tokens": 935,
+  "prompt_tokens_details": null,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "finish_reason": "stop",
+  "request_seconds": 13.66,
+  "attempts": 1
+ },
+ "raw": "{\"status\": \"ELIGIBLE\", \"reasons\": [\"Prerequisites for CS2309 are satisfied: CS1231S is completed, and the combination of CS2030S and CS2040S (both completed) satisfies the corequisite block.\", \"CS2309 is offered in Semester 1 only, but the student asked about Y3 Sem 2 (Semester 6). However, the question is 'Would the prerequisites let me enrol', which is an eligibility check based on prerequisites. The course is open to BComp CS Hons. The student has not completed CS2309. The prerequisites are met. The semester offering constraint is separate from prerequisite eligibility, but typically 'enrol in X in Semester N' implies checking if it's possible. CS2309 is NOT offered in Sem 2. Wait, the prompt says 'Can I take X (in semester N)... X is eligible when... X is offered in that semester's term.' So if it's not offered, it's NOT_ELIGIBLE. Let me re-read carefully. 'Can I take X (in semester N / next semester)?' -> eligibility. X is eligible when... X is offered in that semester's term. CS2309 is offered: Sem 1. The student asks about Y3 Sem 2 (Semester 6). Therefore, it is NOT offered in that semester. So the answer should be NOT_ELIGIBLE because it's not offered. BUT, often students ask 'can I take' meaning 'am I qualified'. The instructions say: 'X is eligible when... X is offered in that semester's term.' This is a hard constraint for ELIGIBLE status. If it's not offered, it's NOT_ELIGIBLE. However, looking at the 'reasons', I should explain. Let's check if there is any ambiguity. 'Y3 Sem 2' is Semester 6. CS2309 is offered Sem 1. So it is not offered in Sem 6. Thus, NOT_ELIGIBLE. Reason: CS2309 is only offered in Semester 1.\n\nWait, let me double check the 'cannot take if completed' and 'mutually exclusive'. CS2309 cannot take if completed CS2305S. Student has not completed CS2305S.\nPrerequisites: (CS1231 or CS1231S or MA1100 or MA1100T) AND (((CS2030 or CS2030S or CS2030DE or CS2030HS) and (CS2040 or CS2040S or CS2040HS or CS2040C or CS2040DE)) or CS2113 or CS2113T).\nStudent has CS1231S.\nStudent has CS2030S and CS2040S.\nSo the first part (CS1231S) is true.\nThe second part: (CS2030S and CS2040S) is true.\nSo prerequisites are met.\nBut it is NOT offered in Sem 2.\nSo NOT_ELIGIBLE.\n\nLet's verify the semester numbering. Y3S1 = 5, Y3S2 = 6.\nCS2309 offered: Sem 1.\nSem 1 corresponds to odd semesters: 1, 3, 5, 7.\nSem 6 is even.\nSo CS2309 is not offered in Sem 6.\nTherefore, the student cannot take it in Y3 Sem 2.\n\nStatus: NOT_ELIGIBLE.\nReason: CS2309 is only offered in Semester 1 (odd semesters), not in Semester 2 (even semesters).\n\nOne more check: Is CS2309 open to BComp CS Hons? Yes, no restriction listed.\nIs it blocked by completed courses? No.\nAre prerequisites met? Yes.\nIs it offered in the requested semester? No.\n\nSo NOT_ELIGIBLE.\n\n{\"status\": \"NOT_ELIGIBLE\", \"reasons\": [\"CS2309 is only offered in Semester 1 (odd semesters), but Y3 Sem 2 is Semester 6 (even).\"]}",
+ "answer": {
+  "status": "NOT_ELIGIBLE",
+  "reasons": [
+   "CS2309 is only offered in Semester 1 (odd semesters), but Y3 Sem 2 is Semester 6 (even)."
+  ]
+ },
+ "fenced": true,
+ "repair": "extra_text",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "workers": 4
+}

@@ -1,0 +1,49 @@
+{
+ "id": "q2-S3-017",
+ "pipeline": "A+",
+ "model": "qwen3.6_35b",
+ "round": 0,
+ "rounds_used": 1,
+ "end": "switched to NO_PLAN",
+ "seconds": 5.71,
+ "usage": {
+  "prompt_tokens": 14382,
+  "total_tokens": 14673,
+  "completion_tokens": 291,
+  "finish_reason": "stop",
+  "request_seconds": 5.71,
+  "attempts": 1
+ },
+ "raw": "{\n\"status\": \"PLAN\",\n\"plan\": {\n\"5\": [\n\"CS3231\",\n\"CS2102\",\n\"CS3230\"\n],\n\"6\": [\n\"CS2109S\",\n\"CS3219\"\n],\n\"7\": [\n\"CP3880\"\n],\n\"8\": [\n\"CS3264\"\n]\n},\n\"reasons\": [\n\"Prerequisites for CS2102, CS3230, CS2109S, CS3219, CS3264 are satisfied by completed courses.\",\n\"CS3231 is taken in Sem 5 as required. CS3230 is taken in Sem 5 to satisfy its prerequisite for CS2109S and CS3264.\",\n\"CS2102 is taken in Sem 5 before CS3219 (Sem 6) as preferred. CS3231 and CS3264 are kept apart (Sem 5 and 8).\",\n\"ATAP (CP3880) is planned in Sem 7 (Y3S2) as requested, with no other courses to respect the 8 MC limit for non-ATAP modules.\"\n]\n}",
+ "answer": {
+  "status": "PLAN",
+  "plan": {
+   "5": [
+    "CS3231",
+    "CS2102",
+    "CS3230"
+   ],
+   "6": [
+    "CS2109S",
+    "CS3219"
+   ],
+   "7": [
+    "CP3880"
+   ],
+   "8": [
+    "CS3264"
+   ]
+  },
+  "reasons": [
+   "Prerequisites for CS2102, CS3230, CS2109S, CS3219, CS3264 are satisfied by completed courses.",
+   "CS3231 is taken in Sem 5 as required. CS3230 is taken in Sem 5 to satisfy its prerequisite for CS2109S and CS3264.",
+   "CS2102 is taken in Sem 5 before CS3219 (Sem 6) as preferred. CS3231 and CS3264 are kept apart (Sem 5 and 8).",
+   "ATAP (CP3880) is planned in Sem 7 (Y3S2) as requested, with no other courses to respect the 8 MC limit for non-ATAP modules."
+  ]
+ },
+ "fenced": false,
+ "repair": "clean",
+ "parse_error": null,
+ "max_tokens": 24576,
+ "k": 3
+}
