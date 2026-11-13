@@ -149,6 +149,15 @@ requirements. Each answer opens with a plain-language headline (for example "Yes
 prerequisites the solver added. Warnings, unsupported wishes, unmet preferences and refusal reasons are displayed
 with the answer, in the solver's own words.
 
+After a plan, press `C` to see your chances of getting its courses in CourseReg (Enter goes back to the menu).
+The planner runs the bidding MDP ([below](#bidding-under-uncertainty-mdp-extension)) under both probability
+scenarios and shows, in plain language: the chance the plan works exactly as written, the chance of finishing
+the courses when the plan says and by Year 4 Semester 2, the courses that are hardest to get, what to bid for now,
+and what to bid for next semester if a bid fails. Every chance is a range from the round-1-only scenario to the
+all-rounds one, and courses with no CourseReg data are named with the chance assumed for them. The bidding advice
+comes from the lower scenario. It takes up to a few seconds and makes no further LLM call. Requests with
+`must` rules, ATAP or a minimum load get a one-line reason instead of the offer.
+
 The command loads the project-root `.env`, preserving existing environment variables. It keeps requests in memory
 and does not write experiment results. It uses the existing Pipeline B prompt and solver; the JSON CLI below still
 works. See `python -m planner --help` for API timeout, retry and token limits (defaults: 60 seconds per attempt,

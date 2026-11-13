@@ -162,6 +162,13 @@ answer = solve(spec, admission=Admission.load("round1", missing=0.9))
 answer = solve(spec, admission=Admission.from_dict({"CS4248": 0.6}))   # courses not given are certain
 ```
 
+**Interactively.** In `python -m planner`, press `C` after a plan. The planner calls `solve` for both scenarios
+and prints the answer as text (`planner/formatting.py`, `format_bidding`): chances as ranges from `round1` to
+`all_rounds`, whole percentages that never round a small chance to 0% or an uncertain one to 100%, the
+chance of finishing by the plan's last semester and by semester 8, the hardest courses (below 95% under
+`round1`), the first bid and the next bid for the five likeliest outcomes, and the courses without report
+rows. The advice (`first_bid`, `if_then`) is the `round1` policy, because it leaves time to bid again.
+
 **Statuses.** `POLICY`, or the solver's own `INVALID_SPEC`, `OUT_OF_SCOPE`, `MISSING_INFO` and `NO_PLAN`
 passed through unchanged. `UNSUPPORTED` is returned for a Q1 request and for a spec with a `must` rule,
 `atap_sems` or `mc_min`. `TOO_LARGE` is returned if the search passes 200,000 states.

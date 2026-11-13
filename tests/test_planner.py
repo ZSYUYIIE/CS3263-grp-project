@@ -13,7 +13,20 @@ from eval.checker import check_plan
 from pipelines import config
 from pipelines.run_b import PROMPT
 from planner import cli
-from planner.formatting import HEADLINES, format_answer, semester_label, summary
+from planner.formatting import (
+    BIDDING_INTRO,
+    HEADLINES,
+    TINY,
+    chance,
+    format_answer,
+    format_bidding,
+    listed,
+    pct,
+    semester_label,
+    summary,
+)
+from solver.admission import Admission
+from solver.mdp import solve
 from solver.run import prepare, run
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -86,6 +99,10 @@ def test_plan_session_sends_unchanged_constraints_to_real_solver(catalog, monkey
     assert "Minimum MC in each nonempty semester: 4" in output
     assert "Wishes I could not apply - no 8am classes" in output
     assert "does not check your full graduation requirements" in output
+    assert ("A check of your chances of getting these courses is not available for this request: "
+            "must rules are not modelled under uncertainty; "
+            "a minimum load (mc_min) is not modelled under uncertainty.") in output
+    assert "[C] Check my chances" not in output
 
 
 def test_followups_update_only_missing_fields_and_do_not_call_llm_again(catalog, monkeypatch):
@@ -93,7 +110,7 @@ def test_followups_update_only_missing_fields_and_do_not_call_llm_again(catalog,
     spy = Mock(wraps=run)
     monkeypatch.setattr(cli, "run", spy)
     output, translator = session(
-        ["2", "Plan my courses.", "", "nothing", "none", "wrong", "Y1S1", "cs1101s", "", "3"],
+        ["2", "Plan my courses.", "", "nothing", "none", "wrong", "Y1S1", "cs1101s", "", "", "3"],
         [original], catalog)
     translator.assert_called_once()
     spy.assert_called_once_with({**original, "completed": [], "current_sem": 1, "must_take": ["CS1101S"]}, catalog)
@@ -118,7 +135,7 @@ def test_query_mismatch_requires_explicit_choice(catalog, monkeypatch, action):
     monkeypatch.setattr(cli, "run", spy)
     inputs, replies = ["1", "Plan my courses.", action], [Q2]
     if action == "s":
-        inputs += ["", "3"]
+        inputs += ["", "", "3"]                # solve, then Enter past the bidding offer
     elif action == "r":
         inputs += ["Can I take CS1101S?", "", "3"]
         replies.append(Q1)
@@ -136,7 +153,7 @@ def test_replacement_and_new_query_have_no_stale_fields(catalog, monkeypatch):
     monkeypatch.setattr(cli, "run", spy)
     old = {**Q2, "mc_max": 4, "unsupported": ["old wish"]}
     output, translator = session(
-        ["2", "Old request.", "r", "Replacement request.", "", "1", "New question.", "", "3"],
+        ["2", "Old request.", "r", "Replacement request.", "", "", "1", "New question.", "", "3"],
         [old, Q2, Q1], catalog)
     assert [call.args[0] for call in spy.call_args_list] == [Q2, Q1]
     assert "Maximum MC per semester: 20 (default)" in output
@@ -384,7 +401,7 @@ def test_null_fields_from_translation_are_labelled_default(catalog):
 
 
 def test_completed_followup_has_one_hint(catalog):
-    output, _ = session(["2", "Plan CS1101S.", "none", "", "3"],
+    output, _ = session(["2", "Plan CS1101S.", "none", "", "", "3"],
                         [{"query": "plan", "current_sem": 1, "must_take": ["CS1101S"]}], catalog)
     assert 'Please give the courses you have already completed (comma-separated codes, or "none"): ' in output
     assert "say so if there are none" not in output
@@ -440,8 +457,94 @@ def test_unknown_codes_in_followups_are_asked_again(catalog, monkeypatch):
                         [{"query": "eligible", "completed": []}], catalog)
     assert "CS9999X is not in the AY" in output
     assert spy.call_args.args[0]["target"] == "CS1101S"
-    output, _ = session(["2", "Plan my courses.", "CS1101S, CS9999X", "CS1101S", "", "3"],
+    output, _ = session(["2", "Plan my courses.", "CS1101S, CS9999X", "CS1101S", "", "", "3"],
                         [{"query": "plan", "current_sem": 1, "completed": []}], catalog)
     assert "Not in the AY" in output and "CS9999X" in output
     assert spy.call_args.args[0]["must_take"] == ["CS1101S"]
     assert headline("OUT_OF_SCOPE") not in output
+
+
+# ---- chances of getting the courses (bidding MDP) ---------------------------------------------------
+
+BIDDING = json.loads((ROOT / "examples/q2_bidding.json").read_text())
+
+
+def test_after_a_plan_the_chances_are_shown_on_request(catalog, monkeypatch):
+    spy = Mock(wraps=cli.bidding_answers)
+    monkeypatch.setattr(cli, "bidding_answers", spy)
+    output, translator = session(["2", "Plan my remaining courses.", "", "x", "c", "3"], [BIDDING], catalog)
+    translator.assert_called_once()                       # no second LLM call
+    spy.assert_called_once_with(BIDDING, catalog)
+    assert "Please choose C or Enter." in output
+    assert "Your chances of getting these courses" in output
+    assert "Plan above works exactly as written 60% to 95%" in output
+    assert "Bid for these now, in Year 3 Semester 1 (semester 5)" in output
+    assert "If you miss CS2105 (2%): CS2105, CS3263, CS4248" in output
+    assert "Done by Year 4 Semester 1, as planned 93% to over 99%" in output
+    assert "Done by Year 4 Semester 2 98% to over 99%" in output
+    assert flat(BIDDING_INTRO) in output and "not a forecast" in output
+    assert "When you finish" not in output
+
+
+def test_declining_the_check_runs_no_mdp(catalog, monkeypatch):
+    spy = Mock()
+    monkeypatch.setattr(cli, "bidding_answers", spy)
+    output, _ = session(["2", "Plan my remaining courses.", "", "", "3"], [BIDDING], catalog)
+    spy.assert_not_called()
+    assert "[C] Check my chances of getting these courses" in output
+    assert "Your chances of getting these courses" not in output
+
+
+def test_both_scenarios_are_solved(catalog):
+    answers = cli.bidding_answers(BIDDING, catalog)
+    assert set(answers) == {"round1", "all_rounds"}
+    assert all(answers[e]["status"] == "POLICY" and answers[e]["estimator"] == e for e in answers)
+
+
+def test_percentages_never_hide_a_small_or_an_uncertain_chance():
+    assert [pct(p) for p in (0.0, 0.004, 0.6, 0.996, 1.0)] == ["0%", "under 1%", "60%", "over 99%", "100%"]
+    assert chance(0.95, 0.6) == "60% to 95%" and chance(0.601, 0.598) == "60%"
+    assert chance(0.996, 1.0) == "over 99%" and chance(0.0, TINY) == "under 1%"
+    finish = {"7": 1.0, "8": 0.0}                 # rounded to three decimals by the answer
+    assert listed(finish, "8") == TINY and listed(finish, "7") < 1.0 and listed(finish, "late") == 0.0
+    assert listed({"7": 1.0}, "7") == 1.0
+
+
+def bidding_view(spec, catalog):
+    answers = {e: solve(spec, catalog, Admission.load(e)) for e in ("round1", "all_rounds")}
+    return flat(format_bidding(answers, catalog)), answers
+
+
+def test_the_view_lists_hard_courses_and_courses_without_data(catalog):
+    row = next(r for r in ROWS if r["id"] == "q2-tight-18")
+    output, answers = bidding_view(row["gold_spec"], catalog)
+    assert answers["round1"]["model"]["no_data"] == {"CS3281": [2], "CS3282": [2]}
+    assert "No past CourseReg data for CS3281 (Semester 2) and CS3282 (Semester 2)" in output
+    assert "A chance of 95% to 98% was assumed" in output
+    assert "Hardest courses to get - CS2106 Introduction to Operating Systems Semester 1: 100% Semester 2: 83% to 98%" \
+        in output
+    assert "Note: this differs from the first semester of the plan above." in output
+    assert answers["round1"]["deterministic"]["last_semester"] == 8
+    assert "as planned" not in output                     # the plan ends in semester 8: one line says it
+    assert "Not taken into account - prefers modules with no final exam" in output
+    text = format_bidding(answers, catalog)              # a long title wraps under itself
+    assert "Production\n                 Systems I" in text
+    assert all(len(line) <= 68 for line in text.splitlines())
+
+
+def test_many_outcomes_are_cut_short_and_long_bids_get_their_own_line(catalog):
+    row = next(r for r in ROWS if r["id"] == "q2-loose-22")
+    output, answers = bidding_view(row["gold_spec"], catalog)
+    hidden = len(answers["round1"]["if_then"]) - 5
+    assert hidden > 0 and f"...and {hidden} less likely outcomes" in output
+    text = format_bidding(answers, catalog)
+    assert "    If every bid succeeds (70%):\n        CS2105, CS2106, CS2111, CS3219, CS3230" in text
+    assert all(len(line) <= 68 for line in text.splitlines())
+
+
+def test_an_answer_without_a_policy_says_why(catalog):
+    answers = {e: {"status": "TOO_LARGE", "reasons": ["the policy needs more than 200000 states"]}
+               for e in ("round1", "all_rounds")}
+    output = flat(format_bidding(answers, catalog))
+    assert "I can't work out your chances for this request" in output
+    assert "Why - the policy needs more than 200000 states" in output

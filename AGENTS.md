@@ -40,7 +40,10 @@ This file covers what you need to avoid mistakes.
 
 10. **The MDP extension is an add-on, not a pipeline.** `solver/mdp.py` and `solver/admission.py` answer "what
     should I bid for when a bid can fail" for a Q2 spec (`docs/MDP_GUIDE.md`). `solver/run.py`, the pipelines, the
-    instance generators and `eval/` must not import them, and the spec format does not change for them.
+    instance generators and `eval/` must not import them, and the spec format does not change for them. The
+    interactive planner may: it offers the check after a plan (`planner/cli.py` `offer_bidding`, text in
+    `planner/formatting.py` `format_bidding`), so a change to the `POLICY` answer fields must keep that view and
+    `tests/test_planner.py` working.
     `BiddingMDP.legal` and `bids` restate the offering, prerequisite, corequisite, exclusion and MC-cap rules for
     one semester, so a change to those rules (rule 8) is made there too; `tests/test_mdp.py` fails if the MDP
     with every probability equal to 1 stops agreeing with CP-SAT and the checker.

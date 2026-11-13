@@ -185,3 +185,177 @@ def format_answer(answer, catalog=None, completed=()):
     elif status == "INVALID_SPEC":
         lines += ["", "  Try rephrasing your request."]
     return "\n".join(lines)
+
+
+# ---- chances of getting the courses (the bidding MDP, solver/mdp.py) --------------------------------
+
+LOW, HIGH = "round1", "all_rounds"          # the two probability scenarios, lower and higher
+HARD = 0.95                                 # a course below this chance (lower scenario) is listed as hard to get
+SHOWN_HARD = 5
+SHOWN_OUTCOMES = 5
+TINY = 1e-9                                 # stands for a chance the answer rounded to 0.0 but did list
+
+LAST_SEMESTER = 8
+BIDDING_INTRO = ("A CourseReg bid can fail when a course is full. These chances are rough estimates from the "
+                 "AY2024/25 and AY2025/26 CourseReg reports, not a forecast. Each is a range from bidding in "
+                 "round 1 only (lower) to bidding again in rounds 2 and 3 (higher).")
+
+
+def pct(p):
+    """A probability as a whole percentage; never rounds a small chance to 0% or a near-certain one to 100%."""
+    if p <= 0:
+        return "0%"
+    if p >= 1:
+        return "100%"
+    if p < 0.005:
+        return "under 1%"
+    if p >= 0.995:
+        return "over 99%"
+    return f"{round(p * 100)}%"
+
+
+def chance(a, b):
+    """The range of two scenario probabilities, or one value when they look the same."""
+    low, high = (pct(p) for p in sorted((a, b)))
+    if low == high:
+        return low
+    if (low, high) == ("over 99%", "100%"):
+        return low
+    if (low, high) == ("0%", "under 1%"):
+        return high
+    return f"{low} to {high}"
+
+
+def listed(distribution, key):
+    """A probability from a finish distribution, which the answer rounds to three decimals. A key is
+    present only when its probability is above 0, so 0.0 means a tiny chance; and 1.0 next to other
+    keys means almost certain, not certain."""
+    value = distribution.get(key)
+    if value is None:
+        return 0.0
+    if value <= 0:
+        return TINY
+    if value >= 1 and len(distribution) > 1:
+        return 1 - TINY
+    return value
+
+
+def year_semester(semester):
+    return f"Year {(semester - 1) // 2 + 1} Semester {(semester - 1) % 2 + 1}"
+
+
+def done_by(distribution, semester):
+    """Chance of finishing by `semester`, from a finish distribution rounded to three decimals."""
+    return sum(listed(distribution, key) for key in distribution if key != "late" and int(key) <= semester)
+
+
+def figure(label, value, indent=2, width=42):
+    return f"{' ' * indent}{label:<{width}}{value}"
+
+
+def course_name(code, catalog):
+    """Code and title, in the same columns as the plan (`course_line`)."""
+    record = catalog[code] if catalog is not None and code in catalog else {}
+    return f"{code:<9}  {record.get('title', '')}".rstrip()
+
+
+def course_item(code, catalog):
+    """A bulleted course; a long title wraps under itself."""
+    return wrap(f"- {course_name(code, catalog)}", "    ", " " * 17)
+
+
+def joined(codes):
+    return " and ".join(codes) if len(codes) < 3 else ", ".join(codes[:-1]) + " and " + codes[-1]
+
+
+def hard_courses(low, high, catalog):
+    """Courses whose chance in some term is below HARD under the lower scenario, hardest first."""
+    rows = []
+    for code, by_term in low["admission"].items():
+        if code in low["model"]["no_data"] or min(by_term.values()) >= HARD:
+            continue
+        other = high["admission"].get(code, {})
+        terms = [f"Semester {term}: {chance(p, other.get(term, 1.0))}" for term, p in sorted(by_term.items())]
+        rows.append((min(by_term.values()), code, terms))
+    lines, indent = [], " " * 17                                       # under the title
+    for _, code, terms in sorted(rows)[:SHOWN_HARD]:
+        lines.append(course_item(code, catalog))
+        one_line = indent + "   ".join(terms)
+        lines += [one_line] if len(one_line) <= WIDTH + 4 else [indent + term for term in terms]
+    if len(rows) > SHOWN_HARD:
+        lines.append(f"    ...and {len(rows) - SHOWN_HARD} more below {pct(HARD)}")
+    return lines
+
+
+def outcome_lines(answer, semester):
+    """What to bid for next semester after each way the first bid can turn out (one scenario)."""
+    rows = []
+    for row in answer["if_then"][:SHOWN_OUTCOMES]:
+        if row["missed"]:
+            label = f"If you miss {joined(row['missed'])} ({pct(row['probability'])}):"
+        else:
+            label = f"If every bid succeeds ({pct(row['probability'])}):"
+        rows.append((label, ", ".join(row["next_bid"]) if row["next_bid"] else "nothing more; you are done"))
+    width = max(len(label) for label, _ in rows) + 2
+    lines = ["", f"  Then, in {semester_label(semester)}, bid for"]
+    if all(4 + width + len(bid) <= WIDTH + 4 for _, bid in rows):     # one aligned line per outcome
+        lines += [f"    {label:<{width}}{bid}" for label, bid in rows]
+    else:                                                               # the bid on its own line
+        for label, bid in rows:
+            lines += [f"    {label}", wrap(bid, "        ")]
+    rest = answer["if_then"][SHOWN_OUTCOMES:]
+    if rest:
+        together = sum(row["probability"] for row in rest)
+        lines.append(f"    ...and {len(rest)} less likely outcomes (together {pct(together)})")
+    return lines
+
+
+def format_bidding(answers, catalog=None):
+    """The answers of `solver.mdp.solve` for the two scenarios ({"round1": ..., "all_rounds": ...}) as text.
+    The advice (what to bid for) comes from the lower scenario, so it leaves time to bid again; every
+    other chance is shown as a range."""
+    low, high = answers[LOW], answers[HIGH]
+    failed = next((a for a in (low, high) if a["status"] != "POLICY"), None)
+    if failed is not None:
+        lines = [heading("I can't work out your chances for this request")]
+        section(lines, "Why", failed.get("reasons", []) or [failed["status"]])
+        return "\n".join(lines)
+
+    lines = [heading("Your chances of getting these courses"), "", wrap(BIDDING_INTRO), ""]
+    lines.append(figure("Plan above works exactly as written",
+                        chance(low["deterministic"]["success_probability"],
+                               high["deterministic"]["success_probability"])))
+    finish_low, finish_high = low["finish_distribution"], high["finish_distribution"]
+    planned = low["deterministic"]["last_semester"]
+    if planned is not None and planned < LAST_SEMESTER:      # otherwise the next line says the same
+        lines.append(figure(f"Done by {year_semester(planned)}, as planned",
+                            chance(done_by(finish_low, planned), done_by(finish_high, planned))))
+    lines.append(figure(f"Done by {year_semester(LAST_SEMESTER)}",
+                        chance(1 - listed(finish_low, "late"), 1 - listed(finish_high, "late"))))
+
+    hard = hard_courses(low, high, catalog)
+    if hard:
+        lines += ["", "  Hardest courses to get"] + hard
+    else:
+        lines += ["", wrap(f"None of these courses is often full: every chance is {pct(HARD)} or more.")]
+
+    first = low["first_bid"]
+    if first["courses"]:
+        lines += ["", f"  Bid for these now, in {semester_label(first['semester'])}"]
+        lines += [course_item(code, catalog) for code in first["courses"]]
+        planned = low["deterministic"]["plan"].get(str(first["semester"]), [])
+        if set(planned) != set(first["courses"]):
+            lines.append(wrap("Note: this differs from the first semester of the plan above.", "    "))
+        if low["if_then"]:
+            lines += outcome_lines(low, first["semester"] + 1)
+
+
+    no_data = low["model"]["no_data"]
+    if no_data:
+        assumed = chance(low["model"]["no_data_p"], high["model"]["no_data_p"])
+        items = [f"{code} (Semester {' and '.join(str(t) for t in terms)})" for code, terms in no_data.items()]
+        lines += ["", wrap(f"No past CourseReg data for {joined(items)}. A chance of {assumed} was assumed.")]
+
+    section(lines, "Notes", low.get("notes", []))
+    section(lines, "Not taken into account", low.get("not_applied", []))
+    return "\n".join(lines)

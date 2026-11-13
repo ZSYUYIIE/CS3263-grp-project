@@ -10,7 +10,10 @@ from m1_data.catalog import Catalog
 from pipelines.config import load_env
 from pipelines.run_a import DEFAULT_MAX_TOKENS, call_api, parse_reply_how
 from pipelines.run_b import build_messages
-from planner.formatting import format_answer, heading, summary
+from planner.formatting import HIGH, LOW, format_answer, format_bidding, heading, summary, wrap
+from solver.admission import Admission
+from solver.mdp import solve as bidding_policy
+from solver.mdp import unsupported_reasons
 from solver.run import MISSING_PROMPTS, prepare, run
 
 QUERY_NAMES = {"eligible": "check whether I can take a course", "plan": "plan my remaining courses"}
@@ -153,8 +156,30 @@ def review_request(query, spec, catalog, read, write):
         if action != "s":
             return action
         write("\nWorking out the answer...")
-        write(format_answer(run(spec, catalog), catalog, completed=cleaned["completed"]))
+        answer = run(spec, catalog)
+        write(format_answer(answer, catalog, completed=cleaned["completed"]))
+        if answer["status"] == "PLAN" and any(answer["plan"].values()):
+            offer_bidding(spec, cleaned, catalog, read, write)
         return "done"
+
+
+def bidding_answers(spec, catalog):
+    """The bidding policy (solver/mdp.py) under both probability scenarios."""
+    return {estimator: bidding_policy(spec, catalog, Admission.load(estimator)) for estimator in (LOW, HIGH)}
+
+
+def offer_bidding(spec, cleaned, catalog, read, write):
+    """After a plan: offer the chance of getting its courses, and what to bid for if a bid fails."""
+    reasons = unsupported_reasons(cleaned)
+    if reasons:
+        write("\n" + wrap("A check of your chances of getting these courses is not available for this request: "
+                          + "; ".join(reasons) + "."))
+        return
+    action = choice("\n[C] Check my chances of getting these courses  [Enter] Back to menu: ", ("c", "m"),
+                    read, write, default="m")
+    if action == "c":
+        write("\nWorking out your chances (this can take a few seconds)...")
+        write(format_bidding(bidding_answers(spec, catalog), catalog))
 
 
 def handle_request(query, translate, catalog, read, write):
