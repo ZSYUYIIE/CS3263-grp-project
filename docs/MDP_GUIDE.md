@@ -2,7 +2,7 @@
 
 The CP-SAT plan assumes the student gets every course in it. At NUS a course is bid for in CourseReg, and a
 bid for a popular course can fail. This extension models that as a Markov decision process (MDP) and
-answers with a **policy**: what to bid for now, and what to bid for next given what was obtained.
+answers with a policy: what to bid for now, and what to bid for next given what was obtained.
 
 It is an add-on to the solver. It is not a pipeline, it does not change the spec, and `solver.run.run`,
 pipelines A and B, the instance files and the checker do not use it.
@@ -53,15 +53,15 @@ V(s, G) = min over bids a of  1 + Σ_G' P(G' | G, a) · V(s+1, G')
 The policy is the minimising bid in each state. Ties go to the first bid in a fixed order, so the answer is
 reproducible.
 
-**Choosing the objective and the penalty.** Two objectives were considered: finish early on average with a
-penalty for missing semester 8 (this one), and maximise the chance of finishing by semester 8.
+**Choosing the objective and the penalty.** The objective is to finish early on average, with a penalty for
+missing semester 8. The obvious alternative, maximising the chance of finishing by semester 8, works less well:
 
 - Maximising only the chance of finishing by semester 8 is a poor objective. A policy that finishes in
   semester 6 and one that finishes in semester 8 both count as on time, so most bids tie, the tie-break
   decides, and the policy can put off a course for no reason.
 - Ranking first by that chance and then by the finishing semester removes the ties but is brittle: it gives
   up a whole semester for a negligibly smaller chance of finishing late.
-- A finite penalty sits between the two. Compare finishing one semester sooner with probability `1 − q` (and
+- A finite penalty sits between the two. Compare finishing one semester sooner with probability `1 - q` (and
   late otherwise) with finishing one semester later for certain. The risky bid is cheaper exactly when
   `q < 1 / (1 + overrun)`: up to 33% more chance of a late finish at `overrun = 2`, about 9% at 10.
 
@@ -128,8 +128,8 @@ is offered in Semester 2 in AY2026/27 but appears only in Semester 1 reports. Su
 treated as certain. It gets a fallback, by default the mean over the course-terms that have an estimate
 under the same scenario: 0.980 for `all_rounds` and 0.953 for `round1`. `--missing certain` or
 `--missing 0.9` sets it otherwise. The answer lists each such course and its terms in `model.no_data`, with
-the value used in `model.no_data_p`. 24 of the 45 requests need at least one. Treating them as certain, as
-the first version did, raises the mean on-time probability of the policy from 0.992 to 0.997 (`all_rounds`)
+the value used in `model.no_data_p`. 24 of the 45 requests need at least one. Treating them as certain
+(`--missing certain`) raises the mean on-time probability of the policy from 0.992 to 0.997 (`all_rounds`)
 and from 0.904 to 0.917 (`round1`).
 
 **Limits of the estimate.**
@@ -167,7 +167,10 @@ and prints the answer as text (`planner/formatting.py`, `format_bidding`): chanc
 `all_rounds`, whole percentages that never round a small chance to 0% or an uncertain one to 100%, the
 chance of finishing by the plan's last semester and by semester 8, the hardest courses (below 95% under
 `round1`), the first bid and the next bid for the five likeliest outcomes, and the courses without report
-rows. The advice (`first_bid`, `if_then`) is the `round1` policy, because it leaves time to bid again.
+rows. The advice (`first_bid`, `if_then`) is the `round1` policy, because it leaves time to bid again. How a
+user reads that screen: [CHECKER_PLANNER_GUIDE.md](CHECKER_PLANNER_GUIDE.md) section 5.
+
+![The planner's chances screen for a plan](images/planner-chances.png)
 
 **Statuses.** `POLICY`, or the solver's own `INVALID_SPEC`, `OUT_OF_SCOPE`, `MISSING_INFO` and `NO_PLAN`
 passed through unchanged. `UNSUPPORTED` is returned for a Q1 request and for a spec with a `must` rule,
@@ -252,8 +255,8 @@ report rows get the mean (section 3). `--overrun` and `--missing` change them.
 | Mean expected cost in semesters, replan / MDP | 3.347 / 3.215 | 4.771 / 4.253 |
 | CP-SAT calls made by replan, all requests | 880 | 6,129 |
 
-The same experiment with the settings of the first version (`--overrun 2 --missing certain`) gave 0.960,
-0.988 and 0.997 under `all_rounds`, and 0.714, 0.875 and 0.912 under `round1`. Most of the change comes from
+With `--overrun 2 --missing certain` the same experiment gives 0.960, 0.988 and 0.997 under `all_rounds`, and
+0.714, 0.875 and 0.912 under `round1`. Most of the change comes from
 the course-terms without rows. With `--overrun 2` and the mean fallback, the MDP gets 0.899 under `round1`,
 against 0.904 at 4 or 10: the lower penalty gives up on-time probability in `q2-tight-14` and `q2-tight-09`.
 
@@ -287,8 +290,8 @@ bound, because prerequisites and offering terms rule most sets out:
 | States evaluated, largest | 10,200 | 16,170 |
 | Slowest policy | 2.0 s | 5.3 s |
 
-Fixing the course set with CP-SAT first is what keeps `n` small. A first prototype that let the MDP choose
-among all prerequisite alternatives (20 or more courses) did not finish in several minutes.
+Fixing the course set with CP-SAT first keeps `n` small. Letting the MDP choose among all prerequisite
+alternatives (20 or more courses) did not finish in several minutes when tried.
 
 ## 8. Assumptions and limits
 

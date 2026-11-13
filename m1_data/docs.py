@@ -72,7 +72,7 @@ def write_courses_md(path, cat):
     path.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
 
 
-SPOT_CHECK_CORE = ["CS3263", "CS2109S", "CS2109HS", "CS3244", "CS4248",          # from the doc
+SPOT_CHECK_CORE = ["CS3263", "CS2109S", "CS2109HS", "CS3244", "CS4248",          # CS3263 and its AI neighbours
                    "CS1231S", "CS2030S", "CS2040S", "CS2100", "CS2103T", "CS2106",
                    "CS3230", "CS3243", "CS2309", "CS4262", "CS4240", "CS3242"]
 
@@ -89,11 +89,10 @@ def write_spot_check_md(path, cat, n_random: int = 8, seed: int = 3263):
     rnd = random.Random(seed).sample(pool, min(n_random, len(pool)))
     picks = [c for c in SPOT_CHECK_CORE if c in cs] + warned + sorted(rnd)
     L = ["# Spot-check sheet", "",
-         "The doc requires our parsed prerequisites and exclusions to be checked by hand against",
-         "NUSMods **before** any instances are generated (target: 29 Oct). For each row open the link,",
-         "compare, then put your initials in **Checked** and ✅ or ❌ in **OK**. For ❌, add a fix to",
+         "Check the parsed prerequisites and exclusions by hand against NUSMods. For each row open the",
+         "link, compare, then put your initials in **Checked** and ✅ or ❌ in **OK**. For ❌, add a fix to",
          "`data/manual/overrides.json` (or fix the parser) and note it here.", "",
-         f"Rows: the doc's 5 courses + BComp CS core, every course with a parser warning, "
+         f"Rows: CS3263 and the AI courses around it, the BComp CS core, every course with a parser warning, "
          f"and {len(rnd)} random courses (seed {seed}).", "",
          "| Course | Prereq (ours) | Blocked if (ours) | Available | Checked | OK | Notes |",
          "|---|---|---|---|---|---|---|"]

@@ -2,17 +2,13 @@
 
 Two pipelines answer the same instances, and `eval.grade` grades both:
 
-- **A** (`run_a.py`): the LLM answers the request itself, given the planning rules and the course records.
-- **B** (`run_b.py`): the LLM translates the request into a spec, and the solver answers the spec.
+- A (`run_a.py`): the LLM answers the request itself, given the planning rules and the course records.
+- B (`run_b.py`): the LLM translates the request into a spec, and the solver answers the spec.
 
-For an interactive terminal interface to **Pipeline B**, configure `.env` as below and run
-`python -m planner` from the repo root. The startup title shows the supported programme and academic year.
-Choose an eligibility check or a course plan to enter a natural-language request directly.
-The interface collects missing information, shows the translated
-request for review, and formats the solver's answer. It uses the same translation prompt and shared API
-helpers, with its own shorter timeout/retry options. It does not write into `results/` or alter the batch
-runners, prompts, solver rules or evaluation protocol. Interactive revisions and follow-ups are separate
-from the experiment's one-call-per-instance protocol. See the root README for usage and scope limits.
+`python -m planner` is the eligibility checker and planner, an interactive tool built on pipeline B (configure `.env` as below). It uses the same
+translation prompt and API helpers, with its own timeout and retry options, and writes nothing to `results/`. Its
+follow-up questions and revisions are outside the experiment's one-call-per-instance protocol. Usage is in
+[`docs/CHECKER_PLANNER_GUIDE.md`](../docs/CHECKER_PLANNER_GUIDE.md).
 
 ## Pipeline A: the LLM answers directly
 
@@ -24,13 +20,13 @@ from the experiment's one-call-per-instance protocol. See the root README for us
    ```
 
    Edit `.env` to set `LLM_BASE_URL`, `LLM_API_KEY` and `LLM_MODEL` for your
-   OpenAI-compatible provider. All four runners (A, B and both ablations) automatically
-   load this project-root file on startup. No `source` command is needed. Restart the
-   command after editing the file. `.env` is Git-ignored and must not be committed.
+   OpenAI-compatible provider. All four runners (A, B and both ablations) load this
+   project-root file on startup, so no `source` command is needed. Restart the command
+   after editing it. `.env` is Git-ignored and must not be committed.
 
-   Existing environment variables take priority over `.env`, so shell exports and CI
-   configuration still work. If `.env` is absent, the runners use the environment as
-   before. Mock runs do not require API credentials.
+   Variables already set in the environment take priority over `.env`, so shell exports
+   and CI configuration still work. Without a `.env`, the runners read the environment
+   only. Mock runs need no API credentials.
 
 2. Try 5 instances first, then run everything (it resumes if stopped):
 
@@ -44,7 +40,7 @@ from the experiment's one-call-per-instance protocol. See the root README for us
    ```bash
    python -m eval.grade results/A/qwen3-max
    ```
-   This writes `graded.csv` (one row per instance, with the broken rules) and `SUMMARY.md` (tables for the slides).
+   This writes `graded.csv` (one row per instance, with the broken rules) and `SUMMARY.md` (result tables).
 
 `python -m pipelines.run_a --mock gold` runs the whole harness without an API (every answer is the gold answer,
 so the grade must come out 100%).
@@ -70,7 +66,7 @@ usable JSON is recorded as `INVALID_SPEC`. Each `results/B/<model>/<id>.json` ho
 its `schema_errors`, the solver's `answer` and `solver_seconds`.
 
 `python -m pipelines.run_b --mock gold` uses the gold spec as the model's reply, so it tests the solver and the
-grader only; the grade must come out 100%.
+grader only. The grade must come out 100%.
 
 ## Comparing the two
 
@@ -85,7 +81,7 @@ summary also compares each spec with the gold spec, field by field.
 
 - `--instances instances/q1_400.json` (or `q1_gating.json`) on `run_a`, `run_b` and `eval.grade` uses another set.
   Pass the same file to the runner and to the grader.
-- `--only q2_infeasible` runs the instances whose kind starts with that text; `--limit N` the first N.
+- `--only q2_infeasible` runs the instances whose kind starts with that text, and `--limit N` the first N.
 - `--tag NAME` writes to `results/A_NAME/<model>` (or `B_NAME`), for example for a timing run.
 - `--workers N` (default 4) and `--max-tokens N` (default 24576).
 

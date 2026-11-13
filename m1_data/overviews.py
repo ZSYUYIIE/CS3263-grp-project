@@ -296,7 +296,7 @@ def solver_flow(cat) -> tuple[str, str]:
     svg = _svg("solver-flow", "How the solver answers a spec",
                "Flowchart: a spec is checked, then answered as Q1 eligibility or as a Q2 CP-SAT plan; an infeasible "
                "plan request returns the smallest set of conflicting rules.", body, height=716)
-    return svg, page("How the solver answers a spec", "Flowchart · solver (M2)",
+    return svg, page("How the solver answers a spec", "Flowchart · solver",
                      "<h1>How the solver answers a spec</h1>"
                      f'<div class="diagram-container">{svg}</div>')
 

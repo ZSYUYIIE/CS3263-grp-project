@@ -1,8 +1,8 @@
-# Solver guide (M2)
+# Solver guide
 
-This guide describes what the solver accepts, what it returns, and exactly what its answers mean. It is written for
-M3 (instance generators, pipelines A and B, evaluation harness and the independent checker) and for any AI assistant
-helping M3. Every JSON example below was produced by running the solver, not typed by hand.
+This guide describes what the solver accepts, what it returns, and what its answers mean. It is the reference for
+the instance generators, pipelines A and B, the evaluation harness and the independent checker. Every JSON example
+below is real solver output.
 
 The companion file [`docs/TRANSLATION_GUIDE.md`](TRANSLATION_GUIDE.md) covers pipeline B's natural-language to JSON
 translation. Course facts (prerequisites, preclusions, offering terms) are in `data/processed/AY2026-2027/catalog.json`
@@ -12,7 +12,7 @@ Terms used in this guide:
 
 - **Spec**: the JSON object the solver reads.
 - **MC**: modular credits. Most courses in the data are 4 MC.
-- **Term**: Semester 1 or Semester 2 of an academic year. Our semester numbers 1 to 8 map to terms by parity: odd is
+- **Term**: Semester 1 or Semester 2 of an academic year. Semester numbers 1 to 8 map to terms by parity: odd is
   term 1, even is term 2.
 - **ATAP**: the Advanced Technology Attachment Programme, an internship semester planned as the course `CP3880` (12 MC).
 - **CSP**: constraint satisfaction problem, a set of variables, the values each can take, and constraints between them.
@@ -29,9 +29,9 @@ Contents:
 5. Preferences, exactly as scored
 6. Optimality
 7. Infeasible requests and the response each one gets
-8. `explain.py` and Responsible AI
+8. `explain.py` and responsible use
 9. The four backtracking variants
-10. Analysis directions the solver makes possible
+10. Analyses the solver output supports
 11. Known limitations
 
 ## 1. How to call the solver
@@ -61,15 +61,15 @@ answer = run_text(llm_output_string)
 
 Points that matter for the harness:
 
-- **No catalog import is needed.** `run(spec)` and `run_text(text)` load the data themselves. This matters because code
+- No catalog import is needed. `run(spec)` and `run_text(text)` load the data themselves. This matters because code
   under `eval/` must not import `m1_data.catalog` or `m1_data.resolve` (AGENTS.md rule 4). Calling `solver.run` from
   the pipeline B code is fine; the independent checker must not call the solver.
-- **The solver never raises on a bad spec.** Wrong types, unknown fields and malformed JSON all come back as an answer
+- The solver never raises on a bad spec. Wrong types, unknown fields and malformed JSON all come back as an answer
   with `"status": "INVALID_SPEC"`.
-- **The answer is a plain, JSON-serialisable `dict`.** The input spec is never modified.
-- **Answers are deterministic.** CP-SAT runs with one worker and a fixed seed, so the same spec gives the same answer on
+- The answer is a plain, JSON-serialisable `dict`. The input spec is never modified.
+- Answers are deterministic. CP-SAT runs with one worker and a fixed seed, so the same spec gives the same answer on
   every run. Several different plans can tie for optimal; the solver always returns the same one of them.
-- **Time limits.** CP-SAT stops each solve after 60 seconds, and the conflict search of `explain.py` after 20 seconds per check (see section 11 for what a time-out looks like).
+- Time limits: CP-SAT stops each solve after 60 seconds, and the conflict search of `explain.py` after 20 seconds per check (see section 11 for what a time-out looks like).
 
 A minimal pipeline B loop:
 
@@ -94,15 +94,15 @@ which:
 | Field | Q1 (`eligible`) | Q2 (`plan`) | Type | Default if left out |
 |---|---|---|---|---|
 | `query` | required | required | `"eligible"` or `"plan"` | none |
-| `completed` | **mandatory** | **mandatory** | list of course codes (`[]` = none completed) | none, so the answer is `MISSING_INFO` |
-| `current_sem` | optional | **mandatory** | integer 1 to 8 | Q1: answered for either term; Q2: `MISSING_INFO` |
-| `target` | **mandatory** | not allowed | one course code | none, so `MISSING_INFO` |
-| `must_take` | not allowed | **mandatory** | list of course codes (`[]` = none) | none, so `MISSING_INFO` |
+| `completed` | mandatory | mandatory | list of course codes (`[]` = none completed) | none, so the answer is `MISSING_INFO` |
+| `current_sem` | optional | mandatory | integer 1 to 8 | Q1: answered for either term; Q2: `MISSING_INFO` |
+| `target` | mandatory | not allowed | one course code | none, so `MISSING_INFO` |
+| `must_take` | not allowed | mandatory | list of course codes (`[]` = none) | none, so `MISSING_INFO` |
 | `programme` | optional | optional | string | not checked |
 | `unsupported` | optional | optional | list of strings | `[]` |
 | `mc_max` | not allowed | optional | positive integer | 20 |
 | `mc_min` | not allowed | optional | integer, 0 up to `mc_max` | no minimum |
-| `sem_caps` | not allowed | optional | object, semester number as a **string** key, non-negative integer value | none |
+| `sem_caps` | not allowed | optional | object, semester number as a string key, non-negative integer value | none |
 | `atap_sems` | not allowed | optional | non-empty list of semesters | no ATAP |
 | `rules` | not allowed | optional | list of rule objects (section 2.3) | `[]` |
 | `objective` | not allowed | optional | `"earliest_graduation"`, `"min_total_mc"` or `"none"` | `"none"` |
@@ -115,7 +115,7 @@ sign of poor translation. A field that is not in the table at all is an error (`
 
 Missing, `null` and empty values:
 
-- A field that is **absent** or **`null`** counts as "not given". For a mandatory field the answer is `MISSING_INFO`.
+- A field that is absent or `null` counts as "not given". For a mandatory field the answer is `MISSING_INFO`.
 - `[]` is a real answer: "the student has completed nothing" or "has no courses left that must be taken". It is never
   `MISSING_INFO`.
 - An empty-string `target` counts as not given.
@@ -128,13 +128,13 @@ Missing, `null` and empty values:
 | Field | Meaning |
 |---|---|
 | `current_sem` | Semesters are numbered 1 to 8 (Y1S1 = 1, Y1S2 = 2, Y2S1 = 3, Y2S2 = 4, ..., Y4S2 = 8). An odd number is Semester 1 of the academic year (term 1) and an even number is Semester 2 (term 2). For Q2 it is the first semester that still has to be planned. For Q1 it is the semester in which the student wants to take the course. |
-| `completed` | Courses already passed. A course the student did not list is treated as **not completed**. A code that is not in the catalogue is ignored with a warning. |
+| `completed` | Courses already passed. A course the student did not list is treated as not completed. A code that is not in the catalogue is ignored with a warning. |
 | `target` | The course asked about in Q1. |
 | `must_take` | Courses the plan has to contain. Graduation in this project means completing every course in this list. Courses already in `completed` are not planned again; the answer adds a note. |
 | `programme` | Only used to check scope. The value `BComp CS Hons` (and the spellings in `m1_data/scope.py`, for example `Computer Science`) is accepted; any other value gives `OUT_OF_SCOPE`. |
 | `unsupported` | Wishes the schema cannot express, as short strings. They are echoed back as `not_applied` so that nothing is dropped silently. |
 | `mc_max` | The most MC allowed in one semester. |
-| `mc_min` | The fewest MC allowed in a semester **that has at least one course**. Empty semesters are not affected. ATAP's 12 MC counts towards this total in the semester that holds it. |
+| `mc_min` | The fewest MC allowed in a semester that has at least one course. Empty semesters are not affected. ATAP's 12 MC counts towards this total in the semester that holds it. |
 | `sem_caps` | Per-semester override of `mc_max`, for example `{"6": 0}`. A cap of `0` blocks the semester completely, so no course (and not ATAP) can be placed in it. Keys must be strings holding a number from 1 to 8. |
 | `atap_sems` | Semesters in which ATAP (course code `CP3880`, 12 MC) may be planned. Giving the field asks for ATAP to be planned. See section 4. |
 | `rules` | Student wishes about specific courses, each marked `must` (hard) or `prefer` (soft). |
@@ -559,34 +559,34 @@ A plan is valid when it satisfies every rule below. These are the rules an indep
 `docs/DATA_SCHEMA.md` and `catalog.json`, so that a disagreement between the checker and the solver points at a bug on
 one side.
 
-1. **Which semesters.** Courses are placed in semesters `current_sem` to 8. Each course appears at most once. Every
+1. Which semesters. Courses are placed in semesters `current_sem` to 8. Each course appears at most once. Every
    `must_take` course that is not already completed appears.
-2. **Plannable courses.** A planned course must exist in AY2026/27 and be available to a BComp CS Hons student
+2. Plannable courses. A planned course must exist in AY2026/27 and be available to a BComp CS Hons student
    (`exists_in_ay` and `available` in the catalogue). A course blocked by a completed course (its preclusion is already
    satisfied) cannot be planned.
-3. **Offering.** A course placed in semester `s` must be offered in term 1 if `s` is odd and in term 2 if `s` is even,
+3. Offering. A course placed in semester `s` must be offered in term 1 if `s` is odd and in term 2 if `s` is even,
    according to its `offered` list.
-4. **Prerequisites.** The prerequisite tree must be satisfied by the completed courses plus the courses planned in
-   **strictly earlier** semesters.
-5. **Corequisites.** The corequisite tree must be satisfied by the completed courses plus the courses planned in the
-   **same or an earlier** semester.
-6. **Exclusions.** Two planned courses that exclude each other (`mutually_exclusive_with`, from the preclusion data)
+4. Prerequisites. The prerequisite tree must be satisfied by the completed courses plus the courses planned in
+   strictly earlier semesters.
+5. Corequisites. The corequisite tree must be satisfied by the completed courses plus the courses planned in the
+   same or an earlier semester.
+6. Exclusions. Two planned courses that exclude each other (`mutually_exclusive_with`, from the preclusion data)
    cannot both appear.
-7. **MC caps.** In each semester the total MC is at most `mc_max`, or the `sem_caps` value for that semester if there is
+7. MC caps. In each semester the total MC is at most `mc_max`, or the `sem_caps` value for that semester if there is
    one. A cap of `0` blocks the semester.
-8. **Minimum MC.** If `mc_min` is given, every semester that has at least one course totals at least `mc_min` MC.
-9. **Must rules.** Every rule with `"strength": "must"` holds. A `must` rule about an already completed course can
+8. Minimum MC. If `mc_min` is given, every semester that has at least one course totals at least `mc_min` MC.
+9. Must rules. Every rule with `"strength": "must"` holds. A `must` rule about an already completed course can
    never be satisfied by placing it, so it gives `NO_PLAN` with a reason (for example `CS2040S is already completed, so
    it cannot be placed in semester 5`).
-10. **Added courses.** A course that is not in `must_take` may be planned only because a planned course needs it, as
+10. Added courses. A course that is not in `must_take` may be planned only because a planned course needs it, as
     part of its prerequisites (placed strictly before that course) or corequisites (same or earlier semester). Courses
     are never added to fill a semester, or to reach `mc_min`.
-11. **ATAP.** ATAP is planned only when `atap_sems` is given (or `CP3880` is in `must_take` or in a `must` rule). It
-    is placed in one of the `atap_sems`, at most once, **never in the last semester used** (some course has to come in a
+11. ATAP. ATAP is planned only when `atap_sems` is given (or `CP3880` is in `must_take` or in a `must` rule). It
+    is placed in one of the `atap_sems`, at most once, never in the last semester used (some course has to come in a
     later semester), and the other courses in that semester total at most `min(8, the semester's cap)` MC. ATAP's own 12
     MC does not count against `mc_max` or `sem_caps`.
 
-Two consequences worth knowing:
+Two consequences:
 
 - Several different plans can be valid and optimal at the same time. Compare plans by the measures in section 6, not by
   equality with the solver's plan.
@@ -595,7 +595,7 @@ Two consequences worth knowing:
 
 ## 5. Preferences, exactly as scored
 
-Preferences never override a hard rule. They are counted: the solver maximises the **number of preferences met**, among
+Preferences never override a hard rule. They are counted: the solver maximises the number of preferences met, among
 the plans that are already best on the objective and use the fewest added courses (section 6).
 
 | Preference | Counts as met when |
@@ -609,38 +609,37 @@ the plans that are already best on the objective and use the fewest added course
 
 Special cases:
 
-- A preference that names a course that is not in the plan counts as **not met**.
+- A preference that names a course that is not in the plan counts as not met.
 - A preference that involves an already completed course follows fixed rules: `before` is met when `a` is completed and
   not met when only `b` is; `apart` is met when either course is completed; `same_sem` is met when both are completed and
   not met when only one is; `in_sem` on a completed course is not met; `early` and `late` on a completed course are met.
 - `early` and `late` on the same course are scored separately: they are two preferences, and the label of each says
   which one it is.
 
-After the count, one tie-break picks one plan among equals. It is **not** part of the graded optimum:
+After the count, one tie-break picks one plan among equals. It is not part of the graded optimum:
 
 - the earliest last semester (only when the objective is not `earliest_graduation`).
 
 ## 6. Optimality
 
-**Valid.** A plan is valid when it satisfies every hard rule in section 4.
+A plan is valid when it satisfies every hard rule in section 4.
 
-**Optimal.** Among all valid plans for an instance, a plan is optimal when it is best on the following measures,
+Among all valid plans for an instance, a plan is optimal when it is best on the following measures,
 compared in this order:
 
-1. **The objective.**
+1. The objective.
    - `earliest_graduation`: the smallest last semester, that is, the highest semester number that holds a course.
    - `min_total_mc`: the smallest total MC of all planned courses, added courses and ATAP included.
    - `none`: no ranking at this step.
-2. **Fewest added courses**: planned courses that are neither in `must_take` nor already completed.
-3. **Most preferences met** (section 5).
+2. Fewest added courses: planned courses that are neither in `must_take` nor already completed.
+3. Most preferences met (section 5).
 
 The earliest last semester is a tie-break and is not graded.
 
 The solver reaches this optimum with a staged search: it solves for the objective and fixes that value, then fixes the
-number of added courses, then fixes the preference count. This is why a plan that is faster to graduate is never traded
-for more preferences.
+number of added courses, then fixes the preference count. So a plan that graduates sooner is never traded for more preferences.
 
-**Scoring an LLM plan against the optimum.** For one feasible instance, let the solver's answer give the reference
+To score an LLM plan against the optimum: for one feasible instance, let the solver's answer give the reference
 objective value, the minimum number of added courses and the maximum preference count. A pipeline's plan then falls into
 exactly one of these classes, checked in this order:
 
@@ -656,13 +655,13 @@ For an infeasible instance the answer is correct when it says that no plan exist
 instance is an *invented plan*; the statement that no plan exists for a feasible instance is an *over-refusal*. The
 solver's `status` is the ground truth for both.
 
-**Agreement between solvers.** CP-SAT and each of the four backtracking variants must agree on `status`,
+CP-SAT and each of the four backtracking variants must agree on `status`,
 `last_semester` and the number of preferences met on every instance both finish. The plans themselves can differ when
 several tie. Disagreement is a bug, never a result.
 
 ## 7. Infeasible requests and the response each one gets
 
-The plan builds infeasible instances from five kinds of perturbation. This is what the solver answers for each kind,
+The infeasible instances are built from six kinds of perturbation. This is what the solver answers for each kind,
 and what the reason looks like. Use it to label instances and to score explanation correctness.
 
 | Perturbation | Example | Where the reason comes from |
@@ -787,11 +786,11 @@ Other reasons the solver can give:
 The reasons come in three forms. The reasons from the data and the capacity message are exact. The conflict explanation
 is described in section 8.
 
-## 8. `explain.py` and Responsible AI
+## 8. `explain.py` and responsible use
 
 ### 8.1 What `explain.py` does
 
-When a `NO_PLAN` has no simpler cause, `solver/explain.py` finds a **minimal conflicting set** of rules: a set of rule
+When a `NO_PLAN` has no simpler cause, `solver/explain.py` finds a minimal conflicting set of rules: a set of rule
 groups that cannot all hold together, where removing any one group makes the rest satisfiable. Each rule group is
 switched by an assumption literal inside a copy of the CP-SAT model; CP-SAT reports which assumptions it needs to prove
 infeasibility, and `explain.py` then removes groups one at a time until none can be removed.
@@ -842,14 +841,14 @@ semester 5. The `CS3219 in semester 5` rule and the `CS2106` preference are not 
 
 ### 8.2 What the explanation is, and is not
 
-- It is **one** minimal conflict. A request can contain several independent conflicts; the solver returns one of them.
+- It is one minimal conflict. A request can contain several independent conflicts; the solver returns one of them.
   After the student fixes it, re-running can show another. Explanation scoring should accept any correct minimal
   conflict, not compare against a single expected one.
-- It is **minimal** (nothing can be dropped) and **sound** (the named items really cannot hold together). Both are
+- It is minimal (nothing can be dropped) and sound (the named items really cannot hold together). Both are
   covered by tests.
-- It describes the student's **stated** rules together with the data. It is not a statement of university policy.
+- It describes the student's stated rules together with the data. It is not a statement of university policy.
 
-### 8.3 Links to the Responsible AI section of the report
+### 8.3 Risks and what the solver does about them
 
 | Risk in the plan | What the solver does |
 |---|---|
@@ -863,11 +862,11 @@ semester 5. The `CS3219 in semester 5` rule and the `CS2106` preference are not 
 
 ## 9. The four backtracking variants
 
-`solver/backtrack.py` is our own CSP solver, written independently of the CP-SAT model (it does not import
+`solver/backtrack.py` is a hand-written CSP solver, written independently of the CP-SAT model (it does not import
 `model.py` or `q2.py`). It solves Q2 only; a Q1 spec is passed straight to the Q1 code with all counters at zero.
 It exists for the solver ablation (plain backtracking vs MRV vs forward checking vs MAC) and for cross-checking CP-SAT.
 
-The variants are **cumulative**. Each one includes the techniques of the one before it:
+The variants are cumulative. Each one includes the techniques of the one before it:
 
 | Variant | Definition |
 |---|---|
@@ -876,15 +875,14 @@ The variants are **cumulative**. Each one includes the techniques of the one bef
 | `fc` | `mrv` plus forward checking: after each assignment, the values of unassigned variables that conflict with the assigned ones are deleted |
 | `mac` | `mrv` plus forward checking plus domain propagation: after each assignment the pruning is repeated, using the reduced domains, until no domain changes; an empty domain means backtrack |
 
-So `mac` includes `fc`, and `fc` includes `mrv`. Slides 36 to 38 of the CSP lecture define forward checking and MAC;
-`mac` reaches the same fixpoint as AC-3 but rescans every variable instead of keeping a queue of arcs, and the MC caps
+So `mac` includes `fc`, and `fc` includes `mrv`. `mac` reaches the same fixpoint as AC-3 but rescans every variable instead of keeping a queue of arcs, and the MC caps
 are checked only against assigned courses.
 
 How the search is organised:
 
 - A variable is a candidate course. A course the student must take takes a value in its allowed semesters. A course
   that could be added also has the value 0 (not planned). Values are tried in ascending semester order, 0 first.
-- The search is **branch-and-bound** over the same stages as CP-SAT (objective, added courses, preferences, tie-break),
+- The search is branch-and-bound over the same stages as CP-SAT (objective, added courses, preferences, tie-break),
   so it proves the optimum instead of stopping at the first solution.
 - Every complete plan gets a full validity check, so pruning only changes speed, never the answer.
 
@@ -933,43 +931,43 @@ It writes one CSV row per instance and engine, with the columns `id, engine, sta
 seconds, nodes, backtracks, checks, timed_out`, and prints for each engine the number of instances finished, the median
 seconds, the median nodes and the agreement with CP-SAT over the finished instances.
 
-## 10. Analysis directions the solver makes possible
+## 10. Analyses the solver output supports
 
-Beyond the analyses already in the project plan, these are available from the solver's output:
+The solver's output supports these analyses:
 
-1. **Explanation correctness.** Compare the items named in a `NO_PLAN` reason with the perturbation that was injected.
+1. Explanation correctness. Compare the items named in a `NO_PLAN` reason with the perturbation that was injected.
    The item kinds in section 8.1 map to the perturbation types in section 7. Any correct minimal conflict counts.
-2. **Over-refusal against invented plans.** Use the solver's `status` as ground truth for the feasible and infeasible
+2. Over-refusal against invented plans. Use the solver's `status` as ground truth for the feasible and infeasible
    confusion matrix, split by tight-feasible and loose-feasible instances.
-3. **Translation failure types for pipeline B.** Classify each B failure as: not valid JSON, `INVALID_SPEC` (which error),
+3. Translation failure types for pipeline B. Classify each B failure as: not valid JSON, `INVALID_SPEC` (which error),
    a false `MISSING_INFO` (a field the student stated was left out), a field with the wrong value, a wish that should have
    been in `unsupported` but was dropped, or a field of the other question (`warnings`).
-4. **Does a translation error change the answer?** Run the solver on the translated spec and on the gold spec and compare
+4. Whether a translation error changes the answer. Run the solver on the translated spec and on the gold spec and compare
    the two answers. Many spec differences leave the answer unchanged; this separates harmless from harmful errors.
-5. **Optimality classes** from section 6 for pipeline A, by objective, and the number of added courses the LLM
+5. Optimality classes from section 6 for pipeline A, by objective, and the number of added courses the LLM
    plans compared with `added_prerequisites`.
-6. **Preference satisfaction rate** and the share of plans that meet every preference.
-7. **Solver ablation** with the counters in section 9: median nodes, checks and seconds per variant, the share of
+6. Preference satisfaction rate and the share of plans that meet every preference.
+7. Solver ablation with the counters in section 9: median nodes, checks and seconds per variant, the share of
    instances that hit the time limit, and the agreement rate with CP-SAT (it must be 100% on finished instances).
-8. **Nodes against the raw search space.** The raw space is the product, over the candidate courses, of the number of
+8. Nodes against the raw search space. The raw space is the product, over the candidate courses, of the number of
    values each can take (the semesters left plus one for "not planned"). The runner does not output it; compute it from
    the instance, for example with the number of `must_take` courses and the semesters left, and plot it against `nodes`.
-9. **Scaling.** Solver time and nodes against the number of courses, the length of the prerequisite chain and how tight
+9. Scaling. Solver time and nodes against the number of courses, the length of the prerequisite chain and how tight
    the MC caps are.
-10. **Cost.** CP-SAT answers in well under a second on the instances tried so far, which makes the LLM call the dominant
+10. Cost. CP-SAT answers in well under a second on the instances tried so far, which makes the LLM call the dominant
     cost and latency of pipeline B.
 
 ## 11. Known limitations
 
-- **CP-SAT time-out looks like `NO_PLAN`.** If a stage reaches 60 seconds without an answer, the status is `NO_PLAN`
+- A CP-SAT time-out looks like `NO_PLAN`. If a stage reaches 60 seconds without an answer, the status is `NO_PLAN`
   and the reason says the solver ran out of time. By status alone this cannot be told apart from true infeasibility;
   check the reason text, and count such answers separately.
-- **One minimal conflict.** `explain.py` names one minimal conflict, not all of them (section 8.2).
-- **Ties.** Several plans can be equally good; compare by measure, not by plan.
-- **Modelled range.** Semesters 1 to 8 only, and only BComp (CS) Hons, single major, AY2026/27.
-- **Graduation** means completing every course in `must_take`. Degree requirements are not derived.
-- **Not modelled:** S/U, CAP, module bidding, module mapping, timetable clashes, failed courses and waivers. Requests
+- One minimal conflict. `explain.py` names one minimal conflict, not all of them (section 8.2).
+- Ties. Several plans can be equally good; compare by measure, not by plan.
+- Modelled range: Semesters 1 to 8 only, and only BComp (CS) Hons, single major, AY2026/27.
+- Graduation means completing every course in `must_take`. Degree requirements are not derived.
+- Not modelled: S/U, CAP, module bidding, module mapping, timetable clashes, failed courses and waivers. Requests
   about them belong in `unsupported`. The solver assumes every planned course is obtained; the separate MDP
   extension ([`MDP_GUIDE.md`](MDP_GUIDE.md)) studies what happens when a bid fails, and does not change this solver.
-- **The backtracking solver** has a time limit and a `TIMED_OUT` status that CP-SAT does not have. Instances with many
+- The backtracking solver has a time limit and a `TIMED_OUT` status that CP-SAT does not have. Instances with many
   added courses are the slowest.

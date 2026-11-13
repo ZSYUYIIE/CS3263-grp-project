@@ -35,6 +35,8 @@ This file covers what you need to avoid mistakes.
 8. **A change to a hard rule is made in three places:** `solver/model.py`, `solver/backtrack.py` and
    `eval/checker.py` implement the rules independently on purpose. Do not make one import another. Update the
    two prompts (`pipelines/prompt_a.py`, `pipelines/prompt_b.txt`) and the guides in the same change.
+   `pipelines/prompt_b.txt` is the only copy of the pipeline B prompt; `docs/TRANSLATION_GUIDE.md` links to it
+   instead of repeating it, so don't paste the prompt into a doc.
 9. **Only pipelines A and B exist.** A: the LLM answers directly. B: the LLM writes a spec and the solver
    answers it. Do not describe other pipelines in the docs unless they are added to `pipelines/`.
 
@@ -44,6 +46,8 @@ This file covers what you need to avoid mistakes.
     interactive planner may: it offers the check after a plan (`planner/cli.py` `offer_bidding`, text in
     `planner/formatting.py` `format_bidding`), so a change to the `POLICY` answer fields must keep that view and
     `tests/test_planner.py` working.
+    A change to what the planner asks, shows or accepts (`planner/`) updates `docs/CHECKER_PLANNER_GUIDE.md` in the same
+    change; its sample output comes from a real offline `run_session` with a fixed spec, not typed by hand.
     `BiddingMDP.legal` and `bids` restate the offering, prerequisite, corequisite, exclusion and MC-cap rules for
     one semester, so a change to those rules (rule 8) is made there too; `tests/test_mdp.py` fails if the MDP
     with every probability equal to 1 stops agreeing with CP-SAT and the checker.
@@ -69,6 +73,7 @@ Update both `pyproject.toml` and `requirements-dev.txt` when adding runtime depe
 | Entry point for one spec | `solver/run.py` → `run(spec, catalog)`; Q1 in `solver/q1.py`, Q2 in `solver/q2.py` (model in `solver/model.py`) |
 | The instance sets | `instances/instances.json` (115 mixed), `q1_400.json`, `q1_gating.json`; counts in `instances/SUMMARY.md`, `Q1_SUMMARY.md` |
 | Run or grade a pipeline | `pipelines/README.md` |
+| How the eligibility checker and planner (`python -m planner`) behaves | `docs/CHECKER_PLANNER_GUIDE.md`; code in `planner/cli.py`, text in `planner/formatting.py` |
 | Bidding policy when a bid can fail | `python -m solver.mdp spec.json`; `docs/MDP_GUIDE.md` |
 | Chance of getting a course | `Admission.load("all_rounds" or "round1", missing="mean").p(code, semester)` in `solver/admission.py` |
 | Is X allowed now? (T1) | `Catalog.can_take(code, completed, semester)` |
