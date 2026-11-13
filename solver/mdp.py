@@ -8,7 +8,7 @@ in each semester, given the courses obtained so far. Formulation, data and limit
     action      a set of courses to bid for in s (offered, prerequisites done, within the MC cap)
     transition  each course in the bid is obtained independently with probability p(course, term of s)
     cost        1 per semester until every must_take course is obtained;
-                `overrun` more if that has not happened by semester 8
+                `overrun` more if that has not happened by semester 8 (default 10)
     solution    backward induction over the reachable states (the horizon is at most 8 semesters)
 
 CP-SAT decides which courses are needed (the must_take courses and the prerequisites it adds); the
@@ -19,7 +19,11 @@ value is the CP-SAT last semester. This module only reads the other solver modul
     from solver.mdp import solve
     answer = solve(spec)                                   # probabilities from the reports
     answer = solve(spec, admission=Admission.from_dict({"CS4248": 0.6}))
-CLI: `python -m solver.mdp path/to/spec.json [--estimator round1] [--p CS4248=0.6]`.
+CLI: `python -m solver.mdp path/to/spec.json [--estimator round1] [--missing 0.9] [--p CS4248=0.6]`.
+
+The probabilities from the reports are approximate scenarios (`solver/admission.py`), and the answer
+says so in `scenario`. A course-term with no report rows gets a stated fallback, not 1, and is listed
+in `model.no_data`.
 """
 from __future__ import annotations
 
@@ -28,11 +32,15 @@ import json
 
 from m1_data.catalog import Catalog, satisfied
 from solver import q2
-from solver.admission import DEFAULT_ESTIMATOR, ESTIMATORS, Admission
+from solver.admission import DEFAULT_ESTIMATOR, DEFAULT_MISSING, ESTIMATORS, MISSING_RULES, Admission
 from solver.common import LAST_SEM, term_of
 from solver.run import prepare
 
-OVERRUN_SEMESTERS = 2        # cost of not finishing by semester 8: one more academic year
+# Cost, in semesters, of not finishing by semester 8. To finish one semester sooner the policy accepts
+# at most 1 / (1 + overrun) more chance of finishing late: about 9% at 10, 33% at 2 (docs/MDP_GUIDE.md
+# section 2). A late finish costs an extra semester of study, while finishing the must_take courses
+# sooner does not by itself mean graduating sooner, so a late finish is weighted heavily.
+OVERRUN_SEMESTERS = 10
 MAX_STATES = 200_000         # the search stops with TOO_LARGE beyond this many states
 LATE = "late"                # key of the finish distribution for "not done by semester 8"
 EPS = 1e-12
@@ -275,7 +283,8 @@ def build(spec, catalog=None, admission: Admission | None = None,
 
 
 def _shown(value: float) -> float:
-    return round(value, 4)
+    """The input probabilities have three decimals, so the answer shows no more."""
+    return round(value, 3)
 
 
 def _distribution(finish: dict) -> dict:
@@ -340,17 +349,19 @@ def _policy_answer(mdp: BiddingMDP, plan_answer: dict) -> dict:
             })
         if_then.sort(key=lambda row: -row["probability"])
 
-    table, no_data = {}, []
+    table, no_data = {}, {}
     for code in mdp.candidates:
         terms = [t for t in mdp.catalog[code]["offered"] if t in (1, 2)]
         if any(mdp.admission.p(code, t) < 1.0 for t in terms):
             table[code] = {str(t): mdp.admission.p(code, t) for t in terms}
-        if mdp.admission.from_reports and not any(mdp.admission.known(code, t) for t in terms):
-            no_data.append(code)
+        missing = [t for t in terms if not mdp.admission.known(code, t)]
+        if mdp.admission.from_reports and missing:
+            no_data[code] = missing
 
     result = {
         "status": "POLICY",
         "estimator": mdp.admission.estimator,
+        "scenario": mdp.admission.describe(),
         "first_bid": {"semester": start, "courses": list(first)},
         "if_then": if_then,
         "alternatives": alternatives,
@@ -368,6 +379,7 @@ def _policy_answer(mdp: BiddingMDP, plan_answer: dict) -> dict:
             "courses": len(mdp.candidates),
             "uncertain": sorted(table),
             "no_data": no_data,
+            "no_data_p": mdp.admission.missing if no_data else None,
             "states": len(mdp.values),
             "overrun": mdp.overrun,
         },
@@ -376,7 +388,8 @@ def _policy_answer(mdp: BiddingMDP, plan_answer: dict) -> dict:
     objective = plan_answer["objective"]
     if objective != "earliest_graduation":
         notes.append(f"objective '{objective}' only decided which courses are needed; "
-                     "the policy minimises the expected finishing semester")
+                     "the policy minimises the expected finishing semester, with a late finish "
+                     f"counted as {mdp.overrun:g} more semesters")
     if notes:
         result["notes"] = notes
     preferences = plan_answer["preferences_met"] + plan_answer["preferences_not_met"]
@@ -386,17 +399,33 @@ def _policy_answer(mdp: BiddingMDP, plan_answer: dict) -> dict:
     return result
 
 
+def missing_value(text: str):
+    """--missing: one of MISSING_RULES, or a number between 0 and 1."""
+    if text in MISSING_RULES:
+        return text
+    try:
+        value = float(text)
+    except ValueError:
+        value = -1.0
+    if not 0.0 <= value <= 1.0:
+        raise argparse.ArgumentTypeError(f"expected one of {list(MISSING_RULES)} or a number between 0 and 1")
+    return value
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Bidding policy for one Q2 spec (docs/MDP_GUIDE.md).")
     parser.add_argument("spec", help="path to a spec JSON file")
     parser.add_argument("--estimator", choices=ESTIMATORS, default=DEFAULT_ESTIMATOR)
+    parser.add_argument("--missing", type=missing_value, default=DEFAULT_MISSING,
+                        help="probability of a course-term with no report rows: 'mean' (of the course-terms "
+                             "with rows; default), 'certain', or a number between 0 and 1")
     parser.add_argument("--overrun", type=float, default=OVERRUN_SEMESTERS,
                         help="cost, in semesters, of not finishing by semester 8")
     parser.add_argument("--p", action="append", default=[], metavar="CODE=PROB",
                         help="set one course's probability by hand (both terms); repeatable")
     args = parser.parse_args()
 
-    admission = Admission.load(args.estimator)
+    admission = Admission.load(args.estimator, missing=args.missing)
     for item in args.p:
         code, _, value = item.partition("=")
         override = Admission.from_dict({code: float(value)})

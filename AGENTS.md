@@ -67,7 +67,7 @@ Update both `pyproject.toml` and `requirements-dev.txt` when adding runtime depe
 | The instance sets | `instances/instances.json` (115 mixed), `q1_400.json`, `q1_gating.json`; counts in `instances/SUMMARY.md`, `Q1_SUMMARY.md` |
 | Run or grade a pipeline | `pipelines/README.md` |
 | Bidding policy when a bid can fail | `python -m solver.mdp spec.json`; `docs/MDP_GUIDE.md` |
-| Chance of getting a course | `Admission.load("all_rounds" or "round1").p(code, semester)` in `solver/admission.py` |
+| Chance of getting a course | `Admission.load("all_rounds" or "round1", missing="mean").p(code, semester)` in `solver/admission.py` |
 | Is X allowed now? (T1) | `Catalog.can_take(code, completed, semester)` |
 | Is X ruled out forever? | `Catalog.reachable(code, completed)` |
 | Courses that need X | `courses[X]["unlocks"]` |
@@ -92,3 +92,8 @@ satisfy a tree when they appear in a transcript, but can't be planned.
   resolved by the student context, which holds H2 Maths.
 - `CS2309` follows NUSMods' bracket reading, not normal precedence (see its `warnings`).
 - 95 codes have `exists_in_ay: false`. They are old courses that are still named in preclusions.
+- In the MDP a course-term with no CourseReg report rows is not certain: it gets `Admission.missing` (by default the
+  mean of the estimates) and is listed in `model.no_data` of the answer. Don't default it back to 1 silently, and
+  call the two estimators approximate scenarios, not bounds.
+- The MDP's default `overrun` is 10, not 2, on purpose: lower values trade a large chance of a late finish for an
+  earlier one (`docs/MDP_GUIDE.md` section 2).

@@ -2,6 +2,7 @@
 
     python -m experiments.run_mdp                                   # instances/instances.json
     python -m experiments.run_mdp --out rows.csv --limit 10
+    python -m experiments.run_mdp --overrun 2 --missing certain     # the first version's settings
 
 For every request in the instance file that has a plan, and for both probability estimates
 (`solver/admission.py`), three ways of acting are compared in the same model of failed bids:
@@ -12,7 +13,9 @@ For every request in the instance file that has a plan, and for both probability
     mdp       the optimal policy of `solver/mdp.py`
 
 Every request is solved for earliest graduation and without its preferences, so that the three
-aim at the same thing. Outcomes are computed exactly (`BiddingMDP.evaluate`), not sampled.
+aim at the same thing. Outcomes are computed exactly (`BiddingMDP.evaluate`), not sampled. The
+probabilities are approximate scenarios, and a course-term with no report rows gets the fallback of
+`--missing` (`solver/admission.py`).
 Writes one CSV row per (instance, estimator) and prints a summary. See docs/MDP_GUIDE.md section 6.
 """
 from __future__ import annotations
@@ -24,11 +27,11 @@ import statistics
 import time
 
 from m1_data.catalog import Catalog
-from solver.admission import ESTIMATORS, Admission
-from solver.mdp import BiddingMDP, TooLarge, build, on_time, plan_success
+from solver.admission import DEFAULT_MISSING, ESTIMATORS, Admission
+from solver.mdp import OVERRUN_SEMESTERS, BiddingMDP, TooLarge, build, missing_value, on_time, plan_success
 from solver.run import run
 
-COLUMNS = ["id", "estimator", "last_semester", "courses", "uncertain", "states", "mdp_seconds",
+COLUMNS = ["id", "estimator", "last_semester", "courses", "uncertain", "no_data", "states", "mdp_seconds",
            "plan_success", "replan_on_time", "mdp_on_time", "replan_cost", "mdp_cost", "cpsat_calls"]
 PREFERENCE_FIELDS = ("rules", "early", "late")
 GAIN = 0.001      # a difference in on-time probability smaller than this counts as a tie
@@ -61,10 +64,11 @@ def replan_policy(spec: dict, mdp: BiddingMDP, catalog):
     return policy
 
 
-def row_of(instance: dict, estimator: str, admission: Admission, catalog) -> dict | None:
+def row_of(instance: dict, estimator: str, admission: Admission, catalog,
+           overrun: float = OVERRUN_SEMESTERS) -> dict | None:
     spec = for_graduation(instance["gold_spec"])
     started = time.perf_counter()
-    early, mdp, plan_answer, _warnings = build(spec, catalog, admission)
+    early, mdp, plan_answer, _warnings = build(spec, catalog, admission, overrun)
     if early is not None:
         return None
     try:
@@ -74,14 +78,16 @@ def row_of(instance: dict, estimator: str, admission: Admission, catalog) -> dic
     seconds = time.perf_counter() - started
     replan = replan_policy(spec, mdp, catalog)
     replan_finish = mdp.evaluate(replan)
-    uncertain = [c for c in mdp.candidates
-                 if any(admission.p(c, s) < 1.0 for s in (1, 2) if s in catalog[c]["offered"])]
+    terms = {c: [t for t in (1, 2) if t in catalog[c]["offered"]] for c in mdp.candidates}
+    uncertain = [c for c in mdp.candidates if any(admission.p(c, t) < 1.0 for t in terms[c])]
+    no_data = sum(not admission.known(c, t) for c in mdp.candidates for t in terms[c])
     return {
         "id": instance["id"],
         "estimator": estimator,
         "last_semester": plan_answer["last_semester"],
         "courses": len(mdp.candidates),
         "uncertain": len(uncertain),
+        "no_data": no_data,
         "states": len(mdp.values),
         "mdp_seconds": round(seconds, 3),
         "plan_success": round(plan_success(mdp, plan_answer["plan"]), 4),
@@ -104,12 +110,15 @@ def summarise(rows: list[dict], estimator: str) -> None:
     def mean(key: str) -> float:
         return statistics.mean(r[key] for r in mine)
 
-    print(f"\n{estimator}: {len(mine)} requests, {len(affected)} with at least one uncertain course")
+    gaps = [r for r in mine if r["no_data"]]
+    print(f"\n{estimator}: {len(mine)} requests, {len(affected)} with at least one uncertain course, "
+          f"{len(gaps)} with a course-term that has no report rows")
     print(f"  mean probability the plan works as written   {mean('plan_success'):.3f}")
     print(f"  mean on-time probability, replan with CP-SAT {mean('replan_on_time'):.3f}")
     print(f"  mean on-time probability, MDP policy         {mean('mdp_on_time'):.3f}")
     print(f"  MDP better on {len(better)}, equal on {len(mine) - len(better) - len(worse)}, "
           f"worse on {len(worse)} (difference above {GAIN})")
+    print(f"  mean expected cost in semesters, replan / MDP {mean('replan_cost'):.3f} / {mean('mdp_cost'):.3f}")
     if better:
         top = max(better, key=lambda r: r["mdp_on_time"] - r["replan_on_time"])
         print(f"  largest gain: {top['id']} from {top['replan_on_time']:.3f} to {top['mdp_on_time']:.3f}")
@@ -123,6 +132,10 @@ def main() -> None:
     parser.add_argument("instances", nargs="?", default="instances/instances.json")
     parser.add_argument("--out", help="write the rows to this CSV file")
     parser.add_argument("--limit", type=int, help="use only the first N requests that have a plan")
+    parser.add_argument("--overrun", type=float, default=OVERRUN_SEMESTERS,
+                        help="cost, in semesters, of not finishing by semester 8")
+    parser.add_argument("--missing", type=missing_value, default=DEFAULT_MISSING,
+                        help="probability of a course-term with no report rows: 'mean', 'certain' or a number")
     args = parser.parse_args()
 
     with open(args.instances, encoding="utf-8") as f:
@@ -133,9 +146,10 @@ def main() -> None:
     catalog = Catalog.load()
     rows, skipped = [], set()
     for estimator in ESTIMATORS:
-        admission = Admission.load(estimator)
+        admission = Admission.load(estimator, missing=args.missing)
+        print(f"{estimator}: {admission.describe()}")
         for instance in instances:
-            row = row_of(instance, estimator, admission, catalog)
+            row = row_of(instance, estimator, admission, catalog, args.overrun)
             if row is None:
                 skipped.add(instance["id"])
             else:
@@ -145,7 +159,7 @@ def main() -> None:
             writer = csv.DictWriter(f, fieldnames=COLUMNS, lineterminator="\n")
             writer.writeheader()
             writer.writerows(rows)
-    print(f"{len(instances)} requests with a plan; {len(skipped)} not covered by the MDP "
+    print(f"\noverrun {args.overrun:g}; {len(instances)} requests with a plan; {len(skipped)} not covered by the MDP "
           f"(must rules, ATAP, mc_min or too many states): {sorted(skipped)}")
     for estimator in ESTIMATORS:
         summarise(rows, estimator)

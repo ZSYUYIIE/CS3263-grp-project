@@ -140,9 +140,11 @@ CP-SAT chose as a finite-horizon MDP ([`MDP_GUIDE.md`](MDP_GUIDE.md)):
 - **Action**: a set of courses to bid for that respects the offering, prerequisite, corequisite, exclusion
   and MC-cap rules in semester `s`.
 - **Transition**: each course in the bid is obtained independently with probability `p(c, term)`, estimated
-  from two years of CourseReg demand and allocation reports.
-- **Cost**: 1 per semester until every `must_take` course is obtained, plus a penalty if that has not
-  happened by semester 8.
+  from two years of CourseReg demand and allocation reports. The estimates are approximate scenarios; a
+  course-term without report rows gets a stated fallback, not `p = 1`.
+- **Cost**: 1 per semester until every `must_take` course is obtained, plus a penalty `overrun` (default 10)
+  if that has not happened by semester 8. To finish one semester sooner the policy accepts at most
+  `1 / (1 + overrun)` more chance of finishing late.
 - **Solution**: `V(s, G) = min_a [1 + Σ P(G' | G, a) V(s+1, G')]` by backward induction. The answer is a
   policy.
 

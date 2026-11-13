@@ -4,6 +4,7 @@ The main guard is `test_certain_bids_reproduce_cpsat`: with every probability eq
 must give the CP-SAT last semester on every committed request that has a plan, and the plan it
 follows must pass the independent checker.
 """
+import argparse
 import copy
 import json
 from pathlib import Path
@@ -17,7 +18,7 @@ from experiments.run_mdp import for_graduation, row_of
 from m1_data.catalog import Catalog
 from solver.admission import ESTIMATORS, Admission, estimate, failure_rates, read_rows
 from solver.common import LAST_SEM
-from solver.mdp import LATE, build, expected_last, on_time, solve
+from solver.mdp import LATE, OVERRUN_SEMESTERS, build, expected_last, missing_value, on_time, solve
 from solver.run import run
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -86,9 +87,40 @@ def test_loaded_tables_are_probabilities_and_ordered():
     for key, p in pessimistic.table.items():
         assert 0.0 <= p <= 1.0
         assert optimistic.table[key] >= p, key
-    assert optimistic.p("CS9999", 3) == 1.0 and not optimistic.known("CS9999", 3)
+    assert not optimistic.known("CS9999", 3)
     with pytest.raises(ValueError):
         Admission.load("made_up")
+
+
+def test_a_course_term_without_rows_gets_the_stated_fallback_not_certainty():
+    for estimator in ESTIMATORS:
+        mean = Admission.load(estimator)
+        expected = round(sum(mean.table.values()) / len(mean.table), 3)
+        assert mean.missing == expected < 1.0 and mean.missing_rule == "mean"
+        assert mean.p("CS9999", 3) == expected and not mean.known("CS9999", 3)
+        assert Admission.load(estimator, missing="certain").p("CS9999", 3) == 1.0
+        assert Admission.load(estimator, missing=0.7).p("CS9999", 3) == 0.7
+        assert Admission.load(estimator, missing=0.7).table == mean.table
+    assert Admission.load("round1").missing <= Admission.load("all_rounds").missing
+    for bad in ("median", 1.5, -0.1):
+        with pytest.raises(ValueError):
+            Admission.load(missing=bad)
+    assert Admission.from_dict({"CS4248": 0.6}).p("CS2106", 5) == 1.0     # a hand table names the uncertain ones
+    assert Admission.certain().p("CS2106", 5) == 1.0
+    assert missing_value("mean") == "mean" and missing_value("0.9") == 0.9
+    with pytest.raises(argparse.ArgumentTypeError):
+        missing_value("2")
+
+
+def test_the_answer_says_the_probabilities_are_an_approximate_scenario(cat):
+    for estimator in ESTIMATORS:
+        answer = solve(EXAMPLE, cat, Admission.load(estimator))
+        assert answer["scenario"].startswith(f"approximate scenario '{estimator}'")
+        assert "AY2024/25 and AY2025/26" in answer["scenario"]
+    certain = solve(EXAMPLE, cat, Admission.load(missing="certain"))
+    assert "treated as certain" in certain["scenario"]
+    assert solve(EXAMPLE, cat, Admission.certain())["scenario"] == "every bid succeeds"
+    assert "set by hand" in solve(EXAMPLE, cat, Admission.from_dict(HAND))["scenario"]
 
 
 def test_from_dict_by_course_or_by_term():
@@ -139,7 +171,7 @@ def test_certain_bids_reproduce_cpsat(cat):
 def test_one_course_two_tries_matches_the_closed_form(cat):
     _, mdp, _, _ = build(one_course(), cat, Admission.from_dict({"CS2106": 0.5}))
     assert mdp.evaluate() == {7: 0.5, 8: 0.25, LATE: 0.25}
-    assert mdp.value(7, START) == pytest.approx(0.5 * 1 + 0.25 * 2 + 0.25 * (2 + 2))
+    assert mdp.value(7, START) == pytest.approx(0.5 * 1 + 0.25 * 2 + 0.25 * (2 + OVERRUN_SEMESTERS))
     answer = solve(one_course(), cat, Admission.from_dict({"CS2106": 0.5}))
     assert answer["status"] == "POLICY"
     assert answer["first_bid"] == {"semester": 7, "courses": ["CS2106"]}
@@ -248,12 +280,29 @@ def test_a_search_past_the_state_limit_is_reported(cat, monkeypatch):
     assert answer["status"] == "TOO_LARGE" and "7 courses" in answer["reasons"][0]
 
 
-def test_courses_without_report_rows_are_listed(cat):
+def test_course_terms_without_report_rows_are_listed_with_the_value_used(cat):
     table = Admission.load("round1")
     del table.table[("CS2106", 1)], table.table[("CS2106", 2)]
     answer = solve(one_course(), cat, table)
-    assert answer["model"]["no_data"] == ["CS2106"] and answer["on_time_probability"] == 1.0
-    assert solve(one_course(), cat, Admission.from_dict({"CS2100": 0.5}))["model"]["no_data"] == []
+    assert answer["model"]["no_data"] == {"CS2106": [1, 2]} and answer["model"]["no_data_p"] == table.missing
+    assert answer["admission"] == {"CS2106": {"1": table.missing, "2": table.missing}}
+    assert answer["on_time_probability"] == round(1 - (1 - table.missing) ** 2, 3)
+    one_term = Admission.load("round1")
+    del one_term.table[("CS2106", 2)]
+    assert solve(one_course(), cat, one_term)["model"]["no_data"] == {"CS2106": [2]}
+    given = solve(one_course(), cat, Admission.from_dict({"CS2100": 0.5}))
+    assert given["model"]["no_data"] == {} and given["model"]["no_data_p"] is None
+
+
+def test_the_default_penalty_does_not_gamble_on_a_single_try(cat):
+    """q2-tight-14, round1: with overrun 2 the policy tries CS4234 once, to finish in semester 7 if it
+    succeeds; the default penalty bids for it in semester 5 so that it can be tried twice."""
+    spec = for_graduation(next(r for r in PLANS if r["id"] == "q2-tight-14")["gold_spec"])
+    admission = Admission.load("round1")
+    _, gamble, _, _ = build(spec, cat, admission, overrun=2)
+    _, default, _, _ = build(spec, cat, admission)
+    assert "CS4234" not in gamble.policy(5, START) and "CS4234" in default.policy(5, START)
+    assert on_time(default.evaluate()) > on_time(gamble.evaluate()) + 0.1
 
 
 def test_the_spec_is_not_changed(cat):

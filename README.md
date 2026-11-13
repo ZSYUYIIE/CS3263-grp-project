@@ -297,14 +297,17 @@ the MDP chooses when to bid for them; with every probability equal to 1 it gives
 
 ```bash
 python -m solver.mdp examples/q2_bidding.json                     # policy for one Q2 spec
-python -m solver.mdp examples/q2_bidding.json --estimator round1  # pessimistic probabilities
+python -m solver.mdp examples/q2_bidding.json --estimator round1  # the lower probability scenario
 python -m experiments.run_mdp --out rows.csv                      # plan vs replan vs policy on the instance set
 ```
 
 It takes the same Q2 spec and is separate from `solver.run`, the pipelines, the instance files and the checker.
-On the 45 committed requests that have a plan, the mean probability of finishing by semester 8 is 0.960 for
-the plan as written, 0.988 when replanning with CP-SAT every semester and 0.997 for the policy (optimistic
-estimate), and 0.714, 0.875 and 0.912 under the pessimistic estimate.
+The policy minimises the expected finishing semester, with a late finish (after semester 8) counted as 10
+more semesters. The probabilities are approximate scenarios, not forecasts, and a course-term with no report
+rows gets a stated fallback (the mean of the others), not certainty.
+On the 45 committed requests that have a plan, the mean probability of finishing by semester 8 is 0.947 for
+the plan as written, 0.980 when replanning with CP-SAT every semester and 0.992 for the policy (`all_rounds`
+scenario), and 0.690, 0.859 and 0.904 under the `round1` scenario.
 Formulation, data, results and limits: [`docs/MDP_GUIDE.md`](docs/MDP_GUIDE.md).
 
 ## Instances, pipelines and evaluation (M3)
